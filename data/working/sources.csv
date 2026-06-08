@@ -1,0 +1,2 @@
+source_id,title,source_type,url,date_found,reliability,notes
+source_players_txt_iheartdisraptor,PLAYERS.TXT / MUME players - who plays who,player_list,https://github.com/iheartdisraptor/mume/blob/master/guide/PLAYERS.TXT,2026-06-07,useful_but_subjective,"Historical list of player-character associations, mainly pkillers. Contains author notes and subjective judgments."
