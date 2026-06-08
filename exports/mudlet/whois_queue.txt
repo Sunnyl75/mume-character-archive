@@ -101,7 +101,6 @@ Avenir
 Awesome
 Axel
 Azalyn
-Azazello
 Azazhel
 Azg
 Azhal
@@ -243,7 +242,6 @@ Caldor
 Calrandir
 Calvin
 Caman
-Candid
 Cano
 Caolin
 Capiche
@@ -288,7 +286,6 @@ Clericii
 Cootafides
 Core
 Cormac
-Corvin
 Cotc
 Cruel
 Cruggo
@@ -336,7 +333,6 @@ Demsie
 Deor
 Deris
 Desastre
-Devastator
 Devran
 Dharazor
 Diamonium
@@ -627,12 +623,10 @@ Granite
 Granvil
 Grashnak
 Graugh
-Gray
 Greed
 Greoldreth
 Grez
 Gringo
-Grino
 Gris
 Grishelda
 Grishnak(Shag)
@@ -874,7 +868,6 @@ Kurdran
 Kurva
 Kviea
 Kylm
-Labero
 Lada
 Lairathim
 Lakh
@@ -1015,7 +1008,6 @@ Mithrellas
 Miyahk
 Moandor
 Moby
-Mochomurka
 Moci
 Mogshak
 Mojo
@@ -1119,7 +1111,6 @@ Nogon
 Nomad
 Nooka
 Norrland
-Norsu
 Nothing
 Notorga
 Nowyr
@@ -1150,7 +1141,6 @@ Orcobal
 Oregon
 Orf
 Orikas
-Orkanoid
 Orodreth
 Oscarmeyer
 Osilin
@@ -1191,7 +1181,6 @@ Pontiac
 Pontu
 Popeye
 Poppis
-Porien
 Posh
 Potgins
 Praiodan
@@ -1254,7 +1243,6 @@ Reef
 Regin
 Reijki
 Reikor
-Relim
 Remorse
 Rend
 Rendra
@@ -1269,7 +1257,6 @@ Rhuarc
 Rhuka
 Ric
 Riekor
-Rik
 Rimnark
 Rio
 Riordan
@@ -1318,7 +1305,6 @@ Salas
 Salmar
 Salta
 San
-Santana
 Sarah
 Sardaukar
 Scaramanga
@@ -1549,11 +1535,9 @@ Uffe
 Ugash
 Ughar
 Ugnez
-Ugurz
 Uhan
 Ukuvul
 Ula
-Ulairy
 Uland
 Uldrak
 Ulfhild
@@ -1588,7 +1572,6 @@ Vandal
 Vanimelde
 Vanir
 Vargas
-Varvar
 Vasa
 Vasilisa
 Vassago
@@ -1617,7 +1600,6 @@ Vrede
 Vridush
 Vr�sh
 Vsevolod
-Vugluskr
 Vulgar
 Waba
 Wacka
@@ -1636,7 +1618,6 @@ Winzy
 Wobbit
 Woe
 Woitkah
-Woland
 Wong
 Wow
 Wreth

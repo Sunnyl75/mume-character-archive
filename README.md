@@ -49,6 +49,7 @@ exports/
 scripts/
   validate_data.py
   build_whois_queue.py
+  import_mudlet_whois_archive.py
 ```
 
 ## Important concepts
@@ -255,6 +256,58 @@ python3 scripts/build_whois_queue.py --priority high
 
 ```bash
 python3 scripts/build_whois_queue.py --output exports/mudlet/test_queue.txt
+```
+
+
+### Import Mudlet whois archive captures
+
+The existing Mudlet whois script writes a JSON archive at:
+
+```text
+/Users/Lewis/.config/mudlet/profiles/Multi-Users in Middle-earth/mume_whois_archive.json
+```
+
+Import it into the repository with:
+
+```bash
+python3 scripts/import_mudlet_whois_archive.py "/Users/Lewis/.config/mudlet/profiles/Multi-Users in Middle-earth/mume_whois_archive.json"
+```
+
+The importer reads the Mudlet JSON archive and updates:
+
+```text
+data/working/sources.csv
+data/working/characters.csv
+data/working/whois_records.csv
+data/working/whois_queue.csv
+```
+
+It preserves every individual whois capture in `whois_records.csv`, including failed or low-confidence captures. It uses each record's latest parsed result to update the summary fields in `characters.csv`.
+
+Before writing changes, you can preview the import with:
+
+```bash
+python3 scripts/import_mudlet_whois_archive.py "/Users/Lewis/.config/mudlet/profiles/Multi-Users in Middle-earth/mume_whois_archive.json" --dry-run
+```
+
+After importing, validate the archive:
+
+```bash
+python3 scripts/validate_data.py
+```
+
+Then rebuild the Mudlet queue so successfully imported names are skipped next time:
+
+```bash
+python3 scripts/build_whois_queue.py
+```
+
+Then commit:
+
+```bash
+git add data/working/sources.csv data/working/characters.csv data/working/whois_records.csv data/working/whois_queue.csv exports/mudlet/whois_queue.txt
+git commit -m "Import Mudlet whois archive captures"
+git push
 ```
 
 ## Normal Git workflow

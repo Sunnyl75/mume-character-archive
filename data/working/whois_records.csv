@@ -1,1 +1,348 @@
 whois_id,character_id,character_name,captured_at,raw_text,parsed_level,parsed_race,parsed_class,status,parse_confidence,notes
+whois_woland_1780810956,char_woland,Woland,2026-06-07 15:42:48,"Woland the Professor of Black Magic is a Black Númenórean [Retired].
+
+'... who are you, then?'
+     'I am part of that power which eternally wills evil and eternally works
+good.'
+     Goethe, Faust
+
+
+                           Never trust. Never fear. Never beg.
+
+![ CW iMc XP:0 2[0:2]>",,Black Númenórean,,Retired,medium,query_name=woland | display_name=Woland the Professor of Black Magic | epithet_or_title=the Professor of Black Magic
+whois_tauno_1780819357,,Tauno,2026-06-07 18:02:38,"Tauno Tumpelo, 7th Tumunzahar Battalion is a level forty Dwarven
+    Ranger [Retired].
+Last login 20 years, 8 months, and 4 days ago from *.fi.
+
+Foot Soldier, 7th Tumunzahar Battalion",40,Dwarven,Ranger,Retired,medium,"query_name=tauno | display_name=Tauno Tumpelo, 7th Tumunzahar Battalion | epithet_or_title=Tumpelo, 7th Tumunzahar Battalion | Last login 20 years, 8 months, and 4 days ago from *.fi."
+whois_mume_1780820791,,MUME,2026-06-07 18:26:31,"MUME.Client protocol error: {""message"":""GMCP JSON parse error: \""[ \\\""Char 1\\\"", \\\""Client 1\\\"", \\\""Room 1\\\"" \""""}Bladorfat is a Maia (Cartographer).
+Is playing from [numerical address].",,Maia,,,low,"query_name=bladorfat | display_name=MUME.Client protocol error: {""message"":""GMCP JSON parse error: \""[ \\\""Char 1\\\"", \\\""Client 1\\\"", \\\""Room 1\\\"" \""""}Bladorfat | epithet_or_title=.Client protocol error: {""message"":""GMCP JSON parse error: \""[ \\\""Char 1\\\"", \\\""Client 1\\\"", \\\""Room 1\\\"" \""""}Bladorfat | role=Cartographer | Capture appears to include protocol/output corruption; raw text preserved."
+whois_grey_1780820803,,grey,2026-06-07 18:26:43,No one by that name.,,,,not_found,high,query_name=grey | MUME returned: No one by that name.
+whois_gray_1780820809,char_gray,Gray,2026-06-07 18:26:50,"Gray the Expert is a level fifty Noldorin Wizard
+    [Retired].
+Last login 20 years, 4 months, and 12 days ago from
+    [numerical address].
+
+  373/37/11/11/5 (pkills/pkdeaths/mobdeaths/other deaths/demoted levels)
+  Max warpoints: warlord.
+
+  ""Newbie scientist is one who wants to change the world. Experienced one is
+one changed by the world already.""       I won't try to change it anymore...
+
+  other legends: Candid, Santana, Corvin, Varvar, Ulairy, Vugluskr, Orkanoid,
+Emmanuelle, Akela, Aeruscator.
+                   MUME site: http://www.cnt.ru/users/snape/MAIN/MAIN.HTM",50,Noldorin,Wizard,Retired,medium,"query_name=gray | display_name=Gray the Expert | epithet_or_title=the Expert | Last login 20 years, 4 months, and 12 days ago from [numerical address]."
+whois_corvin_1780831178,char_corvin,Corvin,2026-06-07 21:19:40,"Corvin - one of the Nine is a level forty Silvan Hunter
+    [Retired].
+Last login 22 years, 5 months, and 8 days ago from
+    [numerical address].
+
+  Three rings for the Assembly-kings under the sky,
+  Seven for the C++-lords in their halls of stone,
+  Nine for Basic Users doomed to die,
+  One for Bill Gates on his sky-blue throne.
+
+  In the Land of Redmond where the Bugs lie.
+  One Ring to rule them all, one Ring to find them,
+  One Ring to bring them all, and the GPF will bind them
+  In the land of Redmond where the Bugs lie.
+
+!# CW>",40,Silvan,Hunter,Retired,medium,"query_name=corvin | display_name=Corvin - one of the Nine | epithet_or_title=- one of the Nine | Last login 22 years, 5 months, and 8 days ago from [numerical address]."
+whois_gray_1780831197,char_gray,Gray,2026-06-07 21:19:59,"Gray the Expert is a level fifty Noldorin Wizard
+Gray the Expert is a level fifty Noldorin Wizard
+    [Retired].
+Last login 20 years, 4 months, and 12 days ago from
+    [numerical address].
+
+  373/37/11/11/5 (pkills/pkdeaths/mobdeaths/other deaths/demoted levels)
+  Max warpoints: warlord.
+
+  ""Newbie scientist is one who wants to change the world. Experienced one is
+one changed by the world already.""       I won't try to change it anymore...
+
+  other legends: Candid, Santana, Corvin, Varvar, Ulairy, Vugluskr, Orkanoid,
+Emmanuelle, Akela, Aeruscator.
+                   MUME site: http://www.cnt.ru/users/snape/MAIN/MAIN.HTM
+
+!# CW>",50,Noldorin,Wizard,,medium,"query_name=gray | display_name=Gray the Expert | epithet_or_title=the Expert | Last login 20 years, 4 months, and 12 days ago from [numerical address]."
+whois_candid_1780831207,char_candid,Candid,2026-06-07 21:20:09,"Candid the Sniper - Nothing Sacred is a level
+Candid the Sniper - Nothing Sacred is a level
+    thirty-five Noldorin Scout [Retired].
+Last login 22 years, 6 months, and 29 days ago from
+    [numerical address].
+
+  21/3/1/0, max warpoints: 18
+
+!# CW>",,level,,,medium,"query_name=candid | display_name=Candid the Sniper - Nothing Sacred | epithet_or_title=the Sniper - Nothing Sacred | Last login 22 years, 6 months, and 29 days ago from [numerical address]."
+whois_santana_1780831482,char_santana,Santana,2026-06-07 21:24:44,"Santana is a level twenty-six Tarkhnarb Assassin
+Santana is a level twenty-six Tarkhnarb Assassin
+    [Retired].
+
+* W S C>exits
+North - The glare of the sun burns your eyes.   <- street
+East  - Lab Entrance
+South - The glare of the sun burns your eyes.   <- street
+
+* W S C>e
+You feel so much better hiding in the shadows!  <- YEAH!!!
+Your lovely lab where you play MUME.
+Exits: East *West*.
+
+!# CW>",26,Tarkhnarb Assassin,,,medium,query_name=santana | display_name=Santana
+whois_candid_1780831491,char_candid,Candid,2026-06-07 21:24:53,"Candid the Sniper - Nothing Sacred is a level
+Candid the Sniper - Nothing Sacred is a level
+    thirty-five Noldorin Scout [Retired].
+Last login 22 years, 6 months, and 29 days ago from
+    [numerical address].
+
+  21/3/1/0, max warpoints: 18
+
+!# CW>",,level,,,medium,"query_name=candid | display_name=Candid the Sniper - Nothing Sacred | epithet_or_title=the Sniper - Nothing Sacred | Last login 22 years, 6 months, and 29 days ago from [numerical address]."
+whois_candid_1780832128,char_candid,Candid,2026-06-07 21:35:30,"Candid the Sniper - Nothing Sacred is a level
+    thirty-five Noldorin Scout [Retired].
+Last login 22 years, 6 months, and 29 days ago from
+    [numerical address].
+
+  21/3/1/0, max warpoints: 18
+
+!# CW>",35,Noldorin,Scout,Retired,medium,"query_name=candid | display_name=Candid the Sniper - Nothing Sacred | epithet_or_title=the Sniper - Nothing Sacred | Last login 22 years, 6 months, and 29 days ago from [numerical address]."
+whois_varvar_1780832170,char_varvar,Varvar,2026-06-07 21:36:12,"Varvar the Black Uruk is a level thirty-three Tarkhnarb
+Varvar the Black Uruk is a level thirty-three Tarkhnarb
+    Battlemaster [Retired].
+
+  132/8/1/2
+
+I don't care about you being not prepared.
+I don't care about you being lost.
+I don't care about you being poisoned.
+I don't care about you being outnumbered.
+I don't care about you being trapped.
+I DON'T CARE ABOUT YOU BEING CLUELESS!
+DIE PUKESCUM! DIE!!!
+
+!# CW>",33,Tarkhnarb,,,medium,query_name=varvar | display_name=Varvar the Black Uruk | epithet_or_title=the Black Uruk
+whois_ulairy_1780832177,char_ulairy,Ulairy,2026-06-07 21:36:19,"Ulairy - in the memory of Grino is a level thirty-two
+Ulairy - in the memory of Grino is a level thirty-two
+    Black Númenórean Mercenary [Retired].
+
+  55/4/4/3
+
+!# CW>",,,,,medium,query_name=ulairy | display_name=Ulairy - in the memory of Grino | epithet_or_title=- in the memory of Grino
+whois_grino_1780832337,char_grino,Grino,2026-06-07 21:38:59,"Grino Grins is a Black Númenórean [Retired].
+
+!# CW>",,Black Númenórean,,Retired,medium,query_name=grino | display_name=Grino Grins | epithet_or_title=Grins
+whois_ulairy_1780832470,char_ulairy,Ulairy,2026-06-07 21:41:10,"Ulairy - in the memory of Grino is a level thirty-two
+    Black Númenórean Mercenary [Retired].
+
+  55/4/4/3",32,Black Númenórean,Mercenary,Retired,medium,query_name=ulairy | display_name=Ulairy - in the memory of Grino | epithet_or_title=- in the memory of Grino
+whois_vugluskr_1780832498,char_vugluskr,Vugluskr,2026-06-07 21:41:39,"Vugluskr is a level thirty-three Dwarven Battlemaster [Retired].
+Last login 22 years, 6 months, and 17 days ago from [numerical
+    address].
+
+  44/4/2/0",33,Dwarven,Battlemaster,Retired,medium,"query_name=Vugluskr | display_name=Vugluskr | Last login 22 years, 6 months, and 17 days ago from [numerical address]."
+whois_orkanoid_1780832511,char_orkanoid,Orkanoid,2026-06-07 21:41:51,"Orkanoid - live fast, die young is a level twenty-six Orkish
+    Archer [Retired].
+
+  6/7/4/0
+
+Nothing is impossible, just certain things take a lot of time.
+Leveling zorc is good example =)",26,Orkish Archer,,Retired,medium,"query_name=Orkanoid | display_name=Orkanoid - live fast, die young | epithet_or_title=- live fast, die young"
+whois_akela_1780832541,,Akela,2026-06-07 21:42:22,"Akela the Pack Leader is a level twenty-nine Dwarven Battlemaster
+    [Retired].
+Last login 22 years, 3 months, and 18 days ago from [numerical
+    address].",29,Dwarven,Battlemaster,Retired,medium,"query_name=Akela | display_name=Akela the Pack Leader | epithet_or_title=the Pack Leader | Last login 22 years, 3 months, and 18 days ago from [numerical address]."
+whois_aeruscator_1780832560,,Aeruscator,2026-06-07 21:42:40,"Aeruscator the Merchant [AKM] is a level thirty-six Half-elven
+    Healer [Retired].
+Last login 22 years, 3 months, and 30 days ago from [numerical
+    address].
+
+  Once a great merchant (480 hours spent trading), retired from business after
+rent change and gone to Lost Realms - maybe until end of legendhome (merchant
+house) building, maybe until MUME becomes less difficult and tedious to play,
+maybe forever. If gods of this game finally decide to make legend eq cost as
+much as it should - real prices for eq (set by players' offer and demand) can
+be found here: http://gray.khimki.ru/MAIN/GUILD.HTM (guild prices).
+
+  Lauren: 27,127 (just before retirement). And yes, this is absolute
+MUME record of gold amount on mortal player, since beginning of MUME.",36,Half-elven,Healer,Retired,medium,"query_name=Aeruscator | display_name=Aeruscator the Merchant [AKM] | epithet_or_title=the Merchant [AKM] | Last login 22 years, 3 months, and 30 days ago from [numerical address]."
+whois_gangee_1780832781,,Gangee,2026-06-07 21:46:22,"Gangee the roly-poly little stoor is a level twenty-two
+    Stoor Necromancer [Retired].
+Last login 22 years, 6 months, and 4 days ago from *.edu.
+Just another hobbit mage.",22,Stoor Necromancer,,Retired,medium,"query_name=gangee | display_name=Gangee the roly-poly little stoor | epithet_or_title=the roly-poly little stoor | Last login 22 years, 6 months, and 4 days ago from *.edu."
+whois_gangee_1780833117,,Gangee,2026-06-07 21:51:58,"Gangee the roly-poly little stoor is a level twenty-two
+    Stoor Necromancer [Retired].
+Last login 22 years, 6 months, and 4 days ago from *.edu.
+Just another hobbit mage.",22,Stoor,Necromancer,Retired,medium,"query_name=gangee | display_name=Gangee the roly-poly little stoor | epithet_or_title=the roly-poly little stoor | Last login 22 years, 6 months, and 4 days ago from *.edu."
+whois_ugurz_1780833138,char_ugurz,Ugurz,2026-06-07 21:52:19,"Ugurz the Forsaken is a level one hundred Orkish Assassin
+    [Retired].
+
+Total player kills: 2,631 (1,747 distinct)",1,hundred Orkish Assassin,,Retired,medium,query_name=ugurz | display_name=Ugurz the Forsaken | epithet_or_title=the Forsaken
+whois_ugurz_1780833558,char_ugurz,Ugurz,2026-06-07 21:59:18,"Ugurz the Forsaken is a level one hundred Orkish Assassin
+    [Retired].
+
+Total player kills: 2,631 (1,747 distinct)",100,Orkish Assassin,,Retired,medium,query_name=ugurz | display_name=Ugurz the Forsaken | epithet_or_title=the Forsaken
+whois_ugurz_1780833675,char_ugurz,Ugurz,2026-06-07 22:01:15,"Ugurz the Forsaken is a level one hundred Orkish Assassin
+    [Retired].
+
+Total player kills: 2,631 (1,747 distinct)",100,Orkish,Assassin,Retired,medium,query_name=ugurz | display_name=Ugurz the Forsaken | epithet_or_title=the Forsaken
+whois_devastator_1780833721,char_devastator,Devastator,2026-06-07 22:02:01,"Devastator is a level nine Mountain Troll Softskin
+    [Retired].",9,Mountain Troll,Softskin,Retired,medium,query_name=devastator | display_name=Devastator
+whois_labero_1780833736,char_labero,Labero,2026-06-07 22:02:16,"Labero the Mad is a level forty-one Black Númenórean Sage
+    [Retired].
+
+                    For millions of years
+                    mankind lived just like the animals.
+
+                    Then something happened,
+                    which unleashed the power of our imagination.
+
+                    We learned to talk.",41,Black Númenórean,Sage,Retired,medium,query_name=labero | display_name=Labero the Mad | epithet_or_title=the Mad
+whois_korn_1780833752,,Korn,2026-06-07 22:02:32,Korn is a Troll [Retired].,,Troll,,Retired,medium,query_name=korn | display_name=Korn
+whois_azazello_1780833778,char_azazello,Azazello,2026-06-07 22:02:59,"Azazello the Daemon of the Waterless Desert is a level
+    one hundred Tarkhnarb Champion [Retired].
+
+ On  the  flank, gleaming  in  steel armour,  rode  Azazello,  his  face
+transformed by  the moon.  Gone was the idiotic wall eye, gone was his false
+squint. Both Azazello's eyes were alike, empty and black, his face white and
+cold. Azazello was now in his real guise,the daemon of the waterless desert,
+the murderer-daemon.
+                                 Mikhail Bulgakov ""The Master and Margarita""
+
+1075k xp gained from focuses ...        2572 kills total, 1511 unique kills",100,Tarkhnarb,Champion,Retired,medium,query_name=azazello | display_name=Azazello the Daemon of the Waterless Desert | epithet_or_title=the Daemon of the Waterless Desert
+whois_norsu_1780833799,char_norsu,Norsu,2026-06-07 22:03:20,"Norsu has left the building is a level one hundred
+    Tarkhnarb Champion [Retired].
+
+      .-""-.
+     /|6 6|\
+    {/(_0_)\}
+     _/ ^ \_
+    (/ /^\ \)-'
+     """"' '""""
+
+Remember the puppy!",100,Tarkhnarb,Champion,Retired,medium,query_name=norsu | display_name=Norsu has left the building | epithet_or_title=has left the building
+whois_huor_1780833817,,Huor,2026-06-07 22:03:38,"Huor of Dor-lómin, Chieftain of Rhudaur is a level
+    seventy-one Dúnadan Battlemaster [Retired].
+Last login 26 years, 6 months, and 18 days ago from *.SE.",71,Dúnadan Battlemaster,,Retired,medium,"query_name=huor | display_name=Huor of Dor-lómin, Chieftain of Rhudaur | epithet_or_title=of Dor-lómin, Chieftain of Rhudaur | Last login 26 years, 6 months, and 18 days ago from *.SE."
+whois_tuor_1780833829,,Tuor,2026-06-07 22:03:49,"Tuor of Vinyamar is a Maia (Cartographer) [Retired].
+
+  After the fall of Gondolin Tuor with Idril Celebrindal and their son
+Earendil the Blessed went to the sea, where Tuor built a great ship and with
+his wife set sail into sunset and the West. Tuor alone of mortal Men was
+numbered among the elder race, and was joined with the Noldor, whom he loved.
+  Now he dwells in Valinor, helping Valar to shape Arda and heal its wounds
+inflicted by Morgoth.",,Maia,,Retired,medium,query_name=tuor | display_name=Tuor of Vinyamar | epithet_or_title=of Vinyamar | role=Cartographer
+whois_mochomurka_1780833863,char_mochomurka,Mochomurka,2026-06-07 22:04:24,"Mochomurka Ukrutny is a level forty-eight Black
+    Númenórean Warlock.",48,Black Númenórean,Warlock,,medium,query_name=mochomurka | display_name=Mochomurka Ukrutny | epithet_or_title=Ukrutny
+whois_relim_1780833876,char_relim,Relim,2026-06-07 22:04:37,"Relim N'Ekasrof is a Man.
+Last login 5 months and 8 days ago.
+
+An Old Timer.",,Man,,,medium,query_name=relim | display_name=Relim N'Ekasrof | epithet_or_title=N'Ekasrof | Last login 5 months and 8 days ago.
+whois_porien_1780833903,char_porien,Porien,2026-06-07 22:05:03,"Porien the Knight of Sadness is a Maia (Cartographer).
+ ""What do you think is best in me?""
+ ""In you? I think it's when you sit silently somewhere out of sight.""
+ ""Really?""
+ ""I don't  know. Seriously, you  can find out  yourself what is  best in
+you, because this is how you meet what you are in  love  with.  What did you
+feel thinking about that guy who waved? ""
+ ""Sadness.""
+ ""Well  then,  sadness  it is.  That's the  best you have, and  you will
+always meet the things you love with sadness.
+                                    Victor Pelevin ""Hermit and Sixfinger""",,Maia,,,medium,query_name=porien | display_name=Porien the Knight of Sadness | epithet_or_title=the Knight of Sadness | role=Cartographer
+whois_gefe_1780833918,,Gefe,2026-06-07 22:05:19,"Gefe the Friendly Neighbourhood Ainu is a Maia (Builder)
+    [Retired].
+
+""I never worked a day in my life,
+   I just lay back and let the big beat lead me.""
+
+Player of: [Evil] Maartje Haphet [Good] Shydae Romain
+
+Building at Sauron's stronghold of Dol Guldur.
+
+One of the immortal Rangers.
+Please ask me if you have any questions about MUME. :)",,Maia,,Retired,medium,query_name=gefe | display_name=Gefe the Friendly Neighbourhood Ainu | epithet_or_title=the Friendly Neighbourhood Ainu | role=Builder
+whois_maartje_1780833943,,Maartje,2026-06-07 22:05:43,"Maartje the Black Bi... uhm Witch is a level twenty-nine
+    Black Númenórean Rider [Retired].
+
+She screams in silence
+A sullen riot penetrating
+through her mind
+Waiting for a sign
+to smash the silence
+with the brick
+of self control",29,Black Númenórean,Rider,Retired,medium,query_name=maartje | display_name=Maartje the Black Bi... uhm Witch | epithet_or_title=the Black Bi... uhm Witch
+whois_haphet_1780833945,,Haphet,2026-06-07 22:05:46,"Haphet Bloodtroll is a level thirty Mountain Troll
+    Warrior [Retired].
+
+The best death...
+is one that leaves a crater",30,Mountain Troll,Warrior,Retired,medium,query_name=haphet | display_name=Haphet Bloodtroll | epithet_or_title=Bloodtroll
+whois_shydaë_1780833957,,Shydaë,2026-06-07 22:05:58,"Shydaë the Explorer is a level twenty-seven Silvan
+    Quickblade [Retired].
+Last login 20 years, 8 months, and 14 days ago from *.nl.
+
+Ah well...",27,Silvan,Quickblade,Retired,medium,"query_name=shydae | display_name=Shydaë the Explorer | epithet_or_title=the Explorer | Last login 20 years, 8 months, and 14 days ago from *.nl."
+whois_romaïn_1780833963,,Romaïn,2026-06-07 22:06:04,"Romaïn Bloodfire is a level thirty-one Dwarven Axemaster
+    [Retired].
+Last login 21 years, 4 months, and 13 days ago from *.nl.
+
+'The only honourable death
+ is one that leaves a crater.'",31,Dwarven,Axemaster,Retired,medium,"query_name=romain | display_name=Romaïn Bloodfire | epithet_or_title=Bloodfire | Last login 21 years, 4 months, and 13 days ago from *.nl."
+whois_rik_1780833974,char_rik,Rik,2026-06-07 22:06:15,"Rik Tik TIK BOOM! Served more than 157 kits is a Maia
+    (Wright) [Retired].
+        __-::..     .-----. .=. .-. .-.
+      _/ _/ _/':.   '-+ +-' '=' | |/ /
+     / // // / ':.    | |   .-. | ' /
+    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
+   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
+  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
+ / // // /                              | + \ N \/ N N \/ N | | \/ | |
+(_)(_)(_)                               |   / \    / \    / | |    | |
+ (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
+   (_)
+The Good:  Ainko, Akio, Alderik, Francis, Ghij, Harold, Kim,, Knutt, Kyrania,
+Marieke,  Obthic, Oksar, Rhamd, Synnove, Tum, Wanda, Xyziristine, Zhyza
+The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
+Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Timo, Tym, Wrorg, Zhough
+
+mume.kyrania.com mume@kyrania.com around since 2000
+It seems my life moved on. Good",,Maia,,Retired,medium,query_name=rik | display_name=Rik Tik TIK BOOM! Served more than 157 kits | epithet_or_title=Tik TIK BOOM! Served more than 157 kits | role=Wright
+whois_rik_1780880030,char_rik,Rik,2026-06-08 10:53:50,"Rik Tik TIK BOOM! Served more than 157 kits is a Maia
+    (Wright) [Retired].
+        __-::..     .-----. .=. .-. .-.
+      _/ _/ _/':.   '-+ +-' '=' | |/ /
+     / // // / ':.    | |   .-. | ' /
+    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
+   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
+  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
+ / // // /                              | + \ N \/ N N \/ N | | \/ | |
+(_)(_)(_)                               |   / \    / \    / | |    | |
+ (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
+   (_)
+The Good:  Ainko, Akio, Alderik, Francis, Ghij, Harold, Kim,, Knutt, Kyrania,
+Marieke,  Obthic, Oksar, Rhamd, Synnove, Tum, Wanda, Xyziristine, Zhyza
+The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
+Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Timo, Tym, Wrorg, Zhough
+
+mume.kyrania.com mume@kyrania.com around since 2000
+It seems my life moved on. Good",,Maia,,Retired,medium,query_name=rik | display_name=Rik Tik TIK BOOM! Served more than 157 kits | epithet_or_title=Tik TIK BOOM! Served more than 157 kits | role=Wright
+whois_rik_1780880388,char_rik,Rik,2026-06-08 10:59:49,"Rik Tik TIK BOOM! Served more than 157 kits is a Maia (Wright)
+    [Retired].
+        __-::..     .-----. .=. .-. .-.
+      _/ _/ _/':.   '-+ +-' '=' | |/ /
+     / // // / ':.    | |   .-. | ' /
+    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
+   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
+  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
+ / // // /                              | + \ N \/ N N \/ N | | \/ | |
+(_)(_)(_)                               |   / \    / \    / | |    | |
+ (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
+   (_)
+The Good:  Ainko, Akio, Alderik, Francis, Ghij, Harold, Kim,, Knutt, Kyrania,
+Marieke,  Obthic, Oksar, Rhamd, Synnove, Tum, Wanda, Xyziristine, Zhyza
+The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
+Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Timo, Tym, Wrorg, Zhough
+
+mume.kyrania.com mume@kyrania.com around since 2000
+It seems my life moved on. Good",,Maia,,Retired,medium,query_name=rik | display_name=Rik Tik TIK BOOM! Served more than 157 kits | epithet_or_title=Tik TIK BOOM! Served more than 157 kits | role=Wright
+whois_ainko_1780880761,,Ainko,2026-06-08 11:06:01,"Ainko the Dwarven Adventurer is a level thirty-six Broadbeam
+    Adventurer [Retired].
+Last login 1 year, 10 months, and 21 days ago.",36,Broadbeam,Adventurer,Retired,medium,"query_name=ainko | display_name=Ainko the Dwarven Adventurer | epithet_or_title=the Dwarven Adventurer | Last login 1 year, 10 months, and 21 days ago."
