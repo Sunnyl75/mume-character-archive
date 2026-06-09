@@ -1,0 +1,46 @@
+affiliation_id,affiliation_name,pattern,pattern_type,confidence_default,notes,source_context,review_status
+arda_s_army,Arda's Army,Arda's Army,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+army_of_arda,Army of Arda,Army of Arda,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+army_of_arthedain,Army of Arthedain,Army of Arthedain,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+army_of_arthedain,Army of Arthedain,AoA,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+black_shadow_clan,Black Shadow Clan,Black Shadow Clan,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_brotherhood_of_the_squirrel,The Brotherhood of the Squirrel,The Brotherhood of the Squirrel,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_brotherhood_of_the_squirrel,The Brotherhood of the Squirrel,BOTS,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_brotherhood_of_the_squirrel,The Brotherhood of the Squirrel,BOTS,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+carrock_of_anduin,Carrock of Anduin,Carrock of Anduin,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+damage_inc,Damage Inc.,Damage Inc.,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+dead_horse_squad,Dead Horse Squad,Dead Horse Squad,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+durin_s_army,Durin's Army,Durin's Army,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+durin_s_house,Durin's House,Durin's House,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+durin_s_house,Durin's House,Thorin's Tribe,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+friends_to_the_death,Friends to the Death,Friends to the Death,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+friends_to_the_death,Friends to the Death,FTTD,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+friends_to_the_death,Friends to the Death,FTTD Army,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,The Hand of Sauron,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Hand of Sauron,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,The Hand,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+scouts_of_rivendell,Scouts of Rivendell,Scouts of Rivendell,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+riders_of_rohan,Riders of Rohan,Riders of Rohan,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,The Seventh Battalion,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,7th,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,Seventh Battalion,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,7th Tumunzahar Battalion,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,The 7th Battalion,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+shire_shock_troops,Shire Shock Troops,Shire Shock Troops,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+shire_shock_troops,Shire Shock Troops,SST,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+shire_shock_troops,Shire Shock Troops,SST,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+troll_kamikaze_squadron,Troll Kamikaze Squadron,Troll Kamikaze Squadron,affiliation_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+troll_kamikaze_squadron,Troll Kamikaze Squadron,TKS,acronym,candidate,Acronym can be ambiguous; review matches.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+troll_kamikaze_squadron,Troll Kamikaze Squadron,TKS,alternate_name,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,of Sauron,title_phrase,candidate,May indicate Hand of Sauron membership; review because lore references may overlap.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Ambassador of Sauron,title_phrase,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Eye of Sauron,title_phrase,candidate,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Mouth of Sauron,title_phrase,candidate,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Right Hand of Sauron,title_phrase,candidate,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_hand_of_sauron,The Hand of Sauron,Left Hand of Sauron,title_phrase,candidate,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,7th Tumunzahar Battalion,title_phrase,medium,Source says members should put this in whois/title.,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+the_seventh_battalion,The Seventh Battalion,"Foot Soldier, 7th Tumunzahar Battalion",title_phrase,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+shire_shock_troops,Shire Shock Troops,of SST,title_phrase,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+shire_shock_troops,Shire Shock Troops,of the SST,title_phrase,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+troll_kamikaze_squadron,Troll Kamikaze Squadron,TKS,acronym,candidate,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
+friends_to_the_death,Friends to the Death,FTTD Army,title_phrase,medium,,Copied player-organised clan/guild webpage content; webpage described as current in 2003.,candidate
