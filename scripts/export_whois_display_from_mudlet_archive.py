@@ -191,19 +191,21 @@ def sanitise_mudlet_html_fragment(fragment):
     fragment = re.sub(r"(?i)\s+on[a-z]+\s*=\s*[^\s>]+", "", fragment)
     fragment = re.sub(r"(?i)javascript:", "", fragment)
 
-    # Remove CSS background declarations from inline styles, preserving color.
+    # Remove only default/near-default black terminal backgrounds.
+    # Preserve non-black backgrounds, because they may be meaningful ASCII art
+    # such as flags, banners, or deliberate block-colour designs.
     fragment = re.sub(
-        r"(?i)background(?:-color)?\s*:\s*rgb\([^)]*\)\s*;?",
+        r"(?i)background(?:-color)?\s*:\s*rgb\(\s*0\s*,\s*0\s*,\s*0\s*\)\s*;?",
         "",
         fragment,
     )
     fragment = re.sub(
-        r"(?i)background(?:-color)?\s*:\s*#[0-9a-f]{3,8}\s*;?",
+        r"(?i)background(?:-color)?\s*:\s*#(?:000|000000|000000ff)\s*;?",
         "",
         fragment,
     )
     fragment = re.sub(
-        r"(?i)background(?:-color)?\s*:\s*(?:black|transparent)\s*;?",
+        r"(?i)background(?:-color)?\s*:\s*black\s*;?",
         "",
         fragment,
     )
