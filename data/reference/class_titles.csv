@@ -7,9 +7,9 @@ Champion,Warrior,unknown,,mume_reference,high,Prestige martial title
 Hero,Warrior,unknown,,mume_reference,medium,Prestige title; may not always indicate class cleanly
 Bodyguard,Warrior,unknown,,mume_reference,high,Martial title
 Battlemaster,Warrior,male,medium,mume_reference,high,Gender inferred from title
-Battlemistress,Warrior,female,medium,mume_reference,high,Gender inferred from title
+Battlemistress,Warrior,female,high,mume_reference,high,Gender inferred from title
 Axemaster,Warrior,male,medium,mume_reference,high,Gender inferred from title
-Axemistress,Warrior,female,medium,mume_reference,high,Gender inferred from title
+Axemistress,Warrior,female,high,mume_reference,high,Gender inferred from title
 Swordsman,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
 Swordswoman,Warrior,female,medium,normalised_alias,medium,Gendered counterpart to Swordsman
 Mercenary,Warrior,unknown,,mume_reference,medium,Gender-neutral martial title
@@ -36,7 +36,7 @@ Foodpad,Scout,unknown,,diku_levels_doc,low,Original Diku spelling/possible typo
 Footpad,Scout,unknown,,normalised_alias,low,Probable normalisation of Foodpad; only trust if observed
 Cleric,Cleric,unknown,,mume_reference,high,Base cleric class title
 Priest,Cleric,male,medium,diku_levels_doc,medium,Diku Cleric title
-Priestess,Cleric,female,medium,normalised_alias,medium,Gendered counterpart to Priest
+Priestess,Cleric,female,high,normalised_alias,medium,Gendered counterpart to Priest
 Patriarch,Cleric,male,high,mume_reference,high,Gender inferred from title
 Matriarch,Cleric,female,high,mume_reference,high,Gender inferred from title
 Monk,Cleric,male,medium,mume_reference,medium,Gender inferred from title
@@ -57,14 +57,14 @@ Noble Priest,Cleric,male,medium,diku_levels_doc,medium,Diku Cleric title
 Mage,Mage,unknown,,mume_reference,high,Base mage class title
 Sage,Mage,unknown,,mume_reference,high,Mage-like title
 Sorcerer,Mage,male,medium,mume_reference,high,Gender inferred from title
-Sorceress,Mage,female,medium,normalised_alias,medium,Gendered counterpart to Sorcerer
+Sorceress,Mage,female,high,normalised_alias,medium,Gendered counterpart to Sorcerer
 Warlock,Mage,male,medium,mume_reference,high,Gender inferred from title
-Witch,Mage,female,medium,mume_reference,high,Gender inferred from title
+Witch,Mage,female,high,mume_reference,high,Gender inferred from title
 Necromancer,Mage,unknown,,mume_reference,high,Mage-like title
 Enchanter,Mage,male,medium,diku_levels_doc,medium,Diku Magic user title
-Enchantress,Mage,female,medium,normalised_alias,medium,Gendered counterpart to Enchanter
+Enchantress,Mage,female,high,normalised_alias,medium,Gendered counterpart to Enchanter
 Wizard,Mage,male,medium,diku_levels_doc,medium,Diku Magic user title
-Wizardess,Mage,female,medium,normalised_alias,medium,Gendered counterpart to Wizard
+Wizardess,Mage,female,high,normalised_alias,medium,Gendered counterpart to Wizard
 Novice,unknown,unknown,,diku_levels_doc,low,Generic low-level Diku title; do not infer class alone
 Apprentice,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
 Spellbinder,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
@@ -81,14 +81,14 @@ Heroine,Warrior,female,high,mume_observed,medium,Female counterpart to Hero; bro
 Chieftain,Warrior,unknown,,mume_observed,medium,Leadership/martial title
 Snaga,unknown,unknown,,mume_observed,medium,Orc status/title; do not infer base class
 Master,unknown,male,medium,mume_observed,low,Generic title; weak class evidence
-Mistress,unknown,female,medium,normalised_alias,low,Generic title; weak class evidence
+Mistress,unknown,female,high,normalised_alias,low,Generic title; weak class evidence
 Quickblade,Scout,unknown,,mume_observed,medium,Likely Scout/weapon-speed title
 Cut-Throat,Scout,unknown,,mume_observed,medium,Likely thief/assassin-style title
 Archer,Scout,unknown,,mume_observed,medium,Ranged/scout-like title
 Weaponsmaster,Warrior,male,medium,mume_observed,high,Gender inferred from title
-Weaponsmistress,Warrior,female,medium,mume_observed,high,Gender inferred from title
+Weaponsmistress,Warrior,female,high,mume_observed,high,Gender inferred from title
 Murderer,Scout,male,medium,mume_observed,low,May be roleplay/crime title; class inference weak
-Murderess,Scout,female,medium,mume_observed,low,Female counterpart to Murderer; class inference weak
+Murderess,Scout,female,high,mume_observed,low,Female counterpart to Murderer; class inference weak
 Warg-rider,Warrior,unknown,,mume_observed,medium,Mounted martial title
 Warg,unknown,unknown,,mume_observed,low,Creature/descriptor; not enough evidence for class
 Pilferer,Scout,unknown,,mume_observed,medium,Thief-like title
