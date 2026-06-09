@@ -1,1699 +1,1699 @@
 character_name,character_id,already_checked,priority,notes
-Aalio,char_aalio,false,normal,
-Aalok,char_aalok,false,normal,
-Aaz,char_aaz,false,normal,
-Abraxas,char_abraxas,false,normal,
-Acheron,char_acheron,false,normal,
-Achilles,char_achilles,false,normal,
-Adama,char_adama,false,normal,
-Adanedhel,char_adanedhel,false,normal,
-Adorable,char_adorable,false,normal,
-Aegon,char_aegon,false,normal,
-Aew,char_aew,false,normal,
-Agan,char_agan,false,normal,
-Agannalo,char_agannalo,false,normal,
-Agannardu,char_agannardu,false,normal,
-Agarakhor,char_agarakhor,false,normal,
-Agarde,char_agarde,false,normal,
-Agattax,char_agattax,false,normal,
-Agent,char_agent,false,normal,
-Aglar,char_aglar,false,normal,
-Agonor,char_agonor,false,normal,
-Aiele,char_aiele,false,normal,
-Ainafea,char_ainafea,false,normal,
-Ainairos,char_ainairos,false,normal,
-Ajax,char_ajax,false,normal,
-Akhorahil,char_akhorahil,false,normal,
-AlBundy,char_albundy,false,normal,
-Alantir,char_alantir,false,normal,
-Alazar,char_alazar,false,normal,
-Alcion,char_alcion,false,normal,
-Alderik,char_alderik,false,normal,
-Alf,char_alf,false,normal,
-Alfank,char_alfank,false,normal,
-Alfo,char_alfo,false,normal,
-Alfrim,char_alfrim,false,normal,
-Algaron,char_algaron,false,normal,
-Alhadar,char_alhadar,false,normal,
-Ali,char_ali,false,normal,
-Alicia,char_alicia,false,normal,
-Alizee,char_alizee,false,normal,
-Alkar,char_alkar,false,normal,
-Almarian,char_almarian,false,normal,
-Alvedon,char_alvedon,false,normal,
-Alweon,char_alweon,false,normal,
-Amandil,char_amandil,false,normal,
-Amantest,char_amantest,false,normal,
-Amarant,char_amarant,false,normal,
-Amarie,char_amarie,false,normal,
-Ambolt,char_ambolt,false,normal,
-Amdir,char_amdir,false,normal,
-Amelia,char_amelia,false,normal,
-Anaconda,char_anaconda,false,normal,
-Anardil,char_anardil,false,normal,
-Ancalimon,char_ancalimon,false,normal,
-Ancra,char_ancra,false,normal,
-Andarion,char_andarion,false,normal,
-Andore,char_andore,false,normal,
-Andris,char_andris,false,normal,
-Anezka,char_anezka,false,normal,
-Angrenfea,char_angrenfea,false,normal,
-AnneilBalkassoon,char_anneilbalkassoon,false,normal,
-Anner,char_anner,false,normal,
-Annesh,char_annesh,false,normal,
-Anolad,char_anolad,false,normal,
-Anselmo,char_anselmo,false,normal,
-Antar,char_antar,false,normal,
-Anton,char_anton,false,normal,
-Aragil,char_aragil,false,normal,
-Araglas,char_araglas,false,normal,
-Arakon,char_arakon,false,normal,
-Aram,char_aram,false,normal,
-Aranka,char_aranka,false,normal,
-Ardent,char_ardent,false,normal,
-Arelia,char_arelia,false,normal,
-Ares,char_ares,false,normal,
-Arglebargle,char_arglebargle,false,normal,
-Arhar,char_arhar,false,normal,
-Ariakan,char_ariakan,false,normal,
-Ariala,char_ariala,false,normal,
-Aris,char_aris,false,normal,
-Arkady,char_arkady,false,normal,
-Arkine,char_arkine,false,normal,
-Arla,char_arla,false,normal,
-Arn,char_arn,false,normal,
-Arnoc,char_arnoc,false,normal,
-Aros,char_aros,false,normal,
-Arte,char_arte,false,normal,
-Artigor,char_artigor,false,normal,
-Asanda,char_asanda,false,normal,
-Aschit,char_aschit,false,normal,
-Aseff,char_aseff,false,normal,
-Ashmash,char_ashmash,false,normal,
-Asmandeus,char_asmandeus,false,normal,
-Assa,char_assa,false,normal,
-Astar,char_astar,false,normal,
-Athela,char_athela,false,normal,
-Atlas,char_atlas,false,normal,
-Audi,char_audi,false,normal,
-Auriane,char_auriane,false,normal,
-Ausir,char_ausir,false,normal,
-Avenir,char_avenir,false,normal,
-Awesome,char_awesome,false,normal,
-Axel,char_axel,false,normal,
-Azalyn,char_azalyn,false,normal,
+Aalio,char_aalio,true,normal,whois imported from Mudlet archive
+Aalok,char_aalok,true,normal,whois returned no extant character information in MUME
+Aaz,char_aaz,true,normal,whois imported from Mudlet archive
+Abraxas,char_abraxas,true,normal,whois imported from Mudlet archive
+Acheron,char_acheron,true,normal,whois imported from Mudlet archive
+Achilles,char_achilles,true,normal,whois imported from Mudlet archive
+Adama,char_adama,true,normal,whois returned no extant character information in MUME
+Adanedhel,char_adanedhel,true,normal,whois imported from Mudlet archive
+Adorable,char_adorable,true,normal,whois returned no extant character information in MUME
+Aegon,char_aegon,true,normal,whois imported from Mudlet archive
+Aew,char_aew,true,normal,whois imported from Mudlet archive
+Agan,char_agan,true,normal,whois imported from Mudlet archive
+Agannalo,char_agannalo,true,normal,whois returned no extant character information in MUME
+Agannardu,char_agannardu,true,normal,whois imported from Mudlet archive
+Agarakhor,char_agarakhor,true,normal,whois imported from Mudlet archive
+Agarde,char_agarde,true,normal,whois returned no extant character information in MUME
+Agattax,char_agattax,true,normal,whois returned no extant character information in MUME
+Agent,char_agent,true,normal,whois returned no extant character information in MUME
+Aglar,char_aglar,true,normal,whois imported from Mudlet archive
+Agonor,char_agonor,true,normal,whois imported from Mudlet archive
+Aiele,char_aiele,true,normal,whois imported from Mudlet archive
+Ainafea,char_ainafea,true,normal,whois returned no extant character information in MUME
+Ainairos,char_ainairos,true,normal,whois returned no extant character information in MUME
+Ajax,char_ajax,true,normal,whois imported from Mudlet archive
+Akhorahil,char_akhorahil,true,normal,whois imported from Mudlet archive
+AlBundy,char_albundy,true,normal,whois returned no extant character information in MUME
+Alantir,char_alantir,true,normal,whois imported from Mudlet archive
+Alazar,char_alazar,true,normal,whois imported from Mudlet archive
+Alcion,char_alcion,true,normal,whois imported from Mudlet archive
+Alderik,char_alderik,true,normal,whois imported from Mudlet archive
+Alf,char_alf,true,normal,whois imported from Mudlet archive
+Alfank,char_alfank,true,normal,whois imported from Mudlet archive
+Alfo,char_alfo,true,normal,whois imported from Mudlet archive
+Alfrim,char_alfrim,true,normal,whois imported from Mudlet archive
+Algaron,char_algaron,true,normal,whois imported from Mudlet archive
+Alhadar,char_alhadar,true,normal,whois imported from Mudlet archive
+Ali,char_ali,true,normal,whois imported from Mudlet archive
+Alicia,char_alicia,true,normal,whois imported from Mudlet archive
+Alizee,char_alizee,true,normal,whois imported from Mudlet archive
+Alkar,char_alkar,true,normal,whois imported from Mudlet archive
+Almarian,char_almarian,true,normal,whois imported from Mudlet archive
+Alvedon,char_alvedon,true,normal,whois imported from Mudlet archive
+Alweon,char_alweon,true,normal,whois imported from Mudlet archive
+Amandil,char_amandil,true,normal,whois imported from Mudlet archive
+Amantest,char_amantest,true,normal,whois returned no extant character information in MUME
+Amarant,char_amarant,true,normal,whois imported from Mudlet archive
+Amarie,char_amarie,true,normal,whois imported from Mudlet archive
+Ambolt,char_ambolt,true,normal,whois imported from Mudlet archive
+Amdir,char_amdir,true,normal,whois imported from Mudlet archive
+Amelia,char_amelia,true,normal,whois imported from Mudlet archive
+Anaconda,char_anaconda,true,normal,whois imported from Mudlet archive
+Anardil,char_anardil,true,normal,whois imported from Mudlet archive
+Ancalimon,char_ancalimon,true,normal,whois imported from Mudlet archive
+Ancra,char_ancra,true,normal,whois returned no extant character information in MUME
+Andarion,char_andarion,true,normal,whois returned no extant character information in MUME
+Andore,char_andore,true,normal,whois imported from Mudlet archive
+Andris,char_andris,true,normal,whois imported from Mudlet archive
+Anezka,char_anezka,true,normal,whois imported from Mudlet archive
+Angrenfea,char_angrenfea,true,normal,whois returned no extant character information in MUME
+AnneilBalkassoon,char_anneilbalkassoon,true,normal,whois imported from Mudlet archive
+Anner,char_anner,true,normal,whois imported from Mudlet archive
+Annesh,char_annesh,true,normal,whois returned no extant character information in MUME
+Anolad,char_anolad,true,normal,whois imported from Mudlet archive
+Anselmo,char_anselmo,true,normal,whois imported from Mudlet archive
+Antar,char_antar,true,normal,whois imported from Mudlet archive
+Anton,char_anton,true,normal,whois imported from Mudlet archive
+Aragil,char_aragil,true,normal,whois imported from Mudlet archive
+Araglas,char_araglas,true,normal,whois imported from Mudlet archive
+Arakon,char_arakon,true,normal,whois imported from Mudlet archive
+Aram,char_aram,true,normal,whois imported from Mudlet archive
+Aranka,char_aranka,true,normal,whois imported from Mudlet archive
+Ardent,char_ardent,true,normal,whois imported from Mudlet archive
+Arelia,char_arelia,true,normal,whois imported from Mudlet archive
+Ares,char_ares,true,normal,whois imported from Mudlet archive
+Arglebargle,char_arglebargle,true,normal,whois imported from Mudlet archive
+Arhar,char_arhar,true,normal,whois imported from Mudlet archive
+Ariakan,char_ariakan,true,normal,whois returned no extant character information in MUME
+Ariala,char_ariala,true,normal,whois returned no extant character information in MUME
+Aris,char_aris,true,normal,whois imported from Mudlet archive
+Arkady,char_arkady,true,normal,whois returned no extant character information in MUME
+Arkine,char_arkine,true,normal,whois imported from Mudlet archive
+Arla,char_arla,true,normal,whois imported from Mudlet archive
+Arn,char_arn,true,normal,whois imported from Mudlet archive
+Arnoc,char_arnoc,true,normal,whois returned no extant character information in MUME
+Aros,char_aros,true,normal,whois returned no extant character information in MUME
+Arte,char_arte,true,normal,whois imported from Mudlet archive
+Artigor,char_artigor,true,normal,whois returned no extant character information in MUME
+Asanda,char_asanda,true,normal,whois returned no extant character information in MUME
+Aschit,char_aschit,true,normal,whois imported from Mudlet archive
+Aseff,char_aseff,true,normal,whois returned no extant character information in MUME
+Ashmash,char_ashmash,true,normal,whois imported from Mudlet archive
+Asmandeus,char_asmandeus,true,normal,whois imported from Mudlet archive
+Assa,char_assa,true,normal,whois returned no extant character information in MUME
+Astar,char_astar,true,normal,whois returned no extant character information in MUME
+Athela,char_athela,true,normal,whois imported from Mudlet archive
+Atlas,char_atlas,true,normal,whois imported from Mudlet archive
+Audi,char_audi,true,normal,whois returned no extant character information in MUME
+Auriane,char_auriane,true,normal,whois imported from Mudlet archive
+Ausir,char_ausir,true,normal,whois imported from Mudlet archive
+Avenir,char_avenir,true,normal,whois imported from Mudlet archive
+Awesome,char_awesome,true,normal,whois imported from Mudlet archive
+Axel,char_axel,true,normal,whois imported from Mudlet archive
+Azalyn,char_azalyn,true,normal,whois imported from Mudlet archive
 Azazello,char_azazello,true,normal,whois imported from Mudlet archive
-Azazhel,char_azazhel,false,normal,
-Azg,char_azg,false,normal,
-Azhal,char_azhal,false,normal,
-Azmodan,char_azmodan,false,normal,
-Azylic,char_azylic,false,normal,
-Baalrukh,char_baalrukh,false,normal,
-Babai,char_babai,false,normal,
-Backfire,char_backfire,false,normal,
-Badur,char_badur,false,normal,
-Bagger,char_bagger,false,normal,
-Baghtru,char_baghtru,false,normal,
-Bah,char_bah,false,normal,
-Bairanax,char_bairanax,false,normal,
-Bajun,char_bajun,false,normal,
-Balder,char_balder,false,normal,
-Baldwin,char_baldwin,false,normal,
-Baldy,char_baldy,false,normal,
-Balin,char_balin,false,normal,
-Balthazar,char_balthazar,false,normal,
-Baltimor,char_baltimor,false,normal,
-Bambi,char_bambi,false,normal,
-Bamsefar,char_bamsefar,false,normal,
-Baphomet,char_baphomet,false,normal,
-Baraban,char_baraban,false,normal,
-Baradul,char_baradul,false,normal,
-Barak,char_barak,false,normal,
-Baresark,char_baresark,false,normal,
-Barlok,char_barlok,false,normal,
-Barnes,char_barnes,false,normal,
-Basha,char_basha,false,normal,
-Bashy,char_bashy,false,normal,
-Basta,char_basta,false,normal,
-Bastantor,char_bastantor,false,normal,
-Bastion,char_bastion,false,normal,
-Batar,char_batar,false,normal,
-Bates,char_bates,false,normal,
-Batpoop,char_batpoop,false,normal,
-Baurk,char_baurk,false,normal,
-Bearclaw,char_bearclaw,false,normal,
-Bearnas,char_bearnas,false,normal,
-Beastly,char_beastly,false,normal,
-Beat,char_beat,false,normal,
-Beleghir,char_beleghir,false,normal,
-Belemoth,char_belemoth,false,normal,
-Belind,char_belind,false,normal,
-Bellows,char_bellows,false,normal,
-Belrun,char_belrun,false,normal,
-Beltira,char_beltira,false,normal,
-Belzagar,char_belzagar,false,normal,
-Belzedin,char_belzedin,false,normal,
-Beogul,char_beogul,false,normal,
-Beorel,char_beorel,false,normal,
-Beowulf,char_beowulf,false,normal,
-Beremon,char_beremon,false,normal,
-Berg,char_berg,false,normal,
-Berin,char_berin,false,normal,
-Berlal,char_berlal,false,normal,
-Beruska,char_beruska,false,normal,
-Betty,char_betty,false,normal,
-Bian,char_bian,false,normal,
-Bianca,char_bianca,false,normal,
-Bianthor,char_bianthor,false,normal,
-Bifur,char_bifur,false,normal,
-Bigge,char_bigge,false,normal,
-Bigger,char_bigger,false,normal,
-Bijec,char_bijec,false,normal,
-Bimulo,char_bimulo,false,normal,
-Bishn�k,char_bishn_k,false,normal,
-Bizarre,char_bizarre,false,normal,
-Bjorn,char_bjorn,false,normal,
-Blackfoot,char_blackfoot,false,normal,
-Blackthorne,char_blackthorne,false,normal,
-Blizzard,char_blizzard,false,normal,
-Blizzardo,char_blizzardo,false,normal,
-Blob,char_blob,false,normal,
-Bloha,char_bloha,false,normal,
-Bluebell,char_bluebell,false,normal,
-Blyn,char_blyn,false,normal,
-Blysk,char_blysk,false,normal,
-Bobba,char_bobba,false,normal,
-Bobbie,char_bobbie,false,normal,
-Bodhran,char_bodhran,false,normal,
-Bodycast,char_bodycast,false,normal,
-Bogger,char_bogger,false,normal,
-Bogodur,char_bogodur,false,normal,
-Bohemond,char_bohemond,false,normal,
-Bok,char_bok,false,normal,
-Bomir,char_bomir,false,normal,
-Bonebiter,char_bonebiter,false,normal,
-Boomer,char_boomer,false,normal,
-Boot,char_boot,false,normal,
-Bootyho,char_bootyho,false,normal,
-Borek,char_borek,false,normal,
-Borgash,char_borgash,false,normal,
-Bornack,char_bornack,false,normal,
-Boroda,char_boroda,false,normal,
-Borodjavka,char_borodjavka,false,normal,
-Botesia,char_botesia,false,normal,
-Bounty,char_bounty,false,normal,
-Braddock,char_braddock,false,normal,
-Bramba,char_bramba,false,normal,
-Brash,char_brash,false,normal,
-Brask,char_brask,false,normal,
-Breaux,char_breaux,false,normal,
-Britney,char_britney,false,normal,
-Brog,char_brog,false,normal,
-Brogan,char_brogan,false,normal,
-Bromir,char_bromir,false,normal,
-Broom,char_broom,false,normal,
-Brugan,char_brugan,false,normal,
-Bruise,char_bruise,false,normal,
-Brumbur,char_brumbur,false,normal,
-Bruni,char_bruni,false,normal,
-Brutte,char_brutte,false,normal,
-Brutux,char_brutux,false,normal,
-Brynhilde,char_brynhilde,false,normal,
-Bubla,char_bubla,false,normal,
-Bubu,char_bubu,false,normal,
-Buffer,char_buffer,false,normal,
-Buggar,char_buggar,false,normal,
-Buliwyf,char_buliwyf,false,normal,
-Bulldozer,char_bulldozer,false,normal,
-Bullebu,char_bullebu,false,normal,
-Buller,char_buller,false,normal,
-Bum,char_bum,false,normal,
-Bumbur,char_bumbur,false,normal,
-Burb,char_burb,false,normal,
-Burghul,char_burghul,false,normal,
-Burk,char_burk,false,normal,
-Burok,char_burok,false,normal,
-Burst,char_burst,false,normal,
-Burzum,char_burzum,false,normal,
-Butrus,char_butrus,false,normal,
-Butter,char_butter,false,normal,
-Byleist,char_byleist,false,normal,
-Cagim,char_cagim,false,normal,
-Calan,char_calan,false,normal,
-Caldor,char_caldor,false,normal,
-Calrandir,char_calrandir,false,normal,
-Calvin,char_calvin,false,normal,
-Caman,char_caman,false,normal,
+Azazhel,char_azazhel,true,normal,whois imported from Mudlet archive
+Azg,char_azg,true,normal,whois imported from Mudlet archive
+Azhal,char_azhal,true,normal,whois returned no extant character information in MUME
+Azmodan,char_azmodan,true,normal,whois imported from Mudlet archive
+Azylic,char_azylic,true,normal,whois returned no extant character information in MUME
+Baalrukh,char_baalrukh,true,normal,whois imported from Mudlet archive
+Babai,char_babai,true,normal,whois imported from Mudlet archive
+Backfire,char_backfire,true,normal,whois returned no extant character information in MUME
+Badur,char_badur,true,normal,whois imported from Mudlet archive
+Bagger,char_bagger,true,normal,whois imported from Mudlet archive
+Baghtru,char_baghtru,true,normal,whois imported from Mudlet archive
+Bah,char_bah,true,normal,whois imported from Mudlet archive
+Bairanax,char_bairanax,true,normal,whois imported from Mudlet archive
+Bajun,char_bajun,true,normal,whois imported from Mudlet archive
+Balder,char_balder,true,normal,whois imported from Mudlet archive
+Baldwin,char_baldwin,true,normal,whois imported from Mudlet archive
+Baldy,char_baldy,true,normal,whois imported from Mudlet archive
+Balin,char_balin,true,normal,whois imported from Mudlet archive
+Balthazar,char_balthazar,true,normal,whois imported from Mudlet archive
+Baltimor,char_baltimor,true,normal,whois returned no extant character information in MUME
+Bambi,char_bambi,true,normal,whois imported from Mudlet archive
+Bamsefar,char_bamsefar,true,normal,whois returned no extant character information in MUME
+Baphomet,char_baphomet,true,normal,whois imported from Mudlet archive
+Baraban,char_baraban,true,normal,whois returned no extant character information in MUME
+Baradul,char_baradul,true,normal,whois imported from Mudlet archive
+Barak,char_barak,true,normal,whois imported from Mudlet archive
+Baresark,char_baresark,true,normal,whois imported from Mudlet archive
+Barlok,char_barlok,true,normal,whois imported from Mudlet archive
+Barnes,char_barnes,true,normal,whois imported from Mudlet archive
+Basha,char_basha,true,normal,whois imported from Mudlet archive
+Bashy,char_bashy,true,normal,whois returned no extant character information in MUME
+Basta,char_basta,true,normal,whois imported from Mudlet archive
+Bastantor,char_bastantor,true,normal,whois imported from Mudlet archive
+Bastion,char_bastion,true,normal,whois imported from Mudlet archive
+Batar,char_batar,true,normal,whois returned no extant character information in MUME
+Bates,char_bates,true,normal,whois imported from Mudlet archive
+Batpoop,char_batpoop,true,normal,whois imported from Mudlet archive
+Baurk,char_baurk,true,normal,whois imported from Mudlet archive
+Bearclaw,char_bearclaw,true,normal,whois returned no extant character information in MUME
+Bearnas,char_bearnas,true,normal,whois imported from Mudlet archive
+Beastly,char_beastly,true,normal,whois imported from Mudlet archive
+Beat,char_beat,true,normal,whois imported from Mudlet archive
+Beleghir,char_beleghir,true,normal,whois imported from Mudlet archive
+Belemoth,char_belemoth,true,normal,whois returned no extant character information in MUME
+Belind,char_belind,true,normal,whois returned no extant character information in MUME
+Bellows,char_bellows,true,normal,whois imported from Mudlet archive
+Belrun,char_belrun,true,normal,whois imported from Mudlet archive
+Beltira,char_beltira,true,normal,whois imported from Mudlet archive
+Belzagar,char_belzagar,true,normal,whois imported from Mudlet archive
+Belzedin,char_belzedin,true,normal,whois returned no extant character information in MUME
+Beogul,char_beogul,true,normal,whois imported from Mudlet archive
+Beorel,char_beorel,true,normal,whois imported from Mudlet archive
+Beowulf,char_beowulf,true,normal,whois imported from Mudlet archive
+Beremon,char_beremon,true,normal,whois imported from Mudlet archive
+Berg,char_berg,true,normal,whois imported from Mudlet archive
+Berin,char_berin,true,normal,whois imported from Mudlet archive
+Berlal,char_berlal,true,normal,whois returned no extant character information in MUME
+Beruska,char_beruska,true,normal,whois imported from Mudlet archive
+Betty,char_betty,true,normal,whois imported from Mudlet archive
+Bian,char_bian,true,normal,whois imported from Mudlet archive
+Bianca,char_bianca,true,normal,whois imported from Mudlet archive
+Bianthor,char_bianthor,true,normal,whois imported from Mudlet archive
+Bifur,char_bifur,true,normal,whois imported from Mudlet archive
+Bigge,char_bigge,true,normal,whois returned no extant character information in MUME
+Bigger,char_bigger,true,normal,whois imported from Mudlet archive
+Bijec,char_bijec,true,normal,whois imported from Mudlet archive
+Bimulo,char_bimulo,true,normal,whois returned no extant character information in MUME
+Bishn�k,char_bishn_k,true,normal,whois returned no extant character information in MUME
+Bizarre,char_bizarre,true,normal,whois imported from Mudlet archive
+Bjorn,char_bjorn,true,normal,whois imported from Mudlet archive
+Blackfoot,char_blackfoot,true,normal,whois imported from Mudlet archive
+Blackthorne,char_blackthorne,true,normal,whois returned no extant character information in MUME
+Blizzard,char_blizzard,true,normal,whois imported from Mudlet archive
+Blizzardo,char_blizzardo,true,normal,whois returned no extant character information in MUME
+Blob,char_blob,true,normal,whois imported from Mudlet archive
+Bloha,char_bloha,true,normal,whois returned no extant character information in MUME
+Bluebell,char_bluebell,true,normal,whois imported from Mudlet archive
+Blyn,char_blyn,true,normal,whois imported from Mudlet archive
+Blysk,char_blysk,true,normal,whois returned no extant character information in MUME
+Bobba,char_bobba,true,normal,whois imported from Mudlet archive
+Bobbie,char_bobbie,true,normal,whois imported from Mudlet archive
+Bodhran,char_bodhran,true,normal,whois imported from Mudlet archive
+Bodycast,char_bodycast,true,normal,whois imported from Mudlet archive
+Bogger,char_bogger,true,normal,whois imported from Mudlet archive
+Bogodur,char_bogodur,true,normal,whois returned no extant character information in MUME
+Bohemond,char_bohemond,true,normal,whois returned no extant character information in MUME
+Bok,char_bok,true,normal,whois imported from Mudlet archive
+Bomir,char_bomir,true,normal,whois imported from Mudlet archive
+Bonebiter,char_bonebiter,true,normal,whois imported from Mudlet archive
+Boomer,char_boomer,true,normal,whois imported from Mudlet archive
+Boot,char_boot,true,normal,whois imported from Mudlet archive
+Bootyho,char_bootyho,true,normal,whois imported from Mudlet archive
+Borek,char_borek,true,normal,whois returned no extant character information in MUME
+Borgash,char_borgash,true,normal,whois returned no extant character information in MUME
+Bornack,char_bornack,true,normal,whois imported from Mudlet archive
+Boroda,char_boroda,true,normal,whois returned no extant character information in MUME
+Borodjavka,char_borodjavka,true,normal,whois imported from Mudlet archive
+Botesia,char_botesia,true,normal,whois imported from Mudlet archive
+Bounty,char_bounty,true,normal,whois returned no extant character information in MUME
+Braddock,char_braddock,true,normal,whois imported from Mudlet archive
+Bramba,char_bramba,true,normal,whois returned no extant character information in MUME
+Brash,char_brash,true,normal,whois imported from Mudlet archive
+Brask,char_brask,true,normal,whois imported from Mudlet archive
+Breaux,char_breaux,true,normal,whois imported from Mudlet archive
+Britney,char_britney,true,normal,whois imported from Mudlet archive
+Brog,char_brog,true,normal,whois imported from Mudlet archive
+Brogan,char_brogan,true,normal,whois imported from Mudlet archive
+Bromir,char_bromir,true,normal,whois imported from Mudlet archive
+Broom,char_broom,true,normal,whois imported from Mudlet archive
+Brugan,char_brugan,true,normal,whois returned no extant character information in MUME
+Bruise,char_bruise,true,normal,whois imported from Mudlet archive
+Brumbur,char_brumbur,true,normal,whois imported from Mudlet archive
+Bruni,char_bruni,true,normal,whois imported from Mudlet archive
+Brutte,char_brutte,true,normal,whois imported from Mudlet archive
+Brutux,char_brutux,true,normal,whois imported from Mudlet archive
+Brynhilde,char_brynhilde,true,normal,whois imported from Mudlet archive
+Bubla,char_bubla,true,normal,whois imported from Mudlet archive
+Bubu,char_bubu,true,normal,whois imported from Mudlet archive
+Buffer,char_buffer,true,normal,whois imported from Mudlet archive
+Buggar,char_buggar,true,normal,whois imported from Mudlet archive
+Buliwyf,char_buliwyf,true,normal,whois returned no extant character information in MUME
+Bulldozer,char_bulldozer,true,normal,whois imported from Mudlet archive
+Bullebu,char_bullebu,true,normal,whois imported from Mudlet archive
+Buller,char_buller,true,normal,whois imported from Mudlet archive
+Bum,char_bum,true,normal,whois imported from Mudlet archive
+Bumbur,char_bumbur,true,normal,whois imported from Mudlet archive
+Burb,char_burb,true,normal,whois imported from Mudlet archive
+Burghul,char_burghul,true,normal,whois imported from Mudlet archive
+Burk,char_burk,true,normal,whois imported from Mudlet archive
+Burok,char_burok,true,normal,whois returned no extant character information in MUME
+Burst,char_burst,true,normal,whois imported from Mudlet archive
+Burzum,char_burzum,true,normal,whois imported from Mudlet archive
+Butrus,char_butrus,true,normal,whois imported from Mudlet archive
+Butter,char_butter,true,normal,whois imported from Mudlet archive
+Byleist,char_byleist,true,normal,whois returned no extant character information in MUME
+Cagim,char_cagim,true,normal,whois returned no extant character information in MUME
+Calan,char_calan,true,normal,whois imported from Mudlet archive
+Caldor,char_caldor,true,normal,whois returned no extant character information in MUME
+Calrandir,char_calrandir,true,normal,whois imported from Mudlet archive
+Calvin,char_calvin,true,normal,whois imported from Mudlet archive
+Caman,char_caman,true,normal,whois imported from Mudlet archive
 Candid,char_candid,true,normal,whois imported from Mudlet archive
-Cano,char_cano,false,normal,
-Caolin,char_caolin,false,normal,
-Capiche,char_capiche,false,normal,
-Carak,char_carak,false,normal,
-Caress,char_caress,false,normal,
-Carib,char_carib,false,normal,
-Carl,char_carl,false,normal,
-Carniminimmiel,char_carniminimmiel,false,normal,
-Casque,char_casque,false,normal,
-Cavalera,char_cavalera,false,normal,
-Cele,char_cele,false,normal,
-Celedon,char_celedon,false,normal,
-Celegrim,char_celegrim,false,normal,
-Celo,char_celo,false,normal,
-Celorfilas,char_celorfilas,false,normal,
-Celt,char_celt,false,normal,
-Cen,char_cen,false,normal,
-Cenedra,char_cenedra,false,normal,
-Centurion,char_centurion,false,normal,
-Cerion,char_cerion,false,normal,
-Cerleg,char_cerleg,false,normal,
-Cervotoc,char_cervotoc,false,normal,
-Chak,char_chak,false,normal,
-Chang,char_chang,false,normal,
-Chauncey,char_chauncey,false,normal,
-Chavez,char_chavez,false,normal,
-Chazan,char_chazan,false,normal,
-Chelios,char_chelios,false,normal,
-Chen,char_chen,false,normal,
-Cherish,char_cherish,false,normal,
-Chewer,char_chewer,false,normal,
-Chikarhayshi,char_chikarhayshi,false,normal,
-Chogall,char_chogall,false,normal,
-Chudwicki,char_chudwicki,false,normal,
-Cidar,char_cidar,false,normal,
-Ciluras,char_ciluras,false,normal,
-Cilya,char_cilya,false,normal,
-Cinsovinsh,char_cinsovinsh,false,normal,
-Ciryatan,char_ciryatan,false,normal,
-Clangedin,char_clangedin,false,normal,
-Clericii,char_clericii,false,normal,
-Cootafides,char_cootafides,false,normal,
-Core,char_core,false,normal,
-Cormac,char_cormac,false,normal,
+Cano,char_cano,true,normal,whois imported from Mudlet archive
+Caolin,char_caolin,true,normal,whois returned no extant character information in MUME
+Capiche,char_capiche,true,normal,whois imported from Mudlet archive
+Carak,char_carak,true,normal,whois imported from Mudlet archive
+Caress,char_caress,true,normal,whois imported from Mudlet archive
+Carib,char_carib,true,normal,whois imported from Mudlet archive
+Carl,char_carl,true,normal,whois imported from Mudlet archive
+Carniminimmiel,char_carniminimmiel,true,normal,whois returned no extant character information in MUME
+Casque,char_casque,true,normal,whois imported from Mudlet archive
+Cavalera,char_cavalera,true,normal,whois imported from Mudlet archive
+Cele,char_cele,true,normal,whois imported from Mudlet archive
+Celedon,char_celedon,true,normal,whois imported from Mudlet archive
+Celegrim,char_celegrim,true,normal,whois returned no extant character information in MUME
+Celo,char_celo,true,normal,whois returned no extant character information in MUME
+Celorfilas,char_celorfilas,true,normal,whois imported from Mudlet archive
+Celt,char_celt,true,normal,whois returned no extant character information in MUME
+Cen,char_cen,true,normal,whois imported from Mudlet archive
+Cenedra,char_cenedra,true,normal,whois imported from Mudlet archive
+Centurion,char_centurion,true,normal,whois imported from Mudlet archive
+Cerion,char_cerion,true,normal,whois imported from Mudlet archive
+Cerleg,char_cerleg,true,normal,whois returned no extant character information in MUME
+Cervotoc,char_cervotoc,true,normal,whois returned no extant character information in MUME
+Chak,char_chak,true,normal,whois imported from Mudlet archive
+Chang,char_chang,true,normal,whois returned no extant character information in MUME
+Chauncey,char_chauncey,true,normal,whois imported from Mudlet archive
+Chavez,char_chavez,true,normal,whois imported from Mudlet archive
+Chazan,char_chazan,true,normal,whois imported from Mudlet archive
+Chelios,char_chelios,true,normal,whois imported from Mudlet archive
+Chen,char_chen,true,normal,whois imported from Mudlet archive
+Cherish,char_cherish,true,normal,whois imported from Mudlet archive
+Chewer,char_chewer,true,normal,whois imported from Mudlet archive
+Chikarhayshi,char_chikarhayshi,true,normal,whois returned no extant character information in MUME
+Chogall,char_chogall,true,normal,whois imported from Mudlet archive
+Chudwicki,char_chudwicki,true,normal,whois imported from Mudlet archive
+Cidar,char_cidar,true,normal,whois imported from Mudlet archive
+Ciluras,char_ciluras,true,normal,whois imported from Mudlet archive
+Cilya,char_cilya,true,normal,whois returned no extant character information in MUME
+Cinsovinsh,char_cinsovinsh,true,normal,whois returned no extant character information in MUME
+Ciryatan,char_ciryatan,true,normal,whois imported from Mudlet archive
+Clangedin,char_clangedin,true,normal,whois imported from Mudlet archive
+Clericii,char_clericii,true,normal,whois imported from Mudlet archive
+Cootafides,char_cootafides,true,normal,whois returned no extant character information in MUME
+Core,char_core,true,normal,whois imported from Mudlet archive
+Cormac,char_cormac,true,normal,whois imported from Mudlet archive
 Corvin,char_corvin,true,normal,whois imported from Mudlet archive
-Cotc,char_cotc,false,normal,
-Cruel,char_cruel,false,normal,
-Cruggo,char_cruggo,false,normal,
-Cryl,char_cryl,false,normal,
-Crysania,char_crysania,false,normal,
-Cufdrup,char_cufdrup,false,normal,
-Cur,char_cur,false,normal,
-Curufin,char_curufin,false,normal,
-Curufinwe,char_curufinwe,false,normal,
-Cyclaw,char_cyclaw,false,normal,
-Cylas,char_cylas,false,normal,
-Cymoril,char_cymoril,false,normal,
-Cyrano,char_cyrano,false,normal,
-Daalil,char_daalil,false,normal,
-Daddy,char_daddy,false,normal,
-Daevia,char_daevia,false,normal,
-Dafur,char_dafur,false,normal,
-Dakkon,char_dakkon,false,normal,
-Dalamar,char_dalamar,false,normal,
-Dalmorg,char_dalmorg,false,normal,
-Danath,char_danath,false,normal,
-Danzig,char_danzig,false,normal,
-Daren,char_daren,false,normal,
-Darkun,char_darkun,false,normal,
-Darkwind,char_darkwind,false,normal,
-Darq,char_darq,false,normal,
-David,char_david,false,normal,
-Dax,char_dax,false,normal,
-Daz,char_daz,false,normal,
-Dazzle,char_dazzle,false,normal,
-Deacon,char_deacon,false,normal,
-Death,char_death,false,normal,
-Deathwind,char_deathwind,false,normal,
-Deavon,char_deavon,false,normal,
-Decoy,char_decoy,false,normal,
-Deedoo,char_deedoo,false,normal,
-Deemon,char_deemon,false,normal,
-Delandir,char_delandir,false,normal,
-Delegat,char_delegat,false,normal,
-Delfi,char_delfi,false,normal,
-Delicate,char_delicate,false,normal,
-Dell,char_dell,false,normal,
-Dement,char_dement,false,normal,
-Demsie,char_demsie,false,normal,
-Deor,char_deor,false,normal,
-Deris,char_deris,false,normal,
-Desastre,char_desastre,false,normal,
+Cotc,char_cotc,true,normal,whois returned no extant character information in MUME
+Cruel,char_cruel,true,normal,whois imported from Mudlet archive
+Cruggo,char_cruggo,true,normal,whois imported from Mudlet archive
+Cryl,char_cryl,true,normal,whois imported from Mudlet archive
+Crysania,char_crysania,true,normal,whois imported from Mudlet archive
+Cufdrup,char_cufdrup,true,normal,whois imported from Mudlet archive
+Cur,char_cur,true,normal,whois imported from Mudlet archive
+Curufin,char_curufin,true,normal,whois imported from Mudlet archive
+Curufinwe,char_curufinwe,true,normal,whois imported from Mudlet archive
+Cyclaw,char_cyclaw,true,normal,whois returned no extant character information in MUME
+Cylas,char_cylas,true,normal,whois imported from Mudlet archive
+Cymoril,char_cymoril,true,normal,whois imported from Mudlet archive
+Cyrano,char_cyrano,true,normal,whois imported from Mudlet archive
+Daalil,char_daalil,true,normal,whois returned no extant character information in MUME
+Daddy,char_daddy,true,normal,whois imported from Mudlet archive
+Daevia,char_daevia,true,normal,whois returned no extant character information in MUME
+Dafur,char_dafur,true,normal,whois imported from Mudlet archive
+Dakkon,char_dakkon,true,normal,whois imported from Mudlet archive
+Dalamar,char_dalamar,true,normal,whois imported from Mudlet archive
+Dalmorg,char_dalmorg,true,normal,whois returned no extant character information in MUME
+Danath,char_danath,true,normal,whois imported from Mudlet archive
+Danzig,char_danzig,true,normal,whois imported from Mudlet archive
+Daren,char_daren,true,normal,whois returned no extant character information in MUME
+Darkun,char_darkun,true,normal,whois imported from Mudlet archive
+Darkwind,char_darkwind,true,normal,whois returned no extant character information in MUME
+Darq,char_darq,true,normal,whois returned no extant character information in MUME
+David,char_david,true,normal,whois imported from Mudlet archive
+Dax,char_dax,true,normal,whois imported from Mudlet archive
+Daz,char_daz,true,normal,whois imported from Mudlet archive
+Dazzle,char_dazzle,true,normal,whois imported from Mudlet archive
+Deacon,char_deacon,true,normal,whois imported from Mudlet archive
+Death,char_death,true,normal,whois imported from Mudlet archive
+Deathwind,char_deathwind,true,normal,whois imported from Mudlet archive
+Deavon,char_deavon,true,normal,whois imported from Mudlet archive
+Decoy,char_decoy,true,normal,whois imported from Mudlet archive
+Deedoo,char_deedoo,true,normal,whois imported from Mudlet archive
+Deemon,char_deemon,true,normal,whois imported from Mudlet archive
+Delandir,char_delandir,true,normal,whois returned no extant character information in MUME
+Delegat,char_delegat,true,normal,whois returned no extant character information in MUME
+Delfi,char_delfi,true,normal,whois returned no extant character information in MUME
+Delicate,char_delicate,true,normal,whois returned no extant character information in MUME
+Dell,char_dell,true,normal,whois imported from Mudlet archive
+Dement,char_dement,true,normal,whois imported from Mudlet archive
+Demsie,char_demsie,true,normal,whois returned no extant character information in MUME
+Deor,char_deor,true,normal,whois imported from Mudlet archive
+Deris,char_deris,true,normal,whois returned no extant character information in MUME
+Desastre,char_desastre,true,normal,whois imported from Mudlet archive
 Devastator,char_devastator,true,normal,whois imported from Mudlet archive
-Devran,char_devran,false,normal,
-Dharazor,char_dharazor,false,normal,
-Diamonium,char_diamonium,false,normal,
-Dif,char_dif,false,normal,
-Digital,char_digital,false,normal,
-Dimmu,char_dimmu,false,normal,
-Dino,char_dino,false,normal,
-Disembowel,char_disembowel,false,normal,
-Dispater,char_dispater,false,normal,
-Dizz,char_dizz,false,normal,
-Djinn,char_djinn,false,normal,
-Dliador,char_dliador,false,normal,
-Dodge,char_dodge,false,normal,
-Doh,char_doh,false,normal,
-Dolengur,char_dolengur,false,normal,
-Dolik,char_dolik,false,normal,
-Dombur,char_dombur,false,normal,
-Domine,char_domine,false,normal,
-Dominic,char_dominic,false,normal,
-Done,char_done,false,normal,
-Donk,char_donk,false,normal,
-Donovan,char_donovan,false,normal,
-Donutello,char_donutello,false,normal,
-Doomer,char_doomer,false,normal,
-Dorak,char_dorak,false,normal,
-Doreth,char_doreth,false,normal,
-Dorfl,char_dorfl,false,normal,
-Dork,char_dork,false,normal,
-Dorolff,char_dorolff,false,normal,
-Draaz,char_draaz,false,normal,
-Draca,char_draca,false,normal,
-Draccon,char_draccon,false,normal,
-Dracolich,char_dracolich,false,normal,
-Draconis,char_draconis,false,normal,
-Dracul,char_dracul,false,normal,
-Dragan,char_dragan,false,normal,
-Dragg,char_dragg,false,normal,
-Draggor,char_draggor,false,normal,
-Draggy,char_draggy,false,normal,
-Draghkar,char_draghkar,false,normal,
-Draglador,char_draglador,false,normal,
-Dragor,char_dragor,false,normal,
-Dragoth,char_dragoth,false,normal,
-Dramon,char_dramon,false,normal,
-Dranj,char_dranj,false,normal,
-Draupner,char_draupner,false,normal,
-Drax,char_drax,false,normal,
-Drayl,char_drayl,false,normal,
-Drazgan,char_drazgan,false,normal,
-Dreamweaver,char_dreamweaver,false,normal,
-Drengist,char_drengist,false,normal,
-Drenical,char_drenical,false,normal,
-Dreth,char_dreth,false,normal,
-Drijian,char_drijian,false,normal,
-Drimdul,char_drimdul,false,normal,
-Drohm,char_drohm,false,normal,
-Drokk,char_drokk,false,normal,
-Drow,char_drow,false,normal,
-Drugar,char_drugar,false,normal,
-Druin,char_druin,false,normal,
-Dryg,char_dryg,false,normal,
-Dugmok,char_dugmok,false,normal,
-Dunlop,char_dunlop,false,normal,
-Dural,char_dural,false,normal,
-Durandir,char_durandir,false,normal,
-Durcano,char_durcano,false,normal,
-Duriel,char_duriel,false,normal,
-Durlak,char_durlak,false,normal,
-Dushegub,char_dushegub,false,normal,
-Duvel,char_duvel,false,normal,
-Dwar,char_dwar,false,normal,
-Dwimmer,char_dwimmer,false,normal,
-Dwogin,char_dwogin,false,normal,
-Dynamit,char_dynamit,false,normal,
-Eale,char_eale,false,normal,
-Earand,char_earand,false,normal,
-Earnur,char_earnur,false,normal,
-Eawian,char_eawian,false,normal,
-Echo,char_echo,false,normal,
-Eckhart,char_eckhart,false,normal,
-Eder,char_eder,false,normal,
-Edrahil,char_edrahil,false,normal,
-Edvard,char_edvard,false,normal,
-Eggrat,char_eggrat,false,normal,
-Eggraz,char_eggraz,false,normal,
-Eher,char_eher,false,normal,
-Ehhe,char_ehhe,false,normal,
-Eidolon,char_eidolon,false,normal,
-Eileen,char_eileen,false,normal,
-Eirin,char_eirin,false,normal,
-Eladamri,char_eladamri,false,normal,
-Elajt,char_elajt,false,normal,
-Elavar,char_elavar,false,normal,
-Elaviel,char_elaviel,false,normal,
-Elayne,char_elayne,false,normal,
-Eldale,char_eldale,false,normal,
-Eldan,char_eldan,false,normal,
-Eldarion,char_eldarion,false,normal,
-Elden,char_elden,false,normal,
-Eldrasil,char_eldrasil,false,normal,
-Eldrenil,char_eldrenil,false,normal,
-Elebor,char_elebor,false,normal,
-Elemur,char_elemur,false,normal,
-Elendur,char_elendur,false,normal,
-Elenril,char_elenril,false,normal,
-Elenwe,char_elenwe,false,normal,
-Elestir,char_elestir,false,normal,
-Eletherion,char_eletherion,false,normal,
-Elfwyn,char_elfwyn,false,normal,
-Elian,char_elian,false,normal,
-Elirion,char_elirion,false,normal,
-Elistan,char_elistan,false,normal,
-Eliwe,char_eliwe,false,normal,
-Ellara,char_ellara,false,normal,
-Elle,char_elle,false,normal,
-Elleth,char_elleth,false,normal,
-Elmir,char_elmir,false,normal,
-Elmo,char_elmo,false,normal,
-Eloin,char_eloin,false,normal,
-Elrik,char_elrik,false,normal,
-Elroh,char_elroh,false,normal,
-Elrun,char_elrun,false,normal,
-Elsurion,char_elsurion,false,normal,
-Eluchil,char_eluchil,false,normal,
-Elumir,char_elumir,false,normal,
-Emroth,char_emroth,false,normal,
-Endor,char_endor,false,normal,
-Endur,char_endur,false,normal,
-Enforcer,char_enforcer,false,normal,
-Engelbert,char_engelbert,false,normal,
-Ennor,char_ennor,false,normal,
-Enso,char_enso,false,normal,
-Equinoxe,char_equinoxe,false,normal,
-Eral,char_eral,false,normal,
-Erebos,char_erebos,false,normal,
-Erewiel,char_erewiel,false,normal,
-Eric,char_eric,false,normal,
-Erkzup,char_erkzup,false,normal,
-Ermon,char_ermon,false,normal,
-Ernst,char_ernst,false,normal,
-Erowyn,char_erowyn,false,normal,
-Erudhil,char_erudhil,false,normal,
-Escape,char_escape,false,normal,
-Estel,char_estel,false,normal,
-Eternal,char_eternal,false,normal,
-Ethar,char_ethar,false,normal,
-Ethne,char_ethne,false,normal,
-Eto,char_eto,false,normal,
-Etopal,char_etopal,false,normal,
-Evandaar,char_evandaar,false,normal,
-Everhate,char_everhate,false,normal,
-Exiled,char_exiled,false,normal,
-Fable,char_fable,false,normal,
-Faelandir,char_faelandir,false,normal,
-Fahil,char_fahil,false,normal,
-Faint,char_faint,false,normal,
-Fairy,char_fairy,false,normal,
-Falanor,char_falanor,false,normal,
-Falathrim,char_falathrim,false,normal,
-Faldir,char_faldir,false,normal,
-Falemir,char_falemir,false,normal,
-Falenor,char_falenor,false,normal,
-Famas,char_famas,false,normal,
-Famine,char_famine,false,normal,
-Fankil,char_fankil,false,normal,
-Faradoc,char_faradoc,false,normal,
-Faramin,char_faramin,false,normal,
-Fardin,char_fardin,false,normal,
-Farin,char_farin,false,normal,
-Farion,char_farion,false,normal,
-Feagil,char_feagil,false,normal,
-Feagor,char_feagor,false,normal,
-Feagwath,char_feagwath,false,normal,
-Feanor,char_feanor,false,normal,
-Fear,char_fear,false,normal,
-Fearan,char_fearan,false,normal,
-Fearendil,char_fearendil,false,normal,
-Fearless,char_fearless,false,normal,
-Fearsome,char_fearsome,false,normal,
-Fenir,char_fenir,false,normal,
-Feon,char_feon,false,normal,
-Feorwyn,char_feorwyn,false,normal,
-Feriand,char_feriand,false,normal,
-Fero,char_fero,false,normal,
-Ferska,char_ferska,false,normal,
-Fiend,char_fiend,false,normal,
-Fierce,char_fierce,false,normal,
-Filia,char_filia,false,normal,
-Filibert,char_filibert,false,normal,
-Filth,char_filth,false,normal,
-Finadriel,char_finadriel,false,normal,
-Findo,char_findo,false,normal,
-Finduilas,char_finduilas,false,normal,
-Fingeror,char_fingeror,false,normal,
-Fiolas,char_fiolas,false,normal,
-Firewalker,char_firewalker,false,normal,
-Fisben,char_fisben,false,normal,
-Flanker,char_flanker,false,normal,
-Floi,char_floi,false,normal,
-Foad,char_foad,false,normal,
-Folko,char_folko,false,normal,
-Fong,char_fong,false,normal,
-Forin,char_forin,false,normal,
-Forrest,char_forrest,false,normal,
-Fortran,char_fortran,false,normal,
-Forve,char_forve,false,normal,
-Fragir,char_fragir,false,normal,
-Francis,char_francis,false,normal,
-Fredde,char_fredde,false,normal,
-Freight,char_freight,false,normal,
-Friar,char_friar,false,normal,
-Frink,char_frink,false,normal,
-Friso,char_friso,false,normal,
-Frukghash,char_frukghash,false,normal,
-Fubar,char_fubar,false,normal,
-Fui,char_fui,false,normal,
-Fuor,char_fuor,false,normal,
-Furfoot,char_furfoot,false,normal,
-Gabil,char_gabil,false,normal,
-Gad,char_gad,false,normal,
-Gadmac,char_gadmac,false,normal,
-Gage,char_gage,false,normal,
-Galadon,char_galadon,false,normal,
-Galerech,char_galerech,false,normal,
-Galowyn,char_galowyn,false,normal,
-Galurin,char_galurin,false,normal,
-Gamak,char_gamak,false,normal,
-Gamli,char_gamli,false,normal,
-Gamram,char_gamram,false,normal,
-Garkan,char_garkan,false,normal,
-Gattling,char_gattling,false,normal,
-Gauldoth,char_gauldoth,false,normal,
-Gaurhir,char_gaurhir,false,normal,
-Gaurog,char_gaurog,false,normal,
-Gauruk,char_gauruk,false,normal,
-Gaylord,char_gaylord,false,normal,
-Gazel,char_gazel,false,normal,
-Geirrodr,char_geirrodr,false,normal,
-Gelion,char_gelion,false,normal,
-Gena,char_gena,false,normal,
-Gereb,char_gereb,false,normal,
-Geri,char_geri,false,normal,
-Ghostly,char_ghostly,false,normal,
-Ghourne,char_ghourne,false,normal,
-Gilcon,char_gilcon,false,normal,
-Gildur,char_gildur,false,normal,
-Gilmandir,char_gilmandir,false,normal,
-Gilmas,char_gilmas,false,normal,
-Gilror,char_gilror,false,normal,
-Gimilzor,char_gimilzor,false,normal,
-Gimlung,char_gimlung,false,normal,
-Ginlon,char_ginlon,false,normal,
-Giralion,char_giralion,false,normal,
-Girando,char_girando,false,normal,
-Girithol,char_girithol,false,normal,
-Glabthrak,char_glabthrak,false,normal,
-Glabur,char_glabur,false,normal,
-Glader,char_glader,false,normal,
-Gladush,char_gladush,false,normal,
-Glamduril,char_glamduril,false,normal,
-Glaran,char_glaran,false,normal,
-Glaref,char_glaref,false,normal,
-Glebus,char_glebus,false,normal,
-Glendale,char_glendale,false,normal,
-Glenn,char_glenn,false,normal,
-Glithraril,char_glithraril,false,normal,
-Globur,char_globur,false,normal,
-Gloha,char_gloha,false,normal,
-Glubur,char_glubur,false,normal,
-Gobakapp,char_gobakapp,false,normal,
-Gobbler,char_gobbler,false,normal,
-Goldor,char_goldor,false,normal,
-Goliat,char_goliat,false,normal,
-Gomen,char_gomen,false,normal,
-Gondgurth,char_gondgurth,false,normal,
-Goretongue,char_goretongue,false,normal,
-Gorlach,char_gorlach,false,normal,
-Gorshak,char_gorshak,false,normal,
-Gothia,char_gothia,false,normal,
-Gothmog,char_gothmog,false,normal,
-Grab,char_grab,false,normal,
-Gradash,char_gradash,false,normal,
-Grak,char_grak,false,normal,
-Grakk,char_grakk,false,normal,
-Grand,char_grand,false,normal,
-Grang,char_grang,false,normal,
-Granite,char_granite,false,normal,
-Granvil,char_granvil,false,normal,
-Grashnak,char_grashnak,false,normal,
-Graugh,char_graugh,false,normal,
+Devran,char_devran,true,normal,whois imported from Mudlet archive
+Dharazor,char_dharazor,true,normal,whois imported from Mudlet archive
+Diamonium,char_diamonium,true,normal,whois imported from Mudlet archive
+Dif,char_dif,true,normal,whois returned no extant character information in MUME
+Digital,char_digital,true,normal,whois imported from Mudlet archive
+Dimmu,char_dimmu,true,normal,whois imported from Mudlet archive
+Dino,char_dino,true,normal,whois imported from Mudlet archive
+Disembowel,char_disembowel,true,normal,whois imported from Mudlet archive
+Dispater,char_dispater,true,normal,whois imported from Mudlet archive
+Dizz,char_dizz,true,normal,whois imported from Mudlet archive
+Djinn,char_djinn,true,normal,whois imported from Mudlet archive
+Dliador,char_dliador,true,normal,whois imported from Mudlet archive
+Dodge,char_dodge,true,normal,whois imported from Mudlet archive
+Doh,char_doh,true,normal,whois imported from Mudlet archive
+Dolengur,char_dolengur,true,normal,whois imported from Mudlet archive
+Dolik,char_dolik,true,normal,whois imported from Mudlet archive
+Dombur,char_dombur,true,normal,whois imported from Mudlet archive
+Domine,char_domine,true,normal,whois returned no extant character information in MUME
+Dominic,char_dominic,true,normal,whois imported from Mudlet archive
+Done,char_done,true,normal,whois imported from Mudlet archive
+Donk,char_donk,true,normal,whois imported from Mudlet archive
+Donovan,char_donovan,true,normal,whois imported from Mudlet archive
+Donutello,char_donutello,true,normal,whois imported from Mudlet archive
+Doomer,char_doomer,true,normal,whois imported from Mudlet archive
+Dorak,char_dorak,true,normal,whois returned no extant character information in MUME
+Doreth,char_doreth,true,normal,whois imported from Mudlet archive
+Dorfl,char_dorfl,true,normal,whois imported from Mudlet archive
+Dork,char_dork,true,normal,whois imported from Mudlet archive
+Dorolff,char_dorolff,true,normal,whois imported from Mudlet archive
+Draaz,char_draaz,true,normal,whois imported from Mudlet archive
+Draca,char_draca,true,normal,whois imported from Mudlet archive
+Draccon,char_draccon,true,normal,whois imported from Mudlet archive
+Dracolich,char_dracolich,true,normal,whois imported from Mudlet archive
+Draconis,char_draconis,true,normal,whois imported from Mudlet archive
+Dracul,char_dracul,true,normal,whois returned no extant character information in MUME
+Dragan,char_dragan,true,normal,whois imported from Mudlet archive
+Dragg,char_dragg,true,normal,whois imported from Mudlet archive
+Draggor,char_draggor,true,normal,whois returned no extant character information in MUME
+Draggy,char_draggy,true,normal,whois imported from Mudlet archive
+Draghkar,char_draghkar,true,normal,whois returned no extant character information in MUME
+Draglador,char_draglador,true,normal,whois imported from Mudlet archive
+Dragor,char_dragor,true,normal,whois imported from Mudlet archive
+Dragoth,char_dragoth,true,normal,whois imported from Mudlet archive
+Dramon,char_dramon,true,normal,whois imported from Mudlet archive
+Dranj,char_dranj,true,normal,whois returned no extant character information in MUME
+Draupner,char_draupner,true,normal,whois imported from Mudlet archive
+Drax,char_drax,true,normal,whois imported from Mudlet archive
+Drayl,char_drayl,true,normal,whois returned no extant character information in MUME
+Drazgan,char_drazgan,true,normal,whois returned no extant character information in MUME
+Dreamweaver,char_dreamweaver,true,normal,whois imported from Mudlet archive
+Drengist,char_drengist,true,normal,whois imported from Mudlet archive
+Drenical,char_drenical,true,normal,whois imported from Mudlet archive
+Dreth,char_dreth,true,normal,whois returned no extant character information in MUME
+Drijian,char_drijian,true,normal,whois imported from Mudlet archive
+Drimdul,char_drimdul,true,normal,whois imported from Mudlet archive
+Drohm,char_drohm,true,normal,whois imported from Mudlet archive
+Drokk,char_drokk,true,normal,whois imported from Mudlet archive
+Drow,char_drow,true,normal,whois imported from Mudlet archive
+Drugar,char_drugar,true,normal,whois imported from Mudlet archive
+Druin,char_druin,true,normal,whois imported from Mudlet archive
+Dryg,char_dryg,true,normal,whois imported from Mudlet archive
+Dugmok,char_dugmok,true,normal,whois imported from Mudlet archive
+Dunlop,char_dunlop,true,normal,whois imported from Mudlet archive
+Dural,char_dural,true,normal,whois imported from Mudlet archive
+Durandir,char_durandir,true,normal,whois returned no extant character information in MUME
+Durcano,char_durcano,true,normal,whois imported from Mudlet archive
+Duriel,char_duriel,true,normal,whois imported from Mudlet archive
+Durlak,char_durlak,true,normal,whois imported from Mudlet archive
+Dushegub,char_dushegub,true,normal,whois imported from Mudlet archive
+Duvel,char_duvel,true,normal,whois returned no extant character information in MUME
+Dwar,char_dwar,true,normal,whois imported from Mudlet archive
+Dwimmer,char_dwimmer,true,normal,whois imported from Mudlet archive
+Dwogin,char_dwogin,true,normal,whois imported from Mudlet archive
+Dynamit,char_dynamit,true,normal,whois imported from Mudlet archive
+Eale,char_eale,true,normal,whois returned no extant character information in MUME
+Earand,char_earand,true,normal,whois imported from Mudlet archive
+Earnur,char_earnur,true,normal,whois imported from Mudlet archive
+Eawian,char_eawian,true,normal,whois returned no extant character information in MUME
+Echo,char_echo,true,normal,whois imported from Mudlet archive
+Eckhart,char_eckhart,true,normal,whois imported from Mudlet archive
+Eder,char_eder,true,normal,whois imported from Mudlet archive
+Edrahil,char_edrahil,true,normal,whois imported from Mudlet archive
+Edvard,char_edvard,true,normal,whois imported from Mudlet archive
+Eggrat,char_eggrat,true,normal,whois imported from Mudlet archive
+Eggraz,char_eggraz,true,normal,whois returned no extant character information in MUME
+Eher,char_eher,true,normal,whois returned no extant character information in MUME
+Ehhe,char_ehhe,true,normal,whois returned no extant character information in MUME
+Eidolon,char_eidolon,true,normal,whois imported from Mudlet archive
+Eileen,char_eileen,true,normal,whois imported from Mudlet archive
+Eirin,char_eirin,true,normal,whois returned no extant character information in MUME
+Eladamri,char_eladamri,true,normal,whois imported from Mudlet archive
+Elajt,char_elajt,true,normal,whois returned no extant character information in MUME
+Elavar,char_elavar,true,normal,whois imported from Mudlet archive
+Elaviel,char_elaviel,true,normal,whois imported from Mudlet archive
+Elayne,char_elayne,true,normal,whois returned no extant character information in MUME
+Eldale,char_eldale,true,normal,whois imported from Mudlet archive
+Eldan,char_eldan,true,normal,whois imported from Mudlet archive
+Eldarion,char_eldarion,true,normal,whois imported from Mudlet archive
+Elden,char_elden,true,normal,whois imported from Mudlet archive
+Eldrasil,char_eldrasil,true,normal,whois imported from Mudlet archive
+Eldrenil,char_eldrenil,true,normal,whois imported from Mudlet archive
+Elebor,char_elebor,true,normal,whois imported from Mudlet archive
+Elemur,char_elemur,true,normal,whois returned no extant character information in MUME
+Elendur,char_elendur,true,normal,whois imported from Mudlet archive
+Elenril,char_elenril,true,normal,whois imported from Mudlet archive
+Elenwe,char_elenwe,true,normal,whois imported from Mudlet archive
+Elestir,char_elestir,true,normal,whois imported from Mudlet archive
+Eletherion,char_eletherion,true,normal,whois imported from Mudlet archive
+Elfwyn,char_elfwyn,true,normal,whois imported from Mudlet archive
+Elian,char_elian,true,normal,whois imported from Mudlet archive
+Elirion,char_elirion,true,normal,whois imported from Mudlet archive
+Elistan,char_elistan,true,normal,whois imported from Mudlet archive
+Eliwe,char_eliwe,true,normal,whois returned no extant character information in MUME
+Ellara,char_ellara,true,normal,whois imported from Mudlet archive
+Elle,char_elle,true,normal,whois imported from Mudlet archive
+Elleth,char_elleth,true,normal,whois imported from Mudlet archive
+Elmir,char_elmir,true,normal,whois imported from Mudlet archive
+Elmo,char_elmo,true,normal,whois imported from Mudlet archive
+Eloin,char_eloin,true,normal,whois imported from Mudlet archive
+Elrik,char_elrik,true,normal,whois imported from Mudlet archive
+Elroh,char_elroh,true,normal,whois imported from Mudlet archive
+Elrun,char_elrun,true,normal,whois imported from Mudlet archive
+Elsurion,char_elsurion,true,normal,whois imported from Mudlet archive
+Eluchil,char_eluchil,true,normal,whois imported from Mudlet archive
+Elumir,char_elumir,true,normal,whois imported from Mudlet archive
+Emroth,char_emroth,true,normal,whois imported from Mudlet archive
+Endor,char_endor,true,normal,whois imported from Mudlet archive
+Endur,char_endur,true,normal,whois imported from Mudlet archive
+Enforcer,char_enforcer,true,normal,whois imported from Mudlet archive
+Engelbert,char_engelbert,true,normal,whois imported from Mudlet archive
+Ennor,char_ennor,true,normal,whois imported from Mudlet archive
+Enso,char_enso,true,normal,whois returned no extant character information in MUME
+Equinoxe,char_equinoxe,true,normal,whois imported from Mudlet archive
+Eral,char_eral,true,normal,whois imported from Mudlet archive
+Erebos,char_erebos,true,normal,whois imported from Mudlet archive
+Erewiel,char_erewiel,true,normal,whois returned no extant character information in MUME
+Eric,char_eric,true,normal,whois imported from Mudlet archive
+Erkzup,char_erkzup,true,normal,whois returned no extant character information in MUME
+Ermon,char_ermon,true,normal,whois imported from Mudlet archive
+Ernst,char_ernst,true,normal,whois imported from Mudlet archive
+Erowyn,char_erowyn,true,normal,whois imported from Mudlet archive
+Erudhil,char_erudhil,true,normal,whois imported from Mudlet archive
+Escape,char_escape,true,normal,whois imported from Mudlet archive
+Estel,char_estel,true,normal,whois imported from Mudlet archive
+Eternal,char_eternal,true,normal,whois imported from Mudlet archive
+Ethar,char_ethar,true,normal,whois imported from Mudlet archive
+Ethne,char_ethne,true,normal,whois imported from Mudlet archive
+Eto,char_eto,true,normal,whois imported from Mudlet archive
+Etopal,char_etopal,true,normal,whois imported from Mudlet archive
+Evandaar,char_evandaar,true,normal,whois imported from Mudlet archive
+Everhate,char_everhate,true,normal,whois imported from Mudlet archive
+Exiled,char_exiled,true,normal,whois imported from Mudlet archive
+Fable,char_fable,true,normal,whois imported from Mudlet archive
+Faelandir,char_faelandir,true,normal,whois returned no extant character information in MUME
+Fahil,char_fahil,true,normal,whois returned no extant character information in MUME
+Faint,char_faint,true,normal,whois imported from Mudlet archive
+Fairy,char_fairy,true,normal,whois imported from Mudlet archive
+Falanor,char_falanor,true,normal,whois imported from Mudlet archive
+Falathrim,char_falathrim,true,normal,whois returned no extant character information in MUME
+Faldir,char_faldir,true,normal,whois imported from Mudlet archive
+Falemir,char_falemir,true,normal,whois returned no extant character information in MUME
+Falenor,char_falenor,true,normal,whois imported from Mudlet archive
+Famas,char_famas,true,normal,whois returned no extant character information in MUME
+Famine,char_famine,true,normal,whois imported from Mudlet archive
+Fankil,char_fankil,true,normal,whois imported from Mudlet archive
+Faradoc,char_faradoc,true,normal,whois imported from Mudlet archive
+Faramin,char_faramin,true,normal,whois imported from Mudlet archive
+Fardin,char_fardin,true,normal,whois returned no extant character information in MUME
+Farin,char_farin,true,normal,whois imported from Mudlet archive
+Farion,char_farion,true,normal,whois imported from Mudlet archive
+Feagil,char_feagil,true,normal,whois imported from Mudlet archive
+Feagor,char_feagor,true,normal,whois imported from Mudlet archive
+Feagwath,char_feagwath,true,normal,whois imported from Mudlet archive
+Feanor,char_feanor,true,normal,whois imported from Mudlet archive
+Fear,char_fear,true,normal,whois imported from Mudlet archive
+Fearan,char_fearan,true,normal,whois imported from Mudlet archive
+Fearendil,char_fearendil,true,normal,whois imported from Mudlet archive
+Fearless,char_fearless,true,normal,whois imported from Mudlet archive
+Fearsome,char_fearsome,true,normal,whois returned no extant character information in MUME
+Fenir,char_fenir,true,normal,whois imported from Mudlet archive
+Feon,char_feon,true,normal,whois imported from Mudlet archive
+Feorwyn,char_feorwyn,true,normal,whois imported from Mudlet archive
+Feriand,char_feriand,true,normal,whois imported from Mudlet archive
+Fero,char_fero,true,normal,whois imported from Mudlet archive
+Ferska,char_ferska,true,normal,whois imported from Mudlet archive
+Fiend,char_fiend,true,normal,whois imported from Mudlet archive
+Fierce,char_fierce,true,normal,whois imported from Mudlet archive
+Filia,char_filia,true,normal,whois imported from Mudlet archive
+Filibert,char_filibert,true,normal,whois imported from Mudlet archive
+Filth,char_filth,true,normal,whois returned no extant character information in MUME
+Finadriel,char_finadriel,true,normal,whois imported from Mudlet archive
+Findo,char_findo,true,normal,whois imported from Mudlet archive
+Finduilas,char_finduilas,true,normal,whois imported from Mudlet archive
+Fingeror,char_fingeror,true,normal,whois imported from Mudlet archive
+Fiolas,char_fiolas,true,normal,whois returned no extant character information in MUME
+Firewalker,char_firewalker,true,normal,whois imported from Mudlet archive
+Fisben,char_fisben,true,normal,whois imported from Mudlet archive
+Flanker,char_flanker,true,normal,whois returned no extant character information in MUME
+Floi,char_floi,true,normal,whois imported from Mudlet archive
+Foad,char_foad,true,normal,whois returned no extant character information in MUME
+Folko,char_folko,true,normal,whois imported from Mudlet archive
+Fong,char_fong,true,normal,whois imported from Mudlet archive
+Forin,char_forin,true,normal,whois imported from Mudlet archive
+Forrest,char_forrest,true,normal,whois imported from Mudlet archive
+Fortran,char_fortran,true,normal,whois imported from Mudlet archive
+Forve,char_forve,true,normal,whois imported from Mudlet archive
+Fragir,char_fragir,true,normal,whois imported from Mudlet archive
+Francis,char_francis,true,normal,whois imported from Mudlet archive
+Fredde,char_fredde,true,normal,whois imported from Mudlet archive
+Freight,char_freight,true,normal,whois imported from Mudlet archive
+Friar,char_friar,true,normal,whois imported from Mudlet archive
+Frink,char_frink,true,normal,whois imported from Mudlet archive
+Friso,char_friso,true,normal,whois returned no extant character information in MUME
+Frukghash,char_frukghash,true,normal,whois returned no extant character information in MUME
+Fubar,char_fubar,true,normal,whois imported from Mudlet archive
+Fui,char_fui,true,normal,whois imported from Mudlet archive
+Fuor,char_fuor,true,normal,whois imported from Mudlet archive
+Furfoot,char_furfoot,true,normal,whois imported from Mudlet archive
+Gabil,char_gabil,true,normal,whois returned no extant character information in MUME
+Gad,char_gad,true,normal,whois returned no extant character information in MUME
+Gadmac,char_gadmac,true,normal,whois returned no extant character information in MUME
+Gage,char_gage,true,normal,whois imported from Mudlet archive
+Galadon,char_galadon,true,normal,whois imported from Mudlet archive
+Galerech,char_galerech,true,normal,whois imported from Mudlet archive
+Galowyn,char_galowyn,true,normal,whois imported from Mudlet archive
+Galurin,char_galurin,true,normal,whois imported from Mudlet archive
+Gamak,char_gamak,true,normal,whois imported from Mudlet archive
+Gamli,char_gamli,true,normal,whois imported from Mudlet archive
+Gamram,char_gamram,true,normal,whois imported from Mudlet archive
+Garkan,char_garkan,true,normal,whois returned no extant character information in MUME
+Gattling,char_gattling,true,normal,whois imported from Mudlet archive
+Gauldoth,char_gauldoth,true,normal,whois imported from Mudlet archive
+Gaurhir,char_gaurhir,true,normal,whois imported from Mudlet archive
+Gaurog,char_gaurog,true,normal,whois imported from Mudlet archive
+Gauruk,char_gauruk,true,normal,whois imported from Mudlet archive
+Gaylord,char_gaylord,true,normal,whois returned no extant character information in MUME
+Gazel,char_gazel,true,normal,whois imported from Mudlet archive
+Geirrodr,char_geirrodr,true,normal,whois imported from Mudlet archive
+Gelion,char_gelion,true,normal,whois returned no extant character information in MUME
+Gena,char_gena,true,normal,whois returned no extant character information in MUME
+Gereb,char_gereb,true,normal,whois imported from Mudlet archive
+Geri,char_geri,true,normal,whois imported from Mudlet archive
+Ghostly,char_ghostly,true,normal,whois imported from Mudlet archive
+Ghourne,char_ghourne,true,normal,whois returned no extant character information in MUME
+Gilcon,char_gilcon,true,normal,whois imported from Mudlet archive
+Gildur,char_gildur,true,normal,whois imported from Mudlet archive
+Gilmandir,char_gilmandir,true,normal,whois imported from Mudlet archive
+Gilmas,char_gilmas,true,normal,whois returned no extant character information in MUME
+Gilror,char_gilror,true,normal,whois returned no extant character information in MUME
+Gimilzor,char_gimilzor,true,normal,whois imported from Mudlet archive
+Gimlung,char_gimlung,true,normal,whois imported from Mudlet archive
+Ginlon,char_ginlon,true,normal,whois imported from Mudlet archive
+Giralion,char_giralion,true,normal,whois returned no extant character information in MUME
+Girando,char_girando,true,normal,whois imported from Mudlet archive
+Girithol,char_girithol,true,normal,whois imported from Mudlet archive
+Glabthrak,char_glabthrak,true,normal,whois returned no extant character information in MUME
+Glabur,char_glabur,true,normal,whois returned no extant character information in MUME
+Glader,char_glader,true,normal,whois returned no extant character information in MUME
+Gladush,char_gladush,true,normal,whois imported from Mudlet archive
+Glamduril,char_glamduril,true,normal,whois imported from Mudlet archive
+Glaran,char_glaran,true,normal,whois imported from Mudlet archive
+Glaref,char_glaref,true,normal,whois imported from Mudlet archive
+Glebus,char_glebus,true,normal,whois returned no extant character information in MUME
+Glendale,char_glendale,true,normal,whois imported from Mudlet archive
+Glenn,char_glenn,true,normal,whois imported from Mudlet archive
+Glithraril,char_glithraril,true,normal,whois imported from Mudlet archive
+Globur,char_globur,true,normal,whois imported from Mudlet archive
+Gloha,char_gloha,true,normal,whois returned no extant character information in MUME
+Glubur,char_glubur,true,normal,whois imported from Mudlet archive
+Gobakapp,char_gobakapp,true,normal,whois returned no extant character information in MUME
+Gobbler,char_gobbler,true,normal,whois imported from Mudlet archive
+Goldor,char_goldor,true,normal,whois imported from Mudlet archive
+Goliat,char_goliat,true,normal,whois imported from Mudlet archive
+Gomen,char_gomen,true,normal,whois returned no extant character information in MUME
+Gondgurth,char_gondgurth,true,normal,whois returned no extant character information in MUME
+Goretongue,char_goretongue,true,normal,whois imported from Mudlet archive
+Gorlach,char_gorlach,true,normal,whois imported from Mudlet archive
+Gorshak,char_gorshak,true,normal,whois imported from Mudlet archive
+Gothia,char_gothia,true,normal,whois imported from Mudlet archive
+Gothmog,char_gothmog,true,normal,whois imported from Mudlet archive
+Grab,char_grab,true,normal,whois returned no extant character information in MUME
+Gradash,char_gradash,true,normal,whois imported from Mudlet archive
+Grak,char_grak,true,normal,whois imported from Mudlet archive
+Grakk,char_grakk,true,normal,whois returned no extant character information in MUME
+Grand,char_grand,true,normal,whois imported from Mudlet archive
+Grang,char_grang,true,normal,whois returned no extant character information in MUME
+Granite,char_granite,true,normal,whois imported from Mudlet archive
+Granvil,char_granvil,true,normal,whois imported from Mudlet archive
+Grashnak,char_grashnak,true,normal,whois imported from Mudlet archive
+Graugh,char_graugh,true,normal,whois imported from Mudlet archive
 Gray,char_gray,true,normal,whois imported from Mudlet archive
-Greed,char_greed,false,normal,
-Greoldreth,char_greoldreth,false,normal,
-Grez,char_grez,false,normal,
-Gringo,char_gringo,false,normal,
+Greed,char_greed,true,normal,whois imported from Mudlet archive
+Greoldreth,char_greoldreth,true,normal,whois returned no extant character information in MUME
+Grez,char_grez,true,normal,whois imported from Mudlet archive
+Gringo,char_gringo,true,normal,whois imported from Mudlet archive
 Grino,char_grino,true,normal,whois imported from Mudlet archive
-Gris,char_gris,false,normal,
-Grishelda,char_grishelda,false,normal,
-Grishnak(Shag),char_grishnak_shag,false,normal,
-Grishtar,char_grishtar,false,normal,
-Grok,char_grok,false,normal,
-Grom,char_grom,false,normal,
-Gromk,char_gromk,false,normal,
-Grukh,char_grukh,false,normal,
-Grul,char_grul,false,normal,
-Grume,char_grume,false,normal,
-Grumph,char_grumph,false,normal,
-Grunganator,char_grunganator,false,normal,
-Grunge,char_grunge,false,normal,
-Gruuk,char_gruuk,false,normal,
-Gruumsh,char_gruumsh,false,normal,
-Grymsh,char_grymsh,false,normal,
-Grytash,char_grytash,false,normal,
-Grythar,char_grythar,false,normal,
-Guglunk,char_guglunk,false,normal,
-Guido,char_guido,false,normal,
-Gulag,char_gulag,false,normal,
-Gundor,char_gundor,false,normal,
-Gurgel,char_gurgel,false,normal,
-Guthol,char_guthol,false,normal,
-Gwira,char_gwira,false,normal,
-Haazheel,char_haazheel,false,normal,
-Hairfoot,char_hairfoot,false,normal,
-Haisam,char_haisam,false,normal,
-Haista,char_haista,false,normal,
-Haity,char_haity,false,normal,
-Haladdin,char_haladdin,false,normal,
-Halas,char_halas,false,normal,
-Haldor,char_haldor,false,normal,
-Halir,char_halir,false,normal,
-Hamfist,char_hamfist,false,normal,
-Hamlas,char_hamlas,false,normal,
-Hannibal,char_hannibal,false,normal,
-Hanr,char_hanr,false,normal,
-Harakiri,char_harakiri,false,normal,
-Hark,char_hark,false,normal,
-Harowen,char_harowen,false,normal,
-Hashtak,char_hashtak,false,normal,
-Hasta,char_hasta,false,normal,
-Hatch,char_hatch,false,normal,
-Hate,char_hate,false,normal,
-Hated,char_hated,false,normal,
-Hatred,char_hatred,false,normal,
-Hazel,char_hazel,false,normal,
-Healer,char_healer,false,normal,
-Healy,char_healy,false,normal,
-Heather,char_heather,false,normal,
-Heldo,char_heldo,false,normal,
-Hele,char_hele,false,normal,
-Helga,char_helga,false,normal,
-Helios,char_helios,false,normal,
-Henduil,char_henduil,false,normal,
-Hercule,char_hercule,false,normal,
-Herman,char_herman,false,normal,
-Herold,char_herold,false,normal,
-Hex,char_hex,false,normal,
-Hobit,char_hobit,false,normal,
-Hoeth,char_hoeth,false,normal,
-Hoho,char_hoho,false,normal,
-Holg,char_holg,false,normal,
-Holy,char_holy,false,normal,
-Horgy,char_horgy,false,normal,
-Horstats,char_horstats,false,normal,
-Horus,char_horus,false,normal,
-Hovado,char_hovado,false,normal,
-Hrive,char_hrive,false,normal,
-Hrolth,char_hrolth,false,normal,
-Hrothgar,char_hrothgar,false,normal,
-Hrym,char_hrym,false,normal,
-Hudson,char_hudson,false,normal,
-Hugo,char_hugo,false,normal,
-Huher,char_huher,false,normal,
-Hukor,char_hukor,false,normal,
-Hunchback,char_hunchback,false,normal,
-Hurar,char_hurar,false,normal,
-Hwarang,char_hwarang,false,normal,
-Hwoarang,char_hwoarang,false,normal,
-Hybrid,char_hybrid,false,normal,
-Hyung,char_hyung,false,normal,
-Hyurk,char_hyurk,false,normal,
-Ibis,char_ibis,false,normal,
-Iblis,char_iblis,false,normal,
-Ibrahim,char_ibrahim,false,normal,
-Ickabod,char_ickabod,false,normal,
-Idun,char_idun,false,normal,
-Ieras,char_ieras,false,normal,
-Ike,char_ike,false,normal,
-Ilgamar,char_ilgamar,false,normal,
-Iljrure,char_iljrure,false,normal,
-Illusia,char_illusia,false,normal,
-Illyas,char_illyas,false,normal,
-Ilmacil,char_ilmacil,false,normal,
-Ilmarin,char_ilmarin,false,normal,
-Imlach,char_imlach,false,normal,
-Imlis,char_imlis,false,normal,
-Implithura,char_implithura,false,normal,
-Imrazor,char_imrazor,false,normal,
-Indra,char_indra,false,normal,
-Ingold,char_ingold,false,normal,
-Ingwe,char_ingwe,false,normal,
-Innuendo,char_innuendo,false,normal,
-Insane,char_insane,false,normal,
-Inziladun,char_inziladun,false,normal,
-Iolo,char_iolo,false,normal,
-Ior,char_ior,false,normal,
-Iorlas,char_iorlas,false,normal,
-Iranon,char_iranon,false,normal,
-Irogla,char_irogla,false,normal,
-Irv,char_irv,false,normal,
-Ishant,char_ishant,false,normal,
-Isolde,char_isolde,false,normal,
-Itallicus,char_itallicus,false,normal,
-Ithilagos,char_ithilagos,false,normal,
-Ithy,char_ithy,false,normal,
-Itil,char_itil,false,normal,
-Ivanushka,char_ivanushka,false,normal,
-Iwain,char_iwain,false,normal,
-Iyachtu,char_iyachtu,false,normal,
-Jaagern,char_jaagern,false,normal,
-Jabba,char_jabba,false,normal,
-Jadon,char_jadon,false,normal,
-Jamie,char_jamie,false,normal,
-Jandor,char_jandor,false,normal,
-Janosh,char_janosh,false,normal,
-Jarhala,char_jarhala,false,normal,
-Jarlaxle,char_jarlaxle,false,normal,
-Jaron,char_jaron,false,normal,
-Jatte,char_jatte,false,normal,
-Jauer,char_jauer,false,normal,
-Jaws,char_jaws,false,normal,
-Jeakoth,char_jeakoth,false,normal,
-Jeffbob,char_jeffbob,false,normal,
-Jelly,char_jelly,false,normal,
-Jensu,char_jensu,false,normal,
-Jeran,char_jeran,false,normal,
-Jerle,char_jerle,false,normal,
-Jerpa,char_jerpa,false,normal,
-Jheran,char_jheran,false,normal,
-Jimbo,char_jimbo,false,normal,
-Joan,char_joan,false,normal,
-Johannes,char_johannes,false,normal,
-Johhaidii,char_johhaidii,false,normal,
-Johnie,char_johnie,false,normal,
-Joker,char_joker,false,normal,
-Jon,char_jon,false,normal,
-Jones,char_jones,false,normal,
-Joponen,char_joponen,false,normal,
-Jube,char_jube,false,normal,
-Juggles,char_juggles,false,normal,
-Junbao,char_junbao,false,normal,
-Juss,char_juss,false,normal,
-Kade,char_kade,false,normal,
-Kakarot,char_kakarot,false,normal,
-Kalevala,char_kalevala,false,normal,
-Kalkano,char_kalkano,false,normal,
-Kalus,char_kalus,false,normal,
-Kami,char_kami,false,normal,
-Kamikaze,char_kamikaze,false,normal,
-Kamlakh,char_kamlakh,false,normal,
-Kaool,char_kaool,false,normal,
-Kardagash,char_kardagash,false,normal,
-Karelin,char_karelin,false,normal,
-Kasach,char_kasach,false,normal,
-Kassler,char_kassler,false,normal,
-Kazadoe,char_kazadoe,false,normal,
-Kazan,char_kazan,false,normal,
-Kazeena,char_kazeena,false,normal,
-Kazzey,char_kazzey,false,normal,
-Keldorn,char_keldorn,false,normal,
-Keno,char_keno,false,normal,
-Kenzu,char_kenzu,false,normal,
-Kess,char_kess,false,normal,
-Kessfare,char_kessfare,false,normal,
-Kesslar,char_kesslar,false,normal,
-Kesslik,char_kesslik,false,normal,
-Kesslin,char_kesslin,false,normal,
-Kessloth,char_kessloth,false,normal,
-Kesstor,char_kesstor,false,normal,
-Kestrel,char_kestrel,false,normal,
-Khad,char_khad,false,normal,
-Khadum,char_khadum,false,normal,
-Khakis,char_khakis,false,normal,
-Khamasin,char_khamasin,false,normal,
-Khamil,char_khamil,false,normal,
-Khandar,char_khandar,false,normal,
-Kharas,char_kharas,false,normal,
-Khawin,char_khawin,false,normal,
-Khazdul,char_khazdul,false,normal,
-Khelben,char_khelben,false,normal,
-Khelek,char_khelek,false,normal,
-Khim,char_khim,false,normal,
-Khird,char_khird,false,normal,
-Khodum,char_khodum,false,normal,
-Khozdul,char_khozdul,false,normal,
-Khreth,char_khreth,false,normal,
-Khuka,char_khuka,false,normal,
-Khzandros,char_khzandros,false,normal,
-Kiki,char_kiki,false,normal,
-Kilimanjaro,char_kilimanjaro,false,normal,
-Kilin,char_kilin,false,normal,
-Killdare,char_killdare,false,normal,
-Kingpool,char_kingpool,false,normal,
-Kinson,char_kinson,false,normal,
-Kiska,char_kiska,false,normal,
-Kitto,char_kitto,false,normal,
-Kloker,char_kloker,false,normal,
-Knold,char_knold,false,normal,
-Kobold,char_kobold,false,normal,
-Kocano,char_kocano,false,normal,
-Kochurma,char_kochurma,false,normal,
-Koer,char_koer,false,normal,
-Koff,char_koff,false,normal,
-Kogan,char_kogan,false,normal,
-Korax,char_korax,false,normal,
-Korek,char_korek,false,normal,
-Korf,char_korf,false,normal,
-Korin,char_korin,false,normal,
-Kostej,char_kostej,false,normal,
-Kotta,char_kotta,false,normal,
-Kovie,char_kovie,false,normal,
-Koza,char_koza,false,normal,
-Kozel,char_kozel,false,normal,
-Kraal,char_kraal,false,normal,
-Krax,char_krax,false,normal,
-Kreil,char_kreil,false,normal,
-Krkavec,char_krkavec,false,normal,
-Kroom,char_kroom,false,normal,
-Krossen,char_krossen,false,normal,
-Krubb,char_krubb,false,normal,
-Kuku,char_kuku,false,normal,
-Kulgan,char_kulgan,false,normal,
-Kunduk,char_kunduk,false,normal,
-Kurast,char_kurast,false,normal,
-Kurdran,char_kurdran,false,normal,
-Kurva,char_kurva,false,normal,
-Kviea,char_kviea,false,normal,
-Kylm,char_kylm,false,normal,
+Gris,char_gris,true,normal,whois imported from Mudlet archive
+Grishelda,char_grishelda,true,normal,whois imported from Mudlet archive
+Grishnak(Shag),char_grishnak_shag,true,normal,whois returned no extant character information in MUME
+Grishtar,char_grishtar,true,normal,whois returned no extant character information in MUME
+Grok,char_grok,true,normal,whois imported from Mudlet archive
+Grom,char_grom,true,normal,whois imported from Mudlet archive
+Gromk,char_gromk,true,normal,whois returned no extant character information in MUME
+Grukh,char_grukh,true,normal,whois imported from Mudlet archive
+Grul,char_grul,true,normal,whois imported from Mudlet archive
+Grume,char_grume,true,normal,whois returned no extant character information in MUME
+Grumph,char_grumph,true,normal,whois imported from Mudlet archive
+Grunganator,char_grunganator,true,normal,whois imported from Mudlet archive
+Grunge,char_grunge,true,normal,whois imported from Mudlet archive
+Gruuk,char_gruuk,true,normal,whois returned no extant character information in MUME
+Gruumsh,char_gruumsh,true,normal,whois imported from Mudlet archive
+Grymsh,char_grymsh,true,normal,whois imported from Mudlet archive
+Grytash,char_grytash,true,normal,whois imported from Mudlet archive
+Grythar,char_grythar,true,normal,whois imported from Mudlet archive
+Guglunk,char_guglunk,true,normal,whois imported from Mudlet archive
+Guido,char_guido,true,normal,whois imported from Mudlet archive
+Gulag,char_gulag,true,normal,whois imported from Mudlet archive
+Gundor,char_gundor,true,normal,whois imported from Mudlet archive
+Gurgel,char_gurgel,true,normal,whois returned no extant character information in MUME
+Guthol,char_guthol,true,normal,whois returned no extant character information in MUME
+Gwira,char_gwira,true,normal,whois imported from Mudlet archive
+Haazheel,char_haazheel,true,normal,whois returned no extant character information in MUME
+Hairfoot,char_hairfoot,true,normal,whois imported from Mudlet archive
+Haisam,char_haisam,true,normal,whois returned no extant character information in MUME
+Haista,char_haista,true,normal,whois returned no extant character information in MUME
+Haity,char_haity,true,normal,whois imported from Mudlet archive
+Haladdin,char_haladdin,true,normal,whois imported from Mudlet archive
+Halas,char_halas,true,normal,whois imported from Mudlet archive
+Haldor,char_haldor,true,normal,whois imported from Mudlet archive
+Halir,char_halir,true,normal,whois returned no extant character information in MUME
+Hamfist,char_hamfist,true,normal,whois imported from Mudlet archive
+Hamlas,char_hamlas,true,normal,whois returned no extant character information in MUME
+Hannibal,char_hannibal,true,normal,whois imported from Mudlet archive
+Hanr,char_hanr,true,normal,whois imported from Mudlet archive
+Harakiri,char_harakiri,true,normal,whois imported from Mudlet archive
+Hark,char_hark,true,normal,whois imported from Mudlet archive
+Harowen,char_harowen,true,normal,whois imported from Mudlet archive
+Hashtak,char_hashtak,true,normal,whois imported from Mudlet archive
+Hasta,char_hasta,true,normal,whois returned no extant character information in MUME
+Hatch,char_hatch,true,normal,whois imported from Mudlet archive
+Hate,char_hate,true,normal,whois imported from Mudlet archive
+Hated,char_hated,true,normal,whois imported from Mudlet archive
+Hatred,char_hatred,true,normal,whois imported from Mudlet archive
+Hazel,char_hazel,true,normal,whois imported from Mudlet archive
+Healer,char_healer,true,normal,whois imported from Mudlet archive
+Healy,char_healy,true,normal,whois returned no extant character information in MUME
+Heather,char_heather,true,normal,whois returned no extant character information in MUME
+Heldo,char_heldo,true,normal,whois returned no extant character information in MUME
+Hele,char_hele,true,normal,whois imported from Mudlet archive
+Helga,char_helga,true,normal,whois imported from Mudlet archive
+Helios,char_helios,true,normal,whois imported from Mudlet archive
+Henduil,char_henduil,true,normal,whois returned no extant character information in MUME
+Hercule,char_hercule,true,normal,whois imported from Mudlet archive
+Herman,char_herman,true,normal,whois imported from Mudlet archive
+Herold,char_herold,true,normal,whois imported from Mudlet archive
+Hex,char_hex,true,normal,whois imported from Mudlet archive
+Hobit,char_hobit,true,normal,whois imported from Mudlet archive
+Hoeth,char_hoeth,true,normal,whois imported from Mudlet archive
+Hoho,char_hoho,true,normal,whois imported from Mudlet archive
+Holg,char_holg,true,normal,whois returned no extant character information in MUME
+Holy,char_holy,true,normal,whois imported from Mudlet archive
+Horgy,char_horgy,true,normal,whois returned no extant character information in MUME
+Horstats,char_horstats,true,normal,whois imported from Mudlet archive
+Horus,char_horus,true,normal,whois imported from Mudlet archive
+Hovado,char_hovado,true,normal,whois imported from Mudlet archive
+Hrive,char_hrive,true,normal,whois returned no extant character information in MUME
+Hrolth,char_hrolth,true,normal,whois returned no extant character information in MUME
+Hrothgar,char_hrothgar,true,normal,whois returned no extant character information in MUME
+Hrym,char_hrym,true,normal,whois imported from Mudlet archive
+Hudson,char_hudson,true,normal,whois imported from Mudlet archive
+Hugo,char_hugo,true,normal,whois imported from Mudlet archive
+Huher,char_huher,true,normal,whois imported from Mudlet archive
+Hukor,char_hukor,true,normal,whois returned no extant character information in MUME
+Hunchback,char_hunchback,true,normal,whois imported from Mudlet archive
+Hurar,char_hurar,true,normal,whois returned no extant character information in MUME
+Hwarang,char_hwarang,true,normal,whois imported from Mudlet archive
+Hwoarang,char_hwoarang,true,normal,whois imported from Mudlet archive
+Hybrid,char_hybrid,true,normal,whois imported from Mudlet archive
+Hyung,char_hyung,true,normal,whois returned no extant character information in MUME
+Hyurk,char_hyurk,true,normal,whois returned no extant character information in MUME
+Ibis,char_ibis,true,normal,whois imported from Mudlet archive
+Iblis,char_iblis,true,normal,whois returned no extant character information in MUME
+Ibrahim,char_ibrahim,true,normal,whois imported from Mudlet archive
+Ickabod,char_ickabod,true,normal,whois imported from Mudlet archive
+Idun,char_idun,true,normal,whois returned no extant character information in MUME
+Ieras,char_ieras,true,normal,whois returned no extant character information in MUME
+Ike,char_ike,true,normal,whois imported from Mudlet archive
+Ilgamar,char_ilgamar,true,normal,whois returned no extant character information in MUME
+Iljrure,char_iljrure,true,normal,whois returned no extant character information in MUME
+Illusia,char_illusia,true,normal,whois returned no extant character information in MUME
+Illyas,char_illyas,true,normal,whois imported from Mudlet archive
+Ilmacil,char_ilmacil,true,normal,whois returned no extant character information in MUME
+Ilmarin,char_ilmarin,true,normal,whois imported from Mudlet archive
+Imlach,char_imlach,true,normal,whois imported from Mudlet archive
+Imlis,char_imlis,true,normal,whois returned no extant character information in MUME
+Implithura,char_implithura,true,normal,whois returned no extant character information in MUME
+Imrazor,char_imrazor,true,normal,whois imported from Mudlet archive
+Indra,char_indra,true,normal,whois imported from Mudlet archive
+Ingold,char_ingold,true,normal,whois imported from Mudlet archive
+Ingwe,char_ingwe,true,normal,whois imported from Mudlet archive
+Innuendo,char_innuendo,true,normal,whois imported from Mudlet archive
+Insane,char_insane,true,normal,whois imported from Mudlet archive
+Inziladun,char_inziladun,true,normal,whois imported from Mudlet archive
+Iolo,char_iolo,true,normal,whois imported from Mudlet archive
+Ior,char_ior,true,normal,whois imported from Mudlet archive
+Iorlas,char_iorlas,true,normal,whois imported from Mudlet archive
+Iranon,char_iranon,true,normal,whois imported from Mudlet archive
+Irogla,char_irogla,true,normal,whois returned no extant character information in MUME
+Irv,char_irv,true,normal,whois imported from Mudlet archive
+Ishant,char_ishant,true,normal,whois imported from Mudlet archive
+Isolde,char_isolde,true,normal,whois imported from Mudlet archive
+Itallicus,char_itallicus,true,normal,whois returned no extant character information in MUME
+Ithilagos,char_ithilagos,true,normal,whois imported from Mudlet archive
+Ithy,char_ithy,true,normal,whois returned no extant character information in MUME
+Itil,char_itil,true,normal,whois imported from Mudlet archive
+Ivanushka,char_ivanushka,true,normal,whois imported from Mudlet archive
+Iwain,char_iwain,true,normal,whois imported from Mudlet archive
+Iyachtu,char_iyachtu,true,normal,whois imported from Mudlet archive
+Jaagern,char_jaagern,true,normal,whois imported from Mudlet archive
+Jabba,char_jabba,true,normal,whois imported from Mudlet archive
+Jadon,char_jadon,true,normal,whois imported from Mudlet archive
+Jamie,char_jamie,true,normal,whois imported from Mudlet archive
+Jandor,char_jandor,true,normal,whois imported from Mudlet archive
+Janosh,char_janosh,true,normal,whois imported from Mudlet archive
+Jarhala,char_jarhala,true,normal,whois returned no extant character information in MUME
+Jarlaxle,char_jarlaxle,true,normal,whois imported from Mudlet archive
+Jaron,char_jaron,true,normal,whois returned no extant character information in MUME
+Jatte,char_jatte,true,normal,whois imported from Mudlet archive
+Jauer,char_jauer,true,normal,whois imported from Mudlet archive
+Jaws,char_jaws,true,normal,whois imported from Mudlet archive
+Jeakoth,char_jeakoth,true,normal,whois imported from Mudlet archive
+Jeffbob,char_jeffbob,true,normal,whois returned no extant character information in MUME
+Jelly,char_jelly,true,normal,whois imported from Mudlet archive
+Jensu,char_jensu,true,normal,whois returned no extant character information in MUME
+Jeran,char_jeran,true,normal,whois imported from Mudlet archive
+Jerle,char_jerle,true,normal,whois imported from Mudlet archive
+Jerpa,char_jerpa,true,normal,whois returned no extant character information in MUME
+Jheran,char_jheran,true,normal,whois imported from Mudlet archive
+Jimbo,char_jimbo,true,normal,whois imported from Mudlet archive
+Joan,char_joan,true,normal,whois imported from Mudlet archive
+Johannes,char_johannes,true,normal,whois imported from Mudlet archive
+Johhaidii,char_johhaidii,true,normal,whois imported from Mudlet archive
+Johnie,char_johnie,true,normal,whois imported from Mudlet archive
+Joker,char_joker,true,normal,whois imported from Mudlet archive
+Jon,char_jon,true,normal,whois imported from Mudlet archive
+Jones,char_jones,true,normal,whois imported from Mudlet archive
+Joponen,char_joponen,true,normal,whois imported from Mudlet archive
+Jube,char_jube,true,normal,whois imported from Mudlet archive
+Juggles,char_juggles,true,normal,whois returned no extant character information in MUME
+Junbao,char_junbao,true,normal,whois imported from Mudlet archive
+Juss,char_juss,true,normal,whois returned no extant character information in MUME
+Kade,char_kade,true,normal,whois imported from Mudlet archive
+Kakarot,char_kakarot,true,normal,whois returned no extant character information in MUME
+Kalevala,char_kalevala,true,normal,whois returned no extant character information in MUME
+Kalkano,char_kalkano,true,normal,whois imported from Mudlet archive
+Kalus,char_kalus,true,normal,whois imported from Mudlet archive
+Kami,char_kami,true,normal,whois imported from Mudlet archive
+Kamikaze,char_kamikaze,true,normal,whois imported from Mudlet archive
+Kamlakh,char_kamlakh,true,normal,whois imported from Mudlet archive
+Kaool,char_kaool,true,normal,whois imported from Mudlet archive
+Kardagash,char_kardagash,true,normal,whois imported from Mudlet archive
+Karelin,char_karelin,true,normal,whois imported from Mudlet archive
+Kasach,char_kasach,true,normal,whois imported from Mudlet archive
+Kassler,char_kassler,true,normal,whois imported from Mudlet archive
+Kazadoe,char_kazadoe,true,normal,whois imported from Mudlet archive
+Kazan,char_kazan,true,normal,whois returned no extant character information in MUME
+Kazeena,char_kazeena,true,normal,whois returned no extant character information in MUME
+Kazzey,char_kazzey,true,normal,whois returned no extant character information in MUME
+Keldorn,char_keldorn,true,normal,whois imported from Mudlet archive
+Keno,char_keno,true,normal,whois imported from Mudlet archive
+Kenzu,char_kenzu,true,normal,whois imported from Mudlet archive
+Kess,char_kess,true,normal,whois imported from Mudlet archive
+Kessfare,char_kessfare,true,normal,whois imported from Mudlet archive
+Kesslar,char_kesslar,true,normal,whois imported from Mudlet archive
+Kesslik,char_kesslik,true,normal,whois imported from Mudlet archive
+Kesslin,char_kesslin,true,normal,whois imported from Mudlet archive
+Kessloth,char_kessloth,true,normal,whois imported from Mudlet archive
+Kesstor,char_kesstor,true,normal,whois imported from Mudlet archive
+Kestrel,char_kestrel,true,normal,whois imported from Mudlet archive
+Khad,char_khad,true,normal,whois imported from Mudlet archive
+Khadum,char_khadum,true,normal,whois returned no extant character information in MUME
+Khakis,char_khakis,true,normal,whois imported from Mudlet archive
+Khamasin,char_khamasin,true,normal,whois imported from Mudlet archive
+Khamil,char_khamil,true,normal,whois imported from Mudlet archive
+Khandar,char_khandar,true,normal,whois returned no extant character information in MUME
+Kharas,char_kharas,true,normal,whois imported from Mudlet archive
+Khawin,char_khawin,true,normal,whois imported from Mudlet archive
+Khazdul,char_khazdul,true,normal,whois imported from Mudlet archive
+Khelben,char_khelben,true,normal,whois imported from Mudlet archive
+Khelek,char_khelek,true,normal,whois imported from Mudlet archive
+Khim,char_khim,true,normal,whois imported from Mudlet archive
+Khird,char_khird,true,normal,whois returned no extant character information in MUME
+Khodum,char_khodum,true,normal,whois returned no extant character information in MUME
+Khozdul,char_khozdul,true,normal,whois imported from Mudlet archive
+Khreth,char_khreth,true,normal,whois imported from Mudlet archive
+Khuka,char_khuka,true,normal,whois returned no extant character information in MUME
+Khzandros,char_khzandros,true,normal,whois imported from Mudlet archive
+Kiki,char_kiki,true,normal,whois imported from Mudlet archive
+Kilimanjaro,char_kilimanjaro,true,normal,whois returned no extant character information in MUME
+Kilin,char_kilin,true,normal,whois imported from Mudlet archive
+Killdare,char_killdare,true,normal,whois imported from Mudlet archive
+Kingpool,char_kingpool,true,normal,whois imported from Mudlet archive
+Kinson,char_kinson,true,normal,whois imported from Mudlet archive
+Kiska,char_kiska,true,normal,whois imported from Mudlet archive
+Kitto,char_kitto,true,normal,whois imported from Mudlet archive
+Kloker,char_kloker,true,normal,whois imported from Mudlet archive
+Knold,char_knold,true,normal,whois returned no extant character information in MUME
+Kobold,char_kobold,true,normal,whois imported from Mudlet archive
+Kocano,char_kocano,true,normal,whois imported from Mudlet archive
+Kochurma,char_kochurma,true,normal,whois imported from Mudlet archive
+Koer,char_koer,true,normal,whois returned no extant character information in MUME
+Koff,char_koff,true,normal,whois imported from Mudlet archive
+Kogan,char_kogan,true,normal,whois imported from Mudlet archive
+Korax,char_korax,true,normal,whois imported from Mudlet archive
+Korek,char_korek,true,normal,whois imported from Mudlet archive
+Korf,char_korf,true,normal,whois imported from Mudlet archive
+Korin,char_korin,true,normal,whois imported from Mudlet archive
+Kostej,char_kostej,true,normal,whois imported from Mudlet archive
+Kotta,char_kotta,true,normal,whois imported from Mudlet archive
+Kovie,char_kovie,true,normal,whois imported from Mudlet archive
+Koza,char_koza,true,normal,whois imported from Mudlet archive
+Kozel,char_kozel,true,normal,whois imported from Mudlet archive
+Kraal,char_kraal,true,normal,whois imported from Mudlet archive
+Krax,char_krax,true,normal,whois imported from Mudlet archive
+Kreil,char_kreil,true,normal,whois returned no extant character information in MUME
+Krkavec,char_krkavec,true,normal,whois imported from Mudlet archive
+Kroom,char_kroom,true,normal,whois imported from Mudlet archive
+Krossen,char_krossen,true,normal,whois imported from Mudlet archive
+Krubb,char_krubb,true,normal,whois imported from Mudlet archive
+Kuku,char_kuku,true,normal,whois imported from Mudlet archive
+Kulgan,char_kulgan,true,normal,whois imported from Mudlet archive
+Kunduk,char_kunduk,true,normal,whois imported from Mudlet archive
+Kurast,char_kurast,true,normal,whois returned no extant character information in MUME
+Kurdran,char_kurdran,true,normal,whois imported from Mudlet archive
+Kurva,char_kurva,true,normal,whois imported from Mudlet archive
+Kviea,char_kviea,true,normal,whois returned no extant character information in MUME
+Kylm,char_kylm,true,normal,whois imported from Mudlet archive
 Labero,char_labero,true,normal,whois imported from Mudlet archive
-Lada,char_lada,false,normal,
-Lairathim,char_lairathim,false,normal,
-Lakh,char_lakh,false,normal,
-Lakon,char_lakon,false,normal,
-Lalloree,char_lalloree,false,normal,
-Lalok,char_lalok,false,normal,
-Lammas,char_lammas,false,normal,
-Lammoth,char_lammoth,false,normal,
-Lana,char_lana,false,normal,
-Lancelot,char_lancelot,false,normal,
-Langolier,char_langolier,false,normal,
-Lasombra,char_lasombra,false,normal,
-Lathos,char_lathos,false,normal,
-Laurelin,char_laurelin,false,normal,
-Lavendel,char_lavendel,false,normal,
-Lazy,char_lazy,false,normal,
-Leagel,char_leagel,false,normal,
-Leave,char_leave,false,normal,
-Lefali,char_lefali,false,normal,
-Leffe,char_leffe,false,normal,
-Legion,char_legion,false,normal,
-Lehto,char_lehto,false,normal,
-Lei,char_lei,false,normal,
-Lenwe,char_lenwe,false,normal,
-Lepra,char_lepra,false,normal,
-Lerian,char_lerian,false,normal,
-Liart,char_liart,false,normal,
-Libresse,char_libresse,false,normal,
-Lief,char_lief,false,normal,
-Liliah,char_liliah,false,normal,
-Lilladde,char_lilladde,false,normal,
-Lillian,char_lillian,false,normal,
-Lilljempa,char_lilljempa,false,normal,
-Lillmarre,char_lillmarre,false,normal,
-Lina,char_lina,false,normal,
-Linar,char_linar,false,normal,
-Linara,char_linara,false,normal,
-Ling,char_ling,false,normal,
-Lirathe,char_lirathe,false,normal,
-Lisp,char_lisp,false,normal,
-Liten,char_liten,false,normal,
-Litovel,char_litovel,false,normal,
-Llort,char_llort,false,normal,
-Lochdale,char_lochdale,false,normal,
-Lokomotiva,char_lokomotiva,false,normal,
-Lol,char_lol,false,normal,
-Lombur,char_lombur,false,normal,
-Lomek,char_lomek,false,normal,
-Lorduk,char_lorduk,false,normal,
-Lore,char_lore,false,normal,
-Lote,char_lote,false,normal,
-Lothar,char_lothar,false,normal,
-Lotheila,char_lotheila,false,normal,
-Lothlahn,char_lothlahn,false,normal,
-Lothlori,char_lothlori,false,normal,
-Lowanda,char_lowanda,false,normal,
-Lowyn,char_lowyn,false,normal,
-Luber,char_luber,false,normal,
-Luckless,char_luckless,false,normal,
-Luingil,char_luingil,false,normal,
-Luke,char_luke,false,normal,
-Lurken,char_lurken,false,normal,
-Lutien,char_lutien,false,normal,
-Luvette,char_luvette,false,normal,
-Maal,char_maal,false,normal,
-Mabel,char_mabel,false,normal,
-Macke,char_macke,false,normal,
-Macros,char_macros,false,normal,
-Madcat,char_madcat,false,normal,
-Maeglor,char_maeglor,false,normal,
-Maegnas,char_maegnas,false,normal,
-Magi,char_magi,false,normal,
-Magica,char_magica,false,normal,
-Maglor,char_maglor,false,normal,
-Magnolia,char_magnolia,false,normal,
-Mahyr,char_mahyr,false,normal,
-Malach,char_malach,false,normal,
-Malak,char_malak,false,normal,
-Malus,char_malus,false,normal,
-Malysh,char_malysh,false,normal,
-Mammoth,char_mammoth,false,normal,
-Mamut,char_mamut,false,normal,
-Mamutice,char_mamutice,false,normal,
-Manaja,char_manaja,false,normal,
-Manatark,char_manatark,false,normal,
-Manic,char_manic,false,normal,
-Manne,char_manne,false,normal,
-Marhault,char_marhault,false,normal,
-Marillion,char_marillion,false,normal,
-Marko,char_marko,false,normal,
-Marras,char_marras,false,normal,
-Marre,char_marre,false,normal,
-Marroc,char_marroc,false,normal,
-Martijn,char_martijn,false,normal,
-Mastah,char_mastah,false,normal,
-Mato,char_mato,false,normal,
-Mauna,char_mauna,false,normal,
-Maverick,char_maverick,false,normal,
-Mazai,char_mazai,false,normal,
-Mazrim,char_mazrim,false,normal,
-Mazza,char_mazza,false,normal,
-Mecra,char_mecra,false,normal,
-Meeka,char_meeka,false,normal,
-Mehter,char_mehter,false,normal,
-Mekul,char_mekul,false,normal,
-Melanchre,char_melanchre,false,normal,
-Melinda,char_melinda,false,normal,
-Meliza,char_meliza,false,normal,
-Meneldur,char_meneldur,false,normal,
-Mengaz,char_mengaz,false,normal,
-Mephistofel,char_mephistofel,false,normal,
-Mercurius,char_mercurius,false,normal,
-Meriadoc,char_meriadoc,false,normal,
-Meril,char_meril,false,normal,
-Merimac,char_merimac,false,normal,
-Merlin,char_merlin,false,normal,
-Merlyn,char_merlyn,false,normal,
-Mess,char_mess,false,normal,
-Mestan,char_mestan,false,normal,
-Meteor,char_meteor,false,normal,
-Mhur,char_mhur,false,normal,
-Mikala,char_mikala,false,normal,
-Mikke,char_mikke,false,normal,
-Miko,char_miko,false,normal,
-Milena,char_milena,false,normal,
-Miler,char_miler,false,normal,
-Millen,char_millen,false,normal,
-Milzok,char_milzok,false,normal,
-Minastir,char_minastir,false,normal,
-Minos,char_minos,false,normal,
-Minuial,char_minuial,false,normal,
-Miriamele,char_miriamele,false,normal,
-Miser,char_miser,false,normal,
-Misery,char_misery,false,normal,
-Mishrak,char_mishrak,false,normal,
-Mitch,char_mitch,false,normal,
-Mithrellas,char_mithrellas,false,normal,
-Miyahk,char_miyahk,false,normal,
-Moandor,char_moandor,false,normal,
-Moby,char_moby,false,normal,
+Lada,char_lada,true,normal,whois returned no extant character information in MUME
+Lairathim,char_lairathim,true,normal,whois imported from Mudlet archive
+Lakh,char_lakh,true,normal,whois returned no extant character information in MUME
+Lakon,char_lakon,true,normal,whois imported from Mudlet archive
+Lalloree,char_lalloree,true,normal,whois imported from Mudlet archive
+Lalok,char_lalok,true,normal,whois imported from Mudlet archive
+Lammas,char_lammas,true,normal,whois returned no extant character information in MUME
+Lammoth,char_lammoth,true,normal,whois imported from Mudlet archive
+Lana,char_lana,true,normal,whois imported from Mudlet archive
+Lancelot,char_lancelot,true,normal,whois imported from Mudlet archive
+Langolier,char_langolier,true,normal,whois imported from Mudlet archive
+Lasombra,char_lasombra,true,normal,whois returned no extant character information in MUME
+Lathos,char_lathos,true,normal,whois imported from Mudlet archive
+Laurelin,char_laurelin,true,normal,whois imported from Mudlet archive
+Lavendel,char_lavendel,true,normal,whois imported from Mudlet archive
+Lazy,char_lazy,true,normal,whois imported from Mudlet archive
+Leagel,char_leagel,true,normal,whois imported from Mudlet archive
+Leave,char_leave,true,normal,whois returned no extant character information in MUME
+Lefali,char_lefali,true,normal,whois imported from Mudlet archive
+Leffe,char_leffe,true,normal,whois imported from Mudlet archive
+Legion,char_legion,true,normal,whois imported from Mudlet archive
+Lehto,char_lehto,true,normal,whois imported from Mudlet archive
+Lei,char_lei,true,normal,whois imported from Mudlet archive
+Lenwe,char_lenwe,true,normal,whois imported from Mudlet archive
+Lepra,char_lepra,true,normal,whois returned no extant character information in MUME
+Lerian,char_lerian,true,normal,whois imported from Mudlet archive
+Liart,char_liart,true,normal,whois imported from Mudlet archive
+Libresse,char_libresse,true,normal,whois returned no extant character information in MUME
+Lief,char_lief,true,normal,whois imported from Mudlet archive
+Liliah,char_liliah,true,normal,whois imported from Mudlet archive
+Lilladde,char_lilladde,true,normal,whois imported from Mudlet archive
+Lillian,char_lillian,true,normal,whois imported from Mudlet archive
+Lilljempa,char_lilljempa,true,normal,whois imported from Mudlet archive
+Lillmarre,char_lillmarre,true,normal,whois imported from Mudlet archive
+Lina,char_lina,true,normal,whois imported from Mudlet archive
+Linar,char_linar,true,normal,whois returned no extant character information in MUME
+Linara,char_linara,true,normal,whois imported from Mudlet archive
+Ling,char_ling,true,normal,whois imported from Mudlet archive
+Lirathe,char_lirathe,true,normal,whois returned no extant character information in MUME
+Lisp,char_lisp,true,normal,whois imported from Mudlet archive
+Liten,char_liten,true,normal,whois imported from Mudlet archive
+Litovel,char_litovel,true,normal,whois imported from Mudlet archive
+Llort,char_llort,true,normal,whois imported from Mudlet archive
+Lochdale,char_lochdale,true,normal,whois imported from Mudlet archive
+Lokomotiva,char_lokomotiva,true,normal,whois imported from Mudlet archive
+Lol,char_lol,true,normal,whois imported from Mudlet archive
+Lombur,char_lombur,true,normal,whois imported from Mudlet archive
+Lomek,char_lomek,true,normal,whois imported from Mudlet archive
+Lorduk,char_lorduk,true,normal,whois imported from Mudlet archive
+Lore,char_lore,true,normal,whois imported from Mudlet archive
+Lote,char_lote,true,normal,whois imported from Mudlet archive
+Lothar,char_lothar,true,normal,whois imported from Mudlet archive
+Lotheila,char_lotheila,true,normal,whois imported from Mudlet archive
+Lothlahn,char_lothlahn,true,normal,whois imported from Mudlet archive
+Lothlori,char_lothlori,true,normal,whois imported from Mudlet archive
+Lowanda,char_lowanda,true,normal,whois imported from Mudlet archive
+Lowyn,char_lowyn,true,normal,whois imported from Mudlet archive
+Luber,char_luber,true,normal,whois imported from Mudlet archive
+Luckless,char_luckless,true,normal,whois imported from Mudlet archive
+Luingil,char_luingil,true,normal,whois returned no extant character information in MUME
+Luke,char_luke,true,normal,whois imported from Mudlet archive
+Lurken,char_lurken,true,normal,whois imported from Mudlet archive
+Lutien,char_lutien,true,normal,whois imported from Mudlet archive
+Luvette,char_luvette,true,normal,whois imported from Mudlet archive
+Maal,char_maal,true,normal,whois imported from Mudlet archive
+Mabel,char_mabel,true,normal,whois imported from Mudlet archive
+Macke,char_macke,true,normal,whois imported from Mudlet archive
+Macros,char_macros,true,normal,whois imported from Mudlet archive
+Madcat,char_madcat,true,normal,whois imported from Mudlet archive
+Maeglor,char_maeglor,true,normal,whois imported from Mudlet archive
+Maegnas,char_maegnas,true,normal,whois imported from Mudlet archive
+Magi,char_magi,true,normal,whois imported from Mudlet archive
+Magica,char_magica,true,normal,whois imported from Mudlet archive
+Maglor,char_maglor,true,normal,whois imported from Mudlet archive
+Magnolia,char_magnolia,true,normal,whois imported from Mudlet archive
+Mahyr,char_mahyr,true,normal,whois imported from Mudlet archive
+Malach,char_malach,true,normal,whois imported from Mudlet archive
+Malak,char_malak,true,normal,whois imported from Mudlet archive
+Malus,char_malus,true,normal,whois imported from Mudlet archive
+Malysh,char_malysh,true,normal,whois imported from Mudlet archive
+Mammoth,char_mammoth,true,normal,whois imported from Mudlet archive
+Mamut,char_mamut,true,normal,whois imported from Mudlet archive
+Mamutice,char_mamutice,true,normal,whois imported from Mudlet archive
+Manaja,char_manaja,true,normal,whois imported from Mudlet archive
+Manatark,char_manatark,true,normal,whois imported from Mudlet archive
+Manic,char_manic,true,normal,whois imported from Mudlet archive
+Manne,char_manne,true,normal,whois returned no extant character information in MUME
+Marhault,char_marhault,true,normal,whois returned no extant character information in MUME
+Marillion,char_marillion,true,normal,whois imported from Mudlet archive
+Marko,char_marko,true,normal,whois imported from Mudlet archive
+Marras,char_marras,true,normal,whois imported from Mudlet archive
+Marre,char_marre,true,normal,whois returned no extant character information in MUME
+Marroc,char_marroc,true,normal,whois imported from Mudlet archive
+Martijn,char_martijn,true,normal,whois imported from Mudlet archive
+Mastah,char_mastah,true,normal,whois imported from Mudlet archive
+Mato,char_mato,true,normal,whois imported from Mudlet archive
+Mauna,char_mauna,true,normal,whois returned no extant character information in MUME
+Maverick,char_maverick,true,normal,whois imported from Mudlet archive
+Mazai,char_mazai,true,normal,whois imported from Mudlet archive
+Mazrim,char_mazrim,true,normal,whois imported from Mudlet archive
+Mazza,char_mazza,true,normal,whois imported from Mudlet archive
+Mecra,char_mecra,true,normal,whois returned no extant character information in MUME
+Meeka,char_meeka,true,normal,whois returned no extant character information in MUME
+Mehter,char_mehter,true,normal,whois imported from Mudlet archive
+Mekul,char_mekul,true,normal,whois returned no extant character information in MUME
+Melanchre,char_melanchre,true,normal,whois returned no extant character information in MUME
+Melinda,char_melinda,true,normal,whois imported from Mudlet archive
+Meliza,char_meliza,true,normal,whois imported from Mudlet archive
+Meneldur,char_meneldur,true,normal,whois imported from Mudlet archive
+Mengaz,char_mengaz,true,normal,whois returned no extant character information in MUME
+Mephistofel,char_mephistofel,true,normal,whois imported from Mudlet archive
+Mercurius,char_mercurius,true,normal,whois imported from Mudlet archive
+Meriadoc,char_meriadoc,true,normal,whois imported from Mudlet archive
+Meril,char_meril,true,normal,whois imported from Mudlet archive
+Merimac,char_merimac,true,normal,whois imported from Mudlet archive
+Merlin,char_merlin,true,normal,whois returned no extant character information in MUME
+Merlyn,char_merlyn,true,normal,whois imported from Mudlet archive
+Mess,char_mess,true,normal,whois imported from Mudlet archive
+Mestan,char_mestan,true,normal,whois returned no extant character information in MUME
+Meteor,char_meteor,true,normal,whois returned no extant character information in MUME
+Mhur,char_mhur,true,normal,whois returned no extant character information in MUME
+Mikala,char_mikala,true,normal,whois imported from Mudlet archive
+Mikke,char_mikke,true,normal,whois imported from Mudlet archive
+Miko,char_miko,true,normal,whois imported from Mudlet archive
+Milena,char_milena,true,normal,whois imported from Mudlet archive
+Miler,char_miler,true,normal,whois imported from Mudlet archive
+Millen,char_millen,true,normal,whois returned no extant character information in MUME
+Milzok,char_milzok,true,normal,whois imported from Mudlet archive
+Minastir,char_minastir,true,normal,whois returned no extant character information in MUME
+Minos,char_minos,true,normal,whois returned no extant character information in MUME
+Minuial,char_minuial,true,normal,whois returned no extant character information in MUME
+Miriamele,char_miriamele,true,normal,whois imported from Mudlet archive
+Miser,char_miser,true,normal,whois imported from Mudlet archive
+Misery,char_misery,true,normal,whois imported from Mudlet archive
+Mishrak,char_mishrak,true,normal,whois imported from Mudlet archive
+Mitch,char_mitch,true,normal,whois imported from Mudlet archive
+Mithrellas,char_mithrellas,true,normal,whois imported from Mudlet archive
+Miyahk,char_miyahk,true,normal,whois imported from Mudlet archive
+Moandor,char_moandor,true,normal,whois returned no extant character information in MUME
+Moby,char_moby,true,normal,whois imported from Mudlet archive
 Mochomurka,char_mochomurka,true,normal,whois imported from Mudlet archive
-Moci,char_moci,false,normal,
-Mogshak,char_mogshak,false,normal,
-Mojo,char_mojo,false,normal,
-Molak,char_molak,false,normal,
-Moloko,char_moloko,false,normal,
-Molor,char_molor,false,normal,
-Monet,char_monet,false,normal,
-Monster,char_monster,false,normal,
-Moonglum,char_moonglum,false,normal,
-Moonparent,char_moonparent,false,normal,
-Moonshade,char_moonshade,false,normal,
-Moortek,char_moortek,false,normal,
-Morannon,char_morannon,false,normal,
-Morbet,char_morbet,false,normal,
-Morbid,char_morbid,false,normal,
-Mordak,char_mordak,false,normal,
-Morfizm,char_morfizm,false,normal,
-Morgil,char_morgil,false,normal,
-Morgulduin,char_morgulduin,false,normal,
-Morholt,char_morholt,false,normal,
-Morholth,char_morholth,false,normal,
-Morog,char_morog,false,normal,
-Moroz,char_moroz,false,normal,
-Morphine,char_morphine,false,normal,
-Mors,char_mors,false,normal,
-Morthe,char_morthe,false,normal,
-Morticus,char_morticus,false,normal,
-Mortie,char_mortie,false,normal,
-Mortis,char_mortis,false,normal,
-Mortti,char_mortti,false,normal,
-Mosaren,char_mosaren,false,normal,
-Mosco,char_mosco,false,normal,
-MouthOfSauron,char_mouthofsauron,false,normal,
-Movin,char_movin,false,normal,
-Mrazik,char_mrazik,false,normal,
-Mrsh,char_mrsh,false,normal,
-Mrsina,char_mrsina,false,normal,
-Mruah,char_mruah,false,normal,
-Mrwhite,char_mrwhite,false,normal,
-Much,char_much,false,normal,
-Muck,char_muck,false,normal,
-Mugorad,char_mugorad,false,normal,
-Muhugar,char_muhugar,false,normal,
-Muhv,char_muhv,false,normal,
-Mukami,char_mukami,false,normal,
-Mulgrim,char_mulgrim,false,normal,
-Mumma,char_mumma,false,normal,
-Mummo,char_mummo,false,normal,
-Murdress,char_murdress,false,normal,
-Murghaz,char_murghaz,false,normal,
-Murumutt,char_murumutt,false,normal,
-Murzilka,char_murzilka,false,normal,
-Mylene,char_mylene,false,normal,
-Myth,char_myth,false,normal,
-Nacs,char_nacs,false,normal,
-Naed,char_naed,false,normal,
-Naga,char_naga,false,normal,
-Naghar,char_naghar,false,normal,
-Nagoroth,char_nagoroth,false,normal,
-Nain,char_nain,false,normal,
-Naksitrall,char_naksitrall,false,normal,
-Naksur,char_naksur,false,normal,
-Naldor,char_naldor,false,normal,
-Nali,char_nali,false,normal,
-Namo,char_namo,false,normal,
-Naomi,char_naomi,false,normal,
-Nardhal,char_nardhal,false,normal,
-Naredhel,char_naredhel,false,normal,
-Narf,char_narf,false,normal,
-Nari,char_nari,false,normal,
-Naroc,char_naroc,false,normal,
-Narttu,char_narttu,false,normal,
-Nat,char_nat,false,normal,
-Natash,char_natash,false,normal,
-Nazalbeth,char_nazalbeth,false,normal,
-Nazghol,char_nazghol,false,normal,
-Nazghul,char_nazghul,false,normal,
-Nazgoroth,char_nazgoroth,false,normal,
-Nazgum,char_nazgum,false,normal,
-Nazkuk,char_nazkuk,false,normal,
-Nele,char_nele,false,normal,
-Nemil,char_nemil,false,normal,
-Neo,char_neo,false,normal,
-Nerf,char_nerf,false,normal,
-Nestha,char_nestha,false,normal,
-Neverborn,char_neverborn,false,normal,
-Newmie,char_newmie,false,normal,
-Neziel,char_neziel,false,normal,
-Nibble,char_nibble,false,normal,
-Niflam,char_niflam,false,normal,
-Nigal,char_nigal,false,normal,
-Nighthawk,char_nighthawk,false,normal,
-Nightwolf,char_nightwolf,false,normal,
-Niilit,char_niilit,false,normal,
-Nimir,char_nimir,false,normal,
-Nimraphel,char_nimraphel,false,normal,
-Nimroth,char_nimroth,false,normal,
-Nithr,char_nithr,false,normal,
-Nogir,char_nogir,false,normal,
-Nogon,char_nogon,false,normal,
-Nomad,char_nomad,false,normal,
-Nooka,char_nooka,false,normal,
-Norrland,char_norrland,false,normal,
+Moci,char_moci,true,normal,whois imported from Mudlet archive
+Mogshak,char_mogshak,true,normal,whois returned no extant character information in MUME
+Mojo,char_mojo,true,normal,whois imported from Mudlet archive
+Molak,char_molak,true,normal,whois imported from Mudlet archive
+Moloko,char_moloko,true,normal,whois imported from Mudlet archive
+Molor,char_molor,true,normal,whois imported from Mudlet archive
+Monet,char_monet,true,normal,whois returned no extant character information in MUME
+Monster,char_monster,true,normal,whois imported from Mudlet archive
+Moonglum,char_moonglum,true,normal,whois imported from Mudlet archive
+Moonparent,char_moonparent,true,normal,whois imported from Mudlet archive
+Moonshade,char_moonshade,true,normal,whois imported from Mudlet archive
+Moortek,char_moortek,true,normal,whois imported from Mudlet archive
+Morannon,char_morannon,true,normal,whois imported from Mudlet archive
+Morbet,char_morbet,true,normal,whois imported from Mudlet archive
+Morbid,char_morbid,true,normal,whois imported from Mudlet archive
+Mordak,char_mordak,true,normal,whois imported from Mudlet archive
+Morfizm,char_morfizm,true,normal,whois imported from Mudlet archive
+Morgil,char_morgil,true,normal,whois returned no extant character information in MUME
+Morgulduin,char_morgulduin,true,normal,whois imported from Mudlet archive
+Morholt,char_morholt,true,normal,whois imported from Mudlet archive
+Morholth,char_morholth,true,normal,whois imported from Mudlet archive
+Morog,char_morog,true,normal,whois imported from Mudlet archive
+Moroz,char_moroz,true,normal,whois imported from Mudlet archive
+Morphine,char_morphine,true,normal,whois imported from Mudlet archive
+Mors,char_mors,true,normal,whois imported from Mudlet archive
+Morthe,char_morthe,true,normal,whois imported from Mudlet archive
+Morticus,char_morticus,true,normal,whois imported from Mudlet archive
+Mortie,char_mortie,true,normal,whois imported from Mudlet archive
+Mortis,char_mortis,true,normal,whois imported from Mudlet archive
+Mortti,char_mortti,true,normal,whois imported from Mudlet archive
+Mosaren,char_mosaren,true,normal,whois imported from Mudlet archive
+Mosco,char_mosco,true,normal,whois imported from Mudlet archive
+MouthOfSauron,char_mouthofsauron,true,normal,whois imported from Mudlet archive
+Movin,char_movin,true,normal,whois imported from Mudlet archive
+Mrazik,char_mrazik,true,normal,whois returned no extant character information in MUME
+Mrsh,char_mrsh,true,normal,whois imported from Mudlet archive
+Mrsina,char_mrsina,true,normal,whois imported from Mudlet archive
+Mruah,char_mruah,true,normal,whois returned no extant character information in MUME
+Mrwhite,char_mrwhite,true,normal,whois returned no extant character information in MUME
+Much,char_much,true,normal,whois imported from Mudlet archive
+Muck,char_muck,true,normal,whois imported from Mudlet archive
+Mugorad,char_mugorad,true,normal,whois imported from Mudlet archive
+Muhugar,char_muhugar,true,normal,whois returned no extant character information in MUME
+Muhv,char_muhv,true,normal,whois returned no extant character information in MUME
+Mukami,char_mukami,true,normal,whois imported from Mudlet archive
+Mulgrim,char_mulgrim,true,normal,whois imported from Mudlet archive
+Mumma,char_mumma,true,normal,whois imported from Mudlet archive
+Mummo,char_mummo,true,normal,whois imported from Mudlet archive
+Murdress,char_murdress,true,normal,whois returned no extant character information in MUME
+Murghaz,char_murghaz,true,normal,whois returned no extant character information in MUME
+Murumutt,char_murumutt,true,normal,whois returned no extant character information in MUME
+Murzilka,char_murzilka,true,normal,whois imported from Mudlet archive
+Mylene,char_mylene,true,normal,whois imported from Mudlet archive
+Myth,char_myth,true,normal,whois imported from Mudlet archive
+Nacs,char_nacs,true,normal,whois imported from Mudlet archive
+Naed,char_naed,true,normal,whois returned no extant character information in MUME
+Naga,char_naga,true,normal,whois imported from Mudlet archive
+Naghar,char_naghar,true,normal,whois returned no extant character information in MUME
+Nagoroth,char_nagoroth,true,normal,whois imported from Mudlet archive
+Nain,char_nain,true,normal,whois imported from Mudlet archive
+Naksitrall,char_naksitrall,true,normal,whois imported from Mudlet archive
+Naksur,char_naksur,true,normal,whois imported from Mudlet archive
+Naldor,char_naldor,true,normal,whois imported from Mudlet archive
+Nali,char_nali,true,normal,whois imported from Mudlet archive
+Namo,char_namo,true,normal,whois imported from Mudlet archive
+Naomi,char_naomi,true,normal,whois imported from Mudlet archive
+Nardhal,char_nardhal,true,normal,whois returned no extant character information in MUME
+Naredhel,char_naredhel,true,normal,whois returned no extant character information in MUME
+Narf,char_narf,true,normal,whois returned no extant character information in MUME
+Nari,char_nari,true,normal,whois imported from Mudlet archive
+Naroc,char_naroc,true,normal,whois returned no extant character information in MUME
+Narttu,char_narttu,true,normal,whois returned no extant character information in MUME
+Nat,char_nat,true,normal,whois returned no extant character information in MUME
+Natash,char_natash,true,normal,whois imported from Mudlet archive
+Nazalbeth,char_nazalbeth,true,normal,whois imported from Mudlet archive
+Nazghol,char_nazghol,true,normal,whois imported from Mudlet archive
+Nazghul,char_nazghul,true,normal,whois imported from Mudlet archive
+Nazgoroth,char_nazgoroth,true,normal,whois returned no extant character information in MUME
+Nazgum,char_nazgum,true,normal,whois imported from Mudlet archive
+Nazkuk,char_nazkuk,true,normal,whois imported from Mudlet archive
+Nele,char_nele,true,normal,whois imported from Mudlet archive
+Nemil,char_nemil,true,normal,whois imported from Mudlet archive
+Neo,char_neo,true,normal,whois imported from Mudlet archive
+Nerf,char_nerf,true,normal,whois imported from Mudlet archive
+Nestha,char_nestha,true,normal,whois returned no extant character information in MUME
+Neverborn,char_neverborn,true,normal,whois returned no extant character information in MUME
+Newmie,char_newmie,true,normal,whois imported from Mudlet archive
+Neziel,char_neziel,true,normal,whois imported from Mudlet archive
+Nibble,char_nibble,true,normal,whois imported from Mudlet archive
+Niflam,char_niflam,true,normal,whois returned no extant character information in MUME
+Nigal,char_nigal,true,normal,whois returned no extant character information in MUME
+Nighthawk,char_nighthawk,true,normal,whois imported from Mudlet archive
+Nightwolf,char_nightwolf,true,normal,whois imported from Mudlet archive
+Niilit,char_niilit,true,normal,whois returned no extant character information in MUME
+Nimir,char_nimir,true,normal,whois imported from Mudlet archive
+Nimraphel,char_nimraphel,true,normal,whois returned no extant character information in MUME
+Nimroth,char_nimroth,true,normal,whois imported from Mudlet archive
+Nithr,char_nithr,true,normal,whois imported from Mudlet archive
+Nogir,char_nogir,true,normal,whois imported from Mudlet archive
+Nogon,char_nogon,true,normal,whois imported from Mudlet archive
+Nomad,char_nomad,true,normal,whois imported from Mudlet archive
+Nooka,char_nooka,true,normal,whois imported from Mudlet archive
+Norrland,char_norrland,true,normal,whois imported from Mudlet archive
 Norsu,char_norsu,true,normal,whois imported from Mudlet archive
-Nothing,char_nothing,false,normal,
-Notorga,char_notorga,false,normal,
-Nowyr,char_nowyr,false,normal,
-Nuri,char_nuri,false,normal,
-Nushenak,char_nushenak,false,normal,
-Nuzo,char_nuzo,false,normal,
-Occult,char_occult,false,normal,
-Oceanborn,char_oceanborn,false,normal,
-Ochra,char_ochra,false,normal,
-Octavian,char_octavian,false,normal,
-Odamees,char_odamees,false,normal,
-Odium,char_odium,false,normal,
-Oggy,char_oggy,false,normal,
-Oguga,char_oguga,false,normal,
-Ogyf,char_ogyf,false,normal,
-OhThePain,char_ohthepain,false,normal,
-Oiri,char_oiri,false,normal,
-Olevipoeg,char_olevipoeg,false,normal,
-Olmer,char_olmer,false,normal,
-Olorion,char_olorion,false,normal,
-Olos,char_olos,false,normal,
-Omega,char_omega,false,normal,
-Omen,char_omen,false,normal,
-Onatah,char_onatah,false,normal,
-Onyx,char_onyx,false,normal,
-Orcbash,char_orcbash,false,normal,
-Orcobal,char_orcobal,false,normal,
-Oregon,char_oregon,false,normal,
-Orf,char_orf,false,normal,
-Orikas,char_orikas,false,normal,
+Nothing,char_nothing,true,normal,whois returned no extant character information in MUME
+Notorga,char_notorga,true,normal,whois imported from Mudlet archive
+Nowyr,char_nowyr,true,normal,whois imported from Mudlet archive
+Nuri,char_nuri,true,normal,whois imported from Mudlet archive
+Nushenak,char_nushenak,true,normal,whois imported from Mudlet archive
+Nuzo,char_nuzo,true,normal,whois imported from Mudlet archive
+Occult,char_occult,true,normal,whois imported from Mudlet archive
+Oceanborn,char_oceanborn,true,normal,whois imported from Mudlet archive
+Ochra,char_ochra,true,normal,whois imported from Mudlet archive
+Octavian,char_octavian,true,normal,whois returned no extant character information in MUME
+Odamees,char_odamees,true,normal,whois returned no extant character information in MUME
+Odium,char_odium,true,normal,whois imported from Mudlet archive
+Oggy,char_oggy,true,normal,whois imported from Mudlet archive
+Oguga,char_oguga,true,normal,whois imported from Mudlet archive
+Ogyf,char_ogyf,true,normal,whois imported from Mudlet archive
+OhThePain,char_ohthepain,true,normal,whois imported from Mudlet archive
+Oiri,char_oiri,true,normal,whois imported from Mudlet archive
+Olevipoeg,char_olevipoeg,true,normal,whois returned no extant character information in MUME
+Olmer,char_olmer,true,normal,whois imported from Mudlet archive
+Olorion,char_olorion,true,normal,whois imported from Mudlet archive
+Olos,char_olos,true,normal,whois returned no extant character information in MUME
+Omega,char_omega,true,normal,whois imported from Mudlet archive
+Omen,char_omen,true,normal,whois imported from Mudlet archive
+Onatah,char_onatah,true,normal,whois imported from Mudlet archive
+Onyx,char_onyx,true,normal,whois imported from Mudlet archive
+Orcbash,char_orcbash,true,normal,whois imported from Mudlet archive
+Orcobal,char_orcobal,true,normal,whois imported from Mudlet archive
+Oregon,char_oregon,true,normal,whois returned no extant character information in MUME
+Orf,char_orf,true,normal,whois returned no extant character information in MUME
+Orikas,char_orikas,true,normal,whois imported from Mudlet archive
 Orkanoid,char_orkanoid,true,normal,whois imported from Mudlet archive
-Orodreth,char_orodreth,false,normal,
-Oscarmeyer,char_oscarmeyer,false,normal,
-Osilin,char_osilin,false,normal,
-Ostravar,char_ostravar,false,normal,
-Ostu,char_ostu,false,normal,
-Oualid,char_oualid,false,normal,
-Ozgun,char_ozgun,false,normal,
-Ozon,char_ozon,false,normal,
-Padla,char_padla,false,normal,
-Pagan,char_pagan,false,normal,
-Pahan,char_pahan,false,normal,
-Paka,char_paka,false,normal,
-Pandion,char_pandion,false,normal,
-Paque,char_paque,false,normal,
-Pasta,char_pasta,false,normal,
-Patty,char_patty,false,normal,
-Pepa,char_pepa,false,normal,
-Perago,char_perago,false,normal,
-Perl,char_perl,false,normal,
-Perun,char_perun,false,normal,
-Pestilence,char_pestilence,false,normal,
-Petrus,char_petrus,false,normal,
-Pheare,char_pheare,false,normal,
-Photon,char_photon,false,normal,
-Piastr,char_piastr,false,normal,
-Pickle,char_pickle,false,normal,
-Pilsner,char_pilsner,false,normal,
-Pinhead,char_pinhead,false,normal,
-Pinion,char_pinion,false,normal,
-Piow,char_piow,false,normal,
-Plancy,char_plancy,false,normal,
-Plato,char_plato,false,normal,
-Plch,char_plch,false,normal,
-Plohish,char_plohish,false,normal,
-Polydeukes,char_polydeukes,false,normal,
-Pomfrit,char_pomfrit,false,normal,
-Pontiac,char_pontiac,false,normal,
-Pontu,char_pontu,false,normal,
-Popeye,char_popeye,false,normal,
-Poppis,char_poppis,false,normal,
+Orodreth,char_orodreth,true,normal,whois imported from Mudlet archive
+Oscarmeyer,char_oscarmeyer,true,normal,whois imported from Mudlet archive
+Osilin,char_osilin,true,normal,whois imported from Mudlet archive
+Ostravar,char_ostravar,true,normal,whois returned no extant character information in MUME
+Ostu,char_ostu,true,normal,whois imported from Mudlet archive
+Oualid,char_oualid,true,normal,whois returned no extant character information in MUME
+Ozgun,char_ozgun,true,normal,whois returned no extant character information in MUME
+Ozon,char_ozon,true,normal,whois imported from Mudlet archive
+Padla,char_padla,true,normal,whois returned no extant character information in MUME
+Pagan,char_pagan,true,normal,whois imported from Mudlet archive
+Pahan,char_pahan,true,normal,whois returned no extant character information in MUME
+Paka,char_paka,true,normal,whois imported from Mudlet archive
+Pandion,char_pandion,true,normal,whois imported from Mudlet archive
+Paque,char_paque,true,normal,whois returned no extant character information in MUME
+Pasta,char_pasta,true,normal,whois imported from Mudlet archive
+Patty,char_patty,true,normal,whois imported from Mudlet archive
+Pepa,char_pepa,true,normal,whois imported from Mudlet archive
+Perago,char_perago,true,normal,whois imported from Mudlet archive
+Perl,char_perl,true,normal,whois imported from Mudlet archive
+Perun,char_perun,true,normal,whois returned no extant character information in MUME
+Pestilence,char_pestilence,true,normal,whois imported from Mudlet archive
+Petrus,char_petrus,true,normal,whois returned no extant character information in MUME
+Pheare,char_pheare,true,normal,whois imported from Mudlet archive
+Photon,char_photon,true,normal,whois imported from Mudlet archive
+Piastr,char_piastr,true,normal,whois imported from Mudlet archive
+Pickle,char_pickle,true,normal,whois imported from Mudlet archive
+Pilsner,char_pilsner,true,normal,whois imported from Mudlet archive
+Pinhead,char_pinhead,true,normal,whois returned no extant character information in MUME
+Pinion,char_pinion,true,normal,whois imported from Mudlet archive
+Piow,char_piow,true,normal,whois imported from Mudlet archive
+Plancy,char_plancy,true,normal,whois returned no extant character information in MUME
+Plato,char_plato,true,normal,whois returned no extant character information in MUME
+Plch,char_plch,true,normal,whois imported from Mudlet archive
+Plohish,char_plohish,true,normal,whois imported from Mudlet archive
+Polydeukes,char_polydeukes,true,normal,whois imported from Mudlet archive
+Pomfrit,char_pomfrit,true,normal,whois imported from Mudlet archive
+Pontiac,char_pontiac,true,normal,whois returned no extant character information in MUME
+Pontu,char_pontu,true,normal,whois returned no extant character information in MUME
+Popeye,char_popeye,true,normal,whois imported from Mudlet archive
+Poppis,char_poppis,true,normal,whois imported from Mudlet archive
 Porien,char_porien,true,normal,whois imported from Mudlet archive
-Posh,char_posh,false,normal,
-Potgins,char_potgins,false,normal,
-Praiodan,char_praiodan,false,normal,
-Prcek,char_prcek,false,normal,
-Pretty,char_pretty,false,normal,
-Prey,char_prey,false,normal,
-Prima,char_prima,false,normal,
-Prist,char_prist,false,normal,
-Prosit,char_prosit,false,normal,
-Psycho,char_psycho,false,normal,
-Puar,char_puar,false,normal,
-Pumuckl,char_pumuckl,false,normal,
-Purkmistr,char_purkmistr,false,normal,
-Qiuram,char_qiuram,false,normal,
-Quible,char_quible,false,normal,
-Quillis,char_quillis,false,normal,
-Quin,char_quin,false,normal,
-Qul,char_qul,false,normal,
-Qwestus,char_qwestus,false,normal,
-Qwestux,char_qwestux,false,normal,
-Rabarbar,char_rabarbar,false,normal,
-Rackhir,char_rackhir,false,normal,
-Radbug,char_radbug,false,normal,
-Radegast,char_radegast,false,normal,
-Rael,char_rael,false,normal,
-Rafa,char_rafa,false,normal,
-Rage,char_rage,false,normal,
-Ragface,char_ragface,false,normal,
-Ragnwald,char_ragnwald,false,normal,
-Rahz,char_rahz,false,normal,
-Raichu,char_raichu,false,normal,
-Rain,char_rain,false,normal,
-Rakot,char_rakot,false,normal,
-Ramangth,char_ramangth,false,normal,
-Ramiris,char_ramiris,false,normal,
-Ramtir,char_ramtir,false,normal,
-Ranax,char_ranax,false,normal,
-Rancid,char_rancid,false,normal,
-Rancor,char_rancor,false,normal,
-Ranhith,char_ranhith,false,normal,
-Rankin,char_rankin,false,normal,
-Ranna,char_ranna,false,normal,
-Rashnak,char_rashnak,false,normal,
-Rasputin,char_rasputin,false,normal,
-Rasta,char_rasta,false,normal,
-Rastik,char_rastik,false,normal,
-Ratark,char_ratark,false,normal,
-Raudo,char_raudo,false,normal,
-Rauko,char_rauko,false,normal,
-Raun,char_raun,false,normal,
-Ravendark,char_ravendark,false,normal,
-Ray,char_ray,false,normal,
-Rayden,char_rayden,false,normal,
-Razamazar,char_razamazar,false,normal,
-Raze,char_raze,false,normal,
-Razoor,char_razoor,false,normal,
-Reaper,char_reaper,false,normal,
-Rebeka,char_rebeka,false,normal,
-Reef,char_reef,false,normal,
-Regin,char_regin,false,normal,
-Reijki,char_reijki,false,normal,
-Reikor,char_reikor,false,normal,
+Posh,char_posh,true,normal,whois imported from Mudlet archive
+Potgins,char_potgins,true,normal,whois returned no extant character information in MUME
+Praiodan,char_praiodan,true,normal,whois imported from Mudlet archive
+Prcek,char_prcek,true,normal,whois imported from Mudlet archive
+Pretty,char_pretty,true,normal,whois imported from Mudlet archive
+Prey,char_prey,true,normal,whois imported from Mudlet archive
+Prima,char_prima,true,normal,whois imported from Mudlet archive
+Prist,char_prist,true,normal,whois imported from Mudlet archive
+Prosit,char_prosit,true,normal,whois imported from Mudlet archive
+Psycho,char_psycho,true,normal,whois imported from Mudlet archive
+Puar,char_puar,true,normal,whois returned no extant character information in MUME
+Pumuckl,char_pumuckl,true,normal,whois imported from Mudlet archive
+Purkmistr,char_purkmistr,true,normal,whois returned no extant character information in MUME
+Qiuram,char_qiuram,true,normal,whois returned no extant character information in MUME
+Quible,char_quible,true,normal,whois returned no extant character information in MUME
+Quillis,char_quillis,true,normal,whois imported from Mudlet archive
+Quin,char_quin,true,normal,whois imported from Mudlet archive
+Qul,char_qul,true,normal,whois imported from Mudlet archive
+Qwestus,char_qwestus,true,normal,whois imported from Mudlet archive
+Qwestux,char_qwestux,true,normal,whois returned no extant character information in MUME
+Rabarbar,char_rabarbar,true,normal,whois returned no extant character information in MUME
+Rackhir,char_rackhir,true,normal,whois imported from Mudlet archive
+Radbug,char_radbug,true,normal,whois imported from Mudlet archive
+Radegast,char_radegast,true,normal,whois imported from Mudlet archive
+Rael,char_rael,true,normal,whois imported from Mudlet archive
+Rafa,char_rafa,true,normal,whois imported from Mudlet archive
+Rage,char_rage,true,normal,whois imported from Mudlet archive
+Ragface,char_ragface,true,normal,whois imported from Mudlet archive
+Ragnwald,char_ragnwald,true,normal,whois returned no extant character information in MUME
+Rahz,char_rahz,true,normal,whois imported from Mudlet archive
+Raichu,char_raichu,true,normal,whois imported from Mudlet archive
+Rain,char_rain,true,normal,whois imported from Mudlet archive
+Rakot,char_rakot,true,normal,whois returned no extant character information in MUME
+Ramangth,char_ramangth,true,normal,whois imported from Mudlet archive
+Ramiris,char_ramiris,true,normal,whois imported from Mudlet archive
+Ramtir,char_ramtir,true,normal,whois imported from Mudlet archive
+Ranax,char_ranax,true,normal,whois imported from Mudlet archive
+Rancid,char_rancid,true,normal,whois imported from Mudlet archive
+Rancor,char_rancor,true,normal,whois imported from Mudlet archive
+Ranhith,char_ranhith,true,normal,whois imported from Mudlet archive
+Rankin,char_rankin,true,normal,whois returned no extant character information in MUME
+Ranna,char_ranna,true,normal,whois imported from Mudlet archive
+Rashnak,char_rashnak,true,normal,whois imported from Mudlet archive
+Rasputin,char_rasputin,true,normal,whois imported from Mudlet archive
+Rasta,char_rasta,true,normal,whois imported from Mudlet archive
+Rastik,char_rastik,true,normal,whois imported from Mudlet archive
+Ratark,char_ratark,true,normal,whois returned no extant character information in MUME
+Raudo,char_raudo,true,normal,whois imported from Mudlet archive
+Rauko,char_rauko,true,normal,whois imported from Mudlet archive
+Raun,char_raun,true,normal,whois imported from Mudlet archive
+Ravendark,char_ravendark,true,normal,whois imported from Mudlet archive
+Ray,char_ray,true,normal,whois imported from Mudlet archive
+Rayden,char_rayden,true,normal,whois imported from Mudlet archive
+Razamazar,char_razamazar,true,normal,whois imported from Mudlet archive
+Raze,char_raze,true,normal,whois imported from Mudlet archive
+Razoor,char_razoor,true,normal,whois imported from Mudlet archive
+Reaper,char_reaper,true,normal,whois imported from Mudlet archive
+Rebeka,char_rebeka,true,normal,whois returned no extant character information in MUME
+Reef,char_reef,true,normal,whois imported from Mudlet archive
+Regin,char_regin,true,normal,whois imported from Mudlet archive
+Reijki,char_reijki,true,normal,whois imported from Mudlet archive
+Reikor,char_reikor,true,normal,whois returned no extant character information in MUME
 Relim,char_relim,true,normal,whois imported from Mudlet archive
-Remorse,char_remorse,false,normal,
-Rend,char_rend,false,normal,
-Rendra,char_rendra,false,normal,
-Reno,char_reno,false,normal,
-Rentera,char_rentera,false,normal,
-Revenan,char_revenan,false,normal,
-Rhand,char_rhand,false,normal,
-Rhobe,char_rhobe,false,normal,
-Rhodry,char_rhodry,false,normal,
-Rhombuc,char_rhombuc,false,normal,
-Rhuarc,char_rhuarc,false,normal,
-Rhuka,char_rhuka,false,normal,
-Ric,char_ric,false,normal,
-Riekor,char_riekor,false,normal,
+Remorse,char_remorse,true,normal,whois returned no extant character information in MUME
+Rend,char_rend,true,normal,whois imported from Mudlet archive
+Rendra,char_rendra,true,normal,whois imported from Mudlet archive
+Reno,char_reno,true,normal,whois imported from Mudlet archive
+Rentera,char_rentera,true,normal,whois imported from Mudlet archive
+Revenan,char_revenan,true,normal,whois imported from Mudlet archive
+Rhand,char_rhand,true,normal,whois imported from Mudlet archive
+Rhobe,char_rhobe,true,normal,whois imported from Mudlet archive
+Rhodry,char_rhodry,true,normal,whois imported from Mudlet archive
+Rhombuc,char_rhombuc,true,normal,whois imported from Mudlet archive
+Rhuarc,char_rhuarc,true,normal,whois imported from Mudlet archive
+Rhuka,char_rhuka,true,normal,whois imported from Mudlet archive
+Ric,char_ric,true,normal,whois imported from Mudlet archive
+Riekor,char_riekor,true,normal,whois imported from Mudlet archive
 Rik,char_rik,true,normal,whois imported from Mudlet archive
-Rimnark,char_rimnark,false,normal,
-Rio,char_rio,false,normal,
-Riordan,char_riordan,false,normal,
-Rippin,char_rippin,false,normal,
-Risca,char_risca,false,normal,
-Risp,char_risp,false,normal,
-Rivet,char_rivet,false,normal,
-Roadkill,char_roadkill,false,normal,
-Rockfish,char_rockfish,false,normal,
-Rodan,char_rodan,false,normal,
-Rodothlim,char_rodothlim,false,normal,
-Rogon,char_rogon,false,normal,
-Rohic,char_rohic,false,normal,
-Rohick,char_rohick,false,normal,
-Rohik,char_rohik,false,normal,
-Roman,char_roman,false,normal,
-Romin,char_romin,false,normal,
-Ronin,char_ronin,false,normal,
-Rorka,char_rorka,false,normal,
-Rot,char_rot,false,normal,
-Rotho,char_rotho,false,normal,
-Rotmos,char_rotmos,false,normal,
-Roxik,char_roxik,false,normal,
-Royal,char_royal,false,normal,
-Rugorn,char_rugorn,false,normal,
-Rukan,char_rukan,false,normal,
-Rulla,char_rulla,false,normal,
-Rumble,char_rumble,false,normal,
-Rumptsais,char_rumptsais,false,normal,
-Runk,char_runk,false,normal,
-Ruul,char_ruul,false,normal,
-Ryu,char_ryu,false,normal,
-Rza,char_rza,false,normal,
-S in,char_s_in,false,normal,
-Sabadon,char_sabadon,false,normal,
-Saber,char_saber,false,normal,
-Sabish,char_sabish,false,normal,
-Sabu,char_sabu,false,normal,
-Saemo,char_saemo,false,normal,
-Saeth,char_saeth,false,normal,
-Sai,char_sai,false,normal,
-Saint,char_saint,false,normal,
-Sakuolts,char_sakuolts,false,normal,
-Sakura,char_sakura,false,normal,
-Salas,char_salas,false,normal,
-Salmar,char_salmar,false,normal,
-Salta,char_salta,false,normal,
-San,char_san,false,normal,
+Rimnark,char_rimnark,true,normal,whois returned no extant character information in MUME
+Rio,char_rio,true,normal,whois imported from Mudlet archive
+Riordan,char_riordan,true,normal,whois imported from Mudlet archive
+Rippin,char_rippin,true,normal,whois imported from Mudlet archive
+Risca,char_risca,true,normal,whois imported from Mudlet archive
+Risp,char_risp,true,normal,whois imported from Mudlet archive
+Rivet,char_rivet,true,normal,whois imported from Mudlet archive
+Roadkill,char_roadkill,true,normal,whois returned no extant character information in MUME
+Rockfish,char_rockfish,true,normal,whois returned no extant character information in MUME
+Rodan,char_rodan,true,normal,whois returned no extant character information in MUME
+Rodothlim,char_rodothlim,true,normal,whois imported from Mudlet archive
+Rogon,char_rogon,true,normal,whois imported from Mudlet archive
+Rohic,char_rohic,true,normal,whois imported from Mudlet archive
+Rohick,char_rohick,true,normal,whois imported from Mudlet archive
+Rohik,char_rohik,true,normal,whois imported from Mudlet archive
+Roman,char_roman,true,normal,whois imported from Mudlet archive
+Romin,char_romin,true,normal,whois imported from Mudlet archive
+Ronin,char_ronin,true,normal,whois imported from Mudlet archive
+Rorka,char_rorka,true,normal,whois imported from Mudlet archive
+Rot,char_rot,true,normal,whois returned no extant character information in MUME
+Rotho,char_rotho,true,normal,whois imported from Mudlet archive
+Rotmos,char_rotmos,true,normal,whois returned no extant character information in MUME
+Roxik,char_roxik,true,normal,whois returned no extant character information in MUME
+Royal,char_royal,true,normal,whois imported from Mudlet archive
+Rugorn,char_rugorn,true,normal,whois imported from Mudlet archive
+Rukan,char_rukan,true,normal,whois returned no extant character information in MUME
+Rulla,char_rulla,true,normal,whois imported from Mudlet archive
+Rumble,char_rumble,true,normal,whois imported from Mudlet archive
+Rumptsais,char_rumptsais,true,normal,whois imported from Mudlet archive
+Runk,char_runk,true,normal,whois returned no extant character information in MUME
+Ruul,char_ruul,true,normal,whois imported from Mudlet archive
+Ryu,char_ryu,true,normal,whois imported from Mudlet archive
+Rza,char_rza,true,normal,whois imported from Mudlet archive
+S in,char_s_in,true,normal,whois returned no extant character information in MUME
+Sabadon,char_sabadon,true,normal,whois imported from Mudlet archive
+Saber,char_saber,true,normal,whois imported from Mudlet archive
+Sabish,char_sabish,true,normal,whois imported from Mudlet archive
+Sabu,char_sabu,true,normal,whois returned no extant character information in MUME
+Saemo,char_saemo,true,normal,whois imported from Mudlet archive
+Saeth,char_saeth,true,normal,whois imported from Mudlet archive
+Sai,char_sai,true,normal,whois returned no extant character information in MUME
+Saint,char_saint,true,normal,whois imported from Mudlet archive
+Sakuolts,char_sakuolts,true,normal,whois imported from Mudlet archive
+Sakura,char_sakura,true,normal,whois imported from Mudlet archive
+Salas,char_salas,true,normal,whois returned no extant character information in MUME
+Salmar,char_salmar,true,normal,whois imported from Mudlet archive
+Salta,char_salta,true,normal,whois imported from Mudlet archive
+San,char_san,true,normal,whois imported from Mudlet archive
 Santana,char_santana,true,normal,whois imported from Mudlet archive
-Sarah,char_sarah,false,normal,
-Sardaukar,char_sardaukar,false,normal,
-Scaramanga,char_scaramanga,false,normal,
-Schmidt,char_schmidt,false,normal,
-Scorn,char_scorn,false,normal,
-Scorpio,char_scorpio,false,normal,
-Scotty,char_scotty,false,normal,
-Scrape,char_scrape,false,normal,
-Scythe,char_scythe,false,normal,
-Seek,char_seek,false,normal,
-Seethe,char_seethe,false,normal,
-Sehanine,char_sehanine,false,normal,
-Selde,char_selde,false,normal,
-Semirhage,char_semirhage,false,normal,
-Serate,char_serate,false,normal,
-Serion,char_serion,false,normal,
-Sethron,char_sethron,false,normal,
-Shades,char_shades,false,normal,
-Shadoh,char_shadoh,false,normal,
-Shadrach,char_shadrach,false,normal,
-Shaff,char_shaff,false,normal,
-Shagra,char_shagra,false,normal,
-Shagrath,char_shagrath,false,normal,
-Shaigan,char_shaigan,false,normal,
-Shaitan,char_shaitan,false,normal,
-Shala,char_shala,false,normal,
-Shaolin,char_shaolin,false,normal,
-Sharaaz,char_sharaaz,false,normal,
-Sharan,char_sharan,false,normal,
-Sharg,char_sharg,false,normal,
-Sharghl,char_sharghl,false,normal,
-Sharmak,char_sharmak,false,normal,
-Shartomb,char_shartomb,false,normal,
-Shashakar,char_shashakar,false,normal,
-Shathur,char_shathur,false,normal,
-Sheol,char_sheol,false,normal,
-Shimmer,char_shimmer,false,normal,
-Shorty,char_shorty,false,normal,
-Shravl,char_shravl,false,normal,
-Shrew,char_shrew,false,normal,
-Shriek,char_shriek,false,normal,
-Shrimp,char_shrimp,false,normal,
-Sibur,char_sibur,false,normal,
-Sikander,char_sikander,false,normal,
-Sil,char_sil,false,normal,
-Silencio,char_silencio,false,normal,
-Silenoz,char_silenoz,false,normal,
-Sillian,char_sillian,false,normal,
-Silmarin,char_silmarin,false,normal,
-Simba,char_simba,false,normal,
-Sindorie,char_sindorie,false,normal,
-Singha,char_singha,false,normal,
-Sinner,char_sinner,false,normal,
-Sirael,char_sirael,false,normal,
-Siriala,char_siriala,false,normal,
-Siroth,char_siroth,false,normal,
-Sisalik,char_sisalik,false,normal,
-Sistina,char_sistina,false,normal,
-Sivanor,char_sivanor,false,normal,
-Skip,char_skip,false,normal,
-Skitz,char_skitz,false,normal,
-Skud,char_skud,false,normal,
-Skyfire,char_skyfire,false,normal,
-Slobber,char_slobber,false,normal,
-Sloo,char_sloo,false,normal,
-Sloshed,char_sloshed,false,normal,
-Sloth,char_sloth,false,normal,
-Smallfist,char_smallfist,false,normal,
-Smasher,char_smasher,false,normal,
-Smitsy,char_smitsy,false,normal,
-Smoke,char_smoke,false,normal,
-Smrtak,char_smrtak,false,normal,
-Smrtihlav,char_smrtihlav,false,normal,
-Snark,char_snark,false,normal,
-Snick,char_snick,false,normal,
-Snicker,char_snicker,false,normal,
-Snigel,char_snigel,false,normal,
-Snooker,char_snooker,false,normal,
-Snork,char_snork,false,normal,
-Snotty,char_snotty,false,normal,
-Snowball,char_snowball,false,normal,
-Snowy,char_snowy,false,normal,
-Snuggles,char_snuggles,false,normal,
-Soerd,char_soerd,false,normal,
-Sofinia,char_sofinia,false,normal,
-Sookoll,char_sookoll,false,normal,
-Soother,char_soother,false,normal,
-Sophia,char_sophia,false,normal,
-Sophiajansson,char_sophiajansson,false,normal,
-Space,char_space,false,normal,
-Spark,char_spark,false,normal,
-Spears,char_spears,false,normal,
-Spiffdark,char_spiffdark,false,normal,
-Spinner,char_spinner,false,normal,
-Spiritus,char_spiritus,false,normal,
-Splat,char_splat,false,normal,
-Splatter,char_splatter,false,normal,
-Spooky,char_spooky,false,normal,
-Spud,char_spud,false,normal,
-Squasher,char_squasher,false,normal,
-Squidgy,char_squidgy,false,normal,
-Squiffy,char_squiffy,false,normal,
-Stampe,char_stampe,false,normal,
-Starobahno,char_starobahno,false,normal,
-Starsa,char_starsa,false,normal,
-Stealthy,char_stealthy,false,normal,
-Steele,char_steele,false,normal,
-Stile,char_stile,false,normal,
-Stolb,char_stolb,false,normal,
-Stormblast,char_stormblast,false,normal,
-Strine,char_strine,false,normal,
-Stussy,char_stussy,false,normal,
-Stylie,char_stylie,false,normal,
-Sufur,char_sufur,false,normal,
-Suiram,char_suiram,false,normal,
-Sunaire,char_sunaire,false,normal,
-Sunflower,char_sunflower,false,normal,
-Sunshine,char_sunshine,false,normal,
-Svarog,char_svarog,false,normal,
-Svin,char_svin,false,normal,
-Swork,char_swork,false,normal,
-Sylan,char_sylan,false,normal,
-Taelo,char_taelo,false,normal,
-Taggert,char_taggert,false,normal,
-Tagrid,char_tagrid,false,normal,
-Tagrin,char_tagrin,false,normal,
-Tahkr,char_tahkr,false,normal,
-Tairach,char_tairach,false,normal,
-Talson,char_talson,false,normal,
-Tanc,char_tanc,false,normal,
-Tandada,char_tandada,false,normal,
-Tanelorn,char_tanelorn,false,normal,
-Tarannon,char_tarannon,false,normal,
-Tardeer,char_tardeer,false,normal,
-Tars,char_tars,false,normal,
-Tasa,char_tasa,false,normal,
-Tasslehoff,char_tasslehoff,false,normal,
-Tauin,char_tauin,false,normal,
-Taurek,char_taurek,false,normal,
-Tear,char_tear,false,normal,
-Teejay,char_teejay,false,normal,
-Teeny,char_teeny,false,normal,
-Telith,char_telith,false,normal,
-Telumehtar,char_telumehtar,false,normal,
-Temegl,char_temegl,false,normal,
-Tempest,char_tempest,false,normal,
-Teomyr,char_teomyr,false,normal,
-Terendul,char_terendul,false,normal,
-Tervin,char_tervin,false,normal,
-Tessa,char_tessa,false,normal,
-Teufel,char_teufel,false,normal,
-Tezcatlipoca,char_tezcatlipoca,false,normal,
-Tha,char_tha,false,normal,
-Thalantyr,char_thalantyr,false,normal,
-Thanis,char_thanis,false,normal,
-Thanquol,char_thanquol,false,normal,
-Tharain,char_tharain,false,normal,
-Tharam,char_tharam,false,normal,
-Tharl,char_tharl,false,normal,
-Tharon,char_tharon,false,normal,
-Thedeen,char_thedeen,false,normal,
-Theofur,char_theofur,false,normal,
-Thezi,char_thezi,false,normal,
-Thilax,char_thilax,false,normal,
-Thiondash,char_thiondash,false,normal,
-Thoirin,char_thoirin,false,normal,
-Thonr,char_thonr,false,normal,
-Thorak,char_thorak,false,normal,
-Thorny,char_thorny,false,normal,
-Thoronwe,char_thoronwe,false,normal,
-Thorzor,char_thorzor,false,normal,
-Thrak,char_thrak,false,normal,
-Throg,char_throg,false,normal,
-Throin,char_throin,false,normal,
-Throk,char_throk,false,normal,
-Thror,char_thror,false,normal,
-Thwag,char_thwag,false,normal,
-Tia,char_tia,false,normal,
-Tiamat,char_tiamat,false,normal,
-Tianbao,char_tianbao,false,normal,
-Tim,char_tim,false,normal,
-Tindomerel,char_tindomerel,false,normal,
-Toe,char_toe,false,normal,
-Toin,char_toin,false,normal,
-Toker,char_toker,false,normal,
-Toku,char_toku,false,normal,
-Tolman,char_tolman,false,normal,
-Tommy,char_tommy,false,normal,
-Topas,char_topas,false,normal,
-Tora,char_tora,false,normal,
-Toran,char_toran,false,normal,
-Torham,char_torham,false,normal,
-Torkild,char_torkild,false,normal,
-Torment,char_torment,false,normal,
-Torq,char_torq,false,normal,
-Torvald,char_torvald,false,normal,
-Toulen,char_toulen,false,normal,
-Tragg,char_tragg,false,normal,
-Tragikomix,char_tragikomix,false,normal,
-Tram,char_tram,false,normal,
-Trandar,char_trandar,false,normal,
-Trasdockan,char_trasdockan,false,normal,
-Trassel,char_trassel,false,normal,
-Traverza,char_traverza,false,normal,
-Trazsh,char_trazsh,false,normal,
-Tri,char_tri,false,normal,
-Trinity,char_trinity,false,normal,
-Trobo,char_trobo,false,normal,
-Troin,char_troin,false,normal,
-Troom,char_troom,false,normal,
-Trori,char_trori,false,normal,
-Tukanek,char_tukanek,false,normal,
-Tulkass,char_tulkass,false,normal,
-Tupoun,char_tupoun,false,normal,
-Turgon,char_turgon,false,normal,
-Turim,char_turim,false,normal,
-Turviniel,char_turviniel,false,normal,
-Tutti,char_tutti,false,normal,
-Tvimina,char_tvimina,false,normal,
-Twog,char_twog,false,normal,
-Twoq,char_twoq,false,normal,
-Tygr,char_tygr,false,normal,
-Tyrion,char_tyrion,false,normal,
-Tzanck,char_tzanck,false,normal,
-Uber,char_uber,false,normal,
-Udo,char_udo,false,normal,
-Uffe,char_uffe,false,normal,
-Ugash,char_ugash,false,normal,
-Ughar,char_ughar,false,normal,
-Ugnez,char_ugnez,false,normal,
+Sarah,char_sarah,true,normal,whois imported from Mudlet archive
+Sardaukar,char_sardaukar,true,normal,whois imported from Mudlet archive
+Scaramanga,char_scaramanga,true,normal,whois returned no extant character information in MUME
+Schmidt,char_schmidt,true,normal,whois imported from Mudlet archive
+Scorn,char_scorn,true,normal,whois imported from Mudlet archive
+Scorpio,char_scorpio,true,normal,whois imported from Mudlet archive
+Scotty,char_scotty,true,normal,whois imported from Mudlet archive
+Scrape,char_scrape,true,normal,whois imported from Mudlet archive
+Scythe,char_scythe,true,normal,whois returned no extant character information in MUME
+Seek,char_seek,true,normal,whois imported from Mudlet archive
+Seethe,char_seethe,true,normal,whois imported from Mudlet archive
+Sehanine,char_sehanine,true,normal,whois imported from Mudlet archive
+Selde,char_selde,true,normal,whois returned no extant character information in MUME
+Semirhage,char_semirhage,true,normal,whois imported from Mudlet archive
+Serate,char_serate,true,normal,whois imported from Mudlet archive
+Serion,char_serion,true,normal,whois imported from Mudlet archive
+Sethron,char_sethron,true,normal,whois imported from Mudlet archive
+Shades,char_shades,true,normal,whois imported from Mudlet archive
+Shadoh,char_shadoh,true,normal,whois imported from Mudlet archive
+Shadrach,char_shadrach,true,normal,whois imported from Mudlet archive
+Shaff,char_shaff,true,normal,whois returned no extant character information in MUME
+Shagra,char_shagra,true,normal,whois imported from Mudlet archive
+Shagrath,char_shagrath,true,normal,whois imported from Mudlet archive
+Shaigan,char_shaigan,true,normal,whois imported from Mudlet archive
+Shaitan,char_shaitan,true,normal,whois imported from Mudlet archive
+Shala,char_shala,true,normal,whois imported from Mudlet archive
+Shaolin,char_shaolin,true,normal,whois returned no extant character information in MUME
+Sharaaz,char_sharaaz,true,normal,whois imported from Mudlet archive
+Sharan,char_sharan,true,normal,whois returned no extant character information in MUME
+Sharg,char_sharg,true,normal,whois imported from Mudlet archive
+Sharghl,char_sharghl,true,normal,whois returned no extant character information in MUME
+Sharmak,char_sharmak,true,normal,whois imported from Mudlet archive
+Shartomb,char_shartomb,true,normal,whois imported from Mudlet archive
+Shashakar,char_shashakar,true,normal,whois returned no extant character information in MUME
+Shathur,char_shathur,true,normal,whois imported from Mudlet archive
+Sheol,char_sheol,true,normal,whois imported from Mudlet archive
+Shimmer,char_shimmer,true,normal,whois imported from Mudlet archive
+Shorty,char_shorty,true,normal,whois imported from Mudlet archive
+Shravl,char_shravl,true,normal,whois returned no extant character information in MUME
+Shrew,char_shrew,true,normal,whois imported from Mudlet archive
+Shriek,char_shriek,true,normal,whois imported from Mudlet archive
+Shrimp,char_shrimp,true,normal,whois imported from Mudlet archive
+Sibur,char_sibur,true,normal,whois returned no extant character information in MUME
+Sikander,char_sikander,true,normal,whois imported from Mudlet archive
+Sil,char_sil,true,normal,whois imported from Mudlet archive
+Silencio,char_silencio,true,normal,whois imported from Mudlet archive
+Silenoz,char_silenoz,true,normal,whois imported from Mudlet archive
+Sillian,char_sillian,true,normal,whois returned no extant character information in MUME
+Silmarin,char_silmarin,true,normal,whois imported from Mudlet archive
+Simba,char_simba,true,normal,whois imported from Mudlet archive
+Sindorie,char_sindorie,true,normal,whois returned no extant character information in MUME
+Singha,char_singha,true,normal,whois returned no extant character information in MUME
+Sinner,char_sinner,true,normal,whois imported from Mudlet archive
+Sirael,char_sirael,true,normal,whois imported from Mudlet archive
+Siriala,char_siriala,true,normal,whois imported from Mudlet archive
+Siroth,char_siroth,true,normal,whois imported from Mudlet archive
+Sisalik,char_sisalik,true,normal,whois imported from Mudlet archive
+Sistina,char_sistina,true,normal,whois imported from Mudlet archive
+Sivanor,char_sivanor,true,normal,whois imported from Mudlet archive
+Skip,char_skip,true,normal,whois imported from Mudlet archive
+Skitz,char_skitz,true,normal,whois imported from Mudlet archive
+Skud,char_skud,true,normal,whois imported from Mudlet archive
+Skyfire,char_skyfire,true,normal,whois imported from Mudlet archive
+Slobber,char_slobber,true,normal,whois imported from Mudlet archive
+Sloo,char_sloo,true,normal,whois returned no extant character information in MUME
+Sloshed,char_sloshed,true,normal,whois imported from Mudlet archive
+Sloth,char_sloth,true,normal,whois imported from Mudlet archive
+Smallfist,char_smallfist,true,normal,whois imported from Mudlet archive
+Smasher,char_smasher,true,normal,whois imported from Mudlet archive
+Smitsy,char_smitsy,true,normal,whois imported from Mudlet archive
+Smoke,char_smoke,true,normal,whois imported from Mudlet archive
+Smrtak,char_smrtak,true,normal,whois imported from Mudlet archive
+Smrtihlav,char_smrtihlav,true,normal,whois imported from Mudlet archive
+Snark,char_snark,true,normal,whois imported from Mudlet archive
+Snick,char_snick,true,normal,whois imported from Mudlet archive
+Snicker,char_snicker,true,normal,whois imported from Mudlet archive
+Snigel,char_snigel,true,normal,whois returned no extant character information in MUME
+Snooker,char_snooker,true,normal,whois imported from Mudlet archive
+Snork,char_snork,true,normal,whois imported from Mudlet archive
+Snotty,char_snotty,true,normal,whois imported from Mudlet archive
+Snowball,char_snowball,true,normal,whois imported from Mudlet archive
+Snowy,char_snowy,true,normal,whois imported from Mudlet archive
+Snuggles,char_snuggles,true,normal,whois imported from Mudlet archive
+Soerd,char_soerd,true,normal,whois imported from Mudlet archive
+Sofinia,char_sofinia,true,normal,whois imported from Mudlet archive
+Sookoll,char_sookoll,true,normal,whois imported from Mudlet archive
+Soother,char_soother,true,normal,whois imported from Mudlet archive
+Sophia,char_sophia,true,normal,whois imported from Mudlet archive
+Sophiajansson,char_sophiajansson,true,normal,whois imported from Mudlet archive
+Space,char_space,true,normal,whois imported from Mudlet archive
+Spark,char_spark,true,normal,whois imported from Mudlet archive
+Spears,char_spears,true,normal,whois imported from Mudlet archive
+Spiffdark,char_spiffdark,true,normal,whois returned no extant character information in MUME
+Spinner,char_spinner,true,normal,whois imported from Mudlet archive
+Spiritus,char_spiritus,true,normal,whois returned no extant character information in MUME
+Splat,char_splat,true,normal,whois imported from Mudlet archive
+Splatter,char_splatter,true,normal,whois imported from Mudlet archive
+Spooky,char_spooky,true,normal,whois imported from Mudlet archive
+Spud,char_spud,true,normal,whois imported from Mudlet archive
+Squasher,char_squasher,true,normal,whois returned no extant character information in MUME
+Squidgy,char_squidgy,true,normal,whois imported from Mudlet archive
+Squiffy,char_squiffy,true,normal,whois imported from Mudlet archive
+Stampe,char_stampe,true,normal,whois returned no extant character information in MUME
+Starobahno,char_starobahno,true,normal,whois imported from Mudlet archive
+Starsa,char_starsa,true,normal,whois imported from Mudlet archive
+Stealthy,char_stealthy,true,normal,whois imported from Mudlet archive
+Steele,char_steele,true,normal,whois imported from Mudlet archive
+Stile,char_stile,true,normal,whois returned no extant character information in MUME
+Stolb,char_stolb,true,normal,whois imported from Mudlet archive
+Stormblast,char_stormblast,true,normal,whois imported from Mudlet archive
+Strine,char_strine,true,normal,whois returned no extant character information in MUME
+Stussy,char_stussy,true,normal,whois imported from Mudlet archive
+Stylie,char_stylie,true,normal,whois returned no extant character information in MUME
+Sufur,char_sufur,true,normal,whois returned no extant character information in MUME
+Suiram,char_suiram,true,normal,whois imported from Mudlet archive
+Sunaire,char_sunaire,true,normal,whois returned no extant character information in MUME
+Sunflower,char_sunflower,true,normal,whois imported from Mudlet archive
+Sunshine,char_sunshine,true,normal,whois imported from Mudlet archive
+Svarog,char_svarog,true,normal,whois imported from Mudlet archive
+Svin,char_svin,true,normal,whois imported from Mudlet archive
+Swork,char_swork,true,normal,whois imported from Mudlet archive
+Sylan,char_sylan,true,normal,whois imported from Mudlet archive
+Taelo,char_taelo,true,normal,whois imported from Mudlet archive
+Taggert,char_taggert,true,normal,whois imported from Mudlet archive
+Tagrid,char_tagrid,true,normal,whois returned no extant character information in MUME
+Tagrin,char_tagrin,true,normal,whois imported from Mudlet archive
+Tahkr,char_tahkr,true,normal,whois imported from Mudlet archive
+Tairach,char_tairach,true,normal,whois imported from Mudlet archive
+Talson,char_talson,true,normal,whois imported from Mudlet archive
+Tanc,char_tanc,true,normal,whois imported from Mudlet archive
+Tandada,char_tandada,true,normal,whois imported from Mudlet archive
+Tanelorn,char_tanelorn,true,normal,whois imported from Mudlet archive
+Tarannon,char_tarannon,true,normal,whois imported from Mudlet archive
+Tardeer,char_tardeer,true,normal,whois imported from Mudlet archive
+Tars,char_tars,true,normal,whois imported from Mudlet archive
+Tasa,char_tasa,true,normal,whois imported from Mudlet archive
+Tasslehoff,char_tasslehoff,true,normal,whois imported from Mudlet archive
+Tauin,char_tauin,true,normal,whois imported from Mudlet archive
+Taurek,char_taurek,true,normal,whois imported from Mudlet archive
+Tear,char_tear,true,normal,whois imported from Mudlet archive
+Teejay,char_teejay,true,normal,whois imported from Mudlet archive
+Teeny,char_teeny,true,normal,whois returned no extant character information in MUME
+Telith,char_telith,true,normal,whois imported from Mudlet archive
+Telumehtar,char_telumehtar,true,normal,whois imported from Mudlet archive
+Temegl,char_temegl,true,normal,whois returned no extant character information in MUME
+Tempest,char_tempest,true,normal,whois imported from Mudlet archive
+Teomyr,char_teomyr,true,normal,whois imported from Mudlet archive
+Terendul,char_terendul,true,normal,whois imported from Mudlet archive
+Tervin,char_tervin,true,normal,whois imported from Mudlet archive
+Tessa,char_tessa,true,normal,whois imported from Mudlet archive
+Teufel,char_teufel,true,normal,whois imported from Mudlet archive
+Tezcatlipoca,char_tezcatlipoca,true,normal,whois imported from Mudlet archive
+Tha,char_tha,true,normal,whois imported from Mudlet archive
+Thalantyr,char_thalantyr,true,normal,whois returned no extant character information in MUME
+Thanis,char_thanis,true,normal,whois returned no extant character information in MUME
+Thanquol,char_thanquol,true,normal,whois imported from Mudlet archive
+Tharain,char_tharain,true,normal,whois returned no extant character information in MUME
+Tharam,char_tharam,true,normal,whois imported from Mudlet archive
+Tharl,char_tharl,true,normal,whois returned no extant character information in MUME
+Tharon,char_tharon,true,normal,whois imported from Mudlet archive
+Thedeen,char_thedeen,true,normal,whois imported from Mudlet archive
+Theofur,char_theofur,true,normal,whois returned no extant character information in MUME
+Thezi,char_thezi,true,normal,whois imported from Mudlet archive
+Thilax,char_thilax,true,normal,whois imported from Mudlet archive
+Thiondash,char_thiondash,true,normal,whois imported from Mudlet archive
+Thoirin,char_thoirin,true,normal,whois imported from Mudlet archive
+Thonr,char_thonr,true,normal,whois imported from Mudlet archive
+Thorak,char_thorak,true,normal,whois returned no extant character information in MUME
+Thorny,char_thorny,true,normal,whois returned no extant character information in MUME
+Thoronwe,char_thoronwe,true,normal,whois imported from Mudlet archive
+Thorzor,char_thorzor,true,normal,whois imported from Mudlet archive
+Thrak,char_thrak,true,normal,whois imported from Mudlet archive
+Throg,char_throg,true,normal,whois imported from Mudlet archive
+Throin,char_throin,true,normal,whois imported from Mudlet archive
+Throk,char_throk,true,normal,whois imported from Mudlet archive
+Thror,char_thror,true,normal,whois imported from Mudlet archive
+Thwag,char_thwag,true,normal,whois imported from Mudlet archive
+Tia,char_tia,true,normal,whois imported from Mudlet archive
+Tiamat,char_tiamat,true,normal,whois imported from Mudlet archive
+Tianbao,char_tianbao,true,normal,whois imported from Mudlet archive
+Tim,char_tim,true,normal,whois imported from Mudlet archive
+Tindomerel,char_tindomerel,true,normal,whois imported from Mudlet archive
+Toe,char_toe,true,normal,whois imported from Mudlet archive
+Toin,char_toin,true,normal,whois imported from Mudlet archive
+Toker,char_toker,true,normal,whois imported from Mudlet archive
+Toku,char_toku,true,normal,whois imported from Mudlet archive
+Tolman,char_tolman,true,normal,whois imported from Mudlet archive
+Tommy,char_tommy,true,normal,whois imported from Mudlet archive
+Topas,char_topas,true,normal,whois returned no extant character information in MUME
+Tora,char_tora,true,normal,whois imported from Mudlet archive
+Toran,char_toran,true,normal,whois imported from Mudlet archive
+Torham,char_torham,true,normal,whois imported from Mudlet archive
+Torkild,char_torkild,true,normal,whois imported from Mudlet archive
+Torment,char_torment,true,normal,whois imported from Mudlet archive
+Torq,char_torq,true,normal,whois imported from Mudlet archive
+Torvald,char_torvald,true,normal,whois imported from Mudlet archive
+Toulen,char_toulen,true,normal,whois imported from Mudlet archive
+Tragg,char_tragg,true,normal,whois returned no extant character information in MUME
+Tragikomix,char_tragikomix,true,normal,whois imported from Mudlet archive
+Tram,char_tram,true,normal,whois imported from Mudlet archive
+Trandar,char_trandar,true,normal,whois returned no extant character information in MUME
+Trasdockan,char_trasdockan,true,normal,whois returned no extant character information in MUME
+Trassel,char_trassel,true,normal,whois imported from Mudlet archive
+Traverza,char_traverza,true,normal,whois imported from Mudlet archive
+Trazsh,char_trazsh,true,normal,whois imported from Mudlet archive
+Tri,char_tri,true,normal,whois returned no extant character information in MUME
+Trinity,char_trinity,true,normal,whois imported from Mudlet archive
+Trobo,char_trobo,true,normal,whois imported from Mudlet archive
+Troin,char_troin,true,normal,whois returned no extant character information in MUME
+Troom,char_troom,true,normal,whois returned no extant character information in MUME
+Trori,char_trori,true,normal,whois imported from Mudlet archive
+Tukanek,char_tukanek,true,normal,whois imported from Mudlet archive
+Tulkass,char_tulkass,true,normal,whois returned no extant character information in MUME
+Tupoun,char_tupoun,true,normal,whois imported from Mudlet archive
+Turgon,char_turgon,true,normal,whois imported from Mudlet archive
+Turim,char_turim,true,normal,whois imported from Mudlet archive
+Turviniel,char_turviniel,true,normal,whois returned no extant character information in MUME
+Tutti,char_tutti,true,normal,whois imported from Mudlet archive
+Tvimina,char_tvimina,true,normal,whois imported from Mudlet archive
+Twog,char_twog,true,normal,whois imported from Mudlet archive
+Twoq,char_twoq,true,normal,whois imported from Mudlet archive
+Tygr,char_tygr,true,normal,whois imported from Mudlet archive
+Tyrion,char_tyrion,true,normal,whois imported from Mudlet archive
+Tzanck,char_tzanck,true,normal,whois imported from Mudlet archive
+Uber,char_uber,true,normal,whois imported from Mudlet archive
+Udo,char_udo,true,normal,whois imported from Mudlet archive
+Uffe,char_uffe,true,normal,whois imported from Mudlet archive
+Ugash,char_ugash,true,normal,whois returned no extant character information in MUME
+Ughar,char_ughar,true,normal,whois imported from Mudlet archive
+Ugnez,char_ugnez,true,normal,whois imported from Mudlet archive
 Ugurz,char_ugurz,true,normal,whois imported from Mudlet archive
-Uhan,char_uhan,false,normal,
-Ukuvul,char_ukuvul,false,normal,
-Ula,char_ula,false,normal,
+Uhan,char_uhan,true,normal,whois returned no extant character information in MUME
+Ukuvul,char_ukuvul,true,normal,whois imported from Mudlet archive
+Ula,char_ula,true,normal,whois imported from Mudlet archive
 Ulairy,char_ulairy,true,normal,whois imported from Mudlet archive
-Uland,char_uland,false,normal,
-Uldrak,char_uldrak,false,normal,
-Ulfhild,char_ulfhild,false,normal,
-Ulkaar,char_ulkaar,false,normal,
-Umanidd,char_umanidd,false,normal,
-Umnik,char_umnik,false,normal,
-Undolomion,char_undolomion,false,normal,
-Ungrim,char_ungrim,false,normal,
-Unholy,char_unholy,false,normal,
-Unoc,char_unoc,false,normal,
-Uralyon,char_uralyon,false,normal,
-Uriond,char_uriond,false,normal,
-Userbius,char_userbius,false,normal,
-Uthalg,char_uthalg,false,normal,
-Uzbad,char_uzbad,false,normal,
-Vaab,char_vaab,false,normal,
-Vagdish,char_vagdish,false,normal,
-Vaim,char_vaim,false,normal,
-Vainamoinen,char_vainamoinen,false,normal,
-Valacar,char_valacar,false,normal,
-Valamir,char_valamir,false,normal,
-Valandar,char_valandar,false,normal,
-Valastule,char_valastule,false,normal,
-Valdja,char_valdja,false,normal,
-Valen,char_valen,false,normal,
-Valeria,char_valeria,false,normal,
-Valgarv,char_valgarv,false,normal,
-Valir,char_valir,false,normal,
-Valkyria,char_valkyria,false,normal,
-Valkyrie,char_valkyrie,false,normal,
-Vandal,char_vandal,false,normal,
-Vanimelde,char_vanimelde,false,normal,
-Vanir,char_vanir,false,normal,
-Vargas,char_vargas,false,normal,
+Uland,char_uland,true,normal,whois imported from Mudlet archive
+Uldrak,char_uldrak,true,normal,whois imported from Mudlet archive
+Ulfhild,char_ulfhild,true,normal,whois imported from Mudlet archive
+Ulkaar,char_ulkaar,true,normal,whois imported from Mudlet archive
+Umanidd,char_umanidd,true,normal,whois imported from Mudlet archive
+Umnik,char_umnik,true,normal,whois imported from Mudlet archive
+Undolomion,char_undolomion,true,normal,whois returned no extant character information in MUME
+Ungrim,char_ungrim,true,normal,whois imported from Mudlet archive
+Unholy,char_unholy,true,normal,whois imported from Mudlet archive
+Unoc,char_unoc,true,normal,whois returned no extant character information in MUME
+Uralyon,char_uralyon,true,normal,whois imported from Mudlet archive
+Uriond,char_uriond,true,normal,whois imported from Mudlet archive
+Userbius,char_userbius,true,normal,whois returned no extant character information in MUME
+Uthalg,char_uthalg,true,normal,whois returned no extant character information in MUME
+Uzbad,char_uzbad,true,normal,whois imported from Mudlet archive
+Vaab,char_vaab,true,normal,whois returned no extant character information in MUME
+Vagdish,char_vagdish,true,normal,whois returned no extant character information in MUME
+Vaim,char_vaim,true,normal,whois imported from Mudlet archive
+Vainamoinen,char_vainamoinen,true,normal,whois imported from Mudlet archive
+Valacar,char_valacar,true,normal,whois imported from Mudlet archive
+Valamir,char_valamir,true,normal,whois imported from Mudlet archive
+Valandar,char_valandar,true,normal,whois imported from Mudlet archive
+Valastule,char_valastule,true,normal,whois returned no extant character information in MUME
+Valdja,char_valdja,true,normal,whois imported from Mudlet archive
+Valen,char_valen,true,normal,whois imported from Mudlet archive
+Valeria,char_valeria,true,normal,whois imported from Mudlet archive
+Valgarv,char_valgarv,true,normal,whois imported from Mudlet archive
+Valir,char_valir,true,normal,whois imported from Mudlet archive
+Valkyria,char_valkyria,true,normal,whois imported from Mudlet archive
+Valkyrie,char_valkyrie,true,normal,whois imported from Mudlet archive
+Vandal,char_vandal,true,normal,whois imported from Mudlet archive
+Vanimelde,char_vanimelde,true,normal,whois imported from Mudlet archive
+Vanir,char_vanir,true,normal,whois returned no extant character information in MUME
+Vargas,char_vargas,true,normal,whois imported from Mudlet archive
 Varvar,char_varvar,true,normal,whois imported from Mudlet archive
-Vasa,char_vasa,false,normal,
-Vasilisa,char_vasilisa,false,normal,
-Vassago,char_vassago,false,normal,
-Vatsayana,char_vatsayana,false,normal,
-Vayu,char_vayu,false,normal,
-Vecna,char_vecna,false,normal,
-Venal,char_venal,false,normal,
-Verminaard,char_verminaard,false,normal,
-Viclona,char_viclona,false,normal,
-Vidomina,char_vidomina,false,normal,
-Vij,char_vij,false,normal,
-Vili,char_vili,false,normal,
-Viljar,char_viljar,false,normal,
-Vincenzo,char_vincenzo,false,normal,
-Vip,char_vip,false,normal,
-Vishnak,char_vishnak,false,normal,
-Vlas,char_vlas,false,normal,
-Voile,char_voile,false,normal,
-Vold,char_vold,false,normal,
-Voltron,char_voltron,false,normal,
-Vorne,char_vorne,false,normal,
-Vortex,char_vortex,false,normal,
-Vradul,char_vradul,false,normal,
-Vral,char_vral,false,normal,
-Vrede,char_vrede,false,normal,
-Vridush,char_vridush,false,normal,
-Vr�sh,char_vr_sh,false,normal,
-Vsevolod,char_vsevolod,false,normal,
+Vasa,char_vasa,true,normal,whois imported from Mudlet archive
+Vasilisa,char_vasilisa,true,normal,whois imported from Mudlet archive
+Vassago,char_vassago,true,normal,whois imported from Mudlet archive
+Vatsayana,char_vatsayana,true,normal,whois returned no extant character information in MUME
+Vayu,char_vayu,true,normal,whois returned no extant character information in MUME
+Vecna,char_vecna,true,normal,whois imported from Mudlet archive
+Venal,char_venal,true,normal,whois returned no extant character information in MUME
+Verminaard,char_verminaard,true,normal,whois imported from Mudlet archive
+Viclona,char_viclona,true,normal,whois imported from Mudlet archive
+Vidomina,char_vidomina,true,normal,whois imported from Mudlet archive
+Vij,char_vij,true,normal,whois imported from Mudlet archive
+Vili,char_vili,true,normal,whois imported from Mudlet archive
+Viljar,char_viljar,true,normal,whois returned no extant character information in MUME
+Vincenzo,char_vincenzo,true,normal,whois imported from Mudlet archive
+Vip,char_vip,true,normal,whois imported from Mudlet archive
+Vishnak,char_vishnak,true,normal,whois imported from Mudlet archive
+Vlas,char_vlas,true,normal,whois imported from Mudlet archive
+Voile,char_voile,true,normal,whois imported from Mudlet archive
+Vold,char_vold,true,normal,whois imported from Mudlet archive
+Voltron,char_voltron,true,normal,whois imported from Mudlet archive
+Vorne,char_vorne,true,normal,whois returned no extant character information in MUME
+Vortex,char_vortex,true,normal,whois imported from Mudlet archive
+Vradul,char_vradul,true,normal,whois imported from Mudlet archive
+Vral,char_vral,true,normal,whois returned no extant character information in MUME
+Vrede,char_vrede,true,normal,whois imported from Mudlet archive
+Vridush,char_vridush,true,normal,whois imported from Mudlet archive
+Vr�sh,char_vr_sh,true,normal,whois returned no extant character information in MUME
+Vsevolod,char_vsevolod,true,normal,whois imported from Mudlet archive
 Vugluskr,char_vugluskr,true,normal,whois imported from Mudlet archive
-Vulgar,char_vulgar,false,normal,
-Waba,char_waba,false,normal,
-Wacka,char_wacka,false,normal,
-Wacker,char_wacker,false,normal,
-Warren,char_warren,false,normal,
-Warzur,char_warzur,false,normal,
-Watar,char_watar,false,normal,
-Wenom,char_wenom,false,normal,
-Wert,char_wert,false,normal,
-Wes,char_wes,false,normal,
-Wierd,char_wierd,false,normal,
-Wilma,char_wilma,false,normal,
-Wind,char_wind,false,normal,
-Winnie,char_winnie,false,normal,
-Winzy,char_winzy,false,normal,
-Wobbit,char_wobbit,false,normal,
-Woe,char_woe,false,normal,
-Woitkah,char_woitkah,false,normal,
+Vulgar,char_vulgar,true,normal,whois returned no extant character information in MUME
+Waba,char_waba,true,normal,whois imported from Mudlet archive
+Wacka,char_wacka,true,normal,whois imported from Mudlet archive
+Wacker,char_wacker,true,normal,whois returned no extant character information in MUME
+Warren,char_warren,true,normal,whois imported from Mudlet archive
+Warzur,char_warzur,true,normal,whois imported from Mudlet archive
+Watar,char_watar,true,normal,whois imported from Mudlet archive
+Wenom,char_wenom,true,normal,whois imported from Mudlet archive
+Wert,char_wert,true,normal,whois returned no extant character information in MUME
+Wes,char_wes,true,normal,whois returned no extant character information in MUME
+Wierd,char_wierd,true,normal,whois imported from Mudlet archive
+Wilma,char_wilma,true,normal,whois imported from Mudlet archive
+Wind,char_wind,true,normal,whois imported from Mudlet archive
+Winnie,char_winnie,true,normal,whois imported from Mudlet archive
+Winzy,char_winzy,true,normal,whois imported from Mudlet archive
+Wobbit,char_wobbit,true,normal,whois imported from Mudlet archive
+Woe,char_woe,true,normal,whois imported from Mudlet archive
+Woitkah,char_woitkah,true,normal,whois returned no extant character information in MUME
 Woland,char_woland,true,normal,whois imported from Mudlet archive
-Wong,char_wong,false,normal,
-Wow,char_wow,false,normal,
-Wreth,char_wreth,false,normal,
-Wroom,char_wroom,false,normal,
-Wryak,char_wryak,false,normal,
-Wryth,char_wryth,false,normal,
-Wucheria,char_wucheria,false,normal,
-Wurzl,char_wurzl,false,normal,
-Wyzz,char_wyzz,false,normal,
-Xagok,char_xagok,false,normal,
-Xaltotun,char_xaltotun,false,normal,
-Xandahar,char_xandahar,false,normal,
-Xander,char_xander,false,normal,
-Xatax,char_xatax,false,normal,
-Xel,char_xel,false,normal,
-Xelloss,char_xelloss,false,normal,
-Xile,char_xile,false,normal,
-Xylo,char_xylo,false,normal,
-Yagara,char_yagara,false,normal,
-Yanwe,char_yanwe,false,normal,
-Ypsilon,char_ypsilon,false,normal,
-Ytinas,char_ytinas,false,normal,
-Zaber,char_zaber,false,normal,
-Zanetha,char_zanetha,false,normal,
-Zar,char_zar,false,normal,
-Ze,char_ze,false,normal,
-Zed,char_zed,false,normal,
-Zeddicus,char_zeddicus,false,normal,
-Zerabethulh,char_zerabethulh,false,normal,
-Zeroth,char_zeroth,false,normal,
-Zeus,char_zeus,false,normal,
-Zevier,char_zevier,false,normal,
-Zhagrat,char_zhagrat,false,normal,
-Zhorgas,char_zhorgas,false,normal,
-Zhuk,char_zhuk,false,normal,
-Zigrakh,char_zigrakh,false,normal,
-Zigurakhor,char_zigurakhor,false,normal,
-Zilkis,char_zilkis,false,normal,
-Zimar,char_zimar,false,normal,
-Zimrathon,char_zimrathon,false,normal,
-Zina,char_zina,false,normal,
-Zirand,char_zirand,false,normal,
-Zlababa,char_zlababa,false,normal,
-Zlo,char_zlo,false,normal,
-Zmej,char_zmej,false,normal,
-Zocker,char_zocker,false,normal,
-Zomb,char_zomb,false,normal,
-Zoone,char_zoone,false,normal,
-Zopa,char_zopa,false,normal,
-Zorek,char_zorek,false,normal,
-Zorgmol,char_zorgmol,false,normal,
-Zorgoth,char_zorgoth,false,normal,
-Zorrak,char_zorrak,false,normal,
-Zoser,char_zoser,false,normal,
-Zroi,char_zroi,false,normal,
-Zubr,char_zubr,false,normal,
-Zug,char_zug,false,normal,
-Zuljin,char_zuljin,false,normal,
-Zygmud,char_zygmud,false,normal,
+Wong,char_wong,true,normal,whois imported from Mudlet archive
+Wow,char_wow,true,normal,whois imported from Mudlet archive
+Wreth,char_wreth,true,normal,whois returned no extant character information in MUME
+Wroom,char_wroom,true,normal,whois returned no extant character information in MUME
+Wryak,char_wryak,true,normal,whois imported from Mudlet archive
+Wryth,char_wryth,true,normal,whois returned no extant character information in MUME
+Wucheria,char_wucheria,true,normal,whois imported from Mudlet archive
+Wurzl,char_wurzl,true,normal,whois imported from Mudlet archive
+Wyzz,char_wyzz,true,normal,whois imported from Mudlet archive
+Xagok,char_xagok,true,normal,whois imported from Mudlet archive
+Xaltotun,char_xaltotun,true,normal,whois imported from Mudlet archive
+Xandahar,char_xandahar,true,normal,whois imported from Mudlet archive
+Xander,char_xander,true,normal,whois imported from Mudlet archive
+Xatax,char_xatax,true,normal,whois returned no extant character information in MUME
+Xel,char_xel,true,normal,whois returned no extant character information in MUME
+Xelloss,char_xelloss,true,normal,whois imported from Mudlet archive
+Xile,char_xile,true,normal,whois imported from Mudlet archive
+Xylo,char_xylo,true,normal,whois returned no extant character information in MUME
+Yagara,char_yagara,true,normal,whois returned no extant character information in MUME
+Yanwe,char_yanwe,true,normal,whois imported from Mudlet archive
+Ypsilon,char_ypsilon,true,normal,whois imported from Mudlet archive
+Ytinas,char_ytinas,true,normal,whois imported from Mudlet archive
+Zaber,char_zaber,true,normal,whois imported from Mudlet archive
+Zanetha,char_zanetha,true,normal,whois imported from Mudlet archive
+Zar,char_zar,true,normal,whois imported from Mudlet archive
+Ze,char_ze,true,normal,whois imported from Mudlet archive
+Zed,char_zed,true,normal,whois imported from Mudlet archive
+Zeddicus,char_zeddicus,true,normal,whois imported from Mudlet archive
+Zerabethulh,char_zerabethulh,true,normal,whois imported from Mudlet archive
+Zeroth,char_zeroth,true,normal,whois imported from Mudlet archive
+Zeus,char_zeus,true,normal,whois imported from Mudlet archive
+Zevier,char_zevier,true,normal,whois imported from Mudlet archive
+Zhagrat,char_zhagrat,true,normal,whois imported from Mudlet archive
+Zhorgas,char_zhorgas,true,normal,whois imported from Mudlet archive
+Zhuk,char_zhuk,true,normal,whois imported from Mudlet archive
+Zigrakh,char_zigrakh,true,normal,whois imported from Mudlet archive
+Zigurakhor,char_zigurakhor,true,normal,whois imported from Mudlet archive
+Zilkis,char_zilkis,true,normal,whois returned no extant character information in MUME
+Zimar,char_zimar,true,normal,whois imported from Mudlet archive
+Zimrathon,char_zimrathon,true,normal,whois imported from Mudlet archive
+Zina,char_zina,true,normal,whois imported from Mudlet archive
+Zirand,char_zirand,true,normal,whois imported from Mudlet archive
+Zlababa,char_zlababa,true,normal,whois imported from Mudlet archive
+Zlo,char_zlo,true,normal,whois imported from Mudlet archive
+Zmej,char_zmej,true,normal,whois imported from Mudlet archive
+Zocker,char_zocker,true,normal,whois imported from Mudlet archive
+Zomb,char_zomb,true,normal,whois imported from Mudlet archive
+Zoone,char_zoone,true,normal,whois imported from Mudlet archive
+Zopa,char_zopa,true,normal,whois returned no extant character information in MUME
+Zorek,char_zorek,true,normal,whois imported from Mudlet archive
+Zorgmol,char_zorgmol,true,normal,whois imported from Mudlet archive
+Zorgoth,char_zorgoth,true,normal,whois imported from Mudlet archive
+Zorrak,char_zorrak,true,normal,whois imported from Mudlet archive
+Zoser,char_zoser,true,normal,whois returned no extant character information in MUME
+Zroi,char_zroi,true,normal,whois imported from Mudlet archive
+Zubr,char_zubr,true,normal,whois imported from Mudlet archive
+Zug,char_zug,true,normal,whois imported from Mudlet archive
+Zuljin,char_zuljin,true,normal,whois imported from Mudlet archive
+Zygmud,char_zygmud,true,normal,whois imported from Mudlet archive
