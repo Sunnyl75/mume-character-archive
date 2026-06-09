@@ -1,0 +1,24 @@
+term,immortal_code,immortal_rank,immortal_role,faction,rank_order,notes
+Creator of Arda,I,Implementor,Implementor,Immortals,1,Original C-coders / overall game responsibility
+Implementor,I,Implementor,Implementor,Immortals,1,Original C-coders / overall game responsibility
+Arata,A,Arata,,Immortals,2,Highly trusted immortal rank with broad access
+Arata of Code,Ac,Arata,Code,Immortals,2,Responsible for mudlle and code
+Arata of Mobs/Objects,Am/o,Arata,Mobs/Objects,Immortals,2,Responsible for mobiles and objects
+Arata of Building,Ab,Arata,Building,Immortals,2,Responsible for growing the world
+Arata of Users,Au,Arata,Users,Immortals,2,Responsible for growing the player base
+Vala,V,Vala,,Immortals,3,Highly trusted immortal rank
+Vala Architect,Va,Vala,Architect,Immortals,3,Zone/area development and supervision
+Architect,Va,Vala,Architect,Immortals,3,Zone/area development and supervision
+Vala Mudller,Vm,Vala,Mudller,Immortals,3,Mudlle/code development
+Mudller,Vm,Vala,Mudller,Immortals,3,Mudlle/code development
+Maia Shaper,Ms,Maia,Shaper,Immortals,4,Senior Maia / world maintenance and supervision
+Shaper,Ms,Maia,Shaper,Immortals,4,Senior Maia / world maintenance and supervision
+Maia Wright,Mw,Maia,Wright,Immortals,5,Finished building a full zone
+Wright,Mw,Maia,Wright,Immortals,5,Finished building a full zone
+Maia Builder,Mb,Maia,Builder,Immortals,6,Finished describing a full zone
+Builder,Mb,Maia,Builder,Immortals,6,Finished describing a full zone
+Maia Cartographer,Mc,Maia,Cartographer,Immortals,7,Helped build/improve a small part of Arda or first zone work
+Cartographer,Mc,Maia,Cartographer,Immortals,7,Helped build/improve a small part of Arda or first zone work
+Maia,M,Maia,,Immortals,8,Plain Maia / lowest Maia rank
+one of the Aratar,A,Arata,,Immortals,2,"Phrase observed in whois descriptors such as Vala, one of the Aratar"
+Aratar,A,Arata,,Immortals,2,Plural/group form of Arata; immortal rank level

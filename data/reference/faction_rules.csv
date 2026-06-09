@@ -1,0 +1,10 @@
+rule_id,priority,match_field,match_value,faction,confidence,notes
+immortal_maia,10,race,Maia,Immortals,high,All Maia are Ainur/immortals
+immortal_vala,10,race,Vala,Immortals,high,Valar are Ainur/immortals
+immortal_arata,10,race,Arata,Immortals,high,Aratar are Ainur/immortals
+immortal_implementor,10,immortal_rank,Implementor,Immortals,high,Implementors are immortal/admin rank
+zaugurz,20,subrace,Zaugurz,Renegade Zaugurz,high,Zaugurz orcs are their own faction
+orc_minion,30,race,Orc,Minions of Sauron,high,Non-Zaugurz orcs are Minions
+troll_minion,30,race,Troll,Minions of Sauron,high,Trolls are Minions
+black_numenorean_minion,30,subrace,Black Númenórean,Minions of Sauron,high,Black Númenóreans are Minions
+mortal_default,90,mortality,mortal,Free Peoples,medium,Mortal characters not otherwise Minions/Zaugurz are Free Peoples
