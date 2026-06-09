@@ -1,0 +1,2 @@
+MUME.Client protocol error: {"message":"GMCP JSON parse error: \"[ \\\"Char 1\\\", \\\"Client 1\\\", \\\"Room 1\\\" \""}Bladorfat is a Maia (Cartographer).
+Is playing from [numerical address].

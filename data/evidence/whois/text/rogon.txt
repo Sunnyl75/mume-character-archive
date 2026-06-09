@@ -1,0 +1,3 @@
+Rogon Rogoff is a Vala, one of the Aratar.
+
+When it comes to new objects, the sdesc is 75% of the work, not even joking.

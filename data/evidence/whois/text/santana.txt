@@ -1,0 +1,15 @@
+Santana is a level twenty-six Tarkhnarb Assassin
+Santana is a level twenty-six Tarkhnarb Assassin
+    [Retired].
+
+* W S C>exits
+North - The glare of the sun burns your eyes.   <- street
+East  - Lab Entrance
+South - The glare of the sun burns your eyes.   <- street
+
+* W S C>e
+You feel so much better hiding in the shadows!  <- YEAH!!!
+Your lovely lab where you play MUME.
+Exits: East *West*.
+
+!# CW>
