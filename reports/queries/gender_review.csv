@@ -1,0 +1,750 @@
+character_id,character_name,derived_gender,derived_gender_confidence,source_descriptor,derived_race,derived_faction,derived_base_class,derived_class_title,classification_status,classification_notes,review_needed
+char_alicia,Alicia,female,high,Dwarven Weaponsmistress,Dwarf,Free Peoples,Warrior,Weaponsmistress,classified,race_term=Dwarven | class_title=Weaponsmistress,no
+char_alvedon,Alvedon,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_alázar,Alázar,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_amelia,Amelia,female,high,Noldorin Mistress of Healing,Elf,Free Peoples,Cleric,Mistress of Healing,classified,race_term=Noldorin | class_title=Mistress of Healing,no
+char_ardent,Ardent,male,high,Dwarven Patriarch,Dwarf,Free Peoples,Cleric,Patriarch,classified,race_term=Dwarven | class_title=Patriarch,no
+char_arelia,Arelia,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_bizarre,Bizarre,female,high,Half-elven Heroine,Half-Elf,Free Peoples,Warrior,Heroine,classified,race_term=Half-elven | class_title=Heroine,no
+char_bootyho,Bootyho,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_bornack,Bornack,male,high,Eriadorian Patriarch,Man,Free Peoples,Cleric,Patriarch,classified,race_term=Eriadorian | class_title=Patriarch,no
+char_bruni,Bruni,male,high,Dwarven Patriarch,Dwarf,Free Peoples,Cleric,Patriarch,classified,race_term=Dwarven | class_title=Patriarch,no
+char_death,Death,female,high,Tarkhnarb Weaponsmistress,Orc,Minions of Sauron,Warrior,Weaponsmistress,classified,race_term=Tarkhnarb | class_title=Weaponsmistress,no
+char_eldan,Eldan,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_elden,Elden,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_elle,Elle,female,high,Sindarin Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Sindarin | class_title=Matriarch,no
+char_elsurion,Elsurion,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_equínôxë,Equínôxë,female,high,Orkish Battlemistress,Orc,Minions of Sauron,Warrior,Battlemistress,classified,race_term=Orkish | class_title=Battlemistress,no
+char_everhate,Everhate,female,high,Tarkhnarb Battlemistress,Orc,Minions of Sauron,Warrior,Battlemistress,classified,race_term=Tarkhnarb | class_title=Battlemistress,no
+char_fairy,Fairy,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_haity,Haity,female,high,Noldorin Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Noldorin | class_title=Matriarch,no
+char_héróld,Héróld,male,high,Rohirric Patriarch,Man,Free Peoples,Cleric,Patriarch,classified,race_term=Rohirric | class_title=Patriarch,no
+char_isolde,Isolde,female,high,Eriadorian Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Eriadorian | class_title=Heroine,no
+char_kalkano,Kalkano,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_khamil,Khamil,male,high,Black Númenórean Patriarch,Man,Minions of Sauron,Cleric,Patriarch,classified,race_term=Black Númenórean | class_title=Patriarch,no
+char_killdare,Killdare,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_koza,Koza,female,high,Dwarven Axemistress,Dwarf,Free Peoples,Warrior,Axemistress,classified,race_term=Dwarven | class_title=Axemistress,no
+char_lalloree,Lalloree,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_lavendel,Lavendel,female,high,Noldorin Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Noldorin | class_title=Priestess,no
+char_lina,Lina,female,high,Noldorin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Noldorin | class_title=Witch,no
+char_litovel,Litovel,female,high,Dwarven Battlemistress,Dwarf,Free Peoples,Warrior,Battlemistress,classified,race_term=Dwarven | class_title=Battlemistress,no
+char_lutien,Lutien,female,high,Noldorin Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Noldorin | class_title=Priestess,no
+char_luvette,Luvette,female,high,Beorning Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Beorning | class_title=Battlemistress,no
+char_lótë,Lótë,female,high,Silvan Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Silvan | class_title=Matriarch,no
+char_magi,Magi,female,high,Sindarin Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Sindarin | class_title=Heroine,no
+char_mithrellas,Mithrellas,female,high,Silvan Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Silvan | class_title=Heroine,no
+char_naomi,Naomi,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_néziel,Néziel,female,high,Tarkhnarb Murderess,Orc,Minions of Sauron,Scout,Murderess,classified,race_term=Tarkhnarb | class_title=Murderess,no
+char_oceanborn,Oceanborn,female,high,Dúnadan Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Dúnadan | class_title=Battlemistress,no
+char_onyx,Onyx,female,high,Rohirric Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Rohirric | class_title=Heroine,no
+char_pomfrit,Pomfrit,male,high,Fallohide Patriarch,Hobbit,Free Peoples,Cleric,Patriarch,classified,race_term=Fallohide | class_title=Patriarch,no
+char_rackhir,Rackhir,male,high,Dúnadan Patriarch,Man,Free Peoples,Cleric,Patriarch,classified,race_term=Dúnadan | class_title=Patriarch,no
+char_reaper,Reaper,female,high,Silvan Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Silvan | class_title=Heroine,no
+char_rorka,Rorka,female,high,looking for a great title! is a level twenty-two Tarkhnarb Murderess,Orc,Minions of Sauron,Scout,Murderess,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Murderess | unmatched=looking for a great title! is a level twenty-two,yes
+char_réndra,Réndra,female,high,Silvan Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Silvan | class_title=Matriarch,no
+char_tianbao,Tianbao,male,high,Half-elven Patriarch,Half-Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Half-elven | class_title=Patriarch,no
+char_tindomerel,Tindomerel,female,high,so hot your head goes Yufzbarr is a level sixty-one Noldorin Heroine,Elf,Free Peoples,Warrior,Heroine,parser_suspect_or_custom_descriptor,race_term=Noldorin | class_title=Heroine | unmatched=so hot your head goes Yufzbarr is a level sixty-one,yes
+char_tiá,Tiá,female,high,Dwarven Battlemistress,Dwarf,Free Peoples,Warrior,Battlemistress,classified,race_term=Dwarven | class_title=Battlemistress,no
+char_vidomina,Vidomina,female,high,Eriadorian Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Eriadorian | class_title=Heroine,no
+char_winnie,Winnie,female,high,Beorning Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Beorning | class_title=Battlemistress,no
+char_wobbit,Wobbit,female,high,Harfoot Priestess,Hobbit,Free Peoples,Cleric,Priestess,classified,race_term=Harfoot | class_title=Priestess,no
+char_wyzz,Wyzz,male,high,Silvan Patriarch,Elf,Free Peoples,Cleric,Patriarch,classified,race_term=Silvan | class_title=Patriarch,no
+char_zevier,Zevier,female,high,Silvan Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Silvan | class_title=Priestess,no
+char_zina,Zina,female,high,Dúnadan Priestess,Man,Free Peoples,Cleric,Priestess,classified,race_term=Dúnadan | class_title=Priestess,no
+char_agarakhor,Agarakhor,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_aglar,Aglar,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_agonor,Agonor,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_akela,Akela,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_akhorahil,Akhorahil,male,medium,Black Númenórean Priest,Man,Minions of Sauron,Cleric,Priest,classified,race_term=Black Númenórean | class_title=Priest,no
+char_ali,Ali,male,medium,Firebeard Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Firebeard | class_title=Battlemaster,no
+char_andris,Andris,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_anton,Anton,male,medium,Silvan Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Silvan | class_title=Wizard,no
+char_arte,Arte,male,medium,Eriadorian Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Eriadorian | class_title=Battlemaster,no
+char_azmodan,Azmodan,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_baldy,Baldy,male,medium,Black Númenórean Priest,Man,Minions of Sauron,Cleric,Priest,classified,race_term=Black Númenórean | class_title=Priest,no
+char_balin,Balin,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_balthazar,Balthazar,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_baresark,Baresark,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_beleghir,Beleghir,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_berin,Berin,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_boot,Boot,male,medium,Fallohide Priest,Hobbit,Free Peoples,Cleric,Priest,classified,race_term=Fallohide | class_title=Priest,no
+char_botesia,Botesia,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_brog,Brog,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_buffer,Buffer,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_butrus,Butrus,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_butter,Butter,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_casque,Casque,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_chak,Chak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_cryl,Cryl,male,medium,Sindarin Enchanter,Elf,Free Peoples,Mage,Enchanter,classified,race_term=Sindarin | class_title=Enchanter,no
+char_daz,Daz,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_dell,Dell,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_dliador,Dliador,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_dombur,Dombur,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_dorolff,Dorolff,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_draconis,Draconis,male,medium,Silvan Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Silvan | class_title=Warlock,no
+char_dragor,Dragor,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_drax,Drax,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_dreamweaver,Dreamweaver,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_drägg,Drägg,male,medium,Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,classified,race_term=Dwarven | class_title=Weaponsmaster,no
+char_duriel,Duriel,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_dwar,Dwar,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_elavar,Elavar,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_eldrenil,Eldrenil,male,medium,Sindarin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Sindarin | class_title=Wizard,no
+char_eletherion,Eletherion,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_elirion,Elirion,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_elmo,Elmo,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_elumïr,Elumïr,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_engelbert,Engelbert,male,medium,Silvan Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Silvan | class_title=Warlock,no
+char_eral,Eral,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_erudhil,Erudhil,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_escape,Escape,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_ethar,Ethar,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_fiend,Fiend,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_fortran,Fortran,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_fragir,Fragir,male,medium,Dwarven Priest,Dwarf,Free Peoples,Cleric,Priest,classified,race_term=Dwarven | class_title=Priest,no
+char_fuor,Fuor,male,medium,Dúnadan Priest,Man,Free Peoples,Cleric,Priest,classified,race_term=Dúnadan | class_title=Priest,no
+char_galowyn,Galowyn,male,medium,Noldorin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Noldorin | class_title=Battlemaster,no
+char_gaurog,Gaurog,male,medium,Orkish Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Orkish | class_title=Murderer,no
+char_gilcon,Gilcon,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_girando,Girando,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_glaref,Glaref,male,medium,Half-elven Warlock,Half-Elf,Free Peoples,Mage,Warlock,classified,race_term=Half-elven | class_title=Warlock,no
+char_goliat,Goliat,male,medium,Fallohide Priest,Hobbit,Free Peoples,Cleric,Priest,classified,race_term=Fallohide | class_title=Priest,no
+char_grak,Grak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_gray,Gray,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_grom,Grom,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_grunganator,Grunganator,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_gundor,Gundor,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_gwira,Gwira,male,medium,Rohirric Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Rohirric | class_title=Battlemaster,no
+char_hate,Hate,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_hovado,Hovado,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_huher,Huher,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_huor,Huor,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_ibrahim,Ibrahim,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_illyas,Illyas,male,medium,Eriadorian Priest,Man,Free Peoples,Cleric,Priest,classified,race_term=Eriadorian | class_title=Priest,no
+char_ingwë,Ingwë,male,medium,Noldorin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Noldorin | class_title=Battlemaster,no
+char_ithilagos,Ithilagos,male,medium,Sindarin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Sindarin | class_title=Battlemaster,no
+char_kassler,Kassler,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_kessloth,Kessloth,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_khad,Khad,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_khakis,Khakis,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_khelben,Khelben,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_khzandros,Khzandros,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_kitto,Kitto,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_langolier,Langolier,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_lenwë,Lenwë,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_lombur,Lombur,male,medium,Firebeard Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Firebeard | class_title=Axemaster,no
+char_manaja,Manaja,male,medium,Sindarin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Sindarin | class_title=Wizard,no
+char_manic,Manic,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_miriamele,Miriamele,male,medium,Silvan Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Silvan | class_title=Wizard,no
+char_mochomurka,Mochomurka,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_moci,Moci,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_molak,Molak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_moloko,Moloko,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_morbet,Morbet,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_mukami,Mukami,male,medium,Rohirric Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Rohirric | class_title=Battlemaster,no
+char_nagoroth,Nagoroth,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_naldor,Naldor,male,medium,Silvan Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Silvan | class_title=Battlemaster,no
+char_nazalbeth,Nazalbeth,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_nazkuk,Nazkuk,male,medium,Tarkhnarb Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Tarkhnarb | class_title=Murderer,no
+char_neo,Neo,male,medium,Beginning to Believe... is a level forty-one Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,parser_suspect_or_custom_descriptor,race_term=Dwarven | class_title=Weaponsmaster | unmatched=Beginning to Believe... is a level forty-one,yes
+char_nimîr,Nimîr,male,medium,Silvan Priest,Elf,Free Peoples,Cleric,Priest,classified,race_term=Silvan | class_title=Priest,no
+char_oscarmeyer,Oscarmeyer,male,medium,Black Númenórean Murderer,Man,Minions of Sauron,Scout,Murderer,classified,race_term=Black Númenórean | class_title=Murderer,no
+char_paka,Paka,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_prist,Prist,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_pumuckl,Pumuckl,male,medium,Silvan Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Silvan | class_title=Battlemaster,no
+char_rauko,Rauko,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_risp,Risp,male,medium,Half-elven Wizard,Half-Elf,Free Peoples,Mage,Wizard,classified,race_term=Half-elven | class_title=Wizard,no
+char_rivet,Rivet,male,medium,Tarkhnarb Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Tarkhnarb | class_title=Murderer,no
+char_romaïn,Romaïn,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_romin,Romin,male,medium,Dwarven Priest,Dwarf,Free Peoples,Cleric,Priest,classified,race_term=Dwarven | class_title=Priest,no
+char_sabish,Sabish,male,medium,Orkish Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Orkish | class_title=Battlemaster,no
+char_san,San,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_scorn,Scorn,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_shathûr,Shathûr,male,medium,Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,classified,race_term=Dwarven | class_title=Weaponsmaster,no
+char_silencio,Silencio,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_skyfire,Skyfire,male,medium,Half-elven Battlemaster,Half-Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Half-elven | class_title=Battlemaster,no
+char_sloshed,Sloshed,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_smitsy,Smitsy,male,medium,Stoor Battlemaster,Hobbit,Free Peoples,Warrior,Battlemaster,classified,race_term=Stoor | class_title=Battlemaster,no
+char_smrtak,Smrtak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_snick,Snick,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_snicker,Snicker,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_snowy,Snowy,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_squidgy,Squidgy,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_tahkr,Tahkr,male,medium,Orkish Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Orkish | class_title=Battlemaster,no
+char_tauin,Tauin,male,medium,Firebeard Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Firebeard | class_title=Battlemaster,no
+char_teomyr,Teomyr,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_tharam,Tharam,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_thorzor,Thorzor,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_thróin,Thróin,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_tiamat,Tiamat,male,medium,Noldorin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Noldorin | class_title=Warlock,no
+char_torham,Torham,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_trazsh,Trazsh,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_ugnez,Ugnez,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_uldrâk,Uldrâk,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_umnik,Umnik,male,medium,Half-elven Warlock,Half-Elf,Free Peoples,Mage,Warlock,classified,race_term=Half-elven | class_title=Warlock,no
+char_ungrim,Ungrim,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_vugluskr,Vugluskr,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_warzûr,Warzûr,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zeroth,Zeroth,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zlababa,Zlababa,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zoone,Zoone,male,medium,Sauron's gift to women is a level thirty-four Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Battlemaster | unmatched=Sauron's gift to women is a level thirty-four,yes
+char_aalok,Aalok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_adama,Adama,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_adorable,Adorable,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_agan,Agan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_agannalo,Agannalo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_agarde,Agarde,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_agattax,Agattax,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_agent,Agent,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_aiele,Aiele,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ainafea,Ainafea,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ainairos,Ainairos,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ainko,Ainko,unknown,,Broadbeam Adventurer,Dwarf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Broadbeam | class_title=Adventurer | base_class_unknown,no
+char_alazar,Alazar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_albundy,AlBundy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_alcion,Alcion,unknown,,Sindarin Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Sindarin | class_title=Adventurer | base_class_unknown,no
+char_alhadar,Alhadar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_alizee,Alizee,unknown,,Sindarin Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Sindarin | class_title=Adventurer | base_class_unknown,no
+char_alweon,Alweon,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_amantest,Amantest,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_amarie,Amarie,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_amdir,Amdir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ancra,Ancra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_andarion,Andarion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_anezka,Anezka,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_angrenfea,Angrenfea,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_annesh,Annesh,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_anolad,Anolad,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ariakan,Ariakan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ariala,Ariala,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_arkady,Arkady,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_arnoc,Arnoc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_aros,Aros,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_artigor,Artigor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_asanda,Asanda,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_aseff,Aseff,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_assa,Assa,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_astar,Astar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_audi,Audi,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_azhal,Azhal,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_azylic,Azylic,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_backfire,Backfire,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_baltimor,Baltimor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bamsefar,Bamsefar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_baphomet,Baphomet,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_baraban,Baraban,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_barnes,Barnes,unknown,,Beorning Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Beorning | class_title=Adventurer | base_class_unknown,no
+char_bashy,Bashy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_batar,Batar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_baurk,Baurk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bearclaw,Bearclaw,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_belemoth,Belemoth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_belind,Belind,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_belzagar,Belzagar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_belzedin,Belzedin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_beogul,Beogul,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_berg,Berg,unknown,,"not a mage, cleric, or Swedish is a level twenty-six Black Númenórean Ranger",Man,Minions of Sauron,Scout,Ranger,parser_suspect_or_custom_descriptor,"race_term=Black Númenórean | class_title=Ranger | unmatched=not a mage, cleric, or Swedish is a level twenty-six",yes
+char_berlal,Berlal,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bianca,Bianca,unknown,,Dúnadan Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Dúnadan | class_title=Adventurer | base_class_unknown,no
+char_bigge,Bigge,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bimulo,Bimulo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bishn_k,Bishn�k,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bjorn,Bjorn,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_blackthorne,Blackthorne,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_blizzardo,Blizzardo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bloha,Bloha,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_blysk,Blysk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bogodur,Bogodur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bohemond,Bohemond,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bok,Bok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bomir,Bomir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_borek,Borek,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_borgash,Borgash,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_boroda,Boroda,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bounty,Bounty,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_braddock,Braddock,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bramba,Bramba,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_brask,Brask,unknown,,Beorning Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Beorning | class_title=Adventurer | base_class_unknown,no
+char_britney,Britney,unknown,,"not a girl, not yet a woman is an Orc",Man,Free Peoples,,,parser_suspect_or_custom_descriptor,"race_term=Woman | unmatched=not a girl, not yet a is an Orc | base_class_unknown",yes
+char_brugan,Brugan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_buliwyf,Buliwyf,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_burok,Burok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_byleist,Byleist,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_bêlzagar,Bêlzagar,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_cagim,Cagim,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_caldor,Caldor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_caman,Caman,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_caolin,Caolin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_carniminimmiel,Carniminimmiel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_celegrim,Celegrim,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_celo,Celo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_celorfilas,Celorfilas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_celt,Celt,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cenedra,Cenedra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cerion,Cerion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cerleg,Cerleg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cervotoc,Cervotoc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_chang,Chang,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_chelios,Chelios,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cherish,Cherish,unknown,,Orkish Snaga,Orc,Minions of Sauron,,Snaga,generic_title_no_class,race_term=Orkish | class_title=Snaga | base_class_unknown,no
+char_chikarhayshi,Chikarhayshi,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_chogall,Chogall,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ciluras,Ciluras,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cilya,Cilya,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cinsovinsh,Cinsovinsh,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cootafides,Cootafides,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cotc,Cotc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_curufinwe,Curufinwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cyclaw,Cyclaw,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_cymoril,Cymoril,unknown,,Noldorin Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Noldorin | class_title=Adventurer | base_class_unknown,no
+char_daalil,Daalil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_daevia,Daevia,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dalmorg,Dalmorg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_daren,Daren,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_darkwind,Darkwind,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_darq,Darq,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_deemon,Deemon,unknown,,Hill Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Hill Troll | class_title=Softskin | base_class_unknown,no
+char_delandir,Delandir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_delegat,Delegat,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_delfi,Delfi,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_delicate,Delicate,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_demsie,Demsie,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_deor,Deor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_deris,Deris,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_desastre,Desastre,unknown,,coming your way is a level thirty-five Tarkhnarb Necromancer,Orc,Minions of Sauron,Mage,Necromancer,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Necromancer | unmatched=coming your way is a level thirty-five,yes
+char_devastator,Devastator,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_dharazor,Dharazor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dif,Dif,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_domine,Domine,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_done,Done,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dorak,Dorak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dork,Dork,unknown,,Cave Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Cave Troll | class_title=Softskin | base_class_unknown,no
+char_dracul,Dracul,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dragg,Dragg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_draggor,Draggor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_draghkar,Draghkar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dragoth,Dragoth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dranj,Dranj,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_drayl,Drayl,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_drazgan,Drazgan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dreth,Dreth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dugmok,Dugmok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_dunlop,Dunlop,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_durandir,Durandir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_durlak,Durlak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_duvel,Duvel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eale,Eale,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_earand,Earand,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_earnur,Earnur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eawian,Eawian,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eggrat,Eggrat,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eggraz,Eggraz,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eher,Eher,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ehhe,Ehhe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eirin,Eirin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elajt,Elajt,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elayne,Elayne,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elemur,Elemur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elenril,Elenril,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elenwe,Elenwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eliwe,Eliwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_eluchil,Eluchil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_elumir,Elumir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_enso,Enso,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_equinoxe,Equinoxe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_erewiel,Erewiel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_erkzup,Erkzup,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fable,Fable,unknown,,Orkish Snaga,Orc,Minions of Sauron,,Snaga,generic_title_no_class,race_term=Orkish | class_title=Snaga | base_class_unknown,no
+char_faelandir,Faelandir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fahil,Fahil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_falathrim,Falathrim,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_falemir,Falemir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_famas,Famas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fardin,Fardin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_feagil,Feagil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_feagor,Feagor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_feagwath,Feagwath,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_feanor,Feanor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fearan,Fearan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fearendil,Fearendil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fearsome,Fearsome,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fierce,Fierce,unknown,,point is a level forty Cave Troll Warrior,Troll,Minions of Sauron,Warrior,Warrior,parser_suspect_or_custom_descriptor,race_term=Cave Troll | class_title=Warrior | unmatched=point is a level forty,yes
+char_filth,Filth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fingeror,Fingeror,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fiolas,Fiolas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_flanker,Flanker,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_floi,Floi,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_foad,Foad,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_fong,Fong,unknown,,Silvan Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Silvan | class_title=Adventurer | base_class_unknown,no
+char_friso,Friso,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_frukghash,Frukghash,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gabil,Gabil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gad,Gad,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gadmac,Gadmac,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_galadon,Galadon,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_garkan,Garkan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gaylord,Gaylord,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_geirrodr,Geirrodr,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gelion,Gelion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gena,Gena,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ghourne,Ghourne,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gilmandir,Gilmandir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gilmas,Gilmas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gilror,Gilror,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gimilzor,Gimilzor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_giralion,Giralion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_glabthrak,Glabthrak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_glabur,Glabur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_glader,Glader,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_glebus,Glebus,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gloha,Gloha,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gobakapp,Gobakapp,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gomen,Gomen,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gondgurth,Gondgurth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grab,Grab,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grakk,Grakk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grang,Grang,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_granvil,Granvil,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_greoldreth,Greoldreth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grishelda,Grishelda,unknown,,Morruhk Adventurer,Orc,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Morruhk | class_title=Adventurer | base_class_unknown,no
+char_grishnak_shag,Grishnak(Shag),unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grishtar,Grishtar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grok,Grok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gromk,Gromk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_grume,Grume,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gruuk,Gruuk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_gulag,Gulag,unknown,,back where he belongs is a level forty-four Tarkhnarb Soldier,Orc,Minions of Sauron,Warrior,Soldier,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Soldier | unmatched=back where he belongs is a level forty-four,yes
+char_gurgel,Gurgel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_guthol,Guthol,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_haazheel,Haazheel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_haisam,Haisam,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_haista,Haista,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_halas,Halas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_halir,Halir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hamlas,Hamlas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hannibal,Hannibal,unknown,,at the gates is a level forty Tarkhnarb Warg-rider,Orc,Minions of Sauron,Warrior,Warg-rider,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Warg-rider | unmatched=at the gates is a level forty,yes
+char_hasta,Hasta,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hated,Hated,unknown,,Dúnadan Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Dúnadan | class_title=Adventurer | base_class_unknown,no
+char_healy,Healy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_heather,Heather,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_heldo,Heldo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_henduil,Henduil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hercule,Hercule,unknown,,Broadbeam Adventurer,Dwarf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Broadbeam | class_title=Adventurer | base_class_unknown,no
+char_herold,Herold,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_holg,Holg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_horgy,Horgy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hrive,Hrive,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hrolth,Hrolth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hrothgar,Hrothgar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hukor,Hukor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hurar,Hurar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hyung,Hyung,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_hyurk,Hyurk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_iblis,Iblis,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_idun,Idun,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ieras,Ieras,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ilgamar,Ilgamar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_iljrure,Iljrure,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_illusia,Illusia,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ilmacil,Ilmacil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_imlis,Imlis,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_implithura,Implithura,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_imrazor,Imrazor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ingwe,Ingwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_inziladun,Inziladun,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_iorlas,Iorlas,unknown,,Rohirric Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Rohirric | class_title=Adventurer | base_class_unknown,no
+char_irogla,Irogla,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_itallicus,Itallicus,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ithy,Ithy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jamie,Jamie,unknown,,Cave Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Cave Troll | class_title=Softskin | base_class_unknown,no
+char_jarhala,Jarhala,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jaron,Jaron,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jatte,Jatte,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jeffbob,Jeffbob,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jensu,Jensu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jerpa,Jerpa,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_joponen,Joponen,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_juggles,Juggles,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_juss,Juss,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_jätte,Jätte,unknown,,Cave Troll Adventurer,Troll,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Cave Troll | class_title=Adventurer | base_class_unknown,no
+char_kakarot,Kakarot,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kalevala,Kalevala,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kamikaze,Kamikaze,unknown,,Noldorin Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Noldorin | class_title=Adventurer | base_class_unknown,no
+char_kazan,Kazan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kazeena,Kazeena,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kazzey,Kazzey,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khadum,Khadum,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khandar,Khandar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khim,Khim,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khird,Khird,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khodum,Khodum,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_khuka,Khuka,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kilimanjaro,Kilimanjaro,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_knold,Knold,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_koer,Koer,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kostej,Kostej,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kotta,Kotta,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kreil,Kreil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kroom,Kroom,unknown,,Tarkhnarb Adventurer,Orc,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Tarkhnarb | class_title=Adventurer | base_class_unknown,no
+char_kurast,Kurast,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_kviea,Kviea,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lada,Lada,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lairathim,Lairathim,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lakh,Lakh,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lammas,Lammas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lasombra,Lasombra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_leave,Leave,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_leffe,Leffe,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_legion,Legion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lenwe,Lenwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lepra,Lepra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_libresse,Libresse,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lief,Lief,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_linar,Linar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ling,Ling,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lirathe,Lirathe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_lote,Lote,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_luingil,Luingil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_macke,Macke,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_maegnas,Maegnas,unknown,,"my name, I am the spider's bane! is a level thirty Noldorin Rider",Elf,Free Peoples,Warrior,Rider,parser_suspect_or_custom_descriptor,"race_term=Noldorin | class_title=Rider | unmatched=my name, I am the spider's bane! is a level thirty",yes
+char_magica,Magica,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_malak,Malak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mammoth,Mammoth,unknown,,Tarkhnarb Adventurer,Orc,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Tarkhnarb | class_title=Adventurer | base_class_unknown,no
+char_manne,Manne,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_marhault,Marhault,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_marillion,Marillion,unknown,,Black Númenórean Adventurer,Man,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Black Númenórean | class_title=Adventurer | base_class_unknown,no
+char_marre,Marre,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mauna,Mauna,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mecra,Mecra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_meeka,Meeka,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mekul,Mekul,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_melanchre,Melanchre,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mengaz,Mengaz,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_merlin,Merlin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mess,Mess,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_mestan,Mestan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_meteor,Meteor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mhur,Mhur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_miko,Miko,unknown,,Tarkhnarb Adventurer,Orc,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Tarkhnarb | class_title=Adventurer | base_class_unknown,no
+char_millen,Millen,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_minastir,Minastir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_minos,Minos,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_minuial,Minuial,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_miyahk,Miyahk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_moandor,Moandor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mogshak,Mogshak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mojo,Mojo,unknown,,Tarkhnarb Snaga,Orc,Minions of Sauron,,Snaga,generic_title_no_class,race_term=Tarkhnarb | class_title=Snaga | base_class_unknown,no
+char_molor,Molor,unknown,,Silvan Adventurer,Elf,Free Peoples,,Adventurer,generic_title_no_class,race_term=Silvan | class_title=Adventurer | base_class_unknown,no
+char_monet,Monet,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_morgil,Morgil,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mrazik,Mrazik,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mruah,Mruah,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_mrwhite,Mrwhite,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_muhugar,Muhugar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_muhv,Muhv,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_murdress,Murdress,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_murghaz,Murghaz,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_murumutt,Murumutt,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_naed,Naed,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_naghar,Naghar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nain,Nain,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nali,Nali,unknown,,Stoor Adventurer,Hobbit,Free Peoples,,Adventurer,generic_title_no_class,race_term=Stoor | class_title=Adventurer | base_class_unknown,no
+char_namo,Namo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nardhal,Nardhal,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_naredhel,Naredhel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_narf,Narf,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_naroc,Naroc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_narttu,Narttu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nat,Nat,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nazghul,Nazghul,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nazgoroth,Nazgoroth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nazgum,Nazgum,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nestha,Nestha,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_neverborn,Neverborn,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_neziel,Neziel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_niflam,Niflam,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nigal,Nigal,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_niilit,Niilit,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nimir,Nimir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nimraphel,Nimraphel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nogir,Nogir,unknown,,warrior. is a level fifty-six Orkish Champion,Orc,Minions of Sauron,Warrior,Champion,parser_suspect_or_custom_descriptor,race_term=Orkish | class_title=Champion | unmatched=warrior. is a level fifty-six,yes
+char_nogon,Nogon,unknown,,Dúnadan Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Dúnadan | class_title=Adventurer | base_class_unknown,no
+char_norrland,Norrland,unknown,,Tarkhnarb Snaga,Orc,Minions of Sauron,,Snaga,generic_title_no_class,race_term=Tarkhnarb | class_title=Snaga | base_class_unknown,no
+char_nothing,Nothing,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nuri,Nuri,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_nushenak,Nushenak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ochra,Ochra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_octavian,Octavian,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_odamees,Odamees,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_odium,Odium,unknown,,Black Númenórean Wanderer,Man,Minions of Sauron,,Wanderer,generic_title_no_class,race_term=Black Númenórean | class_title=Wanderer | base_class_unknown,no
+char_olevipoeg,Olevipoeg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_olorion,Olorion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_olos,Olos,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_oregon,Oregon,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_orf,Orf,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_osilin,Osilin,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_ostravar,Ostravar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ostu,Ostu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_oualid,Oualid,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ozgun,Ozgun,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ozon,Ozon,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_padla,Padla,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_pahan,Pahan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_paque,Paque,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_perun,Perun,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_pestilence,Pestilence,unknown,,Tarkhnarb Snaga,Orc,Minions of Sauron,,Snaga,generic_title_no_class,race_term=Tarkhnarb | class_title=Snaga | base_class_unknown,no
+char_petrus,Petrus,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_pinhead,Pinhead,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_plancy,Plancy,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_plato,Plato,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_pontiac,Pontiac,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_pontu,Pontu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_potgins,Potgins,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_puar,Puar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_purkmistr,Purkmistr,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_qiuram,Qiuram,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_quible,Quible,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_qwestux,Qwestux,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rabarbar,Rabarbar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ragnwald,Ragnwald,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rain,Rain,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rakot,Rakot,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ramangth,Ramangth,unknown,,Black Númenórean Wanderer,Man,Minions of Sauron,,Wanderer,generic_title_no_class,race_term=Black Númenórean | class_title=Wanderer | base_class_unknown,no
+char_rancor,Rancor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rankin,Rankin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rastik,Rastik,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ratark,Ratark,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rebeka,Rebeka,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_reikor,Reikor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_remorse,Remorse,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rendra,Rendra,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rhombuc,Rhombuc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rimnark,Rimnark,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_risca,Risca,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_roadkill,Roadkill,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rockfish,Rockfish,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rodan,Rodan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rohic,Rohic,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rohick,Rohick,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rohik,Rohik,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rot,Rot,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rotmos,Rotmos,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_roxik,Roxik,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_rukan,Rukan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_runk,Runk,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_s_in,S in,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sabu,Sabu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sai,Sai,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_salas,Salas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_scaramanga,Scaramanga,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_scythe,Scythe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_selde,Selde,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_serion,Serion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shaff,Shaff,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shaigan,Shaigan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shaolin,Shaolin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sharan,Sharan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sharghl,Sharghl,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shashakar,Shashakar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shathur,Shathur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_shimmer,Shimmer,unknown,,Dúnadan Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Dúnadan | class_title=Adventurer | base_class_unknown,no
+char_shravl,Shravl,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sibur,Sibur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sillian,Sillian,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_simba,Simba,unknown,,Beorning Adventurer,Man,Free Peoples,,Adventurer,generic_title_no_class,race_term=Beorning | class_title=Adventurer | base_class_unknown,no
+char_sindorie,Sindorie,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_singha,Singha,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_siroth,Siroth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_skud,Skud,unknown,,"heading for beautiful, tropical Iraq is a level thirty-one Hill Troll Warrior",Troll,Minions of Sauron,Warrior,Warrior,parser_suspect_or_custom_descriptor,"race_term=Hill Troll | class_title=Warrior | unmatched=heading for beautiful, tropical Iraq is a level thirty-one",yes
+char_sloo,Sloo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_snigel,Snigel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_spiffdark,Spiffdark,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_spiritus,Spiritus,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_squasher,Squasher,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_stampe,Stampe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_stile,Stile,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_strine,Strine,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_stussy,Stussy,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_stylie,Stylie,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sufur,Sufur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sunaire,Sunaire,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_sunshine,Sunshine,unknown,,Cave Troll Adventurer,Troll,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Cave Troll | class_title=Adventurer | base_class_unknown,no
+char_tagrid,Tagrid,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tarannon,Tarannon,unknown,,Black Númenórean Adventurer,Man,Minions of Sauron,,Adventurer,generic_title_no_class,race_term=Black Númenórean | class_title=Adventurer | base_class_unknown,no
+char_tardeer,Tardeer,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tear,Tear,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_teeny,Teeny,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_temegl,Temegl,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thalantyr,Thalantyr,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thanis,Thanis,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tharain,Tharain,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tharl,Tharl,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thedeen,Thedeen,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_theofur,Theofur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thezi,Thezi,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thorak,Thorak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thorny,Thorny,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thoronwe,Thoronwe,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_throin,Throin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_thror,Thror,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tia,Tia,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_toe,Toe,unknown,,the key! is a level thirty-five Cave Troll Wrecker,Troll,Minions of Sauron,Warrior,Wrecker,parser_suspect_or_custom_descriptor,race_term=Cave Troll | class_title=Wrecker | unmatched=the key! is a level thirty-five,yes
+char_toin,Toin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_topas,Topas,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tragg,Tragg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_trandar,Trandar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_trasdockan,Trasdockan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tri,Tri,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_troin,Troin,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_troom,Troom,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_tulkass,Tulkass,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_turviniel,Turviniel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ugash,Ugash,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ughar,Ughar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_uhan,Uhan,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_uldrak,Uldrak,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_undolomion,Undolomion,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_unoc,Unoc,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_userbius,Userbius,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_uthalg,Uthalg,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_uzbad,Uzbad,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vaab,Vaab,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vagdish,Vagdish,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vainamoinen,Vainamoinen,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_valandar,Valandar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_valastule,Valastule,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vandal,Vandal,unknown,,Mountain Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Mountain Troll | class_title=Softskin | base_class_unknown,no
+char_vanimelde,Vanimelde,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vanir,Vanir,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vatsayana,Vatsayana,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vayu,Vayu,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_venal,Venal,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_viljar,Viljar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vip,Vip,unknown,,Black Númenórean Envoy,Man,Minions of Sauron,,Envoy,generic_title_no_class,race_term=Black Númenórean | class_title=Envoy | base_class_unknown,no
+char_vold,Vold,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vorne,Vorne,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vral,Vral,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vr_sh,Vr�sh,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_vulgar,Vulgar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wacker,Wacker,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_warzur,Warzur,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_watar,Watar,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wert,Wert,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wes,Wes,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wilma,Wilma,unknown,,Hill Troll Softskin,Troll,Minions of Sauron,,Softskin,generic_title_no_class,race_term=Hill Troll | class_title=Softskin | base_class_unknown,no
+char_woitkah,Woitkah,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wreth,Wreth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wroom,Wroom,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_wryth,Wryth,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_xagok,Xagok,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_xatax,Xatax,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_xel,Xel,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_xylo,Xylo,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_yagara,Yagara,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_ze,Ze,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zigurakhor,Zigurakhor,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zilkis,Zilkis,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zimrathon,Zimrathon,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zopa,Zopa,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zoser,Zoser,unknown,,,,,,,no_whois_classification,No classification row found,yes
+char_zroi,Zroi,unknown,,,,,,,no_whois_classification,No classification row found,yes

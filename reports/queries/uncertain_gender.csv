@@ -1,0 +1,139 @@
+character_id,character_name,derived_gender,derived_gender_confidence,source_descriptor,derived_race,derived_faction,derived_base_class,derived_class_title,classification_status,classification_notes,review_needed
+char_agarakhor,Agarakhor,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_aglar,Aglar,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_agonor,Agonor,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_akela,Akela,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_akhorahil,Akhorahil,male,medium,Black Númenórean Priest,Man,Minions of Sauron,Cleric,Priest,classified,race_term=Black Númenórean | class_title=Priest,no
+char_ali,Ali,male,medium,Firebeard Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Firebeard | class_title=Battlemaster,no
+char_andris,Andris,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_anton,Anton,male,medium,Silvan Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Silvan | class_title=Wizard,no
+char_arte,Arte,male,medium,Eriadorian Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Eriadorian | class_title=Battlemaster,no
+char_azmodan,Azmodan,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_baldy,Baldy,male,medium,Black Númenórean Priest,Man,Minions of Sauron,Cleric,Priest,classified,race_term=Black Númenórean | class_title=Priest,no
+char_balin,Balin,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_balthazar,Balthazar,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_baresark,Baresark,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_beleghir,Beleghir,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_berin,Berin,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_boot,Boot,male,medium,Fallohide Priest,Hobbit,Free Peoples,Cleric,Priest,classified,race_term=Fallohide | class_title=Priest,no
+char_botesia,Botesia,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_brog,Brog,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_buffer,Buffer,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_butrus,Butrus,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_butter,Butter,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_casque,Casque,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_chak,Chak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_cryl,Cryl,male,medium,Sindarin Enchanter,Elf,Free Peoples,Mage,Enchanter,classified,race_term=Sindarin | class_title=Enchanter,no
+char_daz,Daz,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_dell,Dell,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_dliador,Dliador,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_dombur,Dombur,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_dorolff,Dorolff,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_draconis,Draconis,male,medium,Silvan Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Silvan | class_title=Warlock,no
+char_dragor,Dragor,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_drax,Drax,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_dreamweaver,Dreamweaver,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_drägg,Drägg,male,medium,Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,classified,race_term=Dwarven | class_title=Weaponsmaster,no
+char_duriel,Duriel,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_dwar,Dwar,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_elavar,Elavar,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_eldrenil,Eldrenil,male,medium,Sindarin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Sindarin | class_title=Wizard,no
+char_eletherion,Eletherion,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_elirion,Elirion,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_elmo,Elmo,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_elumïr,Elumïr,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_engelbert,Engelbert,male,medium,Silvan Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Silvan | class_title=Warlock,no
+char_eral,Eral,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_erudhil,Erudhil,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_escape,Escape,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_ethar,Ethar,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_fiend,Fiend,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_fortran,Fortran,male,medium,Half-elven Priest,Half-Elf,Free Peoples,Cleric,Priest,classified,race_term=Half-elven | class_title=Priest,no
+char_fragir,Fragir,male,medium,Dwarven Priest,Dwarf,Free Peoples,Cleric,Priest,classified,race_term=Dwarven | class_title=Priest,no
+char_fuor,Fuor,male,medium,Dúnadan Priest,Man,Free Peoples,Cleric,Priest,classified,race_term=Dúnadan | class_title=Priest,no
+char_galowyn,Galowyn,male,medium,Noldorin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Noldorin | class_title=Battlemaster,no
+char_gaurog,Gaurog,male,medium,Orkish Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Orkish | class_title=Murderer,no
+char_gilcon,Gilcon,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_girando,Girando,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_glaref,Glaref,male,medium,Half-elven Warlock,Half-Elf,Free Peoples,Mage,Warlock,classified,race_term=Half-elven | class_title=Warlock,no
+char_goliat,Goliat,male,medium,Fallohide Priest,Hobbit,Free Peoples,Cleric,Priest,classified,race_term=Fallohide | class_title=Priest,no
+char_grak,Grak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_gray,Gray,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_grom,Grom,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_grunganator,Grunganator,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_gundor,Gundor,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_gwira,Gwira,male,medium,Rohirric Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Rohirric | class_title=Battlemaster,no
+char_hate,Hate,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_hovado,Hovado,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_huher,Huher,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_huor,Huor,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_ibrahim,Ibrahim,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_illyas,Illyas,male,medium,Eriadorian Priest,Man,Free Peoples,Cleric,Priest,classified,race_term=Eriadorian | class_title=Priest,no
+char_ingwë,Ingwë,male,medium,Noldorin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Noldorin | class_title=Battlemaster,no
+char_ithilagos,Ithilagos,male,medium,Sindarin Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Sindarin | class_title=Battlemaster,no
+char_kassler,Kassler,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_kessloth,Kessloth,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_khad,Khad,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_khakis,Khakis,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_khelben,Khelben,male,medium,Dúnadan Wizard,Man,Free Peoples,Mage,Wizard,classified,race_term=Dúnadan | class_title=Wizard,no
+char_khzandros,Khzandros,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_kitto,Kitto,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_langolier,Langolier,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_lenwë,Lenwë,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_lombur,Lombur,male,medium,Firebeard Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Firebeard | class_title=Axemaster,no
+char_manaja,Manaja,male,medium,Sindarin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Sindarin | class_title=Wizard,no
+char_manic,Manic,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_miriamele,Miriamele,male,medium,Silvan Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Silvan | class_title=Wizard,no
+char_mochomurka,Mochomurka,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_moci,Moci,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_molak,Molak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_moloko,Moloko,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_morbet,Morbet,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_mukami,Mukami,male,medium,Rohirric Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Rohirric | class_title=Battlemaster,no
+char_mylene,Mylene,unknown,,Goddess! is an Elf,Elf,Free Peoples,,,race_only,race_term=Elf | unmatched=Goddess! is an | base_class_unknown,no
+char_nagoroth,Nagoroth,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_naldor,Naldor,male,medium,Silvan Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Silvan | class_title=Battlemaster,no
+char_nazalbeth,Nazalbeth,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_nazkuk,Nazkuk,male,medium,Tarkhnarb Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Tarkhnarb | class_title=Murderer,no
+char_neo,Neo,male,medium,Beginning to Believe... is a level forty-one Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,parser_suspect_or_custom_descriptor,race_term=Dwarven | class_title=Weaponsmaster | unmatched=Beginning to Believe... is a level forty-one,yes
+char_nimîr,Nimîr,male,medium,Silvan Priest,Elf,Free Peoples,Cleric,Priest,classified,race_term=Silvan | class_title=Priest,no
+char_oscarmeyer,Oscarmeyer,male,medium,Black Númenórean Murderer,Man,Minions of Sauron,Scout,Murderer,classified,race_term=Black Númenórean | class_title=Murderer,no
+char_paka,Paka,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_prist,Prist,male,medium,Black Númenórean Warlock,Man,Minions of Sauron,Mage,Warlock,classified,race_term=Black Númenórean | class_title=Warlock,no
+char_pumuckl,Pumuckl,male,medium,Silvan Battlemaster,Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Silvan | class_title=Battlemaster,no
+char_rauko,Rauko,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_risp,Risp,male,medium,Half-elven Wizard,Half-Elf,Free Peoples,Mage,Wizard,classified,race_term=Half-elven | class_title=Wizard,no
+char_rivet,Rivet,male,medium,Tarkhnarb Murderer,Orc,Minions of Sauron,Scout,Murderer,classified,race_term=Tarkhnarb | class_title=Murderer,no
+char_romaïn,Romaïn,male,medium,Dwarven Axemaster,Dwarf,Free Peoples,Warrior,Axemaster,classified,race_term=Dwarven | class_title=Axemaster,no
+char_romin,Romin,male,medium,Dwarven Priest,Dwarf,Free Peoples,Cleric,Priest,classified,race_term=Dwarven | class_title=Priest,no
+char_sabish,Sabish,male,medium,Orkish Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Orkish | class_title=Battlemaster,no
+char_san,San,male,medium,Dúnadan Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Dúnadan | class_title=Battlemaster,no
+char_scorn,Scorn,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_shathûr,Shathûr,male,medium,Dwarven Weaponsmaster,Dwarf,Free Peoples,Warrior,Weaponsmaster,classified,race_term=Dwarven | class_title=Weaponsmaster,no
+char_silencio,Silencio,male,medium,Sindarin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Sindarin | class_title=Warlock,no
+char_skyfire,Skyfire,male,medium,Half-elven Battlemaster,Half-Elf,Free Peoples,Warrior,Battlemaster,classified,race_term=Half-elven | class_title=Battlemaster,no
+char_sloshed,Sloshed,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_smitsy,Smitsy,male,medium,Stoor Battlemaster,Hobbit,Free Peoples,Warrior,Battlemaster,classified,race_term=Stoor | class_title=Battlemaster,no
+char_smrtak,Smrtak,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_snick,Snick,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_snicker,Snicker,male,medium,Black Númenórean Wizard,Man,Minions of Sauron,Mage,Wizard,classified,race_term=Black Númenórean | class_title=Wizard,no
+char_snowy,Snowy,male,medium,Noldorin Wizard,Elf,Free Peoples,Mage,Wizard,classified,race_term=Noldorin | class_title=Wizard,no
+char_squidgy,Squidgy,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_tahkr,Tahkr,male,medium,Orkish Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Orkish | class_title=Battlemaster,no
+char_tauin,Tauin,male,medium,Firebeard Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Firebeard | class_title=Battlemaster,no
+char_teomyr,Teomyr,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_tharam,Tharam,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_thorzor,Thorzor,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_thróin,Thróin,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_tiamat,Tiamat,male,medium,Noldorin Warlock,Elf,Free Peoples,Mage,Warlock,classified,race_term=Noldorin | class_title=Warlock,no
+char_torham,Torham,male,medium,Beorning Battlemaster,Man,Free Peoples,Warrior,Battlemaster,classified,race_term=Beorning | class_title=Battlemaster,no
+char_trazsh,Trazsh,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_ugnez,Ugnez,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_uldrâk,Uldrâk,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_umnik,Umnik,male,medium,Half-elven Warlock,Half-Elf,Free Peoples,Mage,Warlock,classified,race_term=Half-elven | class_title=Warlock,no
+char_ungrim,Ungrim,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_vugluskr,Vugluskr,male,medium,Dwarven Battlemaster,Dwarf,Free Peoples,Warrior,Battlemaster,classified,race_term=Dwarven | class_title=Battlemaster,no
+char_warzûr,Warzûr,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zeroth,Zeroth,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zlababa,Zlababa,male,medium,Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,classified,race_term=Tarkhnarb | class_title=Battlemaster,no
+char_zoone,Zoone,male,medium,Sauron's gift to women is a level thirty-four Tarkhnarb Battlemaster,Orc,Minions of Sauron,Warrior,Battlemaster,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Battlemaster | unmatched=Sauron's gift to women is a level thirty-four,yes

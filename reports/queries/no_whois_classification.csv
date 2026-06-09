@@ -1,0 +1,503 @@
+character_id,character_name,player_main_handle,player_known_by,derived_race,derived_faction,derived_base_class,derived_gender,classification_status,has_whois_display,has_colour_whois,mention_count,group_candidate_count,classification_review_needed,page_review_needed,page_slug
+char_aalok,Aalok,Basha,Basha,,,,,no_whois_classification,no,no,0,0,yes,yes,aalok
+char_adama,Adama,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,adama
+char_adorable,Adorable,Ling,Ling,,,,,no_whois_classification,no,no,0,0,yes,yes,adorable
+char_agan,Agan,Feon,Feon [Johan],,,,,no_whois_classification,no,no,0,0,yes,yes,agan
+char_agannalo,Agannalo,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,agannalo
+char_agarde,Agarde,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,agarde
+char_agattax,Agattax,Agattax,Agattax [Robin],,,,,no_whois_classification,no,no,0,0,yes,yes,agattax
+char_agent,Agent,Namo,Namo,,,,,no_whois_classification,no,no,0,0,yes,yes,agent
+char_aiele,Aiele,Aiele,Aiele [Joel],,,,,no_whois_classification,no,no,0,0,yes,yes,aiele
+char_ainafea,Ainafea,Ainafea,Ainafea,,,,,no_whois_classification,no,no,0,0,yes,yes,ainafea
+char_ainairos,Ainairos,Bobbie,Bobbie,,,,,no_whois_classification,no,no,0,0,yes,yes,ainairos
+char_alazar,Alazar,Omen,Omen [Alexander],,,,,no_whois_classification,no,no,0,0,yes,yes,alazar
+char_albundy,AlBundy,Nighthawk,Nighthawk,,,,,no_whois_classification,no,no,0,0,yes,yes,albundy
+char_alhadar,Alhadar,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,alhadar
+char_alweon,Alweon,Alweon,Alweon,,,,,no_whois_classification,no,no,0,0,yes,yes,alweon
+char_amantest,Amantest,Amandil,Amandil,,,,,no_whois_classification,no,no,0,0,yes,yes,amantest
+char_amarie,Amarie,Filibert,Filibert,,,,,no_whois_classification,no,no,0,0,yes,yes,amarie
+char_amdir,Amdir,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,amdir
+char_ancra,Ancra,Ancra,Ancra [Harry],,,,,no_whois_classification,no,no,0,0,yes,yes,ancra
+char_andarion,Andarion,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,andarion
+char_anezka,Anezka,Evandaar,Evandaar [Daniel],,,,,no_whois_classification,no,no,0,0,yes,yes,anezka
+char_angrenfea,Angrenfea,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,angrenfea
+char_annesh,Annesh,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,annesh
+char_anolad,Anolad,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,anolad
+char_ariakan,Ariakan,Aram,Aram,,,,,no_whois_classification,no,no,0,0,yes,yes,ariakan
+char_ariala,Ariala,Ariala,Ariala [Sandman],,,,,no_whois_classification,no,no,0,0,yes,yes,ariala
+char_arkady,Arkady,Nerf,Nerf,,,,,no_whois_classification,no,no,0,0,yes,yes,arkady
+char_arnoc,Arnoc,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,arnoc
+char_aros,Aros,Tram,Tram,,,,,no_whois_classification,no,no,0,0,yes,yes,aros
+char_artigor,Artigor,Hate,Hate,,,,,no_whois_classification,no,no,0,0,yes,yes,artigor
+char_asanda,Asanda,Agattax,Agattax [Robin],,,,,no_whois_classification,no,no,0,0,yes,yes,asanda
+char_aseff,Aseff,Aseff,Aseff,,,,,no_whois_classification,no,no,0,0,yes,yes,aseff
+char_assa,Assa,Haista,Haista,,,,,no_whois_classification,no,no,0,0,yes,yes,assa
+char_astar,Astar,Moonshade,Moonshade [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,astar
+char_audi,Audi,Risca,Risca,,,,,no_whois_classification,no,no,0,0,yes,yes,audi
+char_azhal,Azhal,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,azhal
+char_azylic,Azylic,Sloo,Sloo,,,,,no_whois_classification,no,no,0,0,yes,yes,azylic
+char_backfire,Backfire,Toe,Toe,,,,,no_whois_classification,no,no,0,0,yes,yes,backfire
+char_baltimor,Baltimor,Ariala,Ariala [Sandman],,,,,no_whois_classification,no,no,0,0,yes,yes,baltimor
+char_bamsefar,Bamsefar,Edvard,Edvard [Aron],,,,,no_whois_classification,no,no,0,0,yes,yes,bamsefar
+char_baraban,Baraban,Rabarbar,Rabarbar [Mihail],,,,,no_whois_classification,no,no,0,0,yes,yes,baraban
+char_bashy,Bashy,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,bashy
+char_batar,Batar,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,batar
+char_baurk,Baurk,Fredde,Fredde [Fredde],,,,,no_whois_classification,no,no,0,0,yes,yes,baurk
+char_bearclaw,Bearclaw,Bearclaw,Bearclaw,,,,,no_whois_classification,no,no,0,0,yes,yes,bearclaw
+char_belemoth,Belemoth,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,belemoth
+char_belind,Belind,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,belind
+char_belzagar,Belzagar,Manatark,Manatark [Kaido],,,,,no_whois_classification,no,no,0,0,yes,yes,belzagar
+char_belzedin,Belzedin,Halir,Halir,,,,,no_whois_classification,no,no,0,0,yes,yes,belzedin
+char_beogul,Beogul,Chauncey,Chauncey,,,,,no_whois_classification,no,no,0,0,yes,yes,beogul
+char_berlal,Berlal,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,berlal
+char_bigge,Bigge,Wow,Wow,,,,,no_whois_classification,no,no,0,0,yes,yes,bigge
+char_bimulo,Bimulo,Hudson,Hudson,,,,,no_whois_classification,no,no,0,0,yes,yes,bimulo
+char_bishn_k,Bishn�k,Bishn�k,Bishn�k [Eric],,,,,no_whois_classification,no,no,0,0,yes,yes,bishn-k
+char_bjorn,Bjorn,Bjorn,Bjorn [Bjorn],,,,,no_whois_classification,no,no,0,0,yes,yes,bjorn
+char_blackthorne,Blackthorne,Fingeror,Fingeror [Jocke],,,,,no_whois_classification,no,no,0,0,yes,yes,blackthorne
+char_blizzardo,Blizzardo,Voile,Voile,,,,,no_whois_classification,no,no,0,0,yes,yes,blizzardo
+char_bloha,Bloha,Helga,Helga [Aleks],,,,,no_whois_classification,no,no,0,0,yes,yes,bloha
+char_blysk,Blysk,Lothlori,Lothlori,,,,,no_whois_classification,no,no,0,0,yes,yes,blysk
+char_bogodur,Bogodur,Rabarbar,Rabarbar [Mihail],,,,,no_whois_classification,no,no,0,0,yes,yes,bogodur
+char_bohemond,Bohemond,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,bohemond
+char_bok,Bok,Jones,Jones,,,,,no_whois_classification,no,no,0,0,yes,yes,bok
+char_bomir,Bomir,Alweon,Alweon,,,,,no_whois_classification,no,no,0,0,yes,yes,bomir
+char_borek,Borek,Axel,Axel [Axel],,,,,no_whois_classification,no,no,0,0,yes,yes,borek
+char_borgash,Borgash,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,borgash
+char_boroda,Boroda,Boroda,Boroda,,,,,no_whois_classification,no,no,0,0,yes,yes,boroda
+char_bounty,Bounty,Bounty,Bounty,,,,,no_whois_classification,no,no,0,0,yes,yes,bounty
+char_braddock,Braddock,Kenzu,Kenzu,,,,,no_whois_classification,no,no,0,0,yes,yes,braddock
+char_bramba,Bramba,Agattax,Agattax [Robin],,,,,no_whois_classification,no,no,0,0,yes,yes,bramba
+char_brugan,Brugan,Axel,Axel [Axel],,,,,no_whois_classification,no,no,0,0,yes,yes,brugan
+char_buliwyf,Buliwyf,Ajax,Ajax,,,,,no_whois_classification,no,no,0,0,yes,yes,buliwyf
+char_burok,Burok,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,burok
+char_byleist,Byleist,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,byleist
+char_cagim,Cagim,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,cagim
+char_caldor,Caldor,Elrik,Elrik,,,,,no_whois_classification,no,no,0,0,yes,yes,caldor
+char_caman,Caman,Alantir,Alantir,,,,,no_whois_classification,no,no,0,0,yes,yes,caman
+char_caolin,Caolin,Aris,Aris,,,,,no_whois_classification,no,no,0,0,yes,yes,caolin
+char_carniminimmiel,Carniminimmiel,Ajax,Ajax,,,,,no_whois_classification,no,no,0,0,yes,yes,carniminimmiel
+char_celegrim,Celegrim,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,celegrim
+char_celo,Celo,Celo,Celo,,,,,no_whois_classification,no,no,0,0,yes,yes,celo
+char_celorfilas,Celorfilas,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,celorfilas
+char_celt,Celt,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,celt
+char_cenedra,Cenedra,Beltira,Beltira [Erik],,,,,no_whois_classification,no,no,0,0,yes,yes,cenedra
+char_cerion,Cerion,Cano,Cano [Tanel],,,,,no_whois_classification,no,no,0,0,yes,yes,cerion
+char_cerleg,Cerleg,Cerleg,Cerleg [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,cerleg
+char_cervotoc,Cervotoc,Bubla,Bubla,,,,,no_whois_classification,no,no,0,0,yes,yes,cervotoc
+char_chang,Chang,Saeth,Saeth [Wojtek],,,,,no_whois_classification,no,no,0,0,yes,yes,chang
+char_chelios,Chelios,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,chelios
+char_chikarhayshi,Chikarhayshi,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,chikarhayshi
+char_chogall,Chogall,Atlas,Atlas,,,,,no_whois_classification,no,no,0,0,yes,yes,chogall
+char_ciluras,Ciluras,Goretongue,Goretongue [Jeremiah],,,,,no_whois_classification,no,no,0,0,yes,yes,ciluras
+char_cilya,Cilya,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,cilya
+char_cinsovinsh,Cinsovinsh,Bounty,Bounty,,,,,no_whois_classification,no,no,0,0,yes,yes,cinsovinsh
+char_cootafides,Cootafides,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,cootafides
+char_cotc,Cotc,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,cotc
+char_curufinwe,Curufinwe,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,curufinwe
+char_cyclaw,Cyclaw,Sloo,Sloo,,,,,no_whois_classification,no,no,0,0,yes,yes,cyclaw
+char_daalil,Daalil,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,daalil
+char_daevia,Daevia,Daevia,Daevia,,,,,no_whois_classification,no,no,0,0,yes,yes,daevia
+char_dalmorg,Dalmorg,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,dalmorg
+char_daren,Daren,Daren,Daren,,,,,no_whois_classification,no,no,0,0,yes,yes,daren
+char_darkwind,Darkwind,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,darkwind
+char_darq,Darq,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,darq
+char_delandir,Delandir,Fisben,Fisben [Gleb],,,,,no_whois_classification,no,no,0,0,yes,yes,delandir
+char_delegat,Delegat,Delegat,Delegat,,,,,no_whois_classification,no,no,0,0,yes,yes,delegat
+char_delfi,Delfi,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,delfi
+char_delicate,Delicate,Tia,Tia,,,,,no_whois_classification,no,no,0,0,yes,yes,delicate
+char_demsie,Demsie,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,demsie
+char_deor,Deor,Deor,Deor,,,,,no_whois_classification,no,no,0,0,yes,yes,deor
+char_deris,Deris,Deris,Deris,,,,,no_whois_classification,no,no,0,0,yes,yes,deris
+char_dharazor,Dharazor,Voile,Voile,,,,,no_whois_classification,no,no,0,0,yes,yes,dharazor
+char_dif,Dif,Hoho,Hoho,,,,,no_whois_classification,no,no,0,0,yes,yes,dif
+char_domine,Domine,Basha,Basha,,,,,no_whois_classification,no,no,0,0,yes,yes,domine
+char_done,Done,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,done
+char_dorak,Dorak,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,dorak
+char_dracul,Dracul,Edvard,Edvard [Aron],,,,,no_whois_classification,no,no,0,0,yes,yes,dracul
+char_dragg,Dragg,Edvard,Edvard [Aron],,,,,no_whois_classification,no,no,0,0,yes,yes,dragg
+char_draggor,Draggor,Draggor,Draggor,,,,,no_whois_classification,no,no,0,0,yes,yes,draggor
+char_draghkar,Draghkar,Tear,Tear,,,,,no_whois_classification,no,no,0,0,yes,yes,draghkar
+char_dragoth,Dragoth,Decoy,Decoy [Peter],,,,,no_whois_classification,no,no,0,0,yes,yes,dragoth
+char_dranj,Dranj,Boroda,Boroda,,,,,no_whois_classification,no,no,0,0,yes,yes,dranj
+char_drayl,Drayl,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,drayl
+char_drazgan,Drazgan,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,drazgan
+char_dreth,Dreth,Faint,Faint,,,,,no_whois_classification,no,no,0,0,yes,yes,dreth
+char_dugmok,Dugmok,Axel,Axel [Axel],,,,,no_whois_classification,no,no,0,0,yes,yes,dugmok
+char_dunlop,Dunlop,Bigger,Bigger [Jakob],,,,,no_whois_classification,no,no,0,0,yes,yes,dunlop
+char_durandir,Durandir,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,durandir
+char_durlak,Durlak,Amandil,Amandil,,,,,no_whois_classification,no,no,0,0,yes,yes,durlak
+char_duvel,Duvel,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,duvel
+char_eale,Eale,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,eale
+char_earand,Earand,Kenzu,Kenzu,,,,,no_whois_classification,no,no,0,0,yes,yes,earand
+char_earnur,Earnur,Feanor,Feanor,,,,,no_whois_classification,no,no,0,0,yes,yes,earnur
+char_eawian,Eawian,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,eawian
+char_eggrat,Eggrat,Alantir,Alantir,,,,,no_whois_classification,no,no,0,0,yes,yes,eggrat
+char_eggraz,Eggraz,Simba,Simba,,,,,no_whois_classification,no,no,0,0,yes,yes,eggraz
+char_eher,Eher,Aris,Aris,,,,,no_whois_classification,no,no,0,0,yes,yes,eher
+char_ehhe,Ehhe,Deor,Deor,,,,,no_whois_classification,no,no,0,0,yes,yes,ehhe
+char_eirin,Eirin,Ancra,Ancra [Harry],,,,,no_whois_classification,no,no,0,0,yes,yes,eirin
+char_elajt,Elajt,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,elajt
+char_elayne,Elayne,Ethar,Ethar,,,,,no_whois_classification,no,no,0,0,yes,yes,elayne
+char_elemur,Elemur,Halir,Halir,,,,,no_whois_classification,no,no,0,0,yes,yes,elemur
+char_elenril,Elenril,Agattax,Agattax [Robin],,,,,no_whois_classification,no,no,0,0,yes,yes,elenril
+char_elenwe,Elenwe,Beorel,Beorel,,,,,no_whois_classification,no,no,0,0,yes,yes,elenwe
+char_eliwe,Eliwe,Ainafea,Ainafea,,,,,no_whois_classification,no,no,0,0,yes,yes,eliwe
+char_eluchil,Eluchil,Feanor,Feanor,,,,,no_whois_classification,no,no,0,0,yes,yes,eluchil
+char_elumir,Elumir,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,elumir
+char_enso,Enso,Aiele,Aiele [Joel],,,,,no_whois_classification,no,no,0,0,yes,yes,enso
+char_equinoxe,Equinoxe,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,equinoxe
+char_erewiel,Erewiel,Irogla,Irogla,,,,,no_whois_classification,no,no,0,0,yes,yes,erewiel
+char_erkzup,Erkzup,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,erkzup
+char_faelandir,Faelandir,Tardeer,Tardeer [Silverberg],,,,,no_whois_classification,no,no,0,0,yes,yes,faelandir
+char_fahil,Fahil,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,fahil
+char_falathrim,Falathrim,Fankil,Fankil [Alexander],,,,,no_whois_classification,no,no,0,0,yes,yes,falathrim
+char_falemir,Falemir,Simba,Simba,,,,,no_whois_classification,no,no,0,0,yes,yes,falemir
+char_famas,Famas,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,famas
+char_fardin,Fardin,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,fardin
+char_feagil,Feagil,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,feagil
+char_feagor,Feagor,Diamonium,Diamonium,,,,,no_whois_classification,no,no,0,0,yes,yes,feagor
+char_feagwath,Feagwath,Atlas,Atlas,,,,,no_whois_classification,no,no,0,0,yes,yes,feagwath
+char_feanor,Feanor,Feanor,Feanor,,,,,no_whois_classification,no,no,0,0,yes,yes,feanor
+char_fearan,Fearan,Alkar,Alkar,,,,,no_whois_classification,no,no,0,0,yes,yes,fearan
+char_fearendil,Fearendil,Fearendil,Fearendil [Dmitry],,,,,no_whois_classification,no,no,0,0,yes,yes,fearendil
+char_fearsome,Fearsome,Echo,Echo,,,,,no_whois_classification,no,no,0,0,yes,yes,fearsome
+char_filth,Filth,Burb,Burb,,,,,no_whois_classification,no,no,0,0,yes,yes,filth
+char_fingeror,Fingeror,Fingeror,Fingeror [Jocke],,,,,no_whois_classification,no,no,0,0,yes,yes,fingeror
+char_fiolas,Fiolas,Valamir,Valamir [Ole],,,,,no_whois_classification,no,no,0,0,yes,yes,fiolas
+char_flanker,Flanker,Bounty,Bounty,,,,,no_whois_classification,no,no,0,0,yes,yes,flanker
+char_floi,Floi,Ares,Ares,,,,,no_whois_classification,no,no,0,0,yes,yes,floi
+char_foad,Foad,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,foad
+char_friso,Friso,Francis,Francis,,,,,no_whois_classification,no,no,0,0,yes,yes,friso
+char_frukghash,Frukghash,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,frukghash
+char_gabil,Gabil,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,gabil
+char_gad,Gad,Cerleg,Cerleg [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,gad
+char_gadmac,Gadmac,Axel,Axel [Axel],,,,,no_whois_classification,no,no,0,0,yes,yes,gadmac
+char_galadon,Galadon,Amandil,Amandil,,,,,no_whois_classification,no,no,0,0,yes,yes,galadon
+char_garkan,Garkan,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,garkan
+char_gaylord,Gaylord,Squiffy,Squiffy,,,,,no_whois_classification,no,no,0,0,yes,yes,gaylord
+char_geirrodr,Geirrodr,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,geirrodr
+char_gelion,Gelion,Echo,Echo,,,,,no_whois_classification,no,no,0,0,yes,yes,gelion
+char_gena,Gena,Gobakapp,Gobakapp,,,,,no_whois_classification,no,no,0,0,yes,yes,gena
+char_ghourne,Ghourne,Deris,Deris,,,,,no_whois_classification,no,no,0,0,yes,yes,ghourne
+char_gilmandir,Gilmandir,Tear,Tear,,,,,no_whois_classification,no,no,0,0,yes,yes,gilmandir
+char_gilmas,Gilmas,David,David [David],,,,,no_whois_classification,no,no,0,0,yes,yes,gilmas
+char_gilror,Gilror,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,gilror
+char_gimilzor,Gimilzor,Beorel,Beorel,,,,,no_whois_classification,no,no,0,0,yes,yes,gimilzor
+char_giralion,Giralion,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,giralion
+char_glabthrak,Glabthrak,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,glabthrak
+char_glabur,Glabur,Khozdul,Khozdul [Calle],,,,,no_whois_classification,no,no,0,0,yes,yes,glabur
+char_glader,Glader,Beorel,Beorel,,,,,no_whois_classification,no,no,0,0,yes,yes,glader
+char_glebus,Glebus,Fisben,Fisben [Gleb],,,,,no_whois_classification,no,no,0,0,yes,yes,glebus
+char_gloha,Gloha,Gloha,Gloha,,,,,no_whois_classification,no,no,0,0,yes,yes,gloha
+char_gobakapp,Gobakapp,Gobakapp,Gobakapp,,,,,no_whois_classification,no,no,0,0,yes,yes,gobakapp
+char_gomen,Gomen,Naredhel,Naredhel,,,,,no_whois_classification,no,no,0,0,yes,yes,gomen
+char_gondgurth,Gondgurth,Diamonium,Diamonium,,,,,no_whois_classification,no,no,0,0,yes,yes,gondgurth
+char_grab,Grab,Alantir,Alantir,,,,,no_whois_classification,no,no,0,0,yes,yes,grab
+char_grakk,Grakk,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,grakk
+char_grang,Grang,Strine,Strine,,,,,no_whois_classification,no,no,0,0,yes,yes,grang
+char_greoldreth,Greoldreth,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,greoldreth
+char_grishnak_shag,Grishnak(Shag),Ghostly,Ghostly,,,,,no_whois_classification,no,no,0,0,yes,yes,grishnak-shag
+char_grishtar,Grishtar,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,grishtar
+char_grok,Grok,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,grok
+char_gromk,Gromk,Bigger,Bigger [Jakob],,,,,no_whois_classification,no,no,0,0,yes,yes,gromk
+char_grume,Grume,Gothmog,Gothmog [Petter],,,,,no_whois_classification,no,no,0,0,yes,yes,grume
+char_gruuk,Gruuk,Alkar,Alkar,,,,,no_whois_classification,no,no,0,0,yes,yes,gruuk
+char_gurgel,Gurgel,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,gurgel
+char_guthol,Guthol,Simba,Simba,,,,,no_whois_classification,no,no,0,0,yes,yes,guthol
+char_haazheel,Haazheel,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,haazheel
+char_haisam,Haisam,Fisben,Fisben [Gleb],,,,,no_whois_classification,no,no,0,0,yes,yes,haisam
+char_haista,Haista,Haista,Haista,,,,,no_whois_classification,no,no,0,0,yes,yes,haista
+char_halas,Halas,Ainafea,Ainafea,,,,,no_whois_classification,no,no,0,0,yes,yes,halas
+char_halir,Halir,Halir,Halir,,,,,no_whois_classification,no,no,0,0,yes,yes,halir
+char_hamlas,Hamlas,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,hamlas
+char_hasta,Hasta,Bigger,Bigger [Jakob],,,,,no_whois_classification,no,no,0,0,yes,yes,hasta
+char_healy,Healy,Healy,Healy,,,,,no_whois_classification,no,no,0,0,yes,yes,healy
+char_heather,Heather,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,heather
+char_heldo,Heldo,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,heldo
+char_henduil,Henduil,Sibur,Sibur [Maxim],,,,,no_whois_classification,no,no,0,0,yes,yes,henduil
+char_herold,Herold,Chavez,Chavez,,,,,no_whois_classification,no,no,0,0,yes,yes,herold
+char_holg,Holg,Moonshade,Moonshade [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,holg
+char_horgy,Horgy,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,horgy
+char_hrive,Hrive,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,hrive
+char_hrolth,Hrolth,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,hrolth
+char_hrothgar,Hrothgar,Ajax,Ajax,,,,,no_whois_classification,no,no,0,0,yes,yes,hrothgar
+char_hukor,Hukor,Filibert,Filibert,,,,,no_whois_classification,no,no,0,0,yes,yes,hukor
+char_hurar,Hurar,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,hurar
+char_hyung,Hyung,Saeth,Saeth [Wojtek],,,,,no_whois_classification,no,no,0,0,yes,yes,hyung
+char_hyurk,Hyurk,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,hyurk
+char_iblis,Iblis,Quillis,Quillis,,,,,no_whois_classification,no,no,0,0,yes,yes,iblis
+char_idun,Idun,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,idun
+char_ieras,Ieras,Fankil,Fankil [Alexander],,,,,no_whois_classification,no,no,0,0,yes,yes,ieras
+char_ilgamar,Ilgamar,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,ilgamar
+char_iljrure,Iljrure,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,iljrure
+char_illusia,Illusia,Bellows,Bellows [Matt],,,,,no_whois_classification,no,no,0,0,yes,yes,illusia
+char_ilmacil,Ilmacil,Feon,Feon [Johan],,,,,no_whois_classification,no,no,0,0,yes,yes,ilmacil
+char_imlis,Imlis,Beorel,Beorel,,,,,no_whois_classification,no,no,0,0,yes,yes,imlis
+char_implithura,Implithura,Tram,Tram,,,,,no_whois_classification,no,no,0,0,yes,yes,implithura
+char_imrazor,Imrazor,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,imrazor
+char_ingwe,Ingwe,Filibert,Filibert,,,,,no_whois_classification,no,no,0,0,yes,yes,ingwe
+char_inziladun,Inziladun,Amandil,Amandil,,,,,no_whois_classification,no,no,0,0,yes,yes,inziladun
+char_irogla,Irogla,Irogla,Irogla,,,,,no_whois_classification,no,no,0,0,yes,yes,irogla
+char_itallicus,Itallicus,Aram,Aram,,,,,no_whois_classification,no,no,0,0,yes,yes,itallicus
+char_ithy,Ithy,Faint,Faint,,,,,no_whois_classification,no,no,0,0,yes,yes,ithy
+char_jarhala,Jarhala,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,jarhala
+char_jaron,Jaron,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,jaron
+char_jatte,Jatte,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,jatte
+char_jeffbob,Jeffbob,Valamir,Valamir [Ole],,,,,no_whois_classification,no,no,0,0,yes,yes,jeffbob
+char_jensu,Jensu,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,jensu
+char_jerpa,Jerpa,Jerpa,Jerpa,,,,,no_whois_classification,no,no,0,0,yes,yes,jerpa
+char_joponen,Joponen,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,joponen
+char_juggles,Juggles,Bellows,Bellows [Matt],,,,,no_whois_classification,no,no,0,0,yes,yes,juggles
+char_juss,Juss,Guido,Guido,,,,,no_whois_classification,no,no,0,0,yes,yes,juss
+char_kakarot,Kakarot,Kakarot,Kakarot,,,,,no_whois_classification,no,no,0,0,yes,yes,kakarot
+char_kalevala,Kalevala,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,kalevala
+char_kazan,Kazan,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,kazan
+char_kazeena,Kazeena,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,kazeena
+char_kazzey,Kazzey,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,kazzey
+char_khadum,Khadum,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,khadum
+char_khandar,Khandar,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,khandar
+char_khim,Khim,Fankil,Fankil [Alexander],,,,,no_whois_classification,no,no,0,0,yes,yes,khim
+char_khird,Khird,Simba,Simba,,,,,no_whois_classification,no,no,0,0,yes,yes,khird
+char_khodum,Khodum,Ibis,Ibis,,,,,no_whois_classification,no,no,0,0,yes,yes,khodum
+char_khuka,Khuka,Guido,Guido,,,,,no_whois_classification,no,no,0,0,yes,yes,khuka
+char_kilimanjaro,Kilimanjaro,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,kilimanjaro
+char_knold,Knold,Ainafea,Ainafea,,,,,no_whois_classification,no,no,0,0,yes,yes,knold
+char_koer,Koer,Helga,Helga [Aleks],,,,,no_whois_classification,no,no,0,0,yes,yes,koer
+char_kostej,Kostej,Luke,Luke,,,,,no_whois_classification,no,no,0,0,yes,yes,kostej
+char_kotta,Kotta,Fredde,Fredde [Fredde],,,,,no_whois_classification,no,no,0,0,yes,yes,kotta
+char_kreil,Kreil,Venal,Venal,,,,,no_whois_classification,no,no,0,0,yes,yes,kreil
+char_kurast,Kurast,Vassago,Vassago,,,,,no_whois_classification,no,no,0,0,yes,yes,kurast
+char_kviea,Kviea,Kogan,Kogan,,,,,no_whois_classification,no,no,0,0,yes,yes,kviea
+char_lada,Lada,Lada,Lada [Ilona],,,,,no_whois_classification,no,no,0,0,yes,yes,lada
+char_lairathim,Lairathim,Toe,Toe,,,,,no_whois_classification,no,no,0,0,yes,yes,lairathim
+char_lakh,Lakh,Feon,Feon [Johan],,,,,no_whois_classification,no,no,0,0,yes,yes,lakh
+char_lammas,Lammas,Crysania,Crysania,,,,,no_whois_classification,no,no,0,0,yes,yes,lammas
+char_lasombra,Lasombra,Shagrath,Shagrath,,,,,no_whois_classification,no,no,0,0,yes,yes,lasombra
+char_leave,Leave,Leave,Leave,,,,,no_whois_classification,no,no,0,0,yes,yes,leave
+char_legion,Legion,Atlas,Atlas,,,,,no_whois_classification,no,no,0,0,yes,yes,legion
+char_lenwe,Lenwe,Rza,Rza,,,,,no_whois_classification,no,no,0,0,yes,yes,lenwe
+char_lepra,Lepra,Bubla,Bubla,,,,,no_whois_classification,no,no,0,0,yes,yes,lepra
+char_libresse,Libresse,Chavez,Chavez,,,,,no_whois_classification,no,no,0,0,yes,yes,libresse
+char_lief,Lief,Kenzu,Kenzu,,,,,no_whois_classification,no,no,0,0,yes,yes,lief
+char_linar,Linar,Linar,Linar,,,,,no_whois_classification,no,no,0,0,yes,yes,linar
+char_ling,Ling,Ling,Ling,,,,,no_whois_classification,no,no,0,0,yes,yes,ling
+char_lirathe,Lirathe,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,lirathe
+char_lote,Lote,Hanr,Hanr,,,,,no_whois_classification,no,no,0,0,yes,yes,lote
+char_luingil,Luingil,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,luingil
+char_magica,Magica,Ling,Ling,,,,,no_whois_classification,no,no,0,0,yes,yes,magica
+char_malak,Malak,Alweon,Alweon,,,,,no_whois_classification,no,no,0,0,yes,yes,malak
+char_manne,Manne,Edvard,Edvard [Aron],,,,,no_whois_classification,no,no,0,0,yes,yes,manne
+char_marhault,Marhault,Aram,Aram,,,,,no_whois_classification,no,no,0,0,yes,yes,marhault
+char_marre,Marre,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,marre
+char_mauna,Mauna,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,mauna
+char_mecra,Mecra,Gloha,Gloha,,,,,no_whois_classification,no,no,0,0,yes,yes,mecra
+char_meeka,Meeka,Almarian,Almarian,,,,,no_whois_classification,no,no,0,0,yes,yes,meeka
+char_mekul,Mekul,Sibur,Sibur [Maxim],,,,,no_whois_classification,no,no,0,0,yes,yes,mekul
+char_melanchre,Melanchre,Bellows,Bellows [Matt],,,,,no_whois_classification,no,no,0,0,yes,yes,melanchre
+char_mengaz,Mengaz,Halir,Halir,,,,,no_whois_classification,no,no,0,0,yes,yes,mengaz
+char_merlin,Merlin,Merlin,Merlin,,,,,no_whois_classification,no,no,0,0,yes,yes,merlin
+char_mestan,Mestan,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,mestan
+char_meteor,Meteor,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,meteor
+char_mhur,Mhur,Ancra,Ancra [Harry],,,,,no_whois_classification,no,no,0,0,yes,yes,mhur
+char_millen,Millen,David,David [David],,,,,no_whois_classification,no,no,0,0,yes,yes,millen
+char_minastir,Minastir,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,minastir
+char_minos,Minos,Bodhran,Bodhran,,,,,no_whois_classification,no,no,0,0,yes,yes,minos
+char_minuial,Minuial,Idun,Idun,,,,,no_whois_classification,no,no,0,0,yes,yes,minuial
+char_miyahk,Miyahk,Beltira,Beltira [Erik],,,,,no_whois_classification,no,no,0,0,yes,yes,miyahk
+char_moandor,Moandor,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,moandor
+char_mogshak,Mogshak,Girithol,Girithol,,,,,no_whois_classification,no,no,0,0,yes,yes,mogshak
+char_monet,Monet,Bodhran,Bodhran,,,,,no_whois_classification,no,no,0,0,yes,yes,monet
+char_morgil,Morgil,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,morgil
+char_mrazik,Mrazik,Rebeka,Rebeka,,,,,no_whois_classification,no,no,0,0,yes,yes,mrazik
+char_mruah,Mruah,Athela,Athela,,,,,no_whois_classification,no,no,0,0,yes,yes,mruah
+char_mrwhite,Mrwhite,Toe,Toe,,,,,no_whois_classification,no,no,0,0,yes,yes,mrwhite
+char_muhugar,Muhugar,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,muhugar
+char_muhv,Muhv,Chavez,Chavez,,,,,no_whois_classification,no,no,0,0,yes,yes,muhv
+char_murdress,Murdress,Ling,Ling,,,,,no_whois_classification,no,no,0,0,yes,yes,murdress
+char_murghaz,Murghaz,Shadrach,Shadrach,,,,,no_whois_classification,no,no,0,0,yes,yes,murghaz
+char_murumutt,Murumutt,Vassago,Vassago,,,,,no_whois_classification,no,no,0,0,yes,yes,murumutt
+char_naed,Naed,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,naed
+char_naghar,Naghar,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,naghar
+char_nain,Nain,Gothmog,Gothmog [Petter],,,,,no_whois_classification,no,no,0,0,yes,yes,nain
+char_namo,Namo,Namo,Namo,,,,,no_whois_classification,no,no,0,0,yes,yes,namo
+char_nardhal,Nardhal,Nardhal,Nardhal,,,,,no_whois_classification,no,no,0,0,yes,yes,nardhal
+char_naredhel,Naredhel,Naredhel,Naredhel,,,,,no_whois_classification,no,no,0,0,yes,yes,naredhel
+char_narf,Narf,Bishn�k,Bishn�k [Eric],,,,,no_whois_classification,no,no,0,0,yes,yes,narf
+char_naroc,Naroc,Daren,Daren,,,,,no_whois_classification,no,no,0,0,yes,yes,naroc
+char_narttu,Narttu,Crysania,Crysania,,,,,no_whois_classification,no,no,0,0,yes,yes,narttu
+char_nat,Nat,Rza,Rza,,,,,no_whois_classification,no,no,0,0,yes,yes,nat
+char_nazghul,Nazghul,Moonparent,Moonparent [David],,,,,no_whois_classification,no,no,0,0,yes,yes,nazghul
+char_nazgoroth,Nazgoroth,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,nazgoroth
+char_nazgum,Nazgum,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,nazgum
+char_nestha,Nestha,Hate,Hate,,,,,no_whois_classification,no,no,0,0,yes,yes,nestha
+char_neverborn,Neverborn,Lancelot,Lancelot [Andreas],,,,,no_whois_classification,no,no,0,0,yes,yes,neverborn
+char_neziel,Neziel,Lehto,Lehto,,,,,no_whois_classification,no,no,0,0,yes,yes,neziel
+char_niflam,Niflam,Rael,Rael [Dario],,,,,no_whois_classification,no,no,0,0,yes,yes,niflam
+char_nigal,Nigal,Wow,Wow,,,,,no_whois_classification,no,no,0,0,yes,yes,nigal
+char_niilit,Niilit,Rabarbar,Rabarbar [Mihail],,,,,no_whois_classification,no,no,0,0,yes,yes,niilit
+char_nimir,Nimir,Feon,Feon [Johan],,,,,no_whois_classification,no,no,0,0,yes,yes,nimir
+char_nimraphel,Nimraphel,Salmar,Salmar,,,,,no_whois_classification,no,no,0,0,yes,yes,nimraphel
+char_nothing,Nothing,Helga,Helga [Aleks],,,,,no_whois_classification,no,no,0,0,yes,yes,nothing
+char_nuri,Nuri,Moonshade,Moonshade [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,nuri
+char_nushenak,Nushenak,Faint,Faint,,,,,no_whois_classification,no,no,0,0,yes,yes,nushenak
+char_ochra,Ochra,Liliah,Liliah,,,,,no_whois_classification,no,no,0,0,yes,yes,ochra
+char_octavian,Octavian,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,octavian
+char_odamees,Odamees,Vassago,Vassago,,,,,no_whois_classification,no,no,0,0,yes,yes,odamees
+char_olevipoeg,Olevipoeg,Guido,Guido,,,,,no_whois_classification,no,no,0,0,yes,yes,olevipoeg
+char_olorion,Olorion,Feon,Feon [Johan],,,,,no_whois_classification,no,no,0,0,yes,yes,olorion
+char_olos,Olos,Echo,Echo,,,,,no_whois_classification,no,no,0,0,yes,yes,olos
+char_oregon,Oregon,Relim,Relim,,,,,no_whois_classification,no,no,0,0,yes,yes,oregon
+char_orf,Orf,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,orf
+char_ostravar,Ostravar,Bubla,Bubla,,,,,no_whois_classification,no,no,0,0,yes,yes,ostravar
+char_ostu,Ostu,Moonshade,Moonshade [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,ostu
+char_oualid,Oualid,Merlin,Merlin,,,,,no_whois_classification,no,no,0,0,yes,yes,oualid
+char_ozgun,Ozgun,Bigger,Bigger [Jakob],,,,,no_whois_classification,no,no,0,0,yes,yes,ozgun
+char_padla,Padla,Helga,Helga [Aleks],,,,,no_whois_classification,no,no,0,0,yes,yes,padla
+char_pahan,Pahan,Zmej,Zmej [Leha],,,,,no_whois_classification,no,no,0,0,yes,yes,pahan
+char_paque,Paque,Relim,Relim,,,,,no_whois_classification,no,no,0,0,yes,yes,paque
+char_perun,Perun,Cerleg,Cerleg [Alex],,,,,no_whois_classification,no,no,0,0,yes,yes,perun
+char_petrus,Petrus,Voile,Voile,,,,,no_whois_classification,no,no,0,0,yes,yes,petrus
+char_pinhead,Pinhead,Wow,Wow,,,,,no_whois_classification,no,no,0,0,yes,yes,pinhead
+char_plancy,Plancy,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,plancy
+char_plato,Plato,Chauncey,Chauncey,,,,,no_whois_classification,no,no,0,0,yes,yes,plato
+char_pontiac,Pontiac,Athela,Athela,,,,,no_whois_classification,no,no,0,0,yes,yes,pontiac
+char_pontu,Pontu,Jones,Jones,,,,,no_whois_classification,no,no,0,0,yes,yes,pontu
+char_potgins,Potgins,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,potgins
+char_puar,Puar,Naredhel,Naredhel,,,,,no_whois_classification,no,no,0,0,yes,yes,puar
+char_purkmistr,Purkmistr,Lancelot,Lancelot [Andreas],,,,,no_whois_classification,no,no,0,0,yes,yes,purkmistr
+char_qiuram,Qiuram,Beorel,Beorel,,,,,no_whois_classification,no,no,0,0,yes,yes,qiuram
+char_quible,Quible,Squiffy,Squiffy,,,,,no_whois_classification,no,no,0,0,yes,yes,quible
+char_qwestux,Qwestux,Francis,Francis,,,,,no_whois_classification,no,no,0,0,yes,yes,qwestux
+char_rabarbar,Rabarbar,Rabarbar,Rabarbar [Mihail],,,,,no_whois_classification,no,no,0,0,yes,yes,rabarbar
+char_ragnwald,Ragnwald,Edvard,Edvard [Aron],,,,,no_whois_classification,no,no,0,0,yes,yes,ragnwald
+char_rain,Rain,Daevia,Daevia,,,,,no_whois_classification,no,no,0,0,yes,yes,rain
+char_rakot,Rakot,Merlyn,Merlyn [Maxim],,,,,no_whois_classification,no,no,0,0,yes,yes,rakot
+char_rancor,Rancor,Alweon,Alweon,,,,,no_whois_classification,no,no,0,0,yes,yes,rancor
+char_rankin,Rankin,Squiffy,Squiffy,,,,,no_whois_classification,no,no,0,0,yes,yes,rankin
+char_rastik,Rastik,Draggor,Draggor,,,,,no_whois_classification,no,no,0,0,yes,yes,rastik
+char_ratark,Ratark,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,ratark
+char_rebeka,Rebeka,Rebeka,Rebeka,,,,,no_whois_classification,no,no,0,0,yes,yes,rebeka
+char_reikor,Reikor,Valamir,Valamir [Ole],,,,,no_whois_classification,no,no,0,0,yes,yes,reikor
+char_remorse,Remorse,Ling,Ling,,,,,no_whois_classification,no,no,0,0,yes,yes,remorse
+char_rendra,Rendra,Delfi,Delfi [Per],,,,,no_whois_classification,no,no,0,0,yes,yes,rendra
+char_rhombuc,Rhombuc,Axel,Axel [Axel],,,,,no_whois_classification,no,no,0,0,yes,yes,rhombuc
+char_rimnark,Rimnark,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,rimnark
+char_risca,Risca,Risca,Risca,,,,,no_whois_classification,no,no,0,0,yes,yes,risca
+char_roadkill,Roadkill,Cur,Cur [Vigfus],,,,,no_whois_classification,no,no,0,0,yes,yes,roadkill
+char_rockfish,Rockfish,Venal,Venal,,,,,no_whois_classification,no,no,0,0,yes,yes,rockfish
+char_rodan,Rodan,Cormac,Cormac,,,,,no_whois_classification,no,no,0,0,yes,yes,rodan
+char_rohic,Rohic,Rohic,Rohic [Rohik],,,,,no_whois_classification,no,no,0,0,yes,yes,rohic
+char_rohick,Rohick,Rohic,Rohic [Rohik],,,,,no_whois_classification,no,no,0,0,yes,yes,rohick
+char_rohik,Rohik,Rohic,Rohic [Rohik],,,,,no_whois_classification,no,no,0,0,yes,yes,rohik
+char_rot,Rot,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,rot
+char_rotmos,Rotmos,Valamir,Valamir [Ole],,,,,no_whois_classification,no,no,0,0,yes,yes,rotmos
+char_roxik,Roxik,Rohic,Rohic [Rohik],,,,,no_whois_classification,no,no,0,0,yes,yes,roxik
+char_rukan,Rukan,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,rukan
+char_runk,Runk,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,runk
+char_s_in,S in,Celo,Celo,,,,,no_whois_classification,no,no,0,0,yes,yes,s-in
+char_sabu,Sabu,Basha,Basha,,,,,no_whois_classification,no,no,0,0,yes,yes,sabu
+char_sai,Sai,Almarian,Almarian,,,,,no_whois_classification,no,no,0,0,yes,yes,sai
+char_salas,Salas,Ginlon,Ginlon,,,,,no_whois_classification,no,no,0,0,yes,yes,salas
+char_scaramanga,Scaramanga,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,scaramanga
+char_scythe,Scythe,Bulldozer,Bulldozer,,,,,no_whois_classification,no,no,0,0,yes,yes,scythe
+char_selde,Selde,Beat,Beat [Joosep],,,,,no_whois_classification,no,no,0,0,yes,yes,selde
+char_serion,Serion,Bobbie,Bobbie,,,,,no_whois_classification,no,no,0,0,yes,yes,serion
+char_shaff,Shaff,Bounty,Bounty,,,,,no_whois_classification,no,no,0,0,yes,yes,shaff
+char_shaigan,Shaigan,Decoy,Decoy [Peter],,,,,no_whois_classification,no,no,0,0,yes,yes,shaigan
+char_shaolin,Shaolin,Evandaar,Evandaar [Daniel],,,,,no_whois_classification,no,no,0,0,yes,yes,shaolin
+char_sharan,Sharan,Lancelot,Lancelot [Andreas],,,,,no_whois_classification,no,no,0,0,yes,yes,sharan
+char_sharghl,Sharghl,Tram,Tram,,,,,no_whois_classification,no,no,0,0,yes,yes,sharghl
+char_shashakar,Shashakar,Mukami,Mukami,,,,,no_whois_classification,no,no,0,0,yes,yes,shashakar
+char_shathur,Shathur,Atlas,Atlas,,,,,no_whois_classification,no,no,0,0,yes,yes,shathur
+char_shravl,Shravl,Tear,Tear,,,,,no_whois_classification,no,no,0,0,yes,yes,shravl
+char_sibur,Sibur,Sibur,Sibur [Maxim],,,,,no_whois_classification,no,no,0,0,yes,yes,sibur
+char_sillian,Sillian,Tardeer,Tardeer [Silverberg],,,,,no_whois_classification,no,no,0,0,yes,yes,sillian
+char_sindorie,Sindorie,Almarian,Almarian,,,,,no_whois_classification,no,no,0,0,yes,yes,sindorie
+char_singha,Singha,Aseff,Aseff,,,,,no_whois_classification,no,no,0,0,yes,yes,singha
+char_siroth,Siroth,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,siroth
+char_sloo,Sloo,Sloo,Sloo,,,,,no_whois_classification,no,no,0,0,yes,yes,sloo
+char_snigel,Snigel,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,snigel
+char_spiffdark,Spiffdark,Buggar,Buggar [Adam],,,,,no_whois_classification,no,no,0,0,yes,yes,spiffdark
+char_spiritus,Spiritus,Bellows,Bellows [Matt],,,,,no_whois_classification,no,no,0,0,yes,yes,spiritus
+char_squasher,Squasher,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,squasher
+char_stampe,Stampe,Valamir,Valamir [Ole],,,,,no_whois_classification,no,no,0,0,yes,yes,stampe
+char_stile,Stile,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,stile
+char_strine,Strine,Strine,Strine,,,,,no_whois_classification,no,no,0,0,yes,yes,strine
+char_stylie,Stylie,Squiffy,Squiffy,,,,,no_whois_classification,no,no,0,0,yes,yes,stylie
+char_sufur,Sufur,Cano,Cano [Tanel],,,,,no_whois_classification,no,no,0,0,yes,yes,sufur
+char_sunaire,Sunaire,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,sunaire
+char_tagrid,Tagrid,Dragor,Dragor,,,,,no_whois_classification,no,no,0,0,yes,yes,tagrid
+char_tardeer,Tardeer,Tardeer,Tardeer [Silverberg],,,,,no_whois_classification,no,no,0,0,yes,yes,tardeer
+char_tear,Tear,Tear,Tear,,,,,no_whois_classification,no,no,0,0,yes,yes,tear
+char_teeny,Teeny,Grunge,Grunge,,,,,no_whois_classification,no,no,0,0,yes,yes,teeny
+char_temegl,Temegl,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,temegl
+char_thalantyr,Thalantyr,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,thalantyr
+char_thanis,Thanis,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,thanis
+char_tharain,Tharain,Angrenfea,Angrenfea [Toivo],,,,,no_whois_classification,no,no,0,0,yes,yes,tharain
+char_tharl,Tharl,Sabadon,Sabadon,,,,,no_whois_classification,no,no,0,0,yes,yes,tharl
+char_thedeen,Thedeen,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,thedeen
+char_theofur,Theofur,Halir,Halir,,,,,no_whois_classification,no,no,0,0,yes,yes,theofur
+char_thezi,Thezi,Evandaar,Evandaar [Daniel],,,,,no_whois_classification,no,no,0,0,yes,yes,thezi
+char_thorak,Thorak,Lothlori,Lothlori,,,,,no_whois_classification,no,no,0,0,yes,yes,thorak
+char_thorny,Thorny,Lothlori,Lothlori,,,,,no_whois_classification,no,no,0,0,yes,yes,thorny
+char_thoronwe,Thoronwe,Ainafea,Ainafea,,,,,no_whois_classification,no,no,0,0,yes,yes,thoronwe
+char_throin,Throin,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,throin
+char_thror,Thror,Ares,Ares,,,,,no_whois_classification,no,no,0,0,yes,yes,thror
+char_tia,Tia,Tia,Tia,,,,,no_whois_classification,no,no,0,0,yes,yes,tia
+char_toin,Toin,Toin,Toin,,,,,no_whois_classification,no,no,0,0,yes,yes,toin
+char_topas,Topas,Elrik,Elrik,,,,,no_whois_classification,no,no,0,0,yes,yes,topas
+char_tragg,Tragg,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,tragg
+char_trandar,Trandar,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,trandar
+char_trasdockan,Trasdockan,Heldo,Heldo [Jens],,,,,no_whois_classification,no,no,0,0,yes,yes,trasdockan
+char_tri,Tri,Bearclaw,Bearclaw,,,,,no_whois_classification,no,no,0,0,yes,yes,tri
+char_troin,Troin,Salmar,Salmar,,,,,no_whois_classification,no,no,0,0,yes,yes,troin
+char_troom,Troom,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,troom
+char_tulkass,Tulkass,Nighthawk,Nighthawk,,,,,no_whois_classification,no,no,0,0,yes,yes,tulkass
+char_turviniel,Turviniel,Tram,Tram,,,,,no_whois_classification,no,no,0,0,yes,yes,turviniel
+char_ugash,Ugash,Marre,Marre [Martin],,,,,no_whois_classification,no,no,0,0,yes,yes,ugash
+char_ughar,Ughar,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,ughar
+char_uhan,Uhan,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,uhan
+char_uldrak,Uldrak,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,uldrak
+char_undolomion,Undolomion,Beat,Beat [Joosep],,,,,no_whois_classification,no,no,0,0,yes,yes,undolomion
+char_unoc,Unoc,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,unoc
+char_userbius,Userbius,Userbius,Userbius [Yaroslav],,,,,no_whois_classification,no,no,0,0,yes,yes,userbius
+char_uthalg,Uthalg,Siroth,Siroth,,,,,no_whois_classification,no,no,0,0,yes,yes,uthalg
+char_uzbad,Uzbad,Feagil,Feagil,,,,,no_whois_classification,no,no,0,0,yes,yes,uzbad
+char_vaab,Vaab,Vaab,Vaab [Joey],,,,,no_whois_classification,no,no,0,0,yes,yes,vaab
+char_vagdish,Vagdish,Nazgum,Nazgum,,,,,no_whois_classification,no,no,0,0,yes,yes,vagdish
+char_vainamoinen,Vainamoinen,Rashnak,Rashnak,,,,,no_whois_classification,no,no,0,0,yes,yes,vainamoinen
+char_valandar,Valandar,Evandaar,Evandaar [Daniel],,,,,no_whois_classification,no,no,0,0,yes,yes,valandar
+char_valastule,Valastule,Steele,Steele [Dan],,,,,no_whois_classification,no,no,0,0,yes,yes,valastule
+char_vanimelde,Vanimelde,Fankil,Fankil [Alexander],,,,,no_whois_classification,no,no,0,0,yes,yes,vanimelde
+char_vanir,Vanir,Valir,Valir [Raul],,,,,no_whois_classification,no,no,0,0,yes,yes,vanir
+char_vatsayana,Vatsayana,Khamasin,Khamasin,,,,,no_whois_classification,no,no,0,0,yes,yes,vatsayana
+char_vayu,Vayu,Ghostly,Ghostly,,,,,no_whois_classification,no,no,0,0,yes,yes,vayu
+char_venal,Venal,Venal,Venal,,,,,no_whois_classification,no,no,0,0,yes,yes,venal
+char_viljar,Viljar,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,viljar
+char_vold,Vold,Aiele,Aiele [Joel],,,,,no_whois_classification,no,no,0,0,yes,yes,vold
+char_vorne,Vorne,Kazeena,Kazeena,,,,,no_whois_classification,no,no,0,0,yes,yes,vorne
+char_vral,Vral,Tardeer,Tardeer [Silverberg],,,,,no_whois_classification,no,no,0,0,yes,yes,vral
+char_vr_sh,Vr�sh,Bishn�k,Bishn�k [Eric],,,,,no_whois_classification,no,no,0,0,yes,yes,vr-sh
+char_vulgar,Vulgar,Aram,Aram,,,,,no_whois_classification,no,no,0,0,yes,yes,vulgar
+char_wacker,Wacker,Mukami,Mukami,,,,,no_whois_classification,no,no,0,0,yes,yes,wacker
+char_warzur,Warzur,Faint,Faint,,,,,no_whois_classification,no,no,0,0,yes,yes,warzur
+char_watar,Watar,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,watar
+char_wert,Wert,Ginlon,Ginlon,,,,,no_whois_classification,no,no,0,0,yes,yes,wert
+char_wes,Wes,Kakarot,Kakarot,,,,,no_whois_classification,no,no,0,0,yes,yes,wes
+char_woitkah,Woitkah,Haista,Haista,,,,,no_whois_classification,no,no,0,0,yes,yes,woitkah
+char_wreth,Wreth,Haazheel,Haazheel,,,,,no_whois_classification,no,no,0,0,yes,yes,wreth
+char_wroom,Wroom,Marillion,Marillion,,,,,no_whois_classification,no,no,0,0,yes,yes,wroom
+char_wryth,Wryth,Wryak,Wryak [Tapio],,,,,no_whois_classification,no,no,0,0,yes,yes,wryth
+char_xagok,Xagok,Miser,Miser,,,,,no_whois_classification,no,no,0,0,yes,yes,xagok
+char_xatax,Xatax,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,xatax
+char_xel,Xel,Celo,Celo,,,,,no_whois_classification,no,no,0,0,yes,yes,xel
+char_xylo,Xylo,Auriane,Auriane [Bob],,,,,no_whois_classification,no,no,0,0,yes,yes,xylo
+char_yagara,Yagara,Temegl,Temegl,,,,,no_whois_classification,no,no,0,0,yes,yes,yagara
+char_ze,Ze,David,David [David],,,,,no_whois_classification,no,no,0,0,yes,yes,ze
+char_zigurakhor,Zigurakhor,Drengist,Drengist,,,,,no_whois_classification,no,no,0,0,yes,yes,zigurakhor
+char_zilkis,Zilkis,Ancra,Ancra [Harry],,,,,no_whois_classification,no,no,0,0,yes,yes,zilkis
+char_zimrathon,Zimrathon,Bjorn,Bjorn [Bjorn],,,,,no_whois_classification,no,no,0,0,yes,yes,zimrathon
+char_zopa,Zopa,Zmej,Zmej [Leha],,,,,no_whois_classification,no,no,0,0,yes,yes,zopa
+char_zoser,Zoser,Risca,Risca,,,,,no_whois_classification,no,no,0,0,yes,yes,zoser
+char_zroi,Zroi,Ethar,Ethar,,,,,no_whois_classification,no,no,0,0,yes,yes,zroi

@@ -1,0 +1,39 @@
+character_id,character_name,derived_gender,derived_gender_confidence,source_descriptor,derived_race,derived_faction,derived_base_class,derived_class_title,classification_status,classification_notes,review_needed
+char_alicia,Alicia,female,high,Dwarven Weaponsmistress,Dwarf,Free Peoples,Warrior,Weaponsmistress,classified,race_term=Dwarven | class_title=Weaponsmistress,no
+char_alvedon,Alvedon,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_amelia,Amelia,female,high,Noldorin Mistress of Healing,Elf,Free Peoples,Cleric,Mistress of Healing,classified,race_term=Noldorin | class_title=Mistress of Healing,no
+char_arelia,Arelia,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_bizarre,Bizarre,female,high,Half-elven Heroine,Half-Elf,Free Peoples,Warrior,Heroine,classified,race_term=Half-elven | class_title=Heroine,no
+char_bootyho,Bootyho,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_death,Death,female,high,Tarkhnarb Weaponsmistress,Orc,Minions of Sauron,Warrior,Weaponsmistress,classified,race_term=Tarkhnarb | class_title=Weaponsmistress,no
+char_elle,Elle,female,high,Sindarin Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Sindarin | class_title=Matriarch,no
+char_equínôxë,Equínôxë,female,high,Orkish Battlemistress,Orc,Minions of Sauron,Warrior,Battlemistress,classified,race_term=Orkish | class_title=Battlemistress,no
+char_everhate,Everhate,female,high,Tarkhnarb Battlemistress,Orc,Minions of Sauron,Warrior,Battlemistress,classified,race_term=Tarkhnarb | class_title=Battlemistress,no
+char_fairy,Fairy,female,high,Sindarin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Sindarin | class_title=Witch,no
+char_haity,Haity,female,high,Noldorin Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Noldorin | class_title=Matriarch,no
+char_isolde,Isolde,female,high,Eriadorian Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Eriadorian | class_title=Heroine,no
+char_killdare,Killdare,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_koza,Koza,female,high,Dwarven Axemistress,Dwarf,Free Peoples,Warrior,Axemistress,classified,race_term=Dwarven | class_title=Axemistress,no
+char_lalloree,Lalloree,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_lavendel,Lavendel,female,high,Noldorin Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Noldorin | class_title=Priestess,no
+char_lina,Lina,female,high,Noldorin Witch,Elf,Free Peoples,Mage,Witch,classified,race_term=Noldorin | class_title=Witch,no
+char_litovel,Litovel,female,high,Dwarven Battlemistress,Dwarf,Free Peoples,Warrior,Battlemistress,classified,race_term=Dwarven | class_title=Battlemistress,no
+char_lutien,Lutien,female,high,Noldorin Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Noldorin | class_title=Priestess,no
+char_luvette,Luvette,female,high,Beorning Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Beorning | class_title=Battlemistress,no
+char_lótë,Lótë,female,high,Silvan Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Silvan | class_title=Matriarch,no
+char_magi,Magi,female,high,Sindarin Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Sindarin | class_title=Heroine,no
+char_mithrellas,Mithrellas,female,high,Silvan Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Silvan | class_title=Heroine,no
+char_naomi,Naomi,female,high,Black Númenórean Witch,Man,Minions of Sauron,Mage,Witch,classified,race_term=Black Númenórean | class_title=Witch,no
+char_néziel,Néziel,female,high,Tarkhnarb Murderess,Orc,Minions of Sauron,Scout,Murderess,classified,race_term=Tarkhnarb | class_title=Murderess,no
+char_oceanborn,Oceanborn,female,high,Dúnadan Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Dúnadan | class_title=Battlemistress,no
+char_onyx,Onyx,female,high,Rohirric Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Rohirric | class_title=Heroine,no
+char_reaper,Reaper,female,high,Silvan Heroine,Elf,Free Peoples,Warrior,Heroine,classified,race_term=Silvan | class_title=Heroine,no
+char_rorka,Rorka,female,high,looking for a great title! is a level twenty-two Tarkhnarb Murderess,Orc,Minions of Sauron,Scout,Murderess,parser_suspect_or_custom_descriptor,race_term=Tarkhnarb | class_title=Murderess | unmatched=looking for a great title! is a level twenty-two,yes
+char_réndra,Réndra,female,high,Silvan Matriarch,Elf,Free Peoples,Cleric,Matriarch,classified,race_term=Silvan | class_title=Matriarch,no
+char_tindomerel,Tindomerel,female,high,so hot your head goes Yufzbarr is a level sixty-one Noldorin Heroine,Elf,Free Peoples,Warrior,Heroine,parser_suspect_or_custom_descriptor,race_term=Noldorin | class_title=Heroine | unmatched=so hot your head goes Yufzbarr is a level sixty-one,yes
+char_tiá,Tiá,female,high,Dwarven Battlemistress,Dwarf,Free Peoples,Warrior,Battlemistress,classified,race_term=Dwarven | class_title=Battlemistress,no
+char_vidomina,Vidomina,female,high,Eriadorian Heroine,Man,Free Peoples,Warrior,Heroine,classified,race_term=Eriadorian | class_title=Heroine,no
+char_winnie,Winnie,female,high,Beorning Battlemistress,Man,Free Peoples,Warrior,Battlemistress,classified,race_term=Beorning | class_title=Battlemistress,no
+char_wobbit,Wobbit,female,high,Harfoot Priestess,Hobbit,Free Peoples,Cleric,Priestess,classified,race_term=Harfoot | class_title=Priestess,no
+char_zevier,Zevier,female,high,Silvan Priestess,Elf,Free Peoples,Cleric,Priestess,classified,race_term=Silvan | class_title=Priestess,no
+char_zina,Zina,female,high,Dúnadan Priestess,Man,Free Peoples,Cleric,Priestess,classified,race_term=Dúnadan | class_title=Priestess,no

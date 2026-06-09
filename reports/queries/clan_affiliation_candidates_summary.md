@@ -1,0 +1,61 @@
+# Clan/guild/group affiliation candidates
+
+These are review candidates, not confirmed affiliations.
+
+Rows: 117
+
+## Confidence counts
+- low: 60
+- medium: 57
+
+## Top candidates
+- Agonor:  (low; group_keyword_line)
+- Alderik:  (low; group_keyword_line)
+- Ambolt:  (low; group_keyword_line)
+- Araglas:  (low; group_keyword_line)
+- Ardent:  (low; group_keyword_line)
+- Berg:  (low; group_keyword_line)
+- Brynhilde:  (low; group_keyword_line)
+- Brynhilde:  (low; group_keyword_line)
+- Bulldozer:  (low; group_keyword_line)
+- Burst:  (low; group_keyword_line)
+- Clangedin:  (low; group_keyword_line)
+- Dement:  (low; group_keyword_line)
+- Dragóth:  (low; group_keyword_line)
+- Elmo:  (low; group_keyword_line)
+- Eloin:  (low; group_keyword_line)
+- Erudhil:  (low; group_keyword_line)
+- Erudhil:  (low; group_keyword_line)
+- Féagwath:  (low; group_keyword_line)
+- Gereb:  (low; group_keyword_line)
+- Grom:  (low; group_keyword_line)
+- Grumph:  (low; group_keyword_line)
+- Gròk:  (low; group_keyword_line)
+- Gròk:  (low; group_keyword_line)
+- Indra:  (low; group_keyword_line)
+- Iolo:  (low; group_keyword_line)
+- Jadon:  (low; group_keyword_line)
+- Jadon:  (low; group_keyword_line)
+- Jadon:  (low; group_keyword_line)
+- Jadon:  (low; group_keyword_line)
+- Johannes:  (low; group_keyword_line)
+- Kaool:  (low; group_keyword_line)
+- Kilin:  (low; group_keyword_line)
+- Koff:  (low; group_keyword_line)
+- Lowanda:  (low; group_keyword_line)
+- Légion:  (low; group_keyword_line)
+- Líëf:  (low; group_keyword_line)
+- Miser:  (low; group_keyword_line)
+- Morfizm:  (low; group_keyword_line)
+- Morphine:  (low; group_keyword_line)
+- Naga:  (low; group_keyword_line)
+- Naga:  (low; group_keyword_line)
+- Nari:  (low; group_keyword_line)
+- Nari:  (low; group_keyword_line)
+- Nazghûl:  (low; group_keyword_line)
+- Newmie:  (low; group_keyword_line)
+- Razoor:  (low; group_keyword_line)
+- Rhômbuc:  (low; group_keyword_line)
+- Rippin:  (low; group_keyword_line)
+- Rotho:  (low; group_keyword_line)
+- Rotho:  (low; group_keyword_line)
