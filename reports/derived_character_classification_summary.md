@@ -40,23 +40,33 @@ Characters processed: 1832
 
 ## Base class counts
 
-- (unknown): 1212
-- Warrior: 410
-- Mage: 82
-- Scout: 73
-- Cleric: 55
+- (unknown): 1185
+- Warrior: 255
+- General: 204
+- Cleric: 72
+- Magic-user: 65
+- Thief: 51
+
+## Who-class group counts
+
+- (unknown): 1185
+- Warrior: 255
+- General: 204
+- Cleric: 72
+- Magic-user: 65
+- Thief: 51
 
 ## Gender counts
 
-- (unknown): 1643
-- male: 151
+- (unknown): 1766
 - female: 38
+- male: 28
 
 ## Classification status counts
 
-- classified: 607
-- race_only: 563
+- classified: 634
+- race_only: 567
 - no_whois_classification: 502
 - immortal: 98
-- generic_title_no_class: 48
+- generic_title_no_class: 17
 - parser_suspect_or_custom_descriptor: 14

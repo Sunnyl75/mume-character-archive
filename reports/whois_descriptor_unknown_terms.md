@@ -17,11 +17,12 @@ Rows analysed: 1370
 
 ## Derived base class counts
 
-- (unknown): 728
-- Warrior: 422
-- Mage: 86
-- Scout: 77
-- Cleric: 57
+- (unknown): 702
+- Warrior: 262
+- General: 210
+- Cleric: 75
+- Magic-user: 68
+- Thief: 53
 
 ## Derived faction counts
 
@@ -33,17 +34,17 @@ Rows analysed: 1370
 
 ## Classification status counts
 
-- classified: 629
-- race_only: 573
+- classified: 655
+- race_only: 578
 - immortal: 103
-- generic_title_no_class: 48
+- generic_title_no_class: 17
 - parser_suspect_or_custom_descriptor: 14
 - custom_descriptor_unclassified: 2
 - no_descriptor: 1
 
 ## Unmatched descriptor remainders
 
-- `Master`: 5
+- `Sentry`: 5
 - `level`: 2
 - `hundred`: 1
 - `discord bot is a`: 1

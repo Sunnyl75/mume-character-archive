@@ -82,8 +82,16 @@ def choose_best(rows):
             s += 10
         if clean(row.get("derived_base_class")):
             s += 20
+        if clean(row.get("derived_who_class_group")):
+            s += 5
         if clean(row.get("derived_class_title")):
             s += 10
+        if clean(row.get("derived_class_confidence")) == "high":
+            s += 3
+        elif clean(row.get("derived_class_confidence")) == "medium":
+            s += 2
+        elif clean(row.get("derived_class_confidence")) == "low":
+            s += 1
         if clean(row.get("derived_immortal_rank")):
             s += 20
         if clean(row.get("derived_gender")):
@@ -254,7 +262,13 @@ def main():
                 "derived_faction": clean(best.get("derived_faction")),
                 "derived_faction_confidence": clean(best.get("derived_faction_confidence")),
                 "derived_base_class": clean(best.get("derived_base_class")),
+                "derived_who_class_group": clean(best.get("derived_who_class_group")),
                 "derived_class_title": clean(best.get("derived_class_title")),
+                "derived_class_confidence": clean(best.get("derived_class_confidence")),
+                "derived_class_skill_notes": clean(best.get("derived_class_skill_notes")),
+                "derived_class_level_restriction_notes": clean(best.get("derived_class_level_restriction_notes")),
+                "derived_class_race_restriction_notes": clean(best.get("derived_class_race_restriction_notes")),
+                "derived_class_alignment_restriction_notes": clean(best.get("derived_class_alignment_restriction_notes")),
                 "derived_gender": clean(best.get("derived_gender")),
                 "derived_gender_confidence": clean(best.get("derived_gender_confidence")),
                 "derived_immortal_rank": clean(best.get("derived_immortal_rank")),
@@ -282,7 +296,13 @@ def main():
                 "derived_faction": "",
                 "derived_faction_confidence": "",
                 "derived_base_class": "",
+                "derived_who_class_group": "",
                 "derived_class_title": "",
+                "derived_class_confidence": "",
+                "derived_class_skill_notes": "",
+                "derived_class_level_restriction_notes": "",
+                "derived_class_race_restriction_notes": "",
+                "derived_class_alignment_restriction_notes": "",
                 "derived_gender": "",
                 "derived_gender_confidence": "",
                 "derived_immortal_rank": "",
@@ -313,7 +333,13 @@ def main():
         "derived_faction",
         "derived_faction_confidence",
         "derived_base_class",
+        "derived_who_class_group",
         "derived_class_title",
+        "derived_class_confidence",
+        "derived_class_skill_notes",
+        "derived_class_level_restriction_notes",
+        "derived_class_race_restriction_notes",
+        "derived_class_alignment_restriction_notes",
         "derived_gender",
         "derived_gender_confidence",
         "derived_immortal_rank",
@@ -330,6 +356,7 @@ def main():
     race_counts = Counter(row["derived_race"] or "(unknown)" for row in out_rows)
     faction_counts = Counter(row["derived_faction"] or "(unknown)" for row in out_rows)
     class_counts = Counter(row["derived_base_class"] or "(unknown)" for row in out_rows)
+    who_class_group_counts = Counter(row.get("derived_who_class_group") or "(unknown)" for row in out_rows)
     gender_counts = Counter(row["derived_gender"] or "(unknown)" for row in out_rows)
     status_counts = Counter(row["classification_status"] or "(unknown)" for row in out_rows)
     review_counts = Counter(row["review_needed"] for row in out_rows)
@@ -369,6 +396,11 @@ def main():
     lines.append("## Base class counts")
     lines.append("")
     for value, count in class_counts.most_common():
+        lines.append(f"- {value}: {count}")
+    lines.append("")
+    lines.append("## Who-class group counts")
+    lines.append("")
+    for value, count in who_class_group_counts.most_common():
         lines.append(f"- {value}: {count}")
     lines.append("")
     lines.append("## Gender counts")

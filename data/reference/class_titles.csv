@@ -1,98 +1,100 @@
-title,base_class,gender,gender_confidence,source,confidence,notes
-Warrior,Warrior,unknown,,mume_reference,high,Generic warrior class title
-Fighter,Warrior,unknown,,mume_reference,high,Generic warrior class title
-Soldier,Warrior,unknown,,mume_reference,high,Gender-neutral martial title
-Rider,Warrior,unknown,,mume_reference,high,Gender-neutral martial title
-Champion,Warrior,unknown,,mume_reference,high,Prestige martial title
-Hero,Warrior,unknown,,mume_reference,medium,Prestige title; may not always indicate class cleanly
-Bodyguard,Warrior,unknown,,mume_reference,high,Martial title
-Battlemaster,Warrior,male,medium,mume_reference,high,Gender inferred from title
-Battlemistress,Warrior,female,high,mume_reference,high,Gender inferred from title
-Axemaster,Warrior,male,medium,mume_reference,high,Gender inferred from title
-Axemistress,Warrior,female,high,mume_reference,high,Gender inferred from title
-Swordsman,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
-Swordswoman,Warrior,female,medium,normalised_alias,medium,Gendered counterpart to Swordsman
-Mercenary,Warrior,unknown,,mume_reference,medium,Gender-neutral martial title
-Veteran,Warrior,unknown,,diku_levels_doc,medium,Diku Warrior title
-Knight,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
-Chevalier,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
-Justiciar,Warrior,unknown,,diku_levels_doc,medium,Diku Warrior title
-Lord,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
-Knight Lord,Warrior,male,medium,diku_levels_doc,medium,Diku Warrior title
-Scout,Scout,unknown,,mume_reference,high,Base scout class title
-Ranger,Scout,unknown,,mume_reference,high,Scout-like title
-Thief,Scout,unknown,,diku_levels_doc,medium,Diku Thief title mapped to MUME Scout
-Assassin,Scout,unknown,,diku_levels_doc,medium,Diku Thief title mapped to MUME Scout
-Sneak,Scout,unknown,,mume_reference,medium,Scout-like title
-Hunter,Scout,unknown,,mume_reference,medium,Could be Scout or Warrior; use Scout initially
-Sentry,Scout,unknown,,mume_reference,low,Uncertain; may need review
-Cutpurse,Scout,unknown,,diku_levels_doc,medium,Diku Thief title
-Robber,Scout,unknown,,diku_levels_doc,medium,Diku Thief title
-Burglar,Scout,unknown,,diku_levels_doc,medium,Diku Thief title
-Magsman,Scout,male,medium,diku_levels_doc,low,Diku Thief title; unusual term
-Senior Thief,Scout,unknown,,diku_levels_doc,medium,Diku Thief title
-Guildsmaster,Scout,male,medium,diku_levels_doc,medium,Diku Thief title
-Foodpad,Scout,unknown,,diku_levels_doc,low,Original Diku spelling/possible typo
-Footpad,Scout,unknown,,normalised_alias,low,Probable normalisation of Foodpad; only trust if observed
-Cleric,Cleric,unknown,,mume_reference,high,Base cleric class title
-Priest,Cleric,male,medium,diku_levels_doc,medium,Diku Cleric title
-Priestess,Cleric,female,high,normalised_alias,medium,Gendered counterpart to Priest
-Patriarch,Cleric,male,high,mume_reference,high,Gender inferred from title
-Matriarch,Cleric,female,high,mume_reference,high,Gender inferred from title
-Monk,Cleric,male,medium,mume_reference,medium,Gender inferred from title
-Nun,Cleric,female,medium,mume_reference,medium,Gender inferred from title
-Druid,Cleric,unknown,,mume_reference,medium,Cleric-like title
-Healer,Cleric,unknown,,mume_reference,medium,Cleric-like title
-Shaman,Cleric,unknown,,mume_reference,medium,Cleric-like title
-Believer,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Acolyte,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Adept,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Adebt,Cleric,unknown,,diku_levels_doc,low,Original Diku spelling/typo; alias only
-Curate,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Canon,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Lama,Cleric,unknown,,diku_levels_doc,medium,Diku Cleric title
-Patriarc,Cleric,male,medium,diku_levels_doc,low,Original Diku spelling/variant
-High Priest,Cleric,male,medium,diku_levels_doc,medium,Diku Cleric title
-Noble Priest,Cleric,male,medium,diku_levels_doc,medium,Diku Cleric title
-Mage,Mage,unknown,,mume_reference,high,Base mage class title
-Sage,Mage,unknown,,mume_reference,high,Mage-like title
-Sorcerer,Mage,male,medium,mume_reference,high,Gender inferred from title
-Sorceress,Mage,female,high,normalised_alias,medium,Gendered counterpart to Sorcerer
-Warlock,Mage,male,medium,mume_reference,high,Gender inferred from title
-Witch,Mage,female,high,mume_reference,high,Gender inferred from title
-Necromancer,Mage,unknown,,mume_reference,high,Mage-like title
-Enchanter,Mage,male,medium,diku_levels_doc,medium,Diku Magic user title
-Enchantress,Mage,female,high,normalised_alias,medium,Gendered counterpart to Enchanter
-Wizard,Mage,male,medium,diku_levels_doc,medium,Diku Magic user title
-Wizardess,Mage,female,high,normalised_alias,medium,Gendered counterpart to Wizard
-Novice,unknown,unknown,,diku_levels_doc,low,Generic low-level Diku title; do not infer class alone
-Apprentice,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
-Spellbinder,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
-Conjurer,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
-Magician,Mage,unknown,,diku_levels_doc,medium,Diku Magic user title
-Adventurer,unknown,unknown,,mume_observed,medium,Generic descriptor; do not infer base class
-Brute,Warrior,unknown,,mume_observed,medium,Likely martial troll/orc style title
-Warden,Warrior,unknown,,mume_observed,medium,Likely martial/guarding title
-Wrecker,Warrior,unknown,,mume_observed,medium,Likely martial troll/orc style title
-Softskin,unknown,unknown,,mume_observed,low,Troll descriptor; not enough evidence for base class
-Scholar,Mage,unknown,,mume_observed,medium,Likely knowledge/magic-adjacent title; review if evidence suggests Cleric
-Envoy,unknown,unknown,,mume_observed,medium,Role/title; do not infer class
-Heroine,Warrior,female,high,mume_observed,medium,Female counterpart to Hero; broad prestige title
-Chieftain,Warrior,unknown,,mume_observed,medium,Leadership/martial title
-Snaga,unknown,unknown,,mume_observed,medium,Orc status/title; do not infer base class
-Master,unknown,male,medium,mume_observed,low,Generic title; weak class evidence
-Mistress,unknown,female,high,normalised_alias,low,Generic title; weak class evidence
-Quickblade,Scout,unknown,,mume_observed,medium,Likely Scout/weapon-speed title
-Cut-Throat,Scout,unknown,,mume_observed,medium,Likely thief/assassin-style title
-Archer,Scout,unknown,,mume_observed,medium,Ranged/scout-like title
-Weaponsmaster,Warrior,male,medium,mume_observed,high,Gender inferred from title
-Weaponsmistress,Warrior,female,high,mume_observed,high,Gender inferred from title
-Murderer,Scout,male,medium,mume_observed,low,May be roleplay/crime title; class inference weak
-Murderess,Scout,female,high,mume_observed,low,Female counterpart to Murderer; class inference weak
-Warg-rider,Warrior,unknown,,mume_observed,medium,Mounted martial title
-Warg,unknown,unknown,,mume_observed,low,Creature/descriptor; not enough evidence for class
-Pilferer,Scout,unknown,,mume_observed,medium,Thief-like title
-Smasher,Warrior,unknown,,mume_observed,medium,Martial title
-Mountaineer,Scout,unknown,,mume_observed,low,Travel/outdoors title; tentative Scout mapping
-Mistress of Healing,Cleric,female,high,mume_observed,high,Healing title; gender inferred from Mistress
-Wanderer,unknown,unknown,,mume_observed,low,Generic/custom-style descriptor; do not infer base class
+title,base_class,who_class_group,gender,gender_confidence,source,classification_confidence,skill_requirement_notes,level_restriction_notes,race_restriction_notes,alignment_restriction_notes,notes
+Adventurer,General,General,,,mume_class_title_list,medium,,,,,General who-class title; useful title evidence but weak skill evidence
+Champion,General,General,,,mume_class_title_list,medium,,,,,General/prestige title
+Chieftain,General,General,,,mume_class_title_list,medium,90%-100% Leadership,,,,Leadership title; skill threshold from user-provided list
+Envoy,General,General,,,mume_class_title_list,medium,,,,,General/role title
+Hero,General,General,,,mume_class_title_list,medium,,,,,General/prestige title; do not infer male gender from this alone
+Heroine,General,General,female,high,mume_class_title_list,medium,,,,,Female-coded general/prestige title
+Mountaineer,General,General,,,mume_class_title_list,medium,100% Climb + 50% Leadership,,,,Skill threshold from user-provided list
+Ranger,General,General,,,mume_class_title_list,medium,High Track; exact requirement uncertain and probably not 100%+,,,,User note: Ranger appears available with 90% Track; likely depends on multiple skills
+Rider,General,General,,,mume_class_title_list,medium,90% Ride,,,,Skill threshold from user-provided list
+Axemaster,Warrior,Warrior,,,mume_class_title_list,high,100% cleaving weapons,,,,Weapon-specialist warrior title; do not infer male gender from Master alone
+Axemistress,Warrior,Warrior,female,high,mume_class_title_list,high,100% cleaving weapons,,,,Female-coded weapon-specialist warrior title
+Battlemaster,Warrior,Warrior,,,mume_class_title_list,high,,,,,Warrior title; do not infer male gender from Master alone
+Battlemistress,Warrior,Warrior,female,high,mume_class_title_list,high,,,,,Female-coded warrior title
+Bodyguard,Warrior,Warrior,,,mume_class_title_list,high,80% Rescue,,,,Skill threshold from user-provided list
+Soldier,Warrior,Warrior,,,mume_class_title_list,high,,,,,Gender-neutral martial title
+Veteran,Warrior,Warrior,,,mume_class_title_list,high,,,,,Gender-neutral martial title
+Warden,Warrior,Warrior,,,mume_class_title_list,high,75% Bash,,,,Skill threshold from user-provided list
+Weaponsmaster,Warrior,Warrior,,,mume_class_title_list,high,Unknown percent in at least two weapon skills,,,,Weapon-specialist warrior title; do not infer male gender from Master alone
+Weaponsmistress,Warrior,Warrior,female,high,mume_class_title_list,high,Unknown percent in at least two weapon skills,,,,Female-coded weapon-specialist warrior title
+Archer,Thief,Thief,,,mume_class_title_list,medium,Unknown percent Missile,,,,Ranged/thief-list title
+Assassin,Thief,Thief,,,mume_class_title_list,high,,,,,Thief who-class title
+Hunter,Thief,Thief,,,mume_class_title_list,medium,,,,,Thief who-class title; may overlap outdoor/combat roleplay
+Scout,Thief,Thief,,,mume_class_title_list,high,,,,,Thief who-class title
+Quickblade,Thief,Thief,,,mume_class_title_list,high,,,,,Thief who-class title
+Cut-Throat,Thief,Thief,,,mume_class_title_list,medium,,,Possibly orc-only; uncertain,,Race restriction uncertain
+Footpad,Thief,Thief,,,mume_class_title_list,high,,,,,Thief who-class title
+Murderer,Thief,Thief,,,mume_class_title_list,medium,,,,,Thief/criminal title; gender inference from -er not used
+Murderess,Thief,Thief,female,high,mume_class_title_list,medium,,,,,Female-coded thief/criminal title
+Healer,Cleric,Cleric,,,mume_class_title_list,high,,,,,Cleric who-class title
+Master Healer,Cleric,Cleric,,,mume_class_title_list,high,,,,,Cleric healing title; do not infer male gender from Master alone
+Mistress of Healing,Cleric,Cleric,female,high,mume_class_title_list,high,,,,,Female-coded cleric healing title
+Necromancer,Cleric,Cleric,,,mume_class_title_list,high,,,,,Listed under Cleric classes in user-provided MUME class list
+Priest,Cleric,Cleric,,,mume_class_title_list,high,,,,,Cleric title; gender evidence should be treated cautiously
+Priestess,Cleric,Cleric,female,high,mume_class_title_list,high,,,,,Female-coded cleric title
+Patriarch,Cleric,Cleric,male,high,mume_class_title_list,high,,,,,Male-coded cleric title
+Matriarch,Cleric,Cleric,female,high,mume_class_title_list,high,,,,,Female-coded cleric title
+Beastmaster,Magic-user,Magic-user,,,mume_class_title_list,medium,Unknown percent Charm,,,,Charm-related magic-user title; do not infer male gender from Master alone
+Sage,Magic-user,Magic-user,,,mume_class_title_list,high,,,,,Magic-user who-class title
+Scholar,Magic-user,Magic-user,,,mume_class_title_list,high,,,,,Magic-user who-class title
+Seer,Magic-user,Magic-user,,,mume_class_title_list,high,,,,,Magic-user who-class title
+Warlock,Magic-user,Magic-user,male,medium,mume_class_title_list,high,,,,,Magic-user title; male-coded but keep cautious
+Witch,Magic-user,Magic-user,female,high,mume_class_title_list,high,,,,,Female-coded magic-user title
+Wizard,Magic-user,Magic-user,,,mume_class_title_list,high,,,,,Magic-user title; do not infer male gender from Wizard alone
+Warrior,Warrior,Warrior,,,legacy_or_observed_alias,medium,,,,,Generic warrior class word
+Fighter,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Generic martial word; not in supplied MUME who-class list
+Swordsman,Warrior,Warrior,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Swordswoman,Warrior,Warrior,female,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Mercenary,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Observed/generic martial title; not in supplied MUME who-class list
+Knight,Warrior,Warrior,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Chevalier,Warrior,Warrior,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Justiciar,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Lord,Warrior,Warrior,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Knight Lord,Warrior,Warrior,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style title; use cautiously
+Thief,Thief,Thief,,,legacy_or_observed_alias,medium,,,,,Generic thief class word
+Sneak,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Thief-like observed title; not in supplied MUME who-class list
+Cutpurse,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Robber,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Burglar,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Pilferer,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Thief-like observed title; not in supplied MUME who-class list
+Foodpad,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Original Diku spelling/possible typo; alias only
+Magsman,Thief,Thief,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Senior Thief,Thief,Thief,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Guildsmaster,Thief,Thief,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style thief title; use cautiously
+Cleric,Cleric,Cleric,,,legacy_or_observed_alias,medium,,,,,Generic cleric class word
+Monk,Cleric,Cleric,male,medium,legacy_or_observed_alias,low,,,,,Observed/legacy cleric-like title; not in supplied MUME who-class list
+Nun,Cleric,Cleric,female,medium,legacy_or_observed_alias,low,,,,,Observed/legacy cleric-like title; not in supplied MUME who-class list
+Druid,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Observed/legacy cleric-like title; not in supplied MUME who-class list
+Shaman,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Observed/legacy cleric-like title; not in supplied MUME who-class list
+Believer,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Acolyte,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Adept,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Adebt,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Original Diku spelling/typo; alias only
+Curate,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Canon,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Lama,Cleric,Cleric,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Patriarc,Cleric,Cleric,male,medium,legacy_or_observed_alias,low,,,,,Original Diku spelling/variant
+High Priest,Cleric,Cleric,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Noble Priest,Cleric,Cleric,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style cleric title; use cautiously
+Mage,Magic-user,Magic-user,,,legacy_or_observed_alias,medium,,,,,Generic magic-user class word
+Sorcerer,Magic-user,Magic-user,male,medium,legacy_or_observed_alias,low,,,,,Observed magic-user-like title; not in supplied MUME who-class list
+Sorceress,Magic-user,Magic-user,female,high,legacy_or_observed_alias,low,,,,,Female-coded magic-user-like title; not in supplied MUME who-class list
+Enchanter,Magic-user,Magic-user,male,medium,legacy_or_observed_alias,low,,,,,Legacy/Diku-style magic-user title; use cautiously
+Enchantress,Magic-user,Magic-user,female,high,legacy_or_observed_alias,low,,,,,Female-coded legacy/Diku-style magic-user title; use cautiously
+Wizardess,Magic-user,Magic-user,female,high,legacy_or_observed_alias,low,,,,,Female-coded counterpart to Wizard; not in supplied MUME who-class list
+Novice,,,,,legacy_or_observed_alias,low,,,,,Generic low-level title; do not infer class alone
+Apprentice,Magic-user,Magic-user,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style magic-user title; use cautiously
+Spellbinder,Magic-user,Magic-user,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style magic-user title; use cautiously
+Conjurer,Magic-user,Magic-user,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style magic-user title; use cautiously
+Magician,Magic-user,Magic-user,,,legacy_or_observed_alias,low,,,,,Legacy/Diku-style magic-user title; use cautiously
+Brute,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Observed martial troll/orc style title; not in supplied MUME who-class list
+Wrecker,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Observed martial troll/orc style title; not in supplied MUME who-class list
+Smasher,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Observed martial title; not in supplied MUME who-class list
+Warg-rider,Warrior,Warrior,,,legacy_or_observed_alias,low,,,,,Observed mounted martial title; not in supplied MUME who-class list
+Softskin,,,,,legacy_or_observed_alias,low,,,,,Troll descriptor; not enough evidence for class
+Snaga,,,,,legacy_or_observed_alias,low,,,,,Orc status/title; not enough evidence for class
+Master,,,male,low,legacy_or_observed_alias,low,,,,,Generic title only; very weak gender evidence
+Mistress,,,female,medium,legacy_or_observed_alias,low,,,,,Generic title only; weak class evidence
+Warg,,,,,legacy_or_observed_alias,low,,,,,Creature/descriptor; not enough evidence for class
+Wanderer,,,,,legacy_or_observed_alias,low,,,,,Generic/custom-style descriptor; do not infer base class

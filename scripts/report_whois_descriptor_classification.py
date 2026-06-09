@@ -156,7 +156,13 @@ def derive_from_descriptor(descriptor, race_terms, class_titles, immortal_ranks)
         "derived_race": "",
         "derived_subrace": "",
         "derived_base_class": "",
+        "derived_who_class_group": "",
         "derived_class_title": "",
+        "derived_class_confidence": "",
+        "derived_class_skill_notes": "",
+        "derived_class_level_restriction_notes": "",
+        "derived_class_race_restriction_notes": "",
+        "derived_class_alignment_restriction_notes": "",
         "derived_gender": "",
         "derived_gender_confidence": "",
         "derived_faction": "",
@@ -236,8 +242,16 @@ def derive_from_descriptor(descriptor, race_terms, class_titles, immortal_ranks)
         class_title_matched = True
         base_class = normalise_base_class(cls.get("base_class"))
 
+        who_class_group = clean(cls.get("who_class_group")) or base_class
+
         result["derived_base_class"] = base_class
+        result["derived_who_class_group"] = who_class_group
         result["derived_class_title"] = clean(cls.get("title"))
+        result["derived_class_confidence"] = clean(cls.get("classification_confidence") or cls.get("confidence"))
+        result["derived_class_skill_notes"] = clean(cls.get("skill_requirement_notes"))
+        result["derived_class_level_restriction_notes"] = clean(cls.get("level_restriction_notes"))
+        result["derived_class_race_restriction_notes"] = clean(cls.get("race_restriction_notes"))
+        result["derived_class_alignment_restriction_notes"] = clean(cls.get("alignment_restriction_notes"))
 
         if base_class:
             class_title_has_specific_class = True
@@ -249,6 +263,16 @@ def derive_from_descriptor(descriptor, race_terms, class_titles, immortal_ranks)
 
         remainder = remove_term(remainder, clean(cls.get("title")))
         notes.append(f"class_title={clean(cls.get('title'))}")
+        if result["derived_who_class_group"]:
+            notes.append(f"who_class_group={result['derived_who_class_group']}")
+        if result["derived_class_confidence"]:
+            notes.append(f"class_confidence={result['derived_class_confidence']}")
+        if result["derived_class_skill_notes"]:
+            notes.append(f"skill_notes={result['derived_class_skill_notes']}")
+        if result["derived_class_race_restriction_notes"]:
+            notes.append(f"race_restriction={result['derived_class_race_restriction_notes']}")
+        if result["derived_class_alignment_restriction_notes"]:
+            notes.append(f"alignment_restriction={result['derived_class_alignment_restriction_notes']}")
 
     remainder = remainder.strip(" ,;:-")
 
@@ -358,7 +382,13 @@ def main():
         "derived_race",
         "derived_subrace",
         "derived_base_class",
+        "derived_who_class_group",
         "derived_class_title",
+        "derived_class_confidence",
+        "derived_class_skill_notes",
+        "derived_class_level_restriction_notes",
+        "derived_class_race_restriction_notes",
+        "derived_class_alignment_restriction_notes",
         "derived_gender",
         "derived_gender_confidence",
         "derived_faction",

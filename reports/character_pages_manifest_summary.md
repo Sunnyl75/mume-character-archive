@@ -21,9 +21,9 @@
 
 ## Classification status counts
 
-- classified: 607
-- race_only: 563
+- classified: 634
+- race_only: 567
 - no_whois_classification: 502
 - immortal: 98
-- generic_title_no_class: 48
+- generic_title_no_class: 17
 - parser_suspect_or_custom_descriptor: 14
