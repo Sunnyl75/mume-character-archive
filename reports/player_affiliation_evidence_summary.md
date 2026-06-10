@@ -2,6 +2,7 @@
 
 Inputs:
 
+- `data/incoming/player_affiliations/2003_clans_webpage/source_metadata.csv`
 - `data/incoming/player_affiliations/2003_clans_webpage/player_affiliations.csv`
 - `data/incoming/player_affiliations/2003_clans_webpage/player_affiliation_members.csv`
 - `data/incoming/player_affiliations/2003_clans_webpage/player_affiliation_patterns.csv`
@@ -17,6 +18,7 @@ Outputs:
 
 - Affiliation source rows: 17
 - Listed member/contact source rows: 108
+- Source metadata rows: 1
 - Pattern source rows: 45
 - Derived affiliation evidence rows: 160
 - Whois queue names: 72
@@ -63,6 +65,7 @@ Outputs:
 ## Interpretation notes
 
 - These are player-organised or socially meaningful affiliations, not built-in race/subrace/faction classifications.
+- `source_id`, `source_name`, `source_url`, and `source_date_context` preserve where the historical evidence came from.
 - Direct membership/contact rows from the 2003 webpage are historical evidence even when a current whois does not mention the group.
 - Pattern matches from whois text are candidates and should be reviewed before public display as accepted affiliation.
 - `character_key` is the official searchable MUME name, taken as the first word of a listed display name.

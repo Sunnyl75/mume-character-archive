@@ -6,6 +6,7 @@ This script intentionally keeps player-organised affiliations separate from buil
 MUME race, subrace, class, and faction classification.
 
 Inputs:
+  data/incoming/player_affiliations/2003_clans_webpage/source_metadata.csv
   data/incoming/player_affiliations/2003_clans_webpage/player_affiliations.csv
   data/incoming/player_affiliations/2003_clans_webpage/player_affiliation_members.csv
   data/incoming/player_affiliations/2003_clans_webpage/player_affiliation_patterns.csv
@@ -33,6 +34,7 @@ SOURCE_DIR = ROOT / "data" / "incoming" / "player_affiliations" / "2003_clans_we
 AFFILIATIONS_CSV = SOURCE_DIR / "player_affiliations.csv"
 MEMBERS_CSV = SOURCE_DIR / "player_affiliation_members.csv"
 PATTERNS_CSV = SOURCE_DIR / "player_affiliation_patterns.csv"
+SOURCE_METADATA_CSV = SOURCE_DIR / "source_metadata.csv"
 CHARACTERS_CSV = ROOT / "data" / "working" / "characters.csv"
 WHOIS_CSV = ROOT / "data" / "working" / "whois_records.csv"
 
@@ -53,6 +55,10 @@ OUTPUT_FIELDS = [
     "role_title",
     "evidence_kind",
     "evidence_source",
+    "source_id",
+    "source_name",
+    "source_url",
+    "source_date_context",
     "source_whois_id",
     "evidence_excerpt",
     "confidence",
@@ -70,6 +76,10 @@ QUEUE_FIELDS = [
     "known_character_id",
     "whois_checked",
     "evidence_kind",
+    "source_id",
+    "source_name",
+    "source_url",
+    "source_date_context",
     "notes",
 ]
 
@@ -77,6 +87,13 @@ QUEUE_FIELDS = [
 def read_csv(path: Path) -> List[dict]:
     if not path.exists():
         raise SystemExit(f"Missing required file: {path}")
+    with path.open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def read_optional_csv(path: Path) -> List[dict]:
+    if not path.exists():
+        return []
     with path.open("r", encoding="utf-8", newline="") as f:
         return list(csv.DictReader(f))
 
@@ -103,6 +120,16 @@ def first_word(display_name: str) -> str:
 
 def truthy(value: str) -> bool:
     return (value or "").strip().casefold() in {"true", "yes", "1", "y"}
+
+
+def source_fields(row: dict, fallback: dict | None = None) -> dict:
+    fallback = fallback or {}
+    return {
+        "source_id": row.get("source_id") or fallback.get("source_id", ""),
+        "source_name": row.get("source_name") or fallback.get("source_name", ""),
+        "source_url": row.get("source_url") or fallback.get("source_url", ""),
+        "source_date_context": row.get("source_date_context") or fallback.get("source_date_context", ""),
+    }
 
 
 def confidence_for_member(kind: str) -> str:
@@ -147,6 +174,8 @@ def excerpt(text: str, start: int, end: int, radius: int = 90) -> str:
 
 
 def main() -> None:
+    source_metadata = read_optional_csv(SOURCE_METADATA_CSV)
+    default_source = source_metadata[0] if source_metadata else {}
     affiliations = read_csv(AFFILIATIONS_CSV)
     members = read_csv(MEMBERS_CSV)
     patterns = read_csv(PATTERNS_CSV)
@@ -180,6 +209,7 @@ def main() -> None:
             "role_title": member.get("role_title", ""),
             "evidence_kind": evidence_kind,
             "evidence_source": "2003_clans_webpage_member_list",
+            **source_fields(member, source_fields(aff, default_source)),
             "source_whois_id": "",
             "evidence_excerpt": aff.get("description_notes", ""),
             "confidence": confidence_for_member(evidence_kind),
@@ -203,6 +233,7 @@ def main() -> None:
                 "known_character_id": char.get("character_id", ""),
                 "whois_checked": whois_checked,
                 "evidence_kind": evidence_kind,
+                **source_fields(member, source_fields(aff, default_source)),
                 "notes": member.get("notes", ""),
             })
 
@@ -245,6 +276,7 @@ def main() -> None:
                 "role_title": "",
                 "evidence_kind": f"whois_{pattern_row.get('pattern_type', 'pattern')}_match",
                 "evidence_source": "whois_records_raw_text",
+                **source_fields(pattern_row, default_source),
                 "source_whois_id": whois.get("whois_id", ""),
                 "evidence_excerpt": excerpt(raw_text, match.start(), match.end()),
                 "confidence": pattern_row.get("confidence_default", "candidate") or "candidate",
@@ -281,6 +313,7 @@ def main() -> None:
 
 Inputs:
 
+- `{SOURCE_METADATA_CSV.relative_to(ROOT)}`
 - `{AFFILIATIONS_CSV.relative_to(ROOT)}`
 - `{MEMBERS_CSV.relative_to(ROOT)}`
 - `{PATTERNS_CSV.relative_to(ROOT)}`
@@ -296,6 +329,7 @@ Outputs:
 
 - Affiliation source rows: {len(affiliations)}
 - Listed member/contact source rows: {len(members)}
+- Source metadata rows: {len(source_metadata)}
 - Pattern source rows: {len(patterns)}
 - Derived affiliation evidence rows: {len(rows)}
 - Whois queue names: {len(queue_rows)}
@@ -320,6 +354,7 @@ Outputs:
 ## Interpretation notes
 
 - These are player-organised or socially meaningful affiliations, not built-in race/subrace/faction classifications.
+- `source_id`, `source_name`, `source_url`, and `source_date_context` preserve where the historical evidence came from.
 - Direct membership/contact rows from the 2003 webpage are historical evidence even when a current whois does not mention the group.
 - Pattern matches from whois text are candidates and should be reviewed before public display as accepted affiliation.
 - `character_key` is the official searchable MUME name, taken as the first word of a listed display name.

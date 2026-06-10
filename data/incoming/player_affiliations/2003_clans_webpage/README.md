@@ -2,10 +2,13 @@
 
 This folder contains a structured first-pass extraction from copied webpage content described as current in 2003.
 
+Source URL: https://elvenrunes.com/mume/clans.html
+
 The source is used for player-organised or socially meaningful clans/guilds/groups only. It should not be mixed with built-in MUME race, subrace, class, or faction classification.
 
 ## Files
 
+- `source_metadata.csv` — stable source ID, source name, URL, source type, and date context.
 - `player_affiliations.csv` — one row per clan/guild/group.
 - `player_affiliation_members.csv` — one row per listed member, founder, contact, or alias candidate.
 - `player_affiliation_patterns.csv` — phrases/acronyms/title patterns used to search existing whois text for candidate affiliation evidence.
@@ -18,3 +21,7 @@ The source is used for player-organised or socially meaningful clans/guilds/grou
 - The Hand of Sauron entry lists Diamonium Dagamatri as the member/contact. `Sauron`, `Loremaster`, and title examples such as `Eye of Sauron` are not listed as ordinary members.
 - A title phrase such as `of Sauron` is included as a whois matching pattern because it may indicate Hand of Sauron affiliation, but it must be reviewed.
 - All rows begin as `candidate` or `needs_context` until reviewed.
+
+## Source metadata
+
+The source is identified as `2003_elvenrunes_clans` and should be carried through into derived evidence rows. This lets later page generation cite the historical webpage evidence separately from Mudlet whois evidence.
