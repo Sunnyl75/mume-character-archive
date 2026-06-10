@@ -4,9 +4,9 @@ This pack shows up to 10 examples from each main mention type.
 
 ## Counts
 
-- comma_name_list: 255
-- heading_name_list: 57
-- quoted_speaker: 61
+- comma_name_list: 265
+- heading_name_list: 69
+- quoted_speaker: 62
 
 ## 1. Cormac → Fragir
 

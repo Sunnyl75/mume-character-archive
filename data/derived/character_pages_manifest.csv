@@ -1831,3 +1831,46 @@ char_cérion,Cérion,cerion,,,,,,Elf,,Free Peoples,medium,,,,,,,,,,,,,,race_only
 char_galádon,Galádon,galadon,,,,,,Elf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,yes,yes,data/evidence/whois_display/html/galadon.html,data/evidence/whois_display/text/galadon.txt,mha:galadon:1780909174:e727c0f3,high,0,0,0,,,no,0,,0,,no,no
 char_röhick,Röhick,rohick,,,,,,Hobbit,,Free Peoples,medium,,,,,,,,,,,,,,race_only,yes,yes,data/evidence/whois_display/html/rohick.html,data/evidence/whois_display/text/rohick.txt,mha:rohick:1780915345:1d311e93,high,0,0,0,,,no,0,,0,,no,no
 char_réndra,Réndra,rendra,,,,,,Elf,Silvan,Free Peoples,medium,Cleric,Cleric,Matriarch,high,,,,,female,high,,,,classified,yes,yes,data/evidence/whois_display/html/rendra.html,data/evidence/whois_display/text/rendra.txt,mha:rendra:1780915203:0d8dd248,high,0,0,0,,,no,0,,0,,no,no
+char_dwalid,Dwalid,dwalid,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_höelün,Höelün,hoelun,,,,,,Elf,Noldorin,Free Peoples,medium,Cleric,Cleric,Priestess,high,,,,,female,high,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_coco,Coco,coco,,,,,,Man,Black Númenórean,Minions of Sauron,high,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_burli,Burli,burli,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Battlemaster,high,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_nator,Nator,nator,,,,,,Dwarf,Broadbeam,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_awreth,Awreth,awreth,,,,,,Maia,,Immortals,high,,,,,,,,,,,Maia,M,,immortal,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_oddvar,Oddvar,oddvar,,,,,,Dwarf,Firebeard,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_zigin,Zigin,zigin,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_xury,Xury,xury,,,,,,Dwarf,,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,yes,1,46.5,0,,no,no
+char_whity,Whity,whity,,,,,,Hobbit,Stoor,Free Peoples,medium,General,General,Adventurer,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_vräsh,Vräsh,vrash,,,,,,Dwarf,,Free Peoples,medium,General,General,Chieftain,medium,90%-100% Leadership,,,,,,,,,classified,no,no,,,,,1,0,0,quoted_speaker:1,Norìk,no,0,,0,,no,yes
+char_tendor,Tendor,tendor,,,,,,Man,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_strah,Strah,strah,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Axemaster,high,100% cleaving weapons,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_shwash,Shwash,shwash,,,,,,Dwarf,Firebeard,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_roy,Roy,roy,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_rohwan,Rohwan,rohwan,,,,,,Man,Rohirrim,Free Peoples,medium,General,General,Chieftain,medium,90%-100% Leadership,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_ritz,Ritz,ritz,,,,,,Dwarf,Broadbeam,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_razer,Razer,razer,,,,,,Maia,,Immortals,high,,,,,,,,,,,Maia,M,,immortal,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_rackarth,Rackarth,rackarth,,,,,,Elf,Noldorin,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_njaa,Njaa,njaa,,,,,,Maia,,Immortals,high,,,,,,,,,,,Maia,M,,immortal,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_lian,Lian,lian,,,,,,Dwarf,,Free Peoples,medium,Cleric,Cleric,Patriarch,high,,,,,male,high,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_letholes,Letholes,letholes,,,,,,Elf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,22,2,2,heading_name_list:12; comma_name_list:10,Artus; Commodore; Dharg; Faihran; Guir; Letholes; Lorte; Romil; Erui; Lethal; Morzak; Sniper,no,0,,0,,no,yes
+char_lolli,Lolli,lolli,,,,,,Troll,Cave Troll,Minions of Sauron,high,Warrior,Warrior,Fighter,low,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_kibgil,Kibgil,kibgil,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_harduin,Harduin,harduin,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Battlemaster,high,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_grunga,Grunga,grunga,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Battlemistress,high,,,,,female,high,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_groan,Groan,groan,,,,,,Troll,,Minions of Sauron,high,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_gilean,Gilean,gilean,,,,,,Man,Eriadorian,Free Peoples,medium,Magic-user,Magic-user,Enchanter,low,,,,,male,medium,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_fëndor,Fëndor,fendor,,,,,,Half-Elf,,Free Peoples,medium,General,General,Adventurer,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_filk,Filk,filk,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Bodyguard,high,80% Rescue,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_fathrà,Fathrà,fathra,,,,,,Elf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_fari,Fari,fari,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,1,low:1,no,yes
+char_brawn,Brawn,brawn,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Mercenary,low,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_aerie,Aerie,aerie,,,,,,Half-Elf,,Free Peoples,medium,Cleric,Cleric,Priestess,high,,,,,female,high,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_aelor,Aelor,aelor,,,,,,Dwarf,Firebeard,Free Peoples,medium,Warrior,Warrior,Warden,high,75% Bash,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_kill,Kill,kill,,,,,,Troll,Mountain Troll,Minions of Sauron,high,,,Softskin,low,,,,,,,,,,generic_title_no_class,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_erath,Erath,erath,,,,,,Dwarf,,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_röxic,Röxic,roxic,,,,,,Man,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,yes,1,17.0,0,,no,no
+char_loreth,Loreth,loreth,,,,,,Dwarf,,Free Peoples,medium,General,General,Champion,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_condor,Condor,condor,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Battlemaster,high,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes
+char_aldweth,Aldweth,aldweth,,,,,,Dwarf,,Free Peoples,medium,,,,,,,,,,,,,,race_only,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_ilwin,Ilwin,ilwin,,,,,,Dwarf,,Free Peoples,medium,Warrior,Warrior,Battlemaster,high,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,0,,no,no
+char_eld,Eld,eld,,,,,,Dwarf,,Free Peoples,medium,General,General,Hero,medium,,,,,,,,,,classified,no,no,,,,,0,0,0,,,no,0,,1,medium:1,no,yes

@@ -20,43 +20,43 @@ Outputs:
 - Listed member/contact source rows: 108
 - Source metadata rows: 1
 - Pattern source rows: 45
-- Derived affiliation evidence rows: 160
-- Whois queue names: 72
+- Derived affiliation evidence rows: 178
+- Whois queue names: 31
 
 ## Evidence source counts
 
 - 2003_clans_webpage_member_list: 108
-- whois_records_raw_text: 52
+- whois_records_raw_text: 70
 
 ## Review status counts
 
-- candidate: 160
+- candidate: 178
 
 ## Confidence counts
 
-- medium: 130
-- candidate: 17
+- medium: 146
+- candidate: 19
 - medium_high: 13
 
 ## Whois queue reason counts
 
-- not_in_characters: 66
+- not_in_characters: 25
 - known_character_without_whois: 6
 
 ## Top affiliation evidence counts
 
-- Durin's House: 37
-- Arda's Army: 26
-- Durin's Army: 21
+- Durin's House: 45
+- Arda's Army: 27
+- Durin's Army: 26
 - The Hand of Sauron: 13
 - Black Shadow Clan: 11
 - Troll Kamikaze Squadron: 11
 - Shire Shock Troops: 8
 - The Seventh Battalion: 8
-- Army of Arthedain: 5
+- Army of Arthedain: 7
 - Damage Inc.: 5
-- Scouts of Rivendell: 4
-- The Brotherhood of the Squirrel: 4
+- Scouts of Rivendell: 5
+- The Brotherhood of the Squirrel: 5
 - Friends to the Death: 3
 - Riders of Rohan: 2
 - Carrock of Anduin: 1

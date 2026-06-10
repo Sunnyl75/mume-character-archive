@@ -2,7 +2,7 @@
 
 This pack shows the top 25 ASCII-art candidates by score.
 
-Total ASCII candidates: 73
+Total ASCII candidates: 75
 
 ## 1. Joker
 
@@ -288,7 +288,56 @@ Last login 1 year, 5 months, and 8 days ago.
   LL\/   ,' '--'-'-----'  \  (
 ```
 
-## 7. Vili
+## 7. Xury
+
+- Score: `46.5`
+- Art-like line count: `14`
+- Source descriptor: `Dwarven Hero`
+
+Detected ASCII block:
+
+```text
+|\                     /)
+ /\_\\__  Evilcleaver   \//
+|   `>\-`     _._       //\
+ \ /` \\  _.-`:::`-._  //
+  `    \|`    :::    `|/
+        |     :::     |
+        |:::::::::::::|
+        |     :::     |
+        \     :::     /
+         \    :::    /
+          `-. ::: .-'
+             /:::\
+            // ' \\
+           |/     \\
+```
+
+Whois context:
+
+```text
+Xury Evilcleaver, Ranger of Belegost is a level
+    forty Dwarven Hero [Retired].
+Last login 10 years, 10 months, and 10 days ago from
+    *.net.
+   |\                     /)
+ /\_\\__  Evilcleaver   \//
+|   `>\-`     _._       //\
+ \ /` \\  _.-`:::`-._  //
+  `    \|`    :::    `|/
+        |     :::     |
+        |:::::::::::::|
+        |:::::::::::::|   The brave no do not fear the grave.
+        |     :::     |
+        \     :::     /
+         \    :::    /
+          `-. ::: .-'
+             /:::\
+            // ' \\
+           |/     \\
+```
+
+## 8. Vili
 
 - Score: `46.0`
 - Art-like line count: `11`
@@ -328,7 +377,7 @@ Runts   \##\  /##/
   us!(___]\====/[___)
 ```
 
-## 8. Väinämöinen
+## 9. Väinämöinen
 
 - Score: `44.5`
 - Art-like line count: `14`
@@ -374,7 +423,7 @@ O  |_\   w
 | (/  \)
 ```
 
-## 9. Buller
+## 10. Buller
 
 - Score: `42.0`
 - Art-like line count: `13`
@@ -416,47 +465,6 @@ Buller O Bong, The LoLog is a level twenty-two Mountain Troll
        WW(  (   )  )WW
         __\,,\ /,,/__
        (______Y______)
-```
-
-## 10. Rik
-
-- Score: `40.5`
-- Art-like line count: `9`
-- Source descriptor: `Maia`
-
-Detected ASCII block:
-
-```text
-__-::..     .-----. .=. .-. .-.
-      _/ _/ _/':.   '-+ +-' '=' | |/ /
-     / // // / ':.    | |   .-. | ' /
-    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
-   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
-  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
- / // // /                              | + \ N \/ N N \/ N | | \/ | |
-(_)(_)(_)                               |   / \    / \    / | |    | |
- (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
-```
-
-Whois context:
-
-```text
-Rik Tik TIK BOOM! Served more than 157 kits is a Maia
-    (Wright) [Retired].
-        __-::..     .-----. .=. .-. .-.
-      _/ _/ _/':.   '-+ +-' '=' | |/ /
-     / // // / ':.    | |   .-. | ' /
-    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
-   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
-  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
- / // // /                              | + \ N \/ N N \/ N | | \/ | |
-(_)(_)(_)                               |   / \    / \    / | |    | |
- (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
-   (_)
-The Good:  Ainko, Akio, Alderik, Francis, Ghij, Harold, Kim,, Knutt, Kyrania,
-Marieke,  Obthic, Oksar, Rhamd, Synnove, Tum, Wanda, Xyziristine, Zhyza
-The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
-Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Tim
 ```
 
 ## 11. Rik
@@ -523,6 +531,47 @@ __-::..     .-----. .=. .-. .-.
 Whois context:
 
 ```text
+Rik Tik TIK BOOM! Served more than 157 kits is a Maia
+    (Wright) [Retired].
+        __-::..     .-----. .=. .-. .-.
+      _/ _/ _/':.   '-+ +-' '=' | |/ /
+     / // // / ':.    | |   .-. | ' /
+    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
+   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
+  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
+ / // // /                              | + \ N \/ N N \/ N | | \/ | |
+(_)(_)(_)                               |   / \    / \    / | |    | |
+ (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
+   (_)
+The Good:  Ainko, Akio, Alderik, Francis, Ghij, Harold, Kim,, Knutt, Kyrania,
+Marieke,  Obthic, Oksar, Rhamd, Synnove, Tum, Wanda, Xyziristine, Zhyza
+The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
+Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Tim
+```
+
+## 13. Rik
+
+- Score: `40.5`
+- Art-like line count: `9`
+- Source descriptor: `Maia`
+
+Detected ASCII block:
+
+```text
+__-::..     .-----. .=. .-. .-.
+      _/ _/ _/':.   '-+ +-' '=' | |/ /
+     / // // / ':.    | |   .-. | ' /
+    / // // /   ::    | |   | | | . \   .--.   .--.   .--.  .--.  .--.
+   =========     ::   | |   | | | |\ \  | + \ /    \ /    \ |   \/   |
+  / // // /      **   '-'   '-' '-' '-' |   / N /\ N N /\ N | |\  /| |
+ / // // /                              | + \ N \/ N N \/ N | | \/ | |
+(_)(_)(_)                               |   / \    / \    / | |    | |
+ (_)(_)         TIK                     '--'   '--'   '--'  '-'    '-'
+```
+
+Whois context:
+
+```text
 Rik Tik TIK BOOM! Served more than 157 kits is a Maia (Wright)
     [Retired].
         __-::..     .-----. .=. .-. .-.
@@ -541,7 +590,7 @@ The Evil: Ashmash, Billiam, Brutex, Defcon, Hatchie, Inkathurg, Lentracus,
 Maglubhiyet, Myrcea, Oki, Oliksia, Qwestus, Tim
 ```
 
-## 13. Lâirâthim
+## 14. Lâirâthim
 
 - Score: `40.0`
 - Art-like line count: `10`
@@ -579,7 +628,7 @@ Lâirâthim - Backfire of the Black Shadow Clan is a Black
      )))( |                    )))( |                      )))( |
 ```
 
-## 14. Carl
+## 15. Carl
 
 - Score: `39.5`
 - Art-like line count: `9`
@@ -620,7 +669,7 @@ You know the thing about a Troll... it's got lifeless eyes, black eyes, like a
                     `-----'  `--' `--' `--' '--' `------'
 ```
 
-## 15. Magi
+## 16. Magi
 
 - Score: `39.0`
 - Art-like line count: `10`
@@ -659,7 +708,7 @@ Last login 1 month and 28 days ago from *.no.
             .-'  .Y  /| |
 ```
 
-## 16. Tindomerel
+## 17. Tindomerel
 
 - Score: `38.5`
 - Art-like line count: `10`
@@ -698,7 +747,7 @@ Last login 7 months and 3 days ago.
         `)/ `. |
 ```
 
-## 17. Liten
+## 18. Liten
 
 - Score: `37.5`
 - Art-like line count: `9`
@@ -735,7 +784,7 @@ __).-| = | = |/   \ |
               `---'
 ```
 
-## 18. Betty
+## 19. Betty
 
 - Score: `36.5`
 - Art-like line count: `10`
@@ -773,7 +822,7 @@ Last login 22 years, 10 months, and 24 days ago from *.org.
    |/''')             \   \sl
 ```
 
-## 19. Bum
+## 20. Bum
 
 - Score: `36.5`
 - Art-like line count: `8`
@@ -808,7 +857,7 @@ Last login 13 years, 3 months, and 21 days ago.
      ()/            '~~~~~'           \()
 ```
 
-## 20. Ukuvul
+## 21. Ukuvul
 
 - Score: `36.5`
 - Art-like line count: `9`
@@ -844,7 +893,7 @@ Ukuvul is a level twelve Orkish Sentry [Retired].
                  (V)(V)(V)   (V)(V)(V)
 ```
 
-## 21. Carak
+## 22. Carak
 
 - Score: `36.0`
 - Art-like line count: `10`
@@ -881,7 +930,7 @@ Carak the Hound of Darkness is an Orc [Retired].
 __/~..''~''''.\_____
 ```
 
-## 22. Dimmu
+## 23. Dimmu
 
 - Score: `35.0`
 - Art-like line count: `10`
@@ -920,7 +969,7 @@ Dimmu is a level one Troll [Retired].
 '..' /       |
 ```
 
-## 23. Draggy
+## 24. Draggy
 
 - Score: `35.0`
 - Art-like line count: `10`
@@ -960,7 +1009,7 @@ Draggy Drone, Raider of Isengard is a level thirty-one Mountain
 '..' /       |
 ```
 
-## 24. Qwestus
+## 25. Qwestus
 
 - Score: `35.0`
 - Art-like line count: `8`
@@ -995,39 +1044,5 @@ Qwestus the Outcast from Goblin Town is an Orc [Retired].
 Bear inspired by mrf, bird by PhS.
 
 Last login 4 years, 5 months and 18 days ago
-```
-
-## 25. Sinner
-
-- Score: `35.0`
-- Art-like line count: `8`
-- Source descriptor: `Troll`
-
-Detected ASCII block:
-
-```text
-,.    ,  .      )        .      ,
-       ("     )  )'     ,'        )  . (`     '`
-     .; )  ' (( (" )    ;(,     ((  (  ;)  "  )"
-     _"., ,._'_.,)_(..,( . )_  _' )_') (. _..( '..
-     / ___|  |_ _| | \ | | | \ | | | ____| |  _ \
-     \___ \   | |  |  \| | |  \| | |  _|   | |_) |
- `(, *___) |  | |  | |\  | | |\  | | |___  |  _ <* ,)`
- .)(.|____/  |___| |_| \_| |_| \_| |_____| |_| \_\.)(.
-```
-
-Whois context:
-
-```text
-Sinner SoulTear is a Troll [Retired].
-
-        ,.    ,  .      )        .      ,
-       ("     )  )'     ,'        )  . (`     '`
-     .; )  ' (( (" )    ;(,     ((  (  ;)  "  )"
-     _"., ,._'_.,)_(..,( . )_  _' )_') (. _..( '..
-     / ___|  |_ _| | \ | | | \ | | | ____| |  _ \
-     \___ \   | |  |  \| | |  \| | |  _|   | |_) |
- `(, *___) |  | |  | |\  | | |\  | | |___  |  _ <* ,)`
- .)(.|____/  |___| |_| \_| |_| \_| |_____| |_| \_\.)(.
 ```
 

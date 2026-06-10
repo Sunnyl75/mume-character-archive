@@ -1,6 +1,6 @@
 # Whois Social and Formatting Report
 
-Whois rows scanned: 1759
+Whois rows scanned: 1825
 Rows with no usable raw text: 0
 
 ## Output files
@@ -11,31 +11,32 @@ Rows with no usable raw text: 0
 
 ## Mention candidates
 
-Total mention rows: 373
+Total mention rows: 396
 
 ### Mention type counts
 
-- comma_name_list: 255
-- quoted_speaker: 61
-- heading_name_list: 57
+- comma_name_list: 265
+- heading_name_list: 69
+- quoted_speaker: 62
 
 ### Heading counts
 
 - Darkies: 47
-- Pukes: 10
+- Pukes: 18
+- Orcs: 4
 
 ### Matched known character counts
 
-- no: 206
-- yes: 167
+- no: 227
+- yes: 169
 
 ## Group/guild/clan candidates
 
-Total group rows: 117
+Total group rows: 133
 
 ## ASCII art candidates
 
-Total ASCII art candidate rows: 73
+Total ASCII art candidate rows: 75
 
 Top ASCII candidates:
 
@@ -45,6 +46,7 @@ Top ASCII candidates:
 - Echo: score 59.0, 14 line(s)
 - Umnik: score 57.5, 15 line(s)
 - Escape: score 55.0, 15 line(s)
+- Xury: score 46.5, 14 line(s)
 - Vili: score 46.0, 11 line(s)
 - Väinämöinen: score 44.5, 14 line(s)
 - Buller: score 42.0, 13 line(s)
@@ -58,4 +60,3 @@ Top ASCII candidates:
 - Liten: score 37.5, 9 line(s)
 - Betty: score 36.5, 10 line(s)
 - Bum: score 36.5, 8 line(s)
-- Ukuvul: score 36.5, 9 line(s)

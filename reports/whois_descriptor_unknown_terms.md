@@ -1,43 +1,43 @@
 # Whois Descriptor Classification: Unknown / Review Terms
 
-Rows analysed: 1370
+Rows analysed: 1414
 
 ## Derived race counts
 
 - Orc: 334
-- Man: 246
-- Elf: 221
-- Dwarf: 197
-- Troll: 116
-- Maia: 91
-- Hobbit: 81
-- Half-Elf: 69
+- Man: 251
+- Elf: 225
+- Dwarf: 223
+- Troll: 119
+- Maia: 94
+- Hobbit: 82
+- Half-Elf: 71
 - Vala: 12
 - (unknown): 3
 
 ## Derived base class counts
 
-- (unknown): 702
-- Warrior: 262
-- General: 210
-- Cleric: 75
-- Magic-user: 68
+- (unknown): 719
+- Warrior: 272
+- General: 223
+- Cleric: 78
+- Magic-user: 69
 - Thief: 53
 
 ## Derived faction counts
 
-- Free Peoples: 704
-- Minions of Sauron: 558
-- Immortals: 103
+- Free Peoples: 741
+- Minions of Sauron: 562
+- Immortals: 106
 - (unknown): 3
 - Renegade Zaugurz: 2
 
 ## Classification status counts
 
-- classified: 655
-- race_only: 578
-- immortal: 103
-- generic_title_no_class: 17
+- classified: 682
+- race_only: 591
+- immortal: 106
+- generic_title_no_class: 18
 - parser_suspect_or_custom_descriptor: 14
 - custom_descriptor_unclassified: 2
 - no_descriptor: 1
@@ -77,40 +77,41 @@ Rows analysed: 1370
 - `the key! is a level thirty-five`: 1
 - `your Papa is an`: 1
 - `Sauron's gift to women is a level thirty-four`: 1
+- `on a holiday is a`: 1
 
 ## Most common raw descriptors
 
 - `Orc`: 150
-- `Elf`: 106
-- `Dwarf`: 86
-- `Maia`: 82
-- `Black Númenórean`: 60
+- `Elf`: 108
+- `Dwarf`: 93
+- `Maia`: 84
+- `Black Númenórean`: 61
 - `Hobbit`: 45
-- `Man`: 41
-- `Troll`: 36
+- `Man`: 43
+- `Troll`: 37
 - `Tarkhnarb Champion`: 36
 - `Half-Elf`: 33
-- `Dwarven Battlemaster`: 27
+- `Dwarven Battlemaster`: 31
+- `Dwarven Hero`: 24
 - `Tarkhnarb Battlemaster`: 23
-- `Dwarven Hero`: 21
 - `Mountain Troll Warrior`: 16
 - `Tarkhnarb Veteran`: 14
 - `Tarkhnarb Necromancer`: 14
 - `Tarkhnarb Rider`: 12
 - `Cave Troll Warrior`: 11
 - `Noldorin Wizard`: 9
+- `Dwarven Axemaster`: 9
 - `Tarkhnarb Shaman`: 9
 - `Vala`: 9
 - `Tarkhnarb Assassin`: 8
-- `Dwarven Axemaster`: 8
 - `Black Númenórean Wizard`: 8
 - `Black Númenórean Mercenary`: 7
+- `Mountain Troll Softskin`: 7
 - `Half-elven Patriarch`: 7
 - `Silvan Hero`: 7
+- `Noldorin Hero`: 7
 - `Sindarin Hero`: 7
 - `Dwarven Ranger`: 6
-- `Mountain Troll Softskin`: 6
-- `Noldorin Hero`: 6
 - `Hill Troll Warrior`: 6
 - `Black Númenórean Envoy`: 6
 - `Dwarven Warden`: 6
@@ -132,17 +133,21 @@ Rows analysed: 1370
 - `Cave Troll Wrecker`: 4
 - `Dwarven Warrior`: 4
 - `Dúnadan Adventurer`: 4
+- `Firebeard Hero`: 4
 - `Black Númenórean Witch`: 4
 - `Tarkhnarb Fighter`: 4
 - `Sindarin Warlock`: 4
 - `Mountain Troll Brute`: 4
+- `Dwarven Chieftain`: 4
 - `Silvan Hunter`: 3
 - `Fallohide Hero`: 3
 - `Sindarin Witch`: 3
+- `Dwarven Patriarch`: 3
 - `Tarkhnarb Soldier`: 3
 - `Silvan Ranger`: 3
 - `Hill Troll Fighter`: 3
 - `Beorning Adventurer`: 3
+- `Cave Troll Fighter`: 3
 - `Dúnadan Wizard`: 3
 - `Dwarven Veteran`: 3
 - `Half-elven Priest`: 3
@@ -153,8 +158,10 @@ Rows analysed: 1370
 - `Dwarven Priest`: 3
 - `Hill Troll Brute`: 3
 - `Mountain Troll Fighter`: 3
-- `Dwarven Chieftain`: 3
+- `Dwarven Mercenary`: 3
 - `Tarkhnarb Adventurer`: 3
+- `Noldorin Priestess`: 3
+- `Dwarven Battlemistress`: 3
 - `Beorning Battlemistress`: 3
 - `Silvan Scout`: 3
 - `Tarkhnarb Snaga`: 3
@@ -174,9 +181,3 @@ Rows analysed: 1370
 - `Half-elven Champion`: 2
 - `Dúnadan Warden`: 2
 - `Silvan Wizard`: 2
-- `Dwarven Patriarch`: 2
-- `Dwarven Fighter`: 2
-- `Cave Troll Fighter`: 2
-- `Rohirric Hero`: 2
-- `Dwarven Scholar`: 2
-- `Broadbeam Fighter`: 2

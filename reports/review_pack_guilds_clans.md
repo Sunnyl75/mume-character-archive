@@ -4,9 +4,9 @@ This report is expected to be noisy. Review for recurring patterns, not individu
 
 ## Counts
 
-- Total rows: 117
-- Medium confidence rows: 57
-- Low confidence rows: 60
+- Total rows: 133
+- Medium confidence rows: 65
+- Low confidence rows: 68
 
 ## 1. Aeruscator
 

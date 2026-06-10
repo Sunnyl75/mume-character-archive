@@ -6,7 +6,7 @@ This is a small review pack. It is not intended to review every row.
 
 - Unknown faction rows: 3
 - Parser-suspect/custom descriptor rows: 14
-- Generic title/no class rows: 48
+- Generic title/no class rows: 18
 - Classified sample rows shown: 10
 
 ## Unknown faction rows
@@ -66,12 +66,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Man`
 - Derived subrace: `Black Númenórean`
 - Derived faction: `Minions of Sauron`
-- Derived class: `Scout`
+- Derived class: `General`
 - Derived title: `Ranger`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `not a mage, cleric, or Swedish is a level twenty-six`
-- Notes: `race_term=Black Númenórean | class_title=Ranger | unmatched=not a mage, cleric, or Swedish is a level twenty-six`
+- Notes: `race_term=Black Númenórean | class_title=Ranger | who_class_group=General | class_confidence=medium | skill_notes=High Track; exact requirement uncertain and probably not 100%+ | unmatched=not a mage, cleric, or Swedish is a level twenty-six`
 
 ### 2. Britney
 
@@ -96,12 +96,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Orc`
 - Derived subrace: `Tarkhnarb`
 - Derived faction: `Minions of Sauron`
-- Derived class: `Mage`
+- Derived class: `Cleric`
 - Derived title: `Necromancer`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `coming your way is a level thirty-five`
-- Notes: `race_term=Tarkhnarb | class_title=Necromancer | unmatched=coming your way is a level thirty-five`
+- Notes: `race_term=Tarkhnarb | class_title=Necromancer | who_class_group=Cleric | class_confidence=high | unmatched=coming your way is a level thirty-five`
 
 ### 4. Fierce
 
@@ -116,7 +116,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `point is a level forty`
-- Notes: `race_term=Cave Troll | class_title=Warrior | unmatched=point is a level forty`
+- Notes: `race_term=Cave Troll | class_title=Warrior | who_class_group=Warrior | class_confidence=medium | unmatched=point is a level forty`
 
 ### 5. Gulag
 
@@ -131,7 +131,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `back where he belongs is a level forty-four`
-- Notes: `race_term=Tarkhnarb | class_title=Soldier | unmatched=back where he belongs is a level forty-four`
+- Notes: `race_term=Tarkhnarb | class_title=Soldier | who_class_group=Warrior | class_confidence=high | unmatched=back where he belongs is a level forty-four`
 
 ### 6. Hannibal
 
@@ -146,7 +146,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `at the gates is a level forty`
-- Notes: `race_term=Tarkhnarb | class_title=Warg-rider | unmatched=at the gates is a level forty`
+- Notes: `race_term=Tarkhnarb | class_title=Warg-rider | who_class_group=Warrior | class_confidence=low | unmatched=at the gates is a level forty`
 
 ### 7. Maegnas
 
@@ -156,12 +156,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Noldorin`
 - Derived faction: `Free Peoples`
-- Derived class: `Warrior`
+- Derived class: `General`
 - Derived title: `Rider`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `my name, I am the spider's bane! is a level thirty`
-- Notes: `race_term=Noldorin | class_title=Rider | unmatched=my name, I am the spider's bane! is a level thirty`
+- Notes: `race_term=Noldorin | class_title=Rider | who_class_group=General | class_confidence=medium | skill_notes=90% Ride | unmatched=my name, I am the spider's bane! is a level thirty`
 
 ### 8. Neo
 
@@ -173,10 +173,10 @@ This is a small review pack. It is not intended to review every row.
 - Derived faction: `Free Peoples`
 - Derived class: `Warrior`
 - Derived title: `Weaponsmaster`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: `Beginning to Believe... is a level forty-one`
-- Notes: `race_term=Dwarven | class_title=Weaponsmaster | unmatched=Beginning to Believe... is a level forty-one`
+- Notes: `race_term=Dwarven | class_title=Weaponsmaster | who_class_group=Warrior | class_confidence=high | skill_notes=Unknown percent in at least two weapon skills | unmatched=Beginning to Believe... is a level forty-one`
 
 ### 9. Nogir
 
@@ -186,12 +186,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Orc`
 - Derived subrace: ``
 - Derived faction: `Minions of Sauron`
-- Derived class: `Warrior`
+- Derived class: `General`
 - Derived title: `Champion`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `warrior. is a level fifty-six`
-- Notes: `race_term=Orkish | class_title=Champion | unmatched=warrior. is a level fifty-six`
+- Notes: `race_term=Orkish | class_title=Champion | who_class_group=General | class_confidence=medium | unmatched=warrior. is a level fifty-six`
 
 ### 10. Rorka
 
@@ -201,12 +201,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Orc`
 - Derived subrace: `Tarkhnarb`
 - Derived faction: `Minions of Sauron`
-- Derived class: `Scout`
+- Derived class: `Thief`
 - Derived title: `Murderess`
 - Derived gender: `female`
 - Gender confidence: `high`
 - Remainder: `looking for a great title! is a level twenty-two`
-- Notes: `race_term=Tarkhnarb | class_title=Murderess | unmatched=looking for a great title! is a level twenty-two`
+- Notes: `race_term=Tarkhnarb | class_title=Murderess | who_class_group=Thief | class_confidence=medium | unmatched=looking for a great title! is a level twenty-two`
 
 ### 11. Skud
 
@@ -221,7 +221,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `heading for beautiful, tropical Iraq is a level thirty-one`
-- Notes: `race_term=Hill Troll | class_title=Warrior | unmatched=heading for beautiful, tropical Iraq is a level thirty-one`
+- Notes: `race_term=Hill Troll | class_title=Warrior | who_class_group=Warrior | class_confidence=medium | unmatched=heading for beautiful, tropical Iraq is a level thirty-one`
 
 ### 12. Tindomerel
 
@@ -231,12 +231,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Noldorin`
 - Derived faction: `Free Peoples`
-- Derived class: `Warrior`
+- Derived class: `General`
 - Derived title: `Heroine`
 - Derived gender: `female`
 - Gender confidence: `high`
 - Remainder: `so hot your head goes Yufzbarr is a level sixty-one`
-- Notes: `race_term=Noldorin | class_title=Heroine | unmatched=so hot your head goes Yufzbarr is a level sixty-one`
+- Notes: `race_term=Noldorin | class_title=Heroine | who_class_group=General | class_confidence=medium | unmatched=so hot your head goes Yufzbarr is a level sixty-one`
 
 ### 13. Toe
 
@@ -251,7 +251,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: `the key! is a level thirty-five`
-- Notes: `race_term=Cave Troll | class_title=Wrecker | unmatched=the key! is a level thirty-five`
+- Notes: `race_term=Cave Troll | class_title=Wrecker | who_class_group=Warrior | class_confidence=low | unmatched=the key! is a level thirty-five`
 
 ### 14. Zoone
 
@@ -263,10 +263,10 @@ This is a small review pack. It is not intended to review every row.
 - Derived faction: `Minions of Sauron`
 - Derived class: `Warrior`
 - Derived title: `Battlemaster`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: `Sauron's gift to women is a level thirty-four`
-- Notes: `race_term=Tarkhnarb | class_title=Battlemaster | unmatched=Sauron's gift to women is a level thirty-four`
+- Notes: `race_term=Tarkhnarb | class_title=Battlemaster | who_class_group=Warrior | class_confidence=high | unmatched=Sauron's gift to women is a level thirty-four`
 
 ## Generic title, no class rows — first 20
 
@@ -283,129 +283,9 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Mountain Troll | class_title=Softskin | base_class_unknown`
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
-### 2. Ainko
-
-- Whois ID: `whois_ainko_1780880761`
-- Descriptor: `Broadbeam Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Dwarf`
-- Derived subrace: `Broadbeam`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Broadbeam | class_title=Adventurer | base_class_unknown`
-
-### 3. Alcion
-
-- Whois ID: `whois_alcion_1780899157`
-- Descriptor: `Sindarin Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Elf`
-- Derived subrace: `Sindarin`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Sindarin | class_title=Adventurer | base_class_unknown`
-
-### 4. Alizee
-
-- Whois ID: `whois_alizee_1780899265`
-- Descriptor: `Sindarin Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Elf`
-- Derived subrace: `Sindarin`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Sindarin | class_title=Adventurer | base_class_unknown`
-
-### 5. Baphomet
-
-- Whois ID: `whois_baphomet_1780902882`
-- Descriptor: `Black Númenórean Envoy`
-- Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Black Númenórean`
-- Derived faction: `Minions of Sauron`
-- Derived class: ``
-- Derived title: `Envoy`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Black Númenórean | class_title=Envoy | base_class_unknown`
-
-### 6. Barnes
-
-- Whois ID: `whois_barnes_1780902915`
-- Descriptor: `Beorning Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Beorning`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Beorning | class_title=Adventurer | base_class_unknown`
-
-### 7. Bêlzagar
-
-- Whois ID: `whois_bêlzagar_1780903025`
-- Descriptor: `Black Númenórean Envoy`
-- Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Black Númenórean`
-- Derived faction: `Minions of Sauron`
-- Derived class: ``
-- Derived title: `Envoy`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Black Númenórean | class_title=Envoy | base_class_unknown`
-
-### 8. Bianca
-
-- Whois ID: `whois_bianca_1780903091`
-- Descriptor: `Dúnadan Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Dúnedain`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Dúnadan | class_title=Adventurer | base_class_unknown`
-
-### 9. Brask
-
-- Whois ID: `whois_brask_1780907233`
-- Descriptor: `Beorning Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Beorning`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Beorning | class_title=Adventurer | base_class_unknown`
-
-### 10. Cherish
+### 2. Cherish
 
 - Whois ID: `whois_cherish_1780907608`
 - Descriptor: `Orkish Snaga`
@@ -418,24 +298,9 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Orkish | class_title=Snaga | base_class_unknown`
+- Notes: `race_term=Orkish | class_title=Snaga | class_confidence=low | base_class_unknown`
 
-### 11. Cymoril
-
-- Whois ID: `whois_cymoril_1780907752`
-- Descriptor: `Noldorin Adventurer`
-- Status: `generic_title_no_class`
-- Derived race: `Elf`
-- Derived subrace: `Noldorin`
-- Derived faction: `Free Peoples`
-- Derived class: ``
-- Derived title: `Adventurer`
-- Derived gender: ``
-- Gender confidence: ``
-- Remainder: ``
-- Notes: `race_term=Noldorin | class_title=Adventurer | base_class_unknown`
-
-### 12. Deemon
+### 3. Deemon
 
 - Whois ID: `whois_deemon_1780907890`
 - Descriptor: `Hill Troll Softskin`
@@ -448,9 +313,9 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Hill Troll | class_title=Softskin | base_class_unknown`
+- Notes: `race_term=Hill Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
-### 13. Dork
+### 4. Dork
 
 - Whois ID: `whois_dork_1780908100`
 - Descriptor: `Cave Troll Softskin`
@@ -463,9 +328,9 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Cave Troll | class_title=Softskin | base_class_unknown`
+- Notes: `race_term=Cave Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
-### 14. Fable
+### 5. Fable
 
 - Whois ID: `whois_fable_1780908788`
 - Descriptor: `Orkish Snaga`
@@ -478,97 +343,202 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Orkish | class_title=Snaga | base_class_unknown`
+- Notes: `race_term=Orkish | class_title=Snaga | class_confidence=low | base_class_unknown`
 
-### 15. Fong
+### 6. Jamie
 
-- Whois ID: `whois_fong_1780909058`
-- Descriptor: `Silvan Adventurer`
+- Whois ID: `whois_jamie_1780912087`
+- Descriptor: `Cave Troll Softskin`
 - Status: `generic_title_no_class`
-- Derived race: `Elf`
-- Derived subrace: `Silvan`
-- Derived faction: `Free Peoples`
+- Derived race: `Troll`
+- Derived subrace: `Cave Troll`
+- Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Adventurer`
+- Derived title: `Softskin`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Silvan | class_title=Adventurer | base_class_unknown`
+- Notes: `race_term=Cave Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
-### 16. Granvil
+### 7. Leffe
 
-- Whois ID: `whois_granvil_1780909536`
-- Descriptor: `Black Númenórean Envoy`
+- Whois ID: `whois_leffe_1780912843`
+- Descriptor: `Mountain Troll Softskin`
+- Status: `generic_title_no_class`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Softskin`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
+
+### 8. Macke
+
+- Whois ID: `whois_macke_1780913109`
+- Descriptor: `Mountain Troll Softskin`
+- Status: `generic_title_no_class`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Softskin`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
+
+### 9. Mess
+
+- Whois ID: `whois_mess_1780913395`
+- Descriptor: `Mountain Troll Softskin`
+- Status: `generic_title_no_class`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Softskin`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
+
+### 10. Mojo
+
+- Whois ID: `whois_mojo_1780913536`
+- Descriptor: `Tarkhnarb Snaga`
+- Status: `generic_title_no_class`
+- Derived race: `Orc`
+- Derived subrace: `Tarkhnarb`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Snaga`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Tarkhnarb | class_title=Snaga | class_confidence=low | base_class_unknown`
+
+### 11. Norrland
+
+- Whois ID: `whois_norrland_1780914113`
+- Descriptor: `Tarkhnarb Snaga`
+- Status: `generic_title_no_class`
+- Derived race: `Orc`
+- Derived subrace: `Tarkhnarb`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Snaga`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Tarkhnarb | class_title=Snaga | class_confidence=low | base_class_unknown`
+
+### 12. Odium
+
+- Whois ID: `whois_odium_1780914181`
+- Descriptor: `Black Númenórean Wanderer`
 - Status: `generic_title_no_class`
 - Derived race: `Man`
 - Derived subrace: `Black Númenórean`
 - Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Envoy`
+- Derived title: `Wanderer`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Black Númenórean | class_title=Envoy | base_class_unknown`
+- Notes: `race_term=Black Númenórean | class_title=Wanderer | class_confidence=low | base_class_unknown`
 
-### 17. Grishelda
+### 13. Pestilence
 
-- Whois ID: `whois_grishelda_1780909580`
-- Descriptor: `Morruhk Adventurer`
+- Whois ID: `whois_pestilence_1780914402`
+- Descriptor: `Tarkhnarb Snaga`
 - Status: `generic_title_no_class`
 - Derived race: `Orc`
-- Derived subrace: `Morruhk`
+- Derived subrace: `Tarkhnarb`
 - Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Adventurer`
+- Derived title: `Snaga`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Morruhk | class_title=Adventurer | base_class_unknown`
+- Notes: `race_term=Tarkhnarb | class_title=Snaga | class_confidence=low | base_class_unknown`
 
-### 18. Hated
+### 14. Ramangth
 
-- Whois ID: `whois_hated_1780909826`
-- Descriptor: `Dúnadan Adventurer`
+- Whois ID: `whois_ramangth_1780915022`
+- Descriptor: `Black Númenórean Wanderer`
 - Status: `generic_title_no_class`
 - Derived race: `Man`
-- Derived subrace: `Dúnedain`
-- Derived faction: `Free Peoples`
+- Derived subrace: `Black Númenórean`
+- Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Adventurer`
+- Derived title: `Wanderer`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Dúnadan | class_title=Adventurer | base_class_unknown`
+- Notes: `race_term=Black Númenórean | class_title=Wanderer | class_confidence=low | base_class_unknown`
 
-### 19. Hercule
+### 15. Stussy
 
-- Whois ID: `whois_hercule_1780911702`
-- Descriptor: `Broadbeam Adventurer`
+- Whois ID: `whois_stussy_1780916174`
+- Descriptor: `Mountain Troll Softskin`
 - Status: `generic_title_no_class`
-- Derived race: `Dwarf`
-- Derived subrace: `Broadbeam`
-- Derived faction: `Free Peoples`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Adventurer`
+- Derived title: `Softskin`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Broadbeam | class_title=Adventurer | base_class_unknown`
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
-### 20. Iorlas
+### 16. Vandal
 
-- Whois ID: `whois_iorlas_1780911998`
-- Descriptor: `Rohirric Adventurer`
+- Whois ID: `whois_vandal_1780917031`
+- Descriptor: `Mountain Troll Softskin`
 - Status: `generic_title_no_class`
-- Derived race: `Man`
-- Derived subrace: `Rohirrim`
-- Derived faction: `Free Peoples`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
 - Derived class: ``
-- Derived title: `Adventurer`
+- Derived title: `Softskin`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Rohirric | class_title=Adventurer | base_class_unknown`
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
+
+### 17. Wilma
+
+- Whois ID: `whois_wilma_1780917273`
+- Descriptor: `Hill Troll Softskin`
+- Status: `generic_title_no_class`
+- Derived race: `Troll`
+- Derived subrace: `Hill Troll`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Softskin`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Hill Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
+
+### 18. Kill
+
+- Whois ID: `whois_kill_1781052416`
+- Descriptor: `Mountain Troll Softskin`
+- Status: `generic_title_no_class`
+- Derived race: `Troll`
+- Derived subrace: `Mountain Troll`
+- Derived faction: `Minions of Sauron`
+- Derived class: ``
+- Derived title: `Softskin`
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: ``
+- Notes: `race_term=Mountain Troll | class_title=Softskin | class_confidence=low | base_class_unknown`
 
 ## Classified sample — first 10
 
@@ -580,12 +550,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Dwarf`
 - Derived subrace: ``
 - Derived faction: `Free Peoples`
-- Derived class: `Scout`
+- Derived class: `General`
 - Derived title: `Ranger`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Dwarven | class_title=Ranger`
+- Notes: `race_term=Dwarven | class_title=Ranger | who_class_group=General | class_confidence=medium | skill_notes=High Track; exact requirement uncertain and probably not 100%+`
 
 ### 2. Gray
 
@@ -595,12 +565,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Noldorin`
 - Derived faction: `Free Peoples`
-- Derived class: `Mage`
+- Derived class: `Magic-user`
 - Derived title: `Wizard`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Noldorin | class_title=Wizard`
+- Notes: `race_term=Noldorin | class_title=Wizard | who_class_group=Magic-user | class_confidence=high`
 
 ### 3. Corvin
 
@@ -610,12 +580,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Silvan`
 - Derived faction: `Free Peoples`
-- Derived class: `Scout`
+- Derived class: `Thief`
 - Derived title: `Hunter`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Silvan | class_title=Hunter`
+- Notes: `race_term=Silvan | class_title=Hunter | who_class_group=Thief | class_confidence=medium`
 
 ### 4. Gray
 
@@ -625,12 +595,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Noldorin`
 - Derived faction: `Free Peoples`
-- Derived class: `Mage`
+- Derived class: `Magic-user`
 - Derived title: `Wizard`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Noldorin | class_title=Wizard`
+- Notes: `race_term=Noldorin | class_title=Wizard | who_class_group=Magic-user | class_confidence=high`
 
 ### 5. Santana
 
@@ -640,12 +610,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Orc`
 - Derived subrace: `Tarkhnarb`
 - Derived faction: `Minions of Sauron`
-- Derived class: `Scout`
+- Derived class: `Thief`
 - Derived title: `Assassin`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Tarkhnarb | class_title=Assassin`
+- Notes: `race_term=Tarkhnarb | class_title=Assassin | who_class_group=Thief | class_confidence=high`
 
 ### 6. Candid
 
@@ -655,12 +625,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Elf`
 - Derived subrace: `Noldorin`
 - Derived faction: `Free Peoples`
-- Derived class: `Scout`
+- Derived class: `Thief`
 - Derived title: `Scout`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Noldorin | class_title=Scout`
+- Notes: `race_term=Noldorin | class_title=Scout | who_class_group=Thief | class_confidence=high`
 
 ### 7. Ulairy
 
@@ -675,7 +645,7 @@ This is a small review pack. It is not intended to review every row.
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Black Númenórean | class_title=Mercenary`
+- Notes: `race_term=Black Númenórean | class_title=Mercenary | who_class_group=Warrior | class_confidence=low`
 
 ### 8. Vugluskr
 
@@ -687,10 +657,10 @@ This is a small review pack. It is not intended to review every row.
 - Derived faction: `Free Peoples`
 - Derived class: `Warrior`
 - Derived title: `Battlemaster`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Dwarven | class_title=Battlemaster`
+- Notes: `race_term=Dwarven | class_title=Battlemaster | who_class_group=Warrior | class_confidence=high`
 
 ### 9. Orkanoid
 
@@ -700,12 +670,12 @@ This is a small review pack. It is not intended to review every row.
 - Derived race: `Orc`
 - Derived subrace: ``
 - Derived faction: `Minions of Sauron`
-- Derived class: `Scout`
+- Derived class: `Thief`
 - Derived title: `Archer`
 - Derived gender: ``
 - Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Orkish | class_title=Archer`
+- Notes: `race_term=Orkish | class_title=Archer | who_class_group=Thief | class_confidence=medium | skill_notes=Unknown percent Missile`
 
 ### 10. Akela
 
@@ -717,8 +687,8 @@ This is a small review pack. It is not intended to review every row.
 - Derived faction: `Free Peoples`
 - Derived class: `Warrior`
 - Derived title: `Battlemaster`
-- Derived gender: `male`
-- Gender confidence: `medium`
+- Derived gender: ``
+- Gender confidence: ``
 - Remainder: ``
-- Notes: `race_term=Dwarven | class_title=Battlemaster`
+- Notes: `race_term=Dwarven | class_title=Battlemaster | who_class_group=Warrior | class_confidence=high`
 
