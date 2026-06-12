@@ -179,15 +179,23 @@ function setText(id, value) {
   if (el) el.textContent = value || "—";
 }
 
+function renderTerminalContent(pre, c) {
+  if (!pre || !c) return;
+  pre.classList.toggle("has-colour-whois", Boolean(c.whoisHtml));
+  if (c.whoisHtml) pre.innerHTML = c.whoisHtml;
+  else if (c.whoisText) pre.textContent = c.whoisText;
+  else pre.textContent = `WHOIS: ${c.name}
+
+No preserved whois display is available yet for this character.`;
+}
+
 function setCharacterPanel(c) {
   setText("filter-player-name", c.player || "Unknown");
   setText("player-card-name", c.player || "Unknown");
-
   setText("identity-name", c.name);
   setText("identity-race", c.race || "Unknown");
   setText("identity-class", c.klass || "Unknown");
   setText("identity-level", displayLevel(c));
-
   setText("strip-player", c.player || "Unknown");
   setText("strip-name", c.name);
   setText("strip-race", c.race || "Unknown");
@@ -195,23 +203,12 @@ function setCharacterPanel(c) {
   setText("strip-level", displayLevel(c));
   setText("strip-clan", c.clan || "—");
   setText("strip-active", c.active || "unknown");
-
   const mainCard = document.getElementById("main-identity-card");
   if (mainCard) mainCard.className = `char-card identity-card ${factionClass(c)}`;
-
   const parked = document.getElementById("parked-player-deck");
-  if (parked) parked.className = `parked-player-deck ${factionClass(c)}`;
-
+  if (parked) parked.className = `parked-player-deck player-back-${c.playerCardFaction || "free"}`;
   const terminal = document.getElementById("whois-terminal");
-  if (terminal) {
-    const pre = terminal.querySelector("pre");
-    if (pre) {
-      pre.textContent = c.whoisText
-        ? c.whoisText
-        : `WHOIS: ${c.name}\n\nNo preserved whois display is available yet for this character.`;
-    }
-  }
-
+  if (terminal) renderTerminalContent(terminal.querySelector("pre"), c);
   renderStackEdges();
 }
 
@@ -415,7 +412,7 @@ function renderPlayerCarousel() {
   };
 
   track.innerHTML = `
-    <article class="char-card info-card player-info-card"><h3>Player</h3><div class="card-symbol">♜</div><p class="player-info-name">${escapeHtml(summary.name || "Unknown")}</p><p>${escapeHtml(currentCharacter.playerConfidence || "unknown")} confidence</p></article>
+    <article class="char-card info-card player-info-card"><h3>Player</h3><div class="card-symbol">♜</div><p class="player-info-name">${escapeHtml(summary.name || "Unknown")}</p><p>${escapeHtml(currentCharacter.playerConfidence || "unknown")} confidence</p>${summary.realFirstName ? `<p>Known first name: ${escapeHtml(summary.realFirstName)}</p>` : ""}</article>
     <article class="char-card info-card player-info-card"><h3>Characters</h3><div class="card-symbol">☷</div><p>${summary.characterCount || 0} known characters</p><p>${summary.knownWhoisCount || 0} with whois evidence</p></article>
     <article class="char-card info-card player-info-card"><h3>Highest</h3><div class="card-symbol">▲</div><p>${summary.highestLevel ? "Level " + summary.highestLevel : "unknown"}</p><p>${escapeHtml((summary.highestLevelCharacters || []).join(", "))}</p></article>
     <article class="char-card info-card player-info-card"><h3>Active</h3><div class="card-symbol">◷</div><p>${escapeHtml(summary.activeSummary || "unknown")}</p><p>Refined as evidence grows</p></article>
@@ -429,8 +426,20 @@ function drawRandomAscii() {
   const record = asciiRecords[Math.floor(Math.random() * asciiRecords.length)];
   const pre = document.getElementById("ascii-pre");
   const card = document.getElementById("ascii-card");
-  if (pre) pre.textContent = record.text;
+  if (pre) {
+    if (record.html) { pre.classList.add("has-colour-whois"); pre.innerHTML = record.html; }
+    else { pre.classList.remove("has-colour-whois"); pre.textContent = record.text || ""; }
+  }
   if (card) card.onclick = () => openCharacterById(record.characterId);
+}
+
+function clearSearch(inputId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  input.value = "";
+  if (inputId === "archive-search") filterArchive();
+  if (inputId === "player-search") filterPlayerCharacters();
+  input.focus();
 }
 
 function openScroll(kind) {
@@ -452,7 +461,7 @@ function openScroll(kind) {
       <div class="scroll-row source">Detailed log references are a later data join.</div>`;
   } else if (kind === "whois") {
     title.textContent = "Whois Evidence";
-    body.innerHTML = `<pre>${escapeHtml(c.whoisText || "No whois text available.")}</pre>`;
+    body.innerHTML = `<pre class="scroll-whois ${c.whoisHtml ? "has-colour-whois" : ""}">${c.whoisHtml || escapeHtml(c.whoisText || "No whois text available.")}</pre>`;
   } else {
     title.textContent = "Sources";
     body.innerHTML = (c.sources || []).map(s => `<div class="scroll-row source">${escapeHtml(s)}</div>`).join("");

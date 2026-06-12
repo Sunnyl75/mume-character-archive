@@ -2345,3 +2345,26 @@
   padding: .35rem 0;
   border-bottom: 1px solid rgba(72, 46, 18, .25);
 }
+
+
+/* alpha 0.1.1 refinements */
+.deck-alpha-realdata .terminal pre,
+.deck-alpha-realdata #ascii-pre,
+.deck-alpha-realdata #whois-terminal pre,
+.deck-alpha-realdata .scroll-whois {
+  color: #f4efe1 !important;
+  text-shadow: none;
+}
+.deck-alpha-realdata .terminal pre span,
+.deck-alpha-realdata #ascii-pre span,
+.deck-alpha-realdata #whois-terminal pre span,
+.deck-alpha-realdata .scroll-whois span { color: inherit; }
+.deck-alpha-realdata .parked-player-deck.player-back-free .player-card-back,
+.deck-alpha-realdata .parked-player-deck.player-back-unknown .player-card-back { background-image: var(--reverse-free) !important; }
+.deck-alpha-realdata .parked-player-deck.player-back-immortal .player-card-back { background-image: var(--reverse-immortal) !important; background-size:100% 100% !important; background-position:center !important; background-repeat:no-repeat !important; opacity:1 !important; filter:none !important; }
+.deck-alpha-realdata .parked-player-deck.player-back-minion .player-card-back { background-image: var(--reverse-minion) !important; background-size:100% 100% !important; background-position:center !important; background-repeat:no-repeat !important; opacity:1 !important; filter:none !important; }
+.deck-alpha-realdata .parked-player-deck.player-back-zaugurz .player-card-back { background-image: var(--reverse-zaugurz) !important; background-size:100% 100% !important; background-position:center !important; background-repeat:no-repeat !important; opacity:1 !important; filter:none !important; }
+.deck-alpha-realdata .search-with-clear .search-control { display:inline-flex; align-items:center; position:relative; }
+.deck-alpha-realdata .search-with-clear input[type="search"] { padding-right:2rem; }
+.deck-alpha-realdata .search-clear { position:absolute; right:.35rem; width:1.25rem; height:1.25rem; border:0; border-radius:50%; background:rgba(60,34,13,.18); color:#2d1b0d; font-weight:800; line-height:1; cursor:pointer; }
+.deck-alpha-realdata .search-clear:hover { background:rgba(60,34,13,.32); }

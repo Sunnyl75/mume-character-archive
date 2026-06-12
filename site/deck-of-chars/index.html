@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deck of Chars — Alpha 0.1 Real Data</title>
+  <title>Deck of Chars — Alpha 0.1.1 Real Data</title>
   <link rel="stylesheet" href="bree-theme.css">
   <link rel="stylesheet" href="deck-of-chars.css">
 </head>
@@ -67,7 +67,7 @@
             <label>Faction<select id="archive-faction" onchange="filterArchive()"><option value="">All factions</option></select></label>
             <label>Clan<select id="archive-clan" onchange="filterArchive()"><option value="">All clans</option></select></label>
             <label>Sort<select id="archive-sort" onchange="filterArchive()"><option value="name">Name</option><option value="level_desc">Level</option><option value="active">Active / age</option></select></label>
-            <label class="search-field search-field-inline">Search<input id="archive-search" placeholder="Search characters…" oninput="filterArchive()"></label>
+            <label class="search-field search-field-inline search-with-clear">Search<span class="search-control"><input id="archive-search" type="search" placeholder="Search characters…" oninput="filterArchive()"><button type="button" class="search-clear" onclick="clearSearch('archive-search')" aria-label="Clear archive search">×</button></span></label>
           </form>
 
           <section class="deck-section">
@@ -164,7 +164,7 @@ Nemesis to those who break it.
             <label>Class<select id="player-class" onchange="filterPlayerCharacters()"><option value="">All classes</option></select></label>
             <label>Clan<select id="player-clan" onchange="filterPlayerCharacters()"><option value="">All clans</option></select></label>
             <label>Status<select id="player-status" onchange="filterPlayerCharacters()"><option value="">All</option><option value="hero_legend">Hero / Legend</option><option value="has_whois">Has whois</option><option value="needs_review">Needs review</option></select></label>
-            <label class="search-field search-field-inline">Search<input id="player-search" placeholder="Search this player…" oninput="filterPlayerCharacters()"></label>
+            <label class="search-field search-field-inline search-with-clear">Search<span class="search-control"><input id="player-search" type="search" placeholder="Search this player…" oninput="filterPlayerCharacters()"><button type="button" class="search-clear" onclick="clearSearch('player-search')" aria-label="Clear player search">×</button></span></label>
           </form>
 
           <section class="deck-section related-area">
