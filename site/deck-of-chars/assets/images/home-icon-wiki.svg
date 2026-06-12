@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Wiki placeholder icon">
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f4dfaa"/>
+      <stop offset="1" stop-color="#a8733c"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="12" width="76" height="70" rx="8" fill="#24170f" opacity=".58"/>
+  <path d="M26 20h42a8 8 0 0 1 8 8v50H31a10 10 0 0 1-10-10V25a5 5 0 0 1 5-5z" fill="url(#paper)" stroke="#f1d58e" stroke-width="3"/>
+  <path d="M31 30h33M31 42h35M31 54h29M31 66h25" stroke="#3a2414" stroke-width="4" stroke-linecap="round" opacity=".72"/>
+  <path d="M70 29v49" stroke="#3a2414" stroke-width="3" opacity=".42"/>
+</svg>

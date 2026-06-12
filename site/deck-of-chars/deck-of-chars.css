@@ -1,0 +1,2347 @@
+:root {
+  --deck-gold:#d2a33c;
+  --deck-gold-light:#f1d381;
+  --deck-ink:#1f140d;
+  --terminal-green:#8ae35b;
+}
+
+.deck-site-page { margin-top:18px; }
+
+.deck-page-inner {
+  width:min(1560px, calc(100vw - 104px));
+  padding-top:42px;
+  padding-inline:58px;
+}
+
+.deck-of-chars { color:var(--deck-ink); }
+
+.deck-of-chars .entry-title {
+  font-size:clamp(3.4rem, 5.8vw, 5.4rem);
+  margin-bottom:.4rem;
+}
+
+.deck-of-chars .entry-lede { max-width:68rem; }
+.deck-of-chars .content-divider { width:min(100%, 68rem); }
+
+.doc-view { display:none; }
+.doc-view.is-visible { display:block; }
+
+.doc-showcase {
+  position:relative;
+  min-height:330px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,221,144,.08), transparent 26rem),
+    linear-gradient(#0b0907, #030303);
+  border:2px solid #7b571c;
+  box-shadow:inset 0 0 35px rgba(0,0,0,.95), 0 8px 18px rgba(65,38,14,.45);
+  color:var(--deck-gold-light);
+  padding:22px;
+  overflow:hidden;
+}
+
+.doc-showcase::before,
+.doc-showcase::after {
+  content:"";
+  position:absolute;
+  width:46px;
+  height:46px;
+  z-index:1;
+  pointer-events:none;
+  border-color:var(--deck-gold);
+  border-style:double;
+}
+
+.doc-showcase::before { left:7px; top:7px; border-width:4px 0 0 4px; }
+.doc-showcase::after { right:7px; bottom:7px; border-width:0 4px 4px 0; }
+
+.showcase-heading {
+  display:flex;
+  justify-content:center;
+  gap:1.2rem;
+  align-items:center;
+  margin-bottom:1rem;
+}
+
+.showcase-heading h2,
+.section-header h2 {
+  margin:0;
+  color:var(--deck-gold-light);
+  text-transform:uppercase;
+  font-size:clamp(1.25rem, 1.8vw, 1.85rem);
+  letter-spacing:.025em;
+  text-shadow:2px 2px 0 #000;
+}
+
+.bree-button {
+  background:linear-gradient(to bottom, rgba(246,217,132,.14), rgba(0,0,0,.15)), #17100a;
+  color:var(--deck-gold-light);
+  border:1px solid #8f6724;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1rem;
+  padding:.55rem .9rem;
+  border-radius:3px;
+  cursor:pointer;
+  box-shadow:inset 0 0 0 1px rgba(255,226,151,.08), 0 3px 8px rgba(0,0,0,.45);
+}
+
+.bree-button:hover { color:#fff2bd; border-color:#e0b855; }
+.bree-button.small { font-size:.95rem; padding:.42rem .72rem; }
+
+.archive-showcase {
+  display:grid;
+  grid-template-columns:1fr minmax(500px,740px) 1fr;
+  gap:1.3rem;
+  align-items:center;
+}
+
+.archive-showcase .showcase-heading { grid-column:2 / 3; }
+
+.ascii-feature {
+  grid-column:2 / 3;
+  background:#030603;
+  border:2px solid #326d2d;
+  color:var(--terminal-green);
+  text-align:left;
+  cursor:pointer;
+  padding:1rem 1.25rem;
+  box-shadow:inset 0 0 18px rgba(26,95,33,.3), 0 0 12px rgba(40,107,42,.3);
+  min-height:210px;
+}
+
+.ascii-feature pre,
+.whois-terminal pre {
+  margin:0;
+  white-space:pre-wrap;
+  font-family:Menlo, Consolas, "Courier New", monospace;
+  font-size:.96rem;
+  line-height:1.24;
+}
+
+/* Filter bars */
+.filter-bar {
+  display:grid;
+  grid-template-columns:repeat(6, minmax(110px,1fr)) minmax(190px,1.55fr);
+  gap:.7rem;
+  align-items:end;
+  margin:.9rem 0 1rem;
+  padding:.75rem;
+  background:rgba(6,5,4,.88);
+  border:1px solid #7b571c;
+  box-shadow:inset 0 0 18px rgba(0,0,0,.8);
+  color:var(--deck-gold-light);
+}
+
+.player-filter {
+  grid-template-columns:auto repeat(4,minmax(120px,1fr)) minmax(190px,1.5fr);
+}
+
+.filter-note {
+  align-self:center;
+  white-space:nowrap;
+  color:#e8cd88;
+}
+
+.filter-bar label {
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  font-size:.9rem;
+  color:var(--deck-gold);
+  font-variant:small-caps;
+}
+
+.filter-bar select,
+.filter-bar input {
+  width:100%;
+  background:#17100a;
+  color:#f3dfab;
+  border:1px solid #7b571c;
+  border-radius:3px;
+  padding:.55rem .65rem;
+  font-family:Georgia, "Times New Roman", serif;
+}
+
+.search-field input { background:#0c0906; }
+
+/* Lower sections */
+.deck-section {
+  position:relative;
+  margin:1rem 0 0;
+  padding:1rem;
+  background:rgba(12,8,4,.18);
+  border:1px solid rgba(80,55,32,.35);
+}
+
+.section-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:.9rem;
+  padding:.6rem .8rem;
+  background:rgba(5,4,3,.82);
+  border:1px solid #6f4d19;
+}
+
+.section-header p { margin:0; color:#e0c88f; }
+.lower-toggle-buttons { display:flex; gap:.5rem; }
+
+/* Card grid */
+.character-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(185px,1fr));
+  gap:1.6rem;
+}
+
+.character-grid.compact {
+  grid-template-columns:repeat(auto-fill, minmax(178px,1fr));
+}
+
+.mini-stack {
+  position:relative;
+  height:286px;
+  cursor:pointer;
+}
+
+.mini-stack::before,
+.mini-stack::after,
+.mini-card {
+  content:"";
+  position:absolute;
+  width:174px;
+  aspect-ratio:5 / 7;
+  border-radius:8px;
+  border:0;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% 100%;
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,.32));
+}
+
+.mini-stack::before {
+  left:38px;
+  top:8px;
+  transform:rotate(4deg);
+  background-image:url("assets/cards/card-reverse-free.png");
+}
+
+.mini-stack::after {
+  left:66px;
+  top:12px;
+  transform:rotate(7deg);
+  background-image:url("assets/cards/card-reverse-free.png");
+}
+
+.mini-stack.minion::before,
+.mini-stack.minion::after {
+  background-image:none;
+  background:linear-gradient(#4a0b10,#170304);
+  border:2px solid #8f6724;
+}
+
+.mini-stack.zaugurz::before,
+.mini-stack.zaugurz::after {
+  background-image:none;
+  background:linear-gradient(#070707,#010101);
+  border:2px solid #8f6724;
+}
+
+.mini-stack.immortal::before,
+.mini-stack.immortal::after {
+  background-image:none;
+  background:linear-gradient(#f8f4e4,#d6b66c);
+  border:2px solid #8f6724;
+}
+
+.mini-card {
+  z-index:2;
+  left:0;
+  top:0;
+  background-image:url("assets/cards/card-base.png");
+  color:#1e130a;
+  text-align:center;
+  padding:1.05rem .86rem;
+  overflow:hidden;
+}
+
+.mini-card h3 {
+  margin:.25rem 0 .42rem;
+  text-transform:uppercase;
+  font-size:1.2rem;
+  line-height:1.05;
+}
+
+.mini-card p {
+  margin:.1rem 0;
+  font-size:.9rem;
+  line-height:1.08;
+}
+
+.mini-card .mini-art {
+  height:118px;
+  width:88px;
+  margin:.55rem auto .62rem;
+  background:radial-gradient(circle at 50% 20%,#d8c199 0 10%,#2c2925 11% 100%);
+  clip-path:polygon(50% 4%,64% 30%,76% 90%,24% 90%,36% 30%);
+}
+
+/* Top character/player panel */
+.character-showcase {
+  height:430px;
+  padding:18px 22px;
+  scroll-margin-top:18px;
+}
+
+.stat-strip {
+  position:absolute;
+  left:22px;
+  right:22px;
+  top:18px;
+  min-height:58px;
+  display:grid;
+  grid-template-columns:1.05fr 1fr 1fr 1fr .7fr 1.25fr 1fr;
+  background:#090705;
+  border:1px solid #8f6724;
+  color:#e8cd88;
+  z-index:8;
+}
+
+.stat-strip span {
+  padding:.55rem .35rem;
+  text-align:center;
+  border-right:1px solid rgba(210,163,60,.35);
+}
+
+.stat-strip span:last-child { border-right:0; }
+
+.stat-strip b {
+  display:block;
+  color:var(--deck-gold);
+  font-size:.72rem;
+  text-transform:uppercase;
+}
+
+.stat-strip em {
+  display:block;
+  font-style:normal;
+  font-size:.82rem;
+  margin-top:.2rem;
+}
+
+.player-click { cursor:pointer; }
+.player-click:hover em { color:#fff2bd; text-decoration:underline; }
+
+/* Player deck: same card size as character cards */
+.parked-player-deck {
+  position:absolute;
+  left:18px;
+  top:104px;
+  width:285px;
+  height:300px;
+  cursor:pointer;
+  z-index:3;
+}
+
+.parked-player-deck .player-card-back {
+  position:absolute;
+  width:178px;
+  aspect-ratio:5 / 7;
+  border-radius:8px;
+  background-image:url("assets/cards/card-reverse-free.png");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,.36));
+}
+
+.parked-player-deck .player-card-back:nth-child(1){left:0; top:0; z-index:7}
+.parked-player-deck .player-card-back:nth-child(2){left:18px; top:4px; z-index:6}
+.parked-player-deck .player-card-back:nth-child(3){left:36px; top:8px; z-index:5}
+.parked-player-deck .player-card-back:nth-child(4){left:54px; top:12px; z-index:4}
+.parked-player-deck .player-card-back:nth-child(5){left:72px; top:16px; z-index:3}
+
+#player-card-name {
+  position:absolute;
+  top:15%;
+  left:12%;
+  right:12%;
+  text-align:center;
+  color:#e7bc54;
+  font-size:1.04rem;
+  text-transform:uppercase;
+  text-shadow:0 2px 4px #000;
+  pointer-events:none;
+}
+
+/* Stacked character deck */
+.selected-deck {
+  position:absolute;
+  left:315px;
+  top:96px;
+  width:600px;
+  height:320px;
+}
+
+.selected-deck h3 {
+  margin:0 0 .45rem;
+  color:var(--deck-gold);
+  text-align:center;
+  text-transform:uppercase;
+  font-size:1.02rem;
+}
+
+.stack-unspread {
+  display:flex;
+  align-items:flex-start;
+  gap:0;
+}
+
+/* Full card face */
+.char-card {
+  flex:0 0 178px;
+  aspect-ratio:5 / 7;
+  border-radius:8px;
+  border:0;
+  background-image:url("assets/cards/card-base.png");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  color:#1d1208;
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,.34));
+  padding:1.02rem .82rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.identity-card { cursor:pointer; }
+
+.card-name {
+  font-size:1.38rem;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin:.18rem 0 .32rem;
+  min-height:1.8rem;
+}
+
+.identity-card p {
+  margin:.07rem 0;
+  font-size:.96rem;
+  line-height:1.05;
+}
+
+.portrait {
+  height:126px;
+  width:96px;
+  margin:.25rem auto .52rem;
+  background:radial-gradient(circle at 50% 15%,#ceb78c 0 9%,#272522 10% 100%);
+  clip-path:polygon(50% 3%,66% 30%,77% 92%,23% 92%,34% 30%);
+}
+
+.card-bottom-icon {
+  position:absolute;
+  bottom:.62rem;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:1.28rem;
+  color:#4e3412;
+}
+
+/*
+  Stacked edge cards:
+  These are now narrow full card elements shifted left onto the preceding card.
+  The text is placed directly over the visible card edge, not on a separate dark bar.
+*/
+.stack-card-edge {
+  position:relative;
+  flex:0 0 178px;
+  width:178px;
+  height:auto;
+  aspect-ratio:5 / 7;
+  margin-left:-143px;
+  border:0;
+  border-radius:8px;
+  background-image:url("assets/cards/card-base.png");
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  color:#2b1a0b;
+  filter:drop-shadow(0 5px 4px rgba(0,0,0,.28));
+  cursor:pointer;
+  overflow:hidden;
+  padding:0;
+  writing-mode:initial;
+  text-orientation:initial;
+  text-transform:none;
+  font-size:0;
+}
+
+.stack-card-edge::after {
+  content:attr(data-label);
+  position:absolute;
+  top:50%;
+  right:11px;
+  transform:translateY(-50%) rotate(90deg);
+  transform-origin:center;
+  width:160px;
+  text-align:center;
+  color:#27160a;
+  font-size:.82rem;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  opacity:.82;
+  pointer-events:none;
+}
+
+.stack-card-edge:hover::after {
+  color:#000;
+  opacity:1;
+}
+
+.stack-card-edge:hover { transform:translateY(-2px); }
+
+.stack-card-edge.trophy-edge {
+  background-image:url("assets/cards/card-trophy-damage-base.png");
+}
+
+.whois-terminal {
+  position:absolute;
+  left:930px;
+  right:24px;
+  top:96px;
+  bottom:24px;
+  background:#020302;
+  border:1px solid #8f6724;
+  color:var(--terminal-green);
+  padding:1rem 1.1rem;
+  box-shadow:inset 0 0 18px rgba(0,0,0,.95);
+}
+
+/* Spread carousel and player info deck */
+.spread-carousel,
+.player-info-carousel {
+  position:absolute;
+  left:292px;
+  right:20px;
+  top:96px;
+  bottom:18px;
+  display:none;
+  overflow:hidden;
+  padding:0 48px;
+}
+
+.carousel-track {
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  transition:transform .25s ease;
+}
+
+.character-showcase.is-spread .selected-deck,
+.character-showcase.is-spread .whois-terminal,
+.character-showcase.is-player-info .selected-deck,
+.character-showcase.is-player-info .whois-terminal,
+.character-showcase.is-player-info .spread-carousel {
+  display:none;
+}
+
+.character-showcase.is-spread .spread-carousel { display:block; }
+.character-showcase.is-player-info .player-info-carousel { display:block; }
+
+.spread-carousel .char-card,
+.player-info-carousel .char-card {
+  flex:0 0 172px;
+}
+
+.spread-carousel .identity-card { flex-basis:180px; }
+
+.info-card h3 {
+  margin:.18rem 0 .45rem;
+  font-size:1.05rem;
+  text-transform:uppercase;
+}
+
+.info-card ul {
+  text-align:left;
+  padding-left:1rem;
+  margin:.45rem 0;
+  font-size:.78rem;
+}
+
+.info-card p {
+  font-size:.84rem;
+  line-height:1.18;
+}
+
+.info-card button {
+  background:#1a1009;
+  border:1px solid #7b571c;
+  color:#f1d381;
+  font-family:inherit;
+  padding:.25rem .45rem;
+}
+
+.card-symbol {
+  font-size:1.75rem;
+  color:#513713;
+}
+
+.player-info-name {
+  font-size:1.2rem !important;
+  font-weight:bold;
+}
+
+.special-card { box-shadow:inset 0 0 0 3px rgba(116,32,25,.18); }
+.achievement-card { box-shadow:inset 0 0 0 3px rgba(38,74,125,.18); }
+.trophy-select-card { cursor:pointer; background-image:url("assets/cards/card-trophy-damage-base.png"); }
+
+.carousel-arrow {
+  position:absolute;
+  z-index:8;
+  top:50%;
+  transform:translateY(-50%);
+  width:38px;
+  height:80px;
+  background:rgba(6,4,2,.6);
+  border:1px solid #8f6724;
+  color:var(--deck-gold);
+  font-size:3rem;
+  cursor:pointer;
+}
+
+.carousel-left { left:6px; }
+.carousel-right { right:6px; }
+
+.deck-motto {
+  text-align:center;
+  margin:1.2rem 0 0;
+  font-size:1.35rem;
+  font-style:italic;
+  color:#2a1a0e;
+}
+
+.trophy-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(170px,1fr));
+  gap:1.45rem;
+}
+
+.trophy-card {
+  position:relative;
+  width:168px;
+  aspect-ratio:5 / 7;
+  border:0;
+  border-radius:8px;
+  background-image:url("assets/cards/card-trophy-damage-base.png");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  color:#1d1208;
+  text-align:center;
+  padding:.95rem .72rem;
+  filter:drop-shadow(0 5px 5px rgba(65,38,14,.34));
+  overflow:hidden;
+}
+
+.trophy-card h3,
+.trophy-card p,
+.trophy-card .mini-art { position:relative; }
+
+.trophy-card h3 {
+  margin:.16rem 0 .3rem;
+  font-size:1.1rem;
+  text-transform:uppercase;
+}
+
+.trophy-card p {
+  margin:.08rem 0;
+  font-size:.86rem;
+}
+
+.trophy-card .mini-art {
+  height:106px;
+  width:80px;
+  margin:.62rem auto;
+  background:radial-gradient(circle at 50% 20%,#d8c199 0 10%,#282520 11% 100%);
+  clip-path:polygon(50% 4%,64% 30%,76% 90%,24% 90%,36% 30%);
+}
+
+/* Scroll overlay */
+.scroll-overlay-wrap[hidden] { display:none; }
+.scroll-overlay-wrap { position:fixed; inset:0; z-index:999; }
+
+.scroll-scrim {
+  position:absolute;
+  inset:0;
+  border:0;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(1px);
+  cursor:pointer;
+}
+
+.scroll-sheet {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(680px,86vw);
+  height:min(820px,88vh);
+  background:linear-gradient(90deg,#b47a37 0 18px,transparent 18px calc(100% - 18px),#b47a37 calc(100% - 18px)),linear-gradient(#e2bd80,#d7ad6d);
+  color:#1e1309;
+  padding:4.2rem 3.2rem 3.7rem;
+  border-left:4px double #704715;
+  border-right:4px double #704715;
+  box-shadow:0 16px 44px rgba(0,0,0,.72);
+}
+
+.scroll-sheet::before,
+.scroll-sheet::after {
+  content:"";
+  position:absolute;
+  left:-40px;
+  right:-40px;
+  height:56px;
+  border-radius:28px;
+  border:4px double #704715;
+  background:linear-gradient(#e8c690,#b57b39);
+  box-shadow:0 5px 15px rgba(0,0,0,.58);
+}
+
+.scroll-sheet::before { top:-22px; }
+.scroll-sheet::after { bottom:-22px; }
+
+.scroll-close {
+  position:absolute;
+  right:1.15rem;
+  top:1.15rem;
+  z-index:2;
+  border:1px solid #7b571c;
+  background:#1a1008;
+  color:#f1d381;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  font-size:1.3rem;
+  cursor:pointer;
+}
+
+.scroll-sheet h2 {
+  text-align:center;
+  text-transform:uppercase;
+  font-size:2.2rem;
+  margin:0 0 1.1rem;
+}
+
+.scroll-body {
+  height:calc(100% - 84px);
+  overflow:auto;
+  border-top:1px solid rgba(86,55,17,.5);
+  border-bottom:1px solid rgba(86,55,17,.5);
+  padding:.7rem .2rem;
+}
+
+.scroll-row {
+  display:grid;
+  grid-template-columns:120px 180px 1fr;
+  gap:1rem;
+  border-bottom:1px solid rgba(86,55,17,.22);
+  padding:.35rem 0;
+}
+
+.scroll-row.source { display:block; line-height:1.25; }
+
+.scroll-footer {
+  text-align:center;
+  font-style:italic;
+  margin:.9rem 0 0;
+}
+
+@media (max-width:1180px) {
+  .archive-showcase { grid-template-columns:1fr; }
+  .archive-showcase .showcase-heading,
+  .ascii-feature { grid-column:auto; }
+  .filter-bar,
+  .player-filter { grid-template-columns:repeat(2,1fr); }
+  .filter-note { grid-column:1 / -1; }
+  .character-showcase { height:auto; min-height:760px; }
+  .stat-strip {
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    grid-template-columns:repeat(2,1fr);
+  }
+  .parked-player-deck,
+  .selected-deck,
+  .whois-terminal,
+  .spread-carousel,
+  .player-info-carousel {
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+    margin-top:1rem;
+  }
+  .whois-terminal { min-height:220px; }
+}
+
+
+/* ------------------------------------------------------------------
+   v11 character-page refinements.
+   Starting point is the uploaded v6 webpage. These rules intentionally
+   avoid #archive-view / #archive-grid so the landing page stays as v6.
+------------------------------------------------------------------- */
+
+:root {
+  --v11-stack-card-w: 202px;
+  --v11-edge-w: 42px;
+  --v11-carousel-card-w: 238px;
+}
+
+/* Give the top panel enough room for larger cards */
+#character-view .character-showcase {
+  height: 468px;
+}
+
+/* Player deck: same size as selected character card */
+#character-view .parked-player-deck {
+  left: 18px;
+  top: 104px;
+  width: 310px;
+  height: 330px;
+}
+
+#character-view .parked-player-deck .player-card-back {
+  width: var(--v11-stack-card-w);
+}
+
+#character-view .parked-player-deck .player-card-back:nth-child(1){left:0; top:0; z-index:7}
+#character-view .parked-player-deck .player-card-back:nth-child(2){left:18px; top:4px; z-index:6}
+#character-view .parked-player-deck .player-card-back:nth-child(3){left:36px; top:8px; z-index:5}
+#character-view .parked-player-deck .player-card-back:nth-child(4){left:54px; top:12px; z-index:4}
+#character-view .parked-player-deck .player-card-back:nth-child(5){left:72px; top:16px; z-index:3}
+
+#character-view #player-card-name {
+  top: 15.5%;
+  left: 12%;
+  right: 12%;
+  font-size: 1.02rem;
+  line-height: 1.05;
+}
+
+/* Stacked character deck. Character/name card remains the top card. */
+#character-view .selected-deck {
+  left: 350px;
+  top: 96px;
+  width: 630px;
+  height: 342px;
+}
+
+#character-view .stack-unspread {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
+#character-view .stack-unspread > .identity-card {
+  z-index: 40;
+  flex: 0 0 var(--v11-stack-card-w);
+  width: var(--v11-stack-card-w);
+  max-width: var(--v11-stack-card-w);
+}
+
+/* Character name must remain between top corner ornaments and above the line */
+#character-view .card-name {
+  width: 70%;
+  max-width: 70%;
+  margin: .44rem auto .20rem;
+  min-height: 1.55rem;
+  line-height: 1.02;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  font-size: 1.28rem;
+}
+
+/* Bottom identity text constrained neatly */
+#character-view .identity-card p {
+  max-width: 72%;
+  margin: .035rem auto;
+  line-height: 1.02;
+  font-size: .92rem;
+}
+
+#character-view .identity-card p:last-of-type {
+  margin-bottom: .12rem;
+}
+
+#character-view .stack-unspread .portrait {
+  height: 128px;
+  width: 96px;
+  margin: .25rem auto .42rem;
+}
+
+#character-view .card-bottom-icon {
+  bottom: .72rem;
+  font-size: 1.05rem;
+}
+
+/*
+  Stacked lower cards:
+  Use narrow visible slices from the same card artwork, not dark bars.
+  The label is vertically centred directly on the exposed card edge.
+*/
+#character-view .stack-card-edge {
+  position: relative;
+  flex: 0 0 var(--v11-edge-w);
+  width: var(--v11-edge-w);
+  max-width: var(--v11-edge-w);
+  height: calc(var(--v11-stack-card-w) * 1.4);
+  aspect-ratio: auto;
+  margin-left: -2px;
+  border: 0;
+  border-radius: 8px;
+  background-image: url("assets/cards/card-base.png");
+  background-size: var(--v11-stack-card-w) 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: #2b1a0b;
+  filter: drop-shadow(0 5px 4px rgba(0,0,0,.22));
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  writing-mode: initial;
+  text-orientation: initial;
+  text-transform: none;
+  font-size: 0;
+  z-index: 20;
+}
+
+#character-view .stack-card-edge.trophy-edge {
+  background-image: url("assets/cards/card-trophy-damage-base.png");
+}
+
+#character-view .stack-card-edge::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(90deg);
+  transform-origin: center;
+  width: 122px;
+  text-align: center;
+  color: #27160a;
+  font-size: .76rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  opacity: .9;
+  pointer-events: none;
+}
+
+#character-view .stack-card-edge:hover::after {
+  color: #000;
+  opacity: 1;
+}
+
+#character-view .stack-card-edge:hover {
+  transform: translateY(-2px);
+}
+
+/* Make room for the wider stack */
+#character-view .whois-terminal {
+  left: 985px;
+}
+
+/* Larger spread carousel cards, fitting top-to-bottom with padding */
+#character-view .spread-carousel,
+#character-view .player-info-carousel {
+  left: 318px;
+  right: 20px;
+  top: 96px;
+  bottom: 18px;
+  padding: 0 54px;
+}
+
+#character-view .carousel-track {
+  gap: 20px;
+}
+
+#character-view .spread-carousel .char-card,
+#character-view .player-info-carousel .char-card {
+  flex: 0 0 var(--v11-carousel-card-w);
+  width: var(--v11-carousel-card-w);
+  max-width: var(--v11-carousel-card-w);
+  padding: 1.16rem .92rem;
+}
+
+#character-view .spread-carousel .identity-card,
+#character-view .player-info-carousel .identity-card {
+  flex-basis: var(--v11-carousel-card-w);
+}
+
+#character-view .spread-carousel .portrait {
+  height: 154px;
+  width: 114px;
+  margin: .28rem auto .50rem;
+}
+
+#character-view .spread-carousel .card-name,
+#character-view .player-info-carousel .card-name {
+  width: 70%;
+  max-width: 70%;
+  margin-top: .48rem;
+  font-size: 1.38rem;
+}
+
+#character-view .spread-carousel .identity-card p {
+  max-width: 72%;
+  font-size: .98rem;
+  line-height: 1.03;
+}
+
+#character-view .info-card h3 {
+  width: 70%;
+  max-width: 70%;
+  margin: .48rem auto .55rem;
+  font-size: 1.15rem;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+#character-view .info-card ul {
+  max-width: 76%;
+  margin: .72rem auto;
+  padding-left: 1.05rem;
+  font-size: .92rem;
+  text-align: left;
+}
+
+#character-view .info-card p {
+  max-width: 76%;
+  margin: .45rem auto;
+  font-size: .98rem;
+  line-height: 1.18;
+}
+
+/* Trophy overlay: above text/images on trophy cards */
+#character-view .trophy-card,
+#character-view .trophy-select-card {
+  position: relative;
+}
+
+#character-view .trophy-card::after,
+#character-view .trophy-select-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/cards/card-trophy-damage-overlay.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 8;
+  pointer-events: none;
+}
+
+#character-view .trophy-card h3,
+#character-view .trophy-card p,
+#character-view .trophy-card .mini-art,
+#character-view .trophy-select-card h3,
+#character-view .trophy-select-card p,
+#character-view .trophy-select-card .card-symbol {
+  position: relative;
+  z-index: 3;
+}
+
+/* Footer quote */
+.deck-motto {
+  text-align: center;
+  margin: 1.2rem 0 0;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #2a1a0e;
+}
+
+@media (max-width:1180px) {
+  #character-view .selected-deck,
+  #character-view .whois-terminal,
+  #character-view .spread-carousel,
+  #character-view .player-info-carousel,
+  #character-view .parked-player-deck {
+    left: auto;
+    right: auto;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   v12 refinements.
+   Built from v11, with landing/index page left alone.
+   Most selectors are scoped to #character-view.
+------------------------------------------------------------------- */
+
+:root {
+  --v12-stack-card-w: 206px;
+  --v12-carousel-card-w: 258px;
+  --v12-card-ratio: 1.4;
+  --v12-edge-visible: 38px;
+  --v12-edge-overlap: -168px;
+}
+
+/* Top character panel: make room for 80-100 character terminal and larger cards */
+#character-view .character-showcase {
+  height: 492px;
+}
+
+/* Status strip remains as before, above the panel content */
+#character-view .stat-strip {
+  z-index: 12;
+}
+
+/* Player deck remains visible at the side */
+#character-view .parked-player-deck {
+  left: 18px;
+  top: 104px;
+  width: 316px;
+  height: 342px;
+}
+
+#character-view .parked-player-deck .player-card-back {
+  width: var(--v12-stack-card-w);
+}
+
+#character-view .parked-player-deck .player-card-back:nth-child(1){left:0; top:0; z-index:7}
+#character-view .parked-player-deck .player-card-back:nth-child(2){left:16px; top:4px; z-index:6}
+#character-view .parked-player-deck .player-card-back:nth-child(3){left:32px; top:8px; z-index:5}
+#character-view .parked-player-deck .player-card-back:nth-child(4){left:48px; top:12px; z-index:4}
+#character-view .parked-player-deck .player-card-back:nth-child(5){left:64px; top:16px; z-index:3}
+
+#character-view #player-card-name {
+  top: 16%;
+  left: 13%;
+  right: 13%;
+  font-size: .98rem;
+  line-height: 1.05;
+}
+
+/* Main stacked character deck shifted left to allow a wider whois terminal */
+#character-view .selected-deck {
+  left: 332px;
+  top: 96px;
+  width: 548px;
+  height: 354px;
+}
+
+/* Name card on top, lower cards underneath as real card slices */
+#character-view .stack-unspread {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
+#character-view .stack-unspread > .identity-card {
+  z-index: 60;
+  flex: 0 0 var(--v12-stack-card-w);
+  width: var(--v12-stack-card-w);
+  max-width: var(--v12-stack-card-w);
+}
+
+/* Character title constrained above the top rule, between corner ornaments */
+#character-view .card-name {
+  width: 64%;
+  max-width: 64%;
+  margin: .38rem auto .10rem;
+  min-height: 1.42rem;
+  line-height: .98;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  font-size: 1.18rem;
+  letter-spacing: .01em;
+}
+
+/* Character type/level constrained at bottom */
+#character-view .identity-card p {
+  max-width: 70%;
+  margin: .02rem auto;
+  line-height: .98;
+  font-size: .86rem;
+}
+
+#character-view .identity-card p:last-of-type {
+  margin-bottom: .08rem;
+}
+
+#character-view .card-bottom-icon {
+  bottom: .66rem;
+  font-size: 1rem;
+}
+
+/* Uploaded character image on identity/name cards */
+#character-view .portrait {
+  height: 146px;
+  width: 118px;
+  margin: .22rem auto .34rem;
+  background: transparent;
+  clip-path: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#character-view .portrait img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/*
+  Stacked edge cards:
+  The previous dark line was caused by using narrow card-slices with transparent
+  space and shadowing on each slice. These now use a full card underneath with
+  a clip-path revealing only the right edge, so the cards read as lying on top
+  of each other rather than as black bars.
+*/
+#character-view .stack-card-edge {
+  position: relative;
+  flex: 0 0 var(--v12-stack-card-w);
+  width: var(--v12-stack-card-w);
+  max-width: var(--v12-stack-card-w);
+  aspect-ratio: 5 / 7;
+  height: auto;
+  margin-left: var(--v12-edge-overlap);
+  border: 0;
+  border-radius: 8px;
+  background-image: url("assets/cards/card-base.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2b1a0b;
+  filter: drop-shadow(0 4px 3px rgba(0,0,0,.18));
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  writing-mode: initial;
+  text-orientation: initial;
+  text-transform: none;
+  font-size: 0;
+  clip-path: inset(0 0 0 calc(100% - var(--v12-edge-visible)));
+}
+
+/* Keep earlier cards above later cards, identity card remains top */
+#character-view .stack-unspread .stack-card-edge:nth-child(2){z-index:59}
+#character-view .stack-unspread .stack-card-edge:nth-child(3){z-index:58}
+#character-view .stack-unspread .stack-card-edge:nth-child(4){z-index:57}
+#character-view .stack-unspread .stack-card-edge:nth-child(5){z-index:56}
+#character-view .stack-unspread .stack-card-edge:nth-child(6){z-index:55}
+#character-view .stack-unspread .stack-card-edge:nth-child(7){z-index:54}
+#character-view .stack-unspread .stack-card-edge:nth-child(8){z-index:53}
+
+#character-view .stack-card-edge.trophy-edge {
+  background-image: url("assets/cards/card-trophy-damage-base.png");
+}
+
+#character-view .stack-card-edge::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  width: 118px;
+  text-align: center;
+  color: #34200d;
+  font-size: .72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .84;
+  pointer-events: none;
+  transition: color .16s ease, opacity .16s ease, text-shadow .16s ease;
+}
+
+/* Edge card title hover colour */
+#character-view .stack-card-edge:hover::after {
+  color: #a23c20;
+  opacity: 1;
+  text-shadow: 0 0 3px rgba(255, 213, 122, .55);
+}
+
+#character-view .stack-card-edge:hover {
+  transform: translateY(-2px);
+}
+
+/* Wider terminal: sized for roughly 80+ monospace characters on desktop */
+#character-view .whois-terminal {
+  left: 900px;
+  right: 24px;
+  min-width: 82ch;
+  max-width: none;
+  font-size: .92rem;
+}
+
+#character-view .whois-terminal pre {
+  font-size: .92rem;
+  line-height: 1.22;
+}
+
+/* Spread carousel: larger cards filling the available vertical space */
+#character-view .spread-carousel,
+#character-view .player-info-carousel {
+  left: 300px;
+  right: 20px;
+  top: 96px;
+  bottom: 18px;
+  padding: 0 54px;
+}
+
+#character-view .carousel-track {
+  gap: 18px;
+}
+
+#character-view .spread-carousel .char-card,
+#character-view .player-info-carousel .char-card {
+  flex: 0 0 var(--v12-carousel-card-w);
+  width: var(--v12-carousel-card-w);
+  max-width: var(--v12-carousel-card-w);
+  padding: 1.18rem .96rem;
+}
+
+#character-view .spread-carousel .identity-card,
+#character-view .player-info-carousel .identity-card {
+  flex-basis: var(--v12-carousel-card-w);
+}
+
+#character-view .spread-carousel .portrait {
+  height: 184px;
+  width: 148px;
+  margin: .25rem auto .40rem;
+}
+
+#character-view .spread-carousel .card-name,
+#character-view .player-info-carousel .card-name {
+  width: 64%;
+  max-width: 64%;
+  margin-top: .42rem;
+  font-size: 1.28rem;
+}
+
+#character-view .spread-carousel .identity-card p {
+  max-width: 70%;
+  font-size: .96rem;
+  line-height: 1;
+}
+
+#character-view .info-card h3 {
+  width: 66%;
+  max-width: 66%;
+  margin: .45rem auto .55rem;
+  font-size: 1.08rem;
+  line-height: 1.02;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+#character-view .info-card ul {
+  max-width: 76%;
+  margin: .72rem auto;
+  padding-left: 1.05rem;
+  font-size: .92rem;
+  text-align: left;
+}
+
+#character-view .info-card p {
+  max-width: 76%;
+  margin: .45rem auto;
+  font-size: .98rem;
+  line-height: 1.18;
+}
+
+/* Lower-page character card art: use uploaded test image, without changing archive markup */
+#character-view .mini-card .mini-art,
+#archive-view .mini-card .mini-art {
+  background-image: url("assets/cards/card-image-human-warrior-male.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  clip-path: none;
+}
+
+/* Search box refinement: remove grey outer block and align the input */
+#character-view .player-filter .search-field,
+#archive-view .filter-bar .search-field {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+#character-view .player-filter .search-field input,
+#archive-view .filter-bar .search-field input {
+  height: 2.45rem;
+  margin: 0;
+  padding: .55rem 2.1rem .55rem .65rem;
+  background-color: #0c0906;
+  border: 1px solid #7b571c;
+  color: #f3dfab;
+  box-shadow: inset 0 0 8px rgba(0,0,0,.65);
+}
+
+#character-view .player-filter .search-field,
+#archive-view .filter-bar .search-field {
+  position: relative;
+}
+
+#character-view .player-filter .search-field::after,
+#archive-view .filter-bar .search-field::after {
+  content: "⌕";
+  position: absolute;
+  right: .72rem;
+  bottom: .48rem;
+  color: var(--deck-gold);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* Trophy overlay remains above all trophy content */
+#character-view .trophy-card,
+#character-view .trophy-select-card {
+  position: relative;
+}
+
+#character-view .trophy-card::after,
+#character-view .trophy-select-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/cards/card-trophy-damage-overlay.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 8;
+  pointer-events: none;
+}
+
+#character-view .trophy-card h3,
+#character-view .trophy-card p,
+#character-view .trophy-card .mini-art,
+#character-view .trophy-select-card h3,
+#character-view .trophy-select-card p,
+#character-view .trophy-select-card .card-symbol {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 1500px) {
+  #character-view .whois-terminal {
+    min-width: 72ch;
+  }
+}
+
+@media (max-width:1180px) {
+  #character-view .selected-deck,
+  #character-view .whois-terminal,
+  #character-view .spread-carousel,
+  #character-view .player-info-carousel,
+  #character-view .parked-player-deck {
+    left: auto;
+    right: auto;
+  }
+
+  #character-view .whois-terminal {
+    min-width: 0;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   v14 refinements, based on the user-uploaded v12 package.
+   The character art is now a full-card overlay layer, aligned exactly
+   over the card background, just like the trophy damage overlay.
+------------------------------------------------------------------- */
+
+.deck-v14 {
+  --character-card-overlay: url("assets/cards/card-image-human-warrior-male.png");
+}
+
+/* Remove v12's portrait-box image treatment. */
+.deck-v14 #character-view .portrait,
+.deck-v14 #archive-view .mini-art,
+.deck-v14 #character-view .mini-art {
+  background: transparent !important;
+}
+
+.deck-v14 #character-view .portrait img,
+.deck-v14 #archive-view .mini-art img,
+.deck-v14 #character-view .mini-art img {
+  display: none !important;
+}
+
+/*
+  Full-card character-image overlay on every ordinary character card.
+  The uploaded image is already sized to match the card, so it fills the
+  same bounds as the card background.
+*/
+.deck-v14 .char-card.identity-card::before,
+.deck-v14 .mini-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--character-card-overlay);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ensure card text and icons sit above the character art overlay. */
+.deck-v14 .char-card.identity-card .card-name,
+.deck-v14 .char-card.identity-card .portrait,
+.deck-v14 .char-card.identity-card p,
+.deck-v14 .char-card.identity-card .card-bottom-icon,
+.deck-v14 .mini-card h3,
+.deck-v14 .mini-card .mini-art,
+.deck-v14 .mini-card p {
+  position: relative;
+  z-index: 3;
+}
+
+/*
+  The old portrait/mask should no longer draw the black placeholder shape.
+  It remains as a layout spacer only, so the overlay can show underneath.
+*/
+.deck-v14 #character-view .portrait {
+  background: transparent !important;
+  clip-path: none !important;
+  overflow: visible !important;
+}
+
+.deck-v14 #character-view .portrait::before,
+.deck-v14 #character-view .portrait::after,
+.deck-v14 #archive-view .mini-art::before,
+.deck-v14 #archive-view .mini-art::after,
+.deck-v14 #character-view .mini-art::before,
+.deck-v14 #character-view .mini-art::after {
+  content: none !important;
+}
+
+/* The full-card overlay handles the art; mini-art is only a spacer. */
+.deck-v14 .mini-card .mini-art {
+  background: transparent !important;
+  clip-path: none !important;
+}
+
+/*
+  Trophy cards: character image is above the trophy base, but beneath the
+  damage overlay. This mirrors the exact overlay layering requested.
+*/
+.deck-v14 #character-view .trophy-card::before,
+.deck-v14 #character-view .trophy-select-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--character-card-overlay);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.deck-v14 #character-view .trophy-card h3,
+.deck-v14 #character-view .trophy-card p,
+.deck-v14 #character-view .trophy-card .mini-art,
+.deck-v14 #character-view .trophy-select-card h3,
+.deck-v14 #character-view .trophy-select-card p,
+.deck-v14 #character-view .trophy-select-card .card-symbol {
+  position: relative;
+  z-index: 3;
+}
+
+.deck-v14 #character-view .trophy-card::after,
+.deck-v14 #character-view .trophy-select-card::after {
+  background-image: url("assets/cards/card-trophy-damage-overlay.png") !important;
+  z-index: 8;
+}
+
+/* Keep title and lower text clear over the overlay. */
+.deck-v14 #character-view .card-name,
+.deck-v14 #character-view .identity-card p,
+.deck-v14 .mini-card h3,
+.deck-v14 .mini-card p {
+  text-shadow: 0 1px 0 rgba(239, 211, 151, .45);
+}
+
+/* Name area remains constrained above the top rule. */
+.deck-v14 #character-view .card-name {
+  width: 60%;
+  max-width: 60%;
+  margin-top: .34rem;
+}
+
+/* Since art is now full-card, reduce portrait spacer height so it does not push bottom text too low. */
+.deck-v14 #character-view .portrait {
+  height: 154px;
+  width: 120px;
+  margin: .22rem auto .32rem;
+}
+
+.deck-v14 #character-view .spread-carousel .portrait {
+  height: 190px;
+  width: 148px;
+  margin: .24rem auto .38rem;
+}
+
+
+/* ------------------------------------------------------------------
+   v16: stacked-character-card seam fix only.
+   This reverts the failed v15 parchment-fill approach and instead follows
+   the player deck method: full card-sized elements, overlapping by position.
+   The character-card deck keeps the same straight horizontal layout, not the
+   slight fanned offsets of the player deck.
+------------------------------------------------------------------- */
+
+.deck-v16 {
+  --v16-stack-card-w: 206px;
+  --v16-stack-card-h: calc(var(--v16-stack-card-w) * 1.4);
+  --v16-edge-step: 40px;
+}
+
+/* Keep the character deck layout stable. */
+.deck-v16 #character-view .selected-deck {
+  left: 332px;
+  top: 96px;
+  width: 650px;
+  height: 354px;
+}
+
+.deck-v16 #character-view .stack-unspread {
+  position: relative;
+  display: block;
+  width: 620px;
+  height: var(--v16-stack-card-h);
+}
+
+/* Identity card is the top card, same idea as the first player-card-back. */
+.deck-v16 #character-view .stack-unspread > .identity-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--v16-stack-card-w);
+  max-width: var(--v16-stack-card-w);
+  height: var(--v16-stack-card-h);
+  aspect-ratio: auto;
+  z-index: 30;
+}
+
+/*
+  Category cards are now full card elements, exactly like the player deck.
+  They are placed behind the identity card and offset horizontally.
+  No clipping, no artificial parchment fill, no separate dark strip.
+*/
+.deck-v16 #character-view .stack-card-edge {
+  position: absolute;
+  top: 0;
+  width: var(--v16-stack-card-w);
+  height: var(--v16-stack-card-h);
+  aspect-ratio: auto;
+  margin-left: 0;
+  border: 0;
+  border-radius: 8px;
+  background-image: url("assets/cards/card-base.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2b1a0b;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,.30));
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  writing-mode: initial;
+  text-orientation: initial;
+  text-transform: none;
+  font-size: 0;
+  clip-path: none;
+  box-shadow: none;
+}
+
+/* Straight stack: same top, regular horizontal offsets. */
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(2) { left: calc(var(--v16-stack-card-w) + 0px); z-index: 29; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(3) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 1); z-index: 28; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(4) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 2); z-index: 27; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(5) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 3); z-index: 26; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(6) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 4); z-index: 25; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(7) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 5); z-index: 24; }
+.deck-v16 #character-view .stack-unspread .stack-card-edge:nth-child(8) { left: calc(var(--v16-stack-card-w) + var(--v16-edge-step) * 6); z-index: 23; }
+
+.deck-v16 #character-view .stack-card-edge.trophy-edge {
+  background-image: url("assets/cards/card-trophy-damage-base.png");
+}
+
+/*
+  Only the right edge of each underlying full card remains visible because
+  the next card sits on top of it. The label is placed on that visible edge.
+*/
+.deck-v16 #character-view .stack-card-edge::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  width: 116px;
+  text-align: center;
+  color: #2b1a0b;
+  font-size: .72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .88;
+  pointer-events: none;
+  transition: color .16s ease, opacity .16s ease, text-shadow .16s ease;
+}
+
+.deck-v16 #character-view .stack-card-edge:hover::after {
+  color: #b84721;
+  opacity: 1;
+  text-shadow: 0 0 4px rgba(255, 221, 151, .68);
+}
+
+.deck-v16 #character-view .stack-card-edge:hover {
+  transform: translateY(-2px);
+}
+
+/* Preserve the v14 wider terminal and card image overlay work. */
+.deck-v16 #character-view .whois-terminal {
+  left: 900px;
+  right: 24px;
+  min-width: 82ch;
+}
+
+@media (max-width:1180px) {
+  .deck-v16 #character-view .stack-unspread,
+  .deck-v16 #character-view .stack-unspread > .identity-card,
+  .deck-v16 #character-view .stack-card-edge {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .deck-v16 #character-view .stack-unspread {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   v17: place information cards underneath the main character card.
+   Keeps the successful v16 full-card overlap method, but reverses the
+   horizontal stacking relationship so the character card is visibly on top.
+   Also moves the selected stack away from the whois panel.
+------------------------------------------------------------------- */
+
+.deck-v17 {
+  --v17-card-w: 206px;
+  --v17-card-h: calc(var(--v17-card-w) * 1.4);
+  --v17-edge-step: 38px;
+}
+
+/* Make the selected-deck area end before the whois terminal begins. */
+.deck-v17 #character-view .selected-deck {
+  left: 332px;
+  top: 96px;
+  width: 535px;
+  height: 354px;
+}
+
+/* Give the whois box a firm left boundary so the deck cannot cover it. */
+.deck-v17 #character-view .whois-terminal {
+  left: 1040px;
+  right: 24px;
+  min-width: 78ch;
+}
+
+/* The stack is now an absolute-positioned pile. */
+.deck-v17 #character-view .stack-unspread {
+  position: relative;
+  display: block;
+  width: 535px;
+  height: var(--v17-card-h);
+}
+
+/*
+   The information cards sit underneath the main character card.
+   Their visible labelled edges appear to the right of the main card,
+   but the actual card bodies extend left underneath it.
+*/
+.deck-v17 #character-view .stack-card-edge {
+  position: absolute;
+  top: 0;
+  width: var(--v17-card-w);
+  height: var(--v17-card-h);
+  aspect-ratio: auto;
+  margin-left: 0;
+  border: 0;
+  border-radius: 8px;
+  background-image: url("assets/cards/card-base.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2b1a0b;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,.30));
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  writing-mode: initial;
+  text-orientation: initial;
+  text-transform: none;
+  font-size: 0;
+  clip-path: none;
+  box-shadow: none;
+}
+
+/* 
+   These left positions mean each info card is mostly hidden below the
+   character card; only its right edge remains visible.
+*/
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(2) { left: calc(var(--v17-edge-step) * 1); z-index: 21; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(3) { left: calc(var(--v17-edge-step) * 2); z-index: 22; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(4) { left: calc(var(--v17-edge-step) * 3); z-index: 23; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(5) { left: calc(var(--v17-edge-step) * 4); z-index: 24; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(6) { left: calc(var(--v17-edge-step) * 5); z-index: 25; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(7) { left: calc(var(--v17-edge-step) * 6); z-index: 26; }
+.deck-v17 #character-view .stack-unspread .stack-card-edge:nth-child(8) { left: calc(var(--v17-edge-step) * 7); z-index: 27; }
+
+.deck-v17 #character-view .stack-card-edge.trophy-edge {
+  background-image: url("assets/cards/card-trophy-damage-base.png");
+}
+
+/* The visible labels are now on the exposed right edges. */
+.deck-v17 #character-view .stack-card-edge::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  width: 116px;
+  text-align: center;
+  color: #2b1a0b;
+  font-size: .72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .88;
+  pointer-events: none;
+  transition: color .16s ease, opacity .16s ease, text-shadow .16s ease;
+}
+
+.deck-v17 #character-view .stack-card-edge:hover::after {
+  color: #b84721;
+  opacity: 1;
+  text-shadow: 0 0 4px rgba(255, 221, 151, .68);
+}
+
+.deck-v17 #character-view .stack-card-edge:hover {
+  transform: translateY(-2px);
+}
+
+/*
+   The identity card is rendered last visually and sits over the information
+   cards, making it the true top card of the deck.
+*/
+.deck-v17 #character-view .stack-unspread > .identity-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--v17-card-w);
+  max-width: var(--v17-card-w);
+  height: var(--v17-card-h);
+  aspect-ratio: auto;
+  z-index: 60;
+}
+
+/* Keep the spread carousel unaffected by the stacked deck repositioning. */
+.deck-v17 #character-view.character-showcase.is-spread .stack-unspread > .identity-card,
+.deck-v17 #character-view.character-showcase.is-spread .stack-card-edge {
+  position: relative;
+}
+
+@media (max-width:1180px) {
+  .deck-v17 #character-view .selected-deck,
+  .deck-v17 #character-view .whois-terminal {
+    left: auto;
+    right: auto;
+  }
+
+  .deck-v17 #character-view .stack-unspread,
+  .deck-v17 #character-view .stack-unspread > .identity-card,
+  .deck-v17 #character-view .stack-card-edge {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   v18: fix character info-card stack order and remove bottom symbol.
+   Based on v17. The main character/name card stays on top; underneath it,
+   the info cards now stack in the natural order:
+   Facts, Whois, Clan, Logs, Deeds, Trophies, Sources.
+------------------------------------------------------------------- */
+
+/*
+  Reverse the v17 z-index ordering for the underlying info cards.
+  Earlier category cards now sit above later category cards, matching the
+  player-deck overlap method while keeping the same straight layout.
+*/
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(2) { z-index: 59; } /* Facts */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(3) { z-index: 58; } /* Whois */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(4) { z-index: 57; } /* Clan */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(5) { z-index: 56; } /* Logs */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(6) { z-index: 55; } /* Deeds */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(7) { z-index: 54; } /* Trophies */
+.deck-v18 #character-view .stack-unspread .stack-card-edge:nth-child(8) { z-index: 53; } /* Sources */
+
+/* Main character card remains the top card. */
+.deck-v18 #character-view .stack-unspread > .identity-card {
+  z-index: 60;
+}
+
+/* Remove the bottom symbol from the character card. */
+.deck-v18 #character-view .card-bottom-icon {
+  display: none !important;
+}
+
+/* Give the lower identity text a touch more breathing room now the symbol is gone. */
+.deck-v18 #character-view .identity-card p:last-of-type {
+  margin-bottom: .18rem;
+}
+
+
+/* ------------------------------------------------------------------
+   v19: top panel refinements only.
+   - Keep whois box inside the panel while giving it room for ~100 chars.
+   - Remove character image overlay from the trophy card in the spread deck.
+------------------------------------------------------------------- */
+
+/*
+  Shift the whois box back inside the right edge of the panel.
+  It is anchored to the right of the panel, not allowed to slide off-screen.
+  The font is slightly tightened so roughly 100 monospace characters fit.
+*/
+.deck-v19 #character-view .whois-terminal {
+  left: 820px;
+  right: 24px;
+  width: auto;
+  min-width: 100ch;
+  max-width: calc(100% - 844px);
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: .74rem;
+}
+
+.deck-v19 #character-view .whois-terminal pre {
+  font-size: .74rem;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Keep the selected character stack clear of the whois box. */
+.deck-v19 #character-view .selected-deck {
+  left: 332px;
+  width: 475px;
+}
+
+/* The spread deck's Trophy card should not carry the character portrait overlay. */
+.deck-v19 #character-view .spread-carousel .trophy-select-card::before {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Keep the trophy card content legible after removing the portrait overlay. */
+.deck-v19 #character-view .spread-carousel .trophy-select-card .card-symbol,
+.deck-v19 #character-view .spread-carousel .trophy-select-card h3,
+.deck-v19 #character-view .spread-carousel .trophy-select-card p {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 1500px) {
+  .deck-v19 #character-view .whois-terminal {
+    left: 800px;
+    right: 18px;
+    min-width: 90ch;
+    max-width: calc(100% - 818px);
+    font-size: .70rem;
+  }
+
+  .deck-v19 #character-view .whois-terminal pre {
+    font-size: .70rem;
+  }
+}
+
+@media (max-width:1180px) {
+  .deck-v19 #character-view .whois-terminal {
+    left: auto;
+    right: auto;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    font-size: .92rem;
+  }
+
+  .deck-v19 #character-view .whois-terminal pre {
+    font-size: .92rem;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   v20 navigation/title/top-panel refinements.
+------------------------------------------------------------------- */
+
+/* Centre the Deck of Chars title and use the generated image title. */
+.deck-v20 .doc-title {
+  text-align: center;
+}
+
+.deck-v20 .doc-title .breadcrumbs {
+  display: none !important;
+}
+
+.deck-v20 .deck-title-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .2rem auto .25rem;
+  line-height: 1;
+}
+
+.deck-v20 .deck-title-image-wrap a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.deck-v20 .deck-title-image-wrap a:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.deck-v20 .deck-title-image-wrap img {
+  display: block;
+  width: min(720px, 78vw);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Return button beneath “Filter characters played by…” */
+.deck-v20 .player-filter .filter-note-with-return {
+  display: flex;
+  flex-direction: column;
+  gap: .38rem;
+  align-self: center;
+  white-space: normal;
+  min-width: 235px;
+}
+
+.deck-v20 .return-archive-button {
+  align-self: flex-start;
+  background: linear-gradient(to bottom, rgba(246,217,132,.12), rgba(0,0,0,.18)), #17100a;
+  color: var(--deck-gold-light);
+  border: 1px solid #8f6724;
+  border-radius: 3px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .86rem;
+  padding: .34rem .58rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255,226,151,.08), 0 2px 6px rgba(0,0,0,.35);
+}
+
+.deck-v20 .return-archive-button:hover {
+  color: #fff2bd;
+  border-color: #e0b855;
+}
+
+/*
+  Whois box: keep it fully inside the top panel and close the right border.
+  v19 used min-width in a way that could force the box beyond the panel.
+  Here the box is right-anchored and the font is scaled so 100 columns fit
+  within the visible rectangle.
+*/
+.deck-v20 #character-view .whois-terminal {
+  left: 820px;
+  right: 28px;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-right: 1px solid #8f6724 !important;
+  font-size: .68rem;
+}
+
+.deck-v20 #character-view .whois-terminal pre {
+  font-size: .68rem;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* The selected stack remains clear of the whois box. */
+.deck-v20 #character-view .selected-deck {
+  width: 475px;
+}
+
+/* Keep search/filters aligned after the return button is added. */
+.deck-v20 .player-filter {
+  align-items: center;
+}
+
+@media (min-width: 1501px) {
+  .deck-v20 #character-view .whois-terminal {
+    font-size: .70rem;
+  }
+
+  .deck-v20 #character-view .whois-terminal pre {
+    font-size: .70rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .deck-v20 #character-view .whois-terminal {
+    left: 790px;
+    right: 22px;
+    font-size: .64rem;
+  }
+
+  .deck-v20 #character-view .whois-terminal pre {
+    font-size: .64rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .deck-v20 #character-view .whois-terminal {
+    left: auto;
+    right: auto;
+    width: auto;
+    min-width: 0;
+    font-size: .92rem;
+  }
+
+  .deck-v20 #character-view .whois-terminal pre {
+    font-size: .92rem;
+  }
+}
+
+
+/* v26: faction backs and immortal labels only. No lower-card layout changes. */
+.deck-v26 {
+  --reverse-free: url("assets/cards/card-reverse-free.png");
+  --reverse-immortal: url("assets/cards/card-reverse-immortal.png");
+  --reverse-minion: url("assets/cards/card-reverse-minions.png");
+  --reverse-zaugurz: url("assets/cards/card-reverse-zaugurz.png");
+}
+
+.deck-v26 .mini-stack.free::before,
+.deck-v26 .mini-stack.free::after,
+.deck-v26 .parked-player-deck.free .player-card-back {
+  background-image: var(--reverse-free) !important;
+}
+
+.deck-v26 .mini-stack.immortal::before,
+.deck-v26 .mini-stack.immortal::after,
+.deck-v26 .parked-player-deck.immortal .player-card-back {
+  background-image: var(--reverse-immortal) !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.deck-v26 .mini-stack.minion::before,
+.deck-v26 .mini-stack.minion::after,
+.deck-v26 .parked-player-deck.minion .player-card-back {
+  background-image: var(--reverse-minion) !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.deck-v26 .mini-stack.zaugurz::before,
+.deck-v26 .mini-stack.zaugurz::after,
+.deck-v26 .parked-player-deck.zaugurz .player-card-back {
+  background-image: var(--reverse-zaugurz) !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.deck-v26 .mini-card p,
+.deck-v26 #character-view .identity-card p {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+
+/* ------------------------------------------------------------------
+   v27: lower-deck refinement only.
+   - New faction backs now scale the same way as the Free Peoples back.
+   - Lower deck fan/splay is reduced so decks stay inside the parchment.
+   - Main subheading is centred.
+   - Bottom quote updated in HTML.
+------------------------------------------------------------------- */
+
+/* Centre the subtitle under the Deck of Chars title. */
+.deck-v27 .deck-subtitle,
+.deck-v27 .entry-subtitle,
+.deck-v27 .archive-subtitle,
+.deck-v27 .doc-title p,
+.deck-v27 .page-intro,
+.deck-v27 .deck-intro {
+  text-align: center;
+}
+
+/*
+  The v26 faction backs inherited the asset's natural aspect/position in
+  some lower-card contexts. Force all faction backs to use exactly the same
+  rendering model as the Free Peoples card back.
+*/
+.deck-v27 .mini-stack::before,
+.deck-v27 .mini-stack::after,
+.deck-v27 .parked-player-deck .player-card-back {
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/*
+  Reduce the lower-card fan. This keeps enough colour/edge visible to read
+  faction at a glance, without pushing decks beyond the parchment.
+*/
+.deck-v27 .mini-stack {
+  width: 205px;
+  max-width: 205px;
+  overflow: hidden;
+}
+
+.deck-v27 .mini-stack::before {
+  left: 18px !important;
+  top: 8px !important;
+  transform: rotate(3deg) !important;
+}
+
+.deck-v27 .mini-stack::after {
+  left: 34px !important;
+  top: 13px !important;
+  transform: rotate(5deg) !important;
+}
+
+/* Keep the face card in its original scale, while narrowing the total deck footprint. */
+.deck-v27 .mini-card {
+  z-index: 3;
+}
+
+/* Use tighter responsive grid cells so the last card never crosses the right parchment edge. */
+.deck-v27 .character-grid,
+.deck-v27 .character-grid.compact {
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  column-gap: 1.25rem;
+  row-gap: 1.6rem;
+  overflow: hidden;
+}
+
+.deck-v27 .deck-section,
+.deck-v27 .related-area,
+.deck-v27 #archive-grid,
+.deck-v27 #related-grid {
+  overflow: hidden;
+}
+
+/* Slightly reduce fan again on narrower screens. */
+@media (max-width: 1450px) {
+  .deck-v27 .mini-stack {
+    width: 195px;
+    max-width: 195px;
+  }
+
+  .deck-v27 .mini-stack::before {
+    left: 14px !important;
+    top: 7px !important;
+    transform: rotate(2.5deg) !important;
+  }
+
+  .deck-v27 .mini-stack::after {
+    left: 28px !important;
+    top: 12px !important;
+    transform: rotate(4.5deg) !important;
+  }
+
+  .deck-v27 .character-grid,
+  .deck-v27 .character-grid.compact {
+    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+    column-gap: 1.1rem;
+  }
+}
+
+/* Ensure faction-specific cards still use their intended backs after scaling correction. */
+.deck-v27 .mini-stack.free::before,
+.deck-v27 .mini-stack.free::after,
+.deck-v27 .parked-player-deck.free .player-card-back {
+  background-image: var(--reverse-free) !important;
+}
+
+.deck-v27 .mini-stack.immortal::before,
+.deck-v27 .mini-stack.immortal::after,
+.deck-v27 .parked-player-deck.immortal .player-card-back {
+  background-image: var(--reverse-immortal) !important;
+}
+
+.deck-v27 .mini-stack.minion::before,
+.deck-v27 .mini-stack.minion::after,
+.deck-v27 .parked-player-deck.minion .player-card-back {
+  background-image: var(--reverse-minion) !important;
+}
+
+.deck-v27 .mini-stack.zaugurz::before,
+.deck-v27 .mini-stack.zaugurz::after,
+.deck-v27 .parked-player-deck.zaugurz .player-card-back {
+  background-image: var(--reverse-zaugurz) !important;
+}
+
+
+/* alpha 0.1 real-data additions */
+.deck-alpha-realdata .section-header p {
+  max-width: 48rem;
+}
+
+.deck-alpha-realdata .mini-stack.unknown::before,
+.deck-alpha-realdata .mini-stack.unknown::after,
+.deck-alpha-realdata .parked-player-deck.unknown .player-card-back {
+  opacity: .72;
+  filter: grayscale(.35);
+}
+
+.deck-alpha-realdata .filter-bar select,
+.deck-alpha-realdata .filter-bar input {
+  min-width: 0;
+}
+
+.deck-alpha-realdata .scroll-row.source {
+  display: block;
+  padding: .35rem 0;
+  border-bottom: 1px solid rgba(72, 46, 18, .25);
+}

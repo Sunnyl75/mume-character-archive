@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deck of Chars — Alpha 0.1 Real Data</title>
+  <link rel="stylesheet" href="bree-theme.css">
+  <link rel="stylesheet" href="deck-of-chars.css">
+</head>
+<body class="deck-alpha-realdata deck-v27 deck-v26 deck-v14 deck-v16 deck-v17 deck-v18 deck-v19 deck-v20">
+<div class="site-page deck-site-page">
+  <header class="site-header" aria-label="Bree Legends header">
+    <img class="site-header__wreath site-header__wreath--left" src="assets/images/header-wreath-left.png" alt="">
+    <img class="site-header__wreath site-header__wreath--right" src="assets/images/header-wreath-right.png" alt="">
+    <img class="site-header__sunny" src="assets/images/header-sunny.png" alt="Sunny">
+    <span class="site-header__side-left"></span><span class="site-header__side-right"></span><span class="site-header__interior-light"></span>
+    <div class="site-header__content">
+      <div class="site-branding">
+        <a href="#"><img class="site-logo" src="assets/images/site-logo-bree-legends.png" alt="Bree Legends"></a>
+        <p class="site-subtitle">A History of Multi User Middle Earth</p>
+      </div>
+      <nav class="primary-navigation">
+        <a href="#">Home</a><a href="#">Timeline</a><a href="#">Chronicles</a><a href="#">Atlas</a><a href="#">Bestiary</a>
+        <a class="active" href="#" onclick="showArchive(); return false;">Characters</a><a href="#">Library</a><a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-frame">
+    <span class="page-frame__left"></span><span class="page-frame__right"></span>
+    <div class="page-frame__inner deck-page-inner">
+      <span class="paper-corner paper-corner--top-left"></span><span class="paper-corner paper-corner--top-right"></span>
+      <span class="paper-corner paper-corner--bottom-left"></span><span class="paper-corner paper-corner--bottom-right"></span>
+      <span class="paper-edge paper-edge--top"></span><span class="paper-edge paper-edge--bottom"></span>
+      <span class="paper-edge paper-edge--left"></span><span class="paper-edge paper-edge--right"></span>
+
+      <main class="page-layout deck-of-chars">
+        <section class="doc-title">
+<h1 class="entry-title deck-title-image-wrap"><a href="#" onclick="showArchive(); return false;" aria-label="Return to complete Deck of Chars archive"><img src="assets/images/deck-of-chars-title.png" alt="Deck of Chars"></a></h1>
+          <p class="entry-lede">Some that die deserve life. Can you give it to them?</p>
+          <div class="content-divider"></div>
+        </section>
+
+        <section id="archive-view" class="doc-view is-visible">
+          <div class="doc-showcase archive-showcase">
+            <div class="showcase-heading">
+              <h2>Daily Random ASCII Whois</h2>
+              <button class="bree-button" onclick="drawRandomAscii()">Draw Another Whois</button>
+            </div>
+            <button id="ascii-card" class="ascii-feature" onclick="openCharacter('Diamonium','Bladorfat')">
+<pre id="ascii-pre">          /\_/\
+         /     \       &gt; WHOIS DIAMONIUM
+        /  ___  \
+       /__/   \__\     Diamonium Dagamatri is a level
+          | |          fifty-two Elf Ranger.
+        __| |__
+       /_______\       Active: c. 2003
+
+&gt; Click this whois to open the character page...</pre>
+            </button>
+          </div>
+
+          <form class="filter-bar" onsubmit="return false;">
+            <label>Race<select id="archive-race" onchange="filterArchive()"><option value="">All races</option></select></label>
+            <label>Subrace<select id="archive-subrace" onchange="filterArchive()"><option value="">All subraces</option></select></label>
+            <label>Class<select id="archive-class" onchange="filterArchive()"><option value="">All classes</option></select></label>
+            <label>Faction<select id="archive-faction" onchange="filterArchive()"><option value="">All factions</option></select></label>
+            <label>Clan<select id="archive-clan" onchange="filterArchive()"><option value="">All clans</option></select></label>
+            <label>Sort<select id="archive-sort" onchange="filterArchive()"><option value="name">Name</option><option value="level_desc">Level</option><option value="active">Active / age</option></select></label>
+            <label class="search-field search-field-inline">Search<input id="archive-search" placeholder="Search characters…" oninput="filterArchive()"></label>
+          </form>
+
+          <section class="deck-section">
+            <div class="section-header"><h2>Character Archive</h2><p>Filters can later link to matching wiki categories.</p></div>
+            <div id="archive-grid" class="character-grid"></div>
+          </section>
+        </section>
+
+        <section id="character-view" class="doc-view">
+          <div class="doc-showcase character-showcase" id="character-panel">
+            <div class="stat-strip">
+              <span class="player-click" onclick="openPlayerDeck()"><b>Player</b><em id="strip-player">Bladorfat</em></span>
+              <span><b>Name</b><em id="strip-name">Diamonium</em></span>
+              <span><b>Race</b><em id="strip-race">Elf (Sindar)</em></span>
+              <span><b>Class</b><em id="strip-class">Ranger</em></span>
+              <span><b>Level</b><em id="strip-level">52</em></span>
+              <span><b>Clan</b><em id="strip-clan">The Night Watch</em></span>
+              <span><b>Active</b><em id="strip-active">c. 2003</em></span>
+            </div>
+
+            <div id="parked-player-deck" class="parked-player-deck free" onclick="openPlayerDeck()">
+              <div class="player-card-back"><span id="player-card-name">Bladorfat</span></div>
+              <div class="player-card-back"></div><div class="player-card-back"></div><div class="player-card-back"></div><div class="player-card-back"></div>
+            </div>
+
+            <div class="selected-deck">
+              <h3>Selected Character</h3>
+              <div class="stack-unspread">
+                <article id="main-identity-card" class="char-card identity-card free" onclick="openStackCard(0)">
+                  <div class="card-name" id="identity-name">Diamonium</div>
+                  <div id="identity-portrait" class="portrait elf-ranger"></div>
+                  <p id="identity-race">Elf (Sindar)</p><p id="identity-class">Ranger</p><p id="identity-level">Level 52</p>
+                  <div class="card-bottom-icon">✥</div>
+                </article>
+                <article class="card-edge stack-card-edge" data-label="Facts" onclick="openStackCard(1)" title="Facts">Facts</article>
+                <article class="card-edge stack-card-edge" data-label="Whois" onclick="openStackCard(2)" title="Whois">Whois</article>
+                <article class="card-edge stack-card-edge" data-label="Clan" onclick="openStackCard(3)" title="Clan">Clan</article>
+                <article class="card-edge stack-card-edge" data-label="Logs" onclick="openStackCard(4)" title="Logs">Logs</article>
+                <article class="card-edge stack-card-edge" data-label="Deeds" onclick="openStackCard(5)" title="Deeds">Deeds</article>
+                <article class="card-edge stack-card-edge trophy-edge" data-label="Trophies" onclick="openStackCard(6)" title="Trophies">Trophies</article>
+                <article class="card-edge stack-card-edge" data-label="Sources" onclick="openStackCard(7)" title="Sources">Sources</article>
+              </div>
+            </div>
+
+            <div id="whois-terminal" class="whois-terminal"><pre>WHOIS: DIAMONIUM
+------------------------------------------------------------
+Narden of the Wild. Silent as shadow,
+swift as the wind. Protector of the realms
+between the stars.
+
+He walks the long roads of Middle-earth
+with bow unstrung and eyes unblinking,
+a watcher in the dark places.
+
+Ally to those who keep faith.
+Nemesis to those who break it.
+------------------------------------------------------------
+&gt; _</pre></div>
+
+            <div id="spread-carousel" class="spread-carousel">
+              <button class="carousel-arrow carousel-left" onclick="carouselNudge(-1)">‹</button>
+              <div id="carousel-track" class="carousel-track">
+                <article class="char-card identity-card free" onclick="pileCards()"><div class="card-name">Diamonium</div><div class="portrait elf-ranger"></div><p>Elf (Sindar)</p><p>Ranger</p><p>Level 52</p><div class="card-bottom-icon">✥</div></article>
+                <article class="char-card info-card"><h3>Facts</h3><div class="card-symbol">✺</div><ul><li>Race: Elf</li><li>Subrace: Sindar</li><li>Class: Ranger</li><li>Faction: Free Peoples</li></ul></article>
+                <article class="char-card info-card"><h3>Whois</h3><div class="card-symbol">⌁</div><p>Preserved terminal evidence exists.</p><button onclick="openScroll('whois')">Open whois</button></article>
+                <article class="char-card info-card special-card"><h3>Clan</h3><div class="card-symbol">⚑</div><p>The Night Watch</p><p>“Through darkness, we watch.”</p></article>
+                <article class="char-card info-card"><h3>Logs</h3><div class="card-symbol">✒</div><ul><li>4,812 roleplay lines</li><li>1,265 combat events</li><li>553 quests</li></ul><button onclick="openScroll('logs')">more…</button></article>
+                <article class="char-card info-card achievement-card"><h3>Deeds</h3><div class="card-symbol">♕</div><p>Watcher of the Wilds</p><p>Guardian of the North</p></article>
+                <article class="char-card info-card trophy-select-card" onclick="showTrophies('selected')"><h3>Trophies</h3><div class="card-symbol">☠</div><p>Known kills for the selected character.</p></article>
+                <article class="char-card info-card"><h3>Sources</h3><div class="card-symbol">▣</div><p>Evidence for this character.</p><button onclick="openScroll('sources')">Open sources</button></article>
+                <article class="char-card info-card"><h3>Mentions</h3><div class="card-symbol">❧</div><p>Other characters named in whois or logs.</p></article>
+                <article class="char-card info-card"><h3>Review</h3><div class="card-symbol">?</div><p>Confidence and parser notes.</p><p>Some facts may require review.</p></article>
+              </div>
+              <button class="carousel-arrow carousel-right" onclick="carouselNudge(1)">›</button>
+            </div>
+
+            <div id="player-info-carousel" class="player-info-carousel">
+              <button class="carousel-arrow carousel-left" onclick="playerCarouselNudge(-1)">‹</button>
+              <div id="player-carousel-track" class="carousel-track">
+                <article class="char-card info-card player-info-card"><h3>Player</h3><div class="card-symbol">♜</div><p class="player-info-name">Bladorfat</p><p>Known by main character</p></article>
+                <article class="char-card info-card player-info-card"><h3>Characters</h3><div class="card-symbol">☷</div><p>8 known characters</p><p>7 with whois evidence</p></article>
+                <article class="char-card info-card player-info-card"><h3>Highest Level</h3><div class="card-symbol">▲</div><p>Level 52</p><p>Diamonium</p></article>
+                <article class="char-card info-card player-info-card"><h3>Active</h3><div class="card-symbol">◷</div><p>fl. 1997–2003</p><p>Refined as evidence grows</p></article>
+                <article class="char-card info-card player-info-card"><h3>Factions</h3><div class="card-symbol">⚖</div><p>Free Peoples</p><p>Unknowns retained</p></article>
+                <article class="char-card info-card player-info-card"><h3>Sources</h3><div class="card-symbol">▣</div><p>Whois archive</p><p>Historical lists</p><button onclick="openScroll('player-sources')">Open sources</button></article>
+              </div>
+              <button class="carousel-arrow carousel-right" onclick="playerCarouselNudge(1)">›</button>
+            </div>
+          </div>
+
+          <form class="filter-bar player-filter" onsubmit="return false;">
+            <span class="filter-note filter-note-with-return"><span>Filter characters played by <b id="filter-player-name">Bladorfat</b></span><button type="button" class="return-archive-button" onclick="showArchive()">Return to Complete Archive</button></span>
+            <label>Race<select id="player-race" onchange="filterPlayerCharacters()"><option value="">All races</option></select></label>
+            <label>Class<select id="player-class" onchange="filterPlayerCharacters()"><option value="">All classes</option></select></label>
+            <label>Clan<select id="player-clan" onchange="filterPlayerCharacters()"><option value="">All clans</option></select></label>
+            <label>Status<select id="player-status" onchange="filterPlayerCharacters()"><option value="">All</option><option value="hero_legend">Hero / Legend</option><option value="has_whois">Has whois</option><option value="needs_review">Needs review</option></select></label>
+            <label class="search-field search-field-inline">Search<input id="player-search" placeholder="Search this player…" oninput="filterPlayerCharacters()"></label>
+          </form>
+
+          <section class="deck-section related-area">
+            <div class="section-header lower-toggle-header">
+              <h2 id="related-title">Other Characters Played by Bladorfat</h2>
+              <div class="lower-toggle-buttons">
+                <button class="bree-button small" onclick="showCharactersView()">Characters</button>
+                <button class="bree-button small" onclick="showTrophies()">Trophies</button>
+              </div>
+            </div>
+            <div id="related-grid" class="character-grid compact"></div>
+          </section>
+        </section>
+
+        <p class="deck-motto">Much that once was is lost</p>
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scroll-overlay" class="scroll-overlay-wrap" hidden>
+  <button class="scroll-scrim" onclick="closeScroll()"></button>
+  <section class="scroll-sheet">
+    <button class="scroll-close" onclick="closeScroll()">×</button>
+    <h2 id="scroll-title">Sources</h2>
+    <div id="scroll-body" class="scroll-body"></div>
+    <p class="scroll-footer">Many deeds are remembered. All are recorded.</p>
+  </section>
+</div>
+<script src="assets/data/deck-data.js"></script>
+<script src="deck-of-chars.js"></script>
+</body>
+</html>
