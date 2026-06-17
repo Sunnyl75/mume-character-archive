@@ -34,7 +34,39 @@ function factionClass(c) {
 }
 
 function displayLevel(c) {
-  return c && c.levelLabel ? c.levelLabel : "Level ?";
+  if (!c) return "";
+  if (c.faction === "immortal") return "";
+  if (c.levelLabel) return c.levelLabel;
+  if (typeof c.level === "number") return `Level ${c.level}`;
+  return "Level ?";
+}
+
+function displayIdentitySecondLine(c) {
+  if (!c) return "";
+  if (c.faction === "immortal") return c.subrace || "";
+  return c.klass || "";
+}
+
+function displayIdentityLevelLine(c) {
+  if (!c) return "Level ?";
+  if (c.faction === "immortal" && !c.levelLabel) return "";
+  return displayLevel(c);
+}
+
+function identityCardLines(c) {
+  const skip = new Set(["", "Unknown", "unknown", "Level ?", "—", "-"]);
+  const values = [
+    c?.race || "",
+    c?.subrace || "",
+    c?.klass || "",
+    displayLevel(c) || ""
+  ];
+
+  return values
+    .map(v => String(v || "").trim())
+    .filter(v => !skip.has(v))
+    .map(v => `<p>${escapeHtml(v)}</p>`)
+    .join("");
 }
 
 function hasHeroLegend(c) {
@@ -46,9 +78,7 @@ function miniStack(c) {
     <article class="mini-card">
       <h3>${escapeHtml(c.name)}</h3>
       <div class="mini-art"></div>
-      <p>${escapeHtml(c.race || "Unknown")}</p>
-      <p>${escapeHtml(c.klass || "Unknown")}</p>
-      <p>${escapeHtml(displayLevel(c))}</p>
+      ${identityCardLines(c)}
     </article>
   </div>`;
 }
@@ -179,6 +209,14 @@ function setText(id, value) {
   if (el) el.textContent = value || "—";
 }
 
+function setOptionalText(id, value) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const text = String(value || "").trim();
+  el.textContent = text;
+  el.style.display = text ? "" : "none";
+}
+
 function renderTerminalContent(pre, c) {
   if (!pre || !c) return;
   pre.classList.toggle("has-colour-whois", Boolean(c.whoisHtml));
@@ -193,14 +231,14 @@ function setCharacterPanel(c) {
   setText("filter-player-name", c.player || "Unknown");
   setText("player-card-name", c.player || "Unknown");
   setText("identity-name", c.name);
-  setText("identity-race", c.race || "Unknown");
-  setText("identity-class", c.klass || "Unknown");
-  setText("identity-level", displayLevel(c));
+  setOptionalText("identity-race", c.race || "Unknown");
+  setOptionalText("identity-class", displayIdentitySecondLine(c));
+  setOptionalText("identity-level", displayIdentityLevelLine(c));
   setText("strip-player", c.player || "Unknown");
   setText("strip-name", c.name);
   setText("strip-race", c.race || "Unknown");
-  setText("strip-class", c.klass || "Unknown");
-  setText("strip-level", displayLevel(c));
+  setText("strip-class", c.klass || "—");
+  setText("strip-level", displayIdentityLevelLine(c) || "—");
   setText("strip-clan", c.clan || "—");
   setText("strip-active", c.active || "unknown");
   const mainCard = document.getElementById("main-identity-card");
@@ -247,7 +285,7 @@ function renderCarouselCards() {
 
   parts.push(`<article class="char-card identity-card ${escapeHtml(factionClass(c))}" onclick="pileCards()">
     <div class="card-name">${escapeHtml(c.name)}</div><div class="portrait"></div>
-    <p>${escapeHtml(c.race || "Unknown")}</p><p>${escapeHtml(c.klass || "Unknown")}</p><p>${escapeHtml(displayLevel(c))}</p>
+    ${identityCardLines(c)}
   </article>`);
 
   parts.push(`<article class="char-card info-card"><h3>Facts</h3><div class="card-symbol">✺</div>
