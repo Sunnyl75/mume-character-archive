@@ -1,6 +1,6 @@
 term,immortal_code,immortal_rank,immortal_role,faction,rank_order,notes
-Creator of Arda,I,Implementor,Implementor,Immortals,1,Original C-coders / overall game responsibility
-Implementor,I,Implementor,Implementor,Immortals,1,Original C-coders / overall game responsibility
+Creator of Arda,I,Implementor,,Immortals,1,Original C-coders / overall game responsibility
+Implementor,I,Implementor,,Immortals,1,Original C-coders / overall game responsibility
 Arata,A,Arata,,Immortals,2,Highly trusted immortal rank with broad access
 Arata of Code,Ac,Arata,Code,Immortals,2,Responsible for mudlle and code
 Arata of Mobs/Objects,Am/o,Arata,Mobs/Objects,Immortals,2,Responsible for mobiles and objects

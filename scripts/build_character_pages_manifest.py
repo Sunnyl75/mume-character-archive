@@ -299,6 +299,16 @@ def main():
             "derived_immortal_rank": clean(row.get("derived_immortal_rank")),
             "derived_immortal_code": clean(row.get("derived_immortal_code")),
             "derived_immortal_role": clean(row.get("derived_immortal_role")),
+            "immortal_list_status": clean(row.get("immortal_list_status")),
+            "immortal_list_category": clean(row.get("immortal_list_category")),
+            "is_maiar_muddler": clean(row.get("is_maiar_muddler")),
+            "honorary_immortal": clean(row.get("honorary_immortal")),
+            "immortal_list_source_id": clean(row.get("immortal_list_source_id")),
+            "immortal_list_source_name": clean(row.get("immortal_list_source_name")),
+            "immortal_list_source_date_context": clean(row.get("immortal_list_source_date_context")),
+            "immortal_list_evidence_id": clean(row.get("immortal_list_evidence_id")),
+            "immortal_list_review_status": clean(row.get("immortal_list_review_status")),
+            "immortal_list_notes": clean(row.get("immortal_list_notes")),
             "classification_status": clean(row.get("classification_status")),
 
             "has_whois_display": has_whois_display,
@@ -344,6 +354,16 @@ def main():
         "derived_immortal_rank",
         "derived_immortal_code",
         "derived_immortal_role",
+        "immortal_list_status",
+        "immortal_list_category",
+        "is_maiar_muddler",
+        "honorary_immortal",
+        "immortal_list_source_id",
+        "immortal_list_source_name",
+        "immortal_list_source_date_context",
+        "immortal_list_evidence_id",
+        "immortal_list_review_status",
+        "immortal_list_notes",
         "classification_status",
 
         "has_whois_display",
@@ -380,11 +400,15 @@ def main():
         "with_mentions": sum(1 for r in manifest_rows if r["mention_count"] != "0"),
         "with_ascii_art": sum(1 for r in manifest_rows if r["has_ascii_art"] == "yes"),
         "with_group_candidates": sum(1 for r in manifest_rows if r["group_candidate_count"] != "0"),
+        "with_immortal_list_evidence": sum(1 for r in manifest_rows if r.get("immortal_list_status")),
+        "with_maiar_muddler_marker": sum(1 for r in manifest_rows if r.get("is_maiar_muddler") == "yes"),
+        "with_honorary_immortal_marker": sum(1 for r in manifest_rows if r.get("honorary_immortal") == "yes"),
         "page_review_needed": sum(1 for r in manifest_rows if r["page_review_needed"] == "yes"),
     }
 
     faction_counts = Counter(r["derived_faction"] or "(unknown)" for r in manifest_rows)
     classification_counts = Counter(r["classification_status"] or "(unknown)" for r in manifest_rows)
+    immortal_list_counts = Counter(r.get("immortal_list_category") or "(none)" for r in manifest_rows)
 
     lines = []
     lines.append("# Character Pages Manifest Summary")
@@ -397,6 +421,11 @@ def main():
     lines.append("## Faction counts")
     lines.append("")
     for value, count in faction_counts.most_common():
+        lines.append(f"- {value}: {count}")
+    lines.append("")
+    lines.append("## Immortal-list category counts")
+    lines.append("")
+    for value, count in immortal_list_counts.most_common():
         lines.append(f"- {value}: {count}")
     lines.append("")
     lines.append("## Classification status counts")

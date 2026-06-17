@@ -1,0 +1,12 @@
+Fili is a Vala, one of the Aratar [Retired].
+Fili was the Arata of Zones.
+
+«At lögum skal land byggja, en eigi at úlögum eyða.»
+
+http://www.ifi.uio.no/~steinarm
+
+Broadcast message from root(ttyp0):
+
+The system is going down NOW!
+
+... Because of illegal mudding ...

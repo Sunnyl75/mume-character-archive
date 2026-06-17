@@ -38,11 +38,58 @@ def norm(value):
     return value
 
 
+
+
+def immortal_identity_token(value):
+    value = norm(value)
+    mapping = {
+        "implementors": "implementor",
+        "aratar": "arata",
+        "valar": "vala",
+        "maiar": "maia",
+        "immortals": "immortal",
+    }
+    return mapping.get(value, value)
+
+def same_immortal_identity(a, b):
+    return bool(clean(a) and clean(b) and immortal_identity_token(a) == immortal_identity_token(b))
+
 def normalise_base_class(value):
     value = clean(value)
     if value.casefold() == "unknown":
         return ""
     return value
+
+
+def extract_note_value(notes, key):
+    notes = notes or ""
+    match = re.search(r"(?:^|\|)\s*" + re.escape(key) + r"\s*=\s*([^|]+)", notes)
+    return match.group(1).strip() if match else ""
+
+
+def apply_immortal_role_to_classification(derived, role):
+    role = clean(role)
+    if same_immortal_identity(role, derived.get("derived_immortal_rank")):
+        role = ""
+    if not role:
+        return derived
+
+    # For immortal whois lines such as ``Bladorfat is a Maia (Cartographer)``,
+    # the parser stores the bracketed role as source evidence.  In the public
+    # character identity fields this should behave like the class/title line:
+    # race/rank = Maia, class/title = Cartographer.
+    if clean(derived.get("derived_faction")) == "Immortals" or clean(derived.get("derived_immortal_rank")):
+        if not clean(derived.get("derived_immortal_role")):
+            derived["derived_immortal_role"] = role
+        if not clean(derived.get("derived_class_title")):
+            derived["derived_class_title"] = role
+        if not clean(derived.get("derived_base_class")):
+            derived["derived_base_class"] = role
+        if not clean(derived.get("derived_who_class_group")):
+            derived["derived_who_class_group"] = role
+        if not clean(derived.get("derived_class_confidence")):
+            derived["derived_class_confidence"] = "high"
+    return derived
 
 
 def read_csv(path):
@@ -204,6 +251,8 @@ def derive_from_descriptor(descriptor, race_terms, class_titles, immortal_ranks)
         result["derived_immortal_rank"] = clean(immortal.get("immortal_rank"))
         result["derived_immortal_code"] = clean(immortal.get("immortal_code"))
         result["derived_immortal_role"] = clean(immortal.get("immortal_role"))
+        if same_immortal_identity(result["derived_immortal_role"], result["derived_immortal_rank"]):
+            result["derived_immortal_role"] = ""
         result["derived_faction"] = "Immortals"
         result["derived_faction_confidence"] = "high"
 
@@ -347,6 +396,8 @@ def main():
 
         descriptor = descriptor_from_row(row)
         derived = derive_from_descriptor(descriptor, race_terms, class_titles, immortal_ranks)
+        role_from_notes = extract_note_value(row.get("notes", ""), "role")
+        derived = apply_immortal_role_to_classification(derived, role_from_notes)
 
         out = {
             "whois_id": clean(row.get("whois_id")),

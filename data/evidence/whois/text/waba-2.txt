@@ -1,0 +1,4 @@
+Waba is a Vala, one of the Aratar.
+waba@waba.be
+
+Waba used to be the Arata of Code, 2014-2024.

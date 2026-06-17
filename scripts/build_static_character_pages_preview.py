@@ -110,6 +110,14 @@ def metadata_table(row):
         ("Gender", row.get("derived_gender")),
         ("Gender confidence", row.get("derived_gender_confidence")),
         ("Immortal rank", row.get("derived_immortal_rank")),
+        ("Immortal list status", row.get("immortal_list_status")),
+        ("Immortal list category", row.get("immortal_list_category")),
+        ("Maiar Muddler", row.get("is_maiar_muddler")),
+        ("Honorary immortal", row.get("honorary_immortal")),
+        ("Immortal source", row.get("immortal_list_source_name")),
+        ("Immortal source date", row.get("immortal_list_source_date_context")),
+        ("Immortal review status", row.get("immortal_list_review_status")),
+        ("Immortal notes", row.get("immortal_list_notes")),
         ("Classification status", row.get("classification_status")),
         ("Colour whois", row.get("has_colour_whois")),
         ("Review needed", row.get("page_review_needed")),
@@ -338,6 +346,10 @@ def choose_preview_rows(rows):
 
     # Add examples with useful features.
     feature_checks = [
+        lambda r: clean(r.get("immortal_list_status")) == "current",
+        lambda r: clean(r.get("immortal_list_status")) == "retired",
+        lambda r: clean(r.get("is_maiar_muddler")) == "yes",
+        lambda r: clean(r.get("honorary_immortal")) == "yes",
         lambda r: r.get("has_colour_whois") == "yes" and r.get("has_ascii_art") == "yes",
         lambda r: r.get("mention_count") != "0",
         lambda r: r.get("group_candidate_count") != "0",
@@ -373,12 +385,24 @@ def build_index(rows):
         faction = esc(row.get("derived_faction")) or "-"
         colour = esc(row.get("has_colour_whois"))
         mentions = esc(row.get("mention_count"))
+        immortal_status = esc(row.get("immortal_list_status"))
+        immortal_category = esc(row.get("immortal_list_category"))
+        muddler = esc(row.get("is_maiar_muddler"))
+        immortal_tags = ""
+        if immortal_status:
+            immortal_tags += f" <span class='tag'>immortal: {immortal_status}</span>"
+        if immortal_category:
+            immortal_tags += f" <span class='tag'>category: {immortal_category}</span>"
+        if muddler == "yes":
+            immortal_tags += " <span class='tag'>m+</span>"
+
         lines.append(
             f"<li><a href='{slug}.html'>{name}</a> "
             f"<span class='tag'>player: {player}</span> "
             f"<span class='tag'>faction: {faction}</span> "
             f"<span class='tag'>colour whois: {colour}</span> "
-            f"<span class='tag'>mentions: {mentions}</span></li>"
+            f"<span class='tag'>mentions: {mentions}</span>"
+            f"{immortal_tags}</li>"
         )
 
     lines.append("</ul>")

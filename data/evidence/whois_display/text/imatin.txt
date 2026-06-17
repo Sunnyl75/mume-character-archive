@@ -1,0 +1,15 @@
+Imatin the Mudlet Package Builder and Tweaker is a Maia
+    (Builder).
+Some mortals: Kaldae, Einor, Faabrat, Glorwen, Mordah, Slegga, Usrhk
+Faabrat, Azrubel, Batter, Yrja, Ruarc and Rivendil!
+
+Currently working on: Making a pre-configured MUDLET package for mume with:
+- aliases for targetting, doors etc
+- actions for simple things like colourmarking being hungry
+- markings on some herbs, examples to make your own
+- communications window (hide, unhide) for tells/narrates
+- spell timers, static shown targets and spell speed, spell tracker(new)
+
+    https://sites.google.com/view/mume-mudlet
+
+                NEW version out 2022/08/24
