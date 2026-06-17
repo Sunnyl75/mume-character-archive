@@ -4,8 +4,8 @@ This is a small review pack. It is not intended to review every row.
 
 ## Summary
 
-- Unknown faction rows: 3
-- Parser-suspect/custom descriptor rows: 14
+- Unknown faction rows: 8
+- Parser-suspect/custom descriptor rows: 15
 - Generic title/no class rows: 18
 - Classified sample rows shown: 10
 
@@ -55,6 +55,81 @@ This is a small review pack. It is not intended to review every row.
 - Gender confidence: ``
 - Remainder: ``
 - Notes: `No descriptor`
+
+### 4. Aredhel
+
+- Whois ID: `whois_aredhel_1781577599`
+- Descriptor: `Valië`
+- Status: `custom_descriptor_unclassified`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `Valië`
+- Notes: `unmatched=Valië | race_unknown | base_class_unknown`
+
+### 5. Remember
+
+- Whois ID: `whois_remember_1781577859`
+- Descriptor: `game`
+- Status: `custom_descriptor_unclassified`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `game`
+- Notes: `unmatched=game | race_unknown | base_class_unknown`
+
+### 6. Ressaven
+
+- Whois ID: `whois_ressaven_1781605555`
+- Descriptor: `Valië`
+- Status: `custom_descriptor_unclassified`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `Valië`
+- Notes: `unmatched=Valië | race_unknown | base_class_unknown`
+
+### 7. Tinkerbell
+
+- Whois ID: `whois_tinkerbell_1781606347`
+- Descriptor: `glad to see MUME is still thriving is a Valië`
+- Status: `parser_suspect_or_custom_descriptor`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `glad to see MUME is still thriving is a Valië`
+- Notes: `unmatched=glad to see MUME is still thriving is a Valië | race_unknown | base_class_unknown`
+
+### 8. Vairë
+
+- Whois ID: `whois_vairë_1781606546`
+- Descriptor: `Valië`
+- Status: `custom_descriptor_unclassified`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `Valië`
+- Notes: `unmatched=Valië | race_unknown | base_class_unknown`
 
 ## Parser-suspect or custom descriptor rows
 
@@ -267,6 +342,21 @@ This is a small review pack. It is not intended to review every row.
 - Gender confidence: ``
 - Remainder: `Sauron's gift to women is a level thirty-four`
 - Notes: `race_term=Tarkhnarb | class_title=Battlemaster | who_class_group=Warrior | class_confidence=high | unmatched=Sauron's gift to women is a level thirty-four`
+
+### 15. Tinkerbell
+
+- Whois ID: `whois_tinkerbell_1781606347`
+- Descriptor: `glad to see MUME is still thriving is a Valië`
+- Status: `parser_suspect_or_custom_descriptor`
+- Derived race: ``
+- Derived subrace: ``
+- Derived faction: ``
+- Derived class: ``
+- Derived title: ``
+- Derived gender: ``
+- Gender confidence: ``
+- Remainder: `glad to see MUME is still thriving is a Valië`
+- Notes: `unmatched=glad to see MUME is still thriving is a Valië | race_unknown | base_class_unknown`
 
 ## Generic title, no class rows — first 20
 

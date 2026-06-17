@@ -1,72 +1,85 @@
 # Whois Descriptor Classification: Unknown / Review Terms
 
-Rows analysed: 1414
+Rows analysed: 2316
 
 ## Derived race counts
 
-- Orc: 334
+- Maia: 911
+- Orc: 335
 - Man: 251
 - Elf: 225
 - Dwarf: 223
 - Troll: 119
-- Maia: 94
+- Vala: 83
 - Hobbit: 82
 - Half-Elf: 71
-- Vala: 12
-- (unknown): 3
+- (unknown): 8
+- Ainu: 4
+- Arata: 4
 
 ## Derived base class counts
 
-- (unknown): 719
+- (unknown): 1198
 - Warrior: 272
-- General: 223
+- General: 224
+- Cartographer: 165
+- Wright: 130
 - Cleric: 78
 - Magic-user: 69
 - Thief: 53
+- Builder: 37
+- Architect: 33
+- Mudller: 29
+- Shaper: 27
+- for now: 1
 
 ## Derived faction counts
 
+- Immortals: 1002
 - Free Peoples: 741
-- Minions of Sauron: 562
-- Immortals: 106
-- (unknown): 3
+- Minions of Sauron: 563
+- (unknown): 8
 - Renegade Zaugurz: 2
 
 ## Classification status counts
 
-- classified: 682
+- immortal: 1002
+- classified: 683
 - race_only: 591
-- immortal: 106
 - generic_title_no_class: 18
-- parser_suspect_or_custom_descriptor: 14
-- custom_descriptor_unclassified: 2
+- parser_suspect_or_custom_descriptor: 15
+- custom_descriptor_unclassified: 6
 - no_descriptor: 1
 
 ## Unmatched descriptor remainders
 
+- `Valië`: 7
 - `Sentry`: 5
 - `level`: 2
+- `discord bot is a`: 2
+- `tired of resting is a`: 2
+- `the Kaoolest is a`: 2
+- `about 14 years old is a`: 2
+- `prowling Arda is a`: 2
+- `done whining for now is a`: 2
+- `always glad to help is a`: 2
+- `new dad now! is a`: 2
+- `on a holiday is a`: 2
+- `back is a`: 2
+- `not here is a`: 2
 - `hundred`: 1
-- `discord bot is a`: 1
 - `not a mage, cleric, or Swedish is a level twenty-six`: 1
 - `not a girl, not yet a is an Orc`: 1
-- `tired of resting is a`: 1
 - `very bizarre, and he is a`: 1
 - `coming your way is a level thirty-five`: 1
 - `strangling back, seething black is an`: 1
 - `point is a level forty`: 1
 - `back where he belongs is a level forty-four`: 1
 - `at the gates is a level forty`: 1
-- `the Kaoolest is a`: 1
-- `about 14 years old is a`: 1
-- `prowling Arda is a`: 1
 - `my name, I am the spider's bane! is a level thirty`: 1
-- `done whining for now is a`: 1
-- `always glad to help is a`: 1
 - `Goddess! is an`: 1
 - `Beginning to Believe... is a level forty-one`: 1
 - `warrior. is a level fifty-six`: 1
-- `new dad now! is a`: 1
 - `looking for a great title! is a level twenty-two`: 1
 - `hiding in shadows is a`: 1
 - `one of them... is an`: 1
@@ -77,23 +90,85 @@ Rows analysed: 1414
 - `the key! is a level thirty-five`: 1
 - `your Papa is an`: 1
 - `Sauron's gift to women is a level thirty-four`: 1
-- `on a holiday is a`: 1
+- `lost is a`: 1
+- `Drosophila Melanogaster. is a`: 1
+- `running for re-election is a`: 1
+- `your father! is a`: 1
+- `Building is a`: 1
+- `game`: 1
+- `snooring and stuff is a`: 1
+- `traipsing and frolicking in Rohan is a`: 1
+- `back and bored is a`: 1
+- `is a`: 1
+- `forbidden to get a kit by the Valar is a`: 1
+- `with you is a`: 1
+- `Gone is a`: 1
+- `happy nappy!!! is a`: 1
+- `thinking about it again is a`: 1
+- `adrift in real life is a`: 1
+- `Here to Help is a`: 1
+- `building is a`: 1
+- `hiding in the shadows watching you... is a`: 1
+- `too absorbed by Magic is a`: 1
+- `back after a 4 year break is a`: 1
+- `bored..... VERY bored is a`: 1
+- `not sleeping and not social is a`: 1
+- `building, proofing, and stuff is a`: 1
+- `sinner, loves pleasure too much is a`: 1
+- `in other windows to is a`: 1
+- `beautiful! is a`: 1
+- `off doing other things is a`: 1
+- `as Krazy does is a`: 1
+- `Kril again is a`: 1
+- `teacher! is a`: 1
+- `blissfully clueless is a`: 1
+- `Smiling to YOU! is a`: 1
+- `probably afk is a`: 1
+- `lost deep inside the Mirkwood is a`: 1
+- `big teddy is a`: 1
+- `this where I type? is a`: 1
+- `ANCIENT! is a`: 1
+- `father but really is a`: 1
+- `back from his wintersleep... is a`: 1
+- `raging is a`: 1
+- `studying and is also ... is a`: 1
+- `Elf is a`: 1
+- `bummed is a`: 1
+- `most probably afk. is a`: 1
+- `waiting for a test zone is a`: 1
+- `always idle is a`: 1
+- `looking for someone is a`: 1
+- `floating in the middle of nowhere is a`: 1
+- `here is a`: 1
+- `creaky and old now is a`: 1
+- `going skiing is a`: 1
+- `despret need of a pracreset is a`: 1
+- `Evil is a`: 1
+- `glad to see MUME is still thriving is a Valië`: 1
+- `happy MUME'r is a`: 1
+- `Xit is a`: 1
+- `gone - never to be seen again is a`: 1
+- `still. is a`: 1
+- `now separated iRL is a`: 1
+- `Mapping is a`: 1
 
 ## Most common raw descriptors
 
+- `Maia`: 832
 - `Orc`: 150
 - `Elf`: 108
 - `Dwarf`: 93
-- `Maia`: 84
 - `Black Númenórean`: 61
+- `Vala`: 59
 - `Hobbit`: 45
 - `Man`: 43
 - `Troll`: 37
-- `Tarkhnarb Champion`: 36
+- `Tarkhnarb Champion`: 37
 - `Half-Elf`: 33
 - `Dwarven Battlemaster`: 31
 - `Dwarven Hero`: 24
 - `Tarkhnarb Battlemaster`: 23
+- `Vala, one of the Aratar`: 21
 - `Mountain Troll Warrior`: 16
 - `Tarkhnarb Veteran`: 14
 - `Tarkhnarb Necromancer`: 14
@@ -102,7 +177,6 @@ Rows analysed: 1414
 - `Noldorin Wizard`: 9
 - `Dwarven Axemaster`: 9
 - `Tarkhnarb Shaman`: 9
-- `Vala`: 9
 - `Tarkhnarb Assassin`: 8
 - `Black Númenórean Wizard`: 8
 - `Black Númenórean Mercenary`: 7
@@ -139,6 +213,8 @@ Rows analysed: 1414
 - `Sindarin Warlock`: 4
 - `Mountain Troll Brute`: 4
 - `Dwarven Chieftain`: 4
+- `Implementor`: 4
+- `Valië, one of the Aratar`: 4
 - `Silvan Hunter`: 3
 - `Fallohide Hero`: 3
 - `Sindarin Witch`: 3
@@ -165,7 +241,7 @@ Rows analysed: 1414
 - `Beorning Battlemistress`: 3
 - `Silvan Scout`: 3
 - `Tarkhnarb Snaga`: 3
-- `Vala, one of the Aratar`: 3
+- `Valië`: 3
 - `level`: 2
 - `Noldorin Scout`: 2
 - `Half-elven Healer`: 2
@@ -178,6 +254,3 @@ Rows analysed: 1414
 - `Sindarin Adventurer`: 2
 - `Firebeard Battlemaster`: 2
 - `Noldorin Sage`: 2
-- `Half-elven Champion`: 2
-- `Dúnadan Warden`: 2
-- `Silvan Wizard`: 2
