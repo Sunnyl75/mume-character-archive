@@ -468,6 +468,10 @@ function drawRandomAscii() {
     if (record.html) { pre.classList.add("has-colour-whois"); pre.innerHTML = record.html; }
     else { pre.classList.remove("has-colour-whois"); pre.textContent = record.text || ""; }
   }
+  if (card) {
+    card.disabled = false;
+    card.onclick = () => openCharacter(record.player || "", record.name || "");
+  }
   if (card) card.onclick = () => openCharacterById(record.characterId);
 }
 
