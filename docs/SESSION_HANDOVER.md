@@ -262,3 +262,19 @@ Before changing code:
 6. Prefer exporter/data fixes before duplicating historical logic in the browser.
 7. Keep Git as the source of truth.
 
+
+---
+
+## Session Update (15 July 2026)
+
+- Scroll popup rebuilt around the parchment artwork.
+- Scroll now has:
+  - fixed title
+  - independently scrolling evidence area
+  - fixed footer
+  - structured source sections with headings and dividers.
+- Scroll layout is close to complete. Remaining work is visual polish.
+- WHOIS should no longer use the scroll. It should reveal the existing terminal viewer.
+- Next priority is implementing progressive portrait selection and fallback.
+- After that, deploy the Deck of Chars proof-of-concept to breelegends.com.
+
