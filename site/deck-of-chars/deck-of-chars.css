@@ -668,94 +668,234 @@
 }
 
 /* Scroll overlay */
-.scroll-overlay-wrap[hidden] { display:none; }
-.scroll-overlay-wrap { position:fixed; inset:0; z-index:999; }
-
-.scroll-scrim {
-  position:absolute;
-  inset:0;
-  border:0;
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(1px);
-  cursor:pointer;
+.scroll-overlay-wrap[hidden] {
+  display: none;
 }
 
+.scroll-overlay-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.scroll-scrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, .45);
+  backdrop-filter: blur(1px);
+  cursor: pointer;
+}
+
+/*
+  The PNG is 1086 × 1448 and contains transparent canvas outside the
+  visible parchment. Title, evidence, and footer are positioned as
+  independent regions against the full image canvas.
+*/
 .scroll-sheet {
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:min(680px,86vw);
-  height:min(820px,88vh);
-  background:linear-gradient(90deg,#b47a37 0 18px,transparent 18px calc(100% - 18px),#b47a37 calc(100% - 18px)),linear-gradient(#e2bd80,#d7ad6d);
-  color:#1e1309;
-  padding:4.2rem 3.2rem 3.7rem;
-  border-left:4px double #704715;
-  border-right:4px double #704715;
-  box-shadow:0 16px 44px rgba(0,0,0,.72);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(720px, 92vw, 65.6vh);
+  aspect-ratio: 1086 / 1448;
+
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: #1e1309;
+
+  background:
+    url("assets/images/scroll-pop-up.png")
+    center / 100% 100%
+    no-repeat;
+
+  box-shadow: none;
+  overflow: visible;
 }
 
 .scroll-sheet::before,
 .scroll-sheet::after {
-  content:"";
-  position:absolute;
-  left:-40px;
-  right:-40px;
-  height:56px;
-  border-radius:28px;
-  border:4px double #704715;
-  background:linear-gradient(#e8c690,#b57b39);
-  box-shadow:0 5px 15px rgba(0,0,0,.58);
+  content: none;
+  display: none;
 }
-
-.scroll-sheet::before { top:-22px; }
-.scroll-sheet::after { bottom:-22px; }
 
 .scroll-close {
-  position:absolute;
-  right:1.15rem;
-  top:1.15rem;
-  z-index:2;
-  border:1px solid #7b571c;
-  background:#1a1008;
-  color:#f1d381;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  font-size:1.3rem;
-  cursor:pointer;
+  position: absolute;
+  top: 8.2%;
+  right: 12.4%;
+  z-index: 4;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  border: 1px solid #7b571c;
+  border-radius: 50%;
+  background: #1a1008;
+  color: #f1d381;
+
+  font-size: 1.3rem;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.scroll-sheet h2 {
-  text-align:center;
-  text-transform:uppercase;
-  font-size:2.2rem;
-  margin:0 0 1.1rem;
+/* Fixed title region. */
+.scroll-sheet > h2 {
+  position: absolute;
+  top: 13.6%;
+  left: 15%;
+  right: 15%;
+
+  margin: 0;
+
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.scroll-body {
-  height:calc(100% - 84px);
-  overflow:auto;
-  border-top:1px solid rgba(86,55,17,.5);
-  border-bottom:1px solid rgba(86,55,17,.5);
-  padding:.7rem .2rem;
+/*
+  Independently scrollable evidence region.
+
+  The 18.5% horizontal inset is measured from the complete transparent
+  image canvas, not merely from the visible parchment edge.
+*/
+.scroll-sheet > .scroll-body {
+  position: absolute;
+  top: 22.5%;
+  left: 18.5%;
+  right: 18.5%;
+  bottom: 19.5%;
+
+  width: auto;
+  height: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0 .3rem;
+
+  box-sizing: border-box;
+  border: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(91, 55, 18, .7) transparent;
 }
 
+.scroll-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-body::-webkit-scrollbar-thumb {
+  background: rgba(91, 55, 18, .65);
+  border-radius: 6px;
+}
+
+/* Fixed footer region, independent of the evidence width. */
+.scroll-sheet > .scroll-footer {
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  bottom: 12.3%;
+
+  width: auto;
+  margin: 0;
+
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Structured source entries within the scrollable evidence region. */
+.scroll-source-section {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 0 .95rem;
+  padding: 0 0 .95rem;
+
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(86, 55, 17, .28);
+}
+
+.scroll-source-section:last-child {
+  margin-bottom: 0;
+}
+
+.scroll-source-section h3 {
+  display: block;
+  width: 100%;
+  margin: 0 0 .28rem;
+
+  font-size: 1.05em;
+  line-height: 1.2;
+}
+
+.scroll-source-detail {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  line-height: 1.32;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Older content types retained for logs and other scroll views. */
 .scroll-row {
-  display:grid;
-  grid-template-columns:120px 180px 1fr;
-  gap:1rem;
-  border-bottom:1px solid rgba(86,55,17,.22);
-  padding:.35rem 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: .35rem 0;
+  border-bottom: 1px solid rgba(86, 55, 17, .22);
+
+  box-sizing: border-box;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.scroll-row.source { display:block; line-height:1.25; }
+@media (max-width: 620px) {
+  .scroll-sheet {
+    width: min(94vw, 65.6vh);
+  }
 
-.scroll-footer {
-  text-align:center;
-  font-style:italic;
-  margin:.9rem 0 0;
+  .scroll-close {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    line-height: 26px;
+  }
+
+  .scroll-sheet > h2 {
+    left: 16%;
+    right: 16%;
+    font-size: clamp(1.1rem, 4.8vw, 1.4rem);
+  }
+
+  .scroll-sheet > .scroll-body {
+    left: 18.5%;
+    right: 18.5%;
+    padding-inline: .12rem;
+  }
+
+  .scroll-sheet > .scroll-footer {
+    left: 12%;
+    right: 12%;
+    font-size: .88rem;
+  }
 }
+
 
 @media (max-width:1180px) {
   .archive-showcase { grid-template-columns:1fr; }
@@ -2368,3 +2508,33 @@
 .deck-alpha-realdata .search-with-clear input[type="search"] { padding-right:2rem; }
 .deck-alpha-realdata .search-clear { position:absolute; right:.35rem; width:1.25rem; height:1.25rem; border:0; border-radius:50%; background:rgba(60,34,13,.18); color:#2d1b0d; font-weight:800; line-height:1; cursor:pointer; }
 .deck-alpha-realdata .search-clear:hover { background:rgba(60,34,13,.32); }
+
+/* Deck title block alignment for the carved logo. */
+.deck-v20 .doc-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.deck-v20 .deck-title-image-wrap {
+  width: 100%;
+  margin: .2rem auto .65rem;
+}
+
+.deck-v20 .deck-title-image-wrap img {
+  width: min(620px, 78vw);
+  margin: 0 auto;
+}
+
+.deck-v20 .doc-title .entry-lede {
+  max-width: 68rem;
+  margin: 0 auto .8rem;
+  text-align: center;
+}
+
+.deck-v20 .doc-title .content-divider {
+  width: min(100%, 68rem);
+  margin-left: auto;
+  margin-right: auto;
+}

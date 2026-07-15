@@ -484,6 +484,26 @@ function clearSearch(inputId) {
   input.focus();
 }
 
+function renderSourceSection(source) {
+  const raw = String(source || "").trim();
+  if (!raw) return "";
+
+  const colonIndex = raw.indexOf(":");
+
+  let heading = "Source";
+  let detail = raw;
+
+  if (colonIndex > 0) {
+    heading = raw.slice(0, colonIndex).trim();
+    detail = raw.slice(colonIndex + 1).trim();
+  }
+
+  return `<section class="scroll-source-section">
+    <h3>${escapeHtml(heading)}</h3>
+    <div class="scroll-source-detail">${escapeHtml(detail)}</div>
+  </section>`;
+}
+
 function openScroll(kind) {
   const overlay = document.getElementById("scroll-overlay");
   const title = document.getElementById("scroll-title");
@@ -494,9 +514,11 @@ function openScroll(kind) {
 
   if (kind === "player-sources") {
     title.textContent = "Player Sources";
-    body.innerHTML = `<div class="scroll-row source">Player: ${escapeHtml(c.player || "Unknown")}</div>
-      <div class="scroll-row source">Player link confidence: ${escapeHtml(c.playerConfidence || "unknown")}</div>
-      <div class="scroll-row source">Player ID: ${escapeHtml(c.playerId || "unknown")}</div>`;
+    body.innerHTML = [
+      renderSourceSection(`Player: ${c.player || "Unknown"}`),
+      renderSourceSection(`Player link confidence: ${c.playerConfidence || "unknown"}`),
+      renderSourceSection(`Player ID: ${c.playerId || "unknown"}`)
+    ].join("");
   } else if (kind === "logs") {
     title.textContent = "Archive Mentions";
     body.innerHTML = `<div class="scroll-row source">${escapeHtml(c.name)} has ${c.mentionCount.toLocaleString()} mention(s) in the current archive manifest.</div>
@@ -506,7 +528,12 @@ function openScroll(kind) {
     body.innerHTML = `<pre class="scroll-whois ${c.whoisHtml ? "has-colour-whois" : ""}">${c.whoisHtml || escapeHtml(c.whoisText || "No whois text available.")}</pre>`;
   } else {
     title.textContent = "Sources";
-    body.innerHTML = (c.sources || []).map(s => `<div class="scroll-row source">${escapeHtml(s)}</div>`).join("");
+    body.innerHTML = (c.sources || [])
+      .map(renderSourceSection)
+      .join("") || `<section class="scroll-source-section">
+        <h3>Sources</h3>
+        <div class="scroll-source-detail">No source records are currently available.</div>
+      </section>`;
   }
 
   overlay.hidden = false;

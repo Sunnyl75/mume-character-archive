@@ -83,3 +83,51 @@ v27 changes:
 - Added overflow protection to the lower archive/related card grids so decks do not run past the parchment edge.
 - Changed the bottom quote to: “Much that once was is lost”.
 - Changed and centred the top subheading: “Some that die deserve life. Can you give it to them?”
+
+## Portrait Images
+
+Character portraits are selected automatically based on the most specific
+portrait available. This allows artwork to be added gradually without
+changing the exporter or the website.
+
+### Filename Convention
+
+Portrait filenames follow this pattern:
+
+    Race-Class-Gender-Subrace.png
+
+Each field is optional after Race.
+
+Examples:
+
+    Human.png
+    Human-Warrior.png
+    Human-Warrior-Male.png
+    Human-Warrior-Male-Black_Numenorean.png
+    Elf-Mage-Female-Noldor.png
+    Orc-Warrior-Male-Zaugurz.png
+    Troll-Warrior-Male-Hill.png
+
+### Rules
+
+- Hyphens (`-`) separate portrait qualifiers.
+- Multi-word qualifiers use underscores (`_`) instead of spaces.
+- Omit unknown qualifiers.
+- Portrait names use Title Case to match archive values.
+- The exporter generates a list of candidate portraits from most specific
+  to least specific.
+
+Example:
+
+    Human-Warrior-Male-Black_Numenorean
+        ↓
+    Human-Warrior-Male-Black_Numenorean.png
+    Human-Warrior-Male.png
+    Human-Warrior.png
+    Human.png
+    Unknown.png
+
+This allows broad race portraits to be created first, with more specific
+race/class/gender/subrace portraits added over time without requiring any
+changes to the website or exported data.
+

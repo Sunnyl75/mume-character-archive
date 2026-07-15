@@ -1,0 +1,40 @@
+# Repository State
+
+Generated: Wed 15 Jul 2026 15:07:58 AEST
+
+## Branch
+
+deck-of-chars-alpha-0.1
+
+## Working Tree
+
+ M site/deck-of-chars/README.md
+ M site/deck-of-chars/deck-of-chars.css
+ M site/deck-of-chars/deck-of-chars.js
+ M site/deck-of-chars/index.html
+?? docs/CURRENT_REPOSITORY_STATE.txt
+?? docs/SESSION_HANDOVER.md
+?? site/.DS_Store
+?? site/deck-of-chars/assets/images/.DS_Store
+?? site/deck-of-chars/assets/images/Deck-of-Chars-Logo.png
+?? site/deck-of-chars/assets/images/scroll-pop-up.png
+?? site/deck-of-chars/deck-of-chars.css.before-scroll-cleanup
+?? site/deck-of-chars/index.html.bak
+
+## Recent Commits
+
+cffe9ee (HEAD -> deck-of-chars-alpha-0.1, origin/deck-of-chars-alpha-0.1) Remove placeholder ASCII from Deck loading panel
+fb0961a Add immortal whois evidence and review outputs
+6690da6 Add immortal whois evidence and classification support
+bb77c39 Export Deck of Chars data from archive
+463ef55 Refine Deck of Chars alpha 0.1 real-data display
+41d94ab Add Deck of Chars alpha 0.1 prototype
+6569476 (main) Import affiliation whois batch
+0afc2f5 Import affiliation whois batch
+7483be2 Add source metadata to player affiliation evidence
+efd3d32 Add player affiliation evidence pipeline
+
+## Remotes
+
+origin	https://github.com/Sunnyl75/mume-character-archive.git (fetch)
+origin	https://github.com/Sunnyl75/mume-character-archive.git (push)
