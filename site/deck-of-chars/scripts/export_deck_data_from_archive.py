@@ -287,6 +287,58 @@ def build_character(row: dict[str, str], working: dict[str, str], affiliation_by
     }
 
 
+PRONUNCIATION_MARK_TRANSLATION = str.maketrans({
+    "Æ": "AE", "æ": "ae", "Œ": "OE", "œ": "oe",
+    "Ð": "D", "ð": "d", "Đ": "D", "đ": "d",
+    "Þ": "TH", "þ": "th", "Ø": "O", "ø": "o",
+    "Ł": "L", "ł": "l", "ß": "ss",
+})
+
+
+def strip_pronunciation_marks(value: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", clean(value))
+    return "".join(ch for ch in decomposed if not unicodedata.combining(ch)).translate(PRONUNCIATION_MARK_TRANSLATION)
+
+
+def accentless_name_key(value: str) -> str:
+    return strip_pronunciation_marks(value).casefold()
+
+
+def has_pronunciation_mark(value: str) -> bool:
+    value = clean(value)
+    return value != strip_pronunciation_marks(value)
+
+
+def character_record_quality(character: dict[str, Any]) -> int:
+    return (
+        (100_000 if character.get("hasWhois") else 0)
+        + (10_000 if isinstance(character.get("level"), int) else 0)
+        + int(character.get("mentionCount") or 0)
+        + len(character.get("sources") or [])
+    )
+
+
+def deduplicate_accented_characters(characters: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for character in characters:
+        groups[accentless_name_key(character.get("name", ""))].append(character)
+
+    results: list[dict[str, Any]] = []
+    for group in groups.values():
+        if len({clean(character.get("name")) for character in group}) < 2:
+            results.extend(group)
+            continue
+        preferred = max(
+            group,
+            key=lambda character: (
+                has_pronunciation_mark(character.get("name", "")),
+                character_record_quality(character),
+            ),
+        )
+        results.append(preferred)
+    return results
+
+
 def build_players(characters: list[dict[str, Any]], players_csv: list[dict[str, str]]) -> list[dict[str, Any]]:
     by_player: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for c in characters:
@@ -382,6 +434,7 @@ def main() -> None:
         build_character(row, working_by_id.get(clean(row.get("character_id")), {}), affiliation_by_character, root)
         for row in manifest
     ]
+    characters = deduplicate_accented_characters(characters)
     characters.sort(key=lambda c: str(c.get("name") or "").casefold())
 
     players = build_players(characters, players_rows)

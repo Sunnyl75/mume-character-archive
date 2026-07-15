@@ -1,7 +1,9 @@
 
 const DATA = window.DECK_CHARS || { characters: [], players: [], asciiRecords: [] };
-const characters = Array.isArray(DATA.characters) ? DATA.characters : [];
-const players = Array.isArray(DATA.players) ? DATA.players : [];
+const rawCharacters = Array.isArray(DATA.characters) ? DATA.characters : [];
+const characters = deduplicateAccentedCharacters(rawCharacters);
+const rawPlayers = Array.isArray(DATA.players) ? DATA.players : [];
+const players = refreshPlayerSummaries(rawPlayers, characters);
 const asciiRecords = Array.isArray(DATA.asciiRecords) ? DATA.asciiRecords : [];
 const portraitFiles = new Set(Array.isArray(DATA.portraitFiles) ? DATA.portraitFiles : []);
 
@@ -26,12 +28,94 @@ function normal(value) {
   return String(value ?? "").trim().toLowerCase();
 }
 
+function stripPronunciationMarks(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/Æ/g, "AE").replace(/æ/g, "ae")
+    .replace(/Œ/g, "OE").replace(/œ/g, "oe")
+    .replace(/[ÐĐ]/g, "D").replace(/[ðđ]/g, "d")
+    .replace(/Þ/g, "TH").replace(/þ/g, "th")
+    .replace(/Ø/g, "O").replace(/ø/g, "o")
+    .replace(/Ł/g, "L").replace(/ł/g, "l")
+    .replace(/ß/g, "ss");
+}
+
+function accentlessNameKey(value) {
+  return stripPronunciationMarks(value).toLocaleLowerCase("en");
+}
+
+function hasPronunciationMark(value) {
+  const name = String(value || "");
+  return name !== stripPronunciationMarks(name);
+}
+
+function characterRecordQuality(c) {
+  return (c?.hasWhois ? 100000 : 0)
+    + (typeof c?.level === "number" ? 10000 : 0)
+    + Number(c?.mentionCount || 0)
+    + Number(c?.sources?.length || 0);
+}
+
+function deduplicateAccentedCharacters(source) {
+  const groups = new Map();
+  source.forEach(c => {
+    const key = accentlessNameKey(c?.name);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(c);
+  });
+
+  const results = [];
+  groups.forEach(group => {
+    if (new Set(group.map(c => c.name)).size < 2) {
+      results.push(...group);
+      return;
+    }
+    const preferred = group.slice().sort((a, b) => {
+      const markDifference = Number(hasPronunciationMark(b.name)) - Number(hasPronunciationMark(a.name));
+      return markDifference || characterRecordQuality(b) - characterRecordQuality(a);
+    })[0];
+    results.push(preferred);
+  });
+  return results;
+}
+
+function refreshPlayerSummaries(source, characterList) {
+  const byPlayer = new Map();
+  characterList.forEach(c => {
+    const playerId = c.playerId || "unknown";
+    if (!byPlayer.has(playerId)) byPlayer.set(playerId, []);
+    byPlayer.get(playerId).push(c);
+  });
+  return source.map(player => {
+    const playerCharacters = byPlayer.get(player.playerId || "unknown") || [];
+    const levels = playerCharacters.map(c => c.level).filter(Number.isInteger);
+    const highestLevel = levels.length ? Math.max(...levels) : null;
+    return {
+      ...player,
+      characterCount: playerCharacters.length,
+      knownWhoisCount: playerCharacters.filter(c => c.hasWhois).length,
+      highestLevel,
+      highestLevelCharacters: highestLevel === null
+        ? []
+        : playerCharacters.filter(c => c.level === highestLevel).map(c => c.name)
+    };
+  });
+}
+
 function byId(id) {
   return characters.find(c => c.id === id) || null;
 }
 
 function factionClass(c) {
   return c && c.faction ? c.faction : "unknown";
+}
+
+function displayClass(c) {
+  const klass = String(c?.klass || "").trim();
+  if (portraitRace(c) === "Orc" && normal(klass) === "cleric") return "Shaman";
+  if (normal(klass) === "magic-user") return "Mage";
+  return klass;
 }
 
 const PORTRAIT_ASSET_PATH = "assets/cards/";
@@ -58,55 +142,154 @@ function portraitSubrace(c) {
   return portraitToken(raw);
 }
 
-function portraitClasses(c) {
+function knownPortraitClass(c) {
   const raw = normal(c?.classRaw || c?.klass);
   const knownClasses = {
     "warrior": "Warrior",
     "magic-user": "Mage",
     "mage": "Mage",
     "cleric": "Cleric",
-    "ranger": "Ranger",
+    "ranger": "Scout",
     "scout": "Scout",
-    "thief": "Thief"
+    "thief": "Scout"
   };
-  if (knownClasses[raw]) return [knownClasses[raw]];
-
-  const race = portraitRace(c);
-  const subrace = portraitSubrace(c);
-  if (subrace === "Black_Numenorean") return ["Mage"];
-  if (race === "Elf" || race === "Hobbit") return ["Scout", "Thief"];
-  return ["Warrior"];
+  return knownClasses[raw] || "";
 }
 
-function portraitCandidates(c) {
+function defaultPortraitClass(c) {
   const race = portraitRace(c);
-  const classes = portraitClasses(c);
+  const subrace = portraitSubrace(c);
+  if (subrace === "Black_Numenorean") return "Mage";
+  if (["Elf", "Half_Elf", "Hobbit"].includes(race)) return "Scout";
+  return "Warrior";
+}
+
+function portraitClassPriorities(c) {
+  return Array.from(new Set([knownPortraitClass(c), defaultPortraitClass(c)].filter(Boolean)));
+}
+
+function portraitClassGroup(value) {
+  const token = portraitToken(value);
+  if (["Scout", "Thief", "Ranger"].includes(token)) return "Scout";
+  if (["Mage", "Magic_User"].includes(token)) return "Mage";
+  return token;
+}
+
+function parsePortraitFile(filename) {
+  const stem = String(filename || "").replace(/\.png$/i, "");
+  const parts = stem.split("-");
+  if (!parts[0]) return null;
+  return {
+    filename,
+    race: parts[0] || "",
+    klass: parts[1] || "",
+    gender: parts[2] || "",
+    subrace: parts.slice(3).join("-")
+  };
+}
+
+const portraitCatalog = Array.from(portraitFiles).map(parsePortraitFile).filter(Boolean);
+
+function stablePortraitHash(value) {
+  let hash = 2166136261;
+  for (const character of String(value || "")) {
+    hash ^= character.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function portraitMatchScore(portrait, c, raceChoices, gender, subrace) {
+  const raceRank = raceChoices.indexOf(portrait.race);
+  let subraceRank = 0;
+  if (subrace) {
+    if (portrait.subrace === subrace) subraceRank = 0;
+    else if (!portrait.subrace) subraceRank = 1;
+    else subraceRank = 2;
+  } else {
+    subraceRank = portrait.subrace ? 1 : 0;
+  }
+
+  let genderRank = 0;
+  if (portrait.gender === gender) genderRank = 0;
+  else if (portrait.gender === "Male") genderRank = 1;
+  else if (!portrait.gender) genderRank = 2;
+  else genderRank = 3;
+
+  return raceRank * 100 + subraceRank * 10 + genderRank;
+}
+
+function chooseBestPortrait(options, c, raceChoices, gender, subrace, salt) {
+  if (!options.length) return null;
+  const scored = options.map(portrait => ({
+    portrait,
+    score: portraitMatchScore(portrait, c, raceChoices, gender, subrace)
+  }));
+  const bestScore = Math.min(...scored.map(item => item.score));
+  const tied = scored
+    .filter(item => item.score === bestScore)
+    .map(item => item.portrait)
+    .sort((a, b) => a.filename.localeCompare(b.filename));
+  const seed = c?.id || c?.name || `${portraitRace(c)}-${portraitSubrace(c)}`;
+  return tied[stablePortraitHash(`${seed}:${salt}`) % tied.length];
+}
+
+function selectPortrait(c) {
+  const race = portraitRace(c);
+  const raceChoices = race === "Half_Elf" ? ["Half_Elf", "Elf"] : [race];
+  const gender = normal(c?.gender) && normal(c?.gender) !== "unknown"
+    ? portraitToken(c?.gender)
+    : "Male";
+  const subrace = portraitSubrace(c);
+  const raceMatches = portraitCatalog.filter(portrait => raceChoices.includes(portrait.race));
+  if (!raceMatches.length) return null;
+
+  for (const klass of portraitClassPriorities(c)) {
+    const classMatches = raceMatches.filter(portrait => portraitClassGroup(portrait.klass) === klass);
+    const selected = chooseBestPortrait(classMatches, c, raceChoices, gender, subrace, klass);
+    if (selected) return selected;
+  }
+
+  const genericMatches = raceMatches.filter(portrait => !portrait.klass);
+  return chooseBestPortrait(genericMatches, c, raceChoices, gender, subrace, "generic")
+    || chooseBestPortrait(raceMatches, c, raceChoices, gender, subrace, "any");
+}
+
+function unmanifestedPortraitCandidates(c) {
+  const race = portraitRace(c);
+  const raceChoices = race === "Half_Elf" ? ["Half_Elf", "Elf"] : [race];
   const gender = normal(c?.gender) && normal(c?.gender) !== "unknown"
     ? portraitToken(c?.gender)
     : "Male";
   const subrace = portraitSubrace(c);
   const filenames = [];
-
+  const classNames = klass => klass === "Scout" ? ["Scout", "Thief", "Ranger"] : [klass];
   const add = (...parts) => {
     if (!parts[0] || parts.some(part => !part)) return;
     const filename = `${parts.join("-")}.png`;
     if (!filenames.includes(filename)) filenames.push(filename);
   };
 
-  classes.forEach(klass => {
-    add(race, klass, gender, subrace);
-    add(race, klass, gender);
-    add(race, klass, subrace);
-    add(race, klass);
+  raceChoices.forEach(raceName => {
+    portraitClassPriorities(c).forEach(klass => classNames(klass).forEach(className => {
+      add(raceName, className, gender, subrace);
+      add(raceName, className, gender);
+      add(raceName, className, subrace);
+      add(raceName, className);
+    }));
+    add(raceName, subrace);
+    add(raceName);
   });
-
-  add(race, subrace);
-  add(race);
   add("Unknown");
-  const available = portraitFiles.size
-    ? filenames.filter(filename => portraitFiles.has(filename)).slice(0, 1)
-    : filenames;
-  return available.map(filename => `${PORTRAIT_ASSET_PATH}${filename}`);
+  return filenames;
+}
+
+function portraitCandidates(c) {
+  if (portraitCatalog.length) {
+    const selected = selectPortrait(c);
+    return selected ? [`${PORTRAIT_ASSET_PATH}${selected.filename}`] : [];
+  }
+  return unmanifestedPortraitCandidates(c).map(filename => `${PORTRAIT_ASSET_PATH}${filename}`);
 }
 
 function advancePortraitFallback(image) {
@@ -165,7 +348,7 @@ function displayLevel(c) {
 function displayIdentitySecondLine(c) {
   if (!c) return "";
   if (c.faction === "immortal") return c.subrace || "";
-  return c.klass || "";
+  return displayClass(c);
 }
 
 function displayIdentityLevelLine(c) {
@@ -177,9 +360,9 @@ function displayIdentityLevelLine(c) {
 function identityCardLines(c) {
   const skip = new Set(["", "Unknown", "unknown", "Level ?", "—", "-"]);
   const values = [
-    c?.race || "",
+    c?.raceRaw || c?.race || "",
     c?.subrace || "",
-    c?.klass || "",
+    displayClass(c),
     displayLevel(c) || ""
   ];
 
@@ -258,7 +441,7 @@ function filterArchive() {
     if (faction && c.factionLabel !== faction) return false;
     if (clan && c.clan !== clan) return false;
     if (q) {
-      const haystack = [c.name, c.player, c.race, c.subrace, c.klass, c.factionLabel, c.clan, c.active, c.classificationStatus].join(" ").toLowerCase();
+      const haystack = [c.name, c.player, c.race, c.subrace, c.klass, displayClass(c), c.factionLabel, c.clan, c.active, c.classificationStatus].join(" ").toLowerCase();
       if (!haystack.includes(q)) return false;
     }
     return true;
@@ -353,13 +536,13 @@ function setCharacterPanel(c) {
   setText("filter-player-name", c.player || "Unknown");
   setText("player-card-name", c.player || "Unknown");
   setText("identity-name", c.name);
-  setOptionalText("identity-race", c.race || "Unknown");
+  setOptionalText("identity-race", c.raceRaw || c.race || "Unknown");
   setOptionalText("identity-class", displayIdentitySecondLine(c));
   setOptionalText("identity-level", displayIdentityLevelLine(c));
   setText("strip-player", c.player || "Unknown");
   setText("strip-name", c.name);
   setText("strip-race", c.race || "Unknown");
-  setText("strip-class", c.klass || "—");
+  setText("strip-class", displayClass(c) || "—");
   setText("strip-level", displayIdentityLevelLine(c) || "—");
   setText("strip-clan", c.clan || "—");
   setText("strip-active", c.active || "unknown");
@@ -416,8 +599,9 @@ function renderCarouselCards() {
 
   parts.push(`<article class="char-card info-card"><h3>Facts</h3><div class="card-symbol">✺</div>
     <ul>
-      <li>Race: ${escapeHtml(c.race || "Unknown")}</li>
-      <li>Class: ${escapeHtml(c.klass || "Unknown")}</li>
+      <li>Race: ${escapeHtml(c.raceRaw || c.race || "Unknown")}</li>
+      ${c.subrace ? `<li>Subrace: ${escapeHtml(c.subrace)}</li>` : ""}
+      <li>Class: ${escapeHtml(displayClass(c) || "Unknown")}</li>
       <li>Faction: ${escapeHtml(c.factionLabel || "Unknown")}</li>
       <li>Active: ${escapeHtml(c.active || "unknown")}</li>
     </ul></article>`);
@@ -553,7 +737,7 @@ function filterPlayerCharacters() {
     if (status === "has_whois" && !c.hasWhois) return false;
     if (status === "needs_review" && !c.reviewNeeded) return false;
     if (q) {
-      const haystack = [c.name, c.race, c.klass, c.factionLabel, c.clan, c.active, c.classificationStatus].join(" ").toLowerCase();
+      const haystack = [c.name, c.race, c.klass, displayClass(c), c.factionLabel, c.clan, c.active, c.classificationStatus].join(" ").toLowerCase();
       if (!haystack.includes(q)) return false;
     }
     return true;

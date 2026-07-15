@@ -114,8 +114,8 @@ Examples:
 - Multi-word qualifiers use underscores (`_`) instead of spaces.
 - Omit unknown qualifiers.
 - Portrait names use Title Case to match archive values.
-- The Deck generates a list of candidate portraits from most specific to
-  least specific and advances through it when an image is unavailable.
+- The Deck compares each character with the available portrait manifest and
+  selects the closest visual match.
 
 Example:
 
@@ -137,12 +137,26 @@ Archive labels are normalised for portrait filenames: `Man` becomes `Human`,
 
 Best-fit defaults are used when archive classifications are incomplete:
 
-- Unknown gender defaults to `Male`.
-- Unknown class defaults to `Warrior` when matching artwork is available.
-- Elves and hobbits with unknown class try `Scout`, then `Thief`.
-- Black Númenóreans with unknown class default to `Mage`.
-- A known subrace remains part of the preferred filename, so a Zaugurz or troll
-  subtype can select its own artwork without requiring a generic subrace image.
+- Female artwork is preferred when gender is known; otherwise `Male` is used.
+- `Scout`, `Thief` and `Ranger` are treated as one visual class.
+- A missing class falls back to `Warrior`, except that elves, half-elves and
+  hobbits prefer `Scout`, while Black Númenóreans prefer `Mage`.
+- Half-elves use elf portraits when no half-elf portrait is available.
+- An exact subrace is preferred, followed by the main race. If only other
+  subrace portraits exist, one of the best matches is chosen consistently per
+  character to add visual variety without changing on each page load.
+- If no class-appropriate or generic portrait exists, another portrait from
+  the same race is used as a final visual fallback.
+- `Unknown.png` is used when the character's race or type cannot be identified.
 
 Run the Deck data exporter after adding portrait files so `portraitFiles` in
 `deck-data.js` is refreshed.
+
+## Display Normalisation
+
+- Race and subrace appear on separate card lines.
+- Orc `Cleric` is displayed as `Shaman`.
+- `Magic-user` is displayed as `Mage`.
+- Character names that differ only by pronunciation marks are shown once, with
+  the original marked spelling preferred. The exporter applies the same rule
+  to future Deck data.
