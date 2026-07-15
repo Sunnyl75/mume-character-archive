@@ -5,8 +5,21 @@ window.DECK_CHARS = {
     "schema": "deck-of-chars-alpha-compatible",
     "characterCount": 2693,
     "playerCount": 225,
-    "asciiRecordCount": 39
+    "asciiRecordCount": 39,
+    "portraitFileCount": 10
   },
+  "portraitFiles": [
+    "Dwarf-Warrior-Male.png",
+    "Elf-Warrior-Male.png",
+    "Hobbit-Warrior-Male.png",
+    "Human-Mage-Male-Black_Numenorean.png",
+    "Human-Warrior-Male.png",
+    "Orc-Warrior-Male-Zaugurz.png",
+    "Orc-Warrior-Male.png",
+    "Troll-Warrior-Male-Cave.png",
+    "Troll-Warrior-Male-Hill.png",
+    "Troll-Warrior-Male-Mountain.png"
+  ],
   "characters": [
     {
       "id": "char_aalio",

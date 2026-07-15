@@ -114,8 +114,8 @@ Examples:
 - Multi-word qualifiers use underscores (`_`) instead of spaces.
 - Omit unknown qualifiers.
 - Portrait names use Title Case to match archive values.
-- The exporter generates a list of candidate portraits from most specific
-  to least specific.
+- The Deck generates a list of candidate portraits from most specific to
+  least specific and advances through it when an image is unavailable.
 
 Example:
 
@@ -131,3 +131,18 @@ This allows broad race portraits to be created first, with more specific
 race/class/gender/subrace portraits added over time without requiring any
 changes to the website or exported data.
 
+Archive labels are normalised for portrait filenames: `Man` becomes `Human`,
+`Magic-user` becomes `Mage`, and troll subraces such as `Cave Troll` become
+`Cave`.
+
+Best-fit defaults are used when archive classifications are incomplete:
+
+- Unknown gender defaults to `Male`.
+- Unknown class defaults to `Warrior` when matching artwork is available.
+- Elves and hobbits with unknown class try `Scout`, then `Thief`.
+- Black Númenóreans with unknown class default to `Mage`.
+- A known subrace remains part of the preferred filename, so a Zaugurz or troll
+  subtype can select its own artwork without requiring a generic subrace image.
+
+Run the Deck data exporter after adding portrait files so `portraitFiles` in
+`deck-data.js` is refreshed.

@@ -349,6 +349,17 @@ def build_ascii_records(characters: list[dict[str, Any]]) -> list[dict[str, Any]
     return records
 
 
+def build_portrait_file_manifest(root: Path) -> list[str]:
+    cards_dir = root / "site/deck-of-chars/assets/cards"
+    if not cards_dir.exists():
+        return []
+    canonical_name = re.compile(r"^[A-Z][A-Za-z0-9_]*(?:-[A-Z][A-Za-z0-9_]*)*\.png$")
+    return sorted(
+        path.name for path in cards_dir.glob("*.png")
+        if canonical_name.fullmatch(path.name)
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("archive_root", help="Path to mume-character-archive repo root")
@@ -375,6 +386,7 @@ def main() -> None:
 
     players = build_players(characters, players_rows)
     ascii_records = build_ascii_records(characters)
+    portrait_files = build_portrait_file_manifest(root)
 
     data = {
         "meta": {
@@ -384,7 +396,9 @@ def main() -> None:
             "characterCount": len(characters),
             "playerCount": len(players),
             "asciiRecordCount": len(ascii_records),
+            "portraitFileCount": len(portrait_files),
         },
+        "portraitFiles": portrait_files,
         "characters": characters,
         "players": players,
         "asciiRecords": ascii_records,
@@ -398,6 +412,7 @@ def main() -> None:
     print(f"Characters: {len(characters)}")
     print(f"Players: {len(players)}")
     print(f"ASCII records: {len(ascii_records)}")
+    print(f"Portrait files: {len(portrait_files)}")
     print("Immortal characters:", sum(1 for c in characters if c.get("faction") == "immortal"))
 
 

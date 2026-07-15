@@ -3,6 +3,7 @@ const DATA = window.DECK_CHARS || { characters: [], players: [], asciiRecords: [
 const characters = Array.isArray(DATA.characters) ? DATA.characters : [];
 const players = Array.isArray(DATA.players) ? DATA.players : [];
 const asciiRecords = Array.isArray(DATA.asciiRecords) ? DATA.asciiRecords : [];
+const portraitFiles = new Set(Array.isArray(DATA.portraitFiles) ? DATA.portraitFiles : []);
 
 let currentCharacter = characters[0] || null;
 let selectedCharacterActive = Boolean(currentCharacter);
@@ -31,6 +32,126 @@ function byId(id) {
 
 function factionClass(c) {
   return c && c.faction ? c.faction : "unknown";
+}
+
+const PORTRAIT_ASSET_PATH = "assets/cards/";
+
+function portraitToken(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(/[^A-Za-z0-9]+/)
+    .filter(Boolean)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join("_");
+}
+
+function portraitRace(c) {
+  const raw = String(c?.raceRaw || c?.race || "").trim();
+  if (normal(raw) === "man") return "Human";
+  return portraitToken(raw);
+}
+
+function portraitSubrace(c) {
+  let raw = String(c?.subrace || "").trim();
+  if (portraitRace(c) === "Troll") raw = raw.replace(/\s+Troll$/i, "");
+  return portraitToken(raw);
+}
+
+function portraitClasses(c) {
+  const raw = normal(c?.classRaw || c?.klass);
+  const knownClasses = {
+    "warrior": "Warrior",
+    "magic-user": "Mage",
+    "mage": "Mage",
+    "cleric": "Cleric",
+    "ranger": "Ranger",
+    "scout": "Scout",
+    "thief": "Thief"
+  };
+  if (knownClasses[raw]) return [knownClasses[raw]];
+
+  const race = portraitRace(c);
+  const subrace = portraitSubrace(c);
+  if (subrace === "Black_Numenorean") return ["Mage"];
+  if (race === "Elf" || race === "Hobbit") return ["Scout", "Thief"];
+  return ["Warrior"];
+}
+
+function portraitCandidates(c) {
+  const race = portraitRace(c);
+  const classes = portraitClasses(c);
+  const gender = normal(c?.gender) && normal(c?.gender) !== "unknown"
+    ? portraitToken(c?.gender)
+    : "Male";
+  const subrace = portraitSubrace(c);
+  const filenames = [];
+
+  const add = (...parts) => {
+    if (!parts[0] || parts.some(part => !part)) return;
+    const filename = `${parts.join("-")}.png`;
+    if (!filenames.includes(filename)) filenames.push(filename);
+  };
+
+  classes.forEach(klass => {
+    add(race, klass, gender, subrace);
+    add(race, klass, gender);
+    add(race, klass, subrace);
+    add(race, klass);
+  });
+
+  add(race, subrace);
+  add(race);
+  add("Unknown");
+  const available = portraitFiles.size
+    ? filenames.filter(filename => portraitFiles.has(filename)).slice(0, 1)
+    : filenames;
+  return available.map(filename => `${PORTRAIT_ASSET_PATH}${filename}`);
+}
+
+function advancePortraitFallback(image) {
+  const candidates = String(image.dataset.portraitCandidates || "").split("|").filter(Boolean);
+  const nextIndex = Number(image.dataset.portraitIndex || 0) + 1;
+  if (nextIndex >= candidates.length) {
+    image.hidden = true;
+    image.removeAttribute("src");
+    return;
+  }
+  image.dataset.portraitIndex = String(nextIndex);
+  image.src = candidates[nextIndex];
+}
+
+function portraitOverlayHtml(c) {
+  const candidates = portraitCandidates(c);
+  if (!candidates.length) return "";
+  return `<img class="character-card-overlay" src="${escapeHtml(candidates[0])}" data-portrait-candidates="${escapeHtml(candidates.join("|"))}" data-portrait-index="0" onerror="advancePortraitFallback(this)" alt="">`;
+}
+
+function setCardPortrait(card, c) {
+  if (!card) return;
+  let image = card.querySelector(".character-card-overlay");
+  const candidates = portraitCandidates(c);
+
+  if (!candidates.length) {
+    if (image) {
+      image.hidden = true;
+      image.removeAttribute("src");
+    }
+    return;
+  }
+
+  if (!image) {
+    image = document.createElement("img");
+    image.className = "character-card-overlay";
+    image.alt = "";
+    image.onerror = () => advancePortraitFallback(image);
+    card.prepend(image);
+  }
+
+  image.hidden = false;
+  image.dataset.portraitCandidates = candidates.join("|");
+  image.dataset.portraitIndex = "0";
+  image.src = candidates[0];
 }
 
 function displayLevel(c) {
@@ -76,6 +197,7 @@ function hasHeroLegend(c) {
 function miniStack(c) {
   return `<div class="mini-stack ${escapeHtml(factionClass(c))}" onclick="openCharacterById('${escapeAttr(c.id)}')">
     <article class="mini-card">
+      ${portraitOverlayHtml(c)}
       <h3>${escapeHtml(c.name)}</h3>
       <div class="mini-art"></div>
       ${identityCardLines(c)}
@@ -242,7 +364,10 @@ function setCharacterPanel(c) {
   setText("strip-clan", c.clan || "—");
   setText("strip-active", c.active || "unknown");
   const mainCard = document.getElementById("main-identity-card");
-  if (mainCard) mainCard.className = `char-card identity-card ${factionClass(c)}`;
+  if (mainCard) {
+    mainCard.className = `char-card identity-card ${factionClass(c)}`;
+    setCardPortrait(mainCard, c);
+  }
   const parked = document.getElementById("parked-player-deck");
   if (parked) parked.className = `parked-player-deck player-back-${c.playerCardFaction || "free"}`;
   const terminal = document.getElementById("whois-terminal");
@@ -284,6 +409,7 @@ function renderCarouselCards() {
   const parts = [];
 
   parts.push(`<article class="char-card identity-card ${escapeHtml(factionClass(c))}" onclick="pileCards()">
+    ${portraitOverlayHtml(c)}
     <div class="card-name">${escapeHtml(c.name)}</div><div class="portrait"></div>
     ${identityCardLines(c)}
   </article>`);
