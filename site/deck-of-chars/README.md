@@ -152,6 +152,50 @@ Best-fit defaults are used when archive classifications are incomplete:
 Run the Deck data exporter after adding portrait files so `portraitFiles` in
 `deck-data.js` is refreshed.
 
+### Immortal Portraits
+
+Immortals use a separate rank-and-level filename system. Mortal class and
+gender defaults are not applied to them.
+
+Canonical filenames are:
+
+    Implementor.png
+    Arata.png
+    Vala.png
+    Vala-Architect.png
+    Vala-Mudller.png
+    Maia-Shaper.png
+    Maia-Wright.png
+    Maia-Builder.png
+    Maia-Cartographer.png
+    Maia-Boardreader.png
+
+`Maia-Boardreader.png` is the base Maia portrait. A Maia with no recorded level
+uses this image, but the card is not labelled `Boardreader` unless the archive
+explicitly identifies that character as a Boardreader. `Maia.png` and
+`Boardreader.png` remain accepted as legacy aliases for the same artwork level.
+
+The fallback hierarchy follows MUME's Ainu levels:
+
+    Implementor
+        -> Arata
+        -> Vala
+        -> Maia Shaper
+        -> Maia Wright
+        -> Maia Builder
+        -> Maia Cartographer
+        -> Maia Boardreader
+
+Within the Maia ranks, missing artwork first falls back to the closest lower
+level, then to the closest higher available level, with base Maia/Boardreader
+always remaining the final fallback. Vala Architect and Mudller
+portraits first use their exact role, then generic Vala artwork, then the other
+equal Vala role. Singular filenames are canonical; plural `Aratar`, `Valar` and
+`Maiar` forms are accepted for compatibility. `Mudller` is the sole recognised
+role spelling, reflecting its connection to Mudlle code.
+
+Reference: https://mume.org/help/ainu_levels
+
 ## Display Normalisation
 
 - Race and subrace appear on separate card lines.

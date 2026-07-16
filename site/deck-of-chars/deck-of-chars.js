@@ -189,6 +189,9 @@ function parsePortraitFile(filename) {
 }
 
 const portraitCatalog = Array.from(portraitFiles).map(parsePortraitFile).filter(Boolean);
+const portraitFileLookup = new Map(
+  Array.from(portraitFiles).map(filename => [normal(filename), filename])
+);
 
 function stablePortraitHash(value) {
   let hash = 2166136261;
@@ -197,6 +200,148 @@ function stablePortraitHash(value) {
     hash = Math.imul(hash, 16777619);
   }
   return hash >>> 0;
+}
+
+const IMMORTAL_RANK_ALIASES = Object.freeze({
+  Implementor: "Implementor",
+  Implementors: "Implementor",
+  Creators_Of_Arda: "Implementor",
+  Arata: "Arata",
+  Aratar: "Arata",
+  Vala: "Vala",
+  Valar: "Vala",
+  Maia: "Maia",
+  Maiar: "Maia",
+  Boardreader: "Boardreader",
+  Boardreaders: "Boardreader"
+});
+
+const IMMORTAL_MAIA_LEVELS = Object.freeze([
+  "Boardreader",
+  "Cartographer",
+  "Builder",
+  "Wright",
+  "Shaper"
+]);
+
+function normaliseImmortalRank(value) {
+  const token = portraitToken(value);
+  return IMMORTAL_RANK_ALIASES[token] || token;
+}
+
+function normaliseImmortalRole(value) {
+  const token = portraitToken(value);
+  if (token === "Mudller") return "Mudller";
+  if (["Architect", ...IMMORTAL_MAIA_LEVELS].includes(token)) return token;
+  return "";
+}
+
+function immortalPortraitProfile(c) {
+  const rankValues = [
+    c?.derivedImmortalRank,
+    c?.raceRaw,
+    c?.race,
+    c?.immortalListCategory
+  ];
+  const knownRanks = new Set(["Implementor", "Arata", "Vala", "Maia", "Boardreader"]);
+  const rank = rankValues
+    .map(normaliseImmortalRank)
+    .find(value => knownRanks.has(value)) || "";
+  const role = normaliseImmortalRole(c?.derivedImmortalRole || c?.subrace);
+
+  if (rank === "Boardreader") return { rank: "Maia", level: "Boardreader" };
+  if (rank === "Maia") {
+    return {
+      rank,
+      level: IMMORTAL_MAIA_LEVELS.includes(role) ? role : "Boardreader"
+    };
+  }
+  if (rank === "Vala") {
+    return {
+      rank,
+      level: ["Architect", "Mudller"].includes(role) ? role : ""
+    };
+  }
+  return { rank, level: "" };
+}
+
+function maiaPortraitFilenameGroup(level) {
+  if (level === "Boardreader") {
+    return [
+      "Maia-Boardreader.png",
+      "Maia.png",
+      "Boardreader.png",
+      "Maiar-Boardreader.png",
+      "Maiar.png"
+    ];
+  }
+  return [`Maia-${level}.png`, `Maiar-${level}.png`];
+}
+
+function maiaPortraitLevelOrder(level) {
+  const targetIndex = IMMORTAL_MAIA_LEVELS.indexOf(level);
+  if (targetIndex < 0) return IMMORTAL_MAIA_LEVELS.slice();
+  if (level === "Boardreader") return ["Boardreader"];
+  return [
+    level,
+    ...IMMORTAL_MAIA_LEVELS.slice(1, targetIndex).reverse(),
+    ...IMMORTAL_MAIA_LEVELS.slice(targetIndex + 1),
+    "Boardreader"
+  ];
+}
+
+function immortalPortraitFilenameGroups(c) {
+  const { rank, level } = immortalPortraitProfile(c);
+  const groups = [];
+  const addMaiaFallbacks = startLevel => {
+    maiaPortraitLevelOrder(startLevel).forEach(maiaLevel => {
+      groups.push(maiaPortraitFilenameGroup(maiaLevel));
+    });
+  };
+  const valaGeneric = ["Vala.png", "Valar.png"];
+  const valaArchitect = ["Vala-Architect.png", "Valar-Architect.png"];
+  const valaMudller = [
+    "Vala-Mudller.png",
+    "Valar-Mudller.png"
+  ];
+
+  if (rank === "Implementor") {
+    groups.push(["Implementor.png", "Implementors.png"]);
+    groups.push(["Arata.png", "Aratar.png"]);
+    groups.push(valaGeneric, valaArchitect, valaMudller);
+    addMaiaFallbacks("Shaper");
+  } else if (rank === "Arata") {
+    groups.push(["Arata.png", "Aratar.png"]);
+    groups.push(valaGeneric, valaArchitect, valaMudller);
+    addMaiaFallbacks("Shaper");
+  } else if (rank === "Vala") {
+    if (level === "Architect") groups.push(valaArchitect);
+    if (level === "Mudller") groups.push(valaMudller);
+    groups.push(valaGeneric);
+    if (level === "Architect") groups.push(valaMudller);
+    else if (level === "Mudller") groups.push(valaArchitect);
+    else groups.push(valaArchitect, valaMudller);
+    addMaiaFallbacks("Shaper");
+  } else if (rank === "Maia") {
+    addMaiaFallbacks(level || "Boardreader");
+  } else {
+    groups.push(maiaPortraitFilenameGroup("Boardreader"));
+  }
+
+  return groups;
+}
+
+function immortalPortraitFilenames(c) {
+  const filenames = [];
+  immortalPortraitFilenameGroups(c).forEach(group => {
+    group.forEach(candidate => {
+      const filename = portraitFiles.size
+        ? portraitFileLookup.get(normal(candidate))
+        : candidate;
+      if (filename && !filenames.includes(filename)) filenames.push(filename);
+    });
+  });
+  return filenames;
 }
 
 function portraitMatchScore(portrait, c, raceChoices, gender, subrace) {
@@ -285,6 +430,9 @@ function unmanifestedPortraitCandidates(c) {
 }
 
 function portraitCandidates(c) {
+  if (normal(c?.faction) === "immortal") {
+    return immortalPortraitFilenames(c).map(filename => `${PORTRAIT_ASSET_PATH}${filename}`);
+  }
   if (portraitCatalog.length) {
     const selected = selectPortrait(c);
     return selected ? [`${PORTRAIT_ASSET_PATH}${selected.filename}`] : [];
