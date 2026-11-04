@@ -1,0 +1,6 @@
+# Revalidate the HTML and generated data after each publication.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|css)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
