@@ -1,0 +1,125 @@
+--- a/bree-legends/assets/css/bree-legends.css
++++ b/bree-legends/assets/css/bree-legends.css
+@@ -1696,7 +1696,7 @@
+ 
+ .home-section-grid {
+   display: grid;
+-  grid-template-columns: repeat(3, minmax(0, 1fr));
++  grid-template-columns: repeat(2, minmax(0, 1fr));
+   gap: clamp(20px, 2.4vw, 34px);
+   align-items: stretch;
+   margin-top: 1.5rem;
+--- /dev/null
++++ b/bree-legends/assets/images/home-icon-deck.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#c4a471" stroke-width="3"><rect x="13" y="13" width="43" height="56" rx="4" transform="rotate(-12 34 41)" fill="#30251c"/><rect x="26" y="10" width="43" height="58" rx="4" fill="#403024"/><circle cx="47.5" cy="30" r="8"/><path d="M34 55c0-17 27-17 27 0M38 61h19"/></svg>
+--- a/bree-legends/front-page.php
++++ b/bree-legends/front-page.php
+@@ -9,7 +9,7 @@
+  * - create/edit the page assigned as the site's Homepage;
+  * - use the "Bree Legends homepage boxes" panel below the editor.
+  *
+- * Section pages with the slugs wiki, history, and comics still control the
++ * Section pages with the slugs wiki, history, comics, and deck-of-chars still control the
+  * destination links and optional Featured Image corner icons.
+  */
+ get_header();
+@@ -47,6 +47,15 @@
+         'meta_key'    => '_bree_legends_home_comics_text',
+         'button_key'  => '_bree_legends_home_comics_button',
+         'icon'        => 'home-icon-comics.svg',
++    ),
++    array(
++        'title'       => __('Deck of Chars', 'bree-legends'),
++        'slug'        => 'deck-of-chars',
++        'description' => __('Discover the characters and players of MUME through illustrated cards, preserved whois records, and historical sources.', 'bree-legends'),
++        'button'      => __('Explore the Deck', 'bree-legends'),
++        'meta_key'    => '_bree_legends_home_deck_text',
++        'button_key'  => '_bree_legends_home_deck_button',
++        'icon'        => 'home-icon-deck.svg',
+     ),
+ );
+ ?>
+--- a/bree-legends/functions.php
++++ b/bree-legends/functions.php
+@@ -30,7 +30,7 @@
+         'bree-legends-main',
+         get_theme_file_uri('/assets/css/bree-legends.css'),
+         array(),
+-        '1.1.7'
++        '1.1.8'
+     );
+ }
+ add_action('wp_enqueue_scripts', 'bree_legends_enqueue_assets');
+@@ -52,6 +52,7 @@
+     $items = array(
+         array('label' => 'Wiki', 'url' => home_url('/wiki/')),
+         array('label' => 'Comics', 'url' => home_url('/comics/')),
++        array('label' => 'Deck of Chars', 'url' => home_url('/deck-of-chars/')),
+         array('label' => 'About', 'url' => home_url('/about/')),
+     );
+ 
+@@ -63,6 +64,29 @@
+         );
+     }
+ }
++
++/** Add the Deck to a configured primary menu unless its destination is present. */
++function bree_legends_deck_menu_link(string $items, $args): string {
++    if (($args->theme_location ?? '') !== 'primary') {
++        return $items;
++    }
++    $menu = wp_get_nav_menu_object($args->menu);
++    if (!$menu) {
++        return $items;
++    }
++    foreach (wp_get_nav_menu_items($menu->term_id) ?: array() as $item) {
++        $path = wp_parse_url($item->url, PHP_URL_PATH);
++        $host = wp_parse_url($item->url, PHP_URL_HOST);
++        if ((!$host || $host === wp_parse_url(home_url('/'), PHP_URL_HOST))
++            && untrailingslashit((string) $path) === untrailingslashit((string) wp_parse_url(home_url('/deck-of-chars/'), PHP_URL_PATH))) {
++            return $items;
++        }
++    }
++    return $items . '<li class="menu-item menu-item-deck"><a href="'
++        . esc_url(home_url('/deck-of-chars/')) . '">'
++        . esc_html__('Deck of Chars', 'bree-legends') . '</a></li>';
++}
++add_filter('wp_nav_menu_items', 'bree_legends_deck_menu_link', 10, 2);
+ 
+ function bree_legends_breadcrumbs(): void {
+     if (is_front_page()) {
+@@ -266,7 +290,7 @@
+ 
+ 
+ /**
+- * Homepage-only text fields for the three landing-page cards.
++ * Homepage-only text fields for the landing-page cards.
+  *
+  * These are stored on the WordPress page assigned as the static homepage.
+  * The front-page template reads these values instead of borrowing text from
+@@ -295,6 +319,13 @@
+             'placeholder' => __('Homepage-only text for the Comics box.', 'bree-legends'),
+             'button'      => __('Read the Comics', 'bree-legends'),
+         ),
++        'deck-of-chars' => array(
++            'label'       => __('Deck of Chars box', 'bree-legends'),
++            'text_key'    => '_bree_legends_home_deck_text',
++            'button_key'  => '_bree_legends_home_deck_button',
++            'placeholder' => __('Homepage-only text for the Deck of Chars box.', 'bree-legends'),
++            'button'      => __('Explore the Deck', 'bree-legends'),
++        ),
+     );
+ }
+ 
+--- a/bree-legends/style.css
++++ b/bree-legends/style.css
+@@ -3,7 +3,7 @@
+ Theme URI: https://mumebreelegends.com/
+ Author: L B / Bree Legends
+ Description: A custom fantasy parchment-and-stone WordPress theme for Bree Legends, based on the approved static webpage mockup.
+-Version: 1.1.7
++Version: 1.1.8
+ Requires at least: 6.0
+ Tested up to: 6.8
+ Requires PHP: 7.4

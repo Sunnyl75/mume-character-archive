@@ -1,0 +1,4 @@
+{
+  "ssh_target": "YOUR_SSH_USER@YOUR_SSH_HOST",
+  "remote_directory": "/ABSOLUTE/PATH/TO/breelegends.com/deck-of-chars"
+}
