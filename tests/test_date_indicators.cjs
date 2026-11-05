@@ -3,7 +3,7 @@ const path=require('node:path');
 const assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
 const root=path.resolve(__dirname,'..');
-const {derive,usable,comparisonRows,columns,evidenceEpoch}=require('../site/date-indicators/chronology.js');
+const {derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample}=require('../site/date-indicators/chronology.js');
 const data=JSON.parse(fs.readFileSync(path.join(root,'research/date_indicators.json'),'utf8'));
 const clone=value=>JSON.parse(JSON.stringify(value));
 const source=(id,end,extra={})=>({id,title:id,date_start:end,date_end:end,date_confidence:'high',calibration:'independent',dependencies:[],...extra});
@@ -42,28 +42,63 @@ assert.equal(get('death-victim').diku.output,'You are dead!  Sorry...');
 assert.match(get('incapacitated').diku.output,/incapacitated an will/);
 assert.equal(rows.length,38);
 
+const evidence=evidenceRows(data),findEvidence=id=>evidence.find(r=>r.id===id);
+assert.equal(evidence.length,33);
+const tell=findEvidence('tell-incoming');assert.equal(tell.label,'Tell');
+assert.equal(tell.cells.vi.find(c=>c.context==='Unavailable').output,'No-one by that name here...');
+assert.equal(tell.cells.vi.find(c=>c.context==='Unavailable').shade,1);
+assert.equal(tell.cells.vi.find(c=>c.context==='Received').shade,0);
+const nod=findEvidence('nod');assert.equal(nod.cells.diku[0].shade,nod.cells.vi[0].shade);
+assert.equal(nod.cells.i,undefined); // A gap is not an observed response.
+const firstKill=findEvidence('first-kill-punctuation');assert.equal(firstKill.cells.vi.length,2);
+assert.notEqual(firstKill.cells.vi[0].shade,firstKill.cells.vi[1].shade);
+const simulated=clone(data),simNod=simulated.indicators.find(i=>i.id==='nod');
+for(const [id,date]of [['later','2000-04-02'],['latest','2005-04-02']]){
+ simulated.sources.push(source(id,date));simNod.attestations.push({source_id:id,quote:'You nod your head solemnly.'});
+}
+const laterNod=evidenceRows(simulated).find(r=>r.id==='nod');
+assert.equal(laterNod.cells.vii[0].shade,1);assert.equal(laterNod.cells.viii[0].shade,1);
+assert.equal(laterNod.cells.vi[0].shade,0);
+assert.equal(sample({id:'tell-incoming'},"Elegil says 'Someone tells you 'hi''"),null);
+assert.equal(sample({id:'elrond-diku-line'},'>> Mood: aggressive << #### BANZAI!!!!!'),null);
+assert.equal(sample({id:'narrate'},"Person narrates 'hello' <--- comment").signature,"<ACTOR> narrates '…'");
+assert.equal(sample({id:'narrate'},"Person narrates 'incomplete"),null);
+assert.equal(sample({id:'tell-incoming'},"Someone tells you 'other message'").signature,tell.cells.vi[0].signature);
+
 const html=fs.readFileSync(path.join(root,'releases/MUME_Date_Indicators.html'),'utf8');
 const dom=new JSDOM(html,{runScripts:'dangerously',url:'https://preview.example.org/'});
 const d=dom.window.document;
 assert.equal(d.querySelectorAll('script[src],link[rel="stylesheet"]').length,0);
 const tabs=[...d.querySelectorAll('[role="tab"]')];
 assert.equal(tabs.length,7);assert.equal(d.querySelectorAll('table').length,1);
-assert.equal(d.querySelectorAll('tbody tr').length,8);
+assert.equal(d.querySelectorAll('tbody tr').length,5);
 assert.equal(d.querySelectorAll('thead th').length,11);
-assert.equal(d.querySelectorAll('form,details,.mdi-indicator').length,0);
+assert.equal(d.querySelectorAll('form,details,.mdi-indicator,.mdi-observed,.mdi-continued').length,0);
+assert.equal(d.querySelector('#mdi-page-tell-incoming th').textContent,'Tell');
+assert.match(d.querySelector('#mdi-page-tell-incoming').textContent,/No-one by that name here\.\.\./);
+assert.doesNotMatch(d.querySelector('tbody').textContent,/present by|199[0-9]/);
+assert.ok(d.querySelector('.mdi-footnotes a[href*="github.com"]'));
+for(const ref of d.querySelectorAll('.mdi-note-ref'))assert.ok(d.getElementById(ref.getAttribute('href').slice(1)));
+const nodSamples=[...d.querySelectorAll('#mdi-page-nod .mdi-sample')];
+assert.equal(nodSamples.length,2);assert.ok(nodSamples.every(c=>c.classList.contains('mdi-shade-0')));
 tabs[1].click();assert.equal(tabs[1].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('[role="tab"][aria-selected="true"]').length,1);
-assert.match(d.querySelector('#mdi-guardian-shadows').textContent,/Present\*/);
-assert.equal(d.querySelector('#mdi-guardian-shadows td').textContent,'—');
-assert.ok(d.querySelector('#mdi-first-kill-punctuation-old a[href*="radorac.txt"]'));
+assert.match(d.querySelector('#mdi-page-guardian-shadows').textContent,/A shadow slowly rises/);
+assert.match(d.querySelector('#mdi-page-guardian-shadows').textContent,/continued/);
+assert.equal(d.querySelector('#mdi-page-guardian-shadows td').textContent,'—');
+assert.ok(d.querySelector('.mdi-footnotes a[href*="radorac.txt"]'));
+assert.equal(d.querySelectorAll('tbody a[href^="http"]').length,0);
 tabs[1].dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'End',bubbles:true}));
 assert.equal(tabs[6].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('table').length,1);
+// Official feature notes with different dates must not be collapsed together.
+const featureNotes=d.querySelector('.mdi-footnotes').textContent;
+assert.match(featureNotes,/Mar 1996/);assert.match(featureNotes,/Apr 1999/);assert.match(featureNotes,/Jan 2002/);
 tabs[6].dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Home',bubbles:true}));
 assert.equal(tabs[0].getAttribute('aria-selected'),'true');
-// Malicious catalogue text and non-web URLs must remain inert.
+// Malicious labels, quotations and non-web source URLs remain inert.
 const malicious=clone(data);malicious.indicators[0].comparison.label='<img src=x onerror=alert(1)>';
-malicious.indicators[0].comparison.output='<script>alert(1)</script>';
+malicious.indicators[0].attestations[0].quote='<script>alert(1)</script>';
 for(const s of malicious.sources)s.url='javascript:alert(1)';
 const isolated=new JSDOM('<div class="bree-mume-dates"><div class="mdi-app"></div></div>',{runScripts:'outside-only'});
 isolated.window.MUME_DATE_INDICATORS=malicious;
@@ -73,6 +108,6 @@ assert.equal(isolated.window.document.querySelectorAll('img,script,a[href^="java
 assert.match(isolated.window.document.body.textContent,/<img src/);
 // Legacy catalogue files still render without comparison metadata.
 const legacy=clone(data);delete legacy.comparison;for(const i of legacy.indicators)delete i.comparison;
-assert.equal(comparisonRows(legacy).length,38);
+assert.equal(comparisonRows(legacy).length,38);assert.ok(evidenceRows(legacy).length>0);
 dom.window.close();isolated.window.close();
-console.log('Date indicator checks passed: soft anchors, circular evidence, epoch ranges, explicit continuity, Diku variants, category tabs and escaped links.');
+console.log('Date indicator checks passed: anchors, circular evidence, epoch ranges, quoted output, wording shades, future repeated variants, source footnotes, tabs and escaping.');

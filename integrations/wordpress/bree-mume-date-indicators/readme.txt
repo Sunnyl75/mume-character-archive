@@ -2,14 +2,16 @@
 Contributors: breelegends
 Requires at least: 5.8
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPL-3.0-or-later
 
 Compact comparison tables with Diku Alfa and MUME epochs as columns. Side tabs
 show one category at a time within the normal full parchment page template.
-Dates link to original sources; dashes mean no evidence. Present* marks explicit
-feature continuation. A dagger marks an original URL not yet recovered.
-Exact quotations and date evidence remain in the catalogue, outside the table.
+Epoch cells show recorded output, with short action labels in the left column.
+Superscript references lead to dated source notes below each table. Matching
+wording keeps the same pale shade; another shade draws attention to a change.
+Colour has no confidence or good/bad meaning. Dashes mean no evidence.
+Confirmed feature continuation does not assert unobserved wording.
 
 Installation:
 1. Upload the ZIP through Plugins > Add New > Upload Plugin. Activate or replace.
@@ -41,7 +43,9 @@ Epoch headings: https://mume.org/about/history
 Diku baseline: original DikuMUD Alfa source, linked by row.
 Source dates indicate surviving evidence, not exact feature introduction dates.
 
-Changelog 0.2.0:
-Replaces long chronology cards with category tabs and compact epoch tables.
-Adds Diku baseline comparisons and social, death and spell output observations.
-Keeps detailed evidence in the catalogue. WordPress runtime still needs testing.
+Changelog 0.3.0:
+Moves recorded output into epoch cells and dates/links into source footnotes.
+Groups Tell, Say, Death and first-kill variants into short-label rows.
+Uses subtle wording-change colours with no confidence meaning.
+Records a future Mudlet collector for current MUME IX responses; not implemented.
+WordPress runtime still needs testing.

@@ -4,7 +4,7 @@ A compact public comparison page, separate from the Deck of Chars workbench.
 
 ## Put the page on Bree Legends
 
-1. Upload `releases/bree-mume-date-indicators-0.2.0.zip` through WordPress → Plugins
+1. Upload `releases/bree-mume-date-indicators-0.3.0.zip` through WordPress → Plugins
    → Add New → Upload Plugin. Activate it, or replace the earlier version.
 2. Use a normal page with the regular full parchment template. Add a Shortcode
    block containing `[mume_date_indicators]`.
@@ -24,22 +24,35 @@ behaviour still need checking on WordPress.
 
 ## Reading the tables
 
-- `—` means no evidence assigned to that epoch; it does not prove absence.
-- Boundary cells use short markers such as `(present by Jan 1995)` or
-  `(present around Jun 1998)`. Interior observed epochs say `Present`.
-- Dates link to the original online source, including retained Wayback copies.
-  `†` identifies dates whose original URL has not yet been recovered.
-- `Present*` means a feature continues by an explicit continuity rule. Only
-  guardian shadows currently have this rule, following the researcher's
-  confirmation that they persisted. This extends feature presence, not exact
-  spelling or output. Earlier epochs remain unknown.
+The left column names the action or indicator, for example **Tell**, **Nod**
+or **First kill**. Each epoch cell shows a recorded output example. Tell and
+Say group related perspectives in the same row. Different forms recorded in
+one epoch appear together; the view does not force them into a single change
+boundary.
 
-The initial catalogue has 37 indicators, displayed as 38 comparison rows.
-Exact quotes, source dates, dependencies and line references stay in the data;
-the public page omits evidence panels and lengthy explanations. Diku wording
-was checked against the original Alfa source. MUME epoch headings follow
-https://mume.org/about/history. Those headings do not establish exact feature
-introduction dates.
+Superscript footnote numbers point to dates and source links below the active
+table. Each displayed form cites the source of that actual example.
+Missing online URLs are stated in the footnote. Complete observations remain in
+the catalogue.
+
+The first recorded wording uses light green. Each different form in that same
+response uses another pale shade, and matching forms keep their shade across
+later observed epochs. Names, message contents and changing stat values do not
+create a wording change; punctuation and spelling do. The colours carry no
+confidence or good/bad meaning.
+
+`—` means no evidence assigned to that epoch. Gaps are not filled with invented
+samples. Guardian shadows can be marked as a continuing feature, following the
+researcher's confirmation that they persisted. That continuation does not
+assert an exact game-output string in an epoch without a sample.
+
+The initial catalogue has 37 indicators, displayed in 33 grouped rows. Examples
+come from retained quotations, with short excerpts for stat fields and damage
+phrases. Quoted player speech and editorial comments that resemble game output
+are excluded from the comparison view. The raw retained observations are not
+changed. Documented features without a game-output sample are identified in
+footnotes. Diku cells use source-code templates. MUME epoch headings follow
+https://mume.org/about/history; these do not establish exact feature dates.
 
 ## Update the catalogue
 
@@ -84,3 +97,17 @@ The builder validates dates, IDs and source references, then creates the offline
 HTML and versioned plugin ZIP. `--catalogue PATH` accepts a revised catalogue.
 It never publishes. The export excludes raw archives, private identity data
 and credentials.
+
+## Future: collect MUME IX responses with Mudlet
+
+A future optional collector should save actual current responses, the triggering
+command/event, character perspective, capture time, MUME version/epoch and a
+source identifier. Preserve both original colour/ANSI information and plain
+text. A user should run a small, deliberate test checklist rather than have the
+script send unsolicited commands or messages automatically. Record prompts
+separately and distinguish game output from chat quoting that output.
+
+Export observations to review before they enter the dating catalogue; place
+verified captures under MUME IX. Text differences should propose variants for
+review, retaining the original capture. Captured private tells need redaction
+before publication. This collector is planned, not implemented in this release.
