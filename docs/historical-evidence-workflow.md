@@ -146,6 +146,13 @@ Public exports use an explicit field selection. Private player data, raw claims
 and research notes remain outside historical Deck data. Log links allow HTTP(S)
 only. New Logs views show approximate date and linked title; death observations
 include their source basis. The existing Trophies controls show dated snapshots.
+New historical death and trophy records have `review_status=needs_review` and
+are excluded from public event views until accepted. Existing legacy records
+with no review status retain their previous published behaviour. Reimports
+preserve review decisions. The Workbench groups related source claims, explains
+confidence, and opens retained source text; the JSON extraction remains separate
+from the original. Its high-confidence batch leaves uncertain or source-missing
+groups pending. See `docs/deck-workbench.md` for the review controls.
 Existing public-player display rules are unchanged; private names from these
 new sources are never copied into the public player table.
 

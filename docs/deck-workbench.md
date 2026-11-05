@@ -75,31 +75,52 @@ research JSON can be used for richer reviewed extractions.
 
 ### 2. Preview & import
 
-Click **Preview proposed changes**. Check the additions and other review items;
-each total opens the corresponding record list. Under **Inspect individual
-records**, choose a record type, filter additions/updates, or search a character,
-player, log title or value. Use **More records** to page through larger imports.
+Click **Preview proposed changes**. The main view groups related claims from
+one source: a player's list of characters, a log's death observations, or trophy
+snapshots. Supporting source, evidence and queue rows are counted separately;
+they do not each require a decision. Filter **Needs judgement**, **High
+confidence**, or **All source groups** and search by name or source.
 
-Click **Inspect** beside a record to see its proposed fields and supporting
-source text. Updates show the current and proposed values side by side. Source
-file names, URLs, extraction locations and confidence remain attached. Full
-record identifiers are available in an expandable section. The detailed report
-can also be downloaded. These inspection actions do not import anything.
+Each group shows the proposed names, confidence, reasons and caveats. High means
+an explicit same-player statement/list or exact game-output evidence, with a
+retained original and no flagged ownership conflict. Transcribed summaries,
+inferences, missing originals and disputed ownership require judgement. Unrated
+means no confidence was supplied. These are transparent evidence rules, not
+probability estimates or a fresh AI reading of the source. Approximate event
+dates remain approximate even when the observation itself is well supported.
+
+Click **Read original source** to read the retained log or webpage as text. The
+reader includes line numbers, citation highlighting for text logs, search and
+pagination. Saved HTML is shown as inert readable text. An archived URL is
+available when recorded. If the original is missing, the app says so explicitly.
+Use the **complete July research ZIP** to bring its saved logs and webpages;
+loading the standalone JSON cannot supply those originals.
+
+The optional archive-row details retain the technical record browser, including
+before/after fields, extracted JSON and a downloadable report. These inspection
+actions do not import anything.
 
 After updating an older workbench, click **Preview proposed changes** again to
 regenerate the detailed report. Your selected input is remembered.
 
 Click **Import into my local archive** when ready.
 An input or archive change invalidates its preview and requires a fresh preview.
-Imports preserve sources and leave new player relationships pending.
+Imports preserve sources and leave new player relationships, death observations
+and trophy claims pending. They become public only after acceptance and rebuild.
 
-### 3. Review player links
+### 3. Review claims
 
-Search names, select rows, and accept, reject or keep them pending. Use the
-existing-player dropdown to map selected source associations to a known player.
-A conflicting accepted owner blocks acceptance. Reject an incorrect imported
-assertion or leave an ambiguous identity pending. The app does not modify older
-non-historical relationship rows. Rebuild later to see accepted links in decks.
+**Accept all pending high-confidence claims** accepts only supported groups with
+retained originals and no flagged conflicts. Medium, low and unrated groups stay
+pending. Read one source and decide its related claims together, rather than
+reviewing every backing row. Select groups to accept, reject or keep pending;
+expand the individual claims when a group needs closer inspection.
+
+Use the optional existing-player dropdown to map selected player associations
+to a known player. A conflicting accepted owner blocks acceptance. Reject an
+incorrect imported assertion or leave an ambiguous identity pending. Older
+non-historical relationships and legacy event review decisions are preserved.
+Rebuild later to see accepted links, deaths and trophy snapshots in the Deck.
 
 ### 4. Collect Whois
 

@@ -135,7 +135,7 @@ def prepare_source(payload):
         names = [character_name(x) for x in re.split(r'[,;\s]+', chars.strip()) if x]
         if not character_name(handle) or not names or not all(names):
             raise ValueError('Use a public player handle and a list of searchable character names.')
-        players.append({'pName': handle, 'characters_as_written': names, 'confidence': 'high',
+        players.append({'pName': handle, 'characters_as_written': names, 'confidence': 'high', 'researcher_confirmed': True,
                         'basis': 'Explicit association entered by the researcher; raw source retained.'})
     if players:
         documents['players.json'] = {'schema_version': 'mume_player_character_evidence/0.1',

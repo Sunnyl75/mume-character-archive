@@ -112,10 +112,19 @@ class HistoricalImportTests(unittest.TestCase):
         imp.tables["logs"][0]["source_url"] = "javascript:alert(1)"
         imp.tables["logs"][0]["notes"] = "PRIVATE_SENTINEL"
         imp.tables["historical_events"][0]["observation_status"] = "PRIVATE_SENTINEL"
+        imp.tables["historical_events"][0]["review_status"] = "accepted"
         imp.write_tables(self.root)
         text = json.dumps(build_history(self.root))
         self.assertNotIn("PRIVATE_SENTINEL", text)
         self.assertNotIn("javascript:", text)
+
+    def test_pending_events_are_preserved_but_not_published(self):
+        imp=self.ingest(corpus());imp.finish();imp.write_tables(self.root)
+        self.assertTrue(imp.tables['historical_events'])
+        self.assertTrue(all(r['review_status']=='needs_review' for r in imp.tables['historical_events']))
+        self.assertTrue(all(not h['deaths'] and not h['trophies'] for h in build_history(self.root).values()))
+        imp.tables['historical_events'][0]['review_status']='accepted';imp.write_tables(self.root)
+        self.assertEqual(sum(len(h['deaths']) for h in build_history(self.root).values()),1)
 
     def test_whois_import_reuses_historical_character_id(self):
         imp = self.ingest(corpus())

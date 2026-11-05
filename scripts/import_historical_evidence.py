@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 import shutil
 import tempfile
+from historical_review import groups_for, level
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "historical-import/1"
@@ -28,7 +29,7 @@ FIELDS = {
     "evidence": "evidence_id,source_id,evidence_type,subject_type,subject_id_or_name,claim,raw_text,location_in_source,date_observed,date_range_start,date_range_end,date_confidence,confidence,notes",
     "logs": "log_id,title,filename,date_exact,date_range_start,date_range_end,date_confidence,date_basis,notes,source_id,source_url,display_date",
     "log_appearances": "appearance_id,log_id,character_id,character_name,line_excerpt,event_type,date_range_start,date_range_end,date_confidence,confidence,notes,evidence_id",
-    "historical_events": "event_id,log_id,source_id,event_type,character_id,character_name,other_character_id,other_character_name,count,date_range_start,date_range_end,display_date,date_confidence,confidence,evidence_id,location,observation_status",
+    "historical_events": "event_id,log_id,source_id,event_type,character_id,character_name,other_character_id,other_character_name,count,date_range_start,date_range_end,display_date,date_confidence,confidence,evidence_id,location,observation_status,review_status",
     "historical_log_index": "entry_id,log_id,source_log_id,title,display_date,url,original_url,source_id,recovery_status",
     "whois_queue": "character_name,character_id,already_checked,priority,notes",
 }
@@ -56,8 +57,7 @@ def name(value):
 
 
 def confidence(value):
-    value = clean(value).casefold()
-    return "high" if value in {"high", "certain"} else "low" if value.startswith("low") else "medium"
+    return level(value)
 
 
 def date_fields(value):
@@ -227,12 +227,16 @@ class Importer:
         if type(count) is not int or count < 1:
             raise ValueError(f"Invalid event count in {logid}/{location}")
         eid = self.evidence(source, location, kind, char["name"], raw, dates)
-        self.put("historical_events", {"event_id": ident("event_hist", eid), "log_id": logid, "source_id": source,
+        event_id = ident("event_hist", eid)
+        old = self.indexes['historical_events'].get(event_id)
+        review_status = (old.get('review_status') or 'accepted') if old else 'needs_review'
+        self.put("historical_events", {"event_id": event_id, "log_id": logid, "source_id": source,
                  "event_type": kind, "character_id": char["character_id"], "character_name": char["name"],
                  "other_character_id": counterpart["character_id"] if counterpart else "",
                  "other_character_name": counterpart["name"] if counterpart else "", "count": count,
                  **dates, "confidence": confidence(raw.get("confidence")), "evidence_id": eid,
-                 "location": clean(raw.get("location")), "observation_status": clean(raw.get("evidence") or "structured extraction")})
+                 "location": clean(raw.get("location")), "observation_status": clean(raw.get("evidence") or "structured extraction"),
+                 "review_status": review_status})
         self.queue(char, eid)
         self.queue(counterpart, eid)
 
@@ -285,6 +289,8 @@ class Importer:
                 if not entries and trophy.get("player_entries"):
                     self.review.append({"kind": "trophy_owner_requires_review", "log_id": logid})
                 for i, entry in enumerate(entries):
+                    entry = {**entry, 'source_context': {'trophy_owner': trophy.get('owner', ''),
+                                                         'observer': rec.get('credited_observer', '')}}
                     self.event(source, logid, f"{logid}/trophy/{i}", "trophy", entry.get("killer_character"),
                                entry.get("victim_character"), entry.get("minimum_kill_count"), entry, dates)
 
@@ -309,6 +315,8 @@ class Importer:
             if data.get("additional_website_candidate"):
                 entries.append(data["additional_website_candidate"])
             for i, entry in enumerate(entries):
+                entry = {**entry, 'source_context': {'evidence_type': data.get('evidence_type', ''),
+                                                    'source_capture_url': data.get('source_capture_url', '')}}
                 self.link(source, f"characters/{i}", entry.get("character_name"), entry.get("same_player_as") or data.get("player_id"), entry)
         elif schema.startswith("mume_player_character_evidence/"):
             for i, player in enumerate(data.get("players", [])):
@@ -418,7 +426,26 @@ class Importer:
         source_context = {row["source_id"]: dict(row) for row in self.tables["sources"]}
         for item in self.inputs:
             source_context[item["source_id"]]["input_file"] = item["path"]
-        return {"preview_schema": "historical-preview/1", "records": records,
+        claim_review = groups_for(self.tables['player_character_links'], self.tables['historical_events'],
+                                  self.tables['evidence'], self.tables['logs'], self.tables['sources'],
+                                  selected_keys={r['key'] for r in records})
+        assessments = {m['record_key']: m['assessment'] for g in claim_review['groups'] for m in g['members']}
+        for record in records:
+            if record['key'] in assessments:
+                record['assessment'] = assessments[record['key']]
+        logical_logs = {}
+        for ev in self.tables['evidence']:
+            if ev.get('evidence_type') == 'logical_log':
+                try:
+                    logical_logs[ev['location_in_source']] = json.loads(ev['raw_text'])
+                except (ValueError, TypeError):
+                    pass
+        for logid, logical in logical_logs.items():
+            if not logical.get('source_url'):
+                logical['source_url'] = self.indexes['logs'].get(logid.casefold(), {}).get('source_url', '')
+        claim_review['summary']['routine_records'] = len(records) - len(assessments)
+        return {"preview_schema": "historical-preview/2", "records": records, 'claim_review': claim_review,
+                'log_context': logical_logs,
                 "evidence_context": {eid: dict(evidence[eid.casefold()]) for eid in sorted(referenced)
                                      if eid.casefold() in evidence}, "source_context": source_context}
 

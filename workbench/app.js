@@ -2,7 +2,7 @@
 const steps = [
   ['Add sources', 'Start with the evidence', 'Load an existing research package, or prepare a webpage or one gameplay log using the forms below.'],
   ['Preview & import', 'See what will change', 'Preview the selected source, check the proposed additions, then import it into your local archive.'],
-  ['Review player links', 'Keep identities deliberate', 'Choose which player–character links to accept. Uncertain links can stay pending while you continue.'],
+  ['Review claims', 'Decide by source group', 'Accept supported groups together. Concentrate on uncertain claims and conflicting owners; the supporting archive rows do not need individual approval.'],
   ['Collect Whois', 'Fill in the character details', 'Build the existing queue, then collect it in Mudlet. You can skip collection and keep working with historical evidence.'],
   ['Import captures', 'Bring the Whois back', 'Choose the latest Mudlet archive. Preview new captures before importing them into the character archive.'],
   ['Build & preview', 'Inspect the actual Deck', 'Rebuild the Deck on your computer. Check player decks, colour Whois, log references and trophy snapshots before publishing.'],
@@ -12,11 +12,12 @@ const hash = new URLSearchParams(location.hash.slice(1));
 let token = hash.get('token') || sessionStorage.getItem('deck-workbench-token') || '';
 if (token) sessionStorage.setItem('deck-workbench-token', token);
 history.replaceState(null, '', location.pathname);
-let state = {}, current = 0, seenJob = '', sourceTab = 'package', candidates = [], selectedLinks = new Set(), review = null;
+let state = {}, current = 0, seenJob = '', sourceTab = 'package', candidates = [], review = null;
 let sourceDraft = {title:'',url:'',date:'',start:'',end:'',observer:'',characters:'',groups:'',text:'',selected:[]};
 let previewFilters = {table:'all',action:'all',q:'',offset:0};
 let previewRequest = 0;
 let previewDetailRequest = 0;
+let selectedClaimGroups = new Set();
 const previewNames = {characters:'Characters',players:'Players',player_character_links:'Player links',logs:'Logs',historical_events:'Deaths & trophy snapshots',log_appearances:'Log appearances',whois_queue:'Whois queue',sources:'Source files',evidence:'Evidence claims',historical_log_index:'Log index entries'};
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -164,12 +165,21 @@ async function renderSource() {
 async function renderImport() {
   const report=state.research_report;
   $('content').innerHTML=`<div class="panel"><h2>Preview the selected source</h2>${state.research_path?`<p class="file-picked">${esc(state.research_path)}</p>`:'<p>Select a research file or prepare a source in the previous step.</p>'}<div class="actions"><button id="preview-research">Preview proposed changes</button></div></div>`+
-    (report?`<div class="panel"><h2>${report.applied?'Imported':'Proposed'} archive changes</h2><p class="hint">Choose a total to inspect its records, or search the detailed list below.</p><div class="progress-list">${Object.entries(report.changes||{}).map(([name,count])=>{const [table,action]=name.split(': ');return `<button class="stat-change preview-category" data-table="${esc(table)}" data-action="${esc(action)}"><span>${esc(previewNames[table]||table)} · ${esc(action)}</span><b>${count}</b></button>`;}).join('')||'<p>No new records or changes. This source is already represented.</p>'}</div><p class="hint">${report.review?.length||0} review item(s). Player-link decisions are made in Step 3.</p><details><summary>Other review items</summary><pre>${esc(JSON.stringify((report.review||[]).filter(r=>r.kind!=='player_link'),null,2))}</pre></details></div>
+    (report?`<div class="panel"><h2>${report.applied?'Imported':'Proposed'} archive changes</h2><p class="hint">Choose a total to inspect its records, or search the detailed list below.</p><div class="progress-list">${Object.entries(report.changes||{}).map(([name,count])=>{const [table,action]=name.split(': ');return `<button class="stat-change preview-category" data-table="${esc(table)}" data-action="${esc(action)}"><span>${esc(previewNames[table]||table)} · ${esc(action)}</span><b>${count}</b></button>`;}).join('')||'<p>No new records or changes. This source is already represented.</p>'}</div><p class="hint">${report.review?.length||0} review item(s). Claim decisions are made in Step 3.</p><details><summary>Other review items</summary><pre>${esc(JSON.stringify((report.review||[]).filter(r=>r.kind!=='player_link'),null,2))}</pre></details></div>
     <div class="panel" id="preview-browser"><h2>Inspect individual records</h2><div class="inline-fields"><div><label for="preview-table">What to inspect</label><select id="preview-table"><option value="all">All record types</option>${Object.entries(previewNames).map(([value,label])=>`<option value="${value}">${label}</option>`).join('')}</select></div><div><label for="preview-action">Change</label><select id="preview-action"><option value="all">Additions and updates</option><option value="added">Additions only</option><option value="updated">Updates only</option></select></div></div><label for="preview-search">Search names, titles or values</label><input id="preview-search" placeholder="e.g. Rogrog, pDorien, a log title…"><div id="preview-records" aria-live="polite"></div><div class="preview-pagination"><button id="preview-prev" class="secondary">← Previous records</button><span id="preview-page"></span><button id="preview-next" class="secondary">More records →</button></div><div id="preview-detail" aria-live="polite"></div></div>
-    <div class="panel"><div class="callout">Inspecting records does not import or change them. Import saves the input and collection candidates; new player links remain awaiting review.</div><div class="actions"><button id="apply-research">Import into my local archive</button><a class="link-button" href="${download('report')}">Save full detailed report</a></div>${state.research_applied?'<p class="step-status">✓ A historical import has been applied in this workspace.</p>':''}</div>`:'');
+    <div class="panel"><div class="callout">Inspecting records does not import or change them. Import saves the input and collection candidates; new player links, deaths and trophy claims remain pending until approved in Step 3.</div><div class="actions"><button id="apply-research">Import into my local archive</button><a class="link-button" href="${download('report')}">Save full detailed report</a></div>${state.research_applied?'<p class="step-status">✓ A historical import has been applied in this workspace.</p>':''}</div>`:'');
   bind('preview-research','click',()=>job('preview_research'));
   bind('apply-research','click',()=>job('apply_research'));
   if (!report) return;
+  // Keep the technical row browser available, but do not make storage rows the
+  // user's review workload. Source claims are the primary review unit.
+  const technical=document.createElement('details');technical.className='advanced-records';
+  technical.innerHTML='<summary>Optional: inspect all supporting archive rows and JSON details</summary>';
+  const browser=$('preview-browser'), totals=browser.previousElementSibling;
+  totals.before(technical);technical.append(totals,browser);
+  const claims=document.createElement('section');claims.className='panel';claims.id='source-claim-review';
+  claims.innerHTML='<h2>Review source claims</h2><div id="preview-claims">Loading review groups…</div>';
+  technical.before(claims);
   $('preview-table').value=previewFilters.table;
   $('preview-action').value=previewFilters.action;
   $('preview-search').value=previewFilters.q;
@@ -185,6 +195,66 @@ async function renderImport() {
     try {await loadPreviewRecords();$('preview-browser').scrollIntoView({behavior:'smooth',block:'start'});}catch(error){notice(error.message,true);}
   });
   await loadPreviewRecords();
+  await renderClaimGroups('preview','preview-claims');
+}
+
+function confidenceBadge(rating){return `<span class="confidence confidence-${esc(rating)}">${esc(rating==='unknown'?'Unrated':rating[0].toUpperCase()+rating.slice(1))} confidence</span>`;}
+async function renderClaimGroups(scope,target){
+  const data=scope==='archive'?review:await api('claims?scope=preview');
+  const groups=data.groups||[], summary=data.summary||{};
+  let filter=groups.some(g=>g.needs_judgement&&g.pending)?'attention':'all', search='';
+  $(target).innerHTML=`<div class="triage-summary"><div><b>${summary.needs_judgement||0}</b><span>source groups needing judgement</span></div><div><b>${summary.supported||0}</b><span>high-confidence groups</span></div><div><b>${summary.routine_records??'—'}</b><span>supporting rows · no separate approval</span></div></div>
+  <p class="hint">High = explicit source-supported claims with a retained original and no detected conflict. Medium = a summary/transcription or interpretation. Low = weak attribution or conflict. Unrated = no usable assessment. These are evidence-based rules, not probabilities or a fresh AI reading.</p>
+  ${scope==='archive'?`<div class="actions"><button id="accept-supported" ${!groups.some(g=>g.safe_to_accept&&g.pending)?'disabled data-keep-disabled="true"':''}>Accept all pending high-confidence claims</button></div>`:'<div class="callout">Import stores the evidence and collection work. New player links, death observations and trophies remain pending until approved in Step 3. You can leave uncertain groups pending indefinitely.</div>'}
+  <div class="tabs claim-tabs"><button data-filter="attention">Needs judgement</button><button data-filter="supported">High confidence</button><button data-filter="all">All source groups</button></div>
+  <label for="${target}-search">Find a character, player or source</label><input id="${target}-search" type="search" placeholder="Search source groups…">
+  <div id="${target}-groups"></div><div id="${target}-original"></div>`;
+  function update(){
+    const visible=groups.filter(g=>(filter==='all'||filter==='supported'&&g.safe_to_accept||filter==='attention'&&g.needs_judgement)&&(!search||[g.title,g.source,...g.names].join(' ').toLocaleLowerCase().includes(search)));
+    document.querySelectorAll(`#${target} .claim-tabs button`).forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));
+    $(target+'-groups').innerHTML=visible.map(g=>`<article class="claim-group"><div class="claim-title">${scope==='archive'?`<input type="checkbox" class="claim-group-check" data-id="${esc(g.id)}" aria-label="Review ${esc(g.title)}" ${selectedClaimGroups.has(g.id)?'checked':''}>`:''}<h3>${esc(g.title)}</h3>${confidenceBadge(g.confidence)}</div>
+      <p class="group-source">Source: ${esc(g.source)} · ${g.pending} pending claim(s) · ${g.original_attached?'Original attached':'Original not retained'}</p><p>${esc(g.reasons[0]||'No assessment available.')}</p>
+      ${g.concerns.map(reason=>`<p class="group-concern">${esc(reason)}</p>`).join('')}
+      ${g.date_notes.map(reason=>`<p class="hint">${esc(reason)}</p>`).join('')}
+      <p class="group-names">${esc(g.names.join(', '))}</p>
+      <details><summary>Why this rating / individual claims</summary><ul>${g.reasons.map(reason=>`<li>${esc(reason)}</li>`).join('')}</ul><ul>${g.members.map(m=>`<li>${esc(m.character)}${m.other_character?' → '+esc(m.other_character):''}${m.count?' · '+esc(m.count):''} · ${esc(m.status.replaceAll('_',' '))}</li>`).join('')}</ul></details>
+      <div class="actions"><button class="secondary open-original" data-group="${esc(g.id)}">Read original source</button></div></article>`).join('')||`<div class="empty">${groups.length?'No source groups match this filter.':'No new claim groups are present. Run Preview proposed changes again after updating to generate the assessments.'}</div>`;
+    $(target+'-groups').querySelectorAll('.claim-group-check').forEach(e=>e.onchange=()=>e.checked?selectedClaimGroups.add(e.dataset.id):selectedClaimGroups.delete(e.dataset.id));
+    $(target+'-groups').querySelectorAll('.open-original').forEach(b=>b.onclick=()=>openOriginal(scope,b.dataset.group,target+'-original').catch(e=>notice(e.message,true)));
+  }
+  document.querySelectorAll(`#${target} .claim-tabs button`).forEach(b=>b.onclick=()=>{filter=b.dataset.filter;update();});
+  bind(target+'-search','input',()=>{search=$(target+'-search').value.trim().toLocaleLowerCase();update();});
+  update();
+  bind('accept-supported','click',()=>job('review_supported'));
+}
+function sourceLink(value){try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?`<a href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">Open archived / original webpage ↗</a>`:'';}catch{return '';}}
+async function openOriginal(scope,group,target){
+  const source=await api('original?'+new URLSearchParams({scope,group}));
+  if(!$(target))return;
+  $(target).innerHTML=`<section class="original-reader"><h3>Original source: ${esc(source.group.title)}</h3>${sourceLink(source.url)}
+    ${source.message?`<div class="callout">${esc(source.message)}</div>`:''}
+    ${source.documents.length?`<label for="original-file">Retained original file</label><select id="original-file">${source.documents.length>1?'<option value="">Choose a retained source copy</option>':''}${source.documents.map(d=>`<option value="${esc(d.ref)}">${esc(d.path)}</option>`).join('')}</select><div class="upload-row"><input id="original-find" placeholder="Find a name or phrase in the original"><button id="original-search" class="secondary">Find in original</button></div><p class="hint" id="original-position"></p><div id="original-lines" class="source-lines"></div><div class="preview-pagination"><button id="original-prev" class="secondary">← Previous lines</button><button id="original-next" class="secondary">Next lines →</button></div>`:''}</section>`;
+  $(target).scrollIntoView({behavior:'smooth',block:'start'});
+  if(!source.documents.length)return;
+  let currentSource=null, requestId=0;
+  async function read(start,q){
+    const ref=$('original-file')?.value;if(!ref)return;
+    const serial=++requestId;
+    const query=new URLSearchParams({ref,...(start?{start}:{}),...(q?{q}:{})});
+    const data=await api('source-text?'+query);
+    if(serial!==requestId||!$('original-lines'))return;
+    currentSource=data;
+    $('original-position').textContent=`${data.name}: lines ${data.start}–${data.end} of ${data.total}. `+
+      (data.citation[0]&&!data.html_as_text?`Referenced lines ${data.citation[0]}–${data.citation[1]} are highlighted.`:'No exact line citation is available; use Find in original.')+
+      (data.html_as_text?' Original HTML is displayed as readable text.':'')+(data.search?` ${data.matches} matching line(s).`:'');
+    $('original-lines').innerHTML=data.lines.map(line=>`<div class="source-line ${line.highlight?'cited-line':''}"><span>${line.number}</span><code>${esc(line.text)||' '}</code></div>`).join('');
+    $('original-prev').disabled=data.start<=1;$('original-prev').dataset.keepDisabled='true';
+    $('original-next').disabled=data.end>=data.total;$('original-next').dataset.keepDisabled='true';
+  }
+  bind('original-file','change',()=>read());bind('original-search','click',()=>read(null,$('original-find').value));
+  bind('original-prev','click',()=>read(Math.max(1,(currentSource?.start||1)-250)));
+  bind('original-next','click',()=>read((currentSource?.end||0)+1));
+  if(source.documents.length===1)await read();
 }
 
 function previewLabel(record) {
@@ -234,18 +304,13 @@ async function inspectPreviewRecord(key) {
 }
 async function renderLinks() {
   if(!review)review=await api('review');
-  $('content').innerHTML=`<div class="panel"><h2>Player–character associations</h2><p>Tick the rows you have checked. Accept them, reject an incorrect assertion, or leave them pending. Existing accepted owners are shown so you can resolve a conflict deliberately.</p><label for="link-filter">Find a character or player</label><input class="review-filter" id="link-filter" placeholder="Search names…"><div class="toolbar"><button id="select-links" class="secondary">Select visible pending links</button><button id="clear-links" class="text-button">Clear selection</button></div><div id="link-table"></div><label for="map-player">Optional: map selected links to an existing player</label><select id="map-player"><option value="">Keep each proposed player</option>${review.players.map(p=>`<option value="${esc(p.player_id)}">${esc(p.known_by||p.main_handle)} · ${esc(p.player_id)}</option>`).join('')}</select><div class="toolbar"><button id="accept-links">Accept selected</button><button id="reject-links" class="secondary">Reject selected</button><button id="pending-links" class="secondary">Keep selected pending</button></div><p class="hint">Accepted links appear in player decks after rebuilding. A conflicting accepted owner will stop the change and explain which character needs attention.</p></div>`;
-  let filter='';
-  function update(){
-    const links=review.links.filter(r=>`${r.character_name} ${r.main_handle}`.toLowerCase().includes(filter));
-    $('link-table').innerHTML=links.length?`<div class="table-wrap"><table><thead><tr><th>Choose</th><th>Character</th><th>Proposed player</th><th>Review state</th><th>Evidence</th></tr></thead><tbody>${links.map(r=>`<tr><td><input class="link-check" type="checkbox" data-id="${esc(r.link_id)}" ${selectedLinks.has(r.link_id)?'checked':''} aria-label="Review ${esc(r.character_name)}"></td><td><b>${esc(r.character_name)}</b></td><td>${esc(r.main_handle)}${r.other_owners.length?`<small class="error-text">Accepted owner: ${esc(r.other_owners.join(', '))}</small>`:''}</td><td>${esc(r.status.replaceAll('_',' '))}<small>${esc(r.confidence)} confidence</small></td><td><details><summary>Source details</summary><small>${esc(r.source_location)}<br>${esc(r.notes)}</small><code>${esc(r.primary_evidence_id)}</code></details></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">No matching historical player links. You can continue to collection or build.</div>';
-    $('link-table').querySelectorAll('.link-check').forEach(e=>e.onchange=()=>e.checked?selectedLinks.add(e.dataset.id):selectedLinks.delete(e.dataset.id));
-  }
-  update();
-  bind('link-filter','input',()=>{filter=$('link-filter').value.toLowerCase();update();});
-  bind('select-links','click',()=>{review.links.filter(r=>r.status==='needs_review'&&`${r.character_name} ${r.main_handle}`.toLowerCase().includes(filter)).forEach(r=>selectedLinks.add(r.link_id));update();});
-  bind('clear-links','click',()=>{selectedLinks.clear();update();});
-  async function save(status){if(!selectedLinks.size)throw Error('Select at least one player link.');const decisions=[...selectedLinks].map(link_id=>({link_id,status,player_id:$('map-player').value}));await job('save_review',{decisions});selectedLinks.clear();}
+  $('content').innerHTML=`<div class="panel"><h2>Review source groups</h2><p>Accept the clear cases in a batch. For uncertain cases, read the original once and decide for the related group. Supporting character, source and queue rows do not require separate decisions.</p><div id="archive-claims"></div>
+    <label for="map-player">Optional: map selected player groups to an existing player</label><select id="map-player"><option value="">Keep each proposed player</option>${review.players.map(p=>`<option value="${esc(p.player_id)}">${esc(p.known_by||p.main_handle)} · ${esc(p.player_id)}</option>`).join('')}</select>
+    <div class="toolbar"><button id="select-links" class="secondary">Select all pending groups</button><button id="clear-links" class="text-button">Clear selection</button></div><div class="toolbar"><button id="accept-links">Accept selected groups</button><button id="reject-links" class="secondary">Reject selected groups</button><button id="pending-links" class="secondary">Keep selected pending</button></div><p class="hint">Rejected and pending player/death/trophy claims stay out of the public Deck. Their original evidence remains preserved. Existing accepted owners are never silently replaced.</p></div>`;
+  await renderClaimGroups('archive','archive-claims');
+  bind('select-links','click',async()=>{review.groups.filter(g=>g.pending).forEach(g=>selectedClaimGroups.add(g.id));await renderClaimGroups('archive','archive-claims');chrome();});
+  bind('clear-links','click',async()=>{selectedClaimGroups.clear();await renderClaimGroups('archive','archive-claims');chrome();});
+  async function save(status){if(!selectedClaimGroups.size)throw Error('Select at least one source group.');await job('review_claims',{groups:[...selectedClaimGroups],status,player_id:$('map-player').value});selectedClaimGroups.clear();}
   bind('accept-links','click',()=>save('accepted'));bind('reject-links','click',()=>save('rejected'));bind('pending-links','click',()=>save('needs_review'));
 }
 async function renderQueue() {

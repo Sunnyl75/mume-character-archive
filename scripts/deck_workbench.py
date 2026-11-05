@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import base64
 import csv
+from collections import Counter
 import hashlib
 from http import HTTPStatus
 from http.cookies import SimpleCookie
@@ -13,6 +14,7 @@ import io
 import json
 import mimetypes
 import os
+import re
 from pathlib import Path, PurePosixPath
 import secrets
 import shutil
@@ -28,6 +30,8 @@ import zipfile
 
 import deck_wordpress_api
 from workbench_sources import extract, prepare_source
+from workbench_sources import plain_text
+from historical_review import groups_for
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'workbench'
@@ -103,13 +107,15 @@ class Workbench:
         self.origin = ''
         self._counts_stamp, self._counts = '', {}
         self._report_cache, self._report_stamp = {}, None
+        self._source_files, self._source_refs = {}, {}
 
     def remember_report(self, path):
         report = read_json(path, {})
         # Keep the polling response and persisted UI state small. Record details
         # are fetched explicitly from the local report when the user inspects them.
         self.data['research_report'] = {key: value for key, value in report.items()
-                                       if key not in {'records', 'evidence_context', 'source_context'}}
+                                       if key not in {'records', 'evidence_context', 'source_context', 'log_context', 'claim_review'}}
+        self.data['research_report']['claim_review'] = {'summary': report.get('claim_review', {}).get('summary', {})}
         self.data['research_report']['details_available'] = 'records' in report
         self._report_cache = report
         self._report_stamp = (path.stat().st_mtime_ns, path.stat().st_size)
@@ -154,6 +160,127 @@ class Workbench:
                              if eid in report.get('evidence_context', {})],
                 'sources': [report.get('source_context', {})[sid] for sid in record['source_ids']
                             if sid in report.get('source_context', {})]}
+
+    def claim_groups(self, scope='preview'):
+        if scope == 'preview':
+            result = json.loads(json.dumps(self.research_report().get('claim_review', {'groups': [], 'summary': {}})))
+        elif scope == 'archive':
+            result = groups_for(table(self.root, 'player_character_links'), table(self.root, 'historical_events'),
+                                table(self.root, 'evidence'), table(self.root, 'logs'), table(self.root, 'sources'))
+        else:
+            raise ValueError('Unknown review scope.')
+        for group in result['groups']:
+            original = self.original_source(scope, group['id'], known_group=group)
+            group['original_attached'] = bool(original['documents'])
+            if not group['original_attached']:
+                warning = 'The original source is not retained here; this group requires a source check before approval.'
+                if warning not in group['concerns']:group['concerns'].append(warning)
+                group.update(safe_to_accept=False, needs_judgement=True)
+                if group['confidence']=='high':group['confidence']='medium'
+                for member in group['members']:
+                    member['assessment'].update(safe_to_accept=False, needs_judgement=True)
+                    if member['assessment']['confidence']=='high':member['assessment']['confidence']='medium'
+        ratings = Counter(g['confidence'] for g in result['groups'])
+        result['summary'].update({rating: ratings[rating] for rating in ('high', 'medium', 'low', 'unknown')})
+        result['summary'].update(needs_judgement=sum(g['needs_judgement'] for g in result['groups']),
+                                 supported=sum(g['safe_to_accept'] for g in result['groups']))
+        return result
+
+    def original_source(self, scope, group_id, *, known_group=None):
+        groups = self.claim_groups(scope)['groups'] if known_group is None else []
+        group = known_group or next((g for g in groups if g['id'] == group_id), None)
+        if group is None:
+            raise ValueError('This review group is no longer available. Refresh the preview.')
+        source_id = group['source_id']
+        if scope == 'preview':
+            report = self.research_report()
+            source = report.get('source_context', {}).get(source_id, {})
+            evidence = report.get('evidence_context', {})
+            logical = report.get('log_context', {}).get(group['log_id'], {})
+            selected = self.selected('research')
+            roots = [selected if selected.is_dir() else selected.parent]
+        else:
+            source = next((r for r in table(self.root, 'sources') if r['source_id'] == source_id), {})
+            evidence = {r['evidence_id']: r for r in table(self.root, 'evidence')}
+            logical = {}
+            for row in evidence.values():
+                if row.get('evidence_type') == 'logical_log' and row.get('location_in_source') == group['log_id']:
+                    try: logical = json.loads(row.get('raw_text', '{}'))
+                    except ValueError: pass
+            roots = []
+            for manifest in (self.root / 'data/incoming/historical').glob('*/import-manifest.json'):
+                if any(item.get('source_id') == source_id for item in read_json(manifest, {}).get('inputs', [])):
+                    roots.append(manifest.parent / 'sources')
+        wanted = Path(str(logical.get('source_file') or '')).name
+        spans = logical.get('source_line_range_1_based') or logical.get('source_line_range') or []
+        start, end = (spans[0], spans[1]) if isinstance(spans, list) and len(spans) >= 2 else (None, None)
+        raw_claims = []
+        for member in group['members']:
+            row = evidence.get(member.get('evidence_id'), {})
+            try: raw_claims.append(json.loads(row.get('raw_text', '{}')))
+            except ValueError: pass
+        cited = [r.get('source_line') for r in raw_claims if type(r.get('source_line')) is int and r['source_line'] > 0]
+        if cited:
+            start, end = min(cited), max(cited)
+        if type(start) is not int or type(end) is not int:
+            start, end = None, None
+        url = source.get('url') or logical.get('source_url', '')
+        if not url and scope == 'archive':
+            url = next((r.get('source_url', '') for r in table(self.root, 'logs') if r['log_id'] == group['log_id']), '')
+        files = []
+        content_seen = set()
+        for root in roots:
+            root = root.resolve()
+            if root not in self._source_files:
+                self._source_files[root] = [p for p in root.rglob('*') if p.is_file() and p.resolve().is_relative_to(root)
+                                            and p.suffix.casefold() in {'.txt', '.log', '.html', '.htm'}]
+            candidates = self._source_files[root]
+            exact = [p for p in candidates if wanted and p.name == wanted]
+            if not exact and not wanted:
+                # Manually prepared player sources retain original.txt too.
+                exact = [p for p in candidates if p.name == 'original.txt']
+            if not exact and not wanted and url:
+                stamp = re.search(r'/web/(\d{10,14})', url)
+                if stamp:
+                    exact = [p for p in candidates if p.suffix.casefold() in {'.html', '.htm'}
+                             and stamp[1] in p.read_text(encoding='utf-8', errors='replace')]
+            for path in exact:
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+                if digest in content_seen:
+                    continue
+                content_seen.add(digest)
+                ref = hashlib.sha256((str(path.resolve()) + source_id + str(start) + str(end)).encode()).hexdigest()
+                self._source_refs[ref] = {'path': path.resolve(), 'root': root, 'start': start, 'end': end}
+                files.append({'ref': ref, 'name': path.name, 'path': str(path.relative_to(root)),
+                              'line_start': start, 'line_end': end})
+        return {'group': group, 'documents': files, 'url': url,
+                'message': '' if files else 'The original log/page is not retained with this assertion. Only its extracted/transcribed claim is available here. Use the archived link if one is attached; do not treat the JSON as the original source.'}
+
+    def source_text(self, ref, query):
+        source = self._source_refs.get(ref)
+        if source is None or not source['path'].is_relative_to(source['root']):
+            raise ValueError('Open the original source from a review group first.')
+        if source['path'].stat().st_size > 16 * 1024 * 1024:
+            raise ValueError('This retained source is too large for the inline reader.')
+        data = source['path'].read_bytes()
+        try: text = data.decode('utf-8-sig')
+        except UnicodeDecodeError: text = data.decode('cp1252', errors='replace')
+        html = bool(re.search(r'<(?:html|body|pre|div)\b', text, re.I))
+        lines = (plain_text(text) if html else text).splitlines()
+        try:
+            start = max(1, int(query.get('start', [max(1, (source['start'] or 1)-8)])[0]))
+        except ValueError:
+            raise ValueError('Invalid source page.') from None
+        search = query.get('q', [''])[0].casefold().strip()[:200]
+        matches = [i+1 for i,line in enumerate(lines) if search and search in line.casefold()]
+        if search and matches: start = max(1, matches[0]-8)
+        start = min(start, max(1, len(lines)))
+        end = min(len(lines), start+249)
+        return {'ref': ref, 'name': source['path'].name, 'start': start, 'end': end, 'total': len(lines),
+                'html_as_text': html, 'matches': len(matches), 'search': search,
+                'citation': [source['start'], source['end']], 'lines': [
+                    {'number': i+1, 'text': lines[i], 'highlight': bool(not html and source['start'] and source['start'] <= i+1 <= source['end'])}
+                    for i in range(start-1,end)]}
 
     def save(self):
         with self.lock:
@@ -283,7 +410,7 @@ class Workbench:
             row['other_owners'] = sorted({r.get('main_handle') or r['player_id'] for r in accepted
                                         if r.get('character_id') == row['character_id'] and r.get('status') == 'accepted'
                                         and r['player_id'] != row['player_id']})
-        return {'links': links, 'players': [{k: r.get(k, '') for k in ('player_id', 'main_handle', 'known_by')}
+        return {'links': links, **self.claim_groups('archive'), 'players': [{k: r.get(k, '') for k in ('player_id', 'main_handle', 'known_by')}
                                           for r in table(self.root, 'players')]}
 
     def review(self, decisions):
@@ -319,9 +446,81 @@ class Workbench:
             shutil.copy2(draft, target)
             target.replace(path)
 
+    def review_claims(self, payload, *, supported=False):
+        groups = self.claim_groups('archive')['groups']
+        if supported:
+            chosen = [g for g in groups if g['safe_to_accept'] and g['pending']]
+            status, mapping = 'accepted', ''
+        else:
+            ids = payload.get('groups', [])
+            if not isinstance(ids, list) or not ids:
+                raise ValueError('Select at least one source group.')
+            chosen = [g for g in groups if g['id'] in ids]
+            if len(chosen) != len(set(ids)):
+                raise ValueError('A review group changed. Refresh the review list before deciding.')
+            status, mapping = payload.get('status'), payload.get('player_id', '')
+            if status not in {'accepted', 'rejected', 'needs_review'}:
+                raise ValueError('Choose an approval, rejection or pending decision.')
+        if not chosen:
+            raise ValueError('There are no pending high-confidence, non-conflicting claims to accept.')
+        players = {r['player_id']:r for r in table(self.root, 'players')}
+        if mapping and mapping not in players:
+            raise ValueError('Choose an existing archive player.')
+        tables, headers, originals = {}, {}, {}
+        for name in ('player_character_links', 'historical_events'):
+            path = self.root/'data/working'/(name+'.csv')
+            if not path.exists():
+                continue
+            with path.open(encoding='utf-8-sig',newline='') as f:
+                reader=csv.DictReader(f)
+                headers[name], tables[name] = list(reader.fieldnames or []), list(reader)
+            originals[path] = path.read_bytes()
+        indexes = {'link':{r['link_id']:r for r in tables.get('player_character_links',[])},
+                   'event':{r['event_id']:r for r in tables.get('historical_events',[])}}
+        changed_links, count = [], 0
+        for group in chosen:
+            for member in group['members']:
+                if supported and member['status'] != 'needs_review':
+                    continue
+                kind='link' if member['kind']=='link' else 'event'
+                row=indexes[kind].get(member['id'])
+                if row is None:
+                    raise ValueError('An imported claim is no longer available.')
+                if kind=='link':
+                    row['status']=status
+                    if mapping:
+                        row.update(player_id=mapping,main_handle=players[mapping]['main_handle'])
+                    changed_links.append(row)
+                else:
+                    row['review_status']=status
+                    if 'review_status' not in headers['historical_events']:
+                        headers['historical_events'].append('review_status')
+                if status=='accepted':
+                    row['confidence']=member['assessment']['confidence']
+                count+=1
+        for row in changed_links:
+            owners={r['player_id'] for r in tables['player_character_links'] if r['character_id']==row['character_id'] and r['status']=='accepted'}
+            if row['status']=='accepted' and len(owners)>1:
+                raise ValueError(f"{row['character_name']} has a conflicting accepted owner. Leave that group pending.")
+        with tempfile.TemporaryDirectory(dir=self.root/'data/working',prefix='review-stage-') as temp:
+            staged=[]
+            for name,rows in tables.items():
+                dest=Path(temp)/(name+'.csv')
+                with dest.open('w',encoding='utf-8',newline='') as f:
+                    writer=csv.DictWriter(f,fieldnames=headers[name]);writer.writeheader();writer.writerows(rows)
+                staged.append((dest,self.root/'data/working'/(name+'.csv')))
+            replaced=[]
+            try:
+                for draft,target in staged:
+                    draft.replace(target);replaced.append(target)
+            except BaseException:
+                for target in replaced:target.write_bytes(originals[target])
+                raise
+        self.job['log'].append(f"{status.replace('_',' ').capitalize()}: {count} claim(s) in {len(chosen)} source group(s). Other claims are unchanged.")
+
     def start(self, action, payload):
         allowed = {'preview_research', 'apply_research', 'save_review', 'queue', 'preview_whois', 'import_whois',
-                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore'}
+                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore', 'review_supported', 'review_claims'}
         if action not in allowed:
             raise ValueError('Unknown workbench step.')
         with self.lock:
@@ -349,6 +548,10 @@ class Workbench:
             elif action == 'save_review':
                 self.backup()
                 self.review(payload.get('decisions'))
+                self.data['links_reviewed'] = True
+            elif action in {'review_supported', 'review_claims'}:
+                self.backup()
+                self.review_claims(payload, supported=action == 'review_supported')
                 self.data['links_reviewed'] = True
             elif action == 'queue':
                 self.run('build_whois_queue.py')
@@ -506,6 +709,18 @@ class Handler(BaseHTTPRequestHandler):
                           else self.app.preview_record(query.get('key', [''])[0]))
                 return self.send(200, result)
             except ValueError as exc:
+                return self.send(400, {'error': str(exc)})
+        if route in {'/api/claims', '/api/original', '/api/source-text'}:
+            if not self.authenticated():
+                return self.send(403, {'error': 'Open the workbench from its launcher.'})
+            query = parse_qs(parsed.query)
+            try:
+                scope = query.get('scope', ['preview'])[0]
+                result = (self.app.claim_groups(scope) if route == '/api/claims' else
+                          self.app.original_source(scope, query.get('group', [''])[0]) if route == '/api/original' else
+                          self.app.source_text(query.get('ref', [''])[0], query))
+                return self.send(200, result)
+            except (ValueError, OSError) as exc:
                 return self.send(400, {'error': str(exc)})
         if route == '/open-preview':
             token = parse_qs(parsed.query).get('token', [''])[0]

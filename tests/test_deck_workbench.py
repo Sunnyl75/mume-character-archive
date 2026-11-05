@@ -1,5 +1,6 @@
 """Local service, source preparation and user-decision regressions."""
 import base64
+import contextlib
 import io
 import json
 from pathlib import Path
@@ -17,6 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from deck_workbench import Workbench, Handler, ThreadingHTTPServer, input_hash, unpack_research, working_stamp
 from workbench_sources import extract, prepare_source
+from import_historical_evidence import Importer
+from historical_views import build_history
 
 SOURCE = '''A small path
 Shrew is dead! R.I.P.
@@ -171,6 +174,62 @@ class WorkbenchTests(unittest.TestCase):
         path.write_text(json.dumps({'session':'old','changes':{}}))
         self.app.remember_report(path)
         self.assertFalse(self.app.preview_records({})['available'])
+
+    def research_fixture(self):
+        prepared=self.app.prepare({'title':'Original witness log','text':SOURCE,'observer':'Observer',
+                                   'selected':[0,2],'groups':'pFixture: Observer, Shrew'})
+        folder=Path(prepared['path'])
+        imp=Importer(self.root)
+        for path in sorted(folder.glob('*.json')):imp.ingest(path,Path(path.name))
+        # A high source label alone must not be bulk approved.
+        imp.link(imp.inputs[0]['source_id'],'uncorroborated','Transcribed','pTranscribed',
+                 {'same_player_as':'pTranscribed','evidence_confidence':'high'})
+        imp.finish()
+        report={'changes':dict(imp.changes),'review':imp.review,**imp.preview_details()}
+        path=self.app.directory/'research-preview.json';path.write_text(json.dumps(report));self.app.remember_report(path)
+        return imp,folder
+
+    def test_original_reader_opens_retained_text_and_line_citations(self):
+        imp,folder=self.research_fixture()
+        group=next(g for g in self.app.claim_groups()['groups'] if g['kind']=='death')
+        source=self.app.original_source('preview',group['id'])
+        self.assertEqual(len(source['documents']),1)
+        read=self.app.source_text(source['documents'][0]['ref'],{})
+        self.assertEqual(read['name'],'original.txt')
+        self.assertIn('Shrew is dead! R.I.P.', '\n'.join(r['text'] for r in read['lines']))
+        self.assertTrue(any(r['highlight'] for r in read['lines']))
+        self.assertEqual(self.app.source_text(source['documents'][0]['ref'],{'q':['TROPHY']})['matches'],2)
+        with self.assertRaises(ValueError):self.app.source_text('/etc/passwd',{})
+
+    def test_supported_batch_preserves_medium_claims_and_archive_originals(self):
+        imp,folder=self.research_fixture()
+        with contextlib.redirect_stdout(io.StringIO()):imp.apply(folder,'group_fixture')
+        self.app.job={'status':'running','log':[]}
+        self.app.worker('review_supported',{})
+        self.assertEqual(self.app.job['status'],'done',self.app.job.get('error'))
+        groups=self.app.claim_groups('archive')['groups']
+        self.assertTrue(all(m['status']=='accepted' for g in groups if g['safe_to_accept'] for m in g['members']))
+        self.assertTrue(all(m['status']=='needs_review' for g in groups if not g['safe_to_accept'] for m in g['members']))
+        self.assertEqual(sum(len(v['trophies']) for v in build_history(self.root).values()),1)
+        event=next(g for g in groups if g['kind']=='trophy')
+        self.assertTrue(self.app.original_source('archive',event['id'])['documents'])
+
+    def test_missing_original_is_explicit_and_is_not_replaced_by_json(self):
+        folder=self.app.directory/'only-extraction';folder.mkdir()
+        path=folder/'research.json';path.write_text('{}');self.app.data['research_path']=str(path)
+        imp=Importer(self.root)
+        sid='source_fixture'
+        imp.put('sources',{'source_id':sid,'title':'Transcribed association'})
+        imp.link(sid,'item/1','Unquoted','pUnquoted',{'evidence_confidence':'high','same_player_as':'pUnquoted',
+                                                  'researcher_confirmed':True})
+        imp.finish()
+        report=self.app.directory/'research-preview.json';report.write_text(json.dumps(imp.preview_details()));self.app.remember_report(report)
+        group=self.app.claim_groups()['groups'][0]
+        original=self.app.original_source('preview',group['id'])
+        self.assertEqual(original['documents'],[])
+        self.assertIn('not retained',original['message'])
+        self.assertEqual(group['confidence'],'medium')
+        self.assertEqual(self.app.claim_groups()['summary']['high'],0)
 
     def test_http_requires_local_host_token_and_same_origin(self):
         server=ThreadingHTTPServer(('127.0.0.1',0),Handler)

@@ -41,6 +41,15 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   await click('select-all-entries');await click('prepare-source');await until(()=>d.getElementById('preview-research'),'Import step missing');
   await click('preview-research');await done('preview_research');
   assert.match(d.body.textContent,/Proposed archive changes/);
+  await until(()=>d.querySelectorAll('#preview-claims .claim-group').length===3,'Source claim groups missing');
+  assert.equal(d.querySelectorAll('#preview-claims .confidence-high').length,3);
+  assert.match(d.getElementById('preview-claims').textContent,/no separate approval/);
+  const originalButton=d.querySelector('#preview-claims .open-original');originalButton.click();
+  await until(()=>d.querySelectorAll('.source-line').length>0,'Original source did not open');
+  assert.match(d.getElementById('original-lines').textContent,/GuiVictim is dead! R.I.P./);
+  assert.match(d.getElementById('original-position').textContent,/original.txt/);
+  assert.equal(d.querySelectorAll('#preview-claims img').length,0);
+  d.querySelector('details.advanced-records').open=true;
   await until(()=>d.querySelectorAll('.preview-inspect').length>0,'Detailed preview did not appear');
   assert.match(d.getElementById('preview-records').textContent,/GuiObserver/);
   assert.equal(d.querySelectorAll('#preview-records img').length,0);
@@ -60,8 +69,8 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   await until(()=>d.querySelectorAll('.preview-inspect').length===1,'Name search did not filter events');
   assert.equal(d.getElementById('preview-next').disabled,true);
   await click('apply-research');await done('apply_research');
-  await click('next');await until(()=>d.querySelectorAll('.link-check').length===2,'Review links missing');
-  await click('select-links');await click('accept-links');await done('save_review');
+  await click('next');await until(()=>d.querySelectorAll('.claim-group-check').length===3,'Review groups missing');
+  await click('accept-supported');await done('review_supported');
   assert.match(fs.readFileSync(path.join(archive,'data/working/player_character_links.csv'),'utf8'),/GuiObserver,pGuiOwner,listed_same_player,accepted/);
   await click('next');await click('build-queue');await done('queue');
   assert.match(fs.readFileSync(path.join(archive,'exports/mudlet/whois_queue.txt'),'utf8'),/GuiObserver/);

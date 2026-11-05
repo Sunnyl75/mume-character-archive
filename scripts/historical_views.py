@@ -39,6 +39,8 @@ def build_history(root):
     for row in rows(root, "log_appearances"):
         add_log(row.get("character_id"), row["log_id"])
     for row in rows(root, "historical_events"):
+        if row.get('review_status') and row['review_status'] != 'accepted':
+            continue
         cid = row.get("character_id")
         if not cid:
             continue
