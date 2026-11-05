@@ -21,7 +21,11 @@ python3 scripts/import_historical_evidence.py \
 ```
 
 The preview writes only the explicitly requested review report. It lists added
-records, proposed player links and unresolved references. It never publishes.
+records, proposed player links and unresolved references. The report includes
+individual record changes, before/after values, source metadata and extracted
+evidence text. The workbench shows these through its searchable Step 2 record
+browser without sending the full evidence payload in each progress update.
+It never publishes.
 After reviewing, apply the same import:
 
 ```bash

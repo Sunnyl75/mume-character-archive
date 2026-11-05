@@ -24,7 +24,7 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   const failures=[];
   const console=new VirtualConsole();console.on('jsdomError',e=>failures.push(e.message));
   dom=await JSDOM.fromURL(address,{resources:'usable',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:console,beforeParse(w){
-    w.scrollTo=()=>{};w.confirm=()=>true;
+    w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};w.confirm=()=>true;
     w.fetch=(target,options={})=>{const address=new URL(target,url.origin);assert.equal(address.origin,url.origin);return fetch(address,{...options,headers:{...options.headers,Origin:url.origin}});};
   }});
   const w=dom.window,d=w.document;
@@ -34,13 +34,31 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   async function click(id){await until(()=>d.getElementById(id),'Missing '+id);d.getElementById(id).click();}
   await until(()=>d.getElementById('tab-text'),'Sources step did not render');
   await click('tab-text');await until(()=>d.getElementById('source-text'),'Source form missing');
-  fill('source-title','Workbench integration fixture');fill('source-date','1995');fill('source-observer','GuiObserver');
+  fill('source-title','Workbench <img src=x onerror=alert(1)> fixture');fill('source-date','1995');fill('source-observer','GuiObserver');
   fill('source-groups','pGuiOwner: GuiObserver, GuiVictim');
   fill('source-text','GuiVictim is dead! R.I.P.\n*** TROPHY *** (Number Killed, Knowledge, Mobile)\n 3, 1%, #GuiTrophy |\n');
   await click('detect');await until(()=>d.querySelectorAll('.entry-check').length===2,'Extraction entries missing');
   await click('select-all-entries');await click('prepare-source');await until(()=>d.getElementById('preview-research'),'Import step missing');
   await click('preview-research');await done('preview_research');
   assert.match(d.body.textContent,/Proposed archive changes/);
+  await until(()=>d.querySelectorAll('.preview-inspect').length>0,'Detailed preview did not appear');
+  assert.match(d.getElementById('preview-records').textContent,/GuiObserver/);
+  assert.equal(d.querySelectorAll('#preview-records img').length,0);
+  d.getElementById('preview-table').value='historical_events';
+  d.getElementById('preview-table').dispatchEvent(new w.Event('change'));
+  await until(()=>d.getElementById('preview-page').textContent.includes('of 2 records'),'Event filter did not show death and trophy');
+  assert.match(d.getElementById('preview-records').textContent,/Trophy snapshot: at least 3/);
+  const inspect=Array.from(d.querySelectorAll('.preview-inspect')).find(b=>b.getAttribute('aria-label').includes('GuiTrophy'));
+  inspect.click();
+  await until(()=>d.getElementById('preview-detail').textContent.includes('Supporting source evidence'),'Evidence details missing');
+  assert.match(d.getElementById('preview-detail').textContent,/minimum_kill_count/);
+  assert.match(d.getElementById('preview-detail').textContent,/raw_line/);
+  assert.equal(d.querySelectorAll('#preview-detail img').length,0);
+  fill('preview-search','NoSuchNameInThisFixture');
+  await until(()=>d.getElementById('preview-records').textContent.includes('No changes match'),'Empty search state missing');
+  fill('preview-search','GuiVictim');
+  await until(()=>d.querySelectorAll('.preview-inspect').length===1,'Name search did not filter events');
+  assert.equal(d.getElementById('preview-next').disabled,true);
   await click('apply-research');await done('apply_research');
   await click('next');await until(()=>d.querySelectorAll('.link-check').length===2,'Review links missing');
   await click('select-links');await click('accept-links');await done('save_review');

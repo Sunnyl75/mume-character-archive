@@ -361,6 +361,67 @@ class Importer:
                 writer.writeheader()
                 writer.writerows(rows)
 
+    def preview_details(self):
+        """Describe the final net change, with evidence references, without writing."""
+        evidence = self.indexes["evidence"]
+        by_character, by_player, by_log = {}, {}, {}
+
+        def associate(index, key, eid):
+            if key and eid:
+                index.setdefault(clean(key).casefold(), set()).add(eid)
+
+        for row in self.tables["evidence"]:
+            associate(by_character, row.get("subject_id_or_name"), row["evidence_id"])
+            if row.get("evidence_type") == "logical_log":
+                associate(by_log, row.get("location_in_source"), row["evidence_id"])
+        for row in self.tables["player_character_links"]:
+            associate(by_player, row.get("player_id"), row.get("primary_evidence_id"))
+        for rows in (self.tables["log_appearances"], self.tables["historical_events"]):
+            for row in rows:
+                associate(by_character, row.get("character_id"), row.get("evidence_id"))
+
+        records, referenced = [], set()
+        for table, current in self.indexes.items():
+            for key, row in current.items():
+                old = self.original[table].get(key)
+                fields = [field for field in self.headers[table]
+                          if clean(row.get(field)) != clean((old or {}).get(field))]
+                if old is not None and not fields:
+                    continue
+                eids = set()
+                for column in ("evidence_id", "primary_evidence_id"):
+                    if row.get(column):
+                        eids.add(row[column])
+                if table == "characters":
+                    eids.update(by_character.get(key, set()))
+                    eids.update(by_character.get(clean(row.get("name")).casefold(), set()))
+                if table == "players":
+                    eids.update(by_player.get(key, set()))
+                if table == "logs":
+                    eids.update(by_log.get(key, set()))
+                if table == "whois_queue":
+                    eids.update(by_character.get(clean(row.get("character_name")).casefold(), set()))
+                    eids.update(re.findall(r"evidence_hist_[a-f0-9]{20}", row.get("notes", "")))
+                source_ids = {row[column] for column in ("source_id", "primary_source_id") if row.get(column)}
+                for eid in eids:
+                    source_id = evidence.get(eid.casefold(), {}).get("source_id")
+                    if source_id:
+                        source_ids.add(source_id)
+                if table == "sources":
+                    source_ids.add(row["source_id"])
+                records.append({"key": table + ":" + row[IDS[table]], "table": table,
+                                "id": row[IDS[table]], "action": "added" if old is None else "updated",
+                                "before": dict(old) if old is not None else None, "after": dict(row),
+                                "changed_fields": fields, "evidence_ids": sorted(eids),
+                                "source_ids": sorted(source_ids)})
+                referenced.update(eids)
+        source_context = {row["source_id"]: dict(row) for row in self.tables["sources"]}
+        for item in self.inputs:
+            source_context[item["source_id"]]["input_file"] = item["path"]
+        return {"preview_schema": "historical-preview/1", "records": records,
+                "evidence_context": {eid: dict(evidence[eid.casefold()]) for eid in sorted(referenced)
+                                     if eid.casefold() in evidence}, "source_context": source_context}
+
     def apply(self, input_path, session):
         """Stage and validate before replacing any canonical table; rollback on failure."""
         import validate_data
@@ -442,6 +503,7 @@ def main():
         raise ValueError("Use an input outside the archive repository to avoid recursive source copies")
     result = {"version": VERSION, "session": session, "applied": args.apply, "inputs": importer.inputs,
               "changes": dict(importer.changes), "review": importer.review}
+    result.update(importer.preview_details())
     if args.apply:
         result["retained_inputs"] = str(importer.apply(path, session))
     if args.report:

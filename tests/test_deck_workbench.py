@@ -141,6 +141,37 @@ class WorkbenchTests(unittest.TestCase):
         self.assertEqual((self.root/'.deck-publish-token').stat().st_mode & 0o077,0)
         self.assertNotIn(token,(self.app.directory/'state.json').read_text())
 
+    def test_preview_records_are_searchable_paginated_and_separate_from_polling(self):
+        report = {'session':'test', 'changes':{'characters: added':2}, 'records':[
+            {'key':'characters:one','table':'characters','id':'one','action':'added','before':None,
+             'after':{'name':'Rogrog'},'changed_fields':['name'],'evidence_ids':['evidence_one'],'source_ids':['source_one']},
+            {'key':'characters:two','table':'characters','id':'two','action':'added','before':None,
+             'after':{'name':'Dorien'},'changed_fields':['name'],'evidence_ids':[],'source_ids':[]}],
+            'evidence_context':{'evidence_one':{'raw_text':'EXACT_SOURCE_SENTINEL'}},
+            'source_context':{'source_one':{'title':'Original page'}}}
+        path = self.app.directory/'research-preview.json'
+        path.write_text(json.dumps(report))
+        self.app.remember_report(path)
+        first = self.app.preview_records({'limit':['1']})
+        second = self.app.preview_records({'offset':['1'],'limit':['1']})
+        self.assertEqual(first['total'],2)
+        self.assertEqual(first['records'][0]['after']['name'],'Rogrog')
+        self.assertEqual(second['records'][0]['after']['name'],'Dorien')
+        found = self.app.preview_records({'q':['dOrIeN'],'table':['characters']})
+        self.assertEqual(found['total'],1)
+        detail = self.app.preview_record('characters:one')
+        self.assertEqual(detail['evidence'][0]['raw_text'],'EXACT_SOURCE_SENTINEL')
+        self.assertEqual(detail['sources'][0]['title'],'Original page')
+        self.assertNotIn('EXACT_SOURCE_SENTINEL',json.dumps(self.app.public_state()))
+        with self.assertRaises(ValueError):self.app.preview_record('no-such-record')
+        with self.assertRaises(ValueError):self.app.preview_records({'offset':['invalid']})
+
+    def test_old_preview_reports_request_a_new_preview(self):
+        path = self.app.directory/'research-preview.json'
+        path.write_text(json.dumps({'session':'old','changes':{}}))
+        self.app.remember_report(path)
+        self.assertFalse(self.app.preview_records({})['available'])
+
     def test_http_requires_local_host_token_and_same_origin(self):
         server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
         server.app=self.app
@@ -152,6 +183,7 @@ class WorkbenchTests(unittest.TestCase):
                     data=json.dumps(body).encode() if body is not None else None,headers=headers or {}))
             with self.assertRaises(error.HTTPError) as failed:call('/api/state')
             self.assertEqual(failed.exception.code,403)
+            with self.assertRaises(error.HTTPError):call('/api/preview')
             headers={'X-Workbench-Token':self.app.token,'Content-Type':'application/json','Origin':'https://outside.example'}
             with self.assertRaises(error.HTTPError):call('/api/step',{'step':3},headers)
             headers['Origin']=self.app.origin

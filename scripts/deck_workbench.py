@@ -102,6 +102,58 @@ class Workbench:
         self.token = secrets.token_urlsafe(32)
         self.origin = ''
         self._counts_stamp, self._counts = '', {}
+        self._report_cache, self._report_stamp = {}, None
+
+    def remember_report(self, path):
+        report = read_json(path, {})
+        # Keep the polling response and persisted UI state small. Record details
+        # are fetched explicitly from the local report when the user inspects them.
+        self.data['research_report'] = {key: value for key, value in report.items()
+                                       if key not in {'records', 'evidence_context', 'source_context'}}
+        self.data['research_report']['details_available'] = 'records' in report
+        self._report_cache = report
+        self._report_stamp = (path.stat().st_mtime_ns, path.stat().st_size)
+
+    def research_report(self):
+        path = self.directory / 'research-preview.json'
+        if not self.data.get('research_report') or not path.exists():
+            return {}
+        stamp = (path.stat().st_mtime_ns, path.stat().st_size)
+        if stamp != self._report_stamp:
+            self._report_cache = read_json(path, {})
+            self._report_stamp = stamp
+        return self._report_cache
+
+    def preview_records(self, query):
+        report = self.research_report()
+        records = report.get('records', [])
+        selected_table = query.get('table', ['all'])[0]
+        action = query.get('action', ['all'])[0]
+        search = query.get('q', [''])[0][:300].casefold().strip()
+        try:
+            offset = max(0, int(query.get('offset', ['0'])[0]))
+            limit = max(1, min(100, int(query.get('limit', ['25'])[0])))
+        except ValueError:
+            raise ValueError('Invalid preview page.') from None
+        filtered = [r for r in records if (selected_table == 'all' or r['table'] == selected_table)
+                    and (action == 'all' or r['action'] == action)
+                    and (not search or search in json.dumps([r['table'], r['before'], r['after']], ensure_ascii=False).casefold())]
+        return {'available': 'records' in report, 'total': len(filtered), 'all_total': len(records),
+                'offset': offset, 'limit': limit, 'records': [
+                    {key: r[key] for key in ('key', 'table', 'id', 'action', 'changed_fields')} |
+                    {'after': {k: v for k, v in r['after'].items() if k != 'raw_text'}}
+                    for r in filtered[offset:offset + limit]]}
+
+    def preview_record(self, key):
+        report = self.research_report()
+        record = next((r for r in report.get('records', []) if r['key'] == key), None)
+        if record is None:
+            raise ValueError('This record is no longer in the preview. Run Preview proposed changes again.')
+        return {'record': record,
+                'evidence': [report.get('evidence_context', {})[eid] for eid in record['evidence_ids']
+                             if eid in report.get('evidence_context', {})],
+                'sources': [report.get('source_context', {})[sid] for sid in record['source_ids']
+                            if sid in report.get('source_context', {})]}
 
     def save(self):
         with self.lock:
@@ -286,13 +338,13 @@ class Workbench:
                 source = self.selected('research')
                 stamp, digest = working_stamp(self.root), input_hash(source)
                 self.run('import_historical_evidence.py', source, '--report', report)
-                self.data['research_report'] = read_json(report, {})
+                self.remember_report(report)
                 self.data['research_preview'] = {'hash': digest, 'stamp': stamp}
             elif action == 'apply_research':
                 self.check_preview('research')
                 self.backup()
                 self.run('import_historical_evidence.py', self.selected('research'), '--apply', '--report', report)
-                self.data['research_report'] = read_json(report, {})
+                self.remember_report(report)
                 self.data['research_applied'] = True
             elif action == 'save_review':
                 self.backup()
@@ -445,6 +497,16 @@ class Handler(BaseHTTPRequestHandler):
             if not self.authenticated():
                 return self.send(403, {'error': 'Open the workbench from its launcher.'})
             return self.send(200, self.app.public_state() if route.endswith('state') else self.app.review_rows())
+        if route in {'/api/preview', '/api/preview-record'}:
+            if not self.authenticated():
+                return self.send(403, {'error': 'Open the workbench from its launcher.'})
+            query = parse_qs(parsed.query)
+            try:
+                result = (self.app.preview_records(query) if route == '/api/preview'
+                          else self.app.preview_record(query.get('key', [''])[0]))
+                return self.send(200, result)
+            except ValueError as exc:
+                return self.send(400, {'error': str(exc)})
         if route == '/open-preview':
             token = parse_qs(parsed.query).get('token', [''])[0]
             if not secrets.compare_digest(token, self.app.token):

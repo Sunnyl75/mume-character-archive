@@ -76,7 +76,20 @@ research JSON can be used for richer reviewed extractions.
 ### 2. Preview & import
 
 Click **Preview proposed changes**. Check the additions and other review items;
-the report can be downloaded. Click **Import into my local archive** when ready.
+each total opens the corresponding record list. Under **Inspect individual
+records**, choose a record type, filter additions/updates, or search a character,
+player, log title or value. Use **More records** to page through larger imports.
+
+Click **Inspect** beside a record to see its proposed fields and supporting
+source text. Updates show the current and proposed values side by side. Source
+file names, URLs, extraction locations and confidence remain attached. Full
+record identifiers are available in an expandable section. The detailed report
+can also be downloaded. These inspection actions do not import anything.
+
+After updating an older workbench, click **Preview proposed changes** again to
+regenerate the detailed report. Your selected input is remembered.
+
+Click **Import into my local archive** when ready.
 An input or archive change invalidates its preview and requires a fresh preview.
 Imports preserve sources and leave new player relationships pending.
 

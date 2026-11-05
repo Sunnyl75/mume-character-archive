@@ -14,6 +14,10 @@ if (token) sessionStorage.setItem('deck-workbench-token', token);
 history.replaceState(null, '', location.pathname);
 let state = {}, current = 0, seenJob = '', sourceTab = 'package', candidates = [], selectedLinks = new Set(), review = null;
 let sourceDraft = {title:'',url:'',date:'',start:'',end:'',observer:'',characters:'',groups:'',text:'',selected:[]};
+let previewFilters = {table:'all',action:'all',q:'',offset:0};
+let previewRequest = 0;
+let previewDetailRequest = 0;
+const previewNames = {characters:'Characters',players:'Players',player_character_links:'Player links',logs:'Logs',historical_events:'Deaths & trophy snapshots',log_appearances:'Log appearances',whois_queue:'Whois queue',sources:'Source files',evidence:'Evidence claims',historical_log_index:'Log index entries'};
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const when = value => value ? new Date(value * 1000).toLocaleString() : 'Not yet';
@@ -160,9 +164,73 @@ async function renderSource() {
 async function renderImport() {
   const report=state.research_report;
   $('content').innerHTML=`<div class="panel"><h2>Preview the selected source</h2>${state.research_path?`<p class="file-picked">${esc(state.research_path)}</p>`:'<p>Select a research file or prepare a source in the previous step.</p>'}<div class="actions"><button id="preview-research">Preview proposed changes</button></div></div>`+
-    (report?`<div class="panel"><h2>Proposed archive changes</h2><div class="progress-list">${Object.entries(report.changes||{}).map(([name,count])=>`<div class="stat-change"><span>${esc(name.replaceAll('_',' '))}</span><b>${count}</b></div>`).join('')||'<p>No new records or changes. This source is already represented.</p>'}</div><p class="hint">${report.review?.length||0} review item(s). Player links will be reviewed in the next step.</p><details><summary>Other review items</summary><pre>${esc(JSON.stringify((report.review||[]).filter(r=>r.kind!=='player_link'),null,2))}</pre></details><div class="callout">Import saves the original input and adds collection candidates. It leaves new player links awaiting review.</div><div class="actions"><button id="apply-research">Import into my local archive</button><a class="link-button" href="${download('report')}">Save review report</a></div>${state.research_applied?'<p class="step-status">✓ A historical import has been applied in this workspace.</p>':''}</div>`:'');
+    (report?`<div class="panel"><h2>${report.applied?'Imported':'Proposed'} archive changes</h2><p class="hint">Choose a total to inspect its records, or search the detailed list below.</p><div class="progress-list">${Object.entries(report.changes||{}).map(([name,count])=>{const [table,action]=name.split(': ');return `<button class="stat-change preview-category" data-table="${esc(table)}" data-action="${esc(action)}"><span>${esc(previewNames[table]||table)} · ${esc(action)}</span><b>${count}</b></button>`;}).join('')||'<p>No new records or changes. This source is already represented.</p>'}</div><p class="hint">${report.review?.length||0} review item(s). Player-link decisions are made in Step 3.</p><details><summary>Other review items</summary><pre>${esc(JSON.stringify((report.review||[]).filter(r=>r.kind!=='player_link'),null,2))}</pre></details></div>
+    <div class="panel" id="preview-browser"><h2>Inspect individual records</h2><div class="inline-fields"><div><label for="preview-table">What to inspect</label><select id="preview-table"><option value="all">All record types</option>${Object.entries(previewNames).map(([value,label])=>`<option value="${value}">${label}</option>`).join('')}</select></div><div><label for="preview-action">Change</label><select id="preview-action"><option value="all">Additions and updates</option><option value="added">Additions only</option><option value="updated">Updates only</option></select></div></div><label for="preview-search">Search names, titles or values</label><input id="preview-search" placeholder="e.g. Rogrog, pDorien, a log title…"><div id="preview-records" aria-live="polite"></div><div class="preview-pagination"><button id="preview-prev" class="secondary">← Previous records</button><span id="preview-page"></span><button id="preview-next" class="secondary">More records →</button></div><div id="preview-detail" aria-live="polite"></div></div>
+    <div class="panel"><div class="callout">Inspecting records does not import or change them. Import saves the input and collection candidates; new player links remain awaiting review.</div><div class="actions"><button id="apply-research">Import into my local archive</button><a class="link-button" href="${download('report')}">Save full detailed report</a></div>${state.research_applied?'<p class="step-status">✓ A historical import has been applied in this workspace.</p>':''}</div>`:'');
   bind('preview-research','click',()=>job('preview_research'));
   bind('apply-research','click',()=>job('apply_research'));
+  if (!report) return;
+  $('preview-table').value=previewFilters.table;
+  $('preview-action').value=previewFilters.action;
+  $('preview-search').value=previewFilters.q;
+  bind('preview-table','change',async()=>{previewFilters.table=$('preview-table').value;previewFilters.offset=0;await loadPreviewRecords();});
+  bind('preview-action','change',async()=>{previewFilters.action=$('preview-action').value;previewFilters.offset=0;await loadPreviewRecords();});
+  let debounce;
+  bind('preview-search','input',()=>{clearTimeout(debounce);previewFilters.q=$('preview-search').value;previewFilters.offset=0;debounce=setTimeout(()=>loadPreviewRecords().catch(e=>notice(e.message,true)),200);});
+  bind('preview-prev','click',async()=>{previewFilters.offset=Math.max(0,previewFilters.offset-25);await loadPreviewRecords();});
+  bind('preview-next','click',async()=>{previewFilters.offset+=25;await loadPreviewRecords();});
+  document.querySelectorAll('.preview-category').forEach(button=>button.onclick=async()=>{
+    previewFilters={table:button.dataset.table,action:button.dataset.action,q:'',offset:0};
+    $('preview-table').value=previewFilters.table;$('preview-action').value=previewFilters.action;$('preview-search').value='';
+    try {await loadPreviewRecords();$('preview-browser').scrollIntoView({behavior:'smooth',block:'start'});}catch(error){notice(error.message,true);}
+  });
+  await loadPreviewRecords();
+}
+
+function previewLabel(record) {
+  const row=record.after;
+  if(record.table==='player_character_links')return `${row.character_name} → ${row.main_handle || row.player_id}`;
+  if(record.table==='historical_events')return row.event_type==='trophy'?`${row.character_name} → ${row.other_character_name}`:row.character_name;
+  return row.name || row.character_name || row.known_by || row.main_handle || row.title || row.subject_id_or_name || row.claim || record.id;
+}
+function previewSummary(record) {
+  const row=record.after;
+  if(record.table==='historical_events')return row.event_type==='trophy'?`Trophy snapshot: at least ${row.count} kill(s), recorded ${row.display_date||'date uncertain'}`:`${row.count} death observation(s) · ${row.display_date||'date uncertain'}`;
+  if(record.table==='player_character_links')return `${(row.status||'').replaceAll('_',' ')} · ${row.confidence||'unknown'} confidence`;
+  if(record.table==='logs'||record.table==='historical_log_index')return row.display_date||'Date uncertain';
+  if(record.table==='whois_queue')return 'Awaiting Whois collection';
+  if(record.table==='evidence')return row.evidence_type?.replaceAll('_',' ')||'Source evidence';
+  if(record.table==='log_appearances')return `${row.event_type||'Appearance'} in a historical log`;
+  return record.action==='updated'?`Changed: ${record.changed_fields.map(f=>f.replaceAll('_',' ')).join(', ')}`:row.notes||'New archive record';
+}
+async function loadPreviewRecords() {
+  const serial=++previewRequest;
+  const query=new URLSearchParams({...previewFilters,limit:25});
+  const result=await api('preview?'+query);
+  if(serial!==previewRequest||current!==1||!$('preview-records'))return;
+  $('preview-detail').innerHTML='';
+  $('preview-records').innerHTML=!result.available?'<div class="callout">This preview was created by the earlier version. Click <b>Preview proposed changes</b> again to load the record details.</div>':
+    result.records.length?`<div class="table-wrap"><table><thead><tr><th>Record</th><th>Type / change</th><th>Details</th><th>Inspect</th></tr></thead><tbody>${result.records.map(r=>`<tr><td><b>${esc(previewLabel(r))}</b></td><td>${esc(previewNames[r.table]||r.table)}<small>${esc(r.action)}</small></td><td>${esc(previewSummary(r))}</td><td><button class="secondary preview-inspect" data-key="${esc(r.key)}" aria-label="Inspect ${esc(previewLabel(r))}">Inspect</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">No changes match these filters.</div>';
+  $('preview-page').textContent=result.total?`${result.offset+1}–${Math.min(result.offset+result.limit,result.total)} of ${result.total} records`:'0 records';
+  for(const [id,disabled] of [['preview-prev',result.offset===0],['preview-next',result.offset+result.limit>=result.total]]){
+    $(id).dataset.keepDisabled='true';$(id).disabled=disabled||running();
+  }
+  document.querySelectorAll('.preview-inspect').forEach(button=>button.onclick=()=>inspectPreviewRecord(button.dataset.key).catch(e=>notice(e.message,true)));
+}
+function prettyRaw(value) {
+  try{return JSON.stringify(JSON.parse(value),null,2);}catch{return value||'';}
+}
+async function inspectPreviewRecord(key) {
+  const selection=++previewDetailRequest, list=previewRequest;
+  const result=await api('preview-record?'+new URLSearchParams({key}));
+  if(current!==1||!$('preview-detail')||selection!==previewDetailRequest||list!==previewRequest)return;
+  const r=result.record,row=r.after,fields=r.changed_fields;
+  const sources=new Map(result.sources.map(source=>[source.source_id,source]));
+  $('preview-detail').innerHTML=`<section class="record-detail"><h3>${esc(previewLabel(r))}</h3><p class="hint">${esc(previewNames[r.table]||r.table)} · ${esc(r.action)}. ${r.before?'Compare the existing and proposed values below.':'This record does not yet exist in the archive.'}</p>
+    <div class="table-wrap"><table><thead><tr><th>Field</th>${r.before?'<th>Currently in archive</th>':''}<th>${state.research_report?.applied?'Imported':'Proposed'} value</th></tr></thead><tbody>${fields.map(field=>`<tr><th>${esc(field.replaceAll('_',' '))}</th>${r.before?`<td class="field-value">${esc(r.before[field]||'—')}</td>`:''}<td class="field-value">${field==='raw_text'?`<pre>${esc(prettyRaw(row[field]))}</pre>`:esc(row[field]||'—')}</td></tr>`).join('')}</tbody></table></div>
+    <h3>Supporting source evidence</h3>${result.sources.map(source=>`<div class="source-reference"><b>${esc(source.title||source.source_id)}</b>${source.input_file?`<small>Input file: ${esc(source.input_file)}</small>`:''}${source.url?`<small class="field-value">${esc(source.url)}</small>`:''}</div>`).join('')}
+    ${result.evidence.map(e=>`<details class="source-excerpt"><summary>${esc(sources.get(e.source_id)?.title||'Source claim')} · ${esc(e.location_in_source||e.evidence_id)}</summary><p>${esc(e.claim)}</p><small>Confidence: ${esc(e.confidence||'unknown')} · ${esc(e.date_range_start||'')} ${esc(e.date_range_end||'')}</small><pre>${esc(prettyRaw(e.raw_text))}</pre></details>`).join('')||'<p class="hint">No separate claim is attached to this record. Its source metadata and full record are available here and in the detailed report.</p>'}
+    <details class="source-excerpt"><summary>Full record and identifiers</summary><pre>${esc(JSON.stringify({before:r.before,after:row,evidence_ids:r.evidence_ids,source_ids:r.source_ids},null,2))}</pre></details></section>`;
 }
 async function renderLinks() {
   if(!review)review=await api('review');
