@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Bree Legends — MUME Dating Indicators
- * Description: An evidence-backed, updateable chronology of MUME dating indicators. Use [mume_date_indicators] on a page.
- * Version: 0.1.0
+ * Description: Compact Diku and MUME epoch comparison tables. Use [mume_date_indicators] on a page.
+ * Version: 0.2.0
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Author: Bree Legends
@@ -11,9 +11,30 @@
 if (!defined('ABSPATH')) { exit; }
 
 function bree_mdi_data() {
+    $seed = json_decode((string) file_get_contents(__DIR__ . '/public/catalogue.json'), true);
     $stored = get_option('bree_mdi_catalogue', null);
-    if (is_array($stored)) { return $stored; }
-    return json_decode((string) file_get_contents(__DIR__ . '/public/catalogue.json'), true);
+    if (!is_array($stored)) { return $seed; }
+    // Older saved catalogues retain research edits while receiving the new
+    // comparison layout and newly bundled rows. Existing observations win.
+    $needs_comparison = !isset($stored['comparison']);
+    if ($needs_comparison && isset($seed['comparison'])) { $stored['comparison'] = $seed['comparison']; }
+    $seed_indicators = array_column($seed['indicators'], null, 'id');
+    $ids = array();
+    foreach ($stored['indicators'] as &$indicator) {
+        $ids[] = $indicator['id'];
+        if (!isset($indicator['comparison']) && isset($seed_indicators[$indicator['id']]['comparison'])) {
+            $indicator['comparison'] = $seed_indicators[$indicator['id']]['comparison'];
+        }
+    }
+    unset($indicator);
+    $source_ids = array_column($stored['sources'], 'id');
+    foreach ($seed['indicators'] as $indicator) {
+        if ($needs_comparison && !in_array($indicator['id'], $ids, true)) { $stored['indicators'][] = $indicator; }
+    }
+    foreach ($seed['sources'] as $source) {
+        if ($needs_comparison && !in_array($source['id'], $source_ids, true)) { $stored['sources'][] = $source; }
+    }
+    return $stored;
 }
 
 function bree_mdi_validate($data) {
@@ -62,10 +83,10 @@ function bree_mdi_validate($data) {
 }
 
 function bree_mdi_shortcode() {
-    wp_enqueue_style('bree-mdi', plugins_url('public/style.css', __FILE__), array(), '0.1.0');
-    wp_enqueue_script('bree-mdi', plugins_url('public/chronology.js', __FILE__), array(), '0.1.0', true);
+    wp_enqueue_style('bree-mdi', plugins_url('public/style.css', __FILE__), array(), '0.2.0');
+    wp_enqueue_script('bree-mdi', plugins_url('public/chronology.js', __FILE__), array(), '0.2.0', true);
     $json = wp_json_encode(bree_mdi_data(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
-    return '<div class="bree-mume-dates"><script type="application/json" class="mdi-data">' . $json . '</script><div class="mdi-app"><noscript>This chronology needs JavaScript to sort the current research indicators.</noscript></div></div>';
+    return '<div class="bree-mume-dates"><script type="application/json" class="mdi-data">' . $json . '</script><div class="mdi-app"><noscript>Enable JavaScript to browse the comparison tables.</noscript></div></div>';
 }
 add_shortcode('mume_date_indicators', 'bree_mdi_shortcode');
 

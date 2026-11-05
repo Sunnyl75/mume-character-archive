@@ -2,7 +2,7 @@
   "schema": "mume-date-indicators/1",
   "title": "MUME Dating Indicators",
   "updated_at": "2026-11-06",
-  "edition": "Research catalogue · initial edition",
+  "edition": "Comparison tables · edition 0.2",
   "description": "A running chronology of the clues used to date MUME logs and reconstruct when characters, items and NPCs existed.",
   "policy": "Approximate dates are sorting anchors, not hard cutoffs. Stronger independent evidence can move an anchor earlier or later. Unresolved clues stay visible.",
   "epochs": [
@@ -251,14 +251,15 @@
     {
       "id": "log_donk_moria_three_vs_eight_1997_06",
       "title": "3 vs 8... well, one of the 3 is Donk!",
-      "url": "",
+      "url": "https://web.archive.org/web/20010708034728/http://www.mume.net:80/oldsite/others/donk6.txt",
       "date_label": "Late Jun 1997",
       "date_start": "1997-06-20",
       "date_end": "1997-06-30",
       "date_confidence": "medium",
       "date_basis": "Internal 97062X heading.",
       "dependencies": [],
-      "calibration": "independent"
+      "calibration": "independent",
+      "url_basis": "Retained mlogs index new_031; matched previously parsed log by title, characters and internal date."
     },
     {
       "id": "log_radorac_lady_luck_1994_12_12",
@@ -287,14 +288,15 @@
     {
       "id": "log_archie_iqpi_eazy_1997_05_06",
       "title": "Eazy eats it at GER / Archie and Iqpi at the Ford",
-      "url": "",
+      "url": "https://web.archive.org/web/20010708034728/http://www.mume.net:80/oldsite/others/archie.txt",
       "date_label": "6 May 1997",
       "date_start": "1997-05-06",
       "date_end": "1997-05-06",
       "date_confidence": "high",
       "date_basis": "Internal heading 970506-Archie.",
       "dependencies": [],
-      "calibration": "independent"
+      "calibration": "independent",
+      "url_basis": "Retained mlogs index new_050; matched previously parsed log by title, characters and internal date."
     },
     {
       "id": "log_battle_below_nen_in_sul_1997_06",
@@ -514,7 +516,17 @@
         }
       ],
       "soft_relation": "after",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Guardian shadows",
+        "output": "Guardian shadow protects a corpse",
+        "continuity": {
+          "confirmed": true,
+          "scope": "feature",
+          "basis": "Researcher confirms that guardian shadows were never removed after implementation."
+        }
+      }
     },
     {
       "id": "horse-clip-clop",
@@ -647,7 +659,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Mounts & followers",
+        "label": "Horse movement",
+        "output": "Clip-clop..."
+      }
     },
     {
       "id": "clip-clop-removal",
@@ -662,7 +679,12 @@
       ],
       "attestations": [],
       "soft_relation": "before",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Mounts & followers",
+        "label": "Clip-clop removal",
+        "output": "Removal / replacement date"
+      }
     },
     {
       "id": "follower-coudln",
@@ -696,7 +718,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Mounts & followers",
+        "label": "Follower-loss typo",
+        "output": "ACK!! <ACTOR> coudln't follow you, you lost him."
+      }
     },
     {
       "id": "raisen-hand",
@@ -739,7 +766,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Icy-wind typo",
+        "output": "raisen hand"
+      }
     },
     {
       "id": "first-kill-punctuation",
@@ -918,7 +950,25 @@
         }
       ],
       "soft_relation": "during",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "First kill",
+        "variants": [
+          {
+            "id": "old",
+            "group": "old",
+            "label": "First kill — older punctuation",
+            "output": "Congratulations!! This is the first time you've killed it !"
+          },
+          {
+            "id": "new",
+            "group": "new",
+            "label": "First kill — newer punctuation",
+            "output": "Congratulations! This is the first time you've killed it!"
+          }
+        ]
+      }
     },
     {
       "id": "armour-percent",
@@ -1042,7 +1092,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Stats & equipment",
+        "label": "Armour metric",
+        "output": "Armour: <N>%"
+      }
     },
     {
       "id": "fragment-damage",
@@ -1085,7 +1140,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Terminal damage",
+        "output": "reduce … to small fragments"
+      }
     },
     {
       "id": "shatter-damage",
@@ -1299,7 +1359,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Severe injury",
+        "output": "shatter / shatters"
+      }
     },
     {
       "id": "shadow-disappearance",
@@ -1370,7 +1435,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Shadow disappearance",
+        "output": "A shadow fades / disappears"
+      }
     },
     {
       "id": "trophy-schema",
@@ -1405,7 +1475,12 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Stats & equipment",
+        "label": "Trophy columns",
+        "output": "Number Killed, Knowledge, Mobile"
+      }
     },
     {
       "id": "istar-clock",
@@ -1420,7 +1495,7 @@
       ],
       "attestations": [
         {
-          "id": "log_wicked_defends_warrens_date_conflict-1234-default",
+          "id": "istar-clock_log_wicked_defends_warrens_date_conflict",
           "source_id": "log_wicked_defends_warrens_date_conflict",
           "quote": "The present Tan Istar, Lord of the Istari Council is Morceleb.",
           "file": "Pasted text (2)(4).txt",
@@ -1429,17 +1504,67 @@
           "group": "default"
         },
         {
-          "id": "log_lady_luck_west_warrens-437-default",
+          "id": "istar-clock_log_lady_luck_west_warrens",
           "source_id": "log_lady_luck_west_warrens",
           "quote": "The present Tan Istar, Lord of the Istari Council is Dorn.",
           "file": "Pasted text (6).txt",
           "line_start": 437,
           "line_end": 437,
           "group": "default"
+        },
+        {
+          "id": "istar-clock_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "The present Tan Istar, Lord of the Istari Council is not defined.",
+          "file": "Pasted text(103).txt",
+          "line_start": 3309,
+          "line_end": 3309,
+          "group": "default"
+        },
+        {
+          "id": "istar-clock_log_badder_superdeathflame_1997_03_12",
+          "source_id": "log_badder_superdeathflame_1997_03_12",
+          "quote": "The present Tan Istar, Lord of the Istari Council is Sally.",
+          "file": "Pasted text(103).txt",
+          "line_start": 7753,
+          "line_end": 7753,
+          "group": "default"
+        },
+        {
+          "id": "istar-clock_log_archie_iqpi_eazy_1997_05_06",
+          "source_id": "log_archie_iqpi_eazy_1997_05_06",
+          "quote": "The present Tan Istar, Lord of the Istari Council is not defined.",
+          "file": "Pasted text(103).txt",
+          "line_start": 8265,
+          "line_end": 8265,
+          "group": "default"
+        },
+        {
+          "id": "istar-clock_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "The present Tan Istar, Lord of the Istari Council is not defined.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 5288,
+          "line_end": 5288,
+          "group": "default"
+        },
+        {
+          "id": "istar-clock_log_fordfighting_zarc_1998_06_calculated",
+          "source_id": "log_fordfighting_zarc_1998_06_calculated",
+          "quote": "The present Tan Istar, Lord of the Istari Council is not defined.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 17070,
+          "line_end": 17070,
+          "group": "default"
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Tan Istar field",
+        "output": "The present Tan Istar, Lord of the Istari Council…"
+      }
     },
     {
       "id": "calendar-reset-hypothesis",
@@ -1465,7 +1590,12 @@
         }
       ],
       "soft_relation": "during",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Early calendar reset",
+        "output": "Calendar epoch reset"
+      }
     },
     {
       "id": "old-warrens",
@@ -1482,7 +1612,12 @@
       ],
       "attestations": [],
       "soft_relation": "during",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "World & NPCs",
+        "label": "West Warrens",
+        "output": "Earlier West Warrens topology"
+      }
     },
     {
       "id": "elrond-diku-line",
@@ -1525,7 +1660,17 @@
         }
       ],
       "soft_relation": "none",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "World & NPCs",
+        "label": "Guard battle cry",
+        "output": "PROTECT THE INNOCENT! BANZAI!! CHARGE!!!",
+        "diku": {
+          "output": "PROTECT THE INNOCENT!  BANZAI!!! CHARGE!!! ARARARAGGGHH!",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/spec_procs.c#L1004"
+        }
+      }
     },
     {
       "id": "literal-spell-names",
@@ -1660,7 +1805,17 @@
         }
       ],
       "soft_relation": "observed",
-      "history": []
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Literal spell display",
+        "output": "utters the words, '<SPELL>'",
+        "diku": {
+          "output": "utters the words, '<SPELL>'",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/spell_parser.c#L464"
+        }
+      }
     },
     {
       "id": "mounts-version-iv",
@@ -1678,7 +1833,12 @@
       "history": [],
       "epoch_id": "iv",
       "documented_date": "1994-02-01",
-      "source_url": "https://mume.org/about/history"
+      "source_url": "https://mume.org/about/history",
+      "comparison": {
+        "section": "Mounts & followers",
+        "label": "Mounts",
+        "output": "Riding mounts"
+      }
     },
     {
       "id": "ansi-version-vi",
@@ -1696,7 +1856,12 @@
       "history": [],
       "epoch_id": "vi",
       "documented_date": "1996-03-01",
-      "source_url": "https://mume.org/about/history"
+      "source_url": "https://mume.org/about/history",
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Colour output",
+        "output": "ANSI colours"
+      }
     },
     {
       "id": "subraces-version-vii",
@@ -1714,7 +1879,12 @@
       "history": [],
       "epoch_id": "vii",
       "documented_date": "1999-04-01",
-      "source_url": "https://mume.org/about/history"
+      "source_url": "https://mume.org/about/history",
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Subraces",
+        "output": "Subrace support"
+      }
     },
     {
       "id": "regen-version-vii",
@@ -1732,7 +1902,12 @@
       "history": [],
       "epoch_id": "vii",
       "documented_date": "1999-04-01",
-      "source_url": "https://mume.org/about/history"
+      "source_url": "https://mume.org/about/history",
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Regeneration",
+        "output": "Continuous regeneration"
+      }
     },
     {
       "id": "beorning-version-viii",
@@ -1750,7 +1925,1480 @@
       "history": [],
       "epoch_id": "viii",
       "documented_date": "2002-01-01",
-      "source_url": "https://mume.org/about/history"
+      "source_url": "https://mume.org/about/history",
+      "comparison": {
+        "section": "Calendar & features",
+        "label": "Beorning",
+        "output": "Beorning shapechangers"
+      }
+    },
+    {
+      "id": "tell-incoming",
+      "title": "Tell received",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Tell received",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "<ACTOR> tells you '…'"
+      ],
+      "attestations": [
+        {
+          "id": "tell-incoming_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "Tapja tells you 'me died'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 1019,
+          "line_end": 1019,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_diamonium_inside_warrens_1997_11_02",
+          "source_id": "log_diamonium_inside_warrens_1997_11_02",
+          "quote": "Cychr tells you 'save me a wall or something :)'",
+          "file": "Pasted text (4).txt",
+          "line_start": 628,
+          "line_end": 628,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_nightstalker_1997_11_02",
+          "source_id": "log_nightstalker_1997_11_02",
+          "quote": "Bubba tells you 'we hidden'",
+          "file": "Pasted text (5).txt",
+          "line_start": 16,
+          "line_end": 16,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "Kamikaze tells you 'pod k tomu cavetrolloj'",
+          "file": "Pasted text (6).txt",
+          "line_start": 467,
+          "line_end": 467,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_first_moria_trip_vlad_c_1996_03",
+          "source_id": "log_first_moria_trip_vlad_c_1996_03",
+          "quote": "Grease tells you 'dont know'",
+          "file": "Pasted text(102).txt",
+          "line_start": 3807,
+          "line_end": 3807,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_execution_golfimbul_late_1996_08",
+          "source_id": "log_execution_golfimbul_late_1996_08",
+          "quote": "Elegil says 'Superdeathflame tells you 'You completely freaking RULE!''",
+          "file": "Pasted text(102).txt",
+          "line_start": 5530,
+          "line_end": 5530,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_rivendell_defended_cadfael_1996_08_09",
+          "source_id": "log_rivendell_defended_cadfael_1996_08_09",
+          "quote": "Biddy tells you 'tell when..'",
+          "file": "Pasted text(102).txt",
+          "line_start": 5745,
+          "line_end": 5745,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_first_balrog_feor_c_1996",
+          "source_id": "log_first_balrog_feor_c_1996",
+          "quote": "Azaghal tells you 'hvor mye exp fikk du da'",
+          "file": "Pasted text(103).txt",
+          "line_start": 2073,
+          "line_end": 2073,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "Ulzog tells you 'jag e bronze hall'",
+          "file": "Pasted text(103).txt",
+          "line_start": 4325,
+          "line_end": 4325,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_badder_superdeathflame_1997_03_12",
+          "source_id": "log_badder_superdeathflame_1997_03_12",
+          "quote": "o HP:Hurt>Nadu tells you 'claps'",
+          "file": "Pasted text(103).txt",
+          "line_start": 8207,
+          "line_end": 8207,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_archie_iqpi_eazy_1997_05_06",
+          "source_id": "log_archie_iqpi_eazy_1997_05_06",
+          "quote": "Shish tells you 'archie looted'",
+          "file": "Pasted text(103).txt",
+          "line_start": 8354,
+          "line_end": 8354,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "Rhapsody tells you 'Shout..was that really necessary?'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 2988,
+          "line_end": 2988,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "* R C>Elle tells you 'hej :)'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 4023,
+          "line_end": 4023,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "Glunx tells you 'gratz'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 9629,
+          "line_end": 9629,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "Dior tells you 'KOM'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 9755,
+          "line_end": 9755,
+          "group": "default"
+        },
+        {
+          "id": "tell-incoming_log_detraman_cyrano_before_1998_06",
+          "source_id": "log_detraman_cyrano_before_1998_06",
+          "quote": "Matter tells you 'Hmmm 16 14 14 19 14 9 12 ..human thief '",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 14208,
+          "line_end": 14208,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Tell received",
+        "output": "<ACTOR> tells you '…'",
+        "diku": {
+          "output": "<ACTOR> tells you '…'",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/act.comm.c#L108"
+        }
+      }
+    },
+    {
+      "id": "tell-outgoing",
+      "title": "Tell sent — confirmation",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Tell sent — confirmation",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "Ok."
+      ],
+      "attestations": [
+        {
+          "id": "tell-outgoing_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "Ok.",
+          "file": "Pasted text (6).txt",
+          "line_start": 1135,
+          "line_end": 1135,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_first_moria_trip_vlad_c_1996_03",
+          "source_id": "log_first_moria_trip_vlad_c_1996_03",
+          "quote": "Ok.",
+          "file": "Pasted text(102).txt",
+          "line_start": 3769,
+          "line_end": 3769,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "Ok.",
+          "file": "Pasted text(103).txt",
+          "line_start": 5172,
+          "line_end": 5172,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_badder_superdeathflame_1997_03_12",
+          "source_id": "log_badder_superdeathflame_1997_03_12",
+          "quote": "Ok.",
+          "file": "Pasted text(103).txt",
+          "line_start": 8201,
+          "line_end": 8201,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_archie_iqpi_eazy_1997_05_06",
+          "source_id": "log_archie_iqpi_eazy_1997_05_06",
+          "quote": "Ok.",
+          "file": "Pasted text(103).txt",
+          "line_start": 8347,
+          "line_end": 8347,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "Ok.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 1824,
+          "line_end": 1824,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "Ok.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 3966,
+          "line_end": 3966,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "Ok.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 9828,
+          "line_end": 9828,
+          "group": "default"
+        },
+        {
+          "id": "tell-outgoing_log_detraman_cyrano_before_1998_06",
+          "source_id": "log_detraman_cyrano_before_1998_06",
+          "quote": "Ok.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 14322,
+          "line_end": 14322,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Tell sent — confirmation",
+        "output": "Ok.",
+        "diku": {
+          "output": "Ok.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/act.comm.c#L111"
+        }
+      }
+    },
+    {
+      "id": "tell-target-missing",
+      "title": "Tell target unavailable",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Tell target unavailable",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "No-one by that name here.."
+      ],
+      "attestations": [
+        {
+          "id": "tell-target-missing_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "No-one by that name here...",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 8900,
+          "line_end": 8900,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Tell target unavailable",
+        "output": "No-one by that name here..",
+        "diku": {
+          "output": "No-one by that name here..",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/act.comm.c#L98"
+        }
+      }
+    },
+    {
+      "id": "say-observer",
+      "title": "Say — observer",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Say — observer",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "<ACTOR> says '…'"
+      ],
+      "attestations": [
+        {
+          "id": "say-observer_log_reliquary_sil_c_1994_12_1995_01",
+          "source_id": "log_reliquary_sil_c_1994_12_1995_01",
+          "quote": "Dragomil says 'name of the exit?'",
+          "file": "Pasted text(100).txt",
+          "line_start": 18,
+          "line_end": 18,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_pukes_enter_warrens_early_1995",
+          "source_id": "log_pukes_enter_warrens_early_1995",
+          "quote": "Shrew says 'ok we stay'",
+          "file": "Pasted text(101).txt",
+          "line_start": 51,
+          "line_end": 51,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_wicked_defends_warrens_date_conflict",
+          "source_id": "log_wicked_defends_warrens_date_conflict",
+          "quote": "A guardian shadow says 'I wun't allow the lootang uf my fell body!'",
+          "file": "Pasted text (2)(4).txt",
+          "line_start": 418,
+          "line_end": 418,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "Beormann says 'then it mush be me i guess:)'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 32,
+          "line_end": 32,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "The earth troll says 'Bastard! How do you dare to attack me? I will remember your face Girion!'",
+          "file": "Pasted text (6).txt",
+          "line_start": 2012,
+          "line_end": 2012,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_last_inn_radorac_1995_04_27",
+          "source_id": "log_last_inn_radorac_1995_04_27",
+          "quote": "A guardian shadow says 'I fon'j alloj jxe loojing oj my gell body!'",
+          "file": "Pasted text(102).txt",
+          "line_start": 539,
+          "line_end": 539,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_dark_tower_mastiff_1995_uncertain",
+          "source_id": "log_dark_tower_mastiff_1995_uncertain",
+          "quote": "Golfimbul says 'noise'",
+          "file": "Pasted text(102).txt",
+          "line_start": 751,
+          "line_end": 751,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_first_moria_trip_vlad_c_1996_03",
+          "source_id": "log_first_moria_trip_vlad_c_1996_03",
+          "quote": "Ghanz says 'ack'",
+          "file": "Pasted text(102).txt",
+          "line_start": 3073,
+          "line_end": 3073,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_execution_golfimbul_late_1996_08",
+          "source_id": "log_execution_golfimbul_late_1996_08",
+          "quote": "Elegil says 'faa jon hit FORT'",
+          "file": "Pasted text(102).txt",
+          "line_start": 4794,
+          "line_end": 4794,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_rivendell_defended_cadfael_1996_08_09",
+          "source_id": "log_rivendell_defended_cadfael_1996_08_09",
+          "quote": "Gurra says 'damnit let em come here to fight :)'",
+          "file": "Pasted text(102).txt",
+          "line_start": 5943,
+          "line_end": 5943,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_first_balrog_feor_c_1996",
+          "source_id": "log_first_balrog_feor_c_1996",
+          "quote": "Huor says 'lava is NOT cool'",
+          "file": "Pasted text(103).txt",
+          "line_start": 21,
+          "line_end": 21,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "emote says ''",
+          "file": "Pasted text(103).txt",
+          "line_start": 3593,
+          "line_end": 3593,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_radorac_lady_luck_1994_12_12",
+          "source_id": "log_radorac_lady_luck_1994_12_12",
+          "quote": "Huor says 'thanks rad :-)'",
+          "file": "Pasted text(103).txt",
+          "line_start": 7089,
+          "line_end": 7089,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "Alhena says 'fol me'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 10,
+          "line_end": 10,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "The Great Eagle says 'If you want to go somewhere, ride me and whisper the'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 3928,
+          "line_end": 3928,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "An olog-hai troll says 'YOU! XolyElj! You will die bejore your wime.'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 8640,
+          "line_end": 8640,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "An olog-hai troll says 'Bashard! Woh dare you? I will remember your face Orodrehh!'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 10321,
+          "line_end": 10321,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_detraman_cyrano_before_1998_06",
+          "source_id": "log_detraman_cyrano_before_1998_06",
+          "quote": "The haunt says 'It was your last mistake Cyrano! I will remember you!'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 13548,
+          "line_end": 13548,
+          "group": "default"
+        },
+        {
+          "id": "say-observer_log_fordfighting_zarc_1998_06_calculated",
+          "source_id": "log_fordfighting_zarc_1998_06_calculated",
+          "quote": "Bash says 'looks like a looter'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 17036,
+          "line_end": 17036,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Say — observer",
+        "output": "<ACTOR> says '…'",
+        "diku": {
+          "output": "<ACTOR> says '…'",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/act.comm.c#L28"
+        }
+      }
+    },
+    {
+      "id": "say-self",
+      "title": "Say — speaker",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Say — speaker",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "You say '…'"
+      ],
+      "attestations": [],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Say — speaker",
+        "output": "You say '…'",
+        "diku": {
+          "output": "Ok.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/act.comm.c#L38"
+        }
+      }
+    },
+    {
+      "id": "narrate",
+      "title": "Narrate",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Narrate",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "<ACTOR> narrates '…'"
+      ],
+      "attestations": [
+        {
+          "id": "narrate_log_reliquary_sil_c_1994_12_1995_01",
+          "source_id": "log_reliquary_sil_c_1994_12_1995_01",
+          "quote": "Dragomir narrates 'what to open in Reliq'",
+          "file": "Pasted text(100).txt",
+          "line_start": 25,
+          "line_end": 25,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_pukes_enter_warrens_early_1995",
+          "source_id": "log_pukes_enter_warrens_early_1995",
+          "quote": "Tevasch narrates 'sinder at hurt'",
+          "file": "Pasted text(101).txt",
+          "line_start": 32,
+          "line_end": 32,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_wicked_defends_warrens_date_conflict",
+          "source_id": "log_wicked_defends_warrens_date_conflict",
+          "quote": "Zooth narrates 'very nice for a bn to fall into a pit when we don't have search'",
+          "file": "Pasted text (2)(4).txt",
+          "line_start": 168,
+          "line_end": 168,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "Skunx narrates 'i'm a born loser. just gotta live with it and be happy :)'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 593,
+          "line_end": 593,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_diamonium_inside_warrens_1997_11_02",
+          "source_id": "log_diamonium_inside_warrens_1997_11_02",
+          "quote": "Someone narrates 'door difficulty changes slightly each zone regen'",
+          "file": "Pasted text (4).txt",
+          "line_start": 305,
+          "line_end": 305,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "Ragface narrates 'fangun an redhorn caves'",
+          "file": "Pasted text (6).txt",
+          "line_start": 1643,
+          "line_end": 1643,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_dark_tower_mastiff_1995_uncertain",
+          "source_id": "log_dark_tower_mastiff_1995_uncertain",
+          "quote": "Painless narrates 'grolls enter'",
+          "file": "Pasted text(102).txt",
+          "line_start": 794,
+          "line_end": 794,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_execution_golfimbul_late_1996_08",
+          "source_id": "log_execution_golfimbul_late_1996_08",
+          "quote": "Grov narrates 'golf and morkul at e priest'",
+          "file": "Pasted text(102).txt",
+          "line_start": 4749,
+          "line_end": 4749,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_rivendell_defended_cadfael_1996_08_09",
+          "source_id": "log_rivendell_defended_cadfael_1996_08_09",
+          "quote": "Haw narrates 'l'",
+          "file": "Pasted text(102).txt",
+          "line_start": 5719,
+          "line_end": 5719,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "Grumbag narrates 'come'           <--- Hmm",
+          "file": "Pasted text(103).txt",
+          "line_start": 2896,
+          "line_end": 2896,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_radorac_lady_luck_1994_12_12",
+          "source_id": "log_radorac_lady_luck_1994_12_12",
+          "quote": "Huor narrates '1 orc at ford'",
+          "file": "Pasted text(103).txt",
+          "line_start": 7015,
+          "line_end": 7015,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "Techno narrates '*glare* anyone tell me how i managed to lose conc 5 times and backfire twice casting detect which i have 57%?'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 15,
+          "line_end": 15,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "Elle narrates 'hello ppl'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 3970,
+          "line_end": 3970,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "Ragface narrates 'Road to Tharbad A swyn swams gracefulli on the sorface of the wate",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 8586,
+          "line_end": 8586,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "Dior narrates 'they here'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 9858,
+          "line_end": 9858,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_detraman_cyrano_before_1998_06",
+          "source_id": "log_detraman_cyrano_before_1998_06",
+          "quote": "Haladir narrates 'what other upgrades are available for parry staff other than iron bar a",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 14411,
+          "line_end": 14411,
+          "group": "default"
+        },
+        {
+          "id": "narrate_log_fordfighting_zarc_1998_06_calculated",
+          "source_id": "log_fordfighting_zarc_1998_06_calculated",
+          "quote": "Someone narrates 'get a life, get a name'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 17530,
+          "line_end": 17530,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Narrate",
+        "output": "<ACTOR> narrates '…'"
+      }
+    },
+    {
+      "id": "smile",
+      "title": "Smile",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Smile",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "You smile happily."
+      ],
+      "attestations": [
+        {
+          "id": "smile_log_first_balrog_feor_c_1996",
+          "source_id": "log_first_balrog_feor_c_1996",
+          "quote": "You smile happily.",
+          "file": "Pasted text(103).txt",
+          "line_start": 723,
+          "line_end": 723,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Smile",
+        "output": "You smile happily.",
+        "diku": {
+          "output": "You smile happily.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L17"
+        }
+      }
+    },
+    {
+      "id": "nod",
+      "title": "Nod",
+      "category": "Social interactions",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Nod",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "You nod solemnly."
+      ],
+      "attestations": [
+        {
+          "id": "nod_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "You nod solemnly.",
+          "file": "Pasted text (6).txt",
+          "line_start": 619,
+          "line_end": 619,
+          "group": "default"
+        },
+        {
+          "id": "nod_log_first_balrog_feor_c_1996",
+          "source_id": "log_first_balrog_feor_c_1996",
+          "quote": "You nod solemnly.",
+          "file": "Pasted text(103).txt",
+          "line_start": 2024,
+          "line_end": 2024,
+          "group": "default"
+        },
+        {
+          "id": "nod_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "You nod solemnly.",
+          "file": "Pasted text(103).txt",
+          "line_start": 6773,
+          "line_end": 6773,
+          "group": "default"
+        },
+        {
+          "id": "nod_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "You nod solemnly.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 78,
+          "line_end": 78,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Social interactions",
+        "label": "Nod",
+        "output": "You nod solemnly.",
+        "diku": {
+          "output": "You nod solemnly.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L93"
+        }
+      }
+    },
+    {
+      "id": "death-victim",
+      "title": "Death — victim",
+      "category": "Combat & death",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Death — victim",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "You are dead! Sorry..."
+      ],
+      "attestations": [
+        {
+          "id": "death-victim_log_diamonium_inside_warrens_1997_11_02",
+          "source_id": "log_diamonium_inside_warrens_1997_11_02",
+          "quote": "You are dead! Sorry...",
+          "file": "Pasted text (4).txt",
+          "line_start": 792,
+          "line_end": 792,
+          "group": "default"
+        },
+        {
+          "id": "death-victim_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "You are dead! Sorry...",
+          "file": "Pasted text (6).txt",
+          "line_start": 1131,
+          "line_end": 1131,
+          "group": "default"
+        },
+        {
+          "id": "death-victim_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "You are dead! Sorry...",
+          "file": "Pasted text(103).txt",
+          "line_start": 3324,
+          "line_end": 3324,
+          "group": "default"
+        },
+        {
+          "id": "death-victim_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "You are dead! Sorry...",
+          "file": "Pasted text(103).txt",
+          "line_start": 6703,
+          "line_end": 6703,
+          "group": "default"
+        },
+        {
+          "id": "death-victim_log_archie_iqpi_eazy_1997_05_06",
+          "source_id": "log_archie_iqpi_eazy_1997_05_06",
+          "quote": "You are dead! Sorry...",
+          "file": "Pasted text(103).txt",
+          "line_start": 8335,
+          "line_end": 8335,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Death — victim",
+        "output": "You are dead! Sorry...",
+        "diku": {
+          "output": "You are dead!  Sorry...",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/fight.c#L608"
+        }
+      }
+    },
+    {
+      "id": "death-room",
+      "title": "Death — room",
+      "category": "Combat & death",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Death — room",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "<TARGET> is dead! R.I.P."
+      ],
+      "attestations": [
+        {
+          "id": "death-room_log_reliquary_sil_c_1994_12_1995_01",
+          "source_id": "log_reliquary_sil_c_1994_12_1995_01",
+          "quote": "Foo is dead! R.I.P.",
+          "file": "Pasted text(100).txt",
+          "line_start": 182,
+          "line_end": 182,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_pukes_enter_warrens_early_1995",
+          "source_id": "log_pukes_enter_warrens_early_1995",
+          "quote": "*Aarvorn the Half-Elf* is dead! R.I.P.",
+          "file": "Pasted text(101).txt",
+          "line_start": 212,
+          "line_end": 212,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_wicked_defends_warrens_date_conflict",
+          "source_id": "log_wicked_defends_warrens_date_conflict",
+          "quote": "Kael is dead! R.I.P.",
+          "file": "Pasted text (2)(4).txt",
+          "line_start": 166,
+          "line_end": 166,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "A smelly troll is dead! R.I.P.",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 194,
+          "line_end": 194,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_nightstalker_1997_11_02",
+          "source_id": "log_nightstalker_1997_11_02",
+          "quote": "*Nightstalker the Elf* is dead! R.I.P.",
+          "file": "Pasted text (5).txt",
+          "line_start": 331,
+          "line_end": 331,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_last_inn_radorac_1995_04_27",
+          "source_id": "log_last_inn_radorac_1995_04_27",
+          "quote": "*a Troll* is dead! R.I.P.",
+          "file": "Pasted text(102).txt",
+          "line_start": 281,
+          "line_end": 281,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_dark_tower_mastiff_1995_uncertain",
+          "source_id": "log_dark_tower_mastiff_1995_uncertain",
+          "quote": "A burly orc is dead! R.I.P.",
+          "file": "Pasted text(102).txt",
+          "line_start": 943,
+          "line_end": 943,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_first_moria_trip_vlad_c_1996_03",
+          "source_id": "log_first_moria_trip_vlad_c_1996_03",
+          "quote": "A grey troll is dead! R.I.P.",
+          "file": "Pasted text(102).txt",
+          "line_start": 3138,
+          "line_end": 3138,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_execution_golfimbul_late_1996_08",
+          "source_id": "log_execution_golfimbul_late_1996_08",
+          "quote": "*Golfimbul the Orc* is dead! R.I.P.",
+          "file": "Pasted text(102).txt",
+          "line_start": 5431,
+          "line_end": 5431,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_rivendell_defended_cadfael_1996_08_09",
+          "source_id": "log_rivendell_defended_cadfael_1996_08_09",
+          "quote": "An elven guard is dead! R.I.P.",
+          "file": "Pasted text(102).txt",
+          "line_start": 6263,
+          "line_end": 6263,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_first_balrog_feor_c_1996",
+          "source_id": "log_first_balrog_feor_c_1996",
+          "quote": "The Balrog is dead! R.I.P.",
+          "file": "Pasted text(103).txt",
+          "line_start": 1670,
+          "line_end": 1670,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "Smack is dead! R.I.P.",
+          "file": "Pasted text(103).txt",
+          "line_start": 2972,
+          "line_end": 2972,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "*Revel the Human* is dead! R.I.P.",
+          "file": "Pasted text(103).txt",
+          "line_start": 3976,
+          "line_end": 3976,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_radorac_lady_luck_1994_12_12",
+          "source_id": "log_radorac_lady_luck_1994_12_12",
+          "quote": "*an Orc* is dead! R.I.P.               [must have been a low-level]",
+          "file": "Pasted text(103).txt",
+          "line_start": 7188,
+          "line_end": 7188,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_badder_superdeathflame_1997_03_12",
+          "source_id": "log_badder_superdeathflame_1997_03_12",
+          "quote": "*Superdeathflame the Human* is dead! R.I.P.",
+          "file": "Pasted text(103).txt",
+          "line_start": 8163,
+          "line_end": 8163,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_battle_below_nen_in_sul_1997_06",
+          "source_id": "log_battle_below_nen_in_sul_1997_06",
+          "quote": "Faw is dead! R.I.P.",
+          "file": "Pasted text(103).txt",
+          "line_start": 8636,
+          "line_end": 8636,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "*Hum the Orc* is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 2491,
+          "line_end": 2491,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "*Behemoth the Troll* is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 6611,
+          "line_end": 6611,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "*HolyElf the Elf* is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 9564,
+          "line_end": 9564,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "Dior is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 10132,
+          "line_end": 10132,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_detraman_cyrano_before_1998_06",
+          "source_id": "log_detraman_cyrano_before_1998_06",
+          "quote": "The haunt is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 13615,
+          "line_end": 13615,
+          "group": "default"
+        },
+        {
+          "id": "death-room_log_fordfighting_zarc_1998_06_calculated",
+          "source_id": "log_fordfighting_zarc_1998_06_calculated",
+          "quote": "*Morthiel the Elf* is dead! R.I.P.",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 17271,
+          "line_end": 17271,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Death — room",
+        "output": "<TARGET> is dead! R.I.P.",
+        "diku": {
+          "output": "<TARGET> is dead! R.I.P.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/fight.c#L607"
+        }
+      }
+    },
+    {
+      "id": "incapacitated",
+      "title": "Incapacitated — victim",
+      "category": "Combat & death",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Incapacitated — victim",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "You are incapacitated and will slowly die, if not aided."
+      ],
+      "attestations": [],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Combat & death",
+        "label": "Incapacitated — victim",
+        "output": "You are incapacitated and will slowly die, if not aided.",
+        "diku": {
+          "output": "You are incapacitated an will slowly die, if not aided.",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/fight.c#L600"
+        }
+      }
+    },
+    {
+      "id": "spell-fireball-words",
+      "title": "Fireball incantation",
+      "category": "Spells",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Fireball incantation",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "yufzbarr"
+      ],
+      "attestations": [
+        {
+          "id": "spell-fireball-words_log_wicked_defends_warrens_date_conflict",
+          "source_id": "log_wicked_defends_warrens_date_conflict",
+          "quote": "*a Human* utters the words, 'yufzbarr'",
+          "file": "Pasted text (2)(4).txt",
+          "line_start": 82,
+          "line_end": 82,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "IqpI utters the words, 'yufzbarr'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 158,
+          "line_end": 158,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_last_inn_radorac_1995_04_27",
+          "source_id": "log_last_inn_radorac_1995_04_27",
+          "quote": "Gaz utters the words, 'yufzbarr'",
+          "file": "Pasted text(102).txt",
+          "line_start": 121,
+          "line_end": 121,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "*PitBoss the Elf* utters the words, 'yufzbarr'",
+          "file": "Pasted text(103).txt",
+          "line_start": 2934,
+          "line_end": 2934,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "*Aaron the Hobbit* utters the words, 'yufzbarr'",
+          "file": "Pasted text(103).txt",
+          "line_start": 3843,
+          "line_end": 3843,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "Orodreth utters the words, 'yufzbarr'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 11432,
+          "line_end": 11432,
+          "group": "default"
+        },
+        {
+          "id": "spell-fireball-words_log_fordfighting_zarc_1998_06_calculated",
+          "source_id": "log_fordfighting_zarc_1998_06_calculated",
+          "quote": "*Morthiel the Elf* utters the words, 'yufzbarr'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 17182,
+          "line_end": 17182,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Fireball incantation",
+        "output": "yufzbarr"
+      }
+    },
+    {
+      "id": "spell-lightning-words",
+      "title": "Lightning-bolt incantation",
+      "category": "Spells",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Lightning-bolt incantation",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "diesilla barh"
+      ],
+      "attestations": [
+        {
+          "id": "spell-lightning-words_log_pukes_enter_warrens_early_1995",
+          "source_id": "log_pukes_enter_warrens_early_1995",
+          "quote": "*a Hobbit* utters the words, 'diesilla barh'",
+          "file": "Pasted text(101).txt",
+          "line_start": 182,
+          "line_end": 182,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "Dyrn utters the words, 'diesilla barh'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 832,
+          "line_end": 832,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_last_inn_radorac_1995_04_27",
+          "source_id": "log_last_inn_radorac_1995_04_27",
+          "quote": "Gaz utters the words, 'diesilla barh'",
+          "file": "Pasted text(102).txt",
+          "line_start": 332,
+          "line_end": 332,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_first_moria_trip_vlad_c_1996_03",
+          "source_id": "log_first_moria_trip_vlad_c_1996_03",
+          "quote": "Angren utters the words, 'diesilla barh'",
+          "file": "Pasted text(102).txt",
+          "line_start": 3119,
+          "line_end": 3119,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "*HolyElf the Elf* utters the words, 'diesilla barh'",
+          "file": "Pasted text(103).txt",
+          "line_start": 3171,
+          "line_end": 3171,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "* W>Razhim utters the words, 'diesilla barh'",
+          "file": "Pasted text(103).txt",
+          "line_start": 3768,
+          "line_end": 3768,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_vertamen_hidden_clearing_1997_10_16",
+          "source_id": "log_vertamen_hidden_clearing_1997_10_16",
+          "quote": "*Nubis the Black Numenorean* utters the words, 'diesilla barh'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 797,
+          "line_end": 797,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_redhorn_caves_cyrano_1998_06",
+          "source_id": "log_redhorn_caves_cyrano_1998_06",
+          "quote": "*an Orc* utters the words, 'diesilla barh' <=== DAMN",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 7435,
+          "line_end": 7435,
+          "group": "default"
+        },
+        {
+          "id": "spell-lightning-words_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "*Ickabod the Black Númenórean* utters the words, 'diesilla barh'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 10072,
+          "line_end": 10072,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Lightning-bolt incantation",
+        "output": "diesilla barh"
+      }
+    },
+    {
+      "id": "spell-blindness-words",
+      "title": "Blindness incantation",
+      "category": "Spells",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Blindness incantation",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "noselacri"
+      ],
+      "attestations": [
+        {
+          "id": "spell-blindness-words_log_pukes_enter_warrens_early_1995",
+          "source_id": "log_pukes_enter_warrens_early_1995",
+          "quote": "*an Elf* utters the words, 'noselacri'",
+          "file": "Pasted text(101).txt",
+          "line_start": 171,
+          "line_end": 171,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_mekin_warrens_1996_11_17",
+          "source_id": "log_mekin_warrens_1996_11_17",
+          "quote": "Pug utters the words, 'noselacri'",
+          "file": "Pasted text (3)(1).txt",
+          "line_start": 162,
+          "line_end": 162,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_lady_luck_west_warrens",
+          "source_id": "log_lady_luck_west_warrens",
+          "quote": "*HolyElf the Elf* utters the words, 'noselacri'",
+          "file": "Pasted text (6).txt",
+          "line_start": 141,
+          "line_end": 141,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_dark_tower_mastiff_1995_uncertain",
+          "source_id": "log_dark_tower_mastiff_1995_uncertain",
+          "quote": "*Huor the Human* utters the words, 'noselacri'",
+          "file": "Pasted text(102).txt",
+          "line_start": 1058,
+          "line_end": 1058,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_execution_golfimbul_late_1996_08",
+          "source_id": "log_execution_golfimbul_late_1996_08",
+          "quote": "Elegil utters the words, 'noselacri'",
+          "file": "Pasted text(102).txt",
+          "line_start": 5504,
+          "line_end": 5504,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_forded_rogrog_1996_10_15",
+          "source_id": "log_forded_rogrog_1996_10_15",
+          "quote": "*a Human* utters the words, 'noselacri'",
+          "file": "Pasted text(103).txt",
+          "line_start": 2861,
+          "line_end": 2861,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_donk_moria_three_vs_eight_1997_06",
+          "source_id": "log_donk_moria_three_vs_eight_1997_06",
+          "quote": "Someone utters the words, 'noselacri'",
+          "file": "Pasted text(103).txt",
+          "line_start": 6130,
+          "line_end": 6130,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_holyelf_gulag_east_priest_1998_08_24",
+          "source_id": "log_holyelf_gulag_east_priest_1998_08_24",
+          "quote": "*HolyElf the Elf* utters the words, 'noselacri'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 8629,
+          "line_end": 8629,
+          "group": "default"
+        },
+        {
+          "id": "spell-blindness-words_log_mammoth_priest_galdor_1998_08_21",
+          "source_id": "log_mammoth_priest_galdor_1998_08_21",
+          "quote": "The evil priest utters the words, 'noselacri'",
+          "file": "Pasted text (2)(5).txt",
+          "line_start": 11978,
+          "line_end": 11978,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Blindness incantation",
+        "output": "noselacri"
+      }
+    },
+    {
+      "id": "spell-call-words",
+      "title": "Call-lightning incantation",
+      "category": "Spells",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "Call-lightning incantation",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "qarr diesilla"
+      ],
+      "attestations": [
+        {
+          "id": "spell-call-words_log_archie_iqpi_eazy_1997_05_06",
+          "source_id": "log_archie_iqpi_eazy_1997_05_06",
+          "quote": "*an Elf* utters the words, 'qarr diesilla'",
+          "file": "Pasted text(103).txt",
+          "line_start": 8315,
+          "line_end": 8315,
+          "group": "default"
+        }
+      ],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "Call-lightning incantation",
+        "output": "qarr diesilla"
+      }
+    },
+    {
+      "id": "spell-diku-fireball",
+      "title": "NPC fireball incantation — Diku",
+      "category": "Spells",
+      "mode": "observed_by",
+      "status": "provisional",
+      "summary": "NPC fireball incantation — Diku",
+      "notes": "Exact passages are retained in the catalogue.",
+      "patterns": [
+        "tuborg"
+      ],
+      "attestations": [],
+      "soft_relation": "observed",
+      "history": [],
+      "comparison": {
+        "section": "Spells",
+        "label": "NPC fireball incantation — Diku",
+        "output": "tuborg",
+        "diku": {
+          "output": "tuborg",
+          "date": "1991-07-01",
+          "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/spec_procs.c#L742"
+        }
+      }
     }
   ],
   "history": [],
@@ -1758,5 +3406,21 @@
     "corpus": "July consolidated historical research v1.0",
     "epoch_source": "https://mume.org/about/history",
     "notes": "All seeded log quotes were matched against retained original text. Introduction/removal dates are not inferred as exact dates from first/last appearance."
+  },
+  "comparison": {
+    "baseline": {
+      "title": "Diku Alfa",
+      "date_label": "Jul 1991",
+      "source": "https://dikumud.com/history/"
+    },
+    "sections": [
+      "Social interactions",
+      "Combat & death",
+      "Spells",
+      "Mounts & followers",
+      "Stats & equipment",
+      "World & NPCs",
+      "Calendar & features"
+    ]
   }
 }

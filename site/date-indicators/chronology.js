@@ -1,6 +1,5 @@
 (function(global){
   'use strict';
-  const categories=['Death and protection','Mounts','Text and spelling','Combat','Stats and equipment','Calendar and characters','World and entities','Lineage','Documented versions'];
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function month(value){
     if(!value)return 'Date unresolved';
@@ -44,42 +43,113 @@
     const sorting=date?(relation==='after'?`Soft after ${month(date)}`:relation==='before'?`Soft before ${month(date)}`:relation==='during'?`Provisional window: ${label}`:`Observed by ${month(date)}`):'No chronological cutoff assigned';
     return {date,from,label,reason,sorting,epoch:epoch?.id||'unresolved',usable:dated.length,evidence:seen};
   }
+  const sections=['Social interactions','Combat & death','Spells','Mounts & followers','Stats & equipment','World & NPCs','Calendar & features'];
+  const oldSections={'Death and protection':'Combat & death','Mounts':'Mounts & followers','Text and spelling':'Combat & death','Combat':'Combat & death','Calendar and characters':'Calendar & features','World and entities':'World & NPCs','Lineage':'World & NPCs','Documented versions':'Calendar & features'};
+  function columns(catalogue){
+    return [{id:'diku',title:catalogue.comparison?.baseline?.title||'Diku Alfa',range:catalogue.comparison?.baseline?.date_label||'Jul 1991',source:catalogue.comparison?.baseline?.source||'https://dikumud.com/history/'},...catalogue.epochs.map(e=>{
+      const last=e.end?new Date(new Date(e.end+'T00:00:00Z').getTime()-86400000).toISOString().slice(0,10):null;
+      return {id:e.id,title:e.title,range:month(e.start)+'–'+(last?month(last):'present'),source:e.source};
+    })];
+  }
+  function evidenceEpoch(catalogue,indicator,source){
+    if(!source||dependsOn(catalogue,source,indicator.id))return null;
+    let start=source.date_start,end=source.date_end,approx=false;
+    if(!start||!end){
+      // A broad single-year label may still identify an epoch; it does not
+      // become a precise date or calibrate the shared introduction anchor.
+      const years=[...new Set(String(source.date_label||'').match(/\b(?:19|20)\d{2}\b/g)||[])];
+      if(years.length!==1||/before|after|alternative|disputed/i.test(source.date_label||''))return null;
+      start=years[0]+'-01-01';end=years[0]+'-12-31';approx=true;
+    }
+    const epoch=catalogue.epochs.find(e=>start>=e.start&&(!e.end||end<e.end));
+    return epoch?{epoch:epoch.id,start,end,approx:approx||source.calibration!=='independent'||String(source.date_confidence).startsWith('low')}:null;
+  }
+  function comparisonRows(catalogue){
+    const sourceMap=new Map(catalogue.sources.map(s=>[s.id,s]));
+    const result=[];
+    for(const indicator of catalogue.indicators){
+      const config=indicator.comparison||{section:oldSections[indicator.category]||indicator.category,label:indicator.title,output:indicator.patterns[0]||indicator.title};
+      const variants=config.variants||(indicator.mode==='transition'?[{id:'old',group:'old',label:indicator.title+' — older',output:indicator.patterns[0]},{id:'new',group:'new',label:indicator.title+' — newer',output:indicator.patterns[1]}]:[{}]);
+      for(const variant of variants){
+        const row={id:indicator.id+(variant.id?'-'+variant.id:''),section:config.section,label:variant.label||config.label,output:variant.output||config.output||indicator.patterns[0]||indicator.title,diku:variant.diku||config.diku,cells:{}};
+        const observed={};
+        for(const a of indicator.attestations){
+          if(variant.group&&a.group!==variant.group)continue;
+          const source=sourceMap.get(a.source_id),placed=evidenceEpoch(catalogue,indicator,source);
+          if(placed)(observed[placed.epoch]??=[]).push({...placed,source,attestation:a});
+        }
+        if(indicator.mode==='documented'){
+          const e=catalogue.epochs.find(e=>e.id===indicator.epoch_id);
+          if(e)observed[e.id]=[{start:indicator.documented_date,end:indicator.documented_date,approx:true,source:{url:indicator.source_url,date_label:month(indicator.documented_date)},documented:true}];
+        }
+        const indexes=catalogue.epochs.map((e,index)=>observed[e.id]?.length?index:-1).filter(index=>index>=0);
+        const continuous=config.continuity?.confirmed===true&&config.continuity.scope==='feature';
+        const first=indexes.length?Math.min(...indexes):-1;
+        const presence=catalogue.epochs.map((e,index)=>!!observed[e.id]?.length||(continuous&&first>=0&&index>first&&(!config.continuity.until||e.start<config.continuity.until)));
+        catalogue.epochs.forEach((epoch,index)=>{
+          const candidates=observed[epoch.id];
+          if(candidates?.length){
+            candidates.sort((a,b)=>a.end.localeCompare(b.end));
+            const firstEdge=index===0||!presence[index-1],lastEdge=index===presence.length-1||!presence[index+1];
+            row.cells[epoch.id]={kind:'observed',first:firstEdge,last:lastEdge,observations:candidates};
+          }else if(presence[index])row.cells[epoch.id]={kind:'continued'};
+        });
+        result.push(row);
+      }
+    }
+    return result;
+  }
+  function calendarDay(value){return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'));}
+  function marker(entry,edge){
+    let term,dateText;
+    if(edge==='first'&&!entry.approx){term='by';dateText=month(entry.end);}
+    else if(entry.approx){term='around';dateText=entry.start.slice(0,4)===entry.end.slice(0,4)&&entry.start.endsWith('01-01')&&entry.end.endsWith('12-31')?entry.start.slice(0,4):month(entry.end);}
+    else if(entry.start===entry.end){term='at';dateText=calendarDay(entry.end);}
+    else if(entry.start.slice(0,7)===entry.end.slice(0,7)){term='around';dateText=month(entry.end);}
+    else{term='between';dateText=month(entry.start)+'–'+month(entry.end);}
+    const date=entry.source.url?link(entry.source.url,dateText):esc(dateText)+'<sup title="Original online source URL has not been recorded">†</sup>';
+    return `<span class="mdi-presence-date">(present ${term} ${date})</span>`;
+  }
+  function cell(row,column){
+    if(column.id==='diku'){
+      if(!row.diku)return '<td class="mdi-unknown mdi-diku">—</td>';
+      return `<td class="mdi-observed mdi-diku">${row.diku.output!==row.output?`<code>${esc(row.diku.output)}</code>`:''}<span class="mdi-presence-date">(present at ${link(row.diku.url,month(row.diku.date))})</span></td>`;
+    }
+    const value=row.cells[column.id];if(!value)return '<td class="mdi-unknown">—</td>';
+    if(value.kind==='continued')return '<td class="mdi-continued">Present<sup>*</sup></td>';
+    const observations=value.observations;
+    let text='Present';
+    if(value.first)text=marker(observations[0],'first');
+    if(value.last&&(!value.first||observations.at(-1).end!==observations[0].end))text=(value.first?text:'')+marker(observations.at(-1),'last');
+    return `<td class="mdi-observed">${text}</td>`;
+  }
   function init(root,catalogue){
-    const host=root.querySelector('.mdi-app');
-    let filters={search:'',epoch:'all',category:'all',status:'all',order:'oldest'};
-    const results=catalogue.indicators.map(indicator=>({indicator,date:derive(catalogue,indicator)}));
-    host.innerHTML=`<header class="mdi-hero"><div class="mdi-kicker">BREE LEGENDS · RESEARCH CHRONOLOGY</div><h1>MUME dating indicators</h1><p class="mdi-lead">The changing clues we use to place player logs in history.</p><p>Exact phrases, game features and character observations, organised by the epoch they currently point to.</p><div class="mdi-edition"><span>${esc(catalogue.edition)}</span><span>Updated ${esc(catalogue.updated_at)}</span></div></header>
-      <section class="mdi-explainer"><b>A working chronology</b><p><strong>“By Jan 1995”</strong> describes the evidence. <strong>“Soft after Jan 1995”</strong> is a provisional sorting preference for an undated log. Stronger independent evidence can place the log earlier and move the indicator with it. Epoch placement is a research aid, not proof of an introduction date.</p><details><summary>How dates and conflicts are handled</summary><p>Features can be introduced before their first surviving observation. Absence of a conditional feature is weak evidence. A log dated using this same indicator cannot independently move its anchor. Version headings follow ${link(catalogue.provenance.epoch_source,'the official MUME history')}; their feature lists do not establish exact deployment dates for every addition.</p><p>This catalogue records what the research currently supports, including unresolved removal dates and calendar hypotheses. Original quotations retain their spelling and punctuation.</p></details></section>
-      <div class="mdi-counts"><div><b>${results.length}</b><span>indicators</span></div><div><b>${results.filter(r=>r.date.date).length}</b><span>placed in epochs</span></div><div><b>${results.filter(r=>!r.date.date).length}</b><span>awaiting a date</span></div><div><b>${catalogue.sources.length}</b><span>source records</span></div></div>
-      <form class="mdi-filters" role="search"><label>Find an indicator<input name="search" type="search" placeholder="Shadows, Clip-clop, a typo…"></label><label>Epoch<select name="epoch"><option value="all">All epochs</option>${catalogue.epochs.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}<option value="unresolved">Date unresolved</option></select></label><label>Evidence family<select name="category"><option value="all">All families</option>${categories.map(c=>`<option>${esc(c)}</option>`).join('')}</select></label><label>Standing<select name="status"><option value="all">All indicators</option><option value="documented">Documented version markers</option><option value="provisional">Provisional research</option><option value="unresolved">Unresolved boundaries</option></select></label><label>Order<select name="order"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label><button type="reset">Reset</button></form>
-      <div class="mdi-result-count" aria-live="polite"></div><main class="mdi-timeline"></main><footer class="mdi-foot"><b>A catalogue that can improve.</b><p>Each new dated observation can refine the shared anchor. The WordPress editor can add evidence or upload a revised catalogue; the page then recalculates its chronology from the stored data.</p><button class="mdi-download" type="button">Download current catalogue</button><p>Unresolved entries remain visible. Documented changes, dated appearances and proposed interpretations retain distinct labels.</p></footer>`;
-    const form=host.querySelector('form'),timeline=host.querySelector('.mdi-timeline');
-    function card({indicator:i,date:d}){
-      const evidence=d.evidence.map(({attestation:a,source:s})=>`<li><div class="mdi-evidence-title">${link(s?.url,s?.title||a.source_id)}</div><p>${esc(s?.date_label||'Date unresolved')} · ${usable(s,i,catalogue)?'usable date evidence':'not used to move this anchor'}</p><blockquote>${esc(a.quote)}</blockquote><small>${esc(a.file||'Source passage')}${a.line_start?` · lines ${a.line_start}–${a.line_end||a.line_start}`:''}</small><details><summary>Date basis</summary><p>${esc(s?.date_basis||'No independent date basis recorded.')}</p>${s?.dependencies?.length?`<p>Depends on: ${esc(s.dependencies.join(', '))}</p>`:''}</details></li>`).join('');
-      return `<article class="mdi-indicator" id="mdi-${esc(i.id)}"><div class="mdi-date"><b>${esc(d.label)}</b><span>${esc(d.sorting)}</span></div><div class="mdi-body"><div class="mdi-badges"><span>${esc(i.category)}</span><span class="mdi-status mdi-${esc(i.status)}">${esc(i.status==='documented'?'Documented version marker':i.status==='unresolved'?'Unresolved boundary':'Provisional research')}</span></div><h3><a href="#mdi-${esc(i.id)}">${esc(i.title)}</a></h3><p>${esc(i.summary)}</p>${i.patterns.length?`<div class="mdi-patterns">${i.patterns.map(p=>`<code>${esc(p)}</code>`).join('')}</div>`:''}<p class="mdi-note">${esc(i.notes)}</p><details><summary>Why this date? · ${i.attestations.length} source observation${i.attestations.length===1?'':'s'}</summary><p>${esc(d.reason)}</p>${i.source_url?`<p>${link(i.source_url,'Official source')}</p>`:''}${evidence?`<ol class="mdi-evidence">${evidence}</ol>`:'<p>No independently dated original passage is attached yet.</p>'}${i.history?.length?`<h4>Research updates</h4><ul>${i.history.map(h=>`<li>${esc(h.date)} — ${esc(h.note)}</li>`).join('')}</ul>`:''}</details></div></article>`;
-    }
+    const host=root.querySelector('.mdi-app'),rows=comparisonRows(catalogue),cols=columns(catalogue);
+    const groups=[...new Set([...(catalogue.comparison?.sections||sections),...rows.map(r=>r.section)])].filter(section=>rows.some(r=>r.section===section));
+    let active=groups[0];
+    host.innerHTML=`<header class="mdi-heading"><h1>MUME wording & date indicators</h1><small>Updated ${esc(catalogue.updated_at)}</small></header><p class="mdi-key">— no evidence · <sup>*</sup> continued feature · <sup>†</sup> source URL unavailable. Dates link to sources.</p><div class="mdi-layout"><nav class="mdi-tabs" role="tablist" aria-label="Output categories" aria-orientation="vertical">${groups.map((section,n)=>`<button type="button" role="tab" id="mdi-tab-${n}" aria-controls="mdi-panel" data-section="${esc(section)}">${esc(section)}</button>`).join('')}</nav><section id="mdi-panel" role="tabpanel" tabindex="0"></section></div>`;
+    const panel=host.querySelector('#mdi-panel');
     function render(){
-      const selected=results.filter(({indicator:i,date:d})=>(filters.epoch==='all'||d.epoch===filters.epoch)&&(filters.category==='all'||i.category===filters.category)&&(filters.status==='all'||i.status===filters.status)&&(!filters.search||[i.title,i.summary,i.notes,...i.patterns,...d.evidence.map(e=>e.source?.title||'')].join(' ').toLowerCase().includes(filters.search)));
-      const epochs=[...catalogue.epochs];if(filters.order==='newest')epochs.reverse();epochs.push({id:'unresolved',title:'Date unresolved',start:null});
-      timeline.innerHTML=epochs.map(epoch=>{
-        const items=selected.filter(r=>r.date.epoch===epoch.id).sort((a,b)=>(a.date.date||'').localeCompare(b.date.date||'')*(filters.order==='newest'?-1:1)||a.indicator.title.localeCompare(b.indicator.title));
-        return items.length?`<section class="mdi-epoch"><header><span>${epoch.start?month(epoch.start):'Awaiting independent anchors'}</span><h2>${esc(epoch.title)}</h2><small>${items.length} indicator${items.length===1?'':'s'}</small></header>${items.map(card).join('')}</section>`:'';
-      }).join('')||'<p class="mdi-empty">No indicators match these filters. Reset the filters to return to the full chronology.</p>';
-      host.querySelector('.mdi-result-count').textContent=`Showing ${selected.length} of ${results.length} indicators`;
+      const index=groups.indexOf(active);
+      host.querySelectorAll('[role="tab"]').forEach(button=>{const selected=button.dataset.section===active;button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;});
+      panel.setAttribute('aria-labelledby','mdi-tab-'+index);
+      panel.innerHTML=`<div class="mdi-table-wrap" tabindex="0" aria-label="${esc(active)} comparison; scroll horizontally for later epochs"><table><thead><tr><th scope="col" class="mdi-output-heading">Output / indicator</th>${cols.map(c=>`<th scope="col" ${c.id==='diku'?'class="mdi-diku"':''}>${esc(c.title)}<small>${link(c.source,c.range)}</small></th>`).join('')}</tr></thead><tbody>${rows.filter(row=>row.section===active).map(row=>`<tr id="mdi-${esc(row.id)}"><th scope="row"><b>${esc(row.label)}</b><code>${esc(row.output)}</code></th>${cols.map(column=>cell(row,column)).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
-    form.addEventListener('submit',e=>e.preventDefault());
-    const updateFilter=e=>{if(e.target.name){filters[e.target.name]=e.target.name==='search'?e.target.value.trim().toLowerCase():e.target.value;render();}};
-    form.addEventListener('input',updateFilter);form.addEventListener('change',updateFilter);
-    form.addEventListener('reset',()=>{filters={search:'',epoch:'all',category:'all',status:'all',order:'oldest'};render();});
-    host.querySelector('.mdi-download').addEventListener('click',()=>{
-      const href=URL.createObjectURL(new Blob([JSON.stringify(catalogue,null,2)+'\n'],{type:'application/json'}));
-      const a=document.createElement('a');a.href=href;a.download='mume-date-indicators.json';a.click();setTimeout(()=>URL.revokeObjectURL(href),1000);
+    host.querySelectorAll('[role="tab"]').forEach(button=>{
+      button.addEventListener('click',()=>{active=button.dataset.section;render();});
+      button.addEventListener('keydown',event=>{
+        const current=groups.indexOf(active);let next;
+        if(event.key==='ArrowDown'||event.key==='ArrowRight')next=(current+1)%groups.length;
+        if(event.key==='ArrowUp'||event.key==='ArrowLeft')next=(current-1+groups.length)%groups.length;
+        if(event.key==='Home')next=0;if(event.key==='End')next=groups.length-1;
+        if(next!==undefined){event.preventDefault();active=groups[next];render();host.querySelector('#mdi-tab-'+next).focus();}
+      });
     });
     render();
   }
-  global.MumeDateIndicators={derive,usable,init};
-  if(typeof module!=='undefined')module.exports={derive,usable};
+  global.MumeDateIndicators={derive,usable,init,comparisonRows,columns,evidenceEpoch};
+  if(typeof module!=='undefined')module.exports={derive,usable,comparisonRows,columns,evidenceEpoch};
   if(typeof document!=='undefined')document.querySelectorAll('.bree-mume-dates').forEach(root=>{
-    try{const inline=root.querySelector('.mdi-data');init(root,inline?JSON.parse(inline.textContent):global.MUME_DATE_INDICATORS);}catch(error){root.innerHTML='<p>The dating catalogue could not be loaded. Please check the uploaded data.</p>';}
+    try{const inline=root.querySelector('.mdi-data');init(root,inline?JSON.parse(inline.textContent):global.MUME_DATE_INDICATORS);}catch(error){root.innerHTML='<p>The dating catalogue could not be loaded.</p>';}
   });
 })(typeof window!=='undefined'?window:globalThis);

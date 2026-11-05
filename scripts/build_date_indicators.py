@@ -35,12 +35,14 @@ def build(catalogue, output):
     css = (assets/'style.css').read_text()
     js = (assets/'chronology.js').read_text()
     encoded = json.dumps(data, ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
-    html = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MUME Dating Indicators — Bree Legends</title><style>body{margin:0;background:#f2eee3}'+css+'</style></head><body><div class="bree-mume-dates"><div class="mdi-app"><noscript>Enable JavaScript to sort and inspect the chronology.</noscript></div></div><script>window.MUME_DATE_INDICATORS='+encoded+';</script><script>'+js+'</script></body></html>\n'
+    html = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MUME Dating Indicators — Bree Legends</title><style>body{margin:0;background:#f2eee3}'+css+'</style></head><body><div class="bree-mume-dates"><div class="mdi-app"><noscript>Enable JavaScript to browse the comparison tables.</noscript></div></div><script>window.MUME_DATE_INDICATORS='+encoded+';</script><script>'+js+'</script></body></html>\n'
     output.mkdir(parents=True, exist_ok=True)
     page = output/'MUME_Date_Indicators.html';page.write_text(html)
-    plugin = output/'bree-mume-date-indicators-0.1.0.zip'
+    plugin_source = ROOT/'integrations/wordpress/bree-mume-date-indicators/bree-mume-date-indicators.php'
+    version = re.search(r'\* Version:\s*([0-9.]+)', plugin_source.read_text()).group(1)
+    plugin = output/('bree-mume-date-indicators-' + version + '.zip')
     with zipfile.ZipFile(plugin,'w',zipfile.ZIP_DEFLATED) as archive:
-        files = {'bree-mume-date-indicators.php':(ROOT/'integrations/wordpress/bree-mume-date-indicators/bree-mume-date-indicators.php').read_bytes(),
+        files = {'bree-mume-date-indicators.php':plugin_source.read_bytes(),
                  'public/style.css':css.encode(), 'public/chronology.js':js.encode(),
                  'public/catalogue.json':(json.dumps(data,ensure_ascii=False,indent=2)+'\n').encode(),
                  'readme.txt':(ROOT/'integrations/wordpress/bree-mume-date-indicators/readme.txt').read_bytes()}
