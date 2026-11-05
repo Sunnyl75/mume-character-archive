@@ -1,3 +1,40 @@
+--- a/bree-legends/README.txt
++++ b/bree-legends/README.txt
+@@ -10,7 +10,7 @@
+ Navigation
+ ----------
+ Go to Appearance > Menus and assign a menu to the Primary Menu location.
+-If no menu is assigned, the theme falls back to Wiki / Comic / About.
++If no menu is assigned, the theme falls back to Wiki / Comics / Deck of Chars / About.
+ 
+ Sidebar
+ -------
+@@ -29,3 +29,25 @@
+ 
+ 
+ Version note: this revision no longer inserts the theme sidebar automatically on every page. Existing floated infoboxes inside page content are styled to match the cork-and-stone sidebar. The sidebar.php template remains available for deliberate future use.
++
++
++Version 1.1.9
++-------------
++Adds an editable Deck of Chars homepage card and a primary navigation link.
++The homepage uses two columns on desktop and one on narrower screens.
++Existing primary menu links and saved homepage descriptions are preserved.
++
++Full Parchment Width page template
++---------------------------------
++Edit a normal page and choose Full Parchment Width in its Page settings >
++Template field, then update the page. This template uses the complete usable
++width inside the existing parchment. The frame and its padding remain the
++same. Page title, breadcrumbs and content remain available; the theme inserts
++no sidebar. Wide/full block alignments stay inside the parchment.
++The existing Full Width Page template for wider embedded tools is unchanged.
++
++Updating the theme
++------------------
++Upload the theme ZIP through Appearance > Themes > Add New > Upload Theme,
++then choose Replace current with uploaded. This is an update of the existing
++Bree Legends theme. Deck character data is managed by its separate plugin.
 --- a/bree-legends/assets/css/bree-legends.css
 +++ b/bree-legends/assets/css/bree-legends.css
 @@ -1696,7 +1696,7 @@
@@ -9,6 +46,44 @@
    gap: clamp(20px, 2.4vw, 34px);
    align-items: stretch;
    margin-top: 1.5rem;
+@@ -2140,3 +2140,37 @@
+   width: 100%;
+   white-space: normal;
+ }
++
++/* Full Parchment Width: use the whole existing parchment interior.
++   Keep the shared frame geometry and its responsive padding unchanged. */
++.full-parchment-page {
++  width: 100%;
++  min-width: 0;
++  max-width: none;
++}
++
++.full-parchment-page .entry-content--parchment-width {
++  --wp--style--global--content-size: 100%;
++  --wp--style--global--wide-size: 100%;
++  width: 100%;
++  max-width: none;
++  min-width: 0;
++}
++
++.full-parchment-page > .entry-lede,
++.full-parchment-page > .content-divider {
++  width: 100%;
++  max-width: none;
++}
++
++.entry-content--parchment-width > .alignwide,
++.entry-content--parchment-width > .alignfull {
++  width: 100%;
++  max-width: 100%;
++  margin-inline: 0;
++}
++
++.entry-content--parchment-width .wp-block-table {
++  max-width: 100%;
++  overflow-x: auto;
++}
 --- /dev/null
 +++ b/bree-legends/assets/images/home-icon-deck.svg
 @@ -0,0 +1 @@
@@ -47,7 +122,7 @@
          get_theme_file_uri('/assets/css/bree-legends.css'),
          array(),
 -        '1.1.7'
-+        '1.1.8'
++        '1.1.9'
      );
  }
  add_action('wp_enqueue_scripts', 'bree_legends_enqueue_assets');
@@ -112,14 +187,51 @@
      );
  }
  
+--- /dev/null
++++ b/bree-legends/page-parchment-width.php
+@@ -0,0 +1,27 @@
++<?php
++/**
++ * Template Name: Full Parchment Width
++ * Template Post Type: page
++ *
++ * Fill the existing parchment interior without changing its frame or padding.
++ */
++get_header();
++?>
++<?php while (have_posts()) : the_post(); ?>
++    <article id="post-<?php the_ID(); ?>" <?php post_class('content-panel wp-entry full-parchment-page'); ?>>
++        <?php bree_legends_breadcrumbs(); ?>
++        <h1 class="entry-title"><?php the_title(); ?></h1>
++        <?php bree_legends_excerpt_lede(); ?>
++        <div class="content-divider" aria-hidden="true"></div>
++        <div class="entry-content entry-content--parchment-width">
++            <?php
++            the_content();
++            wp_link_pages(array(
++                'before' => '<nav class="page-links">' . esc_html__('Pages:', 'bree-legends'),
++                'after' => '</nav>',
++            ));
++            ?>
++        </div>
++    </article>
++<?php endwhile; ?>
++<?php get_footer(); ?>
 --- a/bree-legends/style.css
 +++ b/bree-legends/style.css
-@@ -3,7 +3,7 @@
- Theme URI: https://mumebreelegends.com/
+@@ -1,12 +1,12 @@
+ /*
+ Theme Name: Bree Legends
+-Theme URI: https://mumebreelegends.com/
++Theme URI: https://breelegends.com/
  Author: L B / Bree Legends
  Description: A custom fantasy parchment-and-stone WordPress theme for Bree Legends, based on the approved static webpage mockup.
 -Version: 1.1.7
-+Version: 1.1.8
++Version: 1.1.9
  Requires at least: 6.0
  Tested up to: 6.8
- Requires PHP: 7.4
+-Requires PHP: 7.4
++Requires PHP: 8.0
+ License: GNU General Public License v2 or later
+ License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain: bree-legends

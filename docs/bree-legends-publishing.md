@@ -15,7 +15,7 @@ configuration later in this document is only for other hosting setups.
 2. Open Tools → Deck of Chars → View Deck of Chars. Activation creates the
    published `/deck-of-chars/` page if that slug is free. An existing page is
    preserved; add `[bree_deck_of_chars]` to it if instructed.
-3. Upload the accompanying Bree Legends 1.1.8 theme ZIP through Appearance →
+3. Upload the accompanying Bree Legends 1.1.9 theme ZIP through Appearance →
    Themes → Add New → Upload Theme. Choose to replace the existing 1.1.7 theme
    when prompted. This adds the homepage card and the fallback menu link.
 4. The initial plugin package contains the GitHub archive snapshot: 2,574
@@ -69,7 +69,7 @@ HTTPS/configuration checks also pass.
 ## Theme integration
 
 `integrations/wordpress/bree-legends-deck.patch` updates the saved Bree Legends
-1.1.7 theme to 1.1.8. Apply from the directory containing `bree-legends/` with
+1.1.7 theme to 1.1.9. Apply from the directory containing `bree-legends/` with
 `git apply /path/to/bree-legends-deck.patch`, or install the supplied updated
 theme ZIP in WordPress. Confirm the active theme is still based on that version
 before replacing it; merge these changes into any newer theme instead.
@@ -146,3 +146,19 @@ its contents beneath the site's document root at `/deck-of-chars/`, including
 `.htaccess`. Keep the existing WordPress `.htaccess` at the document root.
 Upload the Deck before installing the theme links so they lead to a working
 destination. These packages are prepared for review; no live server was changed.
+
+
+## Full Parchment Width template (theme 1.1.9)
+
+Edit a normal page and select **Full Parchment Width** in Page settings →
+Template, then update the page. Content and the heading divider fill the
+existing parchment interior. The template retains the existing frame and
+responsive padding, and inserts no sidebar. Its block content-size variables
+allow the default constrained block layout to use this available width;
+wide/full alignment stays inside the parchment. The older Full Width Page
+option for wider embedded tools remains available unchanged.
+
+The theme ZIP was checked against the packaged source files; the generated
+patch applies to the saved 1.1.7 source. PHP 8.3 syntax checks passed for the
+new template, homepage and theme functions. Live appearance should be checked
+after installation on WordPress.com.
