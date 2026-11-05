@@ -10,7 +10,7 @@ Bree Legends uses WordPress.com hosting with plugin/theme uploads, without
 SFTP access on the current plan. Use the dashboard route below. The SSH
 configuration later in this document is only for other hosting setups.
 
-1. Upload `bree-deck-of-chars-1.0.0.zip` through Plugins → Add New Plugin →
+1. Upload `bree-deck-of-chars-1.0.1.zip` through Plugins → Add New Plugin →
    Upload Plugin, then activate it.
 2. Open Tools → Deck of Chars → View Deck of Chars. Activation creates the
    published `/deck-of-chars/` page if that slug is free. An existing page is
@@ -49,7 +49,7 @@ or replace the key at any time. If hosting blocks the API, upload the generated
 `dist/deck-data.json` through Tools → Deck of Chars instead. The live connection
 must be tested after plugin installation; it was not available during packaging.
 
-Every build also produces `dist/bree-deck-of-chars-1.0.0.zip`, an installable
+Every build also produces `dist/bree-deck-of-chars-1.0.1.zip`, an installable
 plugin with the current website assets. Remote data publication updates data
 only: new portraits or frontend changes require uploading the rebuilt plugin
 ZIP through WordPress. Stored character updates survive plugin/theme updates.

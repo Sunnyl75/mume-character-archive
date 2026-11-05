@@ -1,12 +1,12 @@
 window.DECK_CHARS = {
   "meta": {
-    "generatedAt": "2026-07-15T23:23:11.912871+00:00",
+    "generatedAt": "2026-11-05T00:29:41.773670+00:00",
     "source": "mume-character-archive",
     "schema": "deck-of-chars-alpha-compatible",
     "characterCount": 2574,
     "playerCount": 225,
     "asciiRecordCount": 39,
-    "portraitFileCount": 14
+    "portraitFileCount": 17
   },
   "portraitFiles": [
     "Dwarf-Warrior-Male.png",
@@ -17,12 +17,15 @@ window.DECK_CHARS = {
     "Hobbit-Warrior-Male.png",
     "Human-Mage-Male-Black_Numenorean.png",
     "Human-Warrior-Male.png",
+    "Implementor.png",
+    "Maia.png",
     "Orc-Warrior-Male-Zaugurz.png",
     "Orc-Warrior-Male.png",
     "Troll-Warrior-Male-Cave.png",
     "Troll-Warrior-Male-Hill.png",
     "Troll-Warrior-Male-Mountain.png",
-    "Unknown.png"
+    "Unknown.png",
+    "Vala.png"
   ],
   "characters": [
     {

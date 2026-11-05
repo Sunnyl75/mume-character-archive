@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bree Legends — Deck of Chars
  * Description: Illustrated MUME character archive with dashboard uploads and a data-only publishing API.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.2
  * Requires PHP: 8.1
  * Author: Bree Legends
@@ -48,7 +48,20 @@ function bree_deck_default_data(): array {
 
 function bree_deck_data(): array {
     $stored = get_option('bree_deck_published_data', null);
-    return is_array($stored) ? $stored : bree_deck_default_data();
+    $data = is_array($stored) ? $stored : bree_deck_default_data();
+    // Plugin updates may add portraits while retaining an older published dataset.
+    // The installed files are the authoritative inventory of available artwork.
+    $portraits = array();
+    foreach (glob(BREE_DECK_DIR . 'public/assets/cards/*.png') ?: array() as $path) {
+        $name = basename($path);
+        if (preg_match('/\A[A-Z][A-Za-z0-9_-]*\.png\z/', $name)) {
+            $portraits[] = $name;
+        }
+    }
+    sort($portraits);
+    $data['portraitFiles'] = $portraits;
+    $data['meta']['portraitFileCount'] = count($portraits);
+    return $data;
 }
 
 function bree_deck_public_ajax(): void {

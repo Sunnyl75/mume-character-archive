@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Package the current public Deck as an installable WordPress plugin."""
 import json
+import re
 from pathlib import Path
 import shutil
 
@@ -22,7 +23,8 @@ def build_plugin():
         shutil.copy2(site / name, public / name)
     shutil.copytree(site / 'assets', public / 'assets')
     (ROOT / 'dist/deck-data.json').write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
-    archive = shutil.make_archive(str(ROOT / 'dist/bree-deck-of-chars-1.0.0'), 'zip', stage.parent, stage.name)
+    version = re.search(r'Version: ([0-9.]+)', (stage / 'bree-deck-of-chars.php').read_text()).group(1)
+    archive = shutil.make_archive(str(ROOT / f'dist/bree-deck-of-chars-{version}'), 'zip', stage.parent, stage.name)
     print(f'WordPress plugin: {archive}', flush=True)
     return archive
 
