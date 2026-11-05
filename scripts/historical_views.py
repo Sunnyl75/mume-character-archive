@@ -2,6 +2,7 @@
 import csv
 from collections import defaultdict
 from urllib.parse import urlsplit
+from source_review import saved_facts
 
 
 def rows(root, table):
@@ -21,6 +22,7 @@ def public_url(value):
 
 
 def build_history(root):
+    reviewed = saved_facts(root)
     logs = {r["log_id"]: r for r in rows(root, "logs")}
     result = defaultdict(lambda: {"logs": [], "deaths": [], "trophies": []})
     seen = set()
@@ -39,6 +41,8 @@ def build_history(root):
     for row in rows(root, "log_appearances"):
         add_log(row.get("character_id"), row["log_id"])
     for row in rows(root, "historical_events"):
+        if row.get('review_status') and row['review_status'] != 'accepted':
+            continue
         cid = row.get("character_id")
         if not cid:
             continue
@@ -54,7 +58,17 @@ def build_history(root):
         item = {**reference(row["log_id"]), "id": row["event_id"], "count": count,
                 "confidence": row.get("confidence", "unknown"),
                 "observation": observation}
-        # Raw claims, research notes, private player records and locations are not exported.
+        fact = reviewed.get('historical_events:' + row['event_id'], {})
+        if fact.get('citation', {}).get('quote'):
+            item['observation'] = 'reviewed against source'
+        details = [{'kind': f['kind'], 'value': f['value'], 'confidence': f['confidence']}
+                   for f in reviewed.values() if f['status']=='accepted' and f['log_id']==row['log_id']
+                   and f['kind'] in {'observer', 'attacker', 'killer', 'location'}
+                   and (f.get('about')=='historical_events:' + row['event_id'] or
+                        (f['kind']=='observer' and not f.get('about')))]
+        if details: item['details'] = details
+        # Export only explicitly accepted role/location fields; raw claims,
+        # quotations, private review notes and player metadata stay private.
         if row.get("event_type") == "death":
             result[cid]["deaths"].append(item)
             add_log(cid, row["log_id"])

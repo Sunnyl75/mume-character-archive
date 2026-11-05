@@ -2,3 +2,4 @@
 /dist/
 /.deck-publish-token
 __pycache__/
+/.deck-workbench.lock

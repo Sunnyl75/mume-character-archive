@@ -21,7 +21,11 @@ python3 scripts/import_historical_evidence.py \
 ```
 
 The preview writes only the explicitly requested review report. It lists added
-records, proposed player links and unresolved references. It never publishes.
+records, proposed player links and unresolved references. The report includes
+individual record changes, before/after values, source metadata and extracted
+evidence text. The workbench shows these through its searchable Step 2 record
+browser without sending the full evidence payload in each progress update.
+It never publishes.
 After reviewing, apply the same import:
 
 ```bash
@@ -123,6 +127,8 @@ rebuild/publishing command is not one transaction.
 | Full curated index, including unrecovered entries | `historical_log_index.csv` |
 | Collection work | `whois_queue.csv`, then `exports/mudlet/whois_queue.txt` |
 | Immutable source checkpoint and input hashes | `data/incoming/historical/<session>/` |
+| Current source facts and human revisions | `research_facts.csv` (`source-fact/1` records) |
+| Before/after decision and revision history | `research_fact_history.csv` |
 
 Reimporting identical input adds no duplicate rows. Source changes receive new
 evidence identities; prior observations remain available. Session names identify
@@ -142,6 +148,13 @@ Public exports use an explicit field selection. Private player data, raw claims
 and research notes remain outside historical Deck data. Log links allow HTTP(S)
 only. New Logs views show approximate date and linked title; death observations
 include their source basis. The existing Trophies controls show dated snapshots.
+New historical death and trophy records have `review_status=needs_review` and
+are excluded from public event views until accepted. Existing legacy records
+with no review status retain their previous published behaviour. Reimports
+preserve review decisions. The Workbench groups related source claims, explains
+confidence, and opens retained source text; the JSON extraction remains separate
+from the original. Its high-confidence batch leaves uncertain or source-missing
+groups pending. See `docs/deck-workbench.md` for the review controls.
 Existing public-player display rules are unchanged; private names from these
 new sources are never copied into the public player table.
 
@@ -153,6 +166,18 @@ queue export, Whois import, local rebuild and publish stages. Acquisition and ra
 log extraction should be separate operations with visible progress. A review UI
 should resolve player mappings, uncertain observations and duplicate events
 before incorporating them into public summaries.
+
+The Workbench now provides this source-wide review. `source_review.py` separates
+source facts from the UI and public Deck projections. Each reviewed fact has a
+stable ID, source/log IDs, kind, subject/value, status, confidence, evidence basis,
+citation and optional link to another fact. Raw extraction records remain
+unchanged; revisions have before/after history and survive reimport. The source
+view includes all retained structured findings, including context not represented
+by a death/trophy row. This is a foundation for a future master archive, rather
+than a migration or merge with the Usenet research database. Contextual findings
+are private unless the public exporter explicitly selects their fields. Separate
+attacker and final-killer findings retain separate confidence; neither creates a
+trophy count.
 
 ## Checks
 

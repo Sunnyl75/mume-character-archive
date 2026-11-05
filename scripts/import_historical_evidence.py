@@ -17,6 +17,8 @@ from pathlib import Path
 import re
 import shutil
 import tempfile
+from historical_review import groups_for, level
+from source_review import apply_reviewed, saved_facts
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "historical-import/1"
@@ -28,7 +30,7 @@ FIELDS = {
     "evidence": "evidence_id,source_id,evidence_type,subject_type,subject_id_or_name,claim,raw_text,location_in_source,date_observed,date_range_start,date_range_end,date_confidence,confidence,notes",
     "logs": "log_id,title,filename,date_exact,date_range_start,date_range_end,date_confidence,date_basis,notes,source_id,source_url,display_date",
     "log_appearances": "appearance_id,log_id,character_id,character_name,line_excerpt,event_type,date_range_start,date_range_end,date_confidence,confidence,notes,evidence_id",
-    "historical_events": "event_id,log_id,source_id,event_type,character_id,character_name,other_character_id,other_character_name,count,date_range_start,date_range_end,display_date,date_confidence,confidence,evidence_id,location,observation_status",
+    "historical_events": "event_id,log_id,source_id,event_type,character_id,character_name,other_character_id,other_character_name,count,date_range_start,date_range_end,display_date,date_confidence,confidence,evidence_id,location,observation_status,review_status",
     "historical_log_index": "entry_id,log_id,source_log_id,title,display_date,url,original_url,source_id,recovery_status",
     "whois_queue": "character_name,character_id,already_checked,priority,notes",
 }
@@ -56,8 +58,7 @@ def name(value):
 
 
 def confidence(value):
-    value = clean(value).casefold()
-    return "high" if value in {"high", "certain"} else "low" if value.startswith("low") else "medium"
+    return level(value)
 
 
 def date_fields(value):
@@ -227,12 +228,16 @@ class Importer:
         if type(count) is not int or count < 1:
             raise ValueError(f"Invalid event count in {logid}/{location}")
         eid = self.evidence(source, location, kind, char["name"], raw, dates)
-        self.put("historical_events", {"event_id": ident("event_hist", eid), "log_id": logid, "source_id": source,
+        event_id = ident("event_hist", eid)
+        old = self.indexes['historical_events'].get(event_id)
+        review_status = (old.get('review_status') or 'accepted') if old else 'needs_review'
+        self.put("historical_events", {"event_id": event_id, "log_id": logid, "source_id": source,
                  "event_type": kind, "character_id": char["character_id"], "character_name": char["name"],
                  "other_character_id": counterpart["character_id"] if counterpart else "",
                  "other_character_name": counterpart["name"] if counterpart else "", "count": count,
                  **dates, "confidence": confidence(raw.get("confidence")), "evidence_id": eid,
-                 "location": clean(raw.get("location")), "observation_status": clean(raw.get("evidence") or "structured extraction")})
+                 "location": clean(raw.get("location")), "observation_status": clean(raw.get("evidence") or "structured extraction"),
+                 "review_status": review_status})
         self.queue(char, eid)
         self.queue(counterpart, eid)
 
@@ -245,6 +250,7 @@ class Importer:
             dates = date_fields(rec.get("event_date"))
             self.put("logs", {"log_id": logid, "title": clean(rec.get("title")),
                      "filename": clean(rec.get("source_file")), "source_id": source,
+                     **({"source_url": clean(rec["source_url"])} if rec.get("source_url") else {}),
                      "date_exact": dates["date_range_start"] if dates["date_confidence"] == "exact" else "",
                      **dates, "date_basis": serial(rec.get("event_date", {})),
                      "notes": "Historical structured extraction; alternative dates preserved in date_basis."})
@@ -284,6 +290,8 @@ class Importer:
                 if not entries and trophy.get("player_entries"):
                     self.review.append({"kind": "trophy_owner_requires_review", "log_id": logid})
                 for i, entry in enumerate(entries):
+                    entry = {**entry, 'source_context': {'trophy_owner': trophy.get('owner', ''),
+                                                         'observer': rec.get('credited_observer', '')}}
                     self.event(source, logid, f"{logid}/trophy/{i}", "trophy", entry.get("killer_character"),
                                entry.get("victim_character"), entry.get("minimum_kill_count"), entry, dates)
 
@@ -308,6 +316,8 @@ class Importer:
             if data.get("additional_website_candidate"):
                 entries.append(data["additional_website_candidate"])
             for i, entry in enumerate(entries):
+                entry = {**entry, 'source_context': {'evidence_type': data.get('evidence_type', ''),
+                                                    'source_capture_url': data.get('source_capture_url', '')}}
                 self.link(source, f"characters/{i}", entry.get("character_name"), entry.get("same_player_as") or data.get("player_id"), entry)
         elif schema.startswith("mume_player_character_evidence/"):
             for i, player in enumerate(data.get("players", [])):
@@ -342,6 +352,7 @@ class Importer:
             log = self.indexes["logs"].get(entry["log_id"].casefold())
             if log and not log.get("source_url"):
                 self.put("logs", {"log_id": log["log_id"], "source_url": entry["url"]})
+        apply_reviewed(self.root, self.tables)
         self.changes.clear()
         for table, current in self.indexes.items():
             for key, row in current.items():
@@ -359,6 +370,88 @@ class Importer:
                 writer = csv.DictWriter(f, fieldnames=self.headers[table])
                 writer.writeheader()
                 writer.writerows(rows)
+
+    def preview_details(self):
+        """Describe the final net change, with evidence references, without writing."""
+        evidence = self.indexes["evidence"]
+        by_character, by_player, by_log = {}, {}, {}
+
+        def associate(index, key, eid):
+            if key and eid:
+                index.setdefault(clean(key).casefold(), set()).add(eid)
+
+        for row in self.tables["evidence"]:
+            associate(by_character, row.get("subject_id_or_name"), row["evidence_id"])
+            if row.get("evidence_type") == "logical_log":
+                associate(by_log, row.get("location_in_source"), row["evidence_id"])
+        for row in self.tables["player_character_links"]:
+            associate(by_player, row.get("player_id"), row.get("primary_evidence_id"))
+        for rows in (self.tables["log_appearances"], self.tables["historical_events"]):
+            for row in rows:
+                associate(by_character, row.get("character_id"), row.get("evidence_id"))
+
+        records, referenced = [], set()
+        for table, current in self.indexes.items():
+            for key, row in current.items():
+                old = self.original[table].get(key)
+                fields = [field for field in self.headers[table]
+                          if clean(row.get(field)) != clean((old or {}).get(field))]
+                if old is not None and not fields:
+                    continue
+                eids = set()
+                for column in ("evidence_id", "primary_evidence_id"):
+                    if row.get(column):
+                        eids.add(row[column])
+                if table == "characters":
+                    eids.update(by_character.get(key, set()))
+                    eids.update(by_character.get(clean(row.get("name")).casefold(), set()))
+                if table == "players":
+                    eids.update(by_player.get(key, set()))
+                if table == "logs":
+                    eids.update(by_log.get(key, set()))
+                if table == "whois_queue":
+                    eids.update(by_character.get(clean(row.get("character_name")).casefold(), set()))
+                    eids.update(re.findall(r"evidence_hist_[a-f0-9]{20}", row.get("notes", "")))
+                source_ids = {row[column] for column in ("source_id", "primary_source_id") if row.get(column)}
+                for eid in eids:
+                    source_id = evidence.get(eid.casefold(), {}).get("source_id")
+                    if source_id:
+                        source_ids.add(source_id)
+                if table == "sources":
+                    source_ids.add(row["source_id"])
+                records.append({"key": table + ":" + row[IDS[table]], "table": table,
+                                "id": row[IDS[table]], "action": "added" if old is None else "updated",
+                                "before": dict(old) if old is not None else None, "after": dict(row),
+                                "changed_fields": fields, "evidence_ids": sorted(eids),
+                                "source_ids": sorted(source_ids)})
+                referenced.update(eids)
+        source_context = {row["source_id"]: dict(row) for row in self.tables["sources"]}
+        for item in self.inputs:
+            source_context[item["source_id"]]["input_file"] = item["path"]
+        claim_review = groups_for(self.tables['player_character_links'], self.tables['historical_events'],
+                                  self.tables['evidence'], self.tables['logs'], self.tables['sources'],
+                                  selected_keys={r['key'] for r in records}, reviewed=saved_facts(self.root))
+        assessments = {m['record_key']: m['assessment'] for g in claim_review['groups'] for m in g['members']}
+        for record in records:
+            if record['key'] in assessments:
+                record['assessment'] = assessments[record['key']]
+        logical_logs = {}
+        for ev in self.tables['evidence']:
+            if ev.get('evidence_type') == 'logical_log':
+                try:
+                    logical_logs[ev['location_in_source']] = json.loads(ev['raw_text'])
+                except (ValueError, TypeError):
+                    pass
+        for logid, logical in logical_logs.items():
+            if not logical.get('source_url'):
+                logical['source_url'] = self.indexes['logs'].get(logid.casefold(), {}).get('source_url', '')
+        claim_review['summary']['routine_records'] = len(records) - len(assessments)
+        return {"preview_schema": "historical-preview/2", "records": records, 'claim_review': claim_review,
+                'log_context': logical_logs,
+                'source_fact_context': {name: self.tables[name] for name in
+                                        ('player_character_links', 'historical_events', 'evidence', 'logs', 'sources', 'log_appearances')},
+                "evidence_context": {eid: dict(evidence[eid.casefold()]) for eid in sorted(referenced)
+                                     if eid.casefold() in evidence}, "source_context": source_context}
 
     def apply(self, input_path, session):
         """Stage and validate before replacing any canonical table; rollback on failure."""
@@ -441,6 +534,7 @@ def main():
         raise ValueError("Use an input outside the archive repository to avoid recursive source copies")
     result = {"version": VERSION, "session": session, "applied": args.apply, "inputs": importer.inputs,
               "changes": dict(importer.changes), "review": importer.review}
+    result.update(importer.preview_details())
     if args.apply:
         result["retained_inputs"] = str(importer.apply(path, session))
     if args.report:

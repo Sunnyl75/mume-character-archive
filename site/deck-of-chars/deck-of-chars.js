@@ -995,7 +995,7 @@ function openScroll(kind) {
     body.innerHTML = logs.map(item => `<div class="scroll-row source">${historicalReference(item)}</div>`).join("")
       || `<p>No historical log references have been imported for this character.</p>`;
     if (deaths.length) body.innerHTML += `<h3>Death observations</h3><p>Separate source observations may describe the same event.</p>`
-      + deaths.map(item => `<div class="scroll-row source">${historicalReference(item)}<br>${item.count} death(s) reported; ${escapeHtml(item.observation)}; confidence: ${escapeHtml(item.confidence)}</div>`).join("");
+      + deaths.map(item => `<div class="scroll-row source">${historicalReference(item)}<br>${item.count} death(s) reported; ${escapeHtml(item.observation)}; confidence: ${escapeHtml(item.confidence)}${(item.details||[]).map(fact=>`<br>${escapeHtml(fact.kind)}: ${escapeHtml(fact.value)} (${escapeHtml(fact.confidence)} confidence)`).join('')}</div>`).join("");
   } else if (kind === "whois") {
     title.textContent = "Whois Evidence";
     body.innerHTML = `<pre class="scroll-whois ${c.whoisHtml ? "has-colour-whois" : ""}">${c.whoisHtml || escapeHtml(c.whoisText || "No whois text available.")}</pre>`;

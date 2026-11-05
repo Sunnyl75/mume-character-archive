@@ -1,5 +1,6 @@
 """Meaningful regression checks for evidence identity, conflicts and public export."""
 import contextlib
+from collections import Counter
 import csv
 import importlib.util
 import io
@@ -111,10 +112,19 @@ class HistoricalImportTests(unittest.TestCase):
         imp.tables["logs"][0]["source_url"] = "javascript:alert(1)"
         imp.tables["logs"][0]["notes"] = "PRIVATE_SENTINEL"
         imp.tables["historical_events"][0]["observation_status"] = "PRIVATE_SENTINEL"
+        imp.tables["historical_events"][0]["review_status"] = "accepted"
         imp.write_tables(self.root)
         text = json.dumps(build_history(self.root))
         self.assertNotIn("PRIVATE_SENTINEL", text)
         self.assertNotIn("javascript:", text)
+
+    def test_pending_events_are_preserved_but_not_published(self):
+        imp=self.ingest(corpus());imp.finish();imp.write_tables(self.root)
+        self.assertTrue(imp.tables['historical_events'])
+        self.assertTrue(all(r['review_status']=='needs_review' for r in imp.tables['historical_events']))
+        self.assertTrue(all(not h['deaths'] and not h['trophies'] for h in build_history(self.root).values()))
+        imp.tables['historical_events'][0]['review_status']='accepted';imp.write_tables(self.root)
+        self.assertEqual(sum(len(h['deaths']) for h in build_history(self.root).values()),1)
 
     def test_whois_import_reuses_historical_character_id(self):
         imp = self.ingest(corpus())
@@ -124,6 +134,37 @@ class HistoricalImportTests(unittest.TestCase):
                    "records": {"observer": {"latest": {"character_name": "Observer", "class": "Warrior"}}}}
         whois.import_captures(archive, imp.tables["characters"], [], imp.tables["whois_queue"])
         self.assertEqual([c["character_id"] for c in imp.tables["characters"] if c["name"] == "Observer"], [before])
+
+    def test_detailed_preview_matches_totals_and_preserves_source_text(self):
+        imp = self.ingest(corpus())
+        imp.finish()
+        details = imp.preview_details()
+        counts = Counter(r['table'] + ': ' + r['action'] for r in details['records'])
+        self.assertEqual(counts, imp.changes)
+        char = next(r for r in details['records'] if r['table']=='characters' and r['after']['name']=='Observer')
+        self.assertIsNone(char['before'])
+        self.assertTrue(char['evidence_ids'])
+        self.assertTrue(any('Observer' in details['evidence_context'][eid]['raw_text'] for eid in char['evidence_ids']))
+        self.assertEqual(details['source_context'][char['source_ids'][0]]['input_file'], 'fixture.json')
+        self.assertFalse((self.root/'data').exists())
+        imp.write_tables(self.root)
+        again = self.ingest(corpus())
+        again.finish()
+        self.assertEqual(again.preview_details()['records'], [])
+
+    def test_updated_record_preview_has_exact_before_after_values(self):
+        original = self.ingest(corpus())
+        original.finish()
+        original.write_tables(self.root)
+        revised = corpus()
+        revised['records'][0]['title'] = 'Revised <title>'
+        changed = self.ingest(revised)
+        changed.finish()
+        row = next(r for r in changed.preview_details()['records'] if r['table']=='logs')
+        self.assertEqual(row['action'], 'updated')
+        self.assertEqual(row['before']['title'], 'A battle')
+        self.assertEqual(row['after']['title'], 'Revised <title>')
+        self.assertIn('title', row['changed_fields'])
 
     def test_apply_validates_and_rolls_back_failed_replacement(self):
         shutil.copytree(ROOT / "data/working", self.root / "data/working")

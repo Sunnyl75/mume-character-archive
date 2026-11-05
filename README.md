@@ -1,5 +1,9 @@
 # MUME Character Archive
 
+For a guided local interface, see [Deck of Chars Workbench](docs/deck-workbench.md).
+It walks through source preparation, historical import, player review, Mudlet
+collection, Whois import, local preview and publication.
+
 Historical logs, website player links and trophy evidence can now be imported
 through a preview/review/apply workflow. See
 [Historical evidence workflow](docs/historical-evidence-workflow.md) for the July

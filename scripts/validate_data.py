@@ -573,6 +573,7 @@ class Validator:
                                 ("evidence_id", evidence_ids)):
                 self.check_optional_foreign_key("historical_events.csv", events, column, ids, column)
             self.check_allowed_values("historical_events.csv", events, "event_type", {"death", "trophy"})
+            self.check_allowed_values("historical_events.csv", events, "review_status", {'accepted', 'rejected', 'needs_review'})
             self.check_date_range("historical_events.csv", events, "date_range_start", "date_range_end")
             for row in events:
                 if not clean(row.get("count")).isdigit() or int(row["count"]) < 1:

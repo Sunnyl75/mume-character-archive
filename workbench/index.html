@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Deck of Chars Workbench</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">D</span><div>Deck of Chars<small>ARCHIVE WORKBENCH</small></div></div>
+    <p class="aside-intro">From a source you found<br>to a story in the Deck.</p>
+    <nav id="steps" aria-label="Workflow steps"></nav>
+    <div class="sidebar-foot"><span class="local-dot"></span> Running on your computer<p>Your archive stays local.<br>Publishing is a separate step.</p><button class="text-button" id="help-button">Open the field guide ↗</button></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="eyebrow">YOUR MUME ARCHIVE</span><span id="archive-path" class="archive-path"></span></div><span id="connection-badge" class="badge">Local workspace</span></header>
+    <section class="overview" aria-label="Archive counts"><div><strong id="count-characters">—</strong><span>characters</span></div><div><strong id="count-captures">—</strong><span>Whois captures</span></div><div><strong id="count-pending">—</strong><span>names awaiting collection</span></div><div class="overview-note">Evidence first.<br><span>Keep the source behind every claim.</span></div></section>
+    <div id="notice" role="status" hidden></div>
+    <section class="step-heading"><span id="step-number" class="eyebrow"></span><h1 id="step-title"></h1><p id="step-description"></p></section>
+    <section id="content"></section>
+    <div class="navigation"><button id="back" class="secondary">← Previous step</button><span id="step-position"></span><button id="next">Next step →</button></div>
+    <details class="activity" id="activity"><summary><span id="activity-title">Activity log</span><span id="job-status"></span></summary><pre id="job-log" tabindex="0">Your progress and command output will appear here.</pre></details>
+    <footer><span id="backup-note">Working tables are backed up before imports and edits.</span><button id="restore-button" class="text-button">Restore last backup</button></footer>
+  </main>
+</div>
+<dialog id="guide"><button id="close-guide" class="dialog-close" aria-label="Close guide">×</button><span class="eyebrow">THE FIELD GUIDE</span><h2>A repeatable route to the Deck</h2><ol><li><b>Add sources.</b> Load research JSON/ZIP, or paste a webpage or one gameplay log. Enter explicit player groups yourself. Use Detect to find standard death and trophy lines, then select the player entries you want to keep.</li><li><b>Preview and import.</b> Review source groups with confidence reasons. Read original source opens retained logs/pages with line numbers and search. A standalone JSON may lack originals; use the full research ZIP. Import preserves evidence.</li><li><b>Review claims.</b> Open View source & all claims to check completeness. Use each claim’s decision menu to accept as written, revise, reject or keep pending. Add missing findings with evidence and citations. Accept supported high-confidence groups together. New links, deaths and trophy claims remain unpublished until accepted. Map a source player to an existing archive player when needed.</li><li><b>Collect Whois.</b> Build the queue, then copy the commands into Mudlet. This is optional enrichment; historical evidence does not depend on a successful Whois.</li><li><b>Import captures.</b> Select the local Mudlet profile or upload its archive. Preview before importing.</li><li><b>Build and preview.</b> Rebuild locally and open the actual Deck. Download the updated plugin for its first installation.</li><li><b>Publish.</b> Connect the existing WordPress plugin with its publishing key, then explicitly publish when ready. Manual upload remains available.</li></ol><h3>What the source helper understands</h3><p>It detects standard named death lines and player entries inside an explicit TROPHY display. It does not infer ownership, killers, uncertain dates or complex prose. Unrecognised text remains preserved. Split collections into individual logs and use the observer for that specific perspective.</p><h3>Keep uncertainty visible</h3><p>Different logs can describe the same death. Trophy snapshots show minimum counts before their display date and are never added into a lifetime total. Website friendship links do not establish common ownership.</p><h3>Leave and return</h3><p>The workbench remembers your current step, selected files and previous operations. Leave the launcher window open during an operation. Reopening the launcher resumes the workspace.</p></dialog>
+</body></html>
