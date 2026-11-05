@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the Deck and optionally publish its public files using SSH/rsync."""
+"""Rebuild the Deck and publish through its WordPress plugin or SSH/rsync."""
 import argparse
 import json
 import os
@@ -10,6 +10,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import deck_wordpress_api
+from build_deck_wordpress_plugin import build_plugin
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site/deck-of-chars'
@@ -21,6 +23,11 @@ def run_script(name, *args):
 
 def deployment_config(path):
     config = json.loads(path.read_text())
+    if config.get('method') == 'wordpress':
+        config['site_url'] = deck_wordpress_api.site_address(config['site_url'])
+        if not Path(config['token_file']).expanduser().is_file():
+            raise ValueError('Publishing key file is missing. Run --setup-wordpress first.')
+        return config
     target = config['ssh_target']
     remote = config['remote_directory']
     if not re.fullmatch(r'[A-Za-z0-9_][A-Za-z0-9_.-]*@[A-Za-z0-9][A-Za-z0-9.-]*', target):
@@ -38,12 +45,16 @@ def main():
     parser.add_argument('--whois', type=Path, help='Import this Mudlet JSON before rebuilding.')
     parser.add_argument('--export-only', action='store_true', help='Use the already rebuilt archive manifest.')
     parser.add_argument('--config', type=Path, default=ROOT / '.deck-deploy.json')
+    parser.add_argument('--setup-wordpress', action='store_true', help='Connect to the plugin once; prompts for the publishing key.')
     args = parser.parse_args()
+    if args.setup_wordpress:
+        deck_wordpress_api.setup(args.config.expanduser().resolve())
+        return
     if args.whois and args.export_only:
         parser.error('--whois and --export-only cannot be combined')
     # Fail before changing data if deployment is requested but not configured.
     deploy = deployment_config(args.config.expanduser()) if args.publish or args.dry_run else None
-    if deploy and not shutil.which('rsync'):
+    if isinstance(deploy, tuple) and not shutil.which('rsync'):
         parser.error('rsync is required to publish')
     if args.whois:
         whois = args.whois.expanduser().resolve(strict=True)
@@ -91,6 +102,10 @@ def main():
     shutil.copytree(SITE / 'assets', stage / 'assets')
     archive = shutil.make_archive(str(ROOT / 'dist/deck-of-chars'), 'zip', ROOT / 'dist', 'deck-of-chars')
     print(f'Built {len(data["characters"])} characters. Upload package: {archive}', flush=True)
+    build_plugin()
+    if isinstance(deploy, dict):
+        deck_wordpress_api.publish(deploy, data, args.dry_run)
+        return
     if deploy:
         target, remote = deploy
         if not args.dry_run:

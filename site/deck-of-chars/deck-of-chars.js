@@ -118,7 +118,7 @@ function displayClass(c) {
   return klass;
 }
 
-const PORTRAIT_ASSET_PATH = "assets/cards/";
+const PORTRAIT_ASSET_PATH = window.BREE_DECK_ASSET_BASE || "assets/cards/";
 
 function portraitToken(value) {
   return String(value || "")

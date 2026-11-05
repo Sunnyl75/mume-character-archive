@@ -4,6 +4,68 @@ The public destination is `https://breelegends.com/deck-of-chars/`.
 The archive stays on the Mac and in its existing Git repository. Publishing
 copies only the Deck website and its exported data to the web server.
 
+## Install through WordPress (current Bree Legends hosting)
+
+Bree Legends uses WordPress.com hosting with plugin/theme uploads, without
+SFTP access on the current plan. Use the dashboard route below. The SSH
+configuration later in this document is only for other hosting setups.
+
+1. Upload `bree-deck-of-chars-1.0.0.zip` through Plugins → Add New Plugin →
+   Upload Plugin, then activate it.
+2. Open Tools → Deck of Chars → View Deck of Chars. Activation creates the
+   published `/deck-of-chars/` page if that slug is free. An existing page is
+   preserved; add `[bree_deck_of_chars]` to it if instructed.
+3. Upload the accompanying Bree Legends 1.1.8 theme ZIP through Appearance →
+   Themes → Add New → Upload Theme. Choose to replace the existing 1.1.7 theme
+   when prompted. This adds the homepage card and the fallback menu link.
+4. The initial plugin package contains the GitHub archive snapshot: 2,574
+   characters and 225 players. Rebuild from your current local archive to
+   publish any newer data or artwork.
+
+### Connect the Mac once
+
+Under Tools → Deck of Chars, click Create publishing key. On your Mac, from
+the updated archive repository, run:
+
+```bash
+python3 scripts/publish_deck.py --setup-wordpress
+```
+
+Enter `https://breelegends.com` and paste the key at the hidden prompt. The
+command verifies the connection before saving a private local token file.
+The key authorizes only Deck data updates; WordPress stores its hash. Never
+paste it into chat. The token and deployment configuration are ignored by Git.
+
+Then rebuild and publish automatically with:
+
+```bash
+python3 scripts/publish_deck.py --publish
+```
+
+Add `--whois "/path/to/your/mume_whois_archive.json"` to import a fresh capture
+as part of that command. `--dry-run` rebuilds and verifies the connection
+without changing the published data. Use the WordPress Tools page to revoke
+or replace the key at any time. If hosting blocks the API, upload the generated
+`dist/deck-data.json` through Tools → Deck of Chars instead. The live connection
+must be tested after plugin installation; it was not available during packaging.
+
+Every build also produces `dist/bree-deck-of-chars-1.0.0.zip`, an installable
+plugin with the current website assets. Remote data publication updates data
+only: new portraits or frontend changes require uploading the rebuilt plugin
+ZIP through WordPress. Stored character updates survive plugin/theme updates.
+The plugin does not import raw captures or run the archive's Python code on
+WordPress. Rebuilding and uploading remain one command on the Mac.
+
+### Validation
+
+PHP 8.3 syntax checks pass for the plugin and changed theme files. Standalone
+PHP contract tests cover the bundled schema, correct/incorrect/revoked update
+keys, preserving published data after an invalid update, unsafe portrait paths,
+duplicate character IDs, and preserving an existing page during activation.
+Those tests stub WordPress services, so live WordPress.com installation and
+remote publication still need verification. JavaScript syntax and publisher
+HTTPS/configuration checks also pass.
+
 ## Theme integration
 
 `integrations/wordpress/bree-legends-deck.patch` updates the saved Bree Legends

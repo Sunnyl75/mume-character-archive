@@ -1,3 +1,4 @@
 /.deck-deploy.json
 /dist/
+/.deck-publish-token
 __pycache__/
