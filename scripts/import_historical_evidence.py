@@ -245,6 +245,7 @@ class Importer:
             dates = date_fields(rec.get("event_date"))
             self.put("logs", {"log_id": logid, "title": clean(rec.get("title")),
                      "filename": clean(rec.get("source_file")), "source_id": source,
+                     **({"source_url": clean(rec["source_url"])} if rec.get("source_url") else {}),
                      "date_exact": dates["date_range_start"] if dates["date_confidence"] == "exact" else "",
                      **dates, "date_basis": serial(rec.get("event_date", {})),
                      "notes": "Historical structured extraction; alternative dates preserved in date_basis."})
