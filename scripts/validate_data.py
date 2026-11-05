@@ -557,6 +557,33 @@ class Validator:
         self.check_date_range("evidence.csv", evidence, "date_start", "date_end")
         self.check_date_range("logs.csv", logs, "date_start", "date_end")
         self.check_date_range("log_appearances.csv", log_appearances, "date_start", "date_end")
+        self.check_date_range("logs.csv", logs, "date_range_start", "date_range_end")
+        self.check_date_range("log_appearances.csv", log_appearances, "date_range_start", "date_range_end")
+        self.check_date_range("evidence.csv", evidence, "date_range_start", "date_range_end")
+
+        # Historical tables are optional for older archives.
+        if (WORKING_DIR / "historical_events.csv").exists():
+            events = self.read_csv("historical_events.csv", [
+                "event_id", "log_id", "source_id", "event_type", "character_id",
+                "count", "evidence_id", "date_range_start", "date_range_end",
+            ])
+            self.check_unique_ids("historical_events.csv", events, "event_id")
+            for column, ids in (("log_id", log_ids), ("source_id", source_ids),
+                                ("character_id", character_ids), ("other_character_id", character_ids),
+                                ("evidence_id", evidence_ids)):
+                self.check_optional_foreign_key("historical_events.csv", events, column, ids, column)
+            self.check_allowed_values("historical_events.csv", events, "event_type", {"death", "trophy"})
+            self.check_date_range("historical_events.csv", events, "date_range_start", "date_range_end")
+            for row in events:
+                if not clean(row.get("count")).isdigit() or int(row["count"]) < 1:
+                    self.error("historical_events.csv", f"Invalid count for {row.get('event_id')}")
+                if row.get("event_type") == "trophy" and not row.get("other_character_id"):
+                    self.error("historical_events.csv", f"Missing trophy victim for {row.get('event_id')}")
+        if (WORKING_DIR / "historical_log_index.csv").exists():
+            index = self.read_csv("historical_log_index.csv", ["entry_id", "log_id", "source_id", "url"])
+            self.check_unique_ids("historical_log_index.csv", index, "entry_id")
+            self.check_optional_foreign_key("historical_log_index.csv", index, "log_id", log_ids, "log_id")
+            self.check_optional_foreign_key("historical_log_index.csv", index, "source_id", source_ids, "source_id")
 
         # Research-friendly warnings.
         self.check_unlinked_characters(characters, links)

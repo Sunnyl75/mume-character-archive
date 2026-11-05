@@ -764,9 +764,10 @@ function renderCarouselCards() {
     parts.push(`<article class="char-card info-card special-card"><h3>Clan</h3><div class="card-symbol">⚑</div><p>${escapeHtml(c.clan)}</p></article>`);
   }
 
-  if (c.mentionCount > 0) {
+  if (c.mentionCount > 0 || c.history?.logs?.length || c.history?.deaths?.length) {
     parts.push(`<article class="char-card info-card"><h3>Logs</h3><div class="card-symbol">✒</div>
-      <p>${c.mentionCount.toLocaleString()} archive mentions</p><button onclick="openScroll('logs')">more…</button></article>`);
+      <p>${(c.history?.logs?.length || 0).toLocaleString()} historical logs</p>
+      <p>${(c.history?.deaths?.length || 0).toLocaleString()} death observations</p><button onclick="openScroll('logs')">more…</button></article>`);
   }
 
   if (hasHeroLegend(c) || c.faction === "immortal") {
@@ -962,6 +963,16 @@ function renderSourceSection(source) {
   </section>`;
 }
 
+function historicalReference(item) {
+  let url = "";
+  try {
+    const parsed = new URL(item.url);
+    if (["http:", "https:"].includes(parsed.protocol) && !parsed.username && !parsed.password) url = parsed.href;
+  } catch (_) { /* Local-only sources are shown as text. */ }
+  const label = escapeHtml(item.title || "Historical log");
+  return `${escapeHtml(item.date || "Date uncertain")} — ${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : label}`;
+}
+
 function openScroll(kind) {
   const overlay = document.getElementById("scroll-overlay");
   const title = document.getElementById("scroll-title");
@@ -978,9 +989,13 @@ function openScroll(kind) {
       renderSourceSection(`Player ID: ${c.playerId || "unknown"}`)
     ].join("");
   } else if (kind === "logs") {
-    title.textContent = "Archive Mentions";
-    body.innerHTML = `<div class="scroll-row source">${escapeHtml(c.name)} has ${c.mentionCount.toLocaleString()} mention(s) in the current archive manifest.</div>
-      <div class="scroll-row source">Detailed log references are a later data join.</div>`;
+    title.textContent = "Historical Logs";
+    const logs = c.history?.logs || [];
+    const deaths = c.history?.deaths || [];
+    body.innerHTML = logs.map(item => `<div class="scroll-row source">${historicalReference(item)}</div>`).join("")
+      || `<p>No historical log references have been imported for this character.</p>`;
+    if (deaths.length) body.innerHTML += `<h3>Death observations</h3><p>Separate source observations may describe the same event.</p>`
+      + deaths.map(item => `<div class="scroll-row source">${historicalReference(item)}<br>${item.count} death(s) reported; ${escapeHtml(item.observation)}; confidence: ${escapeHtml(item.confidence)}</div>`).join("");
   } else if (kind === "whois") {
     title.textContent = "Whois Evidence";
     body.innerHTML = `<pre class="scroll-whois ${c.whoisHtml ? "has-colour-whois" : ""}">${c.whoisHtml || escapeHtml(c.whoisText || "No whois text available.")}</pre>`;
@@ -1005,9 +1020,15 @@ function closeScroll() {
 function showTrophies(scope = "auto") {
   const grid = document.getElementById("related-grid");
   if (!grid) return;
-  setText("related-title", "Trophy Kills — data not yet connected");
+  const selected = currentCharacter;
+  if (!selected) return;
+  setText("related-title", `Trophy snapshots — ${selected.name}`);
   grid.className = "trophy-grid";
-  grid.innerHTML = `<article class="char-card info-card"><h3>Trophies</h3><div class="card-symbol">♕</div><p>Trophy data is not yet wired to the real archive.</p></article>`;
+  const snapshots = selected.history?.trophies || [];
+  grid.innerHTML = snapshots.length ? snapshots.map(item => `<article class="char-card info-card"><h3>${escapeHtml(item.victim)}</h3>
+    <div class="card-symbol">♕</div><p>At least ${item.count} kill(s) before this display.</p><p>${historicalReference(item)}</p>
+    <p>Snapshot counts are not added together.</p></article>`).join("")
+    : `<article class="char-card info-card"><h3>Trophies</h3><div class="card-symbol">♕</div><p>No trophy snapshots have been imported for this character.</p></article>`;
 }
 
 function fitCardText() {

@@ -43,6 +43,7 @@ def main():
     parser.add_argument('--publish', action='store_true', help='Upload after a successful build.')
     parser.add_argument('--dry-run', action='store_true', help='Build and show rsync changes without uploading.')
     parser.add_argument('--whois', type=Path, help='Import this Mudlet JSON before rebuilding.')
+    parser.add_argument('--historical', type=Path, help='Import structured historical research before rebuilding; player links remain reviewable.')
     parser.add_argument('--export-only', action='store_true', help='Use the already rebuilt archive manifest.')
     parser.add_argument('--config', type=Path, default=ROOT / '.deck-deploy.json')
     parser.add_argument('--setup-wordpress', action='store_true', help='Connect to the plugin once; prompts for the publishing key.')
@@ -50,15 +51,20 @@ def main():
     if args.setup_wordpress:
         deck_wordpress_api.setup(args.config.expanduser().resolve())
         return
-    if args.whois and args.export_only:
-        parser.error('--whois and --export-only cannot be combined')
+    if (args.whois or args.historical) and args.export_only:
+        parser.error('Imports and --export-only cannot be combined')
     # Fail before changing data if deployment is requested but not configured.
     deploy = deployment_config(args.config.expanduser()) if args.publish or args.dry_run else None
     if isinstance(deploy, tuple) and not shutil.which('rsync'):
         parser.error('rsync is required to publish')
+    if args.historical:
+        run_script('scripts/import_historical_evidence.py', args.historical.expanduser().resolve(strict=True),
+                   '--apply', '--report', ROOT / 'reports/historical-import-review.json')
     if args.whois:
         whois = args.whois.expanduser().resolve(strict=True)
         run_script('scripts/import_mudlet_whois_archive.py', whois)
+    if args.historical or args.whois:
+        run_script('scripts/build_whois_queue.py')
     run_script('scripts/validate_data.py')
     if not args.export_only:
         for script in ('report_whois_descriptor_classification.py',

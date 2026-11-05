@@ -26,11 +26,15 @@ import csv
 import html
 import json
 import re
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "scripts"))
+from historical_views import build_history
 
 IMMORTAL_RANK_WORDS = {
     "implementor", "implementors",
@@ -435,6 +439,9 @@ def main() -> None:
         for row in manifest
     ]
     characters = deduplicate_accented_characters(characters)
+    historical = build_history(root)
+    for character in characters:
+        character["history"] = historical.get(character["id"], {"logs": [], "deaths": [], "trophies": []})
     characters.sort(key=lambda c: str(c.get("name") or "").casefold())
 
     players = build_players(characters, players_rows)

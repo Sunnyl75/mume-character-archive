@@ -1,5 +1,10 @@
 # MUME Character Archive
 
+Historical logs, website player links and trophy evidence can now be imported
+through a preview/review/apply workflow. See
+[Historical evidence workflow](docs/historical-evidence-workflow.md) for the July
+research bundle, same-player JSON, Mudlet queue and Deck rebuild commands.
+
 This repository is a working archive for historical and current MUME character/player information.
 
 The project combines:
