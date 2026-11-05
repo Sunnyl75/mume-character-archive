@@ -18,6 +18,7 @@ import re
 import shutil
 import tempfile
 from historical_review import groups_for, level
+from source_review import apply_reviewed, saved_facts
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "historical-import/1"
@@ -351,6 +352,7 @@ class Importer:
             log = self.indexes["logs"].get(entry["log_id"].casefold())
             if log and not log.get("source_url"):
                 self.put("logs", {"log_id": log["log_id"], "source_url": entry["url"]})
+        apply_reviewed(self.root, self.tables)
         self.changes.clear()
         for table, current in self.indexes.items():
             for key, row in current.items():
@@ -428,7 +430,7 @@ class Importer:
             source_context[item["source_id"]]["input_file"] = item["path"]
         claim_review = groups_for(self.tables['player_character_links'], self.tables['historical_events'],
                                   self.tables['evidence'], self.tables['logs'], self.tables['sources'],
-                                  selected_keys={r['key'] for r in records})
+                                  selected_keys={r['key'] for r in records}, reviewed=saved_facts(self.root))
         assessments = {m['record_key']: m['assessment'] for g in claim_review['groups'] for m in g['members']}
         for record in records:
             if record['key'] in assessments:
@@ -446,6 +448,8 @@ class Importer:
         claim_review['summary']['routine_records'] = len(records) - len(assessments)
         return {"preview_schema": "historical-preview/2", "records": records, 'claim_review': claim_review,
                 'log_context': logical_logs,
+                'source_fact_context': {name: self.tables[name] for name in
+                                        ('player_character_links', 'historical_events', 'evidence', 'logs', 'sources', 'log_appearances')},
                 "evidence_context": {eid: dict(evidence[eid.casefold()]) for eid in sorted(referenced)
                                      if eid.casefold() in evidence}, "source_context": source_context}
 

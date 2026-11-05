@@ -127,6 +127,8 @@ rebuild/publishing command is not one transaction.
 | Full curated index, including unrecovered entries | `historical_log_index.csv` |
 | Collection work | `whois_queue.csv`, then `exports/mudlet/whois_queue.txt` |
 | Immutable source checkpoint and input hashes | `data/incoming/historical/<session>/` |
+| Current source facts and human revisions | `research_facts.csv` (`source-fact/1` records) |
+| Before/after decision and revision history | `research_fact_history.csv` |
 
 Reimporting identical input adds no duplicate rows. Source changes receive new
 evidence identities; prior observations remain available. Session names identify
@@ -164,6 +166,18 @@ queue export, Whois import, local rebuild and publish stages. Acquisition and ra
 log extraction should be separate operations with visible progress. A review UI
 should resolve player mappings, uncertain observations and duplicate events
 before incorporating them into public summaries.
+
+The Workbench now provides this source-wide review. `source_review.py` separates
+source facts from the UI and public Deck projections. Each reviewed fact has a
+stable ID, source/log IDs, kind, subject/value, status, confidence, evidence basis,
+citation and optional link to another fact. Raw extraction records remain
+unchanged; revisions have before/after history and survive reimport. The source
+view includes all retained structured findings, including context not represented
+by a death/trophy row. This is a foundation for a future master archive, rather
+than a migration or merge with the Usenet research database. Contextual findings
+are private unless the public exporter explicitly selects their fields. Separate
+attacker and final-killer findings retain separate confidence; neither creates a
+trophy count.
 
 ## Checks
 

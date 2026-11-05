@@ -100,7 +100,8 @@ def assess(kind, row, evidence, *, log=None, other_owners=()):
             'needs_judgement': not safe, 'rule_version': 'source-review/1'}
 
 
-def groups_for(links, events, evidence_rows, logs, sources, *, selected_keys=None):
+def groups_for(links, events, evidence_rows, logs, sources, *, selected_keys=None, reviewed=None):
+    reviewed = reviewed or {}
     evidence = {r['evidence_id']: r for r in evidence_rows}
     by_log = {r['log_id']: r for r in logs}
     by_source = {r['source_id']: r for r in sources}
@@ -122,6 +123,14 @@ def groups_for(links, events, evidence_rows, logs, sources, *, selected_keys=Non
             source_id = ev.get('source_id') or row.get('source_id', '')
             other = [name for pid, name in owners.get(row.get('character_id'), {}).items() if pid != row.get('player_id')] if kind == 'link' else []
             assessment = assess(claim_kind, row, ev, log=by_log.get(row.get('log_id')), other_owners=other)
+            revision = reviewed.get(record_key)
+            if revision:
+                assessment.update(confidence=revision['confidence'],
+                                  reasons=['Human review: ' + revision['basis']],
+                                  concerns=(['Another owner is asserted or accepted: ' + ', '.join(other) + '.'] if other else []),
+                                  safe_to_accept=revision['confidence']=='high' and not other,
+                                  needs_judgement=revision['confidence']!='high' or bool(other))
+                if other: assessment['confidence'] = 'low'
             claims.append({'kind': claim_kind, 'id': row[id_field], 'record_key': record_key,
                            'evidence_id': row.get('primary_evidence_id') or row.get('evidence_id', ''),
                            'character': row.get('character_name', ''), 'other_character': row.get('other_character_name', ''),

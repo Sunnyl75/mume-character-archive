@@ -29,14 +29,14 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   }});
   const w=dom.window,d=w.document;
   async function api(route,body){const response=await fetch(url.origin+'/api/'+route,{method:body?'POST':'GET',headers:{'X-Workbench-Token':token,Origin:url.origin,'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const value=await response.json();assert.ok(response.ok,JSON.stringify(value));return value;}
-  async function done(action){await until(async()=>{const s=await api('state');if(s.job?.action!==action||s.job.status==='running')return false;assert.equal(s.job.status,'done',s.job.log.join('\n'));return true;},action+' failed');await w.eval('refresh()');}
+  async function done(action,previousId){await until(async()=>{const s=await api('state');if(s.job?.action!==action||s.job.id===previousId||s.job.status==='running')return false;assert.equal(s.job.status,'done',s.job.log.join('\n'));return true;},action+' failed');await w.eval('refresh()');}
   function fill(id,value){d.getElementById(id).value=value;d.getElementById(id).dispatchEvent(new w.Event('input',{bubbles:true}));}
   async function click(id){await until(()=>d.getElementById(id),'Missing '+id);d.getElementById(id).click();}
   await until(()=>d.getElementById('tab-text'),'Sources step did not render');
   await click('tab-text');await until(()=>d.getElementById('source-text'),'Source form missing');
   fill('source-title','Workbench <img src=x onerror=alert(1)> fixture');fill('source-date','1995');fill('source-observer','GuiObserver');
   fill('source-groups','pGuiOwner: GuiObserver, GuiVictim');
-  fill('source-text','GuiVictim is dead! R.I.P.\n*** TROPHY *** (Number Killed, Knowledge, Mobile)\n 3, 1%, #GuiTrophy |\n');
+  fill('source-text','GuiAttacker hits you.\nGuiVictim is dead! R.I.P.\n*** TROPHY *** (Number Killed, Knowledge, Mobile)\n 3, 1%, #GuiTrophy |\n');
   await click('detect');await until(()=>d.querySelectorAll('.entry-check').length===2,'Extraction entries missing');
   await click('select-all-entries');await click('prepare-source');await until(()=>d.getElementById('preview-research'),'Import step missing');
   await click('preview-research');await done('preview_research');
@@ -49,6 +49,12 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   assert.match(d.getElementById('original-lines').textContent,/GuiVictim is dead! R.I.P./);
   assert.match(d.getElementById('original-position').textContent,/original.txt/);
   assert.equal(d.querySelectorAll('#preview-claims img').length,0);
+  const deathGroup=Array.from(d.querySelectorAll('#preview-claims .claim-group')).find(g=>g.textContent.includes('death observation(s)'));
+  deathGroup.querySelector('.open-source-facts').click();
+  await until(()=>d.querySelectorAll('.attached-fact').length>5,'Source-wide claims did not open');
+  assert.match(d.getElementById('source-facts-list').textContent,/credited observer/);
+  assert.match(d.getElementById('source-facts-list').textContent,/GuiObserver/);
+  assert.equal(d.querySelectorAll('.fact-decision').length,0); // Preview explicitly requires import.
   d.querySelector('details.advanced-records').open=true;
   await until(()=>d.querySelectorAll('.preview-inspect').length>0,'Detailed preview did not appear');
   assert.match(d.getElementById('preview-records').textContent,/GuiObserver/);
@@ -68,8 +74,29 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   fill('preview-search','GuiVictim');
   await until(()=>d.querySelectorAll('.preview-inspect').length===1,'Name search did not filter events');
   assert.equal(d.getElementById('preview-next').disabled,true);
-  await click('apply-research');await done('apply_research');
-  await click('next');await until(()=>d.querySelectorAll('.claim-group-check').length===3,'Review groups missing');
+  await click('import-review-source');await done('apply_research');
+  await until(()=>d.querySelectorAll('.claim-group-check').length===3,'Import did not open source review in Step 3');
+  const deathMenu=Array.from(d.querySelectorAll('.group-decision')).find(select=>select.closest('.claim-group').textContent.includes('death observation(s)'));
+  deathMenu.value='revise';deathMenu.dispatchEvent(new w.Event('change'));
+  await until(()=>d.querySelector('.fact-decision[data-fact^="historical_events:"]'),'Per-fact decisions missing');
+  const deathFactId=d.querySelector('.fact-decision[data-fact^="historical_events:"]').dataset.fact;
+  const factMenu=d.querySelector('.fact-decision[data-fact^="historical_events:"]');
+  factMenu.value='revise';factMenu.dispatchEvent(new w.Event('change'));
+  await until(()=>d.getElementById('fact-basis'),'Revision form missing');
+  fill('fact-confidence','medium');fill('fact-basis','Observer and death checked against the original.');
+  fill('fact-quote','GuiVictim is dead! R.I.P.');fill('fact-line-start','2');fill('fact-line-end','2');
+  fill('fact-notes','PRIVATE_GUI_NOTE');
+  d.querySelector('#fact-form button[type="submit"]').click();await done('save_facts');
+  assert.match(d.getElementById('source-facts-list').textContent,/Revision history \(1\)/);
+  assert.match(d.getElementById('source-facts-list').textContent,/human reviewed/);
+  await click('add-source-fact');
+  fill('fact-kind','attacker');fill('fact-subject','GuiVictim');fill('fact-value','GuiAttacker');
+  fill('fact-about',deathFactId);fill('fact-confidence','medium');
+  fill('fact-basis','Named attacker on line 1; this does not establish the final killer.');
+  fill('fact-quote','GuiAttacker hits you.');fill('fact-line-start','1');fill('fact-line-end','1');
+  const previousReview=(await api('state')).job.id;
+  d.querySelector('#fact-form button[type="submit"]').click();await done('save_facts',previousReview);
+  assert.match(d.getElementById('source-facts-list').textContent,/GuiAttacker/);
   await click('accept-supported');await done('review_supported');
   assert.match(fs.readFileSync(path.join(archive,'data/working/player_character_links.csv'),'utf8'),/GuiObserver,pGuiOwner,listed_same_player,accepted/);
   await click('next');await click('build-queue');await done('queue');
@@ -85,8 +112,11 @@ async function until(fn,message,timeout=45000){const start=Date.now();while(Date
   const observer=deck.characters.find(c=>c.name==='GuiObserver');
   assert.equal(observer.player,'pGuiOwner');assert.equal(observer.history.trophies[0].count,3);
   assert.equal(deck.characters.find(c=>c.name==='GuiVictim').history.deaths.length,1);
+  const death=deck.characters.find(c=>c.name==='GuiVictim').history.deaths[0];
+  assert.equal(death.confidence,'medium');assert.deepEqual(death.details,[{kind:'attacker',value:'GuiAttacker',confidence:'medium'}]);
+  assert.doesNotMatch(JSON.stringify(deck),/PRIVATE_GUI_NOTE/);
   await click('next');await until(()=>d.getElementById('publish'),'Publish step missing');
   assert.equal(d.getElementById('publish').disabled,true);
   assert.deepEqual(failures,[]);
-  process.stdout.write('Workbench DOM flow passed: prepare, preview, import, accept links, queue, Whois import, full rebuild and publication gate.\n');
+  process.stdout.write('Workbench DOM flow passed: source-wide claims, import into review, revise death, add attacker, accept groups, queue, Whois import, full rebuild and publication gate.\n');
 })().catch(e=>{process.stderr.write(e.stack+'\n');process.exitCode=1;}).finally(()=>{dom?.window.close();server.kill('SIGINT');server.on('exit',()=>fs.rmSync(temp,{recursive:true,force:true}));});

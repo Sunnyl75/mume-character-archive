@@ -18,6 +18,7 @@ let previewFilters = {table:'all',action:'all',q:'',offset:0};
 let previewRequest = 0;
 let previewDetailRequest = 0;
 let selectedClaimGroups = new Set();
+let activeSourceReview=null, queuedSourceReview=null;
 const previewNames = {characters:'Characters',players:'Players',player_character_links:'Player links',logs:'Logs',historical_events:'Deaths & trophy snapshots',log_appearances:'Log appearances',whois_queue:'Whois queue',sources:'Source files',evidence:'Evidence claims',historical_log_index:'Log index entries'};
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -95,6 +96,11 @@ async function refresh() {
     if (state.job.status !== 'running') {
       if (changedJob) notice(state.job.status === 'done' ? 'Step completed. You can review the result and continue.':state.job.error,state.job.status === 'error');
       if (current===2) review=null;
+      if(state.job.action==='apply_research'&&state.job.status==='done'&&queuedSourceReview){
+        activeSourceReview={...queuedSourceReview,scope:'archive',target:'archive-claims-original'};queuedSourceReview=null;
+        current=2;review=null;await api('step',{step:2});
+      }
+      if(state.job.action==='apply_research'&&state.job.status==='error')queuedSourceReview=null;
       await render();
     }
   }
@@ -110,6 +116,7 @@ async function upload(input,kind) {
   const file=$(input).files[0];
   if (!file) throw Error('Choose a file first.');
   await api('upload',{kind,filename:file.name,data:await bytes64(file)});
+  if(kind==='research'){activeSourceReview=null;queuedSourceReview=null;}
   state=await api('state');
   notice(`${file.name} is ready for preview.`);
   await render();
@@ -159,7 +166,7 @@ async function renderSource() {
     candidates=[];sourceDraft.selected=[];await render();
   });
   bind('detect','click',async()=>{candidates=(await api('analyse',sourceDraft)).entries;sourceDraft.selected=[];extractionTable();notice(`Detected ${candidates.length} named observations. Select the player entries to include.`);});
-  bind('prepare-source','click',async()=>{await api('prepare',sourceDraft);state=await api('state');notice('Source preserved and structured for import.');await go(1);});
+  bind('prepare-source','click',async()=>{await api('prepare',sourceDraft);activeSourceReview=null;queuedSourceReview=null;state=await api('state');notice('Source preserved and structured for import.');await go(1);});
   if(candidates.length)extractionTable();
 }
 async function renderImport() {
@@ -196,11 +203,13 @@ async function renderImport() {
   });
   await loadPreviewRecords();
   await renderClaimGroups('preview','preview-claims');
+  if(activeSourceReview?.scope==='preview')await openSourceReview('preview',activeSourceReview,'preview-claims-original',false);
 }
 
 function confidenceBadge(rating){return `<span class="confidence confidence-${esc(rating)}">${esc(rating==='unknown'?'Unrated':rating[0].toUpperCase()+rating.slice(1))} confidence</span>`;}
 async function renderClaimGroups(scope,target){
   const data=scope==='archive'?review:await api('claims?scope=preview');
+  if(!$(target))return;
   const groups=data.groups||[], summary=data.summary||{};
   let filter=groups.some(g=>g.needs_judgement&&g.pending)?'attention':'all', search='';
   $(target).innerHTML=`<div class="triage-summary"><div><b>${summary.needs_judgement||0}</b><span>source groups needing judgement</span></div><div><b>${summary.supported||0}</b><span>high-confidence groups</span></div><div><b>${summary.routine_records??'—'}</b><span>supporting rows · no separate approval</span></div></div>
@@ -218,9 +227,14 @@ async function renderClaimGroups(scope,target){
       ${g.date_notes.map(reason=>`<p class="hint">${esc(reason)}</p>`).join('')}
       <p class="group-names">${esc(g.names.join(', '))}</p>
       <details><summary>Why this rating / individual claims</summary><ul>${g.reasons.map(reason=>`<li>${esc(reason)}</li>`).join('')}</ul><ul>${g.members.map(m=>`<li>${esc(m.character)}${m.other_character?' → '+esc(m.other_character):''}${m.count?' · '+esc(m.count):''} · ${esc(m.status.replaceAll('_',' '))}</li>`).join('')}</ul></details>
-      <div class="actions"><button class="secondary open-original" data-group="${esc(g.id)}">Read original source</button></div></article>`).join('')||`<div class="empty">${groups.length?'No source groups match this filter.':'No new claim groups are present. Run Preview proposed changes again after updating to generate the assessments.'}</div>`;
+      <div class="actions"><button class="secondary open-original" data-group="${esc(g.id)}">Read original source</button><button class="secondary open-source-facts" data-group="${esc(g.id)}">View source & all claims</button>${scope==='archive'?`<select class="group-decision" data-group="${esc(g.id)}" aria-label="Decision for ${esc(g.title)}"><option value="">Choose a decision…</option><option value="accepted">Accept group as written</option><option value="revise">Review / revise individual claims</option><option value="rejected">Reject group</option><option value="needs_review">Keep group pending</option></select>`:''}</div></article>`).join('')||`<div class="empty">${groups.length?'No source groups match this filter.':'No new claim groups are present. Run Preview proposed changes again after updating to generate the assessments.'}</div>`;
     $(target+'-groups').querySelectorAll('.claim-group-check').forEach(e=>e.onchange=()=>e.checked?selectedClaimGroups.add(e.dataset.id):selectedClaimGroups.delete(e.dataset.id));
     $(target+'-groups').querySelectorAll('.open-original').forEach(b=>b.onclick=()=>openOriginal(scope,b.dataset.group,target+'-original').catch(e=>notice(e.message,true)));
+    $(target+'-groups').querySelectorAll('.open-source-facts').forEach(b=>b.onclick=()=>openSourceReview(scope,{group:b.dataset.group},target+'-original').catch(e=>notice(e.message,true)));
+    $(target+'-groups').querySelectorAll('.group-decision').forEach(b=>b.onchange=async()=>{const choice=b.value;b.value='';try{
+      if(choice==='revise')await openSourceReview(scope,{group:b.dataset.group},target+'-original');
+      else if(choice)await job('review_claims',{groups:[b.dataset.group],status:choice});
+    }catch(e){notice(e.message,true);}});
   }
   document.querySelectorAll(`#${target} .claim-tabs button`).forEach(b=>b.onclick=()=>{filter=b.dataset.filter;update();});
   bind(target+'-search','input',()=>{search=$(target+'-search').value.trim().toLocaleLowerCase();update();});
@@ -228,13 +242,83 @@ async function renderClaimGroups(scope,target){
   bind('accept-supported','click',()=>job('review_supported'));
 }
 function sourceLink(value){try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)?`<a href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">Open archived / original webpage ↗</a>`:'';}catch{return '';}}
-async function openOriginal(scope,group,target){
-  const source=await api('original?'+new URLSearchParams({scope,group}));
+function factStatement(fact){
+  if(fact.kind==='death')return `${fact.subject}: ${fact.value} death observation(s)`;
+  if(fact.kind==='trophy')return `${fact.subject}: trophy snapshot of ${fact.value} × ${fact.object}`;
+  if(fact.kind==='link')return `${fact.subject} → player ${fact.object}`;
+  return `${fact.label||fact.kind}: ${fact.value}`;
+}
+async function openSourceReview(scope,query,target,scroll=true){
+  const request=new URLSearchParams({scope,...(query.group?{group:query.group}:{source_id:query.source_id,log_id:query.log_id||''})});
+  const data=await api('source-facts?'+request);
+  if(!$(target))return;
+  activeSourceReview={scope,source_id:data.source_id,log_id:data.log_id,target};
+  $(target).innerHTML=`<section class="source-review"><span class="eyebrow">SOURCE REVIEW</span><h2>${esc(data.log?.title||data.source.title)}</h2>
+    <p><b>${data.facts.length} attached claims and findings.</b> This includes every retained extraction field, named appearance and reviewed claim. Unreviewed context is shown alongside pending, accepted and rejected claims. This list cannot establish that the original extraction missed nothing; add missing findings below.</p>
+    <div class="inline-fields"><div><label for="source-scope">Source scope</label><select id="source-scope"><option value="">Entire imported source collection / page</option>${data.logs.map(log=>`<option value="${esc(log.id)}" ${data.log_id===log.id?'selected':''}>${esc(log.title)}</option>`).join('')}</select></div><div><label for="source-fact-search">Find in attached claims</label><input id="source-fact-search" type="search" placeholder="Name, fact, status or evidence…"></div></div>
+    ${scope==='preview'?`<div class="callout">This is a preview. Import preserves the original and enables Accept / Revise / Reject for these claims. New claims remain pending until you accept them.</div><div class="actions"><button id="import-review-source">${state.research_report?.applied?'Open this source in Step 3':'Import & review this source'}</button></div>`:'<p class="hint">Choose a decision beside a claim. Revise opens a form; Accept as written keeps its current content and confidence. Your changes retain the original extraction and a revision history.</p><button id="add-source-fact" class="secondary">+ Add a missing finding</button>'}
+    <div class="source-review-columns"><div><div id="source-facts-list"></div><div id="source-fact-editor"></div></div>
+    <aside><h3>Original source</h3><div id="source-review-original"></div></aside></div></section>`;
+  if(scroll)$(target).scrollIntoView({behavior:'smooth',block:'start'});
+  function list(){
+    const search=$('source-fact-search').value.trim().toLocaleLowerCase();
+    const visible=data.facts.filter(f=>!search||[factStatement(f),f.subject,f.kind,f.basis,f.status].join(' ').toLocaleLowerCase().includes(search));
+    $('source-facts-list').innerHTML=`<p class="hint">Showing ${visible.length} of ${data.facts.length} attached claims / findings.</p>`+visible.map(f=>`<article class="attached-fact" data-fact="${esc(f.id)}"><div class="claim-title"><h3>${esc(factStatement(f))}</h3>${confidenceBadge(f.confidence)}</div><p class="hint">${esc(f.kind)} · ${esc(f.status.replaceAll('_',' '))}${f.revised?' · human reviewed':''}</p><p>${esc(f.basis)}</p>${f.citation?.quote?`<blockquote>${esc(f.citation.quote)}</blockquote><small>${esc(f.citation.file||'Source')} ${f.citation.start?'· lines '+esc(f.citation.start)+'–'+esc(f.citation.end||f.citation.start):''}</small>`:''}
+      ${f.notes?`<p>${esc(f.notes)}</p>`:''}${scope==='archive'?`<label>Decision <select class="fact-decision" data-fact="${esc(f.id)}" aria-label="Decision for ${esc(factStatement(f))}"><option value="">Choose a decision…</option><option value="accept">Accept as written</option><option value="revise">Revise…</option><option value="reject">Reject</option><option value="pending">Keep pending</option></select></label>`:''}
+      ${f.history?.length?`<details><summary>Revision history (${f.history.length})</summary>${f.history.map(h=>`<div class="fact-history"><b>${esc(h.action)} · ${esc(new Date(h.at).toLocaleString())}</b><p>Before: ${esc(h.before?factStatement(h.before)+' · '+h.before.status+' · '+h.before.confidence:'No earlier finding')}</p><p>After: ${esc(factStatement(h.after))} · ${esc(h.after.status)} · ${esc(h.after.confidence)}</p><p>${esc(h.after.basis)}</p>${h.after.citation?.quote?`<blockquote>${esc(h.after.citation.quote)}</blockquote>`:''}</div>`).join('')}</details>`:''}</article>`).join('');
+    $('source-facts-list').querySelectorAll('.fact-decision').forEach(select=>select.onchange=async()=>{
+      const action=select.value;select.value='';const fact=data.facts.find(f=>f.id===select.dataset.fact);
+      try{if(action==='revise')editSourceFact(data,fact);else if(action)await job('save_facts',{decisions:[{source_id:data.source_id,log_id:fact.log_id,id:fact.id,version:fact.version,action}]});}catch(e){notice(e.message,true);}
+    });
+  }
+  bind('source-fact-search','input',list);list();
+  bind('source-scope','change',()=>openSourceReview(scope,{source_id:data.source_id,log_id:$('source-scope').value},target,false));
+  bind('add-source-fact','click',()=>editSourceFact(data,null));
+  bind('import-review-source','click',async()=>{
+    if(state.research_report?.applied){activeSourceReview={...activeSourceReview,scope:'archive',target:'archive-claims-original'};await go(2);}
+    else{queuedSourceReview={source_id:data.source_id,log_id:data.log_id};await job('apply_research');}
+  });
+  if(data.group_id||data.log_id)await openOriginal(scope,data.group_id||{source_id:data.source_id,log_id:data.log_id},'source-review-original',false);
+  else $('source-review-original').innerHTML='<p class="hint">Select a particular log to read its retained original beside these claims.</p>';
+  chrome();
+}
+function editSourceFact(data,fact){
+  const adding=!fact;
+  fact=fact||{kind:'other',subject:'',object:'',value:'',confidence:'unknown',basis:'',notes:'',about:'',citation:{}};
+  const canonical=!!fact.record_key;
+  $('source-fact-editor').innerHTML=`<form id="fact-form" class="fact-editor"><h3>${adding?'Add a missing finding':'Revise this claim'}</h3>
+    ${canonical?'':`<label for="fact-kind">Finding type</label><select id="fact-kind">${['observer','attacker','killer','participant','location','date',...(adding?['death','trophy','link']:[]),'other'].map(kind=>`<option value="${kind}" ${fact.kind===kind?'selected':''}>${kind==='killer'?'Final killer (only if supported)':kind}</option>`).join('')}</select>`}
+    <div class="inline-fields"><div><label for="fact-subject">${fact.kind==='trophy'?'Trophy owner':'Subject character (if applicable)'}</label><input id="fact-subject" value="${esc(fact.subject)}"></div><div><label for="fact-value">${fact.kind==='death'||fact.kind==='trophy'?'Observation count':'Finding / named character / value'}</label><input id="fact-value" value="${esc(fact.value)}" ${fact.kind==='link'?'disabled data-keep-disabled="true"':''}></div></div>
+    ${adding?`<label for="fact-object">Related character / player ID (trophy or player link)</label><input id="fact-object" list="fact-player-options" placeholder="Trophy victim, or existing player ID"><datalist id="fact-player-options">${data.players.map(p=>`<option value="${esc(p.player_id)}">${esc(p.known_by||p.main_handle)}</option>`).join('')}</datalist><small>For a new death or trophy, enter the observation count in Value. For a player link, use an existing player ID here.</small>`:fact.kind==='link'?`<label for="fact-object">Player</label><select id="fact-object">${data.players.map(p=>`<option value="${esc(p.player_id)}" ${fact.object===p.player_id?'selected':''}>${esc(p.known_by||p.main_handle)}</option>`).join('')}</select>`:fact.kind==='trophy'?`<label for="fact-object">Trophy victim</label><input id="fact-object" value="${esc(fact.object)}">`:''}
+    ${canonical?'':`<label for="fact-about">Attach to a specific observation (optional)</label><select id="fact-about"><option value="">Source / log only</option>${data.facts.filter(f=>f.kind==='death'||f.kind==='trophy').map(f=>`<option value="${esc(f.id)}" ${fact.about===f.id?'selected':''}>${esc(factStatement(f))}</option>`).join('')}</select><small>Use this to attach each attacker or location to the correct death. Add one named character per role finding.</small>`}
+    <label for="fact-confidence">Confidence in this particular claim</label><select id="fact-confidence">${['high','medium','low','unknown'].map(level=>`<option value="${level}" ${fact.confidence===level?'selected':''}>${level==='unknown'?'Unrated':level}</option>`).join('')}</select>
+    <label for="fact-basis">Evidence / reason</label><textarea id="fact-basis" rows="3" required>${esc(fact.basis)}</textarea>
+    <label for="fact-quote">Exact supporting quotation</label><textarea id="fact-quote" rows="3">${esc(fact.citation?.quote||'')}</textarea>
+    <div class="inline-fields triple"><div><label for="fact-file">Source file / passage label</label><input id="fact-file" value="${esc(fact.citation?.file||'')}"></div><div><label for="fact-line-start">First line (optional)</label><input id="fact-line-start" type="number" min="1" value="${esc(fact.citation?.start||'')}"></div><div><label for="fact-line-end">Last line (optional)</label><input id="fact-line-end" type="number" min="1" value="${esc(fact.citation?.end||'')}"></div></div>
+    <label for="fact-notes">Private review notes (optional)</label><textarea id="fact-notes" rows="2">${esc(fact.notes)}</textarea>
+    <div class="actions"><button type="submit">Save & accept ${adding?'finding':'revision'}</button><button id="fact-save-pending" type="button" class="secondary">Save pending</button><button id="fact-cancel" type="button" class="text-button">Cancel</button></div><p class="hint">The retained source and original extraction stay preserved. Attacker and final-killer claims are separate from confirming a death.</p></form>`;
+  $('source-fact-editor').scrollIntoView({behavior:'smooth',block:'start'});
+  async function save(status){
+    const start=$('fact-line-start').value,end=$('fact-line-end').value;
+    const changes={subject:$('fact-subject').value.trim(),value:$('fact-value').value.trim(),confidence:$('fact-confidence').value,
+      basis:$('fact-basis').value.trim(),notes:$('fact-notes').value.trim(),citation:{quote:$('fact-quote').value,file:$('fact-file').value.trim(),start:start?Number(start):null,end:end?Number(end):null}};
+    if($('fact-object'))changes.object=$('fact-object').value.trim();
+    if(!canonical){changes.kind=$('fact-kind').value;changes.about=$('fact-about').value;}
+    const attached=data.facts.find(f=>f.id===changes.about);
+    await job('save_facts',{decisions:[{id:adding?'':fact.id,version:fact.version,source_id:data.source_id,log_id:fact.log_id||attached?.log_id||data.log_id,action:adding?'add':'revise',status,changes}]});
+  }
+  bind('fact-form','submit',async e=>{e.preventDefault();await save('accepted');});
+  bind('fact-save-pending','click',()=>save('needs_review'));
+  bind('fact-cancel','click',()=>{$('source-fact-editor').innerHTML='';});
+  chrome();
+}
+async function openOriginal(scope,group,target,scroll=true){
+  const source=await api('original?'+new URLSearchParams({scope,...(typeof group==='string'?{group}:group)}));
   if(!$(target))return;
   $(target).innerHTML=`<section class="original-reader"><h3>Original source: ${esc(source.group.title)}</h3>${sourceLink(source.url)}
     ${source.message?`<div class="callout">${esc(source.message)}</div>`:''}
     ${source.documents.length?`<label for="original-file">Retained original file</label><select id="original-file">${source.documents.length>1?'<option value="">Choose a retained source copy</option>':''}${source.documents.map(d=>`<option value="${esc(d.ref)}">${esc(d.path)}</option>`).join('')}</select><div class="upload-row"><input id="original-find" placeholder="Find a name or phrase in the original"><button id="original-search" class="secondary">Find in original</button></div><p class="hint" id="original-position"></p><div id="original-lines" class="source-lines"></div><div class="preview-pagination"><button id="original-prev" class="secondary">← Previous lines</button><button id="original-next" class="secondary">Next lines →</button></div>`:''}</section>`;
-  $(target).scrollIntoView({behavior:'smooth',block:'start'});
+  if(scroll)$(target).scrollIntoView({behavior:'smooth',block:'start'});
   if(!source.documents.length)return;
   let currentSource=null, requestId=0;
   async function read(start,q){
@@ -304,10 +388,12 @@ async function inspectPreviewRecord(key) {
 }
 async function renderLinks() {
   if(!review)review=await api('review');
+  if(current!==2)return;
   $('content').innerHTML=`<div class="panel"><h2>Review source groups</h2><p>Accept the clear cases in a batch. For uncertain cases, read the original once and decide for the related group. Supporting character, source and queue rows do not require separate decisions.</p><div id="archive-claims"></div>
     <label for="map-player">Optional: map selected player groups to an existing player</label><select id="map-player"><option value="">Keep each proposed player</option>${review.players.map(p=>`<option value="${esc(p.player_id)}">${esc(p.known_by||p.main_handle)} · ${esc(p.player_id)}</option>`).join('')}</select>
     <div class="toolbar"><button id="select-links" class="secondary">Select all pending groups</button><button id="clear-links" class="text-button">Clear selection</button></div><div class="toolbar"><button id="accept-links">Accept selected groups</button><button id="reject-links" class="secondary">Reject selected groups</button><button id="pending-links" class="secondary">Keep selected pending</button></div><p class="hint">Rejected and pending player/death/trophy claims stay out of the public Deck. Their original evidence remains preserved. Existing accepted owners are never silently replaced.</p></div>`;
   await renderClaimGroups('archive','archive-claims');
+  if(activeSourceReview?.scope==='archive'&&!running())await openSourceReview('archive',activeSourceReview,'archive-claims-original',false);
   bind('select-links','click',async()=>{review.groups.filter(g=>g.pending).forEach(g=>selectedClaimGroups.add(g.id));await renderClaimGroups('archive','archive-claims');chrome();});
   bind('clear-links','click',async()=>{selectedClaimGroups.clear();await renderClaimGroups('archive','archive-claims');chrome();});
   async function save(status){if(!selectedClaimGroups.size)throw Error('Select at least one source group.');await job('review_claims',{groups:[...selectedClaimGroups],status,player_id:$('map-player').value});selectedClaimGroups.clear();}

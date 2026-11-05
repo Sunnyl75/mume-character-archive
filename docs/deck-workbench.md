@@ -96,6 +96,15 @@ available when recorded. If the original is missing, the app says so explicitly.
 Use the **complete July research ZIP** to bring its saved logs and webpages;
 loading the standalone JSON cannot supply those originals.
 
+**View source & all claims** opens a completeness check for the entire log or
+page. It lists all retained extraction fields and findings, not just the claims
+in the review queue: observers, named appearances, dating evidence, locations,
+key findings, deaths, trophies and uncertain observations. Search the list or
+switch scope to the entire imported source collection. This shows what was
+captured; it does not establish that the extraction missed nothing. In preview,
+**Import & review this source** preserves the input and opens its editable review
+in Step 3. Rejected and accepted findings remain visible beside pending ones.
+
 The optional archive-row details retain the technical record browser, including
 before/after fields, extracted JSON and a downloadable report. These inspection
 actions do not import anything.
@@ -121,6 +130,39 @@ to a known player. A conflicting accepted owner blocks acceptance. Reject an
 incorrect imported assertion or leave an ambiguous identity pending. Older
 non-historical relationships and legacy event review decisions are preserved.
 Rebuild later to see accepted links, deaths and trophy snapshots in the Deck.
+
+Each group also has a decision menu beside it. Choose **Accept group as written**,
+**Review / revise individual claims**, **Reject group**, or **Keep group pending**.
+The source review lists a decision menu beside every individual fact:
+
+- **Accept as written** keeps its existing content and confidence.
+- **Revise…** opens a form for the subject, count or player/victim, confidence,
+  evidence/reason, exact quotation, source line range and private review notes.
+  Choose **Save & accept revision** or **Save pending**.
+- **Reject** and **Keep pending** retain the evidence outside public event views.
+
+**Add a missing finding** records an observer, participant, attacker, final
+killer, location, date or another finding. You can also add a missed death, trophy
+snapshot or association with an existing player. Select a particular log before
+adding a death or trophy, and supply its count; new observations get their own
+evidence record without rewriting the original extraction. Give each role its own evidence and
+confidence. Attach an attacker/location to the relevant death observation;
+recording an attacker never automatically assigns a final killer or adds a
+trophy kill. Add one named character per role. Named role findings feed the
+existing collection queue. Accepted observer/attacker/killer/location details
+attached to an accepted death appear in its public log details after rebuild;
+other contextual findings remain available in the research archive.
+
+For Eazy's example, revise the death's reason to identify his log perspective,
+quote `You are dead! Sorry...`, cite line 8335, and select the confidence you can
+support. Add Archie and Iqpi as separate attacker findings attached to that death,
+with their own citations and confidence; leave the final killer unassigned if
+the source does not establish it. These are instructions, not pre-applied edits.
+
+Revisions and decisions retain before/after history in the source view. They do
+not replace raw source evidence, and reimporting identical input preserves them.
+The history records this local review session's action/time; it does not claim
+an authenticated multi-user reviewer identity.
 
 ### 4. Collect Whois
 

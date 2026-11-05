@@ -32,6 +32,7 @@ import deck_wordpress_api
 from workbench_sources import extract, prepare_source
 from workbench_sources import plain_text
 from historical_review import groups_for
+import source_review
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'workbench'
@@ -114,7 +115,7 @@ class Workbench:
         # Keep the polling response and persisted UI state small. Record details
         # are fetched explicitly from the local report when the user inspects them.
         self.data['research_report'] = {key: value for key, value in report.items()
-                                       if key not in {'records', 'evidence_context', 'source_context', 'log_context', 'claim_review'}}
+                                       if key not in {'records', 'evidence_context', 'source_context', 'log_context', 'claim_review', 'source_fact_context'}}
         self.data['research_report']['claim_review'] = {'summary': report.get('claim_review', {}).get('summary', {})}
         self.data['research_report']['details_available'] = 'records' in report
         self._report_cache = report
@@ -166,7 +167,8 @@ class Workbench:
             result = json.loads(json.dumps(self.research_report().get('claim_review', {'groups': [], 'summary': {}})))
         elif scope == 'archive':
             result = groups_for(table(self.root, 'player_character_links'), table(self.root, 'historical_events'),
-                                table(self.root, 'evidence'), table(self.root, 'logs'), table(self.root, 'sources'))
+                                table(self.root, 'evidence'), table(self.root, 'logs'), table(self.root, 'sources'),
+                                reviewed=source_review.saved_facts(self.root))
         else:
             raise ValueError('Unknown review scope.')
         for group in result['groups']:
@@ -186,6 +188,32 @@ class Workbench:
                                  supported=sum(g['safe_to_accept'] for g in result['groups']))
         return result
 
+    def source_facts(self, scope, source_id='', log_id='', group_id=''):
+        if scope not in {'preview', 'archive'}:
+            raise ValueError('Unknown review scope.')
+        tables = (self.research_report().get('source_fact_context') if scope=='preview' else
+                  {name: table(self.root, name) for name in ('player_character_links', 'historical_events', 'evidence', 'logs', 'sources', 'log_appearances')})
+        if not tables:
+            raise ValueError('Run Preview proposed changes again to load all attached facts.')
+        groups = groups_for(tables['player_character_links'], tables['historical_events'], tables['evidence'],
+                            tables['logs'], tables['sources'], reviewed=source_review.saved_facts(self.root))['groups']
+        group = next((g for g in groups if g['id']==group_id), None) if group_id else None
+        if group_id and group is None:
+            raise ValueError('This group changed. Reopen the source review.')
+        if group: source_id, log_id = group['source_id'], group['log_id']
+        source = next((r for r in tables['sources'] if r['source_id']==source_id), None)
+        log = next((r for r in tables['logs'] if r['log_id']==log_id), None)
+        attached_log = any(r.get('source_id')==source_id and r.get('evidence_type')=='logical_log'
+                           and r.get('location_in_source')==log_id for r in tables['evidence'])
+        if not source or (log_id and (not log or not attached_log)):
+            raise ValueError('Choose a source and logical log in this archive.')
+        facts = source_review.source_facts(source_id, log_id, tables, groups,
+                                          source_review.saved_facts(self.root), source_review.rows(self.root, 'research_fact_history'))
+        return {'source_id': source_id, 'log_id': log_id, 'source': source, 'log': log, 'facts': facts,
+                'players': [{k:r.get(k,'') for k in ('player_id', 'main_handle', 'known_by')} for r in table(self.root, 'players')],
+                'logs': [{'id':r['log_id'], 'title':r['title']} for r in tables['logs'] if r['source_id']==source_id],
+                'group_id': group['id'] if group else next((g['id'] for g in groups if g['source_id']==source_id and g['log_id']==log_id), '')}
+
     def original_source(self, scope, group_id, *, known_group=None):
         groups = self.claim_groups(scope)['groups'] if known_group is None else []
         group = known_group or next((g for g in groups if g['id'] == group_id), None)
@@ -197,6 +225,10 @@ class Workbench:
             source = report.get('source_context', {}).get(source_id, {})
             evidence = report.get('evidence_context', {})
             logical = report.get('log_context', {}).get(group['log_id'], {})
+            for row in report.get('source_fact_context', {}).get('evidence', []):
+                if row.get('source_id')==source_id and row.get('evidence_type')=='logical_log' and row.get('location_in_source')==group['log_id']:
+                    try: logical = json.loads(row.get('raw_text', '{}'))
+                    except ValueError: pass
             selected = self.selected('research')
             roots = [selected if selected.is_dir() else selected.parent]
         else:
@@ -204,7 +236,7 @@ class Workbench:
             evidence = {r['evidence_id']: r for r in table(self.root, 'evidence')}
             logical = {}
             for row in evidence.values():
-                if row.get('evidence_type') == 'logical_log' and row.get('location_in_source') == group['log_id']:
+                if row.get('source_id') == source_id and row.get('evidence_type') == 'logical_log' and row.get('location_in_source') == group['log_id']:
                     try: logical = json.loads(row.get('raw_text', '{}'))
                     except ValueError: pass
             roots = []
@@ -255,6 +287,12 @@ class Workbench:
                               'line_start': start, 'line_end': end})
         return {'group': group, 'documents': files, 'url': url,
                 'message': '' if files else 'The original log/page is not retained with this assertion. Only its extracted/transcribed claim is available here. Use the archived link if one is attached; do not treat the JSON as the original source.'}
+
+    def original_for_source(self, scope, source_id, log_id):
+        source = self.source_facts(scope, source_id, log_id)
+        group = {'id':'source', 'source_id':source_id, 'log_id':log_id, 'members':[],
+                 'title':(source['log'] or source['source'])['title']}
+        return self.original_source(scope, '', known_group=group)
 
     def source_text(self, ref, query):
         source = self._source_refs.get(ref)
@@ -463,64 +501,23 @@ class Workbench:
                 raise ValueError('Choose an approval, rejection or pending decision.')
         if not chosen:
             raise ValueError('There are no pending high-confidence, non-conflicting claims to accept.')
-        players = {r['player_id']:r for r in table(self.root, 'players')}
-        if mapping and mapping not in players:
-            raise ValueError('Choose an existing archive player.')
-        tables, headers, originals = {}, {}, {}
-        for name in ('player_character_links', 'historical_events'):
-            path = self.root/'data/working'/(name+'.csv')
-            if not path.exists():
-                continue
-            with path.open(encoding='utf-8-sig',newline='') as f:
-                reader=csv.DictReader(f)
-                headers[name], tables[name] = list(reader.fieldnames or []), list(reader)
-            originals[path] = path.read_bytes()
-        indexes = {'link':{r['link_id']:r for r in tables.get('player_character_links',[])},
-                   'event':{r['event_id']:r for r in tables.get('historical_events',[])}}
-        changed_links, count = [], 0
+        decisions = []
         for group in chosen:
             for member in group['members']:
                 if supported and member['status'] != 'needs_review':
                     continue
-                kind='link' if member['kind']=='link' else 'event'
-                row=indexes[kind].get(member['id'])
-                if row is None:
-                    raise ValueError('An imported claim is no longer available.')
-                if kind=='link':
-                    row['status']=status
-                    if mapping:
-                        row.update(player_id=mapping,main_handle=players[mapping]['main_handle'])
-                    changed_links.append(row)
-                else:
-                    row['review_status']=status
-                    if 'review_status' not in headers['historical_events']:
-                        headers['historical_events'].append('review_status')
-                if status=='accepted':
-                    row['confidence']=member['assessment']['confidence']
-                count+=1
-        for row in changed_links:
-            owners={r['player_id'] for r in tables['player_character_links'] if r['character_id']==row['character_id'] and r['status']=='accepted'}
-            if row['status']=='accepted' and len(owners)>1:
-                raise ValueError(f"{row['character_name']} has a conflicting accepted owner. Leave that group pending.")
-        with tempfile.TemporaryDirectory(dir=self.root/'data/working',prefix='review-stage-') as temp:
-            staged=[]
-            for name,rows in tables.items():
-                dest=Path(temp)/(name+'.csv')
-                with dest.open('w',encoding='utf-8',newline='') as f:
-                    writer=csv.DictWriter(f,fieldnames=headers[name]);writer.writeheader();writer.writerows(rows)
-                staged.append((dest,self.root/'data/working'/(name+'.csv')))
-            replaced=[]
-            try:
-                for draft,target in staged:
-                    draft.replace(target);replaced.append(target)
-            except BaseException:
-                for target in replaced:target.write_bytes(originals[target])
-                raise
+                decision = {'source_id':group['source_id'], 'log_id':group['log_id'], 'id':member['record_key'],
+                            'action':{'accepted':'accept', 'rejected':'reject', 'needs_review':'pending'}[status]}
+                if mapping and member['kind']=='link':
+                    fact = next(f for f in self.source_facts('archive', group['source_id'], group['log_id'])['facts'] if f['id']==member['record_key'])
+                    decision.update(action='revise', status=status, changes={'object':mapping, 'basis':fact['basis']})
+                decisions.append(decision)
+        count = source_review.save(self, decisions)
         self.job['log'].append(f"{status.replace('_',' ').capitalize()}: {count} claim(s) in {len(chosen)} source group(s). Other claims are unchanged.")
 
     def start(self, action, payload):
         allowed = {'preview_research', 'apply_research', 'save_review', 'queue', 'preview_whois', 'import_whois',
-                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore', 'review_supported', 'review_claims'}
+                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore', 'review_supported', 'review_claims', 'save_facts'}
         if action not in allowed:
             raise ValueError('Unknown workbench step.')
         with self.lock:
@@ -553,6 +550,11 @@ class Workbench:
                 self.backup()
                 self.review_claims(payload, supported=action == 'review_supported')
                 self.data['links_reviewed'] = True
+            elif action == 'save_facts':
+                self.backup()
+                count = source_review.save(self, payload.get('decisions'))
+                self.data['links_reviewed'] = True
+                self.job['log'].append(f'Saved {count} fact decision(s), with source citations and revision history.')
             elif action == 'queue':
                 self.run('build_whois_queue.py')
                 self.data['queue_ready'] = True
@@ -710,14 +712,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(200, result)
             except ValueError as exc:
                 return self.send(400, {'error': str(exc)})
-        if route in {'/api/claims', '/api/original', '/api/source-text'}:
+        if route in {'/api/claims', '/api/original', '/api/source-text', '/api/source-facts'}:
             if not self.authenticated():
                 return self.send(403, {'error': 'Open the workbench from its launcher.'})
             query = parse_qs(parsed.query)
             try:
                 scope = query.get('scope', ['preview'])[0]
-                result = (self.app.claim_groups(scope) if route == '/api/claims' else
-                          self.app.original_source(scope, query.get('group', [''])[0]) if route == '/api/original' else
+                result = (self.app.source_facts(scope, query.get('source_id',[''])[0], query.get('log_id',[''])[0], query.get('group',[''])[0]) if route == '/api/source-facts' else
+                          self.app.claim_groups(scope) if route == '/api/claims' else
+                          (self.app.original_source(scope, query['group'][0]) if query.get('group') else
+                           self.app.original_for_source(scope, query.get('source_id',[''])[0], query.get('log_id',[''])[0])) if route == '/api/original' else
                           self.app.source_text(query.get('ref', [''])[0], query))
                 return self.send(200, result)
             except (ValueError, OSError) as exc:
