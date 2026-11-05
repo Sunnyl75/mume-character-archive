@@ -162,3 +162,13 @@ The theme ZIP was checked against the packaged source files; the generated
 patch applies to the saved 1.1.7 source. PHP 8.3 syntax checks passed for the
 new template, homepage and theme functions. Live appearance should be checked
 after installation on WordPress.com.
+
+
+## Yada Wiki layouts (theme 1.1.10)
+
+The separate wiki menu uses the `yada_wiki` content type. Theme 1.1.10 registers
+Full Parchment Width for both `page` and `yada_wiki`, so WordPress can display
+the template selector for wiki entries too. Edit an entry through the Wiki
+menu, choose Full Parchment Width in Template (editor sidebar or Attributes
+box), and update it. This is a per-entry choice; other wiki layouts remain
+unchanged. The PHP minimum remains 8.0, as declared in 1.1.9.

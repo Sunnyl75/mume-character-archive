@@ -9,7 +9,7 @@
  
  Sidebar
  -------
-@@ -29,3 +29,25 @@
+@@ -29,3 +29,35 @@
  
  
  Version note: this revision no longer inserts the theme sidebar automatically on every page. Existing floated infoboxes inside page content are styled to match the cork-and-stone sidebar. The sidebar.php template remains available for deliberate future use.
@@ -35,6 +35,16 @@
 +Upload the theme ZIP through Appearance > Themes > Add New > Upload Theme,
 +then choose Replace current with uploaded. This is an update of the existing
 +Bree Legends theme. Deck character data is managed by its separate plugin.
++
++
++Version 1.1.10 — Yada Wiki templates
++-----------------------------------
++Full Parchment Width can now be selected on Yada Wiki entries (yada_wiki)
++as well as normal WordPress pages. Open the separate Wiki menu, edit an entry,
++and select Full Parchment Width from Template in the editor sidebar or the
++Attributes box, then update the entry. WordPress displays the template
++selector when a custom template is registered for that content type.
++Existing entries keep their current template until you change it.
 --- a/bree-legends/assets/css/bree-legends.css
 +++ b/bree-legends/assets/css/bree-legends.css
 @@ -1696,7 +1696,7 @@
@@ -122,7 +132,7 @@
          get_theme_file_uri('/assets/css/bree-legends.css'),
          array(),
 -        '1.1.7'
-+        '1.1.9'
++        '1.1.10'
      );
  }
  add_action('wp_enqueue_scripts', 'bree_legends_enqueue_assets');
@@ -193,7 +203,7 @@
 +<?php
 +/**
 + * Template Name: Full Parchment Width
-+ * Template Post Type: page
++ * Template Post Type: page, yada_wiki
 + *
 + * Fill the existing parchment interior without changing its frame or padding.
 + */
@@ -227,7 +237,7 @@
  Author: L B / Bree Legends
  Description: A custom fantasy parchment-and-stone WordPress theme for Bree Legends, based on the approved static webpage mockup.
 -Version: 1.1.7
-+Version: 1.1.9
++Version: 1.1.10
  Requires at least: 6.0
  Tested up to: 6.8
 -Requires PHP: 7.4
