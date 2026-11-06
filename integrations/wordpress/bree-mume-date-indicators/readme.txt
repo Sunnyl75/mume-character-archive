@@ -2,7 +2,7 @@
 Contributors: breelegends
 Requires at least: 5.8
 Requires PHP: 7.4
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPL-3.0-or-later
 
 Compact comparison tables with Diku Alfa and MUME epochs as columns. Side tabs
@@ -70,3 +70,7 @@ Groups Tell, Say, Death and first-kill variants into short-label rows.
 Uses subtle wording-change colours with no confidence meaning.
 Records a future Mudlet collector for current MUME IX responses; not implemented.
 WordPress runtime still needs testing.
+
+Changelog 0.5.1:
+Accepts reviewed normalized display templates exported by the Deck Workbench.
+Retains original quoted evidence and separates response perspectives.

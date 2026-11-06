@@ -285,7 +285,8 @@
         }
         const buckets=new Map();
         for(const entry of value.observations){
-          let text=entry.documented?{output:config.output||indicator.title,signature:config.output||indicator.title,viewpoint:'Feature',detail:''}:sample(indicator,entry.attestation.quote);
+          let text=entry.documented?{output:config.output||indicator.title,signature:config.output||indicator.title,viewpoint:'Feature',detail:''}:
+            entry.attestation.display_template?{output:placeholders(entry.attestation.display_template),signature:placeholders(entry.attestation.display_template),viewpoint:defaultView,detail:defaultDetail}:sample(indicator,entry.attestation.quote);
           if(!text)continue;
           if(entry.attestation?.viewpoint)text={...text,viewpoint:viewpoint(entry.attestation.viewpoint)};
           const key=[text.viewpoint,text.detail,text.signature].join('|');let bucket=buckets.get(key);

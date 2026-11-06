@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bree Legends — MUME Dating Indicators
  * Description: Compact Diku and MUME epoch comparison tables. Use [mume_date_indicators] on a page.
- * Version: 0.5.0
+ * Version: 0.5.1
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Author: Bree Legends
@@ -83,8 +83,8 @@ function bree_mdi_validate($data) {
 }
 
 function bree_mdi_shortcode() {
-    wp_enqueue_style('bree-mdi', plugins_url('public/style.css', __FILE__), array(), '0.5.0');
-    wp_enqueue_script('bree-mdi', plugins_url('public/chronology.js', __FILE__), array(), '0.5.0', true);
+    wp_enqueue_style('bree-mdi', plugins_url('public/style.css', __FILE__), array(), '0.5.1');
+    wp_enqueue_script('bree-mdi', plugins_url('public/chronology.js', __FILE__), array(), '0.5.1', true);
     $json = wp_json_encode(bree_mdi_data(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
     return '<div class="bree-mume-dates"><script type="application/json" class="mdi-data">' . $json . '</script><div class="mdi-app"><noscript>Enable JavaScript to browse the comparison tables.</noscript></div></div>';
 }

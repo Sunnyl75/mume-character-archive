@@ -158,14 +158,15 @@ groups pending. See `docs/deck-workbench.md` for the review controls.
 Existing public-player display rules are unchanged; private names from these
 new sources are never copied into the public player table.
 
-## Future app
+## Guided app
 
 The import engine (`Importer`) and public-view builder (`historical_views`) are
-separate from the interface. An app can run the same preview, review, apply,
-queue export, Whois import, local rebuild and publish stages. Acquisition and raw
-log extraction should be separate operations with visible progress. A review UI
-should resolve player mappings, uncertain observations and duplicate events
-before incorporating them into public summaries.
+separate from the interface. The Workbench now uses five steps: add sources as pending evidence, review
+findings, optional Whois collection/import, build/export, and explicit publication.
+Review controls are available as soon as evidence is loaded; the technical
+preview/apply calls are internal to source loading. The epoch exporter uses
+accepted response facts and produces an HTML comparison for review plus a
+WordPress-compatible catalogue. See [the guide](deck-workbench.md).
 
 The Workbench now provides this source-wide review. `source_review.py` separates
 source facts from the UI and public Deck projections. Each reviewed fact has a

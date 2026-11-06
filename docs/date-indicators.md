@@ -4,7 +4,7 @@ A compact public comparison page, separate from the Deck of Chars workbench.
 
 ## Put the page on Bree Legends
 
-1. Upload `releases/bree-mume-date-indicators-0.5.0.zip` through WordPress → Plugins
+1. Upload `releases/bree-mume-date-indicators-0.5.1.zip` through WordPress → Plugins
    → Add New → Upload Plugin. Activate it, or replace the earlier version.
 2. Use a normal page with the regular full parchment template. Add a Shortcode
    block containing `[mume_date_indicators]`.
@@ -107,9 +107,9 @@ the comparison format retain their chosen rows.
 
 The public page is read-only. Updates require WordPress administrator access
 and nonce-checked forms. This plugin does not change character/death records.
-There is no direct exporter from the log-facts app yet; the current connection
-is uploading catalogue JSON. Adding observations or uploading a catalogue makes
-that research available on the public page.
+The workbench exports an accepted response catalogue for review and upload.
+Adding observations or uploading a catalogue makes that research available on
+the public page; the workbench does not publish it automatically.
 
 ## Rebuild
 
@@ -143,3 +143,16 @@ The [epoch-response pilot](epoch-response-research.md) parses independently date
 logs into reviewable response forms with original line references. Its SQLite
 snapshot is a research input; it does not yet promote candidates into this
 public catalogue or add them to the workbench review interface.
+
+## Workbench handoff
+
+The Deck Workbench now scans retained gameplay logs into persistent response
+findings and exports accepted independently dated observations as a comparison
+catalogue and HTML review page. Original quotes, line citations, normalized
+output and point of view stay separate. Load the website’s current catalogue in
+the workbench first to preserve separate website edits. See
+[the workbench guide](deck-workbench.md#epoch-response-review-and-export).
+
+Version 0.5.1 accepts the exporter’s explicit normalized display templates;
+original quotations are retained in the catalogue. It does not otherwise change
+the comparison layout.

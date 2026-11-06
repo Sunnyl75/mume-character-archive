@@ -13,7 +13,7 @@ is required; no Python packages, Node installation or AI account are required.
    Finder's Open action or Privacy & Security; follow the system's own prompt.
 3. The installer finds `~/mume-character-archive`, or asks you to select the
    existing archive folder. Read its installation message and click Install.
-4. It downloads this project's code from `feature/deck-workbench`, backs up
+4. It downloads this project's code from `feature/workbench-review-export`, backs up
    existing code, and opens the interface. It preserves your working database,
    captures, artwork and publishing configuration. Missing bundled reference
    and clan-source files are added only if absent. It does not switch branches,
@@ -64,7 +64,7 @@ select the player entries to include. The detector understands standard named
 entries inside a confirmed `*** TROPHY ***` display. It excludes anonymous races
 and multiword mobile descriptions. One-word names still need your review.
 Nothing detected is included until selected. You can also enter other confirmed
-participant names explicitly. Click **Prepare this source for import**.
+participant names explicitly. Click **Add this source to review**.
 
 This is a conservative source helper, not an AI crawler or a parser for every
 historical log dialect. It does not infer ownership from shared activity,
@@ -73,51 +73,31 @@ reconstruct maps. Split a collection into individual logs before preparation.
 Unrecognised text is retained in the source. Previously prepared structured
 research JSON can be used for richer reviewed extractions.
 
-### 2. Preview & import
+Click **Add research to review**, or **Add this source to review** for the
+text form. The app checks the input, backs up the tables and preserves the source
+in the local research archive. New relationships, deaths and trophies remain
+pending. This is evidence storage, not acceptance or publication. Existing
+review decisions survive reloading the same input. The app opens Step 2 directly;
+there is no separate preview/import stage.
 
-Click **Preview proposed changes**. The main view groups related claims from
-one source: a player's list of characters, a log's death observations, or trophy
-snapshots. Supporting source, evidence and queue rows are counted separately;
-they do not each require a decision. Filter **Needs judgement**, **High
-confidence**, or **All source groups** and search by name or source.
+### 2. Review findings
 
-Each group shows the proposed names, confidence, reasons and caveats. High means
-an explicit same-player statement/list or exact game-output evidence, with a
-retained original and no flagged ownership conflict. Transcribed summaries,
-inferences, missing originals and disputed ownership require judgement. Unrated
-means no confidence was supplied. These are transparent evidence rules, not
-probability estimates or a fresh AI reading of the source. Approximate event
-dates remain approximate even when the observation itself is well supported.
+Use **Needs judgement**, **High confidence**, or **All source groups**, and search
+by character or source. These groups are actionable here: accept, revise, reject
+or keep pending. Confidence ratings explain their evidence and limitations;
+they are not probabilities or a fresh AI interpretation of a log.
 
-Click **Read original source** to read the retained log or webpage as text. The
-reader includes line numbers, citation highlighting for text logs, search and
-pagination. Saved HTML is shown as inert readable text. An archived URL is
-available when recorded. If the original is missing, the app says so explicitly.
-Use the **complete July research ZIP** to bring its saved logs and webpages;
-loading the standalone JSON cannot supply those originals.
+**Read original source** opens the retained text with search and line numbers.
+**View source & all claims** lists all retained extraction fields, appearances
+and reviewed findings, alongside the original. A standalone JSON cannot supply
+missing originals; use the full historical research ZIP when available.
 
-**View source & all claims** opens a completeness check for the entire log or
-page. It lists all retained extraction fields and findings, not just the claims
-in the review queue: observers, named appearances, dating evidence, locations,
-key findings, deaths, trophies and uncertain observations. Search the list or
-switch scope to the entire imported source collection. This shows what was
-captured; it does not establish that the extraction missed nothing. In preview,
-**Import & review this source** preserves the input and opens its editable review
-in Step 3. Rejected and accepted findings remain visible beside pending ones.
-
-The optional archive-row details retain the technical record browser, including
-before/after fields, extracted JSON and a downloadable report. These inspection
-actions do not import anything.
-
-After updating an older workbench, click **Preview proposed changes** again to
-regenerate the detailed report. Your selected input is remembered.
-
-Click **Import into my local archive** when ready.
-An input or archive change invalidates its preview and requires a fresh preview.
-Imports preserve sources and leave new player relationships, death observations
-and trophy claims pending. They become public only after acceptance and rebuild.
-
-### 3. Review claims
+The **Open any source and all its findings** selector also includes sources
+without a death, trophy or ownership claim. Select a particular log to read its
+original, add findings or scan responses. Filter the attached findings by type
+or pending status; filters survive review decisions. **Read cited passage** jumps
+to and highlights a finding’s source lines. Supporting storage rows and the import report are available
+under the optional details panel; they do not require separate approval.
 
 **Accept all pending high-confidence claims** accepts only supported groups with
 retained originals and no flagged conflicts. Medium, low and unrated groups stay
@@ -129,7 +109,7 @@ Use the optional existing-player dropdown to map selected player associations
 to a known player. A conflicting accepted owner blocks acceptance. Reject an
 incorrect imported assertion or leave an ambiguous identity pending. Older
 non-historical relationships and legacy event review decisions are preserved.
-Rebuild later to see accepted links, deaths and trophy snapshots in the Deck.
+Rebuild later to include accepted links, deaths and trophy snapshots in the Deck.
 
 Each group also has a decision menu beside it. Choose **Accept group as written**,
 **Review / revise individual claims**, **Reject group**, or **Keep group pending**.
@@ -164,34 +144,79 @@ not replace raw source evidence, and reimporting identical input preserves them.
 The history records this local review session's action/time; it does not claim
 an authenticated multi-user reviewer identity.
 
-### 4. Collect Whois
+### 3. Whois (optional)
 
 Click **Build Whois queue**, then **Copy Mudlet commands**. Paste the commands
 into Mudlet, one line at a time. The `mha` collector must already be installed
-and enabled in that profile. The workbench does not control or connect to the
-game itself. Return after the batch finishes. This stage is optional.
+and enabled in that profile. This app does not connect to the game.
 
-### 5. Import captures
+After the batch finishes, return to this same step. Select a discovered Mudlet
+profile or its JSON archive. Click **Preview new captures**, then **Import
+captures**. The importer uses the snapshot previewed, including colour data.
+Preview again if Mudlet saves more captures. Historical player links remain
+attached to the same archive character IDs.
 
-Select an automatically discovered local Mudlet profile, or choose its JSON
-archive. Click **Preview new captures**, inspect the activity output, then
-**Import captures**. The importer works from the exact snapshot previewed, so
-the local rebuild uses the same captured text and colour data. If Mudlet saves
-more captures after preview, preview again before importing them.
+You can skip this step when publishing historical findings alone.
 
-### 6. Build & preview
+### 4. Build & export
 
-Click **Rebuild Deck of Chars**. Progress streams into Activity while the
-interface remains responsive. The existing validation/classification/evidence/
-export scripts run in order. Open **local Deck preview** to inspect the actual
-generated website. Download the plugin or data file from this step.
+**Rebuild Deck of Chars** validates and builds the local website data. Review
+the searchable list of added, updated and removed characters, with changed
+fields and before/after player, level, race, class and history counts. Only
+changed characters are listed; the full Deck preview is no longer part of the
+workflow. The baseline is the last publication from this workbench, or the Deck
+present before its first updated build. Manual website uploads cannot be tracked
+and are identified as such. A later archive change requires a fresh build.
 
-For first use of the new Logs and Trophies interface, upload the rebuilt plugin
-through WordPress → Plugins → Add New → Upload Plugin. Subsequent data-only
-updates use the final step. New interface code or portrait assets also require
-a plugin update.
+Plugin and data downloads are under **Installation and manual data downloads**.
+Upload the rebuilt Deck plugin through WordPress → Plugins for interface updates.
 
-### 7. Publish
+#### Epoch response review and export
+
+In Step 2, select a particular gameplay log and click **Find epoch response
+lines**. An anchored watch-list creates pending response findings with normalized
+output, exact raw quotation, original line number and a separate point of view.
+Repeated wording within one log supplies one finding. Repeating a scan preserves
+accepted, rejected and revised findings. A changed source copy requires fresh
+review; ambiguous/shared files without known log bounds cannot be scanned.
+HTML logs must first be prepared as readable text with stable line numbers.
+
+Choose **Revise…** on a response finding to review its category, response name,
+point of view, condition, normalized output and dates. Use `<Actor>`, `<Target>`
+and similar placeholders; retain original names in the supporting quotation.
+Date confidence and evidence are separate from confidence in the wording.
+Do not use the wording itself to independently date its own occurrence.
+Use **Apply these dates to the other unrejected response findings in this log**
+to establish a log’s date once; this does not accept its other pending findings.
+You can also choose **response** in **Add a missing finding**.
+
+In Step 4, **Export epoch comparison** creates:
+
+- An HTML comparison page to download and review in a browser.
+- `epoch-comparison-catalogue.json`, compatible with the comparison plugin.
+- A dating follow-up report, with original quotes and source/log identities.
+- An updated comparison plugin supporting these normalized display templates.
+
+Only accepted response findings with independent, high/medium-confidence date
+bounds wholly within one epoch enter the table. Unclear, circular or cross-epoch
+dates stay in the archive and appear in the follow-up list, with a button back
+to their source review. They are not silently assigned an epoch. Pending/rejected
+findings, private review notes and supporting archive tables are not exported.
+
+If you have edited the comparison catalogue on the website, first download it
+from WordPress → Tools → MUME Dating Indicators, then choose **Use this catalogue**
+in the workbench. Existing catalogue evidence is retained; this archive's prior
+export is refreshed so corrections and later rejections do not leave stale
+observations. Otherwise the bundled comparison is used. The exporter does not
+modify the selected base file or publish to WordPress.
+
+Review the downloaded HTML, install the updated comparison plugin if needed,
+then upload the JSON through WordPress → Tools → MUME Dating Indicators →
+**Replace the catalogue**. The epoch page and Deck have separate publication
+steps. Exports become stale when archive decisions or the base catalogue change;
+create a fresh export before downloading.
+
+### 5. Publish
 
 Create a publishing key in WordPress → Tools → Deck of Chars, then enter the
 site address and key in the workbench. **Verify & save connection** checks the
@@ -228,6 +253,7 @@ The app does not automatically commit or push archive data to GitHub.
 ```bash
 python3 -m unittest discover -s tests -p 'test_*import.py' -v
 python3 -m unittest discover -s tests -p 'test_deck_workbench.py' -v
+python3 -m unittest discover -s tests -p 'test_epoch_workbench.py' -v
 node --check workbench/app.js
 ```
 
@@ -239,6 +265,7 @@ NODE_PATH=/tmp/deck-ui-check/node_modules node tests/test_workbench_browser.cjs
 ```
 
 It uses an isolated archive copy and exercises source preparation, historical
-import, relationship acceptance, queue building, Whois preview/import, full
-rebuild and the publication gate. It never uploads to WordPress. macOS launcher
+import into actionable review, death revisions and attached roles, response
+extraction/dating/export, relationship acceptance, combined Whois collection and
+import, named build changes and the publication gate. It never uploads to WordPress. macOS launcher
 behaviour still needs a test on a Mac; backend and DOM checks run on Linux.
