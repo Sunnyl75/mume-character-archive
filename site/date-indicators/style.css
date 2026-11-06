@@ -12,3 +12,5 @@
 .bree-mume-dates td.mdi-multiple{height:auto}.bree-mume-dates .mdi-multiple .mdi-sample{height:auto;max-height:none;overflow:visible}.bree-mume-dates .mdi-multiple .mdi-sample+.mdi-sample{margin-top:10px}
 
 .bree-mume-dates tbody th b{display:block}.bree-mume-dates .mdi-viewpoint{display:block;font:400 10px/1.4 system-ui,sans-serif;color:#746a58;margin-top:5px}
+
+.bree-mume-dates .mdi-inferred{border:1px dashed #95866b;padding:6px 4px}.bree-mume-dates .mdi-assumption{display:block;font:italic 9px/1.4 system-ui,sans-serif;color:#756852;margin-bottom:4px}.bree-mume-dates .mdi-change{background:transparent;color:#9e2b27;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;white-space:pre-wrap}.bree-mume-dates .mdi-change:empty{display:none}.bree-mume-dates .mdi-deletion{display:inline-block;width:0;height:.85em;border-left:2px solid #9e2b27;vertical-align:baseline;position:relative;top:1px}

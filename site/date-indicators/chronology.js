@@ -203,6 +203,60 @@
     if(indicator.id==='elrond-diku-line')output=`<Actor> screams '${output}'`;
     return {output,signature:output,viewpoint:viewpoint(baseline.viewpoint||config.viewpoint||info?.[1]),detail:config.detail??info?.[2]??''};
   }
+  function wordingDiff(before,after){
+    if(before===after)return [];
+    const tokenize=text=>text.match(/<[^<>]+>|\s+|[\p{L}\p{N}_]+|[^\s\p{L}\p{N}_<>]+|[<>]/gu)||[];
+    const a=tokenize(before),b=tokenize(after),parts=[];
+    // Bound work for unusually large uploaded excerpts.
+    if(a.length*b.length>250000){
+      let start=0,end=0;
+      while(start<a.length&&start<b.length&&a[start]===b[start])start++;
+      while(end<a.length-start&&end<b.length-start&&a.at(-1-end)===b.at(-1-end))end++;
+      return [{text:b.slice(0,start).join('')},
+        {text:b.slice(start,b.length-end).join(''),changed:true,removed:a.slice(start,a.length-end).join('')},
+        {text:b.slice(b.length-end).join('')}].filter(p=>p.text||p.changed);
+    }
+    const matrix=Array.from({length:a.length+1},()=>new Uint16Array(b.length+1));
+    for(let i=a.length-1;i>=0;i--)for(let j=b.length-1;j>=0;j--)matrix[i][j]=a[i]===b[j]?matrix[i+1][j+1]+1:Math.max(matrix[i+1][j],matrix[i][j+1]);
+    let i=0,j=0,added='',removed='';
+    function flush(){if(added||removed){parts.push({text:added,changed:true,removed});added='';removed='';}}
+    while(i<a.length||j<b.length){
+      if(i<a.length&&j<b.length&&a[i]===b[j]){
+        flush();const last=parts.at(-1);if(last&&!last.changed)last.text+=b[j];else parts.push({text:b[j]});i++;j++;
+      }else if(i<a.length&&(j===b.length||matrix[i+1][j]>=matrix[i][j+1]))removed+=a[i++];
+      else added+=b[j++];
+    }
+    flush();return parts;
+  }
+  function diffMarkup(item){
+    if(!item.change)return esc(item.output);
+    const describe=text=>/^\s+$/.test(text)?(text.length===1?'one space':text.length+' spaces'):text;
+    return item.change.parts.map(part=>{
+      if(!part.changed)return esc(part.text);
+      const title=part.removed?'Previously: '+describe(part.removed):'Added wording';
+      if(part.text)return `<mark class="mdi-change" title="${esc(title)}">${esc(part.text)}</mark>`;
+      const label='Removed: '+describe(part.removed);
+      return `<span class="mdi-deletion" role="img" aria-label="${esc(label)}" title="${esc(label)}"></span>`;
+    }).join('');
+  }
+  function bridgeGaps(row,cols){
+    // Only original, comparable response evidence supplies endpoints. Derived
+    // continuity never becomes an attestation or a new calibration source.
+    const observed=cols.map((col,index)=>({col,index,items:(row.cells[col.id]||[]).filter(item=>item.kind==='output'&&item.signature!==null)})).filter(c=>c.items.length);
+    for(let n=1;n<observed.length;n++){
+      const left=observed[n-1],right=observed[n];if(right.index-left.index<2)continue;
+      const rightForms=new Map(right.items.map(item=>[item.signature,item]));
+      const shared=[...new Map(left.items.filter(item=>rightForms.has(item.signature)).map(item=>[item.signature,item])).values()];
+      for(let index=left.index+1;index<right.index;index++){
+        const column=cols[index];if(row.cells[column.id]?.length)continue;
+        if(!shared.length)continue;
+        row.cells[column.id]=shared.map(item=>({kind:'inferred',output:item.output,signature:item.signature,
+          viewpoint:row.viewpoint,detail:row.detail,shade:item.shade,lane:item.lane,entries:[],
+          inference:{inferred:true,key:[row.id,left.col.id,right.col.id,item.signature].join('|'),
+            from:{column:left.col,entry:item.entries[0]},to:{column:right.col,entry:rightForms.get(item.signature).entries[0]}}}));
+      }
+    }
+  }
   function evidenceRows(catalogue){
     const result=[],grouped=new Map(),cols=columns(catalogue);
     const indicators=new Map(catalogue.indicators.map(i=>[i.id,i]));
@@ -255,12 +309,17 @@
         const start=item=>first(item).start||first(item).source?.date_start||'';
         return end(a).localeCompare(end(b))||start(a).localeCompare(start(b));
       });
-      const forms=new Map();
+      const forms=new Map();let previous=null;
       for(const col of cols)for(const item of row.cells[col.id]||[]){
         if(item.signature===null)continue;
-        if(!forms.has(item.signature))forms.set(item.signature,forms.size);
+        if(!forms.has(item.signature)){
+          forms.set(item.signature,forms.size);
+          if(item.kind==='output'&&previous?.kind==='output')item.change={before:previous.output,parts:wordingDiff(previous.output,item.output)};
+        }
         item.shade=forms.get(item.signature)%6;
+        if(item.kind==='output')previous=item;
       }
+      bridgeGaps(row,cols);
     }
     return result;
   }
@@ -269,14 +328,14 @@
     const groups=[...new Set([...(catalogue.comparison?.sections||sections),...rows.map(r=>r.section)])].filter(section=>rows.some(r=>r.section===section));
     const prefix='mdi-'+(document.querySelectorAll('.bree-mume-dates').length>1?[...document.querySelectorAll('.bree-mume-dates')].indexOf(root):'page');
     let active=groups[0];
-    host.innerHTML=`<header class="mdi-heading"><h1>MUME wording & date indicators</h1><small>Updated ${esc(catalogue.updated_at)}</small></header><p class="mdi-key">— no evidence · Names use &lt;Actor&gt; / &lt;Target&gt; · Matching wording keeps its shade.</p><div class="mdi-layout"><nav class="mdi-tabs" role="tablist" aria-label="Output categories" aria-orientation="vertical">${groups.map((section,n)=>`<button type="button" role="tab" id="${prefix}-tab-${n}" aria-controls="${prefix}-panel" data-section="${esc(section)}">${esc(section)}</button>`).join('')}</nav><section id="${prefix}-panel" class="mdi-panel" role="tabpanel" tabindex="0"></section></div>`;
+    host.innerHTML=`<header class="mdi-heading"><h1>MUME wording & date indicators</h1><small>Updated ${esc(catalogue.updated_at)}</small></header><p class="mdi-key">— unknown · Dashed = inferred continuity · Red = first wording difference · Names use &lt;Actor&gt; / &lt;Target&gt;.</p><div class="mdi-layout"><nav class="mdi-tabs" role="tablist" aria-label="Output categories" aria-orientation="vertical">${groups.map((section,n)=>`<button type="button" role="tab" id="${prefix}-tab-${n}" aria-controls="${prefix}-panel" data-section="${esc(section)}">${esc(section)}</button>`).join('')}</nav><section id="${prefix}-panel" class="mdi-panel" role="tabpanel" tabindex="0"></section></div>`;
     const panel=host.querySelector('.mdi-panel');
     function render(){
       const index=groups.indexOf(active),notes=[],noteMap=new Map();
       host.querySelectorAll('[role="tab"]').forEach(button=>{const selected=button.dataset.section===active;button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;});
       panel.setAttribute('aria-labelledby',prefix+'-tab-'+index);
       function reference(entry){
-        const key=entry.continued?'continuity:'+entry.basis:entry.source.id||[entry.source.url,entry.source.date_label,entry.documented?'documented':''].join('|');
+        const key=entry.inferred?'inferred:'+entry.key:entry.continued?'continuity:'+entry.basis:entry.source.id||[entry.source.url,entry.source.date_label,entry.documented?'documented':''].join('|');
         if(!noteMap.has(key)){noteMap.set(key,notes.length+1);notes.push(entry);}
         const n=noteMap.get(key),id=prefix+'-'+index+'-note-'+n;
         return `<a class="mdi-note-ref" href="#${id}" aria-label="Source note ${n}">${n}</a>`;
@@ -284,10 +343,14 @@
       function cell(row,column){
         const items=row.cells[column.id];
         if(!items?.length)return `<td class="mdi-unknown${column.id==='diku'?' mdi-diku':''}">—</td>`;
-        return `<td class="${[column.id==='diku'?'mdi-diku':'',items.length>1?'mdi-multiple':''].filter(Boolean).join(' ')}">${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}"><code>${esc(item.output)}</code><sup>${item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
+        return `<td class="${[column.id==='diku'?'mdi-diku':'',items.length>1?'mdi-multiple':''].filter(Boolean).join(' ')}">${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}${item.kind==='inferred'?' mdi-inferred':''}">${item.kind==='inferred'?'<small class="mdi-assumption">Inferred</small>':''}<code>${diffMarkup(item)}</code><sup>${item.kind==='inferred'?reference(item.inference):item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
       }
       const table=`<div class="mdi-table-wrap" tabindex="0" aria-label="${esc(active)} comparison; scroll horizontally for later epochs"><table><thead><tr><th scope="col">Output / indicator</th>${cols.map(c=>`<th scope="col" ${c.id==='diku'?'class="mdi-diku"':''}>${esc(c.title)}<small>${esc(c.range)}</small></th>`).join('')}</tr></thead><tbody>${rows.filter(row=>row.section===active).map(row=>`<tr id="${prefix}-${esc(row.id)}"><th scope="row"><b>${esc(row.label)}</b><small class="mdi-viewpoint">${esc(row.viewpoint)}${row.detail?' · '+esc(row.detail):''}</small></th>${cols.map(column=>cell(row,column)).join('')}</tr>`).join('')}</tbody></table></div>`;
       function note(entry){
+        if(entry.inferred){
+          const endpoint=bound=>{const s=bound.entry.source;return esc(s.date_label||bound.column.range)+' — '+link(s.url,s.title||bound.column.title)+(s.url?'':' (URL not recorded)');};
+          return `Assumed unchanged between ${esc(entry.from.column.title)} and ${esc(entry.to.column.title)}; no direct evidence from the intervening epochs. ${endpoint(entry.from)}; ${endpoint(entry.to)}.`;
+        }
         if(entry.continued)return esc(entry.basis)+' Feature presence is continued; exact wording is unverified.';
         const s=entry.source,date=s.date_label||(entry.start===entry.end?calendarDay(entry.end):month(entry.start)+'–'+month(entry.end));
         const qualifiers=[entry.approx?'approximate date':'',entry.baseline?'source-code template':'',entry.documented?'documented feature; no game-output sample':''].filter(Boolean).join('; ');
@@ -307,8 +370,8 @@
     });
     render();
   }
-  global.MumeDateIndicators={derive,usable,init,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders};
-  if(typeof module!=='undefined')module.exports={derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders};
+  global.MumeDateIndicators={derive,usable,init,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders,wordingDiff,diffMarkup};
+  if(typeof module!=='undefined')module.exports={derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders,wordingDiff,diffMarkup};
   if(typeof document!=='undefined')document.querySelectorAll('.bree-mume-dates').forEach(root=>{
     try{const inline=root.querySelector('.mdi-data');init(root,inline?JSON.parse(inline.textContent):global.MUME_DATE_INDICATORS);}catch(error){root.innerHTML='<p>The dating catalogue could not be loaded.</p>';}
   });

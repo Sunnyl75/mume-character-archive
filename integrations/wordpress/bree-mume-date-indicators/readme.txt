@@ -2,7 +2,7 @@
 Contributors: breelegends
 Requires at least: 5.8
 Requires PHP: 7.4
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 License: GPL-3.0-or-later
 
 Compact comparison tables with Diku Alfa and MUME epochs as columns. Side tabs
@@ -10,7 +10,11 @@ show one category at a time within the normal full parchment page template.
 Epoch cells show recorded output, with short action labels in the left column.
 Superscript references lead to dated source notes below each table. Matching
 wording keeps the same pale shade; another shade draws attention to a change.
-Colour has no confidence or good/bad meaning. Dashes mean no evidence.
+Pale shades have no confidence or good/bad meaning. A bounded gap can show
+shared wording as inferred continuity: same shade, dashed border, Inferred label
+and a note citing both endpoints. These are not new attestations. Red underlining
+marks changed text at a new form’s first observed appearance. A small red tick
+marks a deletion, explained on hover. Dashes mean no evidence or bounded inference.
 Confirmed feature continuation does not assert unobserved wording.
 
 Installation:
@@ -42,6 +46,12 @@ This plugin does not modify the Deck of Chars archive.
 Epoch headings: https://mume.org/about/history
 Diku baseline: original DikuMUD Alfa source, linked by row.
 Source dates indicate surviving evidence, not exact feature introduction dates.
+
+Changelog 0.5.0:
+Bridges evidence gaps only for matching forms in the nearest observed cells.
+Labels inferred continuity and cites its bounding sources, without changing data.
+Marks inserted/replaced text in red with underlining at first observed appearance.
+Shows deletions as a small red tick; later repeated forms are not highlighted.
 
 Changelog 0.4.0:
 Standardizes display placeholders such as <Actor>, <Target> and <Message>.

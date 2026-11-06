@@ -4,7 +4,7 @@ A compact public comparison page, separate from the Deck of Chars workbench.
 
 ## Put the page on Bree Legends
 
-1. Upload `releases/bree-mume-date-indicators-0.4.0.zip` through WordPress → Plugins
+1. Upload `releases/bree-mume-date-indicators-0.5.0.zip` through WordPress → Plugins
    → Add New → Upload Plugin. Activate it, or replace the earlier version.
 2. Use a normal page with the regular full parchment template. Add a Shortcode
    block containing `[mume_date_indicators]`.
@@ -30,8 +30,8 @@ victim/recipient) and **Room** messages have separate rows. Sent and unavailable
 tell results are separate conditions; combat attack types are also separated.
 Each epoch cell shows a normalized response template. Different forms recorded in
 one epoch stack in that cell, with earlier evidence above later evidence. Cells
-grow to fit their samples. Only forms evidenced within that epoch are listed;
-matching colours do not carry wording into neighbouring epochs.
+grow to fit their samples. Observed forms stay in their evidenced epochs. A
+bounded gap may additionally show inferred continuity, as described below.
 
 Date ranges that overlap remain as recorded in the footnotes. Their display
 order does not establish an exact replacement date or an epoch launch change.
@@ -45,12 +45,25 @@ the catalogue.
 The first recorded wording uses light green. Each different form in that same
 response uses another pale shade, and matching forms keep their shade across
 later observed epochs. Names, message contents and changing stat values do not
-create a wording change; punctuation and spelling do. The colours carry no
-confidence or good/bad meaning.
+create a wording change; punctuation and spelling do. The pale shades carry no
+confidence or good/bad meaning. At the first observed occurrence of a new form,
+changed words and punctuation are red and underlined. Deleted text is represented
+by a small red tick with a hover description, without adding old words to the
+current response. Subsequent repetitions of that form have no red highlighting.
+These are textual differences, not proof that a server update caused them.
 
-`—` means no evidence assigned to that epoch. Gaps are not filled with invented
-samples. Guardian shadows can be marked as a continuing feature, following the
-researcher's confirmation that they persisted. That continuation does not
+When matching normalized wording occurs in the nearest observed cells on both
+sides of a gap, the intervening epochs can show that form with the same shade,
+a dashed border and an **Inferred** label. A source note identifies both bounding
+observations and states that there is no direct evidence in the gap. Only forms
+shared by those bounding cells are inferred. An intervening observation lacking
+a form blocks bridging across it. No inferred wording is extended before the first or
+after the last observation. Actor, Target and Room rows remain separate.
+
+Inferred entries are display-only: they have no attestation records, never move
+shared date anchors and never count as evidence for another gap. `—` remains
+where there is neither evidence nor a bounded continuity inference. Guardian
+shadows can be marked as a continuing feature, following the researcher's confirmation that they persisted. That continuation does not
 assert an exact game-output string in an epoch without a sample.
 
 The initial catalogue has 37 indicators, displayed in 48 rows after separating

@@ -3,7 +3,7 @@ const path=require('node:path');
 const assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
 const root=path.resolve(__dirname,'..');
-const {derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders}=require('../site/date-indicators/chronology.js');
+const {derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders,wordingDiff,diffMarkup}=require('../site/date-indicators/chronology.js');
 const data=JSON.parse(fs.readFileSync(path.join(root,'research/date_indicators.json'),'utf8'));
 const clone=value=>JSON.parse(JSON.stringify(value));
 const source=(id,end,extra={})=>({id,title:id,date_start:end,date_end:end,date_confidence:'high',calibration:'independent',dependencies:[],...extra});
@@ -58,7 +58,8 @@ assert.equal(findEvidence('death-victim').viewpoint,'Target');assert.equal(findE
 assert.notEqual(findEvidence('death-victim').id,findEvidence('death-room').id);
 assert.notEqual(findEvidence('say-self').id,findEvidence('say-observer').id);
 const nod=findEvidence('nod');assert.equal(nod.cells.diku[0].shade,nod.cells.vi[0].shade);
-assert.equal(nod.cells.i,undefined); // A gap is not an observed response.
+for(const epoch of ['i','ii','iii','iv','v']){assert.equal(nod.cells[epoch][0].kind,'inferred');assert.equal(nod.cells[epoch][0].entries.length,0);assert.equal(nod.cells[epoch][0].shade,nod.cells.vi[0].shade);assert.equal(nod.cells[epoch][0].change,undefined);}
+assert.equal(nod.cells.vii,undefined); // A single endpoint cannot extend wording forward.
 const firstKill=findEvidence('first-kill-punctuation');assert.equal(firstKill.cells.vi.length,2);
 assert.notEqual(firstKill.cells.vi[0].shade,firstKill.cells.vi[1].shade);
 // Reversing configured variants must not reverse the dated order inside an
@@ -116,6 +117,41 @@ assert.deepEqual(new Set(perspectiveRows.map(r=>r.viewpoint)),new Set(['Actor','
 assert.ok(perspectiveRows.every(r=>r.cells.vi.every(item=>item.viewpoint===r.viewpoint)));
 const before=JSON.stringify(data);evidenceRows(data);assert.equal(JSON.stringify(data),before);
 
+// Bounded continuity is derived from the nearest observed forms in this row;
+// another response in the gap blocks inference across it. No new evidence is made.
+function series(points){
+ const cat={epochs:data.epochs,sources:[],indicators:[{id:'nod',title:'Nod',category:'Social interactions',mode:'observed_by',soft_relation:'none',patterns:[],comparison:{section:'Social interactions',label:'Nod'},attestations:[]}]};
+ points.forEach(([date,quote],n)=>{const id='series-'+n;cat.sources.push(source(id,date));cat.indicators[0].attestations.push({source_id:id,quote});});
+ return cat;
+}
+const a='You nod solemnly.',b='You nod your head solemnly.',c='You nod in agreement.';
+const gapData=series([['1993-01-01',a],['1997-01-01',a]]),gapBefore=JSON.stringify(gapData);
+const gap=evidenceRows(gapData).find(r=>r.id==='nod-actor');
+assert.equal(gap.cells.i,undefined);assert.equal(gap.cells.vii,undefined);
+for(const epoch of ['iii','iv','v']){const item=gap.cells[epoch][0];assert.equal(item.kind,'inferred');assert.equal(item.output,a);assert.equal(item.shade,gap.cells.ii[0].shade);assert.deepEqual(item.entries,[]);assert.equal(item.change,undefined);}
+assert.equal(derive(gapData,gapData.indicators[0]).usable,2);assert.equal(JSON.stringify(gapData),gapBefore);
+const blocked=evidenceRows(series([['1993-01-01',a],['1994-05-01',b],['1997-01-01',a]])).find(r=>r.id==='nod-actor');
+assert.equal(blocked.cells.iii,undefined);assert.equal(blocked.cells.v,undefined);
+const shared=evidenceRows(series([['1993-01-01',a],['1993-01-02',b],['1997-01-01',b],['1997-01-02',c]])).find(r=>r.id==='nod-actor');
+for(const epoch of ['iii','iv','v']){assert.equal(shared.cells[epoch].length,1);assert.equal(shared.cells[epoch][0].output,b);assert.equal(shared.cells[epoch][0].shade,shared.cells.ii.find(item=>item.output===b).shade);}
+// Only a new form's first observed appearance gets a diff; later repetitions
+// keep the shade, and both inserted/deleted text preserve the current response.
+assert.equal(laterNod.cells.vii[0].change.parts.filter(p=>p.changed).map(p=>p.text).join('').trim(),'your head');
+assert.equal(laterNod.cells.viii[0].change,undefined);
+assert.equal(nod.cells.diku[0].change,undefined);assert.equal(nod.cells.vi[0].change,undefined);
+const punctuation=wordingDiff('No-one by that name here..','No-one by that name here...');
+assert.equal(punctuation.filter(p=>p.changed).map(p=>p.text).join(''),'...');
+const deletion=wordingDiff('You nod very solemnly.','You nod solemnly.');
+assert.ok(deletion.some(p=>p.changed&&!p.text&&p.removed.includes('very')));
+for(const [beforeText,afterText]of [[a,b],['one two','one'],['','new'],['old',''],['a '.repeat(600),'a '.repeat(300)+'b '+'a '.repeat(299)]]){
+ const parts=wordingDiff(beforeText,afterText);assert.equal(parts.map(p=>p.text).join(''),afterText);
+}
+const markup=new JSDOM('<code>'+diffMarkup({output:'You nod solemnly.',change:{parts:deletion}})+'</code>');
+assert.equal(markup.window.document.querySelector('code').textContent,'You nod solemnly.');
+assert.match(markup.window.document.querySelector('.mdi-deletion').getAttribute('aria-label'),/very/);markup.window.close();
+const escapedDiff=new JSDOM('<code>'+diffMarkup({output:'<img src=x>',change:{parts:wordingDiff('safe','<img src=x>')}})+'</code>');
+assert.equal(escapedDiff.window.document.querySelectorAll('img').length,0);assert.equal(escapedDiff.window.document.querySelector('code').textContent,'<img src=x>');escapedDiff.window.close();
+
 const html=fs.readFileSync(path.join(root,'releases/MUME_Date_Indicators.html'),'utf8');
 const dom=new JSDOM(html,{runScripts:'dangerously',url:'https://preview.example.org/'});
 const d=dom.window.document;
@@ -132,7 +168,11 @@ assert.doesNotMatch(d.querySelector('tbody').textContent,/present by|199[0-9]/);
 assert.ok(d.querySelector('.mdi-footnotes a[href*="github.com"]'));
 for(const ref of d.querySelectorAll('.mdi-note-ref'))assert.ok(d.getElementById(ref.getAttribute('href').slice(1)));
 const nodSamples=[...d.querySelectorAll('#mdi-page-nod-actor .mdi-sample')];
-assert.equal(nodSamples.length,2);assert.ok(nodSamples.every(c=>c.classList.contains('mdi-shade-0')));
+assert.equal(nodSamples.length,7);assert.ok(nodSamples.every(c=>c.classList.contains('mdi-shade-0')));
+assert.equal(d.querySelectorAll('#mdi-page-nod-actor .mdi-inferred').length,5);
+assert.equal(d.querySelectorAll('#mdi-page-nod-actor .mdi-sample:not(.mdi-inferred)').length,2);
+assert.equal(d.querySelectorAll('#mdi-page-nod-actor .mdi-change').length,0);
+assert.match(d.querySelector('.mdi-footnotes').textContent,/Assumed unchanged between Diku Alfa and MUME VI; no direct evidence/);
 tabs[1].click();assert.equal(tabs[1].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('[role="tab"][aria-selected="true"]').length,1);
 assert.match(d.querySelector('#mdi-page-guardian-shadows-room').textContent,/A shadow slowly rises/);
@@ -145,6 +185,9 @@ assert.ok(mixedCell.classList.contains('mdi-multiple'));
 const stacked=[...mixedCell.querySelectorAll('.mdi-sample')];
 assert.equal(stacked.length,2);assert.match(stacked[0].textContent,/Congratulations!!/);
 assert.match(stacked[1].textContent,/Congratulations! This/);
+assert.equal(stacked[0].querySelectorAll('.mdi-change,.mdi-deletion').length,0);
+assert.equal(stacked[1].querySelector('.mdi-change').textContent,'!');
+assert.match(stacked[1].querySelector('.mdi-deletion').getAttribute('title'),/one space/);
 tabs[1].dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'End',bubbles:true}));
 assert.equal(tabs[6].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('table').length,1);
@@ -167,4 +210,4 @@ assert.match(isolated.window.document.body.textContent,/<img src/);
 const legacy=clone(data);delete legacy.comparison;for(const i of legacy.indicators)delete i.comparison;
 assert.equal(comparisonRows(legacy).length,38);assert.ok(evidenceRows(legacy).length>0);
 dom.window.close();isolated.window.close();
-console.log('Date indicator checks passed: anchors, circular evidence, epoch ranges, normalized placeholders, separate viewpoints, dated variants, source footnotes, tabs and escaping.');
+console.log('Date indicator checks passed: anchors, circular evidence, epoch ranges, bounded inferred continuity, first-appearance text diffs, placeholders, separate viewpoints, source footnotes, tabs and escaping.');
