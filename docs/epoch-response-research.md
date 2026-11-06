@@ -27,9 +27,11 @@ Unzip `releases/MUME_Epoch_Response_Pilot.zip`. It contains:
 The database is a generated research snapshot, not the canonical archive or a
 new application database. All forms and observations have `needs_review` status.
 Do not use an edited snapshot as the only home for review decisions: rebuilding
-regenerates it. The workbench does not yet review or promote this new record type.
-A future importer should keep accepted/rejected decisions in the existing fact
-review framework and preserve them across extraction reruns.
+regenerates it. The workbench can now scan a retained gameplay log into persistent response
+facts, review them with source citations, and export accepted independently dated
+findings to the comparison catalogue. See [the workbench guide](deck-workbench.md).
+The SQLite pilot remains a reproducible snapshot; its decision columns are not
+imported. Rescan retained originals in the workbench to establish review facts.
 
 ## Selection and parsing rules
 
@@ -97,8 +99,8 @@ WHERE f.response = 'Nod';
 
 1. Review representative forms and their source context; separate genuine
    wording changes from perspective, language, aliases and client rendering.
-2. Integrate approved response observations with the existing fact-review
-   framework, then export accepted forms to the epoch-page catalogue.
+2. Review retained log responses in the workbench and export accepted forms to
+   the epoch-page catalogue; leave uncertain dates pending for further research.
 3. Seek independently dated source logs for MUME I–IV and VII–IX. Prefer a few
    well-dated examples per epoch with different perspectives and command types.
 4. Add the planned deliberate Mudlet response collector for current MUME IX,

@@ -15,7 +15,7 @@ FACT_FIELDS = ['fact_id', 'source_id', 'log_id', 'fact_json', 'updated_at']
 HISTORY_FIELDS = ['revision_id', 'fact_id', 'source_id', 'log_id', 'action',
                   'before_json', 'after_json', 'reviewed_at']
 STATUSES = {'accepted', 'rejected', 'needs_review'}
-CONTEXT_KINDS = {'observer', 'attacker', 'killer', 'participant', 'location', 'date', 'other', 'death', 'trophy', 'link'}
+CONTEXT_KINDS = {'observer', 'attacker', 'killer', 'participant', 'location', 'date', 'other', 'death', 'trophy', 'link', 'response'}
 
 
 def serial(value):
@@ -68,6 +68,8 @@ def source_facts(source_id, log_id, tables, groups, reviewed=None, history=()):
         if group['source_id'] != source_id or (log_id and group['log_id'] != log_id):
             continue
         for member in group['members']:
+            if member['kind'] == 'response':
+                continue  # Already retained in reviewed facts below.
             ev = evidence.get(member['evidence_id'], {})
             try: raw = json.loads(ev.get('raw_text') or '{}')
             except ValueError: raw = {}
@@ -230,7 +232,7 @@ def save(app, decisions):
         seen.add(identity)
         if action in {'revise', 'add'}:
             changes = decision.get('changes') or {}
-            allowed = {'subject', 'object', 'value', 'confidence', 'basis', 'notes', 'citation', 'about'}
+            allowed = {'subject', 'object', 'value', 'confidence', 'basis', 'notes', 'citation', 'about', 'response'}
             if action == 'add' or not fact.get('record_key'): allowed.add('kind')
             if set(changes) - allowed:
                 raise ValueError('An unsupported fact field was supplied.')
@@ -259,6 +261,9 @@ def save(app, decisions):
         if status not in STATUSES:
             raise ValueError('Choose whether the revised fact is accepted or pending.')
         fact.update(status=status, revised=True, reviewed_at=now, schema='source-fact/1')
+        if fact['kind'] == 'response':
+            from epoch_workbench import validate_response
+            validate_response(fact)
         if action=='add' and fact['kind'] in {'death', 'trophy', 'link'}:
             raw = {'evidence':fact['basis'], 'confidence':fact['confidence'], 'researcher_confirmed':True,
                    'raw_line':fact['citation'].get('quote',''), 'source_line':fact['citation'].get('start')}

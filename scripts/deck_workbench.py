@@ -33,6 +33,7 @@ from workbench_sources import extract, prepare_source
 from workbench_sources import plain_text
 from historical_review import groups_for
 import source_review
+import epoch_workbench
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'workbench'
@@ -103,6 +104,9 @@ class Workbench:
         self.directory.mkdir(parents=True, exist_ok=True)
         self.lock = threading.RLock()
         self.data = read_json(self.directory / 'state.json', {'step': 0})
+        if self.data.get('workflow_version') != 2:
+            self.data['step'] = [0, 1, 1, 2, 2, 3, 4][max(0, min(6, self.data.get('step', 0)))]
+            self.data['workflow_version'] = 2
         self.job = None
         self.token = secrets.token_urlsafe(32)
         self.origin = ''
@@ -288,11 +292,21 @@ class Workbench:
         return {'group': group, 'documents': files, 'url': url,
                 'message': '' if files else 'The original log/page is not retained with this assertion. Only its extracted/transcribed claim is available here. Use the archived link if one is attached; do not treat the JSON as the original source.'}
 
-    def original_for_source(self, scope, source_id, log_id):
+    def original_for_source(self, scope, source_id, log_id, fact_id=''):
         source = self.source_facts(scope, source_id, log_id)
         group = {'id':'source', 'source_id':source_id, 'log_id':log_id, 'members':[],
                  'title':(source['log'] or source['source'])['title']}
-        return self.original_source(scope, '', known_group=group)
+        original = self.original_source(scope, '', known_group=group)
+        if fact_id:
+            fact = next((f for f in source['facts'] if f['id'] == fact_id), None)
+            if not fact: raise ValueError('Choose a finding from this source.')
+            citation = fact.get('citation', {})
+            start, end = citation.get('start'), citation.get('end') or citation.get('start')
+            if type(start) is int and type(end) is int:
+                for doc in original['documents']:
+                    self._source_refs[doc['ref']] = {**self._source_refs[doc['ref']], 'start': start, 'end': end}
+                    doc.update(line_start=start, line_end=end)
+        return original
 
     def source_text(self, ref, query):
         source = self._source_refs.get(ref)
@@ -342,7 +356,8 @@ class Workbench:
             state.update(root=str(self.root), session_dir=str(self.directory), job=self.job,
                          profiles=self.profiles(), counts=self._counts,
                          connection={'configured': config.get('method') == 'wordpress', 'site': config.get('site_url', 'https://breelegends.com')},
-                         build_current=self.data.get('build_stamp') == stamp)
+                         build_current=self.data.get('build_stamp') == stamp,
+                         epoch_export_current=self.data.get('epoch_export_stamp') == stamp)
             return state
 
     def uploaded(self, payload):
@@ -448,8 +463,58 @@ class Workbench:
             row['other_owners'] = sorted({r.get('main_handle') or r['player_id'] for r in accepted
                                         if r.get('character_id') == row['character_id'] and r.get('status') == 'accepted'
                                         and r['player_id'] != row['player_id']})
-        return {'links': links, **self.claim_groups('archive'), 'players': [{k: r.get(k, '') for k in ('player_id', 'main_handle', 'known_by')}
-                                          for r in table(self.root, 'players')]}
+        logs = table(self.root, 'logs')
+        retained = {r['source_id'] for r in table(self.root, 'evidence')}
+        facts = source_review.saved_facts(self.root)
+        deaths = [r for r in table(self.root, 'historical_events') if r['event_type'] == 'death']
+        attached = {f.get('about') for f in facts.values() if f['kind'] in {'attacker', 'killer'} and f['status'] == 'accepted'}
+        return {'links': links, **self.claim_groups('archive'),
+                'sources': [{'id': s['source_id'], 'title': s['title'],
+                             'logs': [{'id': l['log_id'], 'title': l['title']} for l in logs if l.get('source_id') == s['source_id']]}
+                            for s in table(self.root, 'sources') if s['source_id'] in retained],
+                'death_context_missing': sum('historical_events:' + r['event_id'] not in attached for r in deaths),
+                'players': [{k: r.get(k, '') for k in ('player_id', 'main_handle', 'known_by')} for r in table(self.root, 'players')]}
+
+    def deck_data(self):
+        path = self.root / 'site/deck-of-chars/assets/data/deck-data.js'
+        if not path.exists(): return {'characters': []}
+        return json.loads(path.read_text().removeprefix('window.DECK_CHARS = ').removesuffix(';\n'))
+
+    def build_changes(self, query):
+        data = read_json(self.directory / 'build-changes.json', {'summary': {}, 'records': []})
+        search = query.get('q', [''])[0].strip().casefold()[:300]
+        offset = max(0, int(query.get('offset', ['0'])[0]))
+        records = [r for r in data['records'] if not search or search in json.dumps(r).casefold()]
+        return {'summary': data['summary'], 'baseline': data.get('baseline', ''), 'total': len(records),
+                'offset': offset, 'records': records[offset:offset+40]}
+
+    def summarize_build(self, built):
+        baseline = read_json(self.directory / 'build-baseline.json', {'characters': []})
+        before = {r['id']: r for r in baseline['characters']}
+        after = {r['id']: r for r in built['characters']}
+        records = []
+        for cid in sorted(before.keys() | after.keys()):
+            old, new = before.get(cid), after.get(cid)
+            def field(row, key):
+                value = (row or {}).get(key)
+                if key == 'history' and not any((value or {}).values()): return None
+                return value
+            if old is not None and new is not None and all(field(old, k) == field(new, k) for k in old.keys() | new.keys()): continue
+            action = 'added' if old is None else 'removed' if new is None else 'updated'
+            fields = sorted(k for k in (old or {}).keys() | (new or {}).keys()
+                            if field(old, k) != field(new, k))
+            details = []
+            for key, label in [('player', 'Player'), ('level', 'Level'), ('race', 'Race'), ('klass', 'Class')]:
+                if key in fields:
+                    details.append(f"{label}: {(old or {}).get(key) or '—'} → {(new or {}).get(key) or '—'}")
+            for key, label in [('logs', 'Logs'), ('deaths', 'Deaths'), ('trophies', 'Trophy snapshots')]:
+                a, b = len((old or {}).get('history', {}).get(key, [])), len((new or {}).get('history', {}).get(key, []))
+                if a != b: details.append(f'{label}: {a} → {b}')
+            records.append({'id': cid, 'name': (new or old).get('name', cid), 'action': action, 'fields': fields, 'details': details})
+        summary = dict(Counter(r['action'] for r in records))
+        atomic_json(self.directory / 'build-changes.json', {'summary': summary, 'records': records,
+                    'baseline': 'Last publication from this workbench' if self.data.get('published_at') else 'Deck present before this workbench’s first updated build'})
+        self.data['build_summary'] = summary
 
     def review(self, decisions):
         if not isinstance(decisions, list) or len(decisions) > 2000:
@@ -516,8 +581,8 @@ class Workbench:
         self.job['log'].append(f"{status.replace('_',' ').capitalize()}: {count} claim(s) in {len(chosen)} source group(s). Other claims are unchanged.")
 
     def start(self, action, payload):
-        allowed = {'preview_research', 'apply_research', 'save_review', 'queue', 'preview_whois', 'import_whois',
-                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore', 'review_supported', 'review_claims', 'save_facts'}
+        allowed = {'preview_research', 'apply_research', 'stage_research', 'save_review', 'queue', 'preview_whois', 'import_whois',
+                   'build', 'validate', 'connect', 'test_connection', 'publish', 'restore', 'review_supported', 'review_claims', 'save_facts', 'scan_responses', 'export_epochs'}
         if action not in allowed:
             raise ValueError('Unknown workbench step.')
         with self.lock:
@@ -530,7 +595,18 @@ class Workbench:
     def worker(self, action, payload):
         try:
             report = self.directory / 'research-preview.json'
-            if action == 'preview_research':
+            if action == 'stage_research':
+                source = self.selected('research')
+                digest, stamp = input_hash(source), working_stamp(self.root)
+                self.run('import_historical_evidence.py', source, '--report', report)
+                if input_hash(source) != digest or working_stamp(self.root) != stamp:
+                    raise ValueError('The input or archive changed while loading. Add the source to review again.')
+                self.backup()
+                self.run('import_historical_evidence.py', source, '--apply', '--report', report)
+                self.remember_report(report)
+                self.data.update(research_applied=True, step=1)
+                self.job['log'].append('Evidence saved for review. New claims remain pending; acceptance and publication are separate.')
+            elif action == 'preview_research':
                 source = self.selected('research')
                 stamp, digest = working_stamp(self.root), input_hash(source)
                 self.run('import_historical_evidence.py', source, '--report', report)
@@ -555,6 +631,15 @@ class Workbench:
                 count = source_review.save(self, payload.get('decisions'))
                 self.data['links_reviewed'] = True
                 self.job['log'].append(f'Saved {count} fact decision(s), with source citations and revision history.')
+            elif action == 'scan_responses':
+                self.backup()
+                added, found = epoch_workbench.scan(self, payload.get('source_id', ''), payload.get('log_id', ''))
+                self.job['log'].append(f'Found {found} response forms; added {added} pending findings. Existing decisions were preserved.')
+            elif action == 'export_epochs':
+                base = Path(self.data['epoch_base']) if self.data.get('epoch_base') else self.root / 'research/date_indicators.json'
+                self.data['epoch_export'] = epoch_workbench.export(self, base)
+                self.data['epoch_export_stamp'] = working_stamp(self.root)
+                self.job['log'].append(f"Exported {self.data['epoch_export']['exported']} accepted response findings; {len(self.data['epoch_export']['deferred'])} accepted findings need clearer dates. Review the downloaded comparison before uploading its catalogue.")
             elif action == 'queue':
                 self.run('build_whois_queue.py')
                 self.data['queue_ready'] = True
@@ -575,6 +660,8 @@ class Workbench:
                 self.data['whois_imported'] = True
                 self.data['whois_import_snapshot'] = str(source)
             elif action == 'build':
+                if not (self.directory / 'build-baseline.json').exists():
+                    atomic_json(self.directory / 'build-baseline.json', self.deck_data())
                 self.backup()
                 args = ['--whois', Path(self.data['whois_import_snapshot'])] if self.data.get('whois_imported') and self.data.get('whois_import_snapshot') else []
                 self.run('publish_deck.py', *args)
@@ -583,6 +670,7 @@ class Workbench:
                 self.data['build_hash'] = input_hash(self.root / 'site/deck-of-chars/assets/data/deck-data.js')
                 built = json.loads((self.root / 'site/deck-of-chars/assets/data/deck-data.js').read_text().removeprefix('window.DECK_CHARS = ').removesuffix(';\n'))
                 self.data['build_count'] = len(built['characters'])
+                self.summarize_build(built)
             elif action == 'validate':
                 self.run('validate_data.py')
             elif action in {'connect', 'test_connection'}:
@@ -603,7 +691,7 @@ class Workbench:
                 if payload.get('confirm') is not True:
                     raise ValueError('Confirm publication in the Publish step.')
                 if self.data.get('build_stamp') != working_stamp(self.root):
-                    raise ValueError('The archive changed since the build. Rebuild and preview first.')
+                    raise ValueError('The archive changed since the build. Rebuild and check the update first.')
                 if self.data.get('build_hash') != input_hash(self.root / 'site/deck-of-chars/assets/data/deck-data.js'):
                     raise ValueError('The Deck data changed. Rebuild and preview first.')
                 config = read_json(self.root / '.deck-deploy.json', {})
@@ -613,6 +701,7 @@ class Workbench:
                 deck_wordpress_api.publish(config, data)
                 self.job['log'].append(f"Published {len(data['characters'])} characters.")
                 self.data['published_at'] = time.time()
+                atomic_json(self.directory / 'build-baseline.json', data)
             elif action == 'restore':
                 if payload.get('confirm') is not True:
                     raise ValueError('Confirm restoring the backup.')
@@ -698,10 +787,14 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(403, {'error': 'Invalid local host.'})
         parsed = urlsplit(self.path)
         route = parsed.path
-        if route == '/api/state' or route == '/api/review':
+        if route in {'/api/state', '/api/review', '/api/build-changes'}:
             if not self.authenticated():
                 return self.send(403, {'error': 'Open the workbench from its launcher.'})
-            return self.send(200, self.app.public_state() if route.endswith('state') else self.app.review_rows())
+            try:
+                return self.send(200, self.app.public_state() if route.endswith('state') else
+                                 self.app.build_changes(parse_qs(parsed.query)) if route.endswith('build-changes') else self.app.review_rows())
+            except ValueError as exc:
+                return self.send(400, {'error': str(exc)})
         if route in {'/api/preview', '/api/preview-record'}:
             if not self.authenticated():
                 return self.send(403, {'error': 'Open the workbench from its launcher.'})
@@ -721,7 +814,7 @@ class Handler(BaseHTTPRequestHandler):
                 result = (self.app.source_facts(scope, query.get('source_id',[''])[0], query.get('log_id',[''])[0], query.get('group',[''])[0]) if route == '/api/source-facts' else
                           self.app.claim_groups(scope) if route == '/api/claims' else
                           (self.app.original_source(scope, query['group'][0]) if query.get('group') else
-                           self.app.original_for_source(scope, query.get('source_id',[''])[0], query.get('log_id',[''])[0])) if route == '/api/original' else
+                           self.app.original_for_source(scope, query.get('source_id',[''])[0], query.get('log_id',[''])[0], query.get('fact_id',[''])[0])) if route == '/api/original' else
                           self.app.source_text(query.get('ref', [''])[0], query))
                 return self.send(200, result)
             except (ValueError, OSError) as exc:
@@ -752,6 +845,16 @@ class Handler(BaseHTTPRequestHandler):
                 paths = [self.app.root / 'exports/mudlet/whois_queue.txt']
             elif artifact == 'report':
                 paths = [self.app.directory / 'research-preview.json']
+            elif artifact in {'epochs', 'epoch-page', 'epoch-report', 'epoch-plugin'}:
+                if self.app.data.get('epoch_export_stamp') != working_stamp(self.app.root):
+                    return self.send(409, {'error': 'The archive changed. Export the epoch comparison again first.'})
+                folder = self.app.directory / 'epoch-export'
+                if artifact == 'epoch-plugin':
+                    paths = sorted(folder.glob('bree-mume-date-indicators-*.zip'), key=lambda p: p.stat().st_mtime, reverse=True)
+                else:
+                    filename = {'epochs': 'epoch-comparison-catalogue.json', 'epoch-page': 'MUME_Date_Indicators.html',
+                                'epoch-report': 'export-report.json'}[artifact]
+                    paths = [folder / filename]
             else:
                 paths = []
             if not paths or not paths[0].is_file():
@@ -785,6 +888,17 @@ class Handler(BaseHTTPRequestHandler):
                 result = {'entries': extract(str(payload.get('text', '')), str(payload.get('observer', '')))}
             elif route == '/api/prepare':
                 result = self.app.prepare(payload)
+            elif route == '/api/epoch-base':
+                data = base64.b64decode(payload.get('data', ''), validate=True)
+                if len(data) > 4 * 1024 * 1024:
+                    raise ValueError('Choose a comparison catalogue smaller than 4 MiB.')
+                catalogue = epoch_workbench.validate_catalogue(json.loads(data.decode('utf-8-sig')))
+                path = self.app.directory / 'comparison-base.json'
+                atomic_json(path, catalogue)
+                self.app.data['epoch_base'] = str(path)
+                self.app.data.pop('epoch_export_stamp', None)
+                self.app.save()
+                result = {'saved': True}
             elif route == '/api/select-profile':
                 path = str(payload.get('path', ''))
                 if path not in {p['path'] for p in self.app.profiles()}:
@@ -796,7 +910,7 @@ class Handler(BaseHTTPRequestHandler):
                 result = {'selected': True}
             elif route == '/api/step':
                 step = payload.get('step')
-                if type(step) is not int or not 0 <= step <= 6:
+                if type(step) is not int or not 0 <= step <= 4:
                     raise ValueError('Invalid step.')
                 self.app.data['step'] = step
                 self.app.save()

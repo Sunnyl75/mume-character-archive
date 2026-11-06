@@ -35,9 +35,9 @@ try:
     if not dialog('Install Deck Workbench in:\n' + str(root) + '\n\nThis downloads code from your Sunnyl75 repository and backs up files before replacing them. Your existing archive data, captures, portraits and publishing key are preserved. Missing bundled reference/source tables are added only if absent. Your current Git branch is not switched.'):
         sys.exit(0)
     print('Downloading the workbench code…', flush=True)
-    subprocess.run(['git', '-C', str(root), 'fetch', 'https://github.com/Sunnyl75/mume-character-archive.git', 'feature/deck-workbench'], check=True)
+    subprocess.run(['git', '-C', str(root), 'fetch', 'https://github.com/Sunnyl75/mume-character-archive.git', 'feature/workbench-review-export'], check=True)
     commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'FETCH_HEAD'], text=True).strip()
-    scopes = ['scripts', 'workbench', 'site/deck-of-chars', 'integrations/wordpress/bree-deck-of-chars',
+    scopes = ['scripts', 'workbench', 'site/deck-of-chars', 'site/date-indicators', 'research', 'integrations/wordpress/bree-mume-date-indicators', 'integrations/wordpress/bree-deck-of-chars',
               'data/reference', 'data/incoming/player_affiliations', 'Open Deck Workbench.command',
               'docs/deck-workbench.md', 'docs/historical-evidence-workflow.md']
     content = subprocess.check_output(['git', '-C', str(root), 'archive', '--format=tar', commit, *scopes])
@@ -50,7 +50,9 @@ try:
             if not member.isfile() or p.is_absolute() or '..' in p.parts:
                 continue
             name = member.name
-            code = (name.startswith(('workbench/', 'integrations/wordpress/bree-deck-of-chars/', 'docs/'))
+            code = (name.startswith(('workbench/', 'integrations/wordpress/bree-deck-of-chars/', 'integrations/wordpress/bree-mume-date-indicators/', 'site/date-indicators/', 'docs/'))
+                    or name == 'research/epoch-responses/rules.json'
+                    or name == 'research/date_indicators.json' and not (root / name).exists()
                     or name == 'Open Deck Workbench.command'
                     or name.startswith('scripts/') and name.endswith('.py')
                     or name.startswith('site/deck-of-chars/') and '/assets/' not in name

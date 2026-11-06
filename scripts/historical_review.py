@@ -137,6 +137,19 @@ def groups_for(links, events, evidence_rows, logs, sources, *, selected_keys=Non
                            'count': row.get('count', ''), 'status': row.get('status') if kind == 'link' else row.get('review_status') or 'accepted',
                            'player_id': row.get('player_id', ''), 'player': row.get('main_handle', ''),
                            'source_id': source_id, 'log_id': row.get('log_id', ''), 'assessment': assessment})
+    # Response observations share persistent decisions, without creating names.
+    for fact in reviewed.values():
+        if fact.get('kind') != 'response' or selected_keys is not None:
+            continue
+        rating = fact['confidence']
+        assessment = {'confidence': rating, 'source_confidence': rating,
+                      'reasons': [fact['basis']], 'concerns': [], 'date_note': '',
+                      'safe_to_accept': rating == 'high' and fact.get('revised', False),
+                      'needs_judgement': rating != 'high' or not fact.get('revised', False)}
+        claims.append({'kind': 'response', 'id': fact['id'], 'record_key': fact['id'], 'evidence_id': '',
+                       'character': fact.get('response', {}).get('label', 'Response'), 'other_character': '',
+                       'count': '', 'status': fact['status'], 'player_id': '', 'player': '',
+                       'source_id': fact['source_id'], 'log_id': fact['log_id'], 'assessment': assessment})
     grouped = defaultdict(list)
     for claim in claims:
         group_key = (claim['kind'], claim['source_id'], claim['player_id'] or claim['log_id'],
@@ -147,7 +160,8 @@ def groups_for(links, events, evidence_rows, logs, sources, *, selected_keys=Non
         kind, source_id, owner, rating, safe = key
         unique_names = sorted({m['character'] for m in members}, key=str.casefold)
         title = ((members[0]['player'] or owner) + ' — ' + str(len(unique_names)) + ' character(s)' if kind == 'link'
-                 else (by_log.get(owner, {}).get('title') or owner) + ' — ' + str(len(members)) + (' death observation(s)' if kind == 'death' else ' trophy snapshot(s)'))
+                 else (by_log.get(owner, {}).get('title') or owner) + ' — ' + str(len(members)) +
+                 {'death': ' death observation(s)', 'trophy': ' trophy snapshot(s)', 'response': ' response form(s)'}[kind])
         result.append({'id': hashlib.sha256(json.dumps(key).encode()).hexdigest()[:20], 'kind': kind,
                        'title': title, 'confidence': rating, 'safe_to_accept': safe,
                        'needs_judgement': not safe, 'source_id': source_id,
