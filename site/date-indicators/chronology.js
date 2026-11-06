@@ -100,100 +100,164 @@
     return result;
   }
   function calendarDay(value){return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'));}
-  const rowNames={
-    'tell-incoming':['Tell','Received'],'tell-outgoing':['Tell','Sent'],'tell-target-missing':['Tell','Unavailable'],
-    'say-observer':['Say','Observer'],'say-self':['Say','Speaker'],'death-victim':['Death','Victim'],'death-room':['Death','Room'],
-    'first-kill-punctuation':['First kill',''],'spell-diku-fireball':['Fireball — NPC',''],
-    'spell-fireball-words':['Fireball',''],'spell-lightning-words':['Lightning bolt',''],
-    'spell-blindness-words':['Blindness',''],'spell-call-words':['Call lightning','']
+  const responseInfo={
+    'tell-incoming':['Tell','Target','Received'],'tell-outgoing':['Tell','Actor','Sent'],
+    'tell-target-missing':['Tell','Actor','Unavailable'],'say-observer':['Say','Room',''],
+    'say-self':['Say','Actor',''],'death-victim':['Death','Target',''],'death-room':['Death','Room',''],
+    'first-kill-punctuation':['First kill','Actor',''],'fragment-damage':['Fragments','Unspecified',''],
+    'shatter-damage':['Shatter','Unspecified',''],'guardian-shadows':['Guardian shadows','Room',''],
+    'shadow-disappearance':['Shadow disappearance','Room',''],'horse-clip-clop':['Horse movement','Room',''],
+    'follower-coudln':['Follower-loss typo','Target','Leader'],'raisen-hand':['Icy-wind typo','Target',''],
+    'armour-percent':['Armour metric','Actor',''],'trophy-schema':['Trophy columns','Actor',''],
+    'istar-clock':['Tan Istar field','Actor',''],'elrond-diku-line':['Guard battle cry','Room',''],
+    'literal-spell-names':['Literal spell display','Room',''],'incapacitated':['Incapacitated','Target',''],
+    'narrate':['Narrate','Room',''],'smile':['Smile','Actor',''],'nod':['Nod','Actor',''],
+    'spell-diku-fireball':['Fireball — NPC','Room',''],'spell-fireball-words':['Fireball','Room',''],
+    'spell-lightning-words':['Lightning bolt','Room',''],'spell-blindness-words':['Blindness','Room',''],
+    'spell-call-words':['Call lightning','Room','']
   };
-  // Display recorded excerpts; normalize variable actors/messages only for
-  // comparing wording. Punctuation and spelling remain part of the signature.
+  const placeholderNames={ACTOR:'Actor',TARGET:'Target','TARGET-POSS':'TargetPossessive','ACTOR-POSS':'ActorPossessive',
+    'ACTOR-OBJ':'ActorObject','TARGET-OBJ':'TargetObject',CHARACTER:'Character',MESSAGE:'Message',SPELL:'Spell',
+    N:'Number',NUMBER:'Number',BODY:'BodyPart',BODYPART:'BodyPart',DIRECTION:'Direction',MOUNT:'Mount',PRONOUN:'Pronoun'};
+  function placeholders(text){return String(text).replace(/<([^<>]+)>/g,(all,name)=>placeholderNames[name.toUpperCase()]?'<'+placeholderNames[name.toUpperCase()]+'>':all);}
+  function viewpoint(value){
+    const aliases={actor:'Actor',speaker:'Actor',sender:'Actor',self:'Actor',target:'Target',victim:'Target',recipient:'Target',
+      room:'Room',observer:'Room',feature:'Feature',system:'Actor',unspecified:'Unspecified'};
+    return aliases[String(value||'').toLowerCase()]||'Unspecified';
+  }
+  function cleanOutput(quote){
+    let text=String(quote).trim();
+    const end=text.indexOf('>');
+    if(end>=0){const prefix=text.slice(0,end);if(!/['"]/.test(prefix)&&((/HP:|Mana:/.test(prefix)&&prefix.length<120)||/^[0-9*oRWC\s]*$/.test(prefix)))text=text.slice(end+1).trim();}
+    return text.replace(/\s+<[-=]{2,}.*$/,'').trimEnd();
+  }
+  function combatSample(output){
+    const found=output.match(/^(You|.+?) ((?:barely |lightly |strongly |swiftly |firmly )?)(hits?|slash(?:es)?|pierces?|crush(?:es)?|smites?|pounds?|cleaves?|stabs?|bites?|claws?|mauls?|whips?|shoots?) (your|.+?'s) ((?:(?:left|right) )?(?:arm|leg|hand|foot|wing|foreleg|hindleg)|head|body|neck|chest|back|tail|stomach) (.+)$/);
+    if(!found)return null;
+    const [,actor,adverb,verb,target,,effect]=found;
+    const view=actor==='You'?'Actor':target==='your'?'Target':'Room';
+    const stem={hits:'Hit',hit:'Hit',slashes:'Slash',slash:'Slash',pierces:'Pierce',pierce:'Pierce',crushes:'Crush',crush:'Crush',
+      smites:'Smite',smite:'Smite',pounds:'Pound',pound:'Pound',cleaves:'Cleave',cleave:'Cleave',stabs:'Stab',stab:'Stab',
+      bites:'Bite',bite:'Bite',claws:'Claw',claw:'Claw',mauls:'Maul',maul:'Maul',whips:'Whip',whip:'Whip',shoots:'Shoot',shoot:'Shoot'};
+    return {output:`${actor==='You'?'You':'<Actor>'} ${adverb}${verb} ${target==='your'?'your':"<Target>'s"} <BodyPart> ${effect}`,viewpoint:view,detail:stem[verb]||verb};
+  }
+  // Display templates consistently. The attestation retains its unmodified raw
+  // quotation; names and perspective never become apparent wording changes.
   function sample(indicator,quote){
     if(!quote)return null;
-    let output=String(quote).trim().replace(/^[^']*>\s*/,'');
-    const id=indicator.id;
+    const id=indicator.id,config=indicator.comparison||{},info=responseInfo[id];
+    let output=cleanOutput(quote),view=config.viewpoint?viewpoint(config.viewpoint):info?.[1]||'Unspecified',detail=config.detail??info?.[2]??'';
+    const done=()=>({output:placeholders(output),signature:placeholders(output),viewpoint:view,detail});
+    if(['tell-incoming','say-observer','narrate'].includes(id)){
+      const verb={'tell-incoming':'tells you','say-observer':'says',narrate:'narrates'}[id];
+      const found=output.match(new RegExp("^[^']+? "+verb+" '(.*)'([.!?]*)$"));
+      if(!found)return null;
+      output=`<Actor> ${verb} '<Message>'${found[2]}`;return done();
+    }
     if(id==='elrond-diku-line'){
       const found=output.match(/^[^']+ screams '(PROTECT THE INNOCENT![^']*)'/);
-      if(!found)return null;output=found[1];
+      if(!found)return null;output=`<Actor> screams '${found[1]}'`;return done();
     }
-    if(['tell-incoming','say-observer','narrate'].includes(id)){
-      output=output.replace(/\s+<[-=]{2,}[\s\S]*$/,'');
-      if(!output.endsWith("'"))return null; // Incomplete speech is not a wording change.
+    if(id==='guardian-shadows')output=output.replace(/(above the corpse of ).*\.$/,'$1<Target>.');
+    if(id==='horse-clip-clop'){
+      const found=output.match(/^(Clip-clop\.+)(.+?) (has arrived from|have arrived from|leaves|leave) (.+)$/);
+      if(!found)return null;
+      const [,sound,,verb,tail]=found;
+      const riding=tail.match(/^(.*?) riding (.+?)(\.)?$/);
+      output=`${sound}<Actor> ${verb} <Direction>${riding?' riding <Mount>':''}${output.endsWith('.')?'.':''}`;
+      detail=/arrived/.test(verb)?'Arrival':'Departure';return done();
     }
-    if(id==='tell-incoming'&&(!/^[\p{L}\w-]+ tells you '/u.test(output)))return null;
-    if(id==='armour-percent'){const found=output.match(/Armour:\s*\d+%/);if(!found)return null;output=found[0];}
-    if(id==='fragment-damage'){const found=output.match(/\breduce[sd]?\b[^.]*small fragments\.?/);if(!found)return null;output=found[0];}
-    if(id==='shatter-damage'){const found=output.match(/\bshatters? it\.?/);if(!found)return null;output=found[0];}
+    if(id==='follower-coudln')output=output.replace(/^ACK!! .*? ((?:coudln|couldn)'t follow you, you lost) (?:him|her|it)\.$/,'ACK!! <Actor> $1 <Pronoun>.');
+    if(id==='raisen-hand')output=output.replace(/(hand of ).*?(\. You panic!)/,'$1<Actor>$2');
+    if(id==='armour-percent'){
+      const found=output.match(/Armour:\s*\d+%/);if(!found)return null;output=found[0].replace(/\d+/g,'<Number>');
+    }
+    if(['fragment-damage','shatter-damage'].includes(id)){
+      const combat=combatSample(output);if(combat)return {...combat,signature:combat.output};
+      view='Unspecified';return done();
+    }
+    if(id==='istar-clock')output=output.replace(/(Council is )(?!not defined\.).*\.$/,'$1<Character>.');
+    if(id==='death-room'){const found=output.match(/^.*? is dead! R\.I\.P\./);if(!found)return null;output='<Target> is dead! R.I.P.';view='Room';}
+    if(['nod','smile'].includes(id)){
+      if(output.startsWith('You '))view='Actor';
+      else{
+        const found=output.match(/^(.+?) (nods|smiles)(.*)$/);
+        if(found){view=/\bat you\b/.test(found[3])?'Target':'Room';output=`<Actor> ${found[2]}${found[3]}`;}
+        else view='Unspecified';
+      }
+      output=output.replace(/( at )(?!you(?:rself)?\b)([^.!?]+)([.!?]*)$/,'$1<Target>$3');
+    }
     if(id==='literal-spell-names'||/^spell-.*-words$/.test(id)){
-      const found=output.match(/^(.+? utters the words, '[^']*')/);if(!found)return null;output=found[1];
-      if(id==='literal-spell-names'&&!/'(?:harm|lightning bolt)'/.test(output))return null;
+      const found=output.match(/^[^']+? utters the words, '([^']*)'([.!?]*)/);if(!found)return null;
+      if(id==='literal-spell-names'&&!/^(?:harm|lightning bolt)$/.test(found[1]))return null;
+      output=`<Actor> utters the words, '${id==='literal-spell-names'?'<Spell>':found[1]}'${found[2]}`;view='Room';
     }
-    let signature=output;
-    if(['tell-incoming','say-observer','narrate'].includes(id))signature=signature.replace(/^.*? (tells you|says|narrates) '[\s\S]*'$/, "<ACTOR> $1 '…'");
-    if(id==='guardian-shadows')signature=signature.replace(/(above the corpse of ).*\.$/,'$1<TARGET>.');
-    if(id==='horse-clip-clop')signature=output.match(/^Clip-clop\.*(?=[A-Z*]|the |$)/)?.[0]||'Clip-clop...';
-    if(id==='follower-coudln')signature=signature.replace(/^ACK!! .*?( coudln't follow you)/,'ACK!! <ACTOR>$1');
-    if(id==='raisen-hand')signature=signature.replace(/(raisen hand of ).*?(\. You panic!)/,'$1<ACTOR>$2');
-    if(id==='armour-percent')signature=signature.replace(/\d+/g,'<N>');
-    if(id==='istar-clock')signature=signature.replace(/(Council is ).*\.$/,'$1<ACTOR>.');
-    if(id==='death-room')signature=signature.replace(/^.*?( is dead!)/,'<TARGET>$1');
-    if(id==='literal-spell-names')signature=signature.replace(/^.*? utters the words, '[^']*'/,"<ACTOR> utters the words, '<SPELL>'");
-    if(/^spell-.*-words$/.test(id))signature=signature.replace(/^.*?( utters the words, )/,'<ACTOR>$1');
-    return {output,signature};
+    return done();
+  }
+  function baselineSample(indicator,baseline){
+    const config=indicator.comparison||{},info=responseInfo[indicator.id];
+    let output=placeholders(baseline.output);
+    if(['tell-incoming','say-observer'].includes(indicator.id))output=output.replace(/'…'/,"'<Message>'");
+    if(indicator.id==='literal-spell-names')output="<Actor> utters the words, '<Spell>'";
+    if(indicator.id==='spell-diku-fireball')output="<Actor> utters the words 'tuborg'.";
+    if(indicator.id==='elrond-diku-line')output=`<Actor> screams '${output}'`;
+    return {output,signature:output,viewpoint:viewpoint(baseline.viewpoint||config.viewpoint||info?.[1]),detail:config.detail??info?.[2]??''};
   }
   function evidenceRows(catalogue){
     const result=[],grouped=new Map(),cols=columns(catalogue);
     const indicators=new Map(catalogue.indicators.map(i=>[i.id,i]));
+    const slug=value=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
     for(const variant of comparisonRows(catalogue)){
       const indicator=indicators.get(variant.id)||catalogue.indicators.find(i=>variant.id.startsWith(i.id+'-'));
-      const config=indicator.comparison||{},defaults=rowNames[indicator.id]||[config.label||indicator.title,''];
-      const label=config.row||defaults[0],context=config.context??defaults[1],key=variant.section+'|'+label;
-      let row=grouped.get(key);
-      if(!row){row={id:indicator.id,section:variant.section,label,cells:{}};grouped.set(key,row);result.push(row);}
-      function add(column,item){(row.cells[column]??=[]).push({...item,lane:indicator.id,context});}
+      const config=indicator.comparison||{},info=responseInfo[indicator.id]||[config.label||indicator.title,indicator.mode==='documented'?'Feature':'Unspecified',''];
+      const label=config.row||info[0],defaultView=viewpoint(config.viewpoint||info[1]),defaultDetail=config.detail??info[2];
+      function ensure(view,detail){
+        const key=[variant.section,label,view,detail].join('|');let row=grouped.get(key);
+        if(!row){row={id:indicator.id+'-'+slug(view)+(detail?'-'+slug(detail):''),section:variant.section,label,viewpoint:view,detail,cells:{}};grouped.set(key,row);result.push(row);}
+        return row;
+      }
+      let added=false;
+      function add(column,item){
+        const view=item.viewpoint||defaultView,detail=item.detail??defaultDetail;
+        const row=ensure(view,detail);(row.cells[column]??=[]).push({...item,lane:indicator.id,viewpoint:view,detail});added=true;
+      }
       if(variant.diku){
-        const output=variant.diku.output;
-        // Source-code templates already substitute variable actors/messages.
-        const signature=indicator.id==='literal-spell-names'?"<ACTOR> utters the words, '<SPELL>'":output;
-        add('diku',{kind:'output',output,signature,entries:[{source:{id:'diku:'+variant.diku.url,title:'Diku Alfa source',url:variant.diku.url,date_label:month(variant.diku.date)},baseline:true}]});
+        const text=baselineSample(indicator,variant.diku);
+        add('diku',{kind:'output',...text,entries:[{source:{id:'diku:'+variant.diku.url,title:'Diku Alfa source',url:variant.diku.url,date_label:month(variant.diku.date)},baseline:true}]});
       }
       for(const [epoch,value] of Object.entries(variant.cells)){
         if(value.kind==='continued'){
-          add(epoch,{kind:'feature',output:label+' (continued)',signature:null,entries:[{continued:true,basis:config.continuity.basis||'Confirmed feature continuation. No wording sample is attached for this epoch.'}]});
-          continue;
+          add(epoch,{kind:'feature',output:label+' (continued)',signature:null,entries:[{continued:true,basis:config.continuity.basis||'Confirmed feature continuation. No wording sample is attached for this epoch.'}]});continue;
         }
         const buckets=new Map();
         for(const entry of value.observations){
-          const text=entry.documented?{output:config.output||indicator.title,signature:config.output||indicator.title}:sample(indicator,entry.attestation.quote);
+          let text=entry.documented?{output:config.output||indicator.title,signature:config.output||indicator.title,viewpoint:'Feature',detail:''}:sample(indicator,entry.attestation.quote);
           if(!text)continue;
-          let bucket=buckets.get(text.signature);
-          if(!bucket){bucket={kind:entry.documented?'feature':'output',...text,entries:[]};buckets.set(text.signature,bucket);}
+          if(entry.attestation?.viewpoint)text={...text,viewpoint:viewpoint(entry.attestation.viewpoint)};
+          const key=[text.viewpoint,text.detail,text.signature].join('|');let bucket=buckets.get(key);
+          if(!bucket){bucket={kind:entry.documented?'feature':'output',...text,entries:[]};buckets.set(key,bucket);}
           bucket.entries.push(entry);
         }
         for(const bucket of buckets.values()){
-          // The footnote must support the actual displayed quotation. Other
-          // examples of the same form remain in the retained catalogue.
-          bucket.entries=[bucket.entries[0]];
-          add(epoch,bucket);
+          // The citation backs the original line from which this display
+          // template was made. Names remain available in that attestation.
+          bucket.entries=[bucket.entries[0]];add(epoch,bucket);
         }
       }
+      if(!added)ensure(defaultView,defaultDetail);
     }
+    const groupOrder=new Map();for(const row of result){const key=row.section+'|'+row.label;if(!groupOrder.has(key))groupOrder.set(key,groupOrder.size);}
+    const ranks={Actor:0,Target:1,Room:2,Feature:3,Unspecified:4};
+    result.sort((a,b)=>groupOrder.get(a.section+'|'+a.label)-groupOrder.get(b.section+'|'+b.label)||ranks[a.viewpoint]-ranks[b.viewpoint]||a.detail.localeCompare(b.detail));
     for(const row of result){
-      // Order each epoch's own samples before assigning shades. Configuration
-      // order (including old/new variant lists) must not determine chronology.
-      // Bounds order overlapping/approximate dates without inventing a cutoff;
-      // the original date ranges remain visible in the source footnotes.
       for(const items of Object.values(row.cells))items.sort((a,b)=>{
-        const first=item=>item.entries[0];
-        const end=item=>first(item).end||first(item).source?.date_end||'';
+        const first=item=>item.entries[0];const end=item=>first(item).end||first(item).source?.date_end||'';
         const start=item=>first(item).start||first(item).source?.date_start||'';
         return end(a).localeCompare(end(b))||start(a).localeCompare(start(b));
       });
-      const lanes=new Map();
+      const forms=new Map();
       for(const col of cols)for(const item of row.cells[col.id]||[]){
         if(item.signature===null)continue;
-        let forms=lanes.get(item.lane);if(!forms){forms=new Map();lanes.set(item.lane,forms);}
         if(!forms.has(item.signature))forms.set(item.signature,forms.size);
         item.shade=forms.get(item.signature)%6;
       }
@@ -205,7 +269,7 @@
     const groups=[...new Set([...(catalogue.comparison?.sections||sections),...rows.map(r=>r.section)])].filter(section=>rows.some(r=>r.section===section));
     const prefix='mdi-'+(document.querySelectorAll('.bree-mume-dates').length>1?[...document.querySelectorAll('.bree-mume-dates')].indexOf(root):'page');
     let active=groups[0];
-    host.innerHTML=`<header class="mdi-heading"><h1>MUME wording & date indicators</h1><small>Updated ${esc(catalogue.updated_at)}</small></header><p class="mdi-key">— no evidence · Matching wording keeps its shade; colours only draw attention to changes.</p><div class="mdi-layout"><nav class="mdi-tabs" role="tablist" aria-label="Output categories" aria-orientation="vertical">${groups.map((section,n)=>`<button type="button" role="tab" id="${prefix}-tab-${n}" aria-controls="${prefix}-panel" data-section="${esc(section)}">${esc(section)}</button>`).join('')}</nav><section id="${prefix}-panel" class="mdi-panel" role="tabpanel" tabindex="0"></section></div>`;
+    host.innerHTML=`<header class="mdi-heading"><h1>MUME wording & date indicators</h1><small>Updated ${esc(catalogue.updated_at)}</small></header><p class="mdi-key">— no evidence · Names use &lt;Actor&gt; / &lt;Target&gt; · Matching wording keeps its shade.</p><div class="mdi-layout"><nav class="mdi-tabs" role="tablist" aria-label="Output categories" aria-orientation="vertical">${groups.map((section,n)=>`<button type="button" role="tab" id="${prefix}-tab-${n}" aria-controls="${prefix}-panel" data-section="${esc(section)}">${esc(section)}</button>`).join('')}</nav><section id="${prefix}-panel" class="mdi-panel" role="tabpanel" tabindex="0"></section></div>`;
     const panel=host.querySelector('.mdi-panel');
     function render(){
       const index=groups.indexOf(active),notes=[],noteMap=new Map();
@@ -220,9 +284,9 @@
       function cell(row,column){
         const items=row.cells[column.id];
         if(!items?.length)return `<td class="mdi-unknown${column.id==='diku'?' mdi-diku':''}">—</td>`;
-        return `<td class="${[column.id==='diku'?'mdi-diku':'',items.length>1?'mdi-multiple':''].filter(Boolean).join(' ')}">${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}">${item.context?`<small class="mdi-context">${esc(item.context)}</small>`:''}<code>${esc(item.output)}</code><sup>${item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
+        return `<td class="${[column.id==='diku'?'mdi-diku':'',items.length>1?'mdi-multiple':''].filter(Boolean).join(' ')}">${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}"><code>${esc(item.output)}</code><sup>${item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
       }
-      const table=`<div class="mdi-table-wrap" tabindex="0" aria-label="${esc(active)} comparison; scroll horizontally for later epochs"><table><thead><tr><th scope="col">Output / indicator</th>${cols.map(c=>`<th scope="col" ${c.id==='diku'?'class="mdi-diku"':''}>${esc(c.title)}<small>${esc(c.range)}</small></th>`).join('')}</tr></thead><tbody>${rows.filter(row=>row.section===active).map(row=>`<tr id="${prefix}-${esc(row.id)}"><th scope="row">${esc(row.label)}</th>${cols.map(column=>cell(row,column)).join('')}</tr>`).join('')}</tbody></table></div>`;
+      const table=`<div class="mdi-table-wrap" tabindex="0" aria-label="${esc(active)} comparison; scroll horizontally for later epochs"><table><thead><tr><th scope="col">Output / indicator</th>${cols.map(c=>`<th scope="col" ${c.id==='diku'?'class="mdi-diku"':''}>${esc(c.title)}<small>${esc(c.range)}</small></th>`).join('')}</tr></thead><tbody>${rows.filter(row=>row.section===active).map(row=>`<tr id="${prefix}-${esc(row.id)}"><th scope="row"><b>${esc(row.label)}</b><small class="mdi-viewpoint">${esc(row.viewpoint)}${row.detail?' · '+esc(row.detail):''}</small></th>${cols.map(column=>cell(row,column)).join('')}</tr>`).join('')}</tbody></table></div>`;
       function note(entry){
         if(entry.continued)return esc(entry.basis)+' Feature presence is continued; exact wording is unverified.';
         const s=entry.source,date=s.date_label||(entry.start===entry.end?calendarDay(entry.end):month(entry.start)+'–'+month(entry.end));
@@ -243,8 +307,8 @@
     });
     render();
   }
-  global.MumeDateIndicators={derive,usable,init,comparisonRows,columns,evidenceEpoch,evidenceRows,sample};
-  if(typeof module!=='undefined')module.exports={derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample};
+  global.MumeDateIndicators={derive,usable,init,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders};
+  if(typeof module!=='undefined')module.exports={derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders};
   if(typeof document!=='undefined')document.querySelectorAll('.bree-mume-dates').forEach(root=>{
     try{const inline=root.querySelector('.mdi-data');init(root,inline?JSON.parse(inline.textContent):global.MUME_DATE_INDICATORS);}catch(error){root.innerHTML='<p>The dating catalogue could not be loaded.</p>';}
   });

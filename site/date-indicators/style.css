@@ -10,3 +10,5 @@
 @media print{.bree-mume-dates .mdi-tabs{display:none}.bree-mume-dates .mdi-layout{display:block}.bree-mume-dates .mdi-table-wrap{overflow:visible}.bree-mume-dates table{min-width:0;font-size:8px}.bree-mume-dates{--mdi-label-width:90px}.bree-mume-dates .mdi-sample{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
 .bree-mume-dates td.mdi-multiple{height:auto}.bree-mume-dates .mdi-multiple .mdi-sample{height:auto;max-height:none;overflow:visible}.bree-mume-dates .mdi-multiple .mdi-sample+.mdi-sample{margin-top:10px}
+
+.bree-mume-dates tbody th b{display:block}.bree-mume-dates .mdi-viewpoint{display:block;font:400 10px/1.4 system-ui,sans-serif;color:#746a58;margin-top:5px}

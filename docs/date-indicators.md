@@ -4,7 +4,7 @@ A compact public comparison page, separate from the Deck of Chars workbench.
 
 ## Put the page on Bree Legends
 
-1. Upload `releases/bree-mume-date-indicators-0.3.1.zip` through WordPress → Plugins
+1. Upload `releases/bree-mume-date-indicators-0.4.0.zip` through WordPress → Plugins
    → Add New → Upload Plugin. Activate it, or replace the earlier version.
 2. Use a normal page with the regular full parchment template. Add a Shortcode
    block containing `[mume_date_indicators]`.
@@ -25,8 +25,10 @@ behaviour still need checking on WordPress.
 ## Reading the tables
 
 The left column names the action or indicator, for example **Tell**, **Nod**
-or **First kill**. Each epoch cell shows a recorded output example. Tell and
-Say group related perspectives in the same row. Different forms recorded in
+or **First kill**, followed by its viewpoint. **Actor**, **Target** (including
+victim/recipient) and **Room** messages have separate rows. Sent and unavailable
+tell results are separate conditions; combat attack types are also separated.
+Each epoch cell shows a normalized response template. Different forms recorded in
 one epoch stack in that cell, with earlier evidence above later evidence. Cells
 grow to fit their samples. Only forms evidenced within that epoch are listed;
 matching colours do not carry wording into neighbouring epochs.
@@ -35,7 +37,8 @@ Date ranges that overlap remain as recorded in the footnotes. Their display
 order does not establish an exact replacement date or an epoch launch change.
 
 Superscript footnote numbers point to dates and source links below the active
-table. Each displayed form cites the source of that actual example.
+table. Each template cites its retained original quotation. Names in the
+source titles remain unchanged.
 Missing online URLs are stated in the footnote. Complete observations remain in
 the catalogue.
 
@@ -50,9 +53,14 @@ samples. Guardian shadows can be marked as a continuing feature, following the
 researcher's confirmation that they persisted. That continuation does not
 assert an exact game-output string in an epoch without a sample.
 
-The initial catalogue has 37 indicators, displayed in 33 grouped rows. Examples
-come from retained quotations, with short excerpts for stat fields and damage
-phrases. Quoted player speech and editorial comments that resemble game output
+The initial catalogue has 37 indicators, displayed in 48 rows after separating
+viewpoints and response conditions. Templates come from retained quotations.
+Names use `<Actor>` and `<Target>` consistently; variable message contents,
+values and body parts use `<Message>`, `<Number>` and `<BodyPart>`. A named
+character in the Tan Istar field uses `<Character>`. Full combat lines preserve
+the attack-effectiveness wording and injury clause. Exact named quotations
+remain unchanged in the catalogue. Stat comparisons retain the relevant
+field. Quoted player speech and editorial comments that resemble game output
 are excluded from the comparison view. The raw retained observations are not
 changed. Documented features without a game-output sample are identified in
 footnotes. Diku cells use source-code templates. MUME epoch headings follow

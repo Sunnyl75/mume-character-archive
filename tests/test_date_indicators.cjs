@@ -3,7 +3,7 @@ const path=require('node:path');
 const assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
 const root=path.resolve(__dirname,'..');
-const {derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample}=require('../site/date-indicators/chronology.js');
+const {derive,usable,comparisonRows,columns,evidenceEpoch,evidenceRows,sample,placeholders}=require('../site/date-indicators/chronology.js');
 const data=JSON.parse(fs.readFileSync(path.join(root,'research/date_indicators.json'),'utf8'));
 const clone=value=>JSON.parse(JSON.stringify(value));
 const source=(id,end,extra={})=>({id,title:id,date_start:end,date_end:end,date_confidence:'high',calibration:'independent',dependencies:[],...extra});
@@ -42,12 +42,21 @@ assert.equal(get('death-victim').diku.output,'You are dead!  Sorry...');
 assert.match(get('incapacitated').diku.output,/incapacitated an will/);
 assert.equal(rows.length,38);
 
-const evidence=evidenceRows(data),findEvidence=id=>evidence.find(r=>r.id===id);
-assert.equal(evidence.length,33);
-const tell=findEvidence('tell-incoming');assert.equal(tell.label,'Tell');
-assert.equal(tell.cells.vi.find(c=>c.context==='Unavailable').output,'No-one by that name here...');
-assert.equal(tell.cells.vi.find(c=>c.context==='Unavailable').shade,1);
-assert.equal(tell.cells.vi.find(c=>c.context==='Received').shade,0);
+const evidence=evidenceRows(data),findEvidence=id=>evidence.find(r=>r.id===id||r.id.startsWith(id+'-'));
+assert.equal(evidence.length,48);
+const tell=findEvidence('tell-incoming'),sent=findEvidence('tell-outgoing'),unavailable=findEvidence('tell-target-missing');
+assert.equal(tell.label,'Tell');assert.equal(tell.viewpoint,'Target');assert.equal(sent.viewpoint,'Actor');
+assert.equal(unavailable.cells.vi[0].output,'No-one by that name here...');
+assert.equal(unavailable.cells.vi[0].shade,1);assert.equal(tell.cells.vi[0].shade,0);
+assert.equal(tell.cells.vi[0].output,"<Actor> tells you '<Message>'");
+for(const row of evidence)for(const items of Object.values(row.cells))for(const item of items){
+ assert.equal(item.viewpoint,row.viewpoint);assert.equal(item.detail,row.detail);
+ assert.doesNotMatch(item.output,/<(?:ACTOR|TARGET|SPELL|N)>/);
+ assert.doesNotMatch(item.output,/Dragomil|Maedhros|Morceleb|Grease|Gonshi|Golfimbul|Tergrim|HolyElf|Radorac/);
+}
+assert.equal(findEvidence('death-victim').viewpoint,'Target');assert.equal(findEvidence('death-room').viewpoint,'Room');
+assert.notEqual(findEvidence('death-victim').id,findEvidence('death-room').id);
+assert.notEqual(findEvidence('say-self').id,findEvidence('say-observer').id);
 const nod=findEvidence('nod');assert.equal(nod.cells.diku[0].shade,nod.cells.vi[0].shade);
 assert.equal(nod.cells.i,undefined); // A gap is not an observed response.
 const firstKill=findEvidence('first-kill-punctuation');assert.equal(firstKill.cells.vi.length,2);
@@ -58,7 +67,7 @@ const reordered=clone(data),reorderedKill=reordered.indicators.find(i=>i.id==='f
 reorderedKill.comparison.variants.reverse();
 reordered.sources.push(source('following-new','2000-01-02'));
 reorderedKill.attestations.push({source_id:'following-new',group:'new',quote:"Congratulations! This is the first time you've killed it!"});
-const ordered=evidenceRows(reordered).find(r=>r.id==='first-kill-punctuation');
+const ordered=evidenceRows(reordered).find(r=>r.id==='first-kill-punctuation-actor');
 assert.equal(ordered.cells.vi.length,2);
 assert.match(ordered.cells.vi[0].output,/Congratulations!!/);
 assert.match(ordered.cells.vi[1].output,/Congratulations! This/);
@@ -72,14 +81,40 @@ const simulated=clone(data),simNod=simulated.indicators.find(i=>i.id==='nod');
 for(const [id,date]of [['later','2000-04-02'],['latest','2005-04-02']]){
  simulated.sources.push(source(id,date));simNod.attestations.push({source_id:id,quote:'You nod your head solemnly.'});
 }
-const laterNod=evidenceRows(simulated).find(r=>r.id==='nod');
+const laterNod=evidenceRows(simulated).find(r=>r.id==='nod-actor');
 assert.equal(laterNod.cells.vii[0].shade,1);assert.equal(laterNod.cells.viii[0].shade,1);
 assert.equal(laterNod.cells.vi[0].shade,0);
 assert.equal(sample({id:'tell-incoming'},"Elegil says 'Someone tells you 'hi''"),null);
+assert.equal(sample({id:'tell-incoming'},"Bob narrates 'HP:Fine> Alice tells you 'hi''"),null);
 assert.equal(sample({id:'elrond-diku-line'},'>> Mood: aggressive << #### BANZAI!!!!!'),null);
-assert.equal(sample({id:'narrate'},"Person narrates 'hello' <--- comment").signature,"<ACTOR> narrates '…'");
+assert.equal(sample({id:'narrate'},"Person narrates 'hello' <--- comment").signature,"<Actor> narrates '<Message>'");
 assert.equal(sample({id:'narrate'},"Person narrates 'incomplete"),null);
 assert.equal(sample({id:'tell-incoming'},"Someone tells you 'other message'").signature,tell.cells.vi[0].signature);
+
+// Normalize actual output templates while preserving the difference in POV.
+assert.equal(placeholders("<ACTOR> hits <TARGET>'s <BODY>."),"<Actor> hits <Target>'s <BodyPart>.");
+const actorHit=sample({id:'shatter-damage'},"You lightly pierce *Mammoth the Orc*'s right leg and shatter it.");
+const victimHit=sample({id:'shatter-damage'},"*Tergrim the Hobbit* barely pierces your left arm and shatters it.");
+const roomHit=sample({id:'shatter-damage'},"Alice lightly pierces Bob's right leg and shatters it.");
+assert.equal(actorHit.viewpoint,'Actor');assert.equal(victimHit.viewpoint,'Target');assert.equal(roomHit.viewpoint,'Room');
+assert.equal(actorHit.output,"You lightly pierce <Target>'s <BodyPart> and shatter it.");
+assert.equal(victimHit.output,"<Actor> barely pierces your <BodyPart> and shatters it.");
+assert.equal(roomHit.output,"<Actor> lightly pierces <Target>'s <BodyPart> and shatters it.");
+assert.equal(sample({id:'shatter-damage'},"You slash Bob's left leg very hard and shatter it.").viewpoint,'Actor');
+assert.equal(sample({id:'tell-incoming'},"Alice tells you 'hello'").output,sample({id:'tell-incoming'},"Bob tells you 'different words'").output);
+assert.equal(sample({id:'smile'},'You smile at Alice.').output,'You smile at <Target>.');
+assert.equal(sample({id:'smile'},'Bob smiles at you.').viewpoint,'Target');
+assert.equal(sample({id:'smile'},'Bob smiles at Alice.').output,'<Actor> smiles at <Target>.');
+assert.equal(sample({id:'istar-clock'},'The present Tan Istar, Lord of the Istari Council is not defined.').output,'The present Tan Istar, Lord of the Istari Council is not defined.');
+const perspectives=clone(data),perspectiveIndicator=perspectives.indicators.find(i=>i.id==='shatter-damage');
+perspectives.sources.push(source('three-views','1997-12-01'));
+for(const quote of ["You lightly pierce Bob's right leg and shatter it.","Bob barely pierces your left arm and shatters it.","Alice lightly pierces Bob's right leg and shatters it."]){
+ perspectiveIndicator.attestations.push({source_id:'three-views',quote});
+}
+const perspectiveRows=evidenceRows(perspectives).filter(r=>r.label==='Shatter'&&r.detail==='Pierce');
+assert.deepEqual(new Set(perspectiveRows.map(r=>r.viewpoint)),new Set(['Actor','Target','Room']));
+assert.ok(perspectiveRows.every(r=>r.cells.vi.every(item=>item.viewpoint===r.viewpoint)));
+const before=JSON.stringify(data);evidenceRows(data);assert.equal(JSON.stringify(data),before);
 
 const html=fs.readFileSync(path.join(root,'releases/MUME_Date_Indicators.html'),'utf8');
 const dom=new JSDOM(html,{runScripts:'dangerously',url:'https://preview.example.org/'});
@@ -87,24 +122,25 @@ const d=dom.window.document;
 assert.equal(d.querySelectorAll('script[src],link[rel="stylesheet"]').length,0);
 const tabs=[...d.querySelectorAll('[role="tab"]')];
 assert.equal(tabs.length,7);assert.equal(d.querySelectorAll('table').length,1);
-assert.equal(d.querySelectorAll('tbody tr').length,5);
+assert.equal(d.querySelectorAll('tbody tr').length,8);
 assert.equal(d.querySelectorAll('thead th').length,11);
 assert.equal(d.querySelectorAll('form,details,.mdi-indicator,.mdi-observed,.mdi-continued').length,0);
-assert.equal(d.querySelector('#mdi-page-tell-incoming th').textContent,'Tell');
-assert.match(d.querySelector('#mdi-page-tell-incoming').textContent,/No-one by that name here\.\.\./);
+assert.equal(d.querySelector('#mdi-page-tell-incoming-target-received th b').textContent,'Tell');
+assert.match(d.querySelector('#mdi-page-tell-incoming-target-received .mdi-viewpoint').textContent,/Target/);
+assert.match(d.querySelector('#mdi-page-tell-target-missing-actor-unavailable').textContent,/No-one by that name here\.\.\./);
 assert.doesNotMatch(d.querySelector('tbody').textContent,/present by|199[0-9]/);
 assert.ok(d.querySelector('.mdi-footnotes a[href*="github.com"]'));
 for(const ref of d.querySelectorAll('.mdi-note-ref'))assert.ok(d.getElementById(ref.getAttribute('href').slice(1)));
-const nodSamples=[...d.querySelectorAll('#mdi-page-nod .mdi-sample')];
+const nodSamples=[...d.querySelectorAll('#mdi-page-nod-actor .mdi-sample')];
 assert.equal(nodSamples.length,2);assert.ok(nodSamples.every(c=>c.classList.contains('mdi-shade-0')));
 tabs[1].click();assert.equal(tabs[1].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('[role="tab"][aria-selected="true"]').length,1);
-assert.match(d.querySelector('#mdi-page-guardian-shadows').textContent,/A shadow slowly rises/);
-assert.match(d.querySelector('#mdi-page-guardian-shadows').textContent,/continued/);
-assert.equal(d.querySelector('#mdi-page-guardian-shadows td').textContent,'—');
+assert.match(d.querySelector('#mdi-page-guardian-shadows-room').textContent,/A shadow slowly rises/);
+assert.match(d.querySelector('#mdi-page-guardian-shadows-room').textContent,/continued/);
+assert.equal(d.querySelector('#mdi-page-guardian-shadows-room td').textContent,'—');
 assert.ok(d.querySelector('.mdi-footnotes a[href*="radorac.txt"]'));
 assert.equal(d.querySelectorAll('tbody a[href^="http"]').length,0);
-const mixedCell=d.querySelector('#mdi-page-first-kill-punctuation td:nth-of-type(7)');
+const mixedCell=d.querySelector('#mdi-page-first-kill-punctuation-actor td:nth-of-type(7)');
 assert.ok(mixedCell.classList.contains('mdi-multiple'));
 const stacked=[...mixedCell.querySelectorAll('.mdi-sample')];
 assert.equal(stacked.length,2);assert.match(stacked[0].textContent,/Congratulations!!/);
@@ -118,7 +154,7 @@ assert.match(featureNotes,/Mar 1996/);assert.match(featureNotes,/Apr 1999/);asse
 tabs[6].dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Home',bubbles:true}));
 assert.equal(tabs[0].getAttribute('aria-selected'),'true');
 // Malicious labels, quotations and non-web source URLs remain inert.
-const malicious=clone(data);malicious.indicators[0].comparison.label='<img src=x onerror=alert(1)>';
+const malicious=clone(data);malicious.indicators[0].comparison.row='<img src=x onerror=alert(1)>';
 malicious.indicators[0].attestations[0].quote='<script>alert(1)</script>';
 for(const s of malicious.sources)s.url='javascript:alert(1)';
 const isolated=new JSDOM('<div class="bree-mume-dates"><div class="mdi-app"></div></div>',{runScripts:'outside-only'});
@@ -131,4 +167,4 @@ assert.match(isolated.window.document.body.textContent,/<img src/);
 const legacy=clone(data);delete legacy.comparison;for(const i of legacy.indicators)delete i.comparison;
 assert.equal(comparisonRows(legacy).length,38);assert.ok(evidenceRows(legacy).length>0);
 dom.window.close();isolated.window.close();
-console.log('Date indicator checks passed: anchors, circular evidence, epoch ranges, quoted output, wording shades, future repeated variants, source footnotes, tabs and escaping.');
+console.log('Date indicator checks passed: anchors, circular evidence, epoch ranges, normalized placeholders, separate viewpoints, dated variants, source footnotes, tabs and escaping.');
