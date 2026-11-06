@@ -2,7 +2,7 @@
 Contributors: breelegends
 Requires at least: 5.8
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPL-3.0-or-later
 
 Compact comparison tables with Diku Alfa and MUME epochs as columns. Side tabs
@@ -42,6 +42,11 @@ This plugin does not modify the Deck of Chars archive.
 Epoch headings: https://mume.org/about/history
 Diku baseline: original DikuMUD Alfa source, linked by row.
 Source dates indicate surviving evidence, not exact feature introduction dates.
+
+Changelog 0.3.1:
+Stacks only variants evidenced within each epoch, ordered earlier above later.
+Cells grow naturally; matching wording retains its shade across columns.
+Dates and uncertain/overlapping ranges remain in source footnotes.
 
 Changelog 0.3.0:
 Moves recorded output into epoch cells and dates/links into source footnotes.

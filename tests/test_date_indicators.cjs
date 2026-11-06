@@ -52,6 +52,22 @@ const nod=findEvidence('nod');assert.equal(nod.cells.diku[0].shade,nod.cells.vi[
 assert.equal(nod.cells.i,undefined); // A gap is not an observed response.
 const firstKill=findEvidence('first-kill-punctuation');assert.equal(firstKill.cells.vi.length,2);
 assert.notEqual(firstKill.cells.vi[0].shade,firstKill.cells.vi[1].shade);
+// Reversing configured variants must not reverse the dated order inside an
+// epoch. Earlier/later samples retain shades matching adjacent observed epochs.
+const reordered=clone(data),reorderedKill=reordered.indicators.find(i=>i.id==='first-kill-punctuation');
+reorderedKill.comparison.variants.reverse();
+reordered.sources.push(source('following-new','2000-01-02'));
+reorderedKill.attestations.push({source_id:'following-new',group:'new',quote:"Congratulations! This is the first time you've killed it!"});
+const ordered=evidenceRows(reordered).find(r=>r.id==='first-kill-punctuation');
+assert.equal(ordered.cells.vi.length,2);
+assert.match(ordered.cells.vi[0].output,/Congratulations!!/);
+assert.match(ordered.cells.vi[1].output,/Congratulations! This/);
+assert.equal(ordered.cells.vi[0].shade,ordered.cells.v[0].shade);
+assert.equal(ordered.cells.vi[1].shade,ordered.cells.vii[0].shade);
+assert.equal(ordered.cells.v.length,1);assert.equal(ordered.cells.viii,undefined);
+for(const [epoch,items]of Object.entries(ordered.cells))for(const item of items){
+ assert.ok(item.entries.every(entry=>entry.epoch===epoch));
+}
 const simulated=clone(data),simNod=simulated.indicators.find(i=>i.id==='nod');
 for(const [id,date]of [['later','2000-04-02'],['latest','2005-04-02']]){
  simulated.sources.push(source(id,date));simNod.attestations.push({source_id:id,quote:'You nod your head solemnly.'});
@@ -88,6 +104,11 @@ assert.match(d.querySelector('#mdi-page-guardian-shadows').textContent,/continue
 assert.equal(d.querySelector('#mdi-page-guardian-shadows td').textContent,'—');
 assert.ok(d.querySelector('.mdi-footnotes a[href*="radorac.txt"]'));
 assert.equal(d.querySelectorAll('tbody a[href^="http"]').length,0);
+const mixedCell=d.querySelector('#mdi-page-first-kill-punctuation td:nth-of-type(7)');
+assert.ok(mixedCell.classList.contains('mdi-multiple'));
+const stacked=[...mixedCell.querySelectorAll('.mdi-sample')];
+assert.equal(stacked.length,2);assert.match(stacked[0].textContent,/Congratulations!!/);
+assert.match(stacked[1].textContent,/Congratulations! This/);
 tabs[1].dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'End',bubbles:true}));
 assert.equal(tabs[6].getAttribute('aria-selected'),'true');
 assert.equal(d.querySelectorAll('table').length,1);

@@ -180,6 +180,16 @@
       }
     }
     for(const row of result){
+      // Order each epoch's own samples before assigning shades. Configuration
+      // order (including old/new variant lists) must not determine chronology.
+      // Bounds order overlapping/approximate dates without inventing a cutoff;
+      // the original date ranges remain visible in the source footnotes.
+      for(const items of Object.values(row.cells))items.sort((a,b)=>{
+        const first=item=>item.entries[0];
+        const end=item=>first(item).end||first(item).source?.date_end||'';
+        const start=item=>first(item).start||first(item).source?.date_start||'';
+        return end(a).localeCompare(end(b))||start(a).localeCompare(start(b));
+      });
       const lanes=new Map();
       for(const col of cols)for(const item of row.cells[col.id]||[]){
         if(item.signature===null)continue;
@@ -210,7 +220,7 @@
       function cell(row,column){
         const items=row.cells[column.id];
         if(!items?.length)return `<td class="mdi-unknown${column.id==='diku'?' mdi-diku':''}">—</td>`;
-        return `<td${column.id==='diku'?' class="mdi-diku"':''}>${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}">${item.context?`<small class="mdi-context">${esc(item.context)}</small>`:''}<code>${esc(item.output)}</code><sup>${item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
+        return `<td class="${[column.id==='diku'?'mdi-diku':'',items.length>1?'mdi-multiple':''].filter(Boolean).join(' ')}">${items.map(item=>`<div class="mdi-sample${item.shade!==undefined?' mdi-shade-'+item.shade:''}">${item.context?`<small class="mdi-context">${esc(item.context)}</small>`:''}<code>${esc(item.output)}</code><sup>${item.entries.map(reference).join(', ')}</sup></div>`).join('')}</td>`;
       }
       const table=`<div class="mdi-table-wrap" tabindex="0" aria-label="${esc(active)} comparison; scroll horizontally for later epochs"><table><thead><tr><th scope="col">Output / indicator</th>${cols.map(c=>`<th scope="col" ${c.id==='diku'?'class="mdi-diku"':''}>${esc(c.title)}<small>${esc(c.range)}</small></th>`).join('')}</tr></thead><tbody>${rows.filter(row=>row.section===active).map(row=>`<tr id="${prefix}-${esc(row.id)}"><th scope="row">${esc(row.label)}</th>${cols.map(column=>cell(row,column)).join('')}</tr>`).join('')}</tbody></table></div>`;
       function note(entry){

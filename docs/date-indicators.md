@@ -4,7 +4,7 @@ A compact public comparison page, separate from the Deck of Chars workbench.
 
 ## Put the page on Bree Legends
 
-1. Upload `releases/bree-mume-date-indicators-0.3.0.zip` through WordPress → Plugins
+1. Upload `releases/bree-mume-date-indicators-0.3.1.zip` through WordPress → Plugins
    → Add New → Upload Plugin. Activate it, or replace the earlier version.
 2. Use a normal page with the regular full parchment template. Add a Shortcode
    block containing `[mume_date_indicators]`.
@@ -27,8 +27,12 @@ behaviour still need checking on WordPress.
 The left column names the action or indicator, for example **Tell**, **Nod**
 or **First kill**. Each epoch cell shows a recorded output example. Tell and
 Say group related perspectives in the same row. Different forms recorded in
-one epoch appear together; the view does not force them into a single change
-boundary.
+one epoch stack in that cell, with earlier evidence above later evidence. Cells
+grow to fit their samples. Only forms evidenced within that epoch are listed;
+matching colours do not carry wording into neighbouring epochs.
+
+Date ranges that overlap remain as recorded in the footnotes. Their display
+order does not establish an exact replacement date or an epoch launch change.
 
 Superscript footnote numbers point to dates and source links below the active
 table. Each displayed form cites the source of that actual example.
