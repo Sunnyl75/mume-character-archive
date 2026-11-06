@@ -111,3 +111,10 @@ Export observations to review before they enter the dating catalogue; place
 verified captures under MUME IX. Text differences should propose variants for
 review, retaining the original capture. Captured private tells need redaction
 before publication. This collector is planned, not implemented in this release.
+
+## Targeted historical parsing
+
+The [epoch-response pilot](epoch-response-research.md) parses independently dated
+logs into reviewable response forms with original line references. Its SQLite
+snapshot is a research input; it does not yet promote candidates into this
+public catalogue or add them to the workbench review interface.

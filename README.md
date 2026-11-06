@@ -4,6 +4,10 @@ For a guided local interface, see [Deck of Chars Workbench](docs/deck-workbench.
 It walks through source preparation, historical import, player review, Mudlet
 collection, Whois import, local preview and publication.
 
+For the independently dated log-response pilot, see
+[Epoch response research](docs/epoch-response-research.md). It produces a
+reviewable SQLite snapshot without changing character data or the public page.
+
 Historical logs, website player links and trophy evidence can now be imported
 through a preview/review/apply workflow. See
 [Historical evidence workflow](docs/historical-evidence-workflow.md) for the July

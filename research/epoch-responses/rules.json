@@ -1,0 +1,4324 @@
+{
+  "schema": "mume-response-rules/1",
+  "diku_reference": {
+    "repository": "Seifert69/DikuMUD",
+    "commit": "81b74dce0436b782d08b19064e32013c73525b45",
+    "path": "dm-dist-alfa/lib/actions",
+    "note": "Source-code response templates used as a matching watch-list; a match is a candidate, not proof of ancestry or a date."
+  },
+  "rules": [
+    {
+      "id": "diku-social-kiss-actor",
+      "category": "Socials",
+      "response": "Kiss",
+      "viewpoint": "actor",
+      "pattern": "Isn't\\ there\\ someone\\ you\\ want\\ to\\ kiss\\?",
+      "template": "Isn't there someone you want to kiss?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Isn't there someone you want to kiss?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L2"
+      }
+    },
+    {
+      "id": "diku-social-kiss-target",
+      "category": "Socials",
+      "response": "Kiss",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ kisses\\ you\\.",
+      "template": "<ACTOR> kisses you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> kisses you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L6"
+      }
+    },
+    {
+      "id": "diku-social-kiss-actor-self",
+      "category": "Socials",
+      "response": "Kiss",
+      "viewpoint": "actor-self",
+      "pattern": "All\\ the\\ lonely\\ people\\ :\\(",
+      "template": "All the lonely people :(",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "All the lonely people :(",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L8"
+      }
+    },
+    {
+      "id": "diku-social-bounce-actor",
+      "category": "Socials",
+      "response": "Bounce",
+      "viewpoint": "actor",
+      "pattern": "BOIINNNNNNGG!",
+      "template": "BOIINNNNNNGG!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "BOIINNNNNNGG!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L12"
+      }
+    },
+    {
+      "id": "diku-social-bounce-room",
+      "category": "Socials",
+      "response": "Bounce",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ bounces\\ around\\.",
+      "template": "<ACTOR> bounces around.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> bounces around.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L13"
+      }
+    },
+    {
+      "id": "diku-social-smile-actor",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "actor",
+      "pattern": "You\\ smile\\ happily\\.",
+      "template": "You smile happily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You smile happily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L17"
+      }
+    },
+    {
+      "id": "diku-social-smile-room",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ smiles\\ happily\\.",
+      "template": "<ACTOR> smiles happily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> smiles happily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L18"
+      }
+    },
+    {
+      "id": "diku-social-smile-actor-targeted",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ smile\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You smile at <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You smile at <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L19"
+      }
+    },
+    {
+      "id": "diku-social-smile-room-targeted",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ beams\\ a\\ smile\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> beams a smile at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> beams a smile at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L20"
+      }
+    },
+    {
+      "id": "diku-social-smile-target",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ smiles\\ at\\ you\\.",
+      "template": "<ACTOR> smiles at you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> smiles at you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L21"
+      }
+    },
+    {
+      "id": "diku-social-smile-actor-self",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ smile\\ at\\ yourself\\.",
+      "template": "You smile at yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You smile at yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L23"
+      }
+    },
+    {
+      "id": "diku-social-smile-room-self",
+      "category": "Socials",
+      "response": "Smile",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ smiles\\ at\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> smiles at <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> smiles at <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L24"
+      }
+    },
+    {
+      "id": "diku-social-dance-actor",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "actor",
+      "pattern": "Feels\\ silly,\\ doesn't\\ it\\?",
+      "template": "Feels silly, doesn't it?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Feels silly, doesn't it?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L28"
+      }
+    },
+    {
+      "id": "diku-social-dance-room",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ tries\\ to\\ dance\\ breakdance,\\ but\\ nearly\\ breaks\\ [^\\n\\r\\x27]+?\\ neck!",
+      "template": "<ACTOR> tries to dance breakdance, but nearly breaks <ACTOR-POSS> neck!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> tries to dance breakdance, but nearly breaks <ACTOR-POSS> neck!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L29"
+      }
+    },
+    {
+      "id": "diku-social-dance-actor-targeted",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ lead\\ [^\\n\\r\\x27]+?\\ to\\ the\\ dancefloor\\.",
+      "template": "You lead <TARGET-OBJ> to the dancefloor.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You lead <TARGET-OBJ> to the dancefloor.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L30"
+      }
+    },
+    {
+      "id": "diku-social-dance-room-targeted",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ sends\\ [^\\n\\r\\x27]+?\\ across\\ the\\ dancefloor\\.",
+      "template": "<ACTOR> sends <TARGET> across the dancefloor.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sends <TARGET> across the dancefloor.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L31"
+      }
+    },
+    {
+      "id": "diku-social-dance-target",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ sends\\ you\\ across\\ the\\ dancefloor\\.",
+      "template": "<ACTOR> sends you across the dancefloor.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sends you across the dancefloor.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L32"
+      }
+    },
+    {
+      "id": "diku-social-dance-actor-self",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ skip\\ and\\ dance\\ around\\ by\\ yourself\\.",
+      "template": "You skip and dance around by yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You skip and dance around by yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L34"
+      }
+    },
+    {
+      "id": "diku-social-dance-room-self",
+      "category": "Socials",
+      "response": "Dance",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ skips\\ a\\ light\\ Fandango\\.",
+      "template": "<ACTOR> skips a light Fandango.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> skips a light Fandango.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L35"
+      }
+    },
+    {
+      "id": "diku-social-cackle-actor",
+      "category": "Socials",
+      "response": "Cackle",
+      "viewpoint": "actor",
+      "pattern": "You\\ cackle\\ gleefully\\.",
+      "template": "You cackle gleefully.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cackle gleefully.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L38"
+      }
+    },
+    {
+      "id": "diku-social-cackle-room",
+      "category": "Socials",
+      "response": "Cackle",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ throws\\ back\\ [^\\n\\r\\x27]+?\\ head\\ and\\ cackles\\ with\\ insane\\ glee!",
+      "template": "<ACTOR> throws back <ACTOR-POSS> head and cackles with insane glee!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> throws back <ACTOR-POSS> head and cackles with insane glee!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L39"
+      }
+    },
+    {
+      "id": "diku-social-laugh-actor",
+      "category": "Socials",
+      "response": "Laugh",
+      "viewpoint": "actor",
+      "pattern": "You\\ fall\\ down\\ laughing\\.",
+      "template": "You fall down laughing.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You fall down laughing.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L43"
+      }
+    },
+    {
+      "id": "diku-social-laugh-room",
+      "category": "Socials",
+      "response": "Laugh",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ falls\\ down\\ laughing\\.",
+      "template": "<ACTOR> falls down laughing.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> falls down laughing.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L44"
+      }
+    },
+    {
+      "id": "diku-social-shake-actor",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "actor",
+      "pattern": "You\\ shake\\ your\\ head\\.",
+      "template": "You shake your head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You shake your head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L53"
+      }
+    },
+    {
+      "id": "diku-social-shake-room",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ shakes\\ [^\\n\\r\\x27]+?\\ head\\.",
+      "template": "<ACTOR> shakes <ACTOR-POSS> head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shakes <ACTOR-POSS> head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L54"
+      }
+    },
+    {
+      "id": "diku-social-shake-actor-targeted",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ shake\\ [^\\n\\r\\x27]+?\\ hand\\.",
+      "template": "You shake <TARGET-POSS> hand.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You shake <TARGET-POSS> hand.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L55"
+      }
+    },
+    {
+      "id": "diku-social-shake-room-targeted",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ shakes\\ [^\\n\\r\\x27]+?'s\\ hand\\.",
+      "template": "<ACTOR> shakes <TARGET>'s hand.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shakes <TARGET>'s hand.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L56"
+      }
+    },
+    {
+      "id": "diku-social-shake-target",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ shakes\\ your\\ hand\\.",
+      "template": "<ACTOR> shakes your hand.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shakes your hand.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L57"
+      }
+    },
+    {
+      "id": "diku-social-shake-actor-self",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ are\\ shaken\\ by\\ yourself\\.",
+      "template": "You are shaken by yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You are shaken by yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L59"
+      }
+    },
+    {
+      "id": "diku-social-shake-room-self",
+      "category": "Socials",
+      "response": "Shake",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ shakes\\ and\\ quivers\\ like\\ a\\ bowlful\\ of\\ jelly\\.",
+      "template": "<ACTOR> shakes and quivers like a bowlful of jelly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shakes and quivers like a bowlful of jelly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L60"
+      }
+    },
+    {
+      "id": "diku-social-puke-actor-targeted",
+      "category": "Socials",
+      "response": "Puke",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ puke\\ on\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You puke on <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You puke on <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L65"
+      }
+    },
+    {
+      "id": "diku-social-puke-target",
+      "category": "Socials",
+      "response": "Puke",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ pukes\\ on\\ your\\ clothes!",
+      "template": "<ACTOR> pukes on your clothes!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pukes on your clothes!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L67"
+      }
+    },
+    {
+      "id": "diku-social-puke-actor-self",
+      "category": "Socials",
+      "response": "Puke",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ puke\\ on\\ yourself\\.",
+      "template": "You puke on yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You puke on yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L69"
+      }
+    },
+    {
+      "id": "diku-social-puke-room-self",
+      "category": "Socials",
+      "response": "Puke",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ pukes\\ on\\ [^\\n\\r\\x27]+?\\ clothes\\.",
+      "template": "<ACTOR> pukes on <ACTOR-POSS> clothes.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pukes on <ACTOR-POSS> clothes.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L70"
+      }
+    },
+    {
+      "id": "diku-social-growl-actor",
+      "category": "Socials",
+      "response": "Growl",
+      "viewpoint": "actor",
+      "pattern": "Grrrrrrrrrr\\.\\.\\.",
+      "template": "Grrrrrrrrrr...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Grrrrrrrrrr...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L73"
+      }
+    },
+    {
+      "id": "diku-social-scream-actor",
+      "category": "Socials",
+      "response": "Scream",
+      "viewpoint": "actor",
+      "pattern": "ARRRRRRRRRRGH!!!!!",
+      "template": "ARRRRRRRRRRGH!!!!!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "ARRRRRRRRRRGH!!!!!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L78"
+      }
+    },
+    {
+      "id": "diku-social-scream-room",
+      "category": "Socials",
+      "response": "Scream",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ screams\\ loudly!",
+      "template": "<ACTOR> screams loudly!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> screams loudly!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L79"
+      }
+    },
+    {
+      "id": "diku-social-comfort-actor",
+      "category": "Socials",
+      "response": "Comfort",
+      "viewpoint": "actor",
+      "pattern": "Do\\ you\\ feel\\ uncomfortable\\?",
+      "template": "Do you feel uncomfortable?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Do you feel uncomfortable?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L83"
+      }
+    },
+    {
+      "id": "diku-social-comfort-actor-targeted",
+      "category": "Socials",
+      "response": "Comfort",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ comfort\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You comfort <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You comfort <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L85"
+      }
+    },
+    {
+      "id": "diku-social-comfort-target",
+      "category": "Socials",
+      "response": "Comfort",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ comforts\\ you\\.",
+      "template": "<ACTOR> comforts you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> comforts you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L87"
+      }
+    },
+    {
+      "id": "diku-social-comfort-actor-self",
+      "category": "Socials",
+      "response": "Comfort",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ make\\ a\\ vain\\ attempt\\ to\\ comfort\\ yourself\\.",
+      "template": "You make a vain attempt to comfort yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You make a vain attempt to comfort yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L89"
+      }
+    },
+    {
+      "id": "diku-social-nod-actor",
+      "category": "Socials",
+      "response": "Nod",
+      "viewpoint": "actor",
+      "pattern": "You\\ nod\\ solemnly\\.",
+      "template": "You nod solemnly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You nod solemnly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L93"
+      }
+    },
+    {
+      "id": "diku-social-nod-room",
+      "category": "Socials",
+      "response": "Nod",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ nods\\ solemnly\\.",
+      "template": "<ACTOR> nods solemnly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> nods solemnly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L94"
+      }
+    },
+    {
+      "id": "diku-social-sigh-room",
+      "category": "Socials",
+      "response": "Sigh",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ sighs\\ loudly\\.",
+      "template": "<ACTOR> sighs loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sighs loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L99"
+      }
+    },
+    {
+      "id": "diku-social-sulk-room",
+      "category": "Socials",
+      "response": "Sulk",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ sulks\\ in\\ the\\ corner\\.",
+      "template": "<ACTOR> sulks in the corner.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sulks in the corner.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L104"
+      }
+    },
+    {
+      "id": "diku-social-hug-actor-self",
+      "category": "Socials",
+      "response": "Hug",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ hug\\ yourself\\.",
+      "template": "You hug yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You hug yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L114"
+      }
+    },
+    {
+      "id": "diku-social-snuggle-actor-targeted",
+      "category": "Socials",
+      "response": "Snuggle",
+      "viewpoint": "actor-targeted",
+      "pattern": "you\\ snuggle\\ [^\\n\\r\\x27]+?\\.",
+      "template": "you snuggle <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "you snuggle <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L120"
+      }
+    },
+    {
+      "id": "diku-social-snuggle-room-targeted",
+      "category": "Socials",
+      "response": "Snuggle",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ snuggles\\ up\\ to\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> snuggles up to <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> snuggles up to <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L121"
+      }
+    },
+    {
+      "id": "diku-social-snuggle-target",
+      "category": "Socials",
+      "response": "Snuggle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ snuggles\\ up\\ to\\ you\\.",
+      "template": "<ACTOR> snuggles up to you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> snuggles up to you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L122"
+      }
+    },
+    {
+      "id": "diku-social-cuddle-actor",
+      "category": "Socials",
+      "response": "Cuddle",
+      "viewpoint": "actor",
+      "pattern": "Who\\ do\\ you\\ feel\\ like\\ cuddling\\ today\\?",
+      "template": "Who do you feel like cuddling today?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Who do you feel like cuddling today?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L128"
+      }
+    },
+    {
+      "id": "diku-social-cuddle-actor-targeted",
+      "category": "Socials",
+      "response": "Cuddle",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ cuddle\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You cuddle <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cuddle <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L130"
+      }
+    },
+    {
+      "id": "diku-social-cuddle-target",
+      "category": "Socials",
+      "response": "Cuddle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ cuddles\\ you\\.",
+      "template": "<ACTOR> cuddles you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cuddles you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L132"
+      }
+    },
+    {
+      "id": "diku-social-cuddle-actor-self",
+      "category": "Socials",
+      "response": "Cuddle",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ must\\ feel\\ very\\ cuddly\\ indeed\\.\\.\\ \\ \\ :\\)",
+      "template": "You must feel very cuddly indeed..   :)",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You must feel very cuddly indeed..   :)",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L134"
+      }
+    },
+    {
+      "id": "diku-social-nuzzle-actor",
+      "category": "Socials",
+      "response": "Nuzzle",
+      "viewpoint": "actor",
+      "pattern": "Nuzzle\\ who\\?\\?",
+      "template": "Nuzzle who??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Nuzzle who??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L138"
+      }
+    },
+    {
+      "id": "diku-social-nuzzle-actor-targeted",
+      "category": "Socials",
+      "response": "Nuzzle",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ nuzzle\\ [^\\n\\r\\x27]+?\\ neck\\ softly\\.",
+      "template": "You nuzzle <TARGET-POSS> neck softly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You nuzzle <TARGET-POSS> neck softly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L140"
+      }
+    },
+    {
+      "id": "diku-social-nuzzle-room-targeted",
+      "category": "Socials",
+      "response": "Nuzzle",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ softly\\ nuzzles\\ [^\\n\\r\\x27]+?'s\\ neck\\.",
+      "template": "<ACTOR> softly nuzzles <TARGET>'s neck.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> softly nuzzles <TARGET>'s neck.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L141"
+      }
+    },
+    {
+      "id": "diku-social-nuzzle-target",
+      "category": "Socials",
+      "response": "Nuzzle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ softly\\ nuzzles\\ your\\ neck\\.",
+      "template": "<ACTOR> softly nuzzles your neck.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> softly nuzzles your neck.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L142"
+      }
+    },
+    {
+      "id": "diku-social-nuzzle-actor-self",
+      "category": "Socials",
+      "response": "Nuzzle",
+      "viewpoint": "actor-self",
+      "pattern": "I'm\\ sorry,\\ friend,\\ but\\ that's\\ impossible\\.",
+      "template": "I'm sorry, friend, but that's impossible.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "I'm sorry, friend, but that's impossible.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L144"
+      }
+    },
+    {
+      "id": "diku-social-cry-room",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ bursts\\ into\\ tears\\.",
+      "template": "<ACTOR> bursts into tears.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> bursts into tears.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L149"
+      }
+    },
+    {
+      "id": "diku-social-cry-actor-targeted",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ cry\\ on\\ [^\\n\\r\\x27]+?\\ shoulder\\.",
+      "template": "You cry on <TARGET-POSS> shoulder.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cry on <TARGET-POSS> shoulder.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L150"
+      }
+    },
+    {
+      "id": "diku-social-cry-room-targeted",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ cries\\ on\\ [^\\n\\r\\x27]+?'s\\ shoulder\\.",
+      "template": "<ACTOR> cries on <TARGET>'s shoulder.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cries on <TARGET>'s shoulder.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L151"
+      }
+    },
+    {
+      "id": "diku-social-cry-target",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ cries\\ on\\ your\\ shoulder\\.",
+      "template": "<ACTOR> cries on your shoulder.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cries on your shoulder.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L152"
+      }
+    },
+    {
+      "id": "diku-social-cry-actor-self",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ cry\\ to\\ yourself\\.",
+      "template": "You cry to yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cry to yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L154"
+      }
+    },
+    {
+      "id": "diku-social-cry-room-self",
+      "category": "Socials",
+      "response": "Cry",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ sobs\\ quietly\\ to\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> sobs quietly to <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sobs quietly to <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L155"
+      }
+    },
+    {
+      "id": "diku-social-poke-actor-targeted",
+      "category": "Socials",
+      "response": "Poke",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ poke\\ [^\\n\\r\\x27]+?\\ in\\ the\\ ribs\\.",
+      "template": "You poke <TARGET-OBJ> in the ribs.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You poke <TARGET-OBJ> in the ribs.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L160"
+      }
+    },
+    {
+      "id": "diku-social-poke-room-targeted",
+      "category": "Socials",
+      "response": "Poke",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ pokes\\ [^\\n\\r\\x27]+?\\ in\\ the\\ ribs\\.",
+      "template": "<ACTOR> pokes <TARGET> in the ribs.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pokes <TARGET> in the ribs.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L161"
+      }
+    },
+    {
+      "id": "diku-social-poke-target",
+      "category": "Socials",
+      "response": "Poke",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ pokes\\ you\\ in\\ the\\ ribs\\.",
+      "template": "<ACTOR> pokes you in the ribs.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pokes you in the ribs.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L162"
+      }
+    },
+    {
+      "id": "diku-social-poke-actor-self",
+      "category": "Socials",
+      "response": "Poke",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ poke\\ yourself\\ in\\ the\\ ribs,\\ feeling\\ very\\ silly\\.",
+      "template": "You poke yourself in the ribs, feeling very silly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You poke yourself in the ribs, feeling very silly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L164"
+      }
+    },
+    {
+      "id": "diku-social-poke-room-self",
+      "category": "Socials",
+      "response": "Poke",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ pokes\\ [^\\n\\r\\x27]+?self\\ in\\ the\\ ribs,\\ looking\\ very\\ sheepish\\.",
+      "template": "<ACTOR> pokes <ACTOR-OBJ>self in the ribs, looking very sheepish.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pokes <ACTOR-OBJ>self in the ribs, looking very sheepish.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L165"
+      }
+    },
+    {
+      "id": "diku-social-accuse-actor",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "actor",
+      "pattern": "Accuse\\ who\\?\\?",
+      "template": "Accuse who??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Accuse who??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L168"
+      }
+    },
+    {
+      "id": "diku-social-accuse-actor-targeted",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ look\\ accusingly\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You look accusingly at <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You look accusingly at <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L170"
+      }
+    },
+    {
+      "id": "diku-social-accuse-room-targeted",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ looks\\ accusingly\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> looks accusingly at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> looks accusingly at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L171"
+      }
+    },
+    {
+      "id": "diku-social-accuse-target",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ looks\\ accusingly\\ at\\ you\\.",
+      "template": "<ACTOR> looks accusingly at you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> looks accusingly at you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L172"
+      }
+    },
+    {
+      "id": "diku-social-accuse-actor-self",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ accuse\\ yourself\\.",
+      "template": "You accuse yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You accuse yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L174"
+      }
+    },
+    {
+      "id": "diku-social-accuse-room-self",
+      "category": "Socials",
+      "response": "Accuse",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ seems\\ to\\ have\\ a\\ bad\\ conscience\\.",
+      "template": "<ACTOR> seems to have a bad conscience.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> seems to have a bad conscience.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L175"
+      }
+    },
+    {
+      "id": "diku-social-grin-actor",
+      "category": "Socials",
+      "response": "Grin",
+      "viewpoint": "actor",
+      "pattern": "You\\ grin\\ evilly\\.",
+      "template": "You grin evilly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You grin evilly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L178"
+      }
+    },
+    {
+      "id": "diku-social-grin-room",
+      "category": "Socials",
+      "response": "Grin",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ grins\\ evilly\\.",
+      "template": "<ACTOR> grins evilly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> grins evilly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L179"
+      }
+    },
+    {
+      "id": "diku-social-bow-actor",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "actor",
+      "pattern": "You\\ bow\\ deeply\\.",
+      "template": "You bow deeply.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You bow deeply.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L183"
+      }
+    },
+    {
+      "id": "diku-social-bow-room",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ bows\\ deeply\\.",
+      "template": "<ACTOR> bows deeply.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> bows deeply.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L184"
+      }
+    },
+    {
+      "id": "diku-social-bow-actor-targeted",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ bow\\ before\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You bow before <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You bow before <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L185"
+      }
+    },
+    {
+      "id": "diku-social-bow-room-targeted",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ bows\\ before\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> bows before <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> bows before <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L186"
+      }
+    },
+    {
+      "id": "diku-social-bow-target",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ bows\\ before\\ you\\.",
+      "template": "<ACTOR> bows before you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> bows before you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L187"
+      }
+    },
+    {
+      "id": "diku-social-bow-actor-self",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ kiss\\ your\\ toes\\.",
+      "template": "You kiss your toes.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You kiss your toes.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L189"
+      }
+    },
+    {
+      "id": "diku-social-bow-room-self",
+      "category": "Socials",
+      "response": "Bow",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ folds\\ up\\ like\\ a\\ jacknife\\ and\\ kisses\\ [^\\n\\r\\x27]+?\\ own\\ toes\\.",
+      "template": "<ACTOR> folds up like a jacknife and kisses <ACTOR-POSS> own toes.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> folds up like a jacknife and kisses <ACTOR-POSS> own toes.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L190"
+      }
+    },
+    {
+      "id": "diku-social-applaud-actor",
+      "category": "Socials",
+      "response": "Applaud",
+      "viewpoint": "actor",
+      "pattern": "Clap,\\ clap,\\ clap\\.",
+      "template": "Clap, clap, clap.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Clap, clap, clap.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L193"
+      }
+    },
+    {
+      "id": "diku-social-applaud-room",
+      "category": "Socials",
+      "response": "Applaud",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ gives\\ a\\ round\\ of\\ applause\\.",
+      "template": "<ACTOR> gives a round of applause.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gives a round of applause.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L194"
+      }
+    },
+    {
+      "id": "diku-social-blush-actor",
+      "category": "Socials",
+      "response": "Blush",
+      "viewpoint": "actor",
+      "pattern": "Your\\ cheeks\\ are\\ burning\\.",
+      "template": "Your cheeks are burning.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Your cheeks are burning.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L198"
+      }
+    },
+    {
+      "id": "diku-social-burp-actor",
+      "category": "Socials",
+      "response": "Burp",
+      "viewpoint": "actor",
+      "pattern": "You\\ burp\\ loudly\\.",
+      "template": "You burp loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You burp loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L203"
+      }
+    },
+    {
+      "id": "diku-social-burp-room",
+      "category": "Socials",
+      "response": "Burp",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ burps\\ loudly\\.",
+      "template": "<ACTOR> burps loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> burps loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L204"
+      }
+    },
+    {
+      "id": "diku-social-chuckle-actor",
+      "category": "Socials",
+      "response": "Chuckle",
+      "viewpoint": "actor",
+      "pattern": "You\\ chuckle\\ politely\\.",
+      "template": "You chuckle politely.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You chuckle politely.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L208"
+      }
+    },
+    {
+      "id": "diku-social-chuckle-room",
+      "category": "Socials",
+      "response": "Chuckle",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ chuckles\\ politely\\.",
+      "template": "<ACTOR> chuckles politely.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> chuckles politely.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L209"
+      }
+    },
+    {
+      "id": "diku-social-clap-actor",
+      "category": "Socials",
+      "response": "Clap",
+      "viewpoint": "actor",
+      "pattern": "You\\ clap\\ your\\ small\\ hands\\ together\\.",
+      "template": "You clap your small hands together.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You clap your small hands together.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L213"
+      }
+    },
+    {
+      "id": "diku-social-clap-room",
+      "category": "Socials",
+      "response": "Clap",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ shows\\ [^\\n\\r\\x27]+?\\ approval\\ by\\ clapping\\ [^\\n\\r\\x27]+?\\ small\\ hands\\ together\\.",
+      "template": "<ACTOR> shows <ACTOR-POSS> approval by clapping <ACTOR-POSS> small hands together.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shows <ACTOR-POSS> approval by clapping <ACTOR-POSS> small hands together.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L214"
+      }
+    },
+    {
+      "id": "diku-social-cough-actor",
+      "category": "Socials",
+      "response": "Cough",
+      "viewpoint": "actor",
+      "pattern": "Yuck,\\ try\\ to\\ cover\\ your\\ mouth\\ next\\ time\\ !",
+      "template": "Yuck, try to cover your mouth next time !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Yuck, try to cover your mouth next time !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L218"
+      }
+    },
+    {
+      "id": "diku-social-cough-room",
+      "category": "Socials",
+      "response": "Cough",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ coughs\\ loudly\\.",
+      "template": "<ACTOR> coughs loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> coughs loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L219"
+      }
+    },
+    {
+      "id": "diku-social-curtsey-actor",
+      "category": "Socials",
+      "response": "Curtsey",
+      "viewpoint": "actor",
+      "pattern": "You\\ curtsey\\ to\\ your\\ audience\\.",
+      "template": "You curtsey to your audience.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You curtsey to your audience.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L223"
+      }
+    },
+    {
+      "id": "diku-social-curtsey-room",
+      "category": "Socials",
+      "response": "Curtsey",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ curtseys\\ gracefully\\.",
+      "template": "<ACTOR> curtseys gracefully.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> curtseys gracefully.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L224"
+      }
+    },
+    {
+      "id": "diku-social-fart-actor",
+      "category": "Socials",
+      "response": "Fart",
+      "viewpoint": "actor",
+      "pattern": "Where\\ are\\ your\\ manners\\ \\?",
+      "template": "Where are your manners ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Where are your manners ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L228"
+      }
+    },
+    {
+      "id": "diku-social-fart-room",
+      "category": "Socials",
+      "response": "Fart",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ lets\\ off\\ a\\ real\\ rip\\-roarer\\ !",
+      "template": "<ACTOR> lets off a real rip-roarer !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> lets off a real rip-roarer !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L229"
+      }
+    },
+    {
+      "id": "diku-social-flip-actor",
+      "category": "Socials",
+      "response": "Flip",
+      "viewpoint": "actor",
+      "pattern": "You\\ flip\\ head\\ over\\ heels\\.",
+      "template": "You flip head over heels.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You flip head over heels.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L233"
+      }
+    },
+    {
+      "id": "diku-social-flip-room",
+      "category": "Socials",
+      "response": "Flip",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ flips\\ head\\ over\\ heels\\.",
+      "template": "<ACTOR> flips head over heels.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> flips head over heels.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L234"
+      }
+    },
+    {
+      "id": "diku-social-fondle-actor",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "actor",
+      "pattern": "Who\\ needs\\ to\\ be\\ fondled\\ \\?",
+      "template": "Who needs to be fondled ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Who needs to be fondled ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L238"
+      }
+    },
+    {
+      "id": "diku-social-fondle-actor-targeted",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ fondly\\ fondle\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You fondly fondle <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You fondly fondle <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L240"
+      }
+    },
+    {
+      "id": "diku-social-fondle-room-targeted",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ fondly\\ fondles\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> fondly fondles <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> fondly fondles <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L241"
+      }
+    },
+    {
+      "id": "diku-social-fondle-target",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ fondly\\ fondles\\ you\\.",
+      "template": "<ACTOR> fondly fondles you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> fondly fondles you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L242"
+      }
+    },
+    {
+      "id": "diku-social-fondle-actor-self",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ fondly\\ fondle\\ yourself,\\ feels\\ funny\\ doesn't\\ it\\ \\?",
+      "template": "You fondly fondle yourself, feels funny doesn't it ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You fondly fondle yourself, feels funny doesn't it ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L244"
+      }
+    },
+    {
+      "id": "diku-social-fondle-room-self",
+      "category": "Socials",
+      "response": "Fondle",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ fondly\\ fondles\\ [^\\n\\r\\x27]+?self\\ \\-\\ this\\ is\\ going\\ too\\ far\\ !!",
+      "template": "<ACTOR> fondly fondles <ACTOR-OBJ>self - this is going too far !!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> fondly fondles <ACTOR-OBJ>self - this is going too far !!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L245"
+      }
+    },
+    {
+      "id": "diku-social-frown-actor",
+      "category": "Socials",
+      "response": "Frown",
+      "viewpoint": "actor",
+      "pattern": "What's\\ bothering\\ you\\ \\?",
+      "template": "What's bothering you ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "What's bothering you ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L248"
+      }
+    },
+    {
+      "id": "diku-social-gasp-actor",
+      "category": "Socials",
+      "response": "Gasp",
+      "viewpoint": "actor",
+      "pattern": "You\\ gasp\\ in\\ astonishment\\.",
+      "template": "You gasp in astonishment.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You gasp in astonishment.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L253"
+      }
+    },
+    {
+      "id": "diku-social-gasp-room",
+      "category": "Socials",
+      "response": "Gasp",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ gasps\\ in\\ astonishment\\.",
+      "template": "<ACTOR> gasps in astonishment.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gasps in astonishment.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L254"
+      }
+    },
+    {
+      "id": "diku-social-glare-actor",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "actor",
+      "pattern": "You\\ glare\\ at\\ nothing\\ in\\ particular\\.",
+      "template": "You glare at nothing in particular.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You glare at nothing in particular.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L258"
+      }
+    },
+    {
+      "id": "diku-social-glare-room",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ glares\\ around\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> glares around <ACTOR-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> glares around <ACTOR-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L259"
+      }
+    },
+    {
+      "id": "diku-social-glare-actor-targeted",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ glare\\ icily\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You glare icily at <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You glare icily at <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L260"
+      }
+    },
+    {
+      "id": "diku-social-glare-room-targeted",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ glares\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> glares at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> glares at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L261"
+      }
+    },
+    {
+      "id": "diku-social-glare-target",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ glares\\ icily\\ at\\ you,\\ you\\ feel\\ cold\\ to\\ your\\ bones\\.",
+      "template": "<ACTOR> glares icily at you, you feel cold to your bones.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> glares icily at you, you feel cold to your bones.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L262"
+      }
+    },
+    {
+      "id": "diku-social-glare-actor-self",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ glare\\ icily\\ at\\ your\\ feet,\\ they\\ are\\ suddenly\\ very\\ cold\\.",
+      "template": "You glare icily at your feet, they are suddenly very cold.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You glare icily at your feet, they are suddenly very cold.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L264"
+      }
+    },
+    {
+      "id": "diku-social-glare-room-self",
+      "category": "Socials",
+      "response": "Glare",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ glares\\ at\\ [^\\n\\r\\x27]+?\\ feet,\\ what\\ is\\ bothering\\ [^\\n\\r\\x27]+?\\ \\?",
+      "template": "<ACTOR> glares at <ACTOR-POSS> feet, what is bothering <ACTOR-OBJ> ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> glares at <ACTOR-POSS> feet, what is bothering <ACTOR-OBJ> ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L265"
+      }
+    },
+    {
+      "id": "diku-social-groan-actor",
+      "category": "Socials",
+      "response": "Groan",
+      "viewpoint": "actor",
+      "pattern": "You\\ groan\\ loudly\\.",
+      "template": "You groan loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You groan loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L268"
+      }
+    },
+    {
+      "id": "diku-social-groan-room",
+      "category": "Socials",
+      "response": "Groan",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ groans\\ loudly\\.",
+      "template": "<ACTOR> groans loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> groans loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L269"
+      }
+    },
+    {
+      "id": "diku-social-grope-actor",
+      "category": "Socials",
+      "response": "Grope",
+      "viewpoint": "actor",
+      "pattern": "Whom\\ do\\ you\\ wish\\ to\\ grope\\ \\?\\?",
+      "template": "Whom do you wish to grope ??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Whom do you wish to grope ??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L273"
+      }
+    },
+    {
+      "id": "diku-social-grope-actor-targeted",
+      "category": "Socials",
+      "response": "Grope",
+      "viewpoint": "actor-targeted",
+      "pattern": "Well,\\ what\\ sort\\ of\\ noise\\ do\\ you\\ expect\\ here\\ \\?",
+      "template": "Well, what sort of noise do you expect here ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Well, what sort of noise do you expect here ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L275"
+      }
+    },
+    {
+      "id": "diku-social-grope-target",
+      "category": "Socials",
+      "response": "Grope",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ gropes\\ you\\.",
+      "template": "<ACTOR> gropes you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gropes you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L277"
+      }
+    },
+    {
+      "id": "diku-social-grope-actor-self",
+      "category": "Socials",
+      "response": "Grope",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ grope\\ yourself\\ \\-\\ YUCK\\.",
+      "template": "You grope yourself - YUCK.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You grope yourself - YUCK.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L279"
+      }
+    },
+    {
+      "id": "diku-social-grope-room-self",
+      "category": "Socials",
+      "response": "Grope",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ gropes\\ [^\\n\\r\\x27]+?self\\ \\-\\ YUCK\\.",
+      "template": "<ACTOR> gropes <ACTOR-OBJ>self - YUCK.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gropes <ACTOR-OBJ>self - YUCK.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L280"
+      }
+    },
+    {
+      "id": "diku-social-lick-actor",
+      "category": "Socials",
+      "response": "Lick",
+      "viewpoint": "actor",
+      "pattern": "You\\ lick\\ your\\ mouth\\ and\\ smile\\.",
+      "template": "You lick your mouth and smile.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You lick your mouth and smile.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L288"
+      }
+    },
+    {
+      "id": "diku-social-lick-room",
+      "category": "Socials",
+      "response": "Lick",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ licks\\ [^\\n\\r\\x27]+?\\ mouth\\ and\\ smiles\\.",
+      "template": "<ACTOR> licks <ACTOR-POSS> mouth and smiles.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> licks <ACTOR-POSS> mouth and smiles.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L289"
+      }
+    },
+    {
+      "id": "diku-social-lick-actor-self",
+      "category": "Socials",
+      "response": "Lick",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ lick\\ yourself\\.",
+      "template": "You lick yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You lick yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L294"
+      }
+    },
+    {
+      "id": "diku-social-lick-room-self",
+      "category": "Socials",
+      "response": "Lick",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ licks\\ [^\\n\\r\\x27]+?self\\ \\-\\ YUCK\\.",
+      "template": "<ACTOR> licks <ACTOR-OBJ>self - YUCK.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> licks <ACTOR-OBJ>self - YUCK.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L295"
+      }
+    },
+    {
+      "id": "diku-social-love-actor",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "actor",
+      "pattern": "You\\ love\\ the\\ whole\\ world\\.",
+      "template": "You love the whole world.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You love the whole world.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L298"
+      }
+    },
+    {
+      "id": "diku-social-love-room",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ loves\\ everybody\\ in\\ the\\ world\\.",
+      "template": "<ACTOR> loves everybody in the world.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> loves everybody in the world.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L299"
+      }
+    },
+    {
+      "id": "diku-social-love-actor-targeted",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ tell\\ your\\ true\\ feelings\\ to\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You tell your true feelings to <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You tell your true feelings to <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L300"
+      }
+    },
+    {
+      "id": "diku-social-love-room-targeted",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ whispers\\ softly\\ to\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> whispers softly to <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> whispers softly to <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L301"
+      }
+    },
+    {
+      "id": "diku-social-love-target",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ whispers\\ to\\ you\\ sweet\\ words\\ of\\ love\\.",
+      "template": "<ACTOR> whispers to you sweet words of love.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> whispers to you sweet words of love.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L302"
+      }
+    },
+    {
+      "id": "diku-social-love-actor-self",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "actor-self",
+      "pattern": "Well,\\ we\\ already\\ know\\ you\\ love\\ yourself\\ \\(lucky\\ someone\\ does\\ !\\)",
+      "template": "Well, we already know you love yourself (lucky someone does !)",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Well, we already know you love yourself (lucky someone does !)",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L304"
+      }
+    },
+    {
+      "id": "diku-social-love-room-self",
+      "category": "Socials",
+      "response": "Love",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ loves\\ [^\\n\\r\\x27]+?self,\\ can\\ you\\ believe\\ it\\ \\?",
+      "template": "<ACTOR> loves <ACTOR-OBJ>self, can you believe it ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> loves <ACTOR-OBJ>self, can you believe it ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L305"
+      }
+    },
+    {
+      "id": "diku-social-moan-actor",
+      "category": "Socials",
+      "response": "Moan",
+      "viewpoint": "actor",
+      "pattern": "You\\ start\\ to\\ moan\\.",
+      "template": "You start to moan.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You start to moan.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L308"
+      }
+    },
+    {
+      "id": "diku-social-moan-room",
+      "category": "Socials",
+      "response": "Moan",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ starts\\ moaning\\.",
+      "template": "<ACTOR> starts moaning.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> starts moaning.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L309"
+      }
+    },
+    {
+      "id": "diku-social-nibble-actor",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "actor",
+      "pattern": "Nibble\\ on\\ who\\ \\?",
+      "template": "Nibble on who ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Nibble on who ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L313"
+      }
+    },
+    {
+      "id": "diku-social-nibble-actor-targeted",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ nibble\\ on\\ [^\\n\\r\\x27]+?'s\\ ear\\.",
+      "template": "You nibble on <TARGET>'s ear.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You nibble on <TARGET>'s ear.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L315"
+      }
+    },
+    {
+      "id": "diku-social-nibble-room-targeted",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ nibbles\\ on\\ [^\\n\\r\\x27]+?'s\\ ear\\.",
+      "template": "<ACTOR> nibbles on <TARGET>'s ear.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> nibbles on <TARGET>'s ear.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L316"
+      }
+    },
+    {
+      "id": "diku-social-nibble-target",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ nibbles\\ on\\ your\\ ear\\.",
+      "template": "<ACTOR> nibbles on your ear.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> nibbles on your ear.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L317"
+      }
+    },
+    {
+      "id": "diku-social-nibble-actor-self",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ nibble\\ on\\ your\\ OWN\\ ear\\ \\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?\\?",
+      "template": "You nibble on your OWN ear ???????????????????",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You nibble on your OWN ear ???????????????????",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L319"
+      }
+    },
+    {
+      "id": "diku-social-nibble-room-self",
+      "category": "Socials",
+      "response": "Nibble",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ nibbles\\ on\\ [^\\n\\r\\x27]+?\\ OWN\\ ear\\ \\(\\ I\\ wonder\\ how\\ it\\ is\\ done\\ !!\\)\\.",
+      "template": "<ACTOR> nibbles on <ACTOR-POSS> OWN ear ( I wonder how it is done !!).",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> nibbles on <ACTOR-POSS> OWN ear ( I wonder how it is done !!).",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L320"
+      }
+    },
+    {
+      "id": "diku-social-pout-actor",
+      "category": "Socials",
+      "response": "Pout",
+      "viewpoint": "actor",
+      "pattern": "Ah,\\ don't\\ take\\ it\\ so\\ hard\\.",
+      "template": "Ah, don't take it so hard.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Ah, don't take it so hard.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L323"
+      }
+    },
+    {
+      "id": "diku-social-purr-actor",
+      "category": "Socials",
+      "response": "Purr",
+      "viewpoint": "actor",
+      "pattern": "MMMMEEEEEEEEOOOOOOOOOWWWWWWWWWWWW\\.",
+      "template": "MMMMEEEEEEEEOOOOOOOOOWWWWWWWWWWWW.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "MMMMEEEEEEEEOOOOOOOOOWWWWWWWWWWWW.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L328"
+      }
+    },
+    {
+      "id": "diku-social-purr-room",
+      "category": "Socials",
+      "response": "Purr",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ purrs\\ contentedly\\.",
+      "template": "<ACTOR> purrs contentedly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> purrs contentedly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L329"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-actor",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "actor",
+      "pattern": "You've\\ got\\ to\\ ruffle\\ SOMEONE\\.",
+      "template": "You've got to ruffle SOMEONE.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You've got to ruffle SOMEONE.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L333"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-actor-targeted",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ ruffle\\ [^\\n\\r\\x27]+?'s\\ hair\\ playfully\\.",
+      "template": "You ruffle <TARGET>'s hair playfully.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You ruffle <TARGET>'s hair playfully.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L335"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-room-targeted",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ ruffles\\ [^\\n\\r\\x27]+?'s\\ hair\\ playfully\\.",
+      "template": "<ACTOR> ruffles <TARGET>'s hair playfully.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> ruffles <TARGET>'s hair playfully.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L336"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-target",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ ruffles\\ your\\ hair\\ playfully\\.",
+      "template": "<ACTOR> ruffles your hair playfully.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> ruffles your hair playfully.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L337"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-actor-self",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ ruffle\\ your\\ hair,\\ wondering\\ how\\ far\\ you\\ can\\ go\\ before\\ the\\ rest\\ think\\ you're\\ crazy\\.",
+      "template": "You ruffle your hair, wondering how far you can go before the rest think you're crazy.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You ruffle your hair, wondering how far you can go before the rest think you're crazy.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L339"
+      }
+    },
+    {
+      "id": "diku-social-ruffle-room-self",
+      "category": "Socials",
+      "response": "Ruffle",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ ruffles\\ [^\\n\\r\\x27]+?\\ hair\\ \\-\\ weirdo\\ !",
+      "template": "<ACTOR> ruffles <ACTOR-POSS> hair - weirdo !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> ruffles <ACTOR-POSS> hair - weirdo !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L340"
+      }
+    },
+    {
+      "id": "diku-social-shiver-room",
+      "category": "Socials",
+      "response": "Shiver",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ shivers\\ uncomfortably\\.",
+      "template": "<ACTOR> shivers uncomfortably.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shivers uncomfortably.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L344"
+      }
+    },
+    {
+      "id": "diku-social-shrug-room",
+      "category": "Socials",
+      "response": "Shrug",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ shrugs\\ helplessly\\.",
+      "template": "<ACTOR> shrugs helplessly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> shrugs helplessly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L349"
+      }
+    },
+    {
+      "id": "diku-social-sing-actor",
+      "category": "Socials",
+      "response": "Sing",
+      "viewpoint": "actor",
+      "pattern": "You\\ raise\\ your\\ clear\\ \\(\\?\\)\\ voice\\ towards\\ the\\ sky\\.",
+      "template": "You raise your clear (?) voice towards the sky.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You raise your clear (?) voice towards the sky.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L353"
+      }
+    },
+    {
+      "id": "diku-social-sing-room",
+      "category": "Socials",
+      "response": "Sing",
+      "viewpoint": "room",
+      "pattern": "SEEK\\ SHELTER\\ AT\\ ONCE\\ !\\ [^\\n\\r\\x27]+?\\ has\\ begun\\ to\\ sing\\.",
+      "template": "SEEK SHELTER AT ONCE ! <ACTOR> has begun to sing.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "SEEK SHELTER AT ONCE ! <ACTOR> has begun to sing.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L354"
+      }
+    },
+    {
+      "id": "diku-social-slap-actor",
+      "category": "Socials",
+      "response": "Slap",
+      "viewpoint": "actor",
+      "pattern": "Normally\\ you\\ slap\\ SOMEBODY\\.",
+      "template": "Normally you slap SOMEBODY.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Normally you slap SOMEBODY.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L358"
+      }
+    },
+    {
+      "id": "diku-social-slap-target",
+      "category": "Socials",
+      "response": "Slap",
+      "viewpoint": "target",
+      "pattern": "You\\ are\\ slapped\\ by\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You are slapped by <ACTOR>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You are slapped by <ACTOR>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L362"
+      }
+    },
+    {
+      "id": "diku-social-slap-actor-self",
+      "category": "Socials",
+      "response": "Slap",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ slap\\ yourself,\\ silly\\ you\\.",
+      "template": "You slap yourself, silly you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You slap yourself, silly you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L364"
+      }
+    },
+    {
+      "id": "diku-social-slap-room-self",
+      "category": "Socials",
+      "response": "Slap",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ slaps\\ [^\\n\\r\\x27]+?self,\\ really\\ strange\\.\\.\\.",
+      "template": "<ACTOR> slaps <ACTOR-OBJ>self, really strange...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> slaps <ACTOR-OBJ>self, really strange...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L365"
+      }
+    },
+    {
+      "id": "diku-social-snap-actor",
+      "category": "Socials",
+      "response": "Snap",
+      "viewpoint": "actor",
+      "pattern": "PRONTO\\ !\\ You\\ snap\\ your\\ fingers\\.",
+      "template": "PRONTO ! You snap your fingers.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "PRONTO ! You snap your fingers.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L373"
+      }
+    },
+    {
+      "id": "diku-social-snap-room",
+      "category": "Socials",
+      "response": "Snap",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ snaps\\ [^\\n\\r\\x27]+?\\ fingers\\.",
+      "template": "<ACTOR> snaps <ACTOR-POSS> fingers.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> snaps <ACTOR-POSS> fingers.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L374"
+      }
+    },
+    {
+      "id": "diku-social-sneeze-actor",
+      "category": "Socials",
+      "response": "Sneeze",
+      "viewpoint": "actor",
+      "pattern": "Gesundheit\\ !",
+      "template": "Gesundheit !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Gesundheit !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L378"
+      }
+    },
+    {
+      "id": "diku-social-snicker-actor",
+      "category": "Socials",
+      "response": "Snicker",
+      "viewpoint": "actor",
+      "pattern": "You\\ snicker\\ softly\\.",
+      "template": "You snicker softly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You snicker softly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L383"
+      }
+    },
+    {
+      "id": "diku-social-snicker-room",
+      "category": "Socials",
+      "response": "Snicker",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ snickers\\ softly\\.",
+      "template": "<ACTOR> snickers softly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> snickers softly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L384"
+      }
+    },
+    {
+      "id": "diku-social-sniff-actor",
+      "category": "Socials",
+      "response": "Sniff",
+      "viewpoint": "actor",
+      "pattern": "You\\ sniff\\ sadly\\.\\ \\*SNIFF\\*",
+      "template": "You sniff sadly. *SNIFF*",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You sniff sadly. *SNIFF*",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L388"
+      }
+    },
+    {
+      "id": "diku-social-sniff-room",
+      "category": "Socials",
+      "response": "Sniff",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ sniffs\\ sadly\\.",
+      "template": "<ACTOR> sniffs sadly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> sniffs sadly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L389"
+      }
+    },
+    {
+      "id": "diku-social-snore-actor",
+      "category": "Socials",
+      "response": "Snore",
+      "viewpoint": "actor",
+      "pattern": "Zzzzzzzzzzzzzzzzz\\.",
+      "template": "Zzzzzzzzzzzzzzzzz.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Zzzzzzzzzzzzzzzzz.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L393"
+      }
+    },
+    {
+      "id": "diku-social-snore-room",
+      "category": "Socials",
+      "response": "Snore",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ snores\\ loudly\\.",
+      "template": "<ACTOR> snores loudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> snores loudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L394"
+      }
+    },
+    {
+      "id": "diku-social-spit-actor",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "actor",
+      "pattern": "You\\ spit\\ over\\ your\\ left\\ shoulder\\.",
+      "template": "You spit over your left shoulder.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You spit over your left shoulder.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L398"
+      }
+    },
+    {
+      "id": "diku-social-spit-room",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ spits\\ over\\ [^\\n\\r\\x27]+?\\ left\\ shoulder\\.",
+      "template": "<ACTOR> spits over <ACTOR-POSS> left shoulder.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> spits over <ACTOR-POSS> left shoulder.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L399"
+      }
+    },
+    {
+      "id": "diku-social-spit-actor-targeted",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ spit\\ on\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You spit on <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You spit on <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L400"
+      }
+    },
+    {
+      "id": "diku-social-spit-room-targeted",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ spits\\ [^\\n\\r\\x27]+?\\ in\\ the\\ face\\.",
+      "template": "<ACTOR> spits <TARGET> in the face.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> spits <TARGET> in the face.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L401"
+      }
+    },
+    {
+      "id": "diku-social-spit-target",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ spits\\ you\\ in\\ the\\ face\\.",
+      "template": "<ACTOR> spits you in the face.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> spits you in the face.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L402"
+      }
+    },
+    {
+      "id": "diku-social-spit-actor-self",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ drool\\ down\\ your\\ front\\.",
+      "template": "You drool down your front.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You drool down your front.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L404"
+      }
+    },
+    {
+      "id": "diku-social-spit-room-self",
+      "category": "Socials",
+      "response": "Spit",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ drools\\ down\\ [^\\n\\r\\x27]+?\\ front\\.",
+      "template": "<ACTOR> drools down <ACTOR-POSS> front.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> drools down <ACTOR-POSS> front.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L405"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-actor",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "actor",
+      "pattern": "Where,\\ what,\\ how,\\ WHO\\ \\?\\?\\?",
+      "template": "Where, what, how, WHO ???",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Where, what, how, WHO ???",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L408"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-actor-targeted",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ squeeze\\ [^\\n\\r\\x27]+?\\ fondly\\.",
+      "template": "You squeeze <TARGET-OBJ> fondly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You squeeze <TARGET-OBJ> fondly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L410"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-room-targeted",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ squeezes\\ [^\\n\\r\\x27]+?\\ fondly\\.",
+      "template": "<ACTOR> squeezes <TARGET> fondly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> squeezes <TARGET> fondly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L411"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-target",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ squeezes\\ you\\ fondly\\.",
+      "template": "<ACTOR> squeezes you fondly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> squeezes you fondly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L412"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-actor-self",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ squeeze\\ yourself\\ \\-\\ try\\ to\\ relax\\ a\\ little\\ !",
+      "template": "You squeeze yourself - try to relax a little !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You squeeze yourself - try to relax a little !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L414"
+      }
+    },
+    {
+      "id": "diku-social-squeeze-room-self",
+      "category": "Socials",
+      "response": "Squeeze",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ squeezes\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> squeezes <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> squeezes <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L415"
+      }
+    },
+    {
+      "id": "diku-social-stare-actor",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "actor",
+      "pattern": "You\\ stare\\ at\\ the\\ sky\\.",
+      "template": "You stare at the sky.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You stare at the sky.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L418"
+      }
+    },
+    {
+      "id": "diku-social-stare-room",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ at\\ the\\ sky\\.",
+      "template": "<ACTOR> stares at the sky.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares at the sky.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L419"
+      }
+    },
+    {
+      "id": "diku-social-stare-actor-targeted",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ stare\\ dreamily\\ at\\ [^\\n\\r\\x27]+?,\\ completely\\ lost\\ in\\ [^\\n\\r\\x27]+?\\ eyes\\.\\.",
+      "template": "You stare dreamily at <TARGET>, completely lost in <TARGET-POSS> eyes..",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You stare dreamily at <TARGET>, completely lost in <TARGET-POSS> eyes..",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L420"
+      }
+    },
+    {
+      "id": "diku-social-stare-room-targeted",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ dreamily\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> stares dreamily at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares dreamily at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L421"
+      }
+    },
+    {
+      "id": "diku-social-stare-target",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ dreamily\\ at\\ you,\\ completely\\ lost\\ in\\ your\\ eyes\\.",
+      "template": "<ACTOR> stares dreamily at you, completely lost in your eyes.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares dreamily at you, completely lost in your eyes.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L422"
+      }
+    },
+    {
+      "id": "diku-social-stare-actor-self",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ stare\\ dreamily\\ at\\ yourself\\ \\-\\ enough\\ narcissism\\ for\\ now\\.",
+      "template": "You stare dreamily at yourself - enough narcissism for now.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You stare dreamily at yourself - enough narcissism for now.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L424"
+      }
+    },
+    {
+      "id": "diku-social-stare-room-self",
+      "category": "Socials",
+      "response": "Stare",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ dreamily\\ at\\ [^\\n\\r\\x27]+?self\\ \\-\\ NARCISSIST\\ !",
+      "template": "<ACTOR> stares dreamily at <ACTOR-OBJ>self - NARCISSIST !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares dreamily at <ACTOR-OBJ>self - NARCISSIST !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L425"
+      }
+    },
+    {
+      "id": "diku-social-strut-actor",
+      "category": "Socials",
+      "response": "Strut",
+      "viewpoint": "actor",
+      "pattern": "Strut\\ your\\ stuff\\.",
+      "template": "Strut your stuff.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Strut your stuff.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L428"
+      }
+    },
+    {
+      "id": "diku-social-strut-room",
+      "category": "Socials",
+      "response": "Strut",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ struts\\ proudly\\.",
+      "template": "<ACTOR> struts proudly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> struts proudly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L429"
+      }
+    },
+    {
+      "id": "diku-social-thank-actor",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "actor",
+      "pattern": "Thank\\ you\\ too\\.",
+      "template": "Thank you too.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Thank you too.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L433"
+      }
+    },
+    {
+      "id": "diku-social-thank-actor-targeted",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ thank\\ [^\\n\\r\\x27]+?\\ heartily\\.",
+      "template": "You thank <TARGET> heartily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You thank <TARGET> heartily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L435"
+      }
+    },
+    {
+      "id": "diku-social-thank-room-targeted",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ thanks\\ [^\\n\\r\\x27]+?\\ heartily\\.",
+      "template": "<ACTOR> thanks <TARGET> heartily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> thanks <TARGET> heartily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L436"
+      }
+    },
+    {
+      "id": "diku-social-thank-target",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ thanks\\ you\\ heartily\\.",
+      "template": "<ACTOR> thanks you heartily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> thanks you heartily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L437"
+      }
+    },
+    {
+      "id": "diku-social-thank-actor-self",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ thank\\ yourself\\ since\\ nobody\\ else\\ wants\\ to\\ !",
+      "template": "You thank yourself since nobody else wants to !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You thank yourself since nobody else wants to !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L439"
+      }
+    },
+    {
+      "id": "diku-social-thank-room-self",
+      "category": "Socials",
+      "response": "Thank",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ thanks\\ \\#hself\\ since\\ you\\ won't\\.",
+      "template": "<ACTOR> thanks #hself since you won't.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> thanks #hself since you won't.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L440"
+      }
+    },
+    {
+      "id": "diku-social-twiddle-actor",
+      "category": "Socials",
+      "response": "Twiddle",
+      "viewpoint": "actor",
+      "pattern": "You\\ patiently\\ twiddle\\ your\\ thumbs\\.",
+      "template": "You patiently twiddle your thumbs.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You patiently twiddle your thumbs.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L443"
+      }
+    },
+    {
+      "id": "diku-social-twiddle-room",
+      "category": "Socials",
+      "response": "Twiddle",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ patiently\\ twiddles\\ [^\\n\\r\\x27]+?\\ thumbs\\.",
+      "template": "<ACTOR> patiently twiddles <ACTOR-POSS> thumbs.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> patiently twiddles <ACTOR-POSS> thumbs.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L444"
+      }
+    },
+    {
+      "id": "diku-social-wave-room",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ waves\\ happily\\.",
+      "template": "<ACTOR> waves happily.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> waves happily.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L449"
+      }
+    },
+    {
+      "id": "diku-social-wave-actor-targeted",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ wave\\ goodbye\\ to\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You wave goodbye to <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You wave goodbye to <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L450"
+      }
+    },
+    {
+      "id": "diku-social-wave-room-targeted",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ waves\\ goodbye\\ to\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> waves goodbye to <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> waves goodbye to <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L451"
+      }
+    },
+    {
+      "id": "diku-social-wave-target",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ waves\\ goodbye\\ to\\ you\\.\\ Have\\ a\\ good\\ journey\\.",
+      "template": "<ACTOR> waves goodbye to you. Have a good journey.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> waves goodbye to you. Have a good journey.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L452"
+      }
+    },
+    {
+      "id": "diku-social-wave-actor-self",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "actor-self",
+      "pattern": "Are\\ you\\ going\\ on\\ adventures\\ as\\ well\\ \\?\\?",
+      "template": "Are you going on adventures as well ??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Are you going on adventures as well ??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L454"
+      }
+    },
+    {
+      "id": "diku-social-wave-room-self",
+      "category": "Socials",
+      "response": "Wave",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ waves\\ goodbye\\ to\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> waves goodbye to <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> waves goodbye to <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L455"
+      }
+    },
+    {
+      "id": "diku-social-whistle-actor",
+      "category": "Socials",
+      "response": "Whistle",
+      "viewpoint": "actor",
+      "pattern": "You\\ whistle\\ appreciatively\\.",
+      "template": "You whistle appreciatively.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You whistle appreciatively.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L458"
+      }
+    },
+    {
+      "id": "diku-social-whistle-room",
+      "category": "Socials",
+      "response": "Whistle",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ whistles\\ appreciatively\\.",
+      "template": "<ACTOR> whistles appreciatively.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> whistles appreciatively.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L459"
+      }
+    },
+    {
+      "id": "diku-social-wiggle-actor",
+      "category": "Socials",
+      "response": "Wiggle",
+      "viewpoint": "actor",
+      "pattern": "Your\\ wiggle\\ your\\ bottom\\.",
+      "template": "Your wiggle your bottom.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Your wiggle your bottom.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L463"
+      }
+    },
+    {
+      "id": "diku-social-wiggle-room",
+      "category": "Socials",
+      "response": "Wiggle",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ wiggles\\ [^\\n\\r\\x27]+?\\ bottom\\.",
+      "template": "<ACTOR> wiggles <ACTOR-POSS> bottom.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> wiggles <ACTOR-POSS> bottom.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L464"
+      }
+    },
+    {
+      "id": "diku-social-wink-actor",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "actor",
+      "pattern": "Have\\ you\\ got\\ something\\ in\\ your\\ eye\\ \\?",
+      "template": "Have you got something in your eye ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Have you got something in your eye ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L468"
+      }
+    },
+    {
+      "id": "diku-social-wink-room",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ winks\\ suggestively\\.",
+      "template": "<ACTOR> winks suggestively.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> winks suggestively.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L469"
+      }
+    },
+    {
+      "id": "diku-social-wink-actor-targeted",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ wink\\ suggestively\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You wink suggestively at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You wink suggestively at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L470"
+      }
+    },
+    {
+      "id": "diku-social-wink-target",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ winks\\ suggestively\\ at\\ you\\.",
+      "template": "<ACTOR> winks suggestively at you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> winks suggestively at you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L472"
+      }
+    },
+    {
+      "id": "diku-social-wink-actor-self",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ wink\\ at\\ yourself\\ \\?\\?\\ \\-\\ what\\ are\\ you\\ up\\ to\\ \\?",
+      "template": "You wink at yourself ?? - what are you up to ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You wink at yourself ?? - what are you up to ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L474"
+      }
+    },
+    {
+      "id": "diku-social-wink-room-self",
+      "category": "Socials",
+      "response": "Wink",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ winks\\ at\\ [^\\n\\r\\x27]+?self\\ \\-\\ something\\ strange\\ is\\ going\\ on\\.\\.\\.",
+      "template": "<ACTOR> winks at <ACTOR-OBJ>self - something strange is going on...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> winks at <ACTOR-OBJ>self - something strange is going on...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L475"
+      }
+    },
+    {
+      "id": "diku-social-yawn-actor",
+      "category": "Socials",
+      "response": "Yawn",
+      "viewpoint": "actor",
+      "pattern": "Gosh,\\ will\\ you\\ trade\\ those\\ teeth\\ for\\ mine\\ \\?\\?\\ \\-\\ you\\ get\\ my\\ glasseyes\\ in\\ the\\ bargain\\ too\\ !",
+      "template": "Gosh, will you trade those teeth for mine ?? - you get my glasseyes in the bargain too !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Gosh, will you trade those teeth for mine ?? - you get my glasseyes in the bargain too !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L478"
+      }
+    },
+    {
+      "id": "diku-social-snowball-actor",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "actor",
+      "pattern": "Who\\ do\\ you\\ want\\ to\\ throw\\ a\\ snowball\\ at\\ \\?\\?",
+      "template": "Who do you want to throw a snowball at ??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Who do you want to throw a snowball at ??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L483"
+      }
+    },
+    {
+      "id": "diku-social-snowball-actor-targeted",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ trow\\ a\\ snowball\\ in\\ [^\\n\\r\\x27]+?'s\\ face\\.",
+      "template": "You trow a snowball in <TARGET>'s face.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You trow a snowball in <TARGET>'s face.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L485"
+      }
+    },
+    {
+      "id": "diku-social-snowball-room-targeted",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ conjures\\ a\\ snowball\\ from\\ the\\ thin\\ air\\ and\\ throws\\ it\\ at\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> conjures a snowball from the thin air and throws it at <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> conjures a snowball from the thin air and throws it at <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L486"
+      }
+    },
+    {
+      "id": "diku-social-snowball-target",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ conjures\\ a\\ snowball\\ from\\ the\\ thin\\ air\\ and\\ throws\\ it\\ at\\ you\\.",
+      "template": "<ACTOR> conjures a snowball from the thin air and throws it at you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> conjures a snowball from the thin air and throws it at you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L487"
+      }
+    },
+    {
+      "id": "diku-social-snowball-actor-self",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ conjure\\ a\\ snowball\\ from\\ the\\ thin\\ air\\ and\\ throw\\ it\\ at\\ yourself\\.",
+      "template": "You conjure a snowball from the thin air and throw it at yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You conjure a snowball from the thin air and throw it at yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L489"
+      }
+    },
+    {
+      "id": "diku-social-snowball-room-self",
+      "category": "Socials",
+      "response": "Snowball",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ conjures\\ a\\ snowball\\ out\\ of\\ the\\ thin\\ air\\ and\\ throws\\ it\\ at\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> conjures a snowball out of the thin air and throws it at <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> conjures a snowball out of the thin air and throws it at <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L490"
+      }
+    },
+    {
+      "id": "diku-social-french-actor",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "actor",
+      "pattern": "Kiss\\ whom\\ \\?\\?",
+      "template": "Kiss whom ??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Kiss whom ??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L493"
+      }
+    },
+    {
+      "id": "diku-social-french-actor-targeted",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ give\\ [^\\n\\r\\x27]+?\\ a\\ long\\ and\\ passionate\\ kiss,\\ it\\ seems\\ to\\ take\\ forever\\.\\.\\.",
+      "template": "You give <TARGET> a long and passionate kiss, it seems to take forever...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You give <TARGET> a long and passionate kiss, it seems to take forever...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L495"
+      }
+    },
+    {
+      "id": "diku-social-french-room-targeted",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ kisses\\ [^\\n\\r\\x27]+?\\ passionately\\.",
+      "template": "<ACTOR> kisses <TARGET> passionately.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> kisses <TARGET> passionately.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L496"
+      }
+    },
+    {
+      "id": "diku-social-french-target",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ gives\\ you\\ a\\ long\\ and\\ passionate\\ kiss,\\ it\\ seems\\ to\\ take\\ forever\\.\\.\\.",
+      "template": "<ACTOR> gives you a long and passionate kiss, it seems to take forever...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gives you a long and passionate kiss, it seems to take forever...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L497"
+      }
+    },
+    {
+      "id": "diku-social-french-actor-self",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ gather\\ yourself\\ in\\ your\\ arms\\ and\\ try\\ to\\ kiss\\ you\\.",
+      "template": "You gather yourself in your arms and try to kiss you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You gather yourself in your arms and try to kiss you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L499"
+      }
+    },
+    {
+      "id": "diku-social-french-room-self",
+      "category": "Socials",
+      "response": "French",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ makes\\ an\\ attempt\\ at\\ kissing\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> makes an attempt at kissing <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> makes an attempt at kissing <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L500"
+      }
+    },
+    {
+      "id": "diku-social-comb-actor",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "actor",
+      "pattern": "You\\ comb\\ your\\ hair\\ \\-\\ perfect\\.",
+      "template": "You comb your hair - perfect.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You comb your hair - perfect.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L503"
+      }
+    },
+    {
+      "id": "diku-social-comb-room",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ combs\\ [^\\n\\r\\x27]+?\\ hair,\\ what\\ a\\ dashing\\ specimen\\ !",
+      "template": "<ACTOR> combs <ACTOR-POSS> hair, what a dashing specimen !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> combs <ACTOR-POSS> hair, what a dashing specimen !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L504"
+      }
+    },
+    {
+      "id": "diku-social-comb-actor-targeted",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ patiently\\ untangle\\ [^\\n\\r\\x27]+?'s\\ hair\\ \\-\\ what\\ a\\ mess\\ !",
+      "template": "You patiently untangle <TARGET>'s hair - what a mess !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You patiently untangle <TARGET>'s hair - what a mess !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L505"
+      }
+    },
+    {
+      "id": "diku-social-comb-room-targeted",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ tries\\ patiently\\ to\\ untangle\\ [^\\n\\r\\x27]+?'s\\ hair\\.",
+      "template": "<ACTOR> tries patiently to untangle <TARGET>'s hair.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> tries patiently to untangle <TARGET>'s hair.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L506"
+      }
+    },
+    {
+      "id": "diku-social-comb-target",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ pulls\\ your\\ hair\\ in\\ an\\ attempt\\ to\\ comb\\ it\\.",
+      "template": "<ACTOR> pulls your hair in an attempt to comb it.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pulls your hair in an attempt to comb it.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L507"
+      }
+    },
+    {
+      "id": "diku-social-comb-actor-self",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ pull\\ your\\ hair,\\ but\\ it\\ will\\ not\\ be\\ combed\\.",
+      "template": "You pull your hair, but it will not be combed.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You pull your hair, but it will not be combed.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L509"
+      }
+    },
+    {
+      "id": "diku-social-comb-room-self",
+      "category": "Socials",
+      "response": "Comb",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ tries\\ to\\ comb\\ [^\\n\\r\\x27]+?\\ tangled\\ hair\\.",
+      "template": "<ACTOR> tries to comb <ACTOR-POSS> tangled hair.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> tries to comb <ACTOR-POSS> tangled hair.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L510"
+      }
+    },
+    {
+      "id": "diku-social-massage-actor",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "actor",
+      "pattern": "Massage\\ what\\ \\?\\ \\-\\ thin\\ air\\ \\?",
+      "template": "Massage what ? - thin air ?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Massage what ? - thin air ?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L513"
+      }
+    },
+    {
+      "id": "diku-social-massage-actor-targeted",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ gently\\ massage\\ [^\\n\\r\\x27]+?'s\\ shoulders\\.",
+      "template": "You gently massage <TARGET>'s shoulders.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You gently massage <TARGET>'s shoulders.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L515"
+      }
+    },
+    {
+      "id": "diku-social-massage-room-targeted",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ massages\\ [^\\n\\r\\x27]+?'s\\ shoulders\\.",
+      "template": "<ACTOR> massages <TARGET>'s shoulders.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> massages <TARGET>'s shoulders.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L516"
+      }
+    },
+    {
+      "id": "diku-social-massage-target",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ gently\\ massages\\ your\\ shoulders\\ \\-\\ Ahhhhhhhhhh\\.\\.\\.",
+      "template": "<ACTOR> gently massages your shoulders - Ahhhhhhhhhh...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gently massages your shoulders - Ahhhhhhhhhh...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L517"
+      }
+    },
+    {
+      "id": "diku-social-massage-actor-self",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ practise\\ yoga\\ as\\ you\\ try\\ to\\ massage\\ yourself\\.",
+      "template": "You practise yoga as you try to massage yourself.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You practise yoga as you try to massage yourself.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L519"
+      }
+    },
+    {
+      "id": "diku-social-massage-room-self",
+      "category": "Socials",
+      "response": "Massage",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ gives\\ a\\ show\\ on\\ yoga\\-positions,\\ trying\\ to\\ massage\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> gives a show on yoga-positions, trying to massage <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> gives a show on yoga-positions, trying to massage <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L520"
+      }
+    },
+    {
+      "id": "diku-social-tickle-actor",
+      "category": "Socials",
+      "response": "Tickle",
+      "viewpoint": "actor",
+      "pattern": "Who\\ do\\ you\\ want\\ to\\ tickle\\ \\?\\?",
+      "template": "Who do you want to tickle ??",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Who do you want to tickle ??",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L523"
+      }
+    },
+    {
+      "id": "diku-social-tickle-actor-targeted",
+      "category": "Socials",
+      "response": "Tickle",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ tickle\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You tickle <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You tickle <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L525"
+      }
+    },
+    {
+      "id": "diku-social-tickle-target",
+      "category": "Socials",
+      "response": "Tickle",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ tickles\\ you\\ \\-\\ hee\\ hee\\ hee\\.",
+      "template": "<ACTOR> tickles you - hee hee hee.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> tickles you - hee hee hee.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L527"
+      }
+    },
+    {
+      "id": "diku-social-tickle-actor-self",
+      "category": "Socials",
+      "response": "Tickle",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ tickle\\ yourself,\\ how\\ funny\\ !",
+      "template": "You tickle yourself, how funny !",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You tickle yourself, how funny !",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L529"
+      }
+    },
+    {
+      "id": "diku-social-tickle-room-self",
+      "category": "Socials",
+      "response": "Tickle",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ tickles\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> tickles <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> tickles <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L530"
+      }
+    },
+    {
+      "id": "diku-social-pat-actor-targeted",
+      "category": "Socials",
+      "response": "Pat",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ pat\\ [^\\n\\r\\x27]+?\\ on\\ [^\\n\\r\\x27]+?\\ head\\.",
+      "template": "You pat <TARGET> on <TARGET-POSS> head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You pat <TARGET> on <TARGET-POSS> head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L535"
+      }
+    },
+    {
+      "id": "diku-social-pat-room-targeted",
+      "category": "Socials",
+      "response": "Pat",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ pats\\ [^\\n\\r\\x27]+?\\ on\\ [^\\n\\r\\x27]+?\\ head\\.",
+      "template": "<ACTOR> pats <TARGET> on <TARGET-POSS> head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pats <TARGET> on <TARGET-POSS> head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L536"
+      }
+    },
+    {
+      "id": "diku-social-pat-target",
+      "category": "Socials",
+      "response": "Pat",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ pats\\ you\\ on\\ your\\ head\\.",
+      "template": "<ACTOR> pats you on your head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pats you on your head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L537"
+      }
+    },
+    {
+      "id": "diku-social-pat-actor-self",
+      "category": "Socials",
+      "response": "Pat",
+      "viewpoint": "actor-self",
+      "pattern": "You\\ pat\\ yourself\\ on\\ your\\ head,\\ very\\ reassuring\\.",
+      "template": "You pat yourself on your head, very reassuring.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You pat yourself on your head, very reassuring.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L539"
+      }
+    },
+    {
+      "id": "diku-social-pat-room-self",
+      "category": "Socials",
+      "response": "Pat",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ pats\\ [^\\n\\r\\x27]+?self\\ on\\ the\\ head\\.",
+      "template": "<ACTOR> pats <ACTOR-OBJ>self on the head.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> pats <ACTOR-OBJ>self on the head.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L540"
+      }
+    },
+    {
+      "id": "diku-social-curse-actor",
+      "category": "Socials",
+      "response": "Curse",
+      "viewpoint": "actor",
+      "pattern": "You\\ swear\\ loudly\\ for\\ a\\ long\\ time\\.",
+      "template": "You swear loudly for a long time.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You swear loudly for a long time.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L543"
+      }
+    },
+    {
+      "id": "diku-social-curse-room",
+      "category": "Socials",
+      "response": "Curse",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ swears\\ :\\ \\#@\\*\"\\*\\&\\^\\$\\$%@\\*\\&!\\ !!!!!",
+      "template": "<ACTOR> swears : #@*\"*&^$$%@*&! !!!!!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> swears : #@*\"*&^$$%@*&! !!!!!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L544"
+      }
+    },
+    {
+      "id": "diku-social-pray-actor",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "actor",
+      "pattern": "You\\ feel\\ righteous,\\ and\\ maybe\\ a\\ little\\ foolish\\.",
+      "template": "You feel righteous, and maybe a little foolish.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You feel righteous, and maybe a little foolish.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L548"
+      }
+    },
+    {
+      "id": "diku-social-pray-room",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ begs\\ and\\ grovels\\ to\\ the\\ powers\\ that\\ be\\.",
+      "template": "<ACTOR> begs and grovels to the powers that be.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> begs and grovels to the powers that be.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L549"
+      }
+    },
+    {
+      "id": "diku-social-pray-actor-targeted",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ crawl\\ in\\ the\\ dust\\ before\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You crawl in the dust before <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You crawl in the dust before <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L550"
+      }
+    },
+    {
+      "id": "diku-social-pray-room-targeted",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ falls\\ down\\ and\\ grovels\\ in\\ the\\ dirt\\ before\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> falls down and grovels in the dirt before <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> falls down and grovels in the dirt before <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L551"
+      }
+    },
+    {
+      "id": "diku-social-pray-target",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ kisses\\ the\\ dirt\\ at\\ your\\ feet\\.",
+      "template": "<ACTOR> kisses the dirt at your feet.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> kisses the dirt at your feet.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L552"
+      }
+    },
+    {
+      "id": "diku-social-pray-actor-self",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "actor-self",
+      "pattern": "Talk\\ about\\ narcissism\\.\\.\\.",
+      "template": "Talk about narcissism...",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Talk about narcissism...",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L554"
+      }
+    },
+    {
+      "id": "diku-social-pray-room-self",
+      "category": "Socials",
+      "response": "Pray",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ performs\\ some\\ strange\\ yoga\\-exercises\\ and\\ mumbles\\ a\\ prayer\\ to\\ [^\\n\\r\\x27]+?self\\.",
+      "template": "<ACTOR> performs some strange yoga-exercises and mumbles a prayer to <ACTOR-OBJ>self.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> performs some strange yoga-exercises and mumbles a prayer to <ACTOR-OBJ>self.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L555"
+      }
+    },
+    {
+      "id": "diku-social-cringe-actor",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "actor",
+      "pattern": "You\\ cringe\\ in\\ terror\\.",
+      "template": "You cringe in terror.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cringe in terror.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L568"
+      }
+    },
+    {
+      "id": "diku-social-cringe-room",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ cringes\\ in\\ terror!",
+      "template": "<ACTOR> cringes in terror!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cringes in terror!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L569"
+      }
+    },
+    {
+      "id": "diku-social-cringe-actor-targeted",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ cringe\\ away\\ from\\ [^\\n\\r\\x27]+?\\.",
+      "template": "You cringe away from <TARGET-OBJ>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You cringe away from <TARGET-OBJ>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L570"
+      }
+    },
+    {
+      "id": "diku-social-cringe-room-targeted",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ cringes\\ away\\ from\\ [^\\n\\r\\x27]+?\\ in\\ mortal\\ terror\\.",
+      "template": "<ACTOR> cringes away from <TARGET> in mortal terror.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cringes away from <TARGET> in mortal terror.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L571"
+      }
+    },
+    {
+      "id": "diku-social-cringe-target",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ cringes\\ away\\ from\\ you\\.",
+      "template": "<ACTOR> cringes away from you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> cringes away from you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L572"
+      }
+    },
+    {
+      "id": "diku-social-cringe-actor-self",
+      "category": "Socials",
+      "response": "Cringe",
+      "viewpoint": "actor-self",
+      "pattern": "I\\ beg\\ your\\ pardon\\?",
+      "template": "I beg your pardon?",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "I beg your pardon?",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L574"
+      }
+    },
+    {
+      "id": "diku-social-daydream-actor",
+      "category": "Socials",
+      "response": "Daydream",
+      "viewpoint": "actor",
+      "pattern": "You\\ dream\\ of\\ better\\ times\\.",
+      "template": "You dream of better times.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You dream of better times.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L578"
+      }
+    },
+    {
+      "id": "diku-social-daydream-room",
+      "category": "Socials",
+      "response": "Daydream",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ looks\\ absent\\-minded,\\ his\\ eyes\\ staring\\ into\\ space\\.",
+      "template": "<ACTOR> looks absent-minded, his eyes staring into space.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> looks absent-minded, his eyes staring into space.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L579"
+      }
+    },
+    {
+      "id": "diku-social-fume-actor",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "actor",
+      "pattern": "Take\\ it\\ easy\\ now!\\ count\\ to\\ ten,\\ very\\ slowly\\.",
+      "template": "Take it easy now! count to ten, very slowly.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "Take it easy now! count to ten, very slowly.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L583"
+      }
+    },
+    {
+      "id": "diku-social-fume-room",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ grits\\ [^\\n\\r\\x27]+?\\ teeth\\ and\\ fumes\\ with\\ rage\\.",
+      "template": "<ACTOR> grits <ACTOR-POSS> teeth and fumes with rage.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> grits <ACTOR-POSS> teeth and fumes with rage.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L584"
+      }
+    },
+    {
+      "id": "diku-social-fume-actor-targeted",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ stare\\ at\\ [^\\n\\r\\x27]+?,\\ fuming\\.",
+      "template": "You stare at <TARGET-OBJ>, fuming.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You stare at <TARGET-OBJ>, fuming.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L585"
+      }
+    },
+    {
+      "id": "diku-social-fume-room-targeted",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ at\\ [^\\n\\r\\x27]+?,\\ fuming\\ with\\ rage\\.",
+      "template": "<ACTOR> stares at <TARGET>, fuming with rage.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares at <TARGET>, fuming with rage.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L586"
+      }
+    },
+    {
+      "id": "diku-social-fume-target",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ stares\\ at\\ you,\\ fuming\\ with\\ rage!",
+      "template": "<ACTOR> stares at you, fuming with rage!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> stares at you, fuming with rage!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L587"
+      }
+    },
+    {
+      "id": "diku-social-fume-actor-self",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "actor-self",
+      "pattern": "That's\\ right\\ \\-\\ hate\\ yourself!",
+      "template": "That's right - hate yourself!",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "That's right - hate yourself!",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L589"
+      }
+    },
+    {
+      "id": "diku-social-fume-room-self",
+      "category": "Socials",
+      "response": "Fume",
+      "viewpoint": "room-self",
+      "pattern": "[^\\n\\r\\x27]+?\\ clenches\\ [^\\n\\r\\x27]+?\\ fists\\ and\\ stomps\\ his\\ feet,\\ fuming\\ with\\ anger\\.",
+      "template": "<ACTOR> clenches <ACTOR-POSS> fists and stomps his feet, fuming with anger.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> clenches <ACTOR-POSS> fists and stomps his feet, fuming with anger.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L590"
+      }
+    },
+    {
+      "id": "diku-social-grovel-actor",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "actor",
+      "pattern": "You\\ grovel\\ in\\ the\\ dirt\\.",
+      "template": "You grovel in the dirt.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You grovel in the dirt.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L593"
+      }
+    },
+    {
+      "id": "diku-social-grovel-room",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "room",
+      "pattern": "[^\\n\\r\\x27]+?\\ grovels\\ in\\ the\\ dirt\\.",
+      "template": "<ACTOR> grovels in the dirt.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> grovels in the dirt.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L594"
+      }
+    },
+    {
+      "id": "diku-social-grovel-actor-targeted",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "actor-targeted",
+      "pattern": "You\\ grovel\\ before\\ [^\\n\\r\\x27]+?",
+      "template": "You grovel before <TARGET-OBJ>",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "You grovel before <TARGET-OBJ>",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L595"
+      }
+    },
+    {
+      "id": "diku-social-grovel-room-targeted",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "room-targeted",
+      "pattern": "[^\\n\\r\\x27]+?\\ grovels\\ in\\ the\\ dirt\\ before\\ [^\\n\\r\\x27]+?\\.",
+      "template": "<ACTOR> grovels in the dirt before <TARGET>.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> grovels in the dirt before <TARGET>.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L596"
+      }
+    },
+    {
+      "id": "diku-social-grovel-target",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "target",
+      "pattern": "[^\\n\\r\\x27]+?\\ grovels\\ in\\ the\\ dirt\\ before\\ you\\.",
+      "template": "<ACTOR> grovels in the dirt before you.",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "<ACTOR> grovels in the dirt before you.",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L597"
+      }
+    },
+    {
+      "id": "diku-social-grovel-actor-self",
+      "category": "Socials",
+      "response": "Grovel",
+      "viewpoint": "actor-self",
+      "pattern": "That\\ seems\\ a\\ little\\ silly\\ to\\ me\\.\\.",
+      "template": "That seems a little silly to me..",
+      "baseline": {
+        "system": "Diku Alfa",
+        "date": "1991-07",
+        "template": "That seems a little silly to me..",
+        "url": "https://github.com/Seifert69/DikuMUD/blob/81b74dce0436b782d08b19064e32013c73525b45/dm-dist-alfa/lib/actions#L599"
+      }
+    },
+    {
+      "id": "speech-tell",
+      "category": "Communication",
+      "response": "Tell",
+      "viewpoint": "recipient",
+      "pattern": "(?P<actor>(?:\\*[^*\\n]+\\*|[\\w-]+(?: [^\\n\\x27]+)?)) tells you '(?P<message>.*)'",
+      "template": "<ACTOR> tells you '<MESSAGE>'",
+      "retained": []
+    },
+    {
+      "id": "speech-say",
+      "category": "Communication",
+      "response": "Say",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>(?:\\*[^*\\n]+\\*|[\\w-]+(?: [^\\n\\x27]+)?)) says '(?P<message>.*)'",
+      "template": "<ACTOR> says '<MESSAGE>'",
+      "retained": []
+    },
+    {
+      "id": "speech-narrate",
+      "category": "Communication",
+      "response": "Narrate",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>(?:\\*[^*\\n]+\\*|[\\w-]+(?: [^\\n\\x27]+)?)) narrates '(?P<message>.*)'",
+      "template": "<ACTOR> narrates '<MESSAGE>'",
+      "retained": []
+    },
+    {
+      "id": "speech-shout",
+      "category": "Communication",
+      "response": "Shout",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>(?:\\*[^*\\n]+\\*|[\\w-]+(?: [^\\n\\x27]+)?)) shouts '(?P<message>.*)'",
+      "template": "<ACTOR> shouts '<MESSAGE>'",
+      "retained": []
+    },
+    {
+      "id": "tell-missing",
+      "category": "Communication",
+      "response": "Tell",
+      "viewpoint": "recipient",
+      "pattern": "No-one by that name here(?P<punct>\\.{2,3})",
+      "template": "No-one by that name here{punct}",
+      "retained": [
+        "punct"
+      ]
+    },
+    {
+      "id": "spell-words",
+      "category": "Spells",
+      "response": "Incantation",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>(?:\\*[^*\\n]+\\*|[\\w-]+(?: [^\\n\\x27]+)?)) utters the words, '(?P<spell>[^\\x27]+)'",
+      "template": "<ACTOR> utters the words, '{spell}'",
+      "retained": [
+        "spell"
+      ]
+    },
+    {
+      "id": "spell-raisen",
+      "category": "Spells",
+      "response": "Icy wind",
+      "viewpoint": "recipient",
+      "pattern": "An icy wind starts to blow from the (?P<hand>raisen|raised) hand of (?P<actor>.+?)\\. You panic!",
+      "template": "An icy wind starts to blow from the {hand} hand of <ACTOR>. You panic!",
+      "retained": [
+        "hand"
+      ]
+    },
+    {
+      "id": "concentration",
+      "category": "Spells",
+      "response": "Concentration failure",
+      "viewpoint": "actor",
+      "pattern": "You (?:lost|lose|were not able to keep) your concentration[^\\n]*[.!]",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "death-self",
+      "category": "Death and position",
+      "response": "Death",
+      "viewpoint": "victim",
+      "pattern": "You are dead!(?P<space> +)Sorry\\.\\.\\.",
+      "template": "You are dead!{space}Sorry...",
+      "retained": [
+        "space"
+      ]
+    },
+    {
+      "id": "death-room",
+      "category": "Death and position",
+      "response": "Death",
+      "viewpoint": "room",
+      "pattern": "(?P<actor>.+?) is dead! R\\.I\\.P\\.",
+      "template": "<ACTOR> is dead! R.I.P.",
+      "retained": []
+    },
+    {
+      "id": "death-cry",
+      "category": "Death and position",
+      "response": "Death cry",
+      "viewpoint": "actor",
+      "pattern": "(?P<actor>.+?) makes a strange sound, as you place (?P<poss>your|a) (?P<part>.+?) in (?:his|her|its) back\\.",
+      "template": "<ACTOR> makes a strange sound, as you place {poss} <BODY> in <TARGET-POSS> back.",
+      "retained": [
+        "poss"
+      ]
+    },
+    {
+      "id": "position",
+      "category": "Death and position",
+      "response": "Injury position",
+      "viewpoint": "context-dependent",
+      "pattern": "(?:You(?: are|\\x27re)|(?P<actor>.+?) is) (?P<state>stunned|incapacitated|mortally wounded)[^\\n]*[.!]",
+      "template": "{actor_normalized}",
+      "retained": [
+        "actor_normalized"
+      ]
+    },
+    {
+      "id": "shadow-rise",
+      "category": "Death and position",
+      "response": "Guardian shadow",
+      "viewpoint": "room",
+      "pattern": "A shadow slowly (?P<verb>rises|raises) above the corpse of (?P<actor>.+?)\\.",
+      "template": "A shadow slowly {verb} above the corpse of <ACTOR>.",
+      "retained": [
+        "verb"
+      ]
+    },
+    {
+      "id": "shadow-end",
+      "category": "Death and position",
+      "response": "Guardian shadow departure",
+      "viewpoint": "room",
+      "pattern": "A (?:guardian )?shadow (?:fades away and dissolves|disappears) into nothing\\.",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "first-kill",
+      "category": "Combat",
+      "response": "First kill",
+      "viewpoint": "actor",
+      "pattern": "Congratulations!{1,2} This is the first time you\\x27ve killed it ?!",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "melee",
+      "category": "Combat",
+      "response": "Melee injury",
+      "viewpoint": "context-dependent",
+      "pattern": "(?P<actor>.+?) (?P<adverb>(?:strongly|swiftly|barely|lightly|firmly) )?(?P<verb>hit|hits|slash|slashes|pierce|pierces|crush|crushes|smite|smites|stab|stabs|pound|pounds|bite|bites|claw|claws|maul|mauls|whip|whips|cleave|cleaves|bludgeon|bludgeons|shoot|shoots) (?P<target>your|.+?\\x27s) (?P<body>(?:left |right )?(?:arm|leg|hand|foot|wing|foreleg|hindleg)|head|body|neck|chest|back|tail|stomach) (?P<effect>.+[.!])",
+      "template": "{actor_form} {adverb}{verb} {target_form} <BODY> {effect}",
+      "retained": [
+        "actor_form",
+        "verb",
+        "target_form",
+        "effect",
+        "adverb"
+      ]
+    },
+    {
+      "id": "defence",
+      "category": "Combat",
+      "response": "Defence",
+      "viewpoint": "context-dependent",
+      "pattern": "(?P<actor>.+?) (?P<adverb>(?:strongly|swiftly|barely|lightly|firmly) )?(?P<verb>dodge|dodges|parry|parries) (?P<target>your|.+?\\x27s) (?P<attack>.+?)\\.",
+      "template": "{actor_form} {adverb}{verb} {target_form} {attack}.",
+      "retained": [
+        "actor_form",
+        "verb",
+        "target_form",
+        "attack",
+        "adverb"
+      ]
+    },
+    {
+      "id": "flee",
+      "category": "Combat",
+      "response": "Flee",
+      "viewpoint": "actor",
+      "pattern": "(?:You flee head over heels\\.|PANIC! You (?:couldn\\x27t escape|can\\x27t flee)[.!]|You try to flee, but[^\\n]*[.!])",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "bash-self",
+      "category": "Special combat",
+      "response": "Bash",
+      "viewpoint": "actor",
+      "pattern": "You (?:bash|kick) (?P<target>.+?)(?:\\.|!)",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "bash-received",
+      "category": "Special combat",
+      "response": "Bash",
+      "viewpoint": "victim",
+      "pattern": "(?P<actor>.+?) (?:sends you sprawling|bashes you|kicks you)[^\\n]*[.!]",
+      "template": "{actor_normalized}",
+      "retained": [
+        "actor_normalized"
+      ]
+    },
+    {
+      "id": "condition",
+      "category": "Health and resources",
+      "response": "Condition",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>.+?) (?:is in |has )(?:an? )?(?:excellent condition|few scratches|small wounds and bruises|big nasty wounds|pretty hurt|awful condition|bad shape|very bad shape)[^\\n]*[.!]",
+      "template": "{actor_normalized}",
+      "retained": [
+        "actor_normalized"
+      ]
+    },
+    {
+      "id": "resources",
+      "category": "Health and resources",
+      "response": "Hit / mana / move",
+      "viewpoint": "actor",
+      "pattern": "(?P<hp>\\d+/\\d+) hit, (?P<mana>\\d+/\\d+) mana and (?P<move>\\d+/\\d+) moves\\.",
+      "template": "<CURRENT>/<MAX> hit, <CURRENT>/<MAX> mana and <CURRENT>/<MAX> moves.",
+      "retained": []
+    },
+    {
+      "id": "combat-stats",
+      "category": "Stats and equipment",
+      "response": "Combat stats",
+      "viewpoint": "actor",
+      "pattern": "OB: [^\\n]*",
+      "template": "{numbers_normalized}",
+      "retained": [
+        "numbers_normalized"
+      ]
+    },
+    {
+      "id": "condition-self",
+      "category": "Health and resources",
+      "response": "Personal condition",
+      "viewpoint": "actor",
+      "pattern": "You are (?:hungry|thirsty|drunk|sober|exhausted|too exhausted)[^\\n]*[.!]",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "feel",
+      "category": "Health and resources",
+      "response": "Personal effect",
+      "viewpoint": "actor",
+      "pattern": "You feel [^\\n\\x27]{2,160}[.!]",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "failure-self",
+      "category": "System failures",
+      "response": "Action failure",
+      "viewpoint": "actor",
+      "pattern": "(?:You (?:can\\x27t|cannot|couldn\\x27t|must|don\\x27t|do not|need|failed|fail) |Nah\\.\\.\\.|Alas, |But )[^\\n]{2,180}[.!?]",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "failure-fixed",
+      "category": "System failures",
+      "response": "Action failure",
+      "viewpoint": "actor",
+      "pattern": "(?:No way!|They aren\\x27t here\\.|Nobody here by that name\\.|Huh\\?!|You can\\x27t find it!|It seems to be locked\\.|It\\x27s already (?:open|closed)\\.)",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "mount-clipclop",
+      "category": "Mounts and followers",
+      "response": "Horse movement",
+      "viewpoint": "room",
+      "pattern": "Clip-clop(?P<punct>\\.+)(?P<rest>.+)",
+      "template": "Clip-clop{punct}<MOVEMENT>",
+      "retained": [
+        "punct"
+      ]
+    },
+    {
+      "id": "follower-loss",
+      "category": "Mounts and followers",
+      "response": "Follower loss",
+      "viewpoint": "leader",
+      "pattern": "ACK!! (?P<actor>.+?) (?P<verb>coudln\\x27t|couldn\\x27t) follow you, you lost (?P<pronoun>him|her|it)\\.",
+      "template": "ACK!! <ACTOR> {verb} follow you, you lost <PRONOUN>.",
+      "retained": [
+        "verb"
+      ]
+    },
+    {
+      "id": "istar",
+      "category": "Calendar",
+      "response": "Tan Istar",
+      "viewpoint": "observer",
+      "pattern": "The present Tan Istar, Lord of the Istari Council is (?P<actor>.+?)\\.",
+      "template": "The present Tan Istar, Lord of the Istari Council is {named_actor}.",
+      "retained": [
+        "named_actor"
+      ]
+    },
+    {
+      "id": "trophy",
+      "category": "Stats and equipment",
+      "response": "Trophy header",
+      "viewpoint": "actor",
+      "pattern": "\\*\\*\\* TROPHY \\*\\*\\* \\([^\\n]+\\)",
+      "template": "{text}",
+      "retained": [
+        "text"
+      ]
+    },
+    {
+      "id": "npc-guard",
+      "category": "NPC speech",
+      "response": "Guard cry",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>.+?) screams '(?P<cry>PROTECT THE INNOCENT![^\\x27]*)'",
+      "template": "<ACTOR> screams '{cry}'",
+      "retained": [
+        "cry"
+      ]
+    },
+    {
+      "id": "door-close",
+      "category": "Movement and doors",
+      "response": "Door close",
+      "viewpoint": "room",
+      "pattern": "The (?P<door>[^\\n.]+?) closes quietly\\.",
+      "template": "The <DOOR> closes quietly.",
+      "retained": []
+    },
+    {
+      "id": "door-action",
+      "category": "Movement and doors",
+      "response": "Door action",
+      "viewpoint": "observer",
+      "pattern": "(?P<actor>.+?) (?P<verb>opens|closes|locks|unlocks) the (?P<door>[^\\n]+?)\\.",
+      "template": "<ACTOR> {verb} the <DOOR>.",
+      "retained": [
+        "verb"
+      ]
+    },
+    {
+      "id": "exits",
+      "category": "Movement and doors",
+      "response": "Exit list",
+      "viewpoint": "observer",
+      "pattern": "(?P<label>Exits|Obvious exits):(?P<rest>[^\\n]*)",
+      "template": "{label}: <EXITS>",
+      "retained": [
+        "label"
+      ]
+    }
+  ]
+}
